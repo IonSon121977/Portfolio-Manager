@@ -525,7 +525,7 @@ def send_email(subject: str, html: str, cfg: dict) -> bool:
         msg["From"]    = a["email_from"]
         msg["To"]      = a["email_to"]
         msg.attach(MIMEText(html, "html"))
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=20) as s:
+        with smtplib.SMTP_SSL("smtp.agentmail.to", 465, timeout=20) as s:
             s.login(a["email_from"], a["email_password"])
             s.send_message(msg)
         log.info("  Sent: " + subject)
