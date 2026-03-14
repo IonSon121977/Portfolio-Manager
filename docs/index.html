@@ -170,12 +170,12 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
 
 <nav>
   <div class="tab on"    onclick="go('dashboard',this)">Dashboard</div>
+  <div class="tab"       onclick="go('scores',this)">📊 Stock Scores</div>
   <div class="tab intel" onclick="go('intelligence',this)">🧠 Intelligence</div>
   <div class="tab"       onclick="go('etf',this)">ETF Holdings</div>
   <div class="tab"       onclick="go('alerts',this)">Alerts <span id="ac"></span></div>
   <div class="tab"       onclick="go('weekly',this)">📅 Weekly Report</div>
   <div class="tab"       onclick="go('config',this)">⚙ Configure</div>
-  <div class="tab"       onclick="go('deploy',this)">🚀 Deploy Guide</div>
 </nav>
 
 <!-- DASHBOARD -->
@@ -198,6 +198,118 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
     <thead><tr><th>Ticker</th><th>Name</th><th>Price EUR</th><th>Day Chg</th><th>Shares</th><th>Value EUR</th><th>52W Low</th><th>52W High</th></tr></thead>
     <tbody id="tb-etf"><tr><td colspan="8" class="empty">Loading snapshot…</td></tr></tbody>
   </table></div>
+</div>
+
+<!-- STOCK SCORES -->
+<div class="page" id="pg-scores">
+  <div class="sh">
+    <div class="st" style="color:var(--warn)">📊 Stock Scores</div>
+    <div class="bdg" id="sc-count">0</div>
+    <div class="shr" style="gap:6px">
+      <span style="color:var(--muted);font-size:10px" id="sc-updated">Updated —</span>
+    </div>
+  </div>
+  <p style="color:var(--muted);font-size:11px;margin-bottom:16px">
+    Investment scores (0–100) calculated from P/E, P/B, ROE, margins, growth and more. Updated every 2h during market hours via GitHub Actions.
+  </p>
+
+  <!-- Search + Filters -->
+  <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:16px">
+    <input type="text" id="sc-search" placeholder="Search by ticker or name…"
+      oninput="renderScores()" style="max-width:400px">
+
+    <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+      <div style="display:flex;align-items:center;gap:6px">
+        <label style="margin:0;white-space:nowrap">Score:</label>
+        <input type="number" id="sc-min-score" placeholder="Min" min="0" max="100"
+          oninput="renderScores()" style="width:70px">
+        <span style="color:var(--muted)">–</span>
+        <input type="number" id="sc-max-score" placeholder="Max" min="0" max="100"
+          oninput="renderScores()" style="width:70px">
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <label style="margin:0;white-space:nowrap">Price EUR:</label>
+        <input type="number" id="sc-min-price" placeholder="Min" min="0"
+          oninput="renderScores()" style="width:80px">
+        <span style="color:var(--muted)">–</span>
+        <input type="number" id="sc-max-price" placeholder="Max" min="0"
+          oninput="renderScores()" style="width:80px">
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <label style="margin:0;white-space:nowrap">Day Chg %:</label>
+        <input type="number" id="sc-min-chg" placeholder="Min" step="0.1"
+          oninput="renderScores()" style="width:70px">
+        <span style="color:var(--muted)">–</span>
+        <input type="number" id="sc-max-chg" placeholder="Max" step="0.1"
+          oninput="renderScores()" style="width:70px">
+      </div>
+      <button class="btn bg sm" onclick="clearScoreFilters()">Clear Filters</button>
+    </div>
+
+    <!-- Export buttons -->
+    <div style="display:flex;flex-wrap:wrap;gap:7px">
+      <button class="btn sm" style="background:var(--up)"    onclick="scExport('csv')">Export CSV</button>
+      <button class="btn sm" style="background:var(--accent)" onclick="scExport('json')">Export JSON</button>
+      <button class="btn sm" style="background:var(--intel)" onclick="scExport('xml')">Export XML</button>
+      <button class="btn sm" style="background:var(--warn)"  onclick="scExport('html')">Export HTML</button>
+      <button class="btn sm" style="background:var(--dn)"    onclick="scExport('pdf')">Export PDF</button>
+    </div>
+  </div>
+
+  <!-- Results count + pagination top -->
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:8px">
+    <span style="color:var(--muted);font-size:11px" id="sc-results">Showing 0 of 0</span>
+    <div style="display:flex;align-items:center;gap:8px">
+      <label style="margin:0">Per page:</label>
+      <select id="sc-per-page" onchange="scPage=1;renderScores()"
+        style="background:var(--s2);border:1px solid var(--border);color:var(--text);border-radius:5px;padding:4px 8px;font-family:var(--ff);font-size:11px">
+        <option value="10">10</option>
+        <option value="25" selected>25</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="tbox">
+    <table>
+      <thead>
+        <tr>
+          <th onclick="scSort('symbol')"    style="cursor:pointer">Ticker <span id="scs-symbol"></span></th>
+          <th onclick="scSort('name')"      style="cursor:pointer">Name <span id="scs-name"></span></th>
+          <th onclick="scSort('score')"     style="cursor:pointer">Score <span id="scs-score">↓</span></th>
+          <th onclick="scSort('price')"     style="cursor:pointer">Price EUR <span id="scs-price"></span></th>
+          <th onclick="scSort('change')"    style="cursor:pointer">Day Chg <span id="scs-change"></span></th>
+          <th onclick="scSort('pe')"        style="cursor:pointer">P/E <span id="scs-pe"></span></th>
+          <th onclick="scSort('pb')"        style="cursor:pointer">P/B <span id="scs-pb"></span></th>
+          <th onclick="scSort('roe')"       style="cursor:pointer">ROE % <span id="scs-roe"></span></th>
+          <th onclick="scSort('margin')"    style="cursor:pointer">Margin % <span id="scs-margin"></span></th>
+          <th onclick="scSort('beta')"      style="cursor:pointer">Beta <span id="scs-beta"></span></th>
+        </tr>
+      </thead>
+      <tbody id="tb-scores"><tr><td colspan="10" class="empty">Loading fundamentals…</td></tr></tbody>
+    </table>
+  </div>
+
+  <!-- Pagination bottom -->
+  <div style="display:flex;justify-content:center;align-items:center;gap:10px;margin-top:8px">
+    <button class="btn bg sm" id="sc-prev" onclick="scPage--;renderScores()">← Prev</button>
+    <span style="color:var(--muted);font-size:11px" id="sc-page-info">Page 1 of 1</span>
+    <button class="btn bg sm" id="sc-next" onclick="scPage++;renderScores()">Next →</button>
+  </div>
+
+  <!-- Breakdown panel -->
+  <div id="sc-breakdown" style="display:none;margin-top:20px;background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:20px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+      <div>
+        <span id="sc-bd-ticker" style="color:var(--intel);font-weight:700;font-size:16px"></span>
+        <span id="sc-bd-name"   style="color:var(--muted);font-size:13px;margin-left:8px"></span>
+      </div>
+      <button class="btn bg sm" onclick="document.getElementById('sc-breakdown').style.display='none'">✕ Close</button>
+    </div>
+    <div id="sc-bd-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px"></div>
+  </div>
 </div>
 
 <!-- INTELLIGENCE -->
@@ -246,7 +358,51 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
   <div class="af" id="alert-feed"><div class="empty">Loading…</div></div>
 </div>
 
+<!-- CONFIG -->
+<div class="page" id="pg-config">
+  <div style="background:rgba(79,158,248,.08);border:1px solid rgba(79,158,248,.10);border-radius:8px;padding:14px 18px;margin-bottom:20px;font-size:11.5px;color:var(--muted);line-height:1.7">
+    ℹ Add your stocks and ETFs below, then click <strong style="color:var(--accent)">Generate JSON</strong>.
+    Copy the result and commit it to your repo as <code>portfolio_config.json</code>.
+  </div>
 
+  <div class="cb2">
+    <h3>📈 Stocks</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px;margin-bottom:6px">
+      <span style="font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Ticker</span>
+      <span style="font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Name</span>
+      <span style="font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Shares</span>
+      <span style="font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">ISIN</span>
+    </div>
+    <div id="sl" class="fl"></div>
+    <button class="addb" onclick="addRow('s')">+ Add Stock</button>
+  </div>
+
+  <div class="cb2" style="margin-top:16px">
+    <h3>🗂 ETFs</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px;margin-bottom:6px">
+      <span style="font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Ticker</span>
+      <span style="font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Name</span>
+      <span style="font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Shares</span>
+      <span style="font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">ISIN</span>
+    </div>
+    <div id="el" class="fl"></div>
+    <button class="addb" onclick="addRow('e')">+ Add ETF</button>
+  </div>
+
+  <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:20px">
+    <button class="btn bg" onclick="loadCfg()">↺ Reset</button>
+    <button class="btn" onclick="exportCfg()">📋 Generate JSON</button>
+  </div>
+
+  <!-- JSON preview -->
+  <div id="cfg-preview" style="display:none;margin-top:16px">
+    <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">
+      Generated portfolio_config.json — copy and commit to your repo
+    </div>
+    <pre id="cfg-json" style="max-height:400px;overflow-y:auto;cursor:text;user-select:all"></pre>
+    <button class="btn bg sm" style="margin-top:8px" onclick="copyCfgJson()">📋 Copy to Clipboard</button>
+  </div>
+</div>
 
 <!-- WEEKLY REPORT -->
 <div class="page" id="pg-weekly">
@@ -295,13 +451,13 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
 
 
 
-
 <div class="toast" id="toast"></div>
 
 <script>
 // ── DATA ────────────────────────────────────────────────────────────────────
 let snap         = null;
 let weeklyReport = null;
+let fundamentals = null;
 let intel        = null;
 let alerts       = [];
 let cfg          = null;
@@ -321,11 +477,13 @@ async function reload() {
   intel        = await fetchJSON('data/intelligence.json');
   alerts       = await fetchJSON('data/alerts.json') || [];
   weeklyReport = await fetchJSON('data/weekly_report.json');
+  fundamentals = await fetchJSON('data/fundamentals.json');
   renderDashboard();
   renderIntel();
   renderAlerts();
   renderEtf();
   renderWeekly();
+  renderScores();
   document.getElementById('lu-time').textContent =
     snap?.timestamp ? snap.timestamp.slice(0,16).replace('T',' ') + ' UTC' : '—';
   toast('Data reloaded', 'inf');
@@ -347,6 +505,7 @@ function go(id, el) {
   document.getElementById('pg-'+id).classList.add('on');
   if (id==='config') loadCfg();
   if (id==='weekly') renderWeekly();
+  if (id==='scores') renderScores();
 }
 
 // ── FORMAT ──────────────────────────────────────────────────────────────────
@@ -374,7 +533,7 @@ function rColor(r) {
 // ── DASHBOARD ───────────────────────────────────────────────────────────────
 function renderDashboard() {
   if (!snap) {
-    ['tb-stk','tb-etf'].forEach(id=>document.getElementById(id).innerHTML=`<tr><td colspan="11" class="empty">No data yet — GitHub Actions hasn't run yet, or check the Deploy Guide tab.</td></tr>`);
+    ['tb-stk','tb-etf'].forEach(id=>document.getElementById(id).innerHTML=`<tr><td colspan="11" class="empty">No data yet — GitHub Actions hasn't run yet. Trigger a workflow manually in your GitHub repo Actions tab.</td></tr>`);
     return;
   }
   document.getElementById('s-tot').textContent = fe(snap.total_eur);
@@ -511,19 +670,17 @@ function loadCfg() {
   iTimes = [...(cfg.alerts.intel_times_cet||[])];
   renderRows('s', cfg.portfolio.stocks||[]);
   renderRows('e', cfg.portfolio.etfs||[]);
-  document.getElementById('thr').value     = cfg.alerts.movement_threshold_pct||3;
-  document.getElementById('ne').checked   = cfg.news?.enabled!==false;
-  document.getElementById('nk').value     = cfg.finnhub?.api_key||'';
-  renderTags('d', dTimes); renderTags('i', iTimes);
+
 }
 
 function renderRows(t, list) {
   document.getElementById(t==='s'?'sl':'el').innerHTML = list.map((h,i)=>`
-    <div class="hr">
-      <input class="ht" type="text" placeholder="Ticker" value="${h.ticker||''}" onchange="updH('${t}',${i},'ticker',this.value)">
-      <input type="text" placeholder="Name" value="${h.name||''}" onchange="updH('${t}',${i},'name',this.value)">
+    <div class="hr" style="flex-wrap:wrap">
+      <input class="ht" type="text" placeholder="Ticker e.g. MSFT" value="${h.ticker||''}" onchange="updH('${t}',${i},'ticker',this.value)">
+      <input type="text" placeholder="Name e.g. Microsoft" value="${h.name||''}" onchange="updH('${t}',${i},'name',this.value)">
       <input class="hs" type="number" placeholder="Shares" value="${h.shares||0}" min="0" step="0.001" onchange="updH('${t}',${i},'shares',+this.value)">
-      <button class="btn sm" style="background:var(--dn);color:#fff" onclick="remH('${t}',${i})">✕</button>
+      <input type="text" placeholder="ISIN (optional)" value="${h.isin||''}" style="max-width:140px;flex:0 0 140px" onchange="updH('${t}',${i},'isin',this.value)">
+      <button class="btn sm" style="background:var(--dn);color:#fff;flex-shrink:0" onclick="remH('${t}',${i})">✕</button>
     </div>`).join('');
 }
 function addRow(t) { const k=t==='s'?'stocks':'etfs'; cfg.portfolio[k].push({ticker:'',name:'',shares:0}); renderRows(t,cfg.portfolio[k]); }
@@ -543,25 +700,41 @@ function addT(k) {
 function remT(k,i){(k==='d'?dTimes:iTimes).splice(i,1);renderTags(k,k==='d'?dTimes:iTimes);}
 
 function saveCfg() {
-  cfg.alerts.movement_threshold_pct = +document.getElementById('thr').value;
-  cfg.alerts.digest_times_cet       = dTimes;
-  cfg.alerts.intel_times_cet        = iTimes;
-  cfg.news    = cfg.news    || {};
-  cfg.finnhub = cfg.finnhub || {};
-  cfg.news.enabled     = document.getElementById('ne').checked;
-  cfg.finnhub.api_key  = document.getElementById('nk').value;
   localStorage.setItem(LS_KEY, JSON.stringify(cfg));
-  toast('Saved to browser. Export JSON to commit to your repo.');
+  toast('Saved to browser.');
 }
 
 function exportCfg() {
-  cfg.alerts.movement_threshold_pct = +document.getElementById('thr').value;
-  cfg.alerts.digest_times_cet       = dTimes;
-  cfg.alerts.intel_times_cet        = iTimes;
-  const blob = new Blob([JSON.stringify(cfg,null,2)],{type:'application/json'});
-  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
-  a.download='portfolio_config.json'; a.click();
-  toast('Config exported — commit this file to your GitHub repo');
+  // Build clean config with only portfolio data
+  const out = {
+    portfolio: {
+      stocks: cfg.portfolio.stocks.filter(h=>h.ticker),
+      etfs:   cfg.portfolio.etfs.filter(h=>h.ticker)
+    },
+    alerts: {
+      movement_threshold_pct: 3.0,
+      email_enabled: true,
+      email_from: "",
+      email_password: "",
+      email_to: ""
+    },
+    last_prices: {},
+    morning_prices: {}
+  };
+  const json = JSON.stringify(out, null, 2);
+  const pre  = document.getElementById('cfg-json');
+  const wrap = document.getElementById('cfg-preview');
+  if (pre && wrap) {
+    pre.textContent = json;
+    wrap.style.display = 'block';
+    wrap.scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+  toast('JSON generated — copy and commit to your repo');
+}
+
+function copyCfgJson() {
+  const text = document.getElementById('cfg-json')?.textContent || '';
+  navigator.clipboard.writeText(text).then(()=>toast('Copied to clipboard')).catch(()=>toast('Select text and copy manually','err'));
 }
 
 // ── WEEKLY REPORT ─────────────────────────────────────────────────────────────
@@ -627,6 +800,396 @@ function renderWeekly() {
     ['Date','Company','Ticker','Exchange','Price','Status'],
     [...ipos].sort((a,b)=>a.date.localeCompare(b.date)).map(i=>`<tr>${td(i.date,'color:var(--muted)')}${td(i.name||'—')}${td(tkBadge(i.ticker||'—'))}${td(i.exchange||'—','color:var(--muted);font-size:11px')}${td(i.price_range||'—','color:var(--lime)')}${td(i.status||'—','color:var(--muted);font-size:11px')}</tr>`)
   ) : '<div class="empty">No notable IPOs scheduled.</div>');
+}
+
+
+// ── STOCK SCORES ─────────────────────────────────────────────────────────────
+let scSortField = 'score';
+let scSortDir   = 'desc';
+let scPage      = 1;
+let scFiltered  = [];
+
+function calcScore(h) {
+  let score = 50;
+  const bd = {
+    baseScore: 50,
+    peRatio:       { value: h.pe_ratio,       contribution: 0, reason: 'Not available' },
+    pbRatio:       { value: h.pb_ratio,       contribution: 0, reason: 'Not available' },
+    priceChange:   { value: h.change_pct||0,  contribution: 0, reason: 'Stable' },
+    roe:           { value: null,             contribution: 0, reason: 'Not available' },
+    roa:           { value: null,             contribution: 0, reason: 'Not available' },
+    profitMargin:  { value: null,             contribution: 0, reason: 'Not available' },
+    debtToEquity:  { value: h.debt_to_equity, contribution: 0, reason: 'Not available' },
+    currentRatio:  { value: h.current_ratio,  contribution: 0, reason: 'Not available' },
+    dividendYield: { value: null,             contribution: 0, reason: 'Not available' },
+    revenueGrowth: { value: null,             contribution: 0, reason: 'Not available' },
+    earningsGrowth:{ value: null,             contribution: 0, reason: 'Not available' },
+    beta:          { value: h.beta,           contribution: 0, reason: 'Not available' },
+    fiftyTwoWeekChange: { value: null,        contribution: 0, reason: 'Not available' },
+  };
+
+  // Convert decimal ratios to %
+  const roe    = h.roe            != null ? h.roe            * 100 : undefined;
+  const roa    = h.roa            != null ? h.roa            * 100 : undefined;
+  const margin = h.profit_margin  != null ? h.profit_margin  * 100 : undefined;
+  const dYield = h.dividend_yield != null ? h.dividend_yield * 100 : undefined;
+  const revG   = h.revenue_growth != null ? h.revenue_growth * 100 : undefined;
+  const epsG   = h.earnings_growth!= null ? h.earnings_growth* 100 : undefined;
+  bd.roe.value          = roe;
+  bd.roa.value          = roa;
+  bd.profitMargin.value = margin;
+  bd.dividendYield.value= dYield;
+  bd.revenueGrowth.value= revG;
+  bd.earningsGrowth.value= epsG;
+
+  // 52w change from price vs high
+  let fw52 = undefined;
+  if (h['52w_high'] && h.price_eur && h['52w_high'] > 0)
+    fw52 = ((h.price_eur - h['52w_high']) / h['52w_high']) * 100;
+  bd.fiftyTwoWeekChange.value = fw52;
+
+  // P/E
+  const pe = h.pe_ratio;
+  if (pe != null && pe > 0) {
+    if (pe < 10)      { bd.peRatio.contribution = 15;  bd.peRatio.reason = 'Excellent (P/E < 10)';   score += 15; }
+    else if (pe < 15) { bd.peRatio.contribution = 10;  bd.peRatio.reason = 'Good (P/E < 15)';        score += 10; }
+    else if (pe < 20) { bd.peRatio.contribution = 5;   bd.peRatio.reason = 'Fair (P/E < 20)';        score += 5;  }
+    else if (pe > 50) { bd.peRatio.contribution = -20; bd.peRatio.reason = 'Poor (P/E > 50)';        score -= 20; }
+    else if (pe > 30) { bd.peRatio.contribution = -10; bd.peRatio.reason = 'High (P/E > 30)';        score -= 10; }
+    else              { bd.peRatio.reason = 'Moderate (P/E 20-30)'; }
+  }
+  // P/B
+  const pb = h.pb_ratio;
+  if (pb != null) {
+    if (pb < 1)      { bd.pbRatio.contribution = 10;  bd.pbRatio.reason = 'Excellent (P/B < 1)';   score += 10; }
+    else if (pb < 1.5){ bd.pbRatio.contribution = 5;   bd.pbRatio.reason = 'Good (P/B < 1.5)';      score += 5;  }
+    else if (pb > 5) { bd.pbRatio.contribution = -10; bd.pbRatio.reason = 'Poor (P/B > 5)';        score -= 10; }
+    else if (pb > 3) { bd.pbRatio.contribution = -5;  bd.pbRatio.reason = 'High (P/B > 3)';        score -= 5;  }
+    else             { bd.pbRatio.reason = 'Moderate (P/B 1.5-3)'; }
+  }
+  // Price change
+  const chg = h.change_pct || 0;
+  if (chg > 10)       { bd.priceChange.contribution = 10;  bd.priceChange.reason = 'Strong growth (>10%)';       score += 10; }
+  else if (chg > 5)   { bd.priceChange.contribution = 5;   bd.priceChange.reason = 'Positive growth (5-10%)';    score += 5;  }
+  else if (chg < -10) { bd.priceChange.contribution = -10; bd.priceChange.reason = 'Significant decline (<-10%)'; score -= 10; }
+  else if (chg < -5)  { bd.priceChange.contribution = -5;  bd.priceChange.reason = 'Negative trend (-5% to -10%)'; score -= 5; }
+  // ROE
+  if (roe != null) {
+    if (roe > 20)      { bd.roe.contribution = 8;  bd.roe.reason = 'Excellent ROE (>20%)';  score += 8; }
+    else if (roe > 15) { bd.roe.contribution = 5;  bd.roe.reason = 'Good ROE (15-20%)';     score += 5; }
+    else if (roe > 10) { bd.roe.contribution = 2;  bd.roe.reason = 'Fair ROE (10-15%)';     score += 2; }
+    else if (roe < 0)  { bd.roe.contribution = -5; bd.roe.reason = 'Negative ROE';          score -= 5; }
+    else               { bd.roe.reason = 'Low ROE (<10%)'; }
+  }
+  // ROA
+  if (roa != null) {
+    if (roa > 10)      { bd.roa.contribution = 5;  bd.roa.reason = 'Excellent ROA (>10%)'; score += 5; }
+    else if (roa > 5)  { bd.roa.contribution = 3;  bd.roa.reason = 'Good ROA (5-10%)';     score += 3; }
+    else if (roa < 0)  { bd.roa.contribution = -3; bd.roa.reason = 'Negative ROA';         score -= 3; }
+    else               { bd.roa.reason = 'Low ROA (<5%)'; }
+  }
+  // Profit margin
+  if (margin != null) {
+    if (margin > 20)      { bd.profitMargin.contribution = 8;  bd.profitMargin.reason = 'Excellent margin (>20%)'; score += 8; }
+    else if (margin > 10) { bd.profitMargin.contribution = 5;  bd.profitMargin.reason = 'Good margin (10-20%)';    score += 5; }
+    else if (margin > 5)  { bd.profitMargin.contribution = 2;  bd.profitMargin.reason = 'Fair margin (5-10%)';     score += 2; }
+    else if (margin < 0)  { bd.profitMargin.contribution = -8; bd.profitMargin.reason = 'Negative margin';         score -= 8; }
+    else                  { bd.profitMargin.reason = 'Low margin (<5%)'; }
+  }
+  // Debt/Equity
+  const de = h.debt_to_equity;
+  if (de != null) {
+    if (de < 0.5)      { bd.debtToEquity.contribution = 5;  bd.debtToEquity.reason = 'Low debt (<0.5)';       score += 5; }
+    else if (de < 1)   { bd.debtToEquity.contribution = 3;  bd.debtToEquity.reason = 'Moderate debt (0.5-1)'; score += 3; }
+    else if (de > 2)   { bd.debtToEquity.contribution = -5; bd.debtToEquity.reason = 'High debt (>2)';        score -= 5; }
+    else               { bd.debtToEquity.reason = 'Elevated debt (1-2)'; }
+  }
+  // Current ratio
+  const cr = h.current_ratio;
+  if (cr != null) {
+    if (cr > 2)        { bd.currentRatio.contribution = 3;  bd.currentRatio.reason = 'Strong liquidity (>2)';    score += 3; }
+    else if (cr > 1.5) { bd.currentRatio.contribution = 2;  bd.currentRatio.reason = 'Good liquidity (1.5-2)';  score += 2; }
+    else if (cr < 1)   { bd.currentRatio.contribution = -5; bd.currentRatio.reason = 'Poor liquidity (<1)';     score -= 5; }
+    else               { bd.currentRatio.reason = 'Adequate liquidity (1-1.5)'; }
+  }
+  // Dividend yield
+  if (dYield != null && dYield > 0) {
+    if (dYield > 4)      { bd.dividendYield.contribution = 4; bd.dividendYield.reason = 'High yield (>4%)';  score += 4; }
+    else if (dYield > 2) { bd.dividendYield.contribution = 2; bd.dividendYield.reason = 'Good yield (2-4%)'; score += 2; }
+    else                 { bd.dividendYield.reason = 'Low yield (<2%)'; }
+  }
+  // Revenue growth
+  if (revG != null) {
+    if (revG > 20)       { bd.revenueGrowth.contribution = 8;  bd.revenueGrowth.reason = 'Strong growth (>20%)';      score += 8; }
+    else if (revG > 10)  { bd.revenueGrowth.contribution = 5;  bd.revenueGrowth.reason = 'Good growth (10-20%)';      score += 5; }
+    else if (revG > 5)   { bd.revenueGrowth.contribution = 2;  bd.revenueGrowth.reason = 'Moderate growth (5-10%)';   score += 2; }
+    else if (revG < -10) { bd.revenueGrowth.contribution = -8; bd.revenueGrowth.reason = 'Declining revenue (<-10%)'; score -= 8; }
+    else if (revG < 0)   { bd.revenueGrowth.contribution = -3; bd.revenueGrowth.reason = 'Negative growth';           score -= 3; }
+    else                 { bd.revenueGrowth.reason = 'Slow growth (<5%)'; }
+  }
+  // Earnings growth
+  if (epsG != null) {
+    if (epsG > 25)       { bd.earningsGrowth.contribution = 8;   bd.earningsGrowth.reason = 'Strong EPS growth (>25%)';    score += 8;  }
+    else if (epsG > 15)  { bd.earningsGrowth.contribution = 5;   bd.earningsGrowth.reason = 'Good EPS growth (15-25%)';    score += 5;  }
+    else if (epsG > 5)   { bd.earningsGrowth.contribution = 2;   bd.earningsGrowth.reason = 'Moderate EPS growth (5-15%)'; score += 2;  }
+    else if (epsG < -20) { bd.earningsGrowth.contribution = -10; bd.earningsGrowth.reason = 'Declining EPS (<-20%)';       score -= 10; }
+    else if (epsG < 0)   { bd.earningsGrowth.contribution = -5;  bd.earningsGrowth.reason = 'Negative EPS growth';         score -= 5;  }
+    else                 { bd.earningsGrowth.reason = 'Slow EPS growth (<5%)'; }
+  }
+  // Beta
+  const b = h.beta;
+  if (b != null) {
+    if (b >= 0.8 && b <= 1.2) { bd.beta.contribution = 3;  bd.beta.reason = 'Stable (0.8-1.2)'; score += 3; }
+    else if (b > 1.5)         { bd.beta.contribution = -3; bd.beta.reason = 'High volatility (>1.5)'; score -= 3; }
+    else if (b < 0.5)         { bd.beta.contribution = 2;  bd.beta.reason = 'Low volatility (<0.5)'; score += 2; }
+    else                      { bd.beta.reason = 'Moderate volatility'; }
+  }
+  // 52w change
+  if (fw52 != null) {
+    if (fw52 > 50)       { bd.fiftyTwoWeekChange.contribution = 8;  bd.fiftyTwoWeekChange.reason = 'Strong 52w (>50%)';         score += 8; }
+    else if (fw52 > 20)  { bd.fiftyTwoWeekChange.contribution = 5;  bd.fiftyTwoWeekChange.reason = 'Good 52w (20-50%)';         score += 5; }
+    else if (fw52 < -30) { bd.fiftyTwoWeekChange.contribution = -8; bd.fiftyTwoWeekChange.reason = 'Poor 52w (<-30%)';          score -= 8; }
+    else if (fw52 < -10) { bd.fiftyTwoWeekChange.contribution = -3; bd.fiftyTwoWeekChange.reason = 'Negative 52w (-10% to -30%)'; score -= 3; }
+    else                 { bd.fiftyTwoWeekChange.reason = 'Moderate 52w performance'; }
+  }
+
+  return { score: Math.max(0, Math.min(100, Math.round(score))), breakdown: bd };
+}
+
+function scoreBadgeColor(s) {
+  if (s >= 70) return 'var(--up)';
+  if (s >= 55) return 'var(--warn)';
+  return 'var(--dn)';
+}
+
+function renderScores() {
+  if (!fundamentals?.holdings?.length) {
+    document.getElementById('tb-scores').innerHTML =
+      '<tr><td colspan="10" class="empty">No fundamentals data yet — trigger the Fundamentals workflow in GitHub Actions.</td></tr>';
+    return;
+  }
+
+  // Update header
+  const upd = fundamentals.updated || '';
+  document.getElementById('sc-updated').textContent = upd ? 'Updated ' + upd.slice(0,16).replace('T',' ') + ' UTC' : '';
+
+  // Build scored list
+  const scored = fundamentals.holdings
+    .filter(h => !h.error && !h.skip && h.price_eur)
+    .map(h => ({ h, ...calcScore(h) }));
+
+  document.getElementById('sc-count').textContent = scored.length;
+
+  // Filters
+  const q        = (document.getElementById('sc-search')?.value    || '').toLowerCase();
+  const minScore = parseFloat(document.getElementById('sc-min-score')?.value) || null;
+  const maxScore = parseFloat(document.getElementById('sc-max-score')?.value) || null;
+  const minPrice = parseFloat(document.getElementById('sc-min-price')?.value) || null;
+  const maxPrice = parseFloat(document.getElementById('sc-max-price')?.value) || null;
+  const minChg   = parseFloat(document.getElementById('sc-min-chg')?.value)   || null;
+  const maxChg   = parseFloat(document.getElementById('sc-max-chg')?.value)   || null;
+
+  scFiltered = scored.filter(({h, score}) => {
+    if (q && !h.ticker.toLowerCase().includes(q) && !(h.name||'').toLowerCase().includes(q)) return false;
+    if (minScore != null && score < minScore) return false;
+    if (maxScore != null && score > maxScore) return false;
+    if (minPrice != null && (h.price_eur||0) < minPrice) return false;
+    if (maxPrice != null && (h.price_eur||0) > maxPrice) return false;
+    if (minChg   != null && (h.change_pct||0) < minChg) return false;
+    if (maxChg   != null && (h.change_pct||0) > maxChg) return false;
+    return true;
+  });
+
+  // Sort
+  const dir = scSortDir === 'asc' ? 1 : -1;
+  scFiltered.sort((a, b) => {
+    let av, bv;
+    switch(scSortField) {
+      case 'symbol': av = a.h.ticker;       bv = b.h.ticker;       break;
+      case 'name':   av = a.h.name||'';     bv = b.h.name||'';     break;
+      case 'score':  av = a.score;          bv = b.score;          break;
+      case 'price':  av = a.h.price_eur||0; bv = b.h.price_eur||0; break;
+      case 'change': av = a.h.change_pct||0;bv = b.h.change_pct||0;break;
+      case 'pe':     av = a.h.pe_ratio||0;  bv = b.h.pe_ratio||0;  break;
+      case 'pb':     av = a.h.pb_ratio||0;  bv = b.h.pb_ratio||0;  break;
+      case 'roe':    av = (a.h.roe||0)*100; bv = (b.h.roe||0)*100; break;
+      case 'margin': av = (a.h.profit_margin||0)*100; bv = (b.h.profit_margin||0)*100; break;
+      case 'beta':   av = a.h.beta||0;      bv = b.h.beta||0;      break;
+      default:       av = a.score;          bv = b.score;
+    }
+    if (typeof av === 'string') return av.localeCompare(bv) * dir;
+    return (av - bv) * dir;
+  });
+
+  // Pagination
+  const perPage  = parseInt(document.getElementById('sc-per-page')?.value || '25');
+  const total    = scFiltered.length;
+  const maxPages = Math.max(1, Math.ceil(total / perPage));
+  scPage = Math.max(1, Math.min(scPage, maxPages));
+  const slice = scFiltered.slice((scPage-1)*perPage, scPage*perPage);
+
+  document.getElementById('sc-results').textContent   = `Showing ${slice.length} of ${total}`;
+  document.getElementById('sc-page-info').textContent = `Page ${scPage} of ${maxPages}`;
+  document.getElementById('sc-prev').disabled = scPage <= 1;
+  document.getElementById('sc-next').disabled = scPage >= maxPages;
+
+  // Update sort icons
+  ['symbol','name','score','price','change','pe','pb','roe','margin','beta'].forEach(f => {
+    const el = document.getElementById('scs-'+f);
+    if (el) el.textContent = scSortField===f ? (scSortDir==='asc'?'↑':'↓') : '';
+  });
+
+  // Render rows
+  document.getElementById('tb-scores').innerHTML = slice.map(({h, score, breakdown}) => {
+    const col  = scoreBadgeColor(score);
+    const roe  = h.roe   != null ? (h.roe   * 100).toFixed(1)+'%' : '—';
+    const marg = h.profit_margin != null ? (h.profit_margin * 100).toFixed(1)+'%' : '—';
+    return `<tr onclick="showBreakdown('${h.ticker}',${JSON.stringify(h).replace(/'/g,"\'")})" style="cursor:pointer">
+      <td class="tk">${h.ticker}</td>
+      <td class="nm" title="${h.name||''}">${(h.name||'').slice(0,22)}</td>
+      <td><span style="background:${col}22;border:1px solid ${col}44;color:${col};border-radius:12px;padding:3px 10px;font-weight:700;font-size:12px">${score}</span></td>
+      <td class="mn">${fe(h.price_eur)}</td>
+      <td>${chgCell(h.change_pct)}</td>
+      <td class="dm">${fn(h.pe_ratio)}</td>
+      <td class="dm">${fn(h.pb_ratio)}</td>
+      <td class="dm">${roe}</td>
+      <td class="dm">${marg}</td>
+      <td class="dm">${fn(h.beta,2)}</td>
+    </tr>`;
+  }).join('') || '<tr><td colspan="10" class="empty">No results match your filters.</td></tr>';
+}
+
+function scSort(field) {
+  if (scSortField === field) scSortDir = scSortDir === 'asc' ? 'desc' : 'asc';
+  else { scSortField = field; scSortDir = field === 'score' ? 'desc' : 'asc'; }
+  scPage = 1;
+  renderScores();
+}
+
+function clearScoreFilters() {
+  ['sc-search','sc-min-score','sc-max-score','sc-min-price','sc-max-price','sc-min-chg','sc-max-chg']
+    .forEach(id => { const el = document.getElementById(id); if(el) el.value=''; });
+  scPage = 1;
+  renderScores();
+}
+
+function showBreakdown(ticker, h) {
+  const {score, breakdown} = calcScore(h);
+  document.getElementById('sc-bd-ticker').textContent = ticker;
+  document.getElementById('sc-bd-name').textContent   = h.name || '';
+  const items = [
+    ['Base Score',     breakdown.baseScore, 'Starting point', null],
+    ['P/E Ratio',      breakdown.peRatio.contribution,       breakdown.peRatio.reason,       breakdown.peRatio.value],
+    ['P/B Ratio',      breakdown.pbRatio.contribution,       breakdown.pbRatio.reason,       breakdown.pbRatio.value],
+    ['Price Change',   breakdown.priceChange.contribution,   breakdown.priceChange.reason,   breakdown.priceChange.value],
+    ['ROE',            breakdown.roe.contribution,           breakdown.roe.reason,           breakdown.roe.value],
+    ['ROA',            breakdown.roa.contribution,           breakdown.roa.reason,           breakdown.roa.value],
+    ['Profit Margin',  breakdown.profitMargin.contribution,  breakdown.profitMargin.reason,  breakdown.profitMargin.value],
+    ['Debt/Equity',    breakdown.debtToEquity.contribution,  breakdown.debtToEquity.reason,  breakdown.debtToEquity.value],
+    ['Current Ratio',  breakdown.currentRatio.contribution,  breakdown.currentRatio.reason,  breakdown.currentRatio.value],
+    ['Dividend Yield', breakdown.dividendYield.contribution, breakdown.dividendYield.reason, breakdown.dividendYield.value],
+    ['Revenue Growth', breakdown.revenueGrowth.contribution, breakdown.revenueGrowth.reason, breakdown.revenueGrowth.value],
+    ['Earnings Growth',breakdown.earningsGrowth.contribution,breakdown.earningsGrowth.reason,breakdown.earningsGrowth.value],
+    ['Beta',           breakdown.beta.contribution,          breakdown.beta.reason,          breakdown.beta.value],
+    ['52W Change',     breakdown.fiftyTwoWeekChange.contribution, breakdown.fiftyTwoWeekChange.reason, breakdown.fiftyTwoWeekChange.value],
+  ];
+  document.getElementById('sc-bd-grid').innerHTML = items.map(([label, contrib, reason, value]) => {
+    const c   = typeof contrib === 'number' && contrib !== breakdown.baseScore ? contrib : (label==='Base Score' ? 0 : contrib);
+    const col = label==='Base Score' ? 'var(--muted)' : c > 0 ? 'var(--up)' : c < 0 ? 'var(--dn)' : 'var(--muted)';
+    const val = label==='Base Score' ? breakdown.baseScore : (c > 0 ? '+'+c : c);
+    const valDisp = value != null ? ` (${typeof value === 'number' ? value.toFixed(2) : value})` : '';
+    const isTotal = label==='Base Score';
+    return `<div style="padding:10px;background:var(--s2);border-radius:8px;border-left:3px solid ${col}">
+      <div style="font-size:10px;color:var(--muted);margin-bottom:4px">${label}${valDisp}</div>
+      <div style="font-size:${isTotal?'20':'16'}px;font-weight:700;color:${col}">${val}</div>
+      <div style="font-size:10px;color:var(--dim);font-style:italic;margin-top:2px">${reason}</div>
+    </div>`;
+  });
+  // Total score card
+  const tcol = scoreBadgeColor(score);
+  document.getElementById('sc-bd-grid').innerHTML +=
+    `<div style="padding:10px;background:${tcol}22;border-radius:8px;border:1px solid ${tcol}44;grid-column:1/-1">
+      <div style="font-size:10px;color:var(--muted);margin-bottom:4px">Total Investment Score</div>
+      <div style="font-size:28px;font-weight:700;color:${tcol}">${score}</div>
+      <div style="font-size:10px;color:var(--dim);font-style:italic">Final score (0–100)</div>
+    </div>`;
+  document.getElementById('sc-breakdown').style.display = 'block';
+  document.getElementById('sc-breakdown').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function scExport(fmt) {
+  if (!scFiltered.length) { toast('No data to export','err'); return; }
+  const rows = scFiltered.map(({h,score})=>({
+    ticker:        h.ticker,
+    name:          h.name||'',
+    score,
+    price_eur:     h.price_eur||0,
+    change_pct:    h.change_pct||0,
+    pe_ratio:      h.pe_ratio||null,
+    pb_ratio:      h.pb_ratio||null,
+    roe_pct:       h.roe   != null ? +(h.roe   *100).toFixed(2) : null,
+    margin_pct:    h.profit_margin != null ? +(h.profit_margin*100).toFixed(2) : null,
+    beta:          h.beta||null,
+  }));
+  const date = new Date().toISOString().slice(0,10);
+  let blob, filename;
+
+  if (fmt === 'csv') {
+    const hdr = Object.keys(rows[0]).join(',');
+    const body = rows.map(r=>Object.values(r).map(v=>v==null?'':'"'+String(v)+'"').join(',')).join('\n');
+    blob = new Blob([hdr+'\n'+body],{type:'text/csv'});
+    filename = `stocks_scores_${date}.csv`;
+  } else if (fmt === 'json') {
+    blob = new Blob([JSON.stringify(rows,null,2)],{type:'application/json'});
+    filename = `stocks_scores_${date}.json`;
+  } else if (fmt === 'xml') {
+    const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const xml = '<?xml version="1.0" encoding="UTF-8"?>\n<stocks>\n' +
+      rows.map(r=>'  <stock>\n'+Object.entries(r).map(([k,v])=>`    <${k}>${esc(v??'')}</${k}>`).join('\n')+'\n  </stock>').join('\n') +
+      '\n</stocks>';
+    blob = new Blob([xml],{type:'application/xml'});
+    filename = `stocks_scores_${date}.xml`;
+  } else if (fmt === 'html') {
+    const hdr = Object.keys(rows[0]).map(k=>`<th>${k}</th>`).join('');
+    const body = rows.map(r=>'<tr>'+Object.values(r).map(v=>`<td>${v??''}</td>`).join('')+'</tr>').join('');
+    const content = `<!DOCTYPE html><html><head><title>Stock Scores</title><style>body{font-family:Arial,sans-serif;padding:20px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #ddd;padding:8px;text-align:left}th{background:#4f9ef8;color:#fff}tr:nth-child(even){background:#f5f5f5}</style></head><body><h1>Stock Scores — ${date}</h1><table><thead><tr>${hdr}</tr></thead><tbody>${body}</tbody></table></body></html>`;
+    blob = new Blob([content],{type:'text/html'});
+    filename = `stocks_scores_${date}.html`;
+  } else if (fmt === 'pdf') {
+    // Use jsPDF via CDN
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+    script.onload = () => {
+      const script2 = document.createElement('script');
+      script2.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.3/jspdf.plugin.autotable.min.js';
+      script2.onload = () => {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF({ orientation:'landscape' });
+        doc.setFontSize(14);
+        doc.text('Stock Investment Scores — ' + date, 14, 15);
+        doc.autoTable({
+          head: [['Ticker','Name','Score','Price EUR','Day Chg%','P/E','P/B','ROE%','Margin%','Beta']],
+          body: rows.map(r=>[r.ticker,r.name,r.score,'€'+r.price_eur.toFixed(2),(r.change_pct>=0?'+':'')+r.change_pct.toFixed(2)+'%',r.pe_ratio??'—',r.pb_ratio??'—',r.roe_pct??'—',r.margin_pct??'—',r.beta??'—']),
+          startY: 22,
+          styles: { fontSize: 8 },
+          headStyles: { fillColor: [79,158,248] },
+        });
+        doc.save(`stocks_scores_${date}.pdf`);
+        toast('PDF exported');
+      };
+      document.head.appendChild(script2);
+    };
+    document.head.appendChild(script);
+    return;
+  }
+
+  if (blob) {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = filename;
+    a.click();
+    toast(fmt.toUpperCase() + ' exported');
+  }
 }
 
 // ── TOAST ────────────────────────────────────────────────────────────────────
