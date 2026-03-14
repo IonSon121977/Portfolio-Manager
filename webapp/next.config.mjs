@@ -1,22 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
-    // Allow production builds to succeed even with TypeScript errors
     ignoreBuildErrors: true,
   },
-  eslint: {
-    // Allow production builds to succeed even with ESLint errors
-    ignoreDuringBuilds: true,
-  },
-  async headers() {
-    return [
-      {
-        source: '/api/:path*',
-        headers: [
-          { key: 'Access-Control-Allow-Origin', value: '*' },
-        ],
-      },
-    ];
+  serverExternalPackages: ['yahoo-finance2'],
+  webpack: (config) => {
+    config.resolve = config.resolve || {};
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@gadicc/fetch-mock-cache/runtimes/deno.ts': false,
+      '@gadicc/fetch-mock-cache/stores/fs.ts': false,
+      '@std/testing/mock': false,
+      '@std/testing/bdd': false,
+    };
+    return config;
   },
 };
 

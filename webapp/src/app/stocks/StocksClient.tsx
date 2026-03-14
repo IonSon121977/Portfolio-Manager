@@ -3,7 +3,8 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import jsPDF from 'jspdf';
-import 'jspdf-autotable';
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const autoTable = require('jspdf-autotable').default || require('jspdf-autotable');
 import { PRODUCT_NAME, PRODUCT_VERSION } from '../../lib/version';
 import './stocks.css';
 
@@ -294,7 +295,7 @@ export default function StocksClient() {
     doc.text('Stocks Export', 14, 15);
     doc.text(`Generated: ${new Date().toLocaleDateString()}`, 14, 22);
 
-    (doc as any).autoTable({
+    autoTable(doc, {
       head: [['Symbol', 'Name', 'Score', 'Price', 'Change %']],
       body: sortedStocks.map(s => [
         s.symbol,
