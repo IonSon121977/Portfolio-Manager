@@ -1,5 +1,5 @@
 export const runtime = 'nodejs';
-export const revalidate = 3600;
+export const dynamic = 'force-dynamic';
 
 import { NextRequest, NextResponse } from 'next/server';
 import YahooFinance from 'yahoo-finance2';
@@ -303,7 +303,7 @@ async function fetchStockData(symbol: string): Promise<StockData | null> {
       fiftyTwoWeekChange: typeof fiftyTwoWeekChange === 'number' ? parseFloat(fiftyTwoWeekChange.toFixed(2)) : undefined,
     };
   } catch (error) {
-    console.error(`Error fetching data for ${symbol}:`, error);
+    console.error(`Error fetching data for ${symbol}:`, JSON.stringify(error));
     return null;
   }
 }
@@ -376,6 +376,7 @@ export async function GET(request: NextRequest) {
       })
       .sort((a, b) => b.investmentScore - a.investmentScore);
 
+    console.log(`Fetched ${stocksWithScores.length} of ${symbols.length} stocks successfully`);
     return NextResponse.json({ stocks: stocksWithScores });
   } catch (error) {
     console.error('Error fetching stocks:', error);
