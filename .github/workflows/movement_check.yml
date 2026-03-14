@@ -1,11 +1,11 @@
-name: Movement + Analyst Alerts
+name: Movement Alerts
 on:
   schedule:
-    - cron: '41 7 * * 1-5'   # 08:45 CET (UTC+1)
-    - cron: '41 09 * * 1-5'   # 11:00 CET
+    - cron: '41 7  * * 1-5'   # 08:45 CET (UTC+1)
+    - cron: '41 9  * * 1-5'   # 11:00 CET
     - cron: '41 11 * * 1-5'   # 13:00 CET
-    - cron: '41 14 * * 1-5'  # 15:45 CET
-    - cron: '41 17 * * 1-5'   # 17:00 CET
+    - cron: '41 14 * * 1-5'   # 15:45 CET
+    - cron: '41 17 * * 1-5'   # 19:45 CET
     # Summer CEST (UTC+2): subtract 1 hour from each
   workflow_dispatch: {}
 permissions:
@@ -13,6 +13,8 @@ permissions:
 jobs:
   movement-check:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - uses: actions/checkout@v5
         with:
@@ -22,14 +24,14 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
       - run: pip install requests yfinance mstarpy
-      - name: Run movement + analyst check
+      - name: Run movement check
         env:
           EMAIL_FROM:     ${{ secrets.EMAIL_FROM }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
           EMAIL_TO:       ${{ secrets.EMAIL_TO }}
           DIGEST_MODE:    "movement"
         run: python scripts/price_digest.py
-      - name: Commit snapshot
+      - name: Commit data
         run: |
           git config user.name  "Portfolio Bot"
           git config user.email "portfolio-bot@users.noreply.github.com"
