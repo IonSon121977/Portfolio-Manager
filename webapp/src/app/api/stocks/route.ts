@@ -1,7 +1,8 @@
+export const runtime = 'nodejs';
+export const revalidate = 3600;
+
 import { NextRequest, NextResponse } from 'next/server';
 import YahooFinance from 'yahoo-finance2';
-
-export const revalidate = 3600; // Cache route response for 1 hour
 
 const yahooFinance = new YahooFinance();
 
