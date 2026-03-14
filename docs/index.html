@@ -204,11 +204,11 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
 <div class="page" id="pg-intelligence">
   <div class="sh">
     <div class="st" style="color:var(--intel)">🧠 Intelligence — Ratings & News</div>
-    <div class="bdg">Runs 07:30 & 17:00 CET via GitHub Actions</div>
+    <div class="bdg">Runs 08:00 & 17:00 CET via GitHub Actions</div>
   </div>
   <p style="color:var(--muted);font-size:11px;margin-bottom:18px">
     Analyst rating <strong style="color:var(--intel)">changes</strong> trigger an immediate separate email.
-    News requires a free Finnhub.io. Data below is from the last automated run.
+    Data below is from the last automated run.
   </p>
 
   <div class="sh" style="margin-top:0"><div class="st" style="font-size:13px">⚡ Recent Rating Changes (today)</div></div>
@@ -224,7 +224,7 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
 <!-- ETF HOLDINGS -->
 <div class="page" id="pg-etf">
   <div class="sh"><div class="st">🗂 ETF Top 15 Holdings</div><div class="bdg">From last snapshot</div></div>
-  <p style="color:var(--muted);font-size:11px;margin-bottom:18px">Holdings data from Finnhub. ETF holdings coverage varies by exchange.</p>
+  <p style="color:var(--muted);font-size:11px;margin-bottom:18px">Holdings data from snapshot. ETF holdings coverage varies by exchange.</p>
   <div id="etf-wrap"><div class="empty">Loading…</div></div>
 </div>
 
@@ -292,8 +292,6 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
           <div class="fr"><input type="text" id="nit" placeholder="HH:MM" style="width:90px">
           <button class="btn bg sm" onclick="addT('i')">Add</button></div>
         </div>
-        <div><label>Finnhub API Key — get free at finnhub.io</label>
-          <input type="text" id="nk" placeholder="(stored as GitHub Secret, not here)"></div>
         <div class="fr" style="gap:10px">
           <input type="checkbox" id="ne" checked>
           <label style="margin:0;text-transform:none;font-size:12px">Enable news</label>
@@ -302,16 +300,17 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
     </div>
 
     <div class="cb2" style="grid-column:1/-1">
-      <h3>✉ Email (Gmail) — set via GitHub Secrets</h3>
+      <h3>✉ Email — set via GitHub Secrets</h3>
       <p style="color:var(--muted);font-size:11px;margin-bottom:14px;line-height:1.6">
         Email credentials are stored as <strong style="color:var(--accent)">GitHub Secrets</strong>, not in this config file.
         Go to your repo → Settings → Secrets and variables → Actions → New repository secret.
       </p>
       <div style="display:flex;flex-direction:column;gap:7px">
-        <div class="secret-row"><span class="secret-name">EMAIL_FROM</span><span class="secret-desc">your.gmail@gmail.com</span></div>
-        <div class="secret-row"><span class="secret-name">EMAIL_PASSWORD</span><span class="secret-desc">Gmail App Password (16 chars)</span></div>
+        <div class="secret-row"><span class="secret-name">EMAIL_FROM</span><span class="secret-desc">your sender email address</span></div>
+        <div class="secret-row"><span class="secret-name">EMAIL_PASSWORD</span><span class="secret-desc">SMTP password or app password</span></div>
         <div class="secret-row"><span class="secret-name">EMAIL_TO</span><span class="secret-desc">recipient@email.com</span></div>
-        <div class="secret-row"><span class="secret-name">FINNHUB_API_KEY</span><span class="secret-desc">Free at finnhub.io — 60 calls/min</span></div>
+        <div class="secret-row"><span class="secret-name">AGENTMAIL_API_KEY</span><span class="secret-desc">AgentMail API key</span></div>
+        <div class="secret-row"><span class="secret-name">AGENTMAIL_INBOX_ID</span><span class="secret-desc">AgentMail inbox ID</span></div>
       </div>
     </div>
   </div>
@@ -332,10 +331,8 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
     </div>
   </div>
 
-  <!-- Summary pills -->
   <div id="wr-pills" style="margin-bottom:22px;display:flex;flex-wrap:wrap;gap:8px"></div>
 
-  <!-- Earnings -->
   <div class="sh" style="margin-top:4px">
     <div class="st" style="font-size:13px;color:var(--intel)">📅 Earnings Calls</div>
     <div class="bdg" id="wr-earn-cnt">0</div>
@@ -344,7 +341,6 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
     <div class="empty">No earnings calls for your holdings next week.</div>
   </div>
 
-  <!-- Dividends -->
   <div class="sh">
     <div class="st" style="font-size:13px;color:var(--up)">💰 Dividend Events</div>
     <div class="bdg" id="wr-div-cnt">0</div>
@@ -353,7 +349,6 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
     <div class="empty">No dividend ex-dates or pay-dates next week.</div>
   </div>
 
-  <!-- Splits -->
   <div class="sh">
     <div class="st" style="font-size:13px;color:var(--warn)">✂️ Stock Splits</div>
     <div class="bdg" id="wr-split-cnt">0</div>
@@ -362,7 +357,6 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
     <div class="empty">No stock splits next week.</div>
   </div>
 
-  <!-- IPOs -->
   <div class="sh">
     <div class="st" style="font-size:13px;color:var(--accent)">🚀 Market IPOs</div>
     <div class="bdg" id="wr-ipo-cnt">0</div>
@@ -380,8 +374,8 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
     <div class="step">
       <div class="step-num">1</div>
       <div class="step-body">
-        <strong>Create a GitHub repository</strong> (private recommended)<br>
-        Go to <a href="https://github.com/new" target="_blank" style="color:var(--accent)">github.com/new</a> → create a new private repo.
+        <strong>Create a GitHub repository</strong> (public for free scheduled workflows)<br>
+        Go to <a href="https://github.com/new" target="_blank" style="color:var(--accent)">github.com/new</a> → create a new public repo.
       </div>
     </div>
 
@@ -400,7 +394,7 @@ git push -u origin main</pre>
       <div class="step-num">3</div>
       <div class="step-body">
         <strong>Edit your portfolio</strong> — open <code>portfolio_config.json</code> in the repo and replace the sample stocks with your own.
-        Use Yahoo Finance tickers for display; Finnhub symbols auto-converted. E.g. <code>ASML.AS</code> · <code>SAP.DE</code> · <code>AAPL</code> etc.
+        Use Yahoo Finance tickers. E.g. <code>ASML.AS</code> · <code>SAP.DE</code> · <code>AAPL</code> etc.
       </div>
     </div>
 
@@ -409,10 +403,11 @@ git push -u origin main</pre>
       <div class="step-body">
         <strong>Add GitHub Secrets</strong> — Settings → Secrets and variables → Actions:
         <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px">
-          <div class="secret-row"><span class="secret-name">EMAIL_FROM</span><span class="secret-desc">your.gmail@gmail.com</span></div>
-          <div class="secret-row"><span class="secret-name">EMAIL_PASSWORD</span><span class="secret-desc">Gmail App Password — Google Account → Security → 2FA → App Passwords</span></div>
+          <div class="secret-row"><span class="secret-name">EMAIL_FROM</span><span class="secret-desc">sender email address</span></div>
+          <div class="secret-row"><span class="secret-name">EMAIL_PASSWORD</span><span class="secret-desc">SMTP password</span></div>
           <div class="secret-row"><span class="secret-name">EMAIL_TO</span><span class="secret-desc">Where to receive alerts</span></div>
-          <div class="secret-row"><span class="secret-name">FINNHUB_API_KEY</span><span class="secret-desc">Free at finnhub.io — 60 req/min (register in 30 s)</span></div>
+          <div class="secret-row"><span class="secret-name">AGENTMAIL_API_KEY</span><span class="secret-desc">From agentmail.to dashboard</span></div>
+          <div class="secret-row"><span class="secret-name">AGENTMAIL_INBOX_ID</span><span class="secret-desc">Your AgentMail inbox ID</span></div>
         </div>
       </div>
     </div>
@@ -430,20 +425,11 @@ git push -u origin main</pre>
       <div class="step-num">6</div>
       <div class="step-body">
         <strong>GitHub Actions runs automatically:</strong><br>
-        • Price digest: <strong style="color:var(--lime)">07:45 · 12:00 · 15:15 · 17:00 CET</strong> (Mon–Fri)<br>
-        • Intelligence (ratings + news): <strong style="color:var(--intel)">07:30 · 17:00 CET</strong> (Mon–Fri)<br>
-        • Trigger manually anytime: repo → Actions tab → pick workflow → Run workflow<br>
-        <br>
-        After each run, updated JSON is committed back to the repo. Reload this page to see the latest data.
-      </div>
-    </div>
-
-    <div class="step">
-      <div class="step-num">7</div>
-      <div class="step-body">
-        <strong>Summer/Winter time note:</strong> GitHub Actions uses UTC. The workflow files use CET (UTC+1). 
-        In summer (CEST, UTC+2) you may want to adjust the cron times by 1 hour. 
-        Open <code>.github/workflows/price_digest.yml</code> and update the cron expressions.
+        • Price digest: <strong style="color:var(--lime)">08:15 CET</strong> (Mon–Fri)<br>
+        • Movement checks: <strong style="color:var(--lime)">08:45 · 11:00 · 13:00 · 15:45 · 17:00 CET</strong> (Mon–Fri)<br>
+        • Intelligence: <strong style="color:var(--intel)">08:00 · 17:00 CET</strong> (Mon–Fri)<br>
+        • Fundamentals: <strong style="color:var(--warn)">every 2h from 08:00–18:00 CET</strong> (Mon–Fri)<br>
+        • Weekly summary: <strong style="color:var(--accent)">Saturday 10:00 CET</strong>
       </div>
     </div>
   </div>
@@ -453,16 +439,14 @@ git push -u origin main</pre>
 
 <script>
 // ── DATA ────────────────────────────────────────────────────────────────────
-let snap    = null;
+let snap         = null;
 let weeklyReport = null;
-let intel   = null;
-let alerts  = [];
-let cfg     = null;
-let dTimes  = [];
-let iTimes  = [];
+let intel        = null;
+let alerts       = [];
+let cfg          = null;
+let dTimes       = [];
+let iTimes       = [];
 
-// Load from JSON files committed by GitHub Actions
-// When running locally (file://), fetch will fail gracefully
 async function fetchJSON(path) {
   try {
     const r = await fetch(path + '?t=' + Date.now());
@@ -470,8 +454,6 @@ async function fetchJSON(path) {
     return await r.json();
   } catch { return null; }
 }
-
-let weeklyReport = null;
 
 async function reload() {
   snap         = await fetchJSON('data/snapshot.json');
@@ -582,7 +564,6 @@ function renderIntel() {
     return;
   }
 
-  // All rating changes across holdings
   let allChanges = [];
   for (const h of intel.holdings||[]) {
     for (const r of h.new_ratings||[]) allChanges.push({ticker:h.ticker,...r});
@@ -606,11 +587,10 @@ function renderIntel() {
     <td><span class="tag tnw">${r.action||'change'}</span></td>
   </tr>`).join('') || `<tr><td colspan="6" class="empty">No rating changes detected today.</td></tr>`;
 
-  // News cards
   document.getElementById('news-grid').innerHTML = (intel.holdings||[]).map(h=>{
     const newsHtml = (h.news||[]).length
       ? (h.news).slice(0,3).map(a=>`<div class="no">• <a href="${a.url}" target="_blank">${a.title}</a> <span style="color:var(--dim)">(${a.source})</span></div>`).join('')
-      : `<div class="no" style="color:var(--dim)">No news yet. Finnhub news runs on the intel schedule.</div>`;
+      : `<div class="no" style="color:var(--dim)">No news available.</div>`;
     const newRat = (h.new_ratings||[]).length
       ? `<div class="ics">⚡ New Rating Changes</div>` + h.new_ratings.map(r=>`<div class="nr"><span style="color:var(--muted);text-decoration:line-through">${r.from_grade||'—'}</span><span>→</span><span style="color:${rColor(r.to_grade)};font-weight:700">${r.to_grade}</span><span class="dm" style="font-size:11px">${r.firm}</span></div>`).join('') : '';
     return `<div class="ic">
@@ -629,13 +609,12 @@ function renderEtf() {
     document.getElementById('etf-wrap').innerHTML = `<div class="empty">No ETF data in snapshot.</div>`;
     return;
   }
-  // Holdings data stored in snapshot if available
   document.getElementById('etf-wrap').innerHTML = snap.etfs.map(e=>{
     const h = e.holdings;
     const tbl = h?.length ? `<div class="tbox"><table>
       <thead><tr><th>#</th><th>Ticker</th><th>Name</th><th>Weight %</th></tr></thead>
       <tbody>${h.map((r,i)=>`<tr><td class="dm">${i+1}</td><td class="tk">${r.ticker||'—'}</td><td class="nm">${r.name||'—'}</td><td class="dm">${r.weight_pct??'—'}%</td></tr>`).join('')}</tbody>
-    </table></div>` : `<div class="empty" style="padding:12px">ETF holdings data not available via Finnhub for this ticker.</div>`;
+    </table></div>` : `<div class="empty" style="padding:12px">ETF holdings data not available for this ticker.</div>`;
     return `<div class="sh" style="margin-top:16px"><div class="st" style="font-size:13px">${e.name||e.ticker} <span class="bdg">${e.ticker}</span></div></div>${tbl}`;
   }).join('');
 }
@@ -660,16 +639,20 @@ function loadCfg() {
   const stored = localStorage.getItem(LS_KEY);
   cfg = stored ? JSON.parse(stored) : {
     portfolio:{ stocks:[], etfs:[] },
-    alerts:{ movement_threshold_pct:3, digest_times_cet:['07:45','12:00','15:15','17:00'], intel_times_cet:['07:30','17:00'] },
+    alerts:{ movement_threshold_pct:3, digest_times_cet:['08:15'], intel_times_cet:['08:00','17:00'] },
+    news:{ enabled:true },
     finnhub:{ api_key:'' }
   };
+  // Ensure nested objects exist
+  cfg.news    = cfg.news    || { enabled:true };
+  cfg.finnhub = cfg.finnhub || { api_key:'' };
   dTimes = [...(cfg.alerts.digest_times_cet||[])];
   iTimes = [...(cfg.alerts.intel_times_cet||[])];
   renderRows('s', cfg.portfolio.stocks||[]);
   renderRows('e', cfg.portfolio.etfs||[]);
-  document.getElementById('thr').value = cfg.alerts.movement_threshold_pct||3;
-  document.getElementById('ne').checked = cfg.news?.enabled!==false;
-  document.getElementById('nk').value = cfg.finnhub?.api_key||'';
+  document.getElementById('thr').value     = cfg.alerts.movement_threshold_pct||3;
+  document.getElementById('ne').checked   = cfg.news?.enabled!==false;
+  document.getElementById('nk').value     = cfg.finnhub?.api_key||'';
   renderTags('d', dTimes); renderTags('i', iTimes);
 }
 
@@ -700,24 +683,25 @@ function remT(k,i){(k==='d'?dTimes:iTimes).splice(i,1);renderTags(k,k==='d'?dTim
 
 function saveCfg() {
   cfg.alerts.movement_threshold_pct = +document.getElementById('thr').value;
-  cfg.alerts.digest_times_cet = dTimes;
-  cfg.alerts.intel_times_cet  = iTimes;
-  cfg.news.enabled    = document.getElementById('ne').checked;
-  cfg.finnhub = cfg.finnhub||{}; cfg.finnhub.api_key = document.getElementById('nk').value;
+  cfg.alerts.digest_times_cet       = dTimes;
+  cfg.alerts.intel_times_cet        = iTimes;
+  cfg.news    = cfg.news    || {};
+  cfg.finnhub = cfg.finnhub || {};
+  cfg.news.enabled     = document.getElementById('ne').checked;
+  cfg.finnhub.api_key  = document.getElementById('nk').value;
   localStorage.setItem(LS_KEY, JSON.stringify(cfg));
   toast('Saved to browser. Export JSON to commit to your repo.');
 }
 
 function exportCfg() {
   cfg.alerts.movement_threshold_pct = +document.getElementById('thr').value;
-  cfg.alerts.digest_times_cet = dTimes;
-  cfg.alerts.intel_times_cet  = iTimes;
+  cfg.alerts.digest_times_cet       = dTimes;
+  cfg.alerts.intel_times_cet        = iTimes;
   const blob = new Blob([JSON.stringify(cfg,null,2)],{type:'application/json'});
   const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
   a.download='portfolio_config.json'; a.click();
   toast('Config exported — commit this file to your GitHub repo');
 }
-
 
 // ── WEEKLY REPORT ─────────────────────────────────────────────────────────────
 function renderWeekly() {
@@ -725,7 +709,7 @@ function renderWeekly() {
   if (!wr) {
     ['wr-earnings-wrap','wr-div-wrap','wr-split-wrap','wr-ipo-wrap'].forEach(id => {
       const el = document.getElementById(id);
-      if (el) el.innerHTML = '<div class="empty">No weekly report yet — runs every Saturday 09:00 CET via GitHub Actions.</div>';
+      if (el) el.innerHTML = '<div class="empty">No weekly report yet — runs every Saturday 10:00 CET via GitHub Actions.</div>';
     });
     return;
   }
@@ -759,7 +743,6 @@ function renderWeekly() {
   const tbl = (heads,rows) => `<table style="width:100%;border-collapse:collapse"><thead><tr>${heads.map(th).join('')}</tr></thead><tbody>${rows.join('')}</tbody></table>`;
   const setHtml = (id, html) => { const el = document.getElementById(id); if(el) el.innerHTML = html; };
 
-  // Earnings
   const earnFlat = Object.entries(earn).flatMap(([t,evts])=>evts.map(e=>({t,...e}))).sort((a,b)=>a.date.localeCompare(b.date));
   const hourLbl = h => ({'bmo':'Before open','amc':'After close','dmh':'During mkt'}[h]||h||'—');
   setHtml('wr-earnings-wrap', earnFlat.length ? tbl(
@@ -767,21 +750,18 @@ function renderWeekly() {
     earnFlat.map(e=>`<tr>${td(e.date,'color:var(--muted)')}${td(tkBadge(e.t))}${td(`Q${e.quarter||'?'} ${e.year||''}`,'color:var(--muted)')}${td(hourLbl(e.hour),'color:var(--muted);font-size:11px')}${td(e.eps_estimate!=null?`$${Number(e.eps_estimate).toFixed(2)}`:'—','color:var(--lime)')}${td(e.revenue_est>1e6?`$${(e.revenue_est/1e9).toFixed(2)}B`:'—','color:var(--lime)')}</tr>`)
   ) : '<div class="empty">No earnings calls for your holdings next week.</div>');
 
-  // Dividends
   const divFlat = Object.entries(divs).flatMap(([t,evts])=>evts.map(d=>({t,...d}))).sort((a,b)=>(a.ex_date||'').localeCompare(b.ex_date||''));
   setHtml('wr-div-wrap', divFlat.length ? tbl(
     ['Ex-Date','Ticker','Amount','Currency','Record Date','Pay Date'],
     divFlat.map(d=>`<tr>${td(d.ex_date||'—','color:var(--muted)')}${td(tkBadge(d.t))}${td(d.amount!=null?`$${Number(d.amount).toFixed(4)}`:'—','color:var(--up);font-weight:600')}${td(d.currency||'USD','color:var(--muted);font-size:11px')}${td(d.record_date||'—','color:var(--muted);font-size:11px')}${td(d.pay_date||'—','color:var(--muted);font-size:11px')}</tr>`)
   ) : '<div class="empty">No dividend events next week.</div>');
 
-  // Splits
   const splitFlat = Object.entries(splits).flatMap(([t,evts])=>evts.map(s=>({t,...s}))).sort((a,b)=>a.date.localeCompare(b.date));
   setHtml('wr-split-wrap', splitFlat.length ? tbl(
     ['Date','Ticker','Ratio'],
     splitFlat.map(s=>`<tr>${td(s.date,'color:var(--muted)')}${td(tkBadge(s.t))}${td(s.ratio||'—','color:var(--warn);font-weight:600')}</tr>`)
   ) : '<div class="empty">No stock splits next week.</div>');
 
-  // IPOs
   setHtml('wr-ipo-wrap', ipos.length ? tbl(
     ['Date','Company','Ticker','Exchange','Price','Status'],
     [...ipos].sort((a,b)=>a.date.localeCompare(b.date)).map(i=>`<tr>${td(i.date,'color:var(--muted)')}${td(i.name||'—')}${td(tkBadge(i.ticker||'—'))}${td(i.exchange||'—','color:var(--muted);font-size:11px')}${td(i.price_range||'—','color:var(--lime)')}${td(i.status||'—','color:var(--muted);font-size:11px')}</tr>`)
