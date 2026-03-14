@@ -5,99 +5,309 @@
       "name": "Microsoft Corporation",
       "isin": "US5949181045",
       "shares": 5,
-      "timestamp": "2026-03-14T19:35:21.496005",
+      "timestamp": "2026-03-14T20:20:12.870107",
       "price_native": 395.55,
       "prev_close": 401.9483,
       "currency": "USD",
       "change_pct": -1.59,
       "price_eur": 346.26,
       "value_eur": 1731.32,
-      "pe_ratio": 24.752815,
-      "pb_ratio": 7.5178175,
-      "ps_ratio": 9.624646,
-      "beta": 1.108,
+      "pe_ratio": 24.75,
+      "pb_ratio": 7.52,
+      "ps_ratio": 9.62,
+      "beta": 1.11,
       "market_cap": 2939877064704,
       "eps_ttm": 15.98,
       "dividend_yield": 0.92,
-      "roe": 0.34390998,
+      "roe": 0.3439,
       "roa": 0.1486,
-      "profit_margin": 0.39044,
-      "debt_to_equity": 31.539,
-      "current_ratio": 1.386,
+      "profit_margin": 0.3904,
+      "gross_margin": 0.6859,
+      "ebitda_margin": 0.5738,
+      "debt_to_equity": 31.54,
+      "current_ratio": 1.39,
+      "quick_ratio": 1.24,
+      "free_cashflow": 53640626176,
       "revenue_growth": 0.167,
       "earnings_growth": 0.598,
+      "short_ratio": 1.63,
+      "short_pct_float": 0.01,
+      "shares_short": 74347979,
       "52w_high": 555.45,
       "52w_low": 344.79,
       "sector": "Technology",
       "country": "United States",
       "recommendation": "buy",
       "analyst_total": 53,
-      "analyst_target_mean": 594.6217,
+      "analyst_target_mean": 594.62,
       "analyst_target_high": 730.0,
-      "analyst_target_low": 392.0
+      "analyst_target_low": 392.0,
+      "analyst_upside_pct": 50.33,
+      "earnings_surprise": [
+        {
+          "period": "",
+          "eps_estimate": 3.216,
+          "eps_actual": 3.46,
+          "surprise_pct": 7.6,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 3.379,
+          "eps_actual": 3.65,
+          "surprise_pct": 8.0,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 3.662,
+          "eps_actual": 3.72,
+          "surprise_pct": 1.6,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 3.849,
+          "eps_actual": 5.16,
+          "surprise_pct": 34.1,
+          "beat": true
+        }
+      ],
+      "revenue_earnings_trend": [
+        {
+          "period": "2025-03-31",
+          "revenue": 70066000000,
+          "net_income": 25824000000
+        },
+        {
+          "period": "2025-06-30",
+          "revenue": 76441000000,
+          "net_income": 27233000000
+        },
+        {
+          "period": "2025-09-30",
+          "revenue": 77673000000,
+          "net_income": 27747000000
+        },
+        {
+          "period": "2025-12-31",
+          "revenue": 81273000000,
+          "net_income": 38458000000
+        }
+      ],
+      "insider_transactions": [
+        {
+          "date": "2026-03-06",
+          "insider": "HOGAN KATHLEEN T",
+          "title": "Officer",
+          "transaction": "",
+          "shares": 12320,
+          "value_usd": 5045643
+        },
+        {
+          "date": "2026-02-18",
+          "insider": "STANTON JOHN W.",
+          "title": "Director",
+          "transaction": "",
+          "shares": 5000,
+          "value_usd": 1986750
+        },
+        {
+          "date": "2026-01-30",
+          "insider": "STANTON JOHN W.",
+          "title": "Director",
+          "transaction": "",
+          "shares": 145,
+          "value_usd": 0
+        },
+        {
+          "date": "2026-01-30",
+          "insider": "LIST TERI",
+          "title": "Director",
+          "transaction": "",
+          "shares": 145,
+          "value_usd": 0
+        },
+        {
+          "date": "2026-01-30",
+          "insider": "SCHARF CHARLES W",
+          "title": "Director",
+          "transaction": "",
+          "shares": 145,
+          "value_usd": 0
+        },
+        {
+          "date": "2026-01-30",
+          "insider": "MASON MARK A.L.",
+          "title": "Director",
+          "transaction": "",
+          "shares": 145,
+          "value_usd": 0
+        },
+        {
+          "date": "2025-12-10",
+          "insider": "HOGAN KATHLEEN T",
+          "title": "Officer",
+          "transaction": "",
+          "shares": 150,
+          "value_usd": 0
+        },
+        {
+          "date": "2025-12-04",
+          "insider": "NUMOTO TAKESHI",
+          "title": "Officer",
+          "transaction": "",
+          "shares": 2850,
+          "value_usd": 1364352
+        },
+        {
+          "date": "2025-12-04",
+          "insider": "STANTON JOHN W.",
+          "title": "Director",
+          "transaction": "",
+          "shares": 130,
+          "value_usd": 0
+        },
+        {
+          "date": "2025-12-04",
+          "insider": "LIST TERI",
+          "title": "Director",
+          "transaction": "",
+          "shares": 130,
+          "value_usd": 0
+        }
+      ]
     },
     {
       "ticker": "ENR.DE",
       "name": "Siemens Energy AG             N",
       "isin": "DE000ENER6Y0",
       "shares": 9,
-      "timestamp": "2026-03-14T19:35:22.162933",
+      "timestamp": "2026-03-14T20:20:13.748235",
       "price_native": 143.95,
       "prev_close": 152.65,
       "currency": "EUR",
       "change_pct": -5.7,
       "price_eur": 143.95,
       "value_eur": 1295.55,
-      "pe_ratio": 67.26635,
-      "pb_ratio": 10.935126,
-      "ps_ratio": 3.092861,
-      "beta": 1.832,
+      "pe_ratio": 67.27,
+      "pb_ratio": 10.94,
+      "ps_ratio": 3.09,
+      "beta": 1.83,
       "market_cap": 123126792192,
       "eps_ttm": 2.14,
       "dividend_yield": 0.49,
-      "roe": 0.20254,
+      "roe": 0.2025,
       "roa": 0.023,
-      "profit_margin": 0.04755,
+      "profit_margin": 0.0476,
+      "gross_margin": 0.1827,
+      "ebitda_margin": 0.0812,
       "debt_to_equity": 33.02,
-      "current_ratio": 0.924,
+      "current_ratio": 0.92,
+      "quick_ratio": 0.59,
+      "free_cashflow": 3722500096,
       "revenue_growth": 0.082,
       "earnings_growth": 2.405,
+      "short_ratio": null,
+      "short_pct_float": null,
+      "shares_short": null,
       "52w_high": 171.65,
       "52w_low": 41.81,
       "sector": "Industrials",
       "country": "Germany",
       "recommendation": "buy",
       "analyst_total": 25,
-      "analyst_target_mean": 165.682,
+      "analyst_target_mean": 165.68,
       "analyst_target_high": 220.0,
-      "analyst_target_low": 89.0
+      "analyst_target_low": 89.0,
+      "analyst_upside_pct": 15.1,
+      "earnings_surprise": [
+        {
+          "period": "",
+          "eps_estimate": 0.338,
+          "eps_actual": 0.763,
+          "surprise_pct": 125.7,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 0.21,
+          "eps_actual": 0.208,
+          "surprise_pct": -1.1,
+          "beat": false
+        },
+        {
+          "period": "",
+          "eps_estimate": 0.325,
+          "eps_actual": 0.317,
+          "surprise_pct": -2.4,
+          "beat": false
+        },
+        {
+          "period": "",
+          "eps_estimate": 0.821,
+          "eps_actual": 0.922,
+          "surprise_pct": 12.3,
+          "beat": true
+        }
+      ],
+      "revenue_earnings_trend": [
+        {
+          "period": "2025-03-31",
+          "revenue": 9962000000,
+          "net_income": 434000000
+        },
+        {
+          "period": "2025-06-30",
+          "revenue": 9745000000,
+          "net_income": 615000000
+        },
+        {
+          "period": "2025-09-30",
+          "revenue": 10428000000,
+          "net_income": 168000000
+        },
+        {
+          "period": "2025-12-31",
+          "revenue": 9675000000,
+          "net_income": 677000000
+        }
+      ],
+      "insider_transactions": []
     },
     {
       "ticker": "VH2.DE",
       "name": "Friedrich Vorwerk Group SE    I",
       "isin": "DE000A255F11",
       "shares": 11,
-      "timestamp": "2026-03-14T19:35:22.465944",
+      "timestamp": "2026-03-14T20:20:14.357230",
       "price_native": 76.7,
       "prev_close": 81.0,
       "currency": "EUR",
       "change_pct": -5.31,
       "price_eur": 76.7,
       "value_eur": 843.7,
-      "pe_ratio": 21.666666,
-      "pb_ratio": 5.9949975,
-      "ps_ratio": 2.341002,
+      "pe_ratio": 21.67,
+      "pb_ratio": 5.99,
+      "ps_ratio": 2.34,
       "beta": 0.82,
       "market_cap": 1556852864,
       "eps_ttm": 3.54,
       "dividend_yield": 0.39,
-      "roe": 0.34982,
-      "roa": 0.15236,
-      "profit_margin": 0.10646,
-      "debt_to_equity": 11.409,
-      "current_ratio": 2.223,
+      "roe": 0.3498,
+      "roa": 0.1524,
+      "profit_margin": 0.1065,
+      "gross_margin": 0.5262,
+      "ebitda_margin": 0.1869,
+      "debt_to_equity": 11.41,
+      "current_ratio": 2.22,
+      "quick_ratio": 2.05,
+      "free_cashflow": 58796124,
       "revenue_growth": 0.393,
       "earnings_growth": 1.266,
+      "short_ratio": null,
+      "short_pct_float": null,
+      "shares_short": null,
       "52w_high": 109.2,
       "52w_low": 42.0,
       "sector": "Industrials",
@@ -106,34 +316,66 @@
       "analyst_total": 4,
       "analyst_target_mean": 88.5,
       "analyst_target_high": 111.0,
-      "analyst_target_low": 65.0
+      "analyst_target_low": 65.0,
+      "analyst_upside_pct": 15.38,
+      "earnings_surprise": [],
+      "revenue_earnings_trend": [
+        {
+          "period": "2024-12-31",
+          "revenue": 159251000,
+          "net_income": 13517000
+        },
+        {
+          "period": "2025-03-31",
+          "revenue": 133040000,
+          "net_income": 8555000
+        },
+        {
+          "period": "2025-06-30",
+          "revenue": 170045000,
+          "net_income": 19694000
+        },
+        {
+          "period": "2025-09-30",
+          "revenue": 201974000,
+          "net_income": 29037000
+        }
+      ],
+      "insider_transactions": []
     },
     {
       "ticker": "MILDEF.ST",
       "name": "Mildef Group AB",
       "isin": "SE0016074249",
       "shares": 60,
-      "timestamp": "2026-03-14T19:35:22.871015",
+      "timestamp": "2026-03-14T20:20:15.195985",
       "price_native": 132.4,
       "prev_close": 131.8,
       "currency": "SEK",
       "change_pct": 0.46,
       "price_eur": 12.23,
       "value_eur": 733.51,
-      "pe_ratio": 41.89873,
-      "pb_ratio": 4.1041536,
-      "ps_ratio": 3.0487795,
-      "beta": 1.167,
+      "pe_ratio": 41.9,
+      "pb_ratio": 4.1,
+      "ps_ratio": 3.05,
+      "beta": 1.17,
       "market_cap": 6235363840,
       "eps_ttm": 3.16,
       "dividend_yield": 0.57,
-      "roe": 0.11293,
-      "roa": 0.05691,
-      "profit_margin": 0.07236,
-      "debt_to_equity": 50.866,
-      "current_ratio": 2.061,
+      "roe": 0.1129,
+      "roa": 0.0569,
+      "profit_margin": 0.0724,
+      "gross_margin": 0.4499,
+      "ebitda_margin": 0.1561,
+      "debt_to_equity": 50.87,
+      "current_ratio": 2.06,
+      "quick_ratio": 1.24,
+      "free_cashflow": -177324992,
       "revenue_growth": 0.875,
       "earnings_growth": null,
+      "short_ratio": null,
+      "short_pct_float": null,
+      "shares_short": null,
       "52w_high": 294.4,
       "52w_low": 115.0,
       "sector": "Industrials",
@@ -142,122 +384,280 @@
       "analyst_total": 5,
       "analyst_target_mean": 208.0,
       "analyst_target_high": 250.0,
-      "analyst_target_low": 190.0
+      "analyst_target_low": 190.0,
+      "analyst_upside_pct": 57.1,
+      "earnings_surprise": [],
+      "revenue_earnings_trend": [
+        {
+          "period": "2024-12-31",
+          "revenue": 417500000,
+          "net_income": -249500000
+        },
+        {
+          "period": "2025-03-31",
+          "revenue": 339500000,
+          "net_income": -100000
+        },
+        {
+          "period": "2025-06-30",
+          "revenue": 383300000,
+          "net_income": 9200000
+        },
+        {
+          "period": "2025-12-31",
+          "revenue": 782700000,
+          "net_income": 93500000
+        }
+      ],
+      "insider_transactions": []
     },
     {
       "ticker": "GOOG",
       "name": "Alphabet Inc.",
       "isin": "US02079K1079",
       "shares": 2,
-      "timestamp": "2026-03-14T19:35:23.404125",
+      "timestamp": "2026-03-14T20:20:16.088435",
       "price_native": 301.46,
       "prev_close": 303.81,
       "currency": "USD",
       "change_pct": -0.77,
       "price_eur": 263.9,
       "value_eur": 527.8,
-      "pe_ratio": 27.861368,
-      "pb_ratio": 8.775361,
-      "ps_ratio": 9.052721,
-      "beta": 1.112,
+      "pe_ratio": 27.86,
+      "pb_ratio": 8.78,
+      "ps_ratio": 9.05,
+      "beta": 1.11,
       "market_cap": 3646761730048,
       "eps_ttm": 10.82,
       "dividend_yield": 0.28,
-      "roe": 0.35705003,
-      "roa": 0.15427,
-      "profit_margin": 0.32810003,
-      "debt_to_equity": 16.133,
-      "current_ratio": 2.005,
+      "roe": 0.3571,
+      "roa": 0.1543,
+      "profit_margin": 0.3281,
+      "gross_margin": 0.5965,
+      "ebitda_margin": 0.3728,
+      "debt_to_equity": 16.13,
+      "current_ratio": 2.0,
+      "quick_ratio": 1.85,
+      "free_cashflow": 38088376320,
       "revenue_growth": 0.18,
       "earnings_growth": 0.311,
+      "short_ratio": 1.29,
+      "short_pct_float": null,
+      "shares_short": 31878342,
       "52w_high": 350.15,
       "52w_low": 142.66,
       "sector": "Communication Services",
       "country": "United States",
       "recommendation": "buy",
       "analyst_total": 17,
-      "analyst_target_mean": 359.52942,
+      "analyst_target_mean": 359.53,
       "analyst_target_high": 405.0,
-      "analyst_target_low": 185.0
+      "analyst_target_low": 185.0,
+      "analyst_upside_pct": 19.26,
+      "earnings_surprise": [
+        {
+          "period": "",
+          "eps_estimate": 2.01,
+          "eps_actual": 2.81,
+          "surprise_pct": 39.8,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 2.198,
+          "eps_actual": 2.31,
+          "surprise_pct": 5.1,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 2.262,
+          "eps_actual": 2.87,
+          "surprise_pct": 26.9,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 2.641,
+          "eps_actual": 2.82,
+          "surprise_pct": 6.8,
+          "beat": true
+        }
+      ],
+      "revenue_earnings_trend": [
+        {
+          "period": "2025-03-31",
+          "revenue": 90234000000,
+          "net_income": 34540000000
+        },
+        {
+          "period": "2025-06-30",
+          "revenue": 96428000000,
+          "net_income": 28196000000
+        },
+        {
+          "period": "2025-09-30",
+          "revenue": 102346000000,
+          "net_income": 34979000000
+        },
+        {
+          "period": "2025-12-31",
+          "revenue": 113829000000,
+          "net_income": 34455000000
+        }
+      ],
+      "insider_transactions": []
     },
     {
       "ticker": "AIR.PA",
       "name": "AIRBUS SE",
       "isin": "NL0000235190",
       "shares": 7,
-      "timestamp": "2026-03-14T19:35:23.755322",
+      "timestamp": "2026-03-14T20:20:16.881482",
       "price_native": 168.38,
       "prev_close": 172.06,
       "currency": "EUR",
       "change_pct": -2.14,
       "price_eur": 168.38,
       "value_eur": 1178.66,
-      "pe_ratio": 25.512123,
-      "pb_ratio": 5.0779576,
-      "ps_ratio": 1.8101308,
-      "beta": 0.835,
+      "pe_ratio": 25.51,
+      "pb_ratio": 5.08,
+      "ps_ratio": 1.81,
+      "beta": 0.83,
       "market_cap": 132899799040,
       "eps_ttm": 6.6,
       "dividend_yield": 1.9,
-      "roe": 0.21621999,
-      "roa": 0.027139999,
-      "profit_margin": 0.07111,
-      "debt_to_equity": 54.419,
+      "roe": 0.2162,
+      "roa": 0.0271,
+      "profit_margin": 0.0711,
+      "gross_margin": 0.1562,
+      "ebitda_margin": 0.1082,
+      "debt_to_equity": 54.42,
       "current_ratio": 1.16,
+      "quick_ratio": 0.46,
+      "free_cashflow": -1231250048,
       "revenue_growth": 0.051,
       "earnings_growth": 0.065,
+      "short_ratio": null,
+      "short_pct_float": null,
+      "shares_short": null,
       "52w_high": 221.3,
       "52w_low": 126.4,
       "sector": "Industrials",
       "country": "Netherlands",
       "recommendation": "buy",
       "analyst_total": 21,
-      "analyst_target_mean": 219.54762,
+      "analyst_target_mean": 219.55,
       "analyst_target_high": 259.0,
-      "analyst_target_low": 173.0
+      "analyst_target_low": 173.0,
+      "analyst_upside_pct": 30.39,
+      "earnings_surprise": [
+        {
+          "period": "",
+          "eps_estimate": 0.55,
+          "eps_actual": 0.67,
+          "surprise_pct": 21.8,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 1.38,
+          "eps_actual": 1.48,
+          "surprise_pct": 7.2,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 1.627,
+          "eps_actual": 1.82,
+          "surprise_pct": 11.9,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 2.607,
+          "eps_actual": 2.92,
+          "surprise_pct": 12.0,
+          "beat": true
+        }
+      ],
+      "revenue_earnings_trend": [
+        {
+          "period": "2025-03-31",
+          "revenue": 13542000000,
+          "net_income": 793000000
+        },
+        {
+          "period": "2025-06-30",
+          "revenue": 16068000000,
+          "net_income": 732000000
+        },
+        {
+          "period": "2025-09-30",
+          "revenue": 17826000000,
+          "net_income": 1116000000
+        },
+        {
+          "period": "2025-12-31",
+          "revenue": 25984000000,
+          "net_income": 2580000000
+        }
+      ],
+      "insider_transactions": []
     },
     {
       "ticker": "HO.PA",
       "name": "THALES",
       "isin": "FR0000121329",
       "shares": 5,
-      "timestamp": "2026-03-14T19:35:24.099262",
+      "timestamp": "2026-03-14T20:20:17.707949",
       "price_native": 253.8,
       "prev_close": 254.8,
       "currency": "EUR",
       "change_pct": -0.39,
       "price_eur": 253.8,
       "value_eur": 1269.0,
-      "pe_ratio": 31.256159,
-      "pb_ratio": 6.544611,
-      "ps_ratio": 2.355939,
-      "beta": 0.134,
+      "pe_ratio": 31.26,
+      "pb_ratio": 6.54,
+      "ps_ratio": 2.36,
+      "beta": 0.13,
       "market_cap": 52152004608,
       "eps_ttm": 8.12,
       "dividend_yield": 1.54,
-      "roe": 0.21103,
-      "roa": 0.03435,
-      "profit_margin": 0.07564,
-      "debt_to_equity": 76.737,
-      "current_ratio": 0.845,
+      "roe": 0.211,
+      "roa": 0.0343,
+      "profit_margin": 0.0756,
+      "gross_margin": 0.2644,
+      "ebitda_margin": 0.136,
+      "debt_to_equity": 76.74,
+      "current_ratio": 0.84,
+      "quick_ratio": 0.6,
+      "free_cashflow": 2076862464,
       "revenue_growth": 0.071,
       "earnings_growth": 1.512,
+      "short_ratio": null,
+      "short_pct_float": null,
+      "shares_short": null,
       "52w_high": 279.3,
       "52w_low": 207.0,
       "sector": "Industrials",
       "country": "France",
       "recommendation": "buy",
       "analyst_total": 18,
-      "analyst_target_mean": 292.66666,
+      "analyst_target_mean": 292.67,
       "analyst_target_high": 380.0,
-      "analyst_target_low": 240.0
+      "analyst_target_low": 240.0,
+      "analyst_upside_pct": 15.32,
+      "earnings_surprise": [],
+      "revenue_earnings_trend": [],
+      "insider_transactions": []
     },
     {
       "ticker": "BTC-USD",
       "name": "Bitcoin",
       "isin": "",
       "shares": 0,
-      "timestamp": "2026-03-14T19:35:24.644991",
+      "timestamp": "2026-03-14T20:20:18.393553",
       "skip": true
     },
     {
@@ -265,7 +665,7 @@
       "name": "Gold",
       "isin": "",
       "shares": 0,
-      "timestamp": "2026-03-14T19:35:24.645062",
+      "timestamp": "2026-03-14T20:20:18.393589",
       "skip": true
     },
     {
@@ -273,7 +673,7 @@
       "name": "Silver",
       "isin": "",
       "shares": 0,
-      "timestamp": "2026-03-14T19:35:24.645114",
+      "timestamp": "2026-03-14T20:20:18.393631",
       "skip": true
     },
     {
@@ -281,171 +681,503 @@
       "name": "NVIDIA Corporation",
       "isin": "US67066G1040",
       "shares": 0,
-      "timestamp": "2026-03-14T19:35:24.645178",
+      "timestamp": "2026-03-14T20:20:18.393667",
       "price_native": 180.25,
       "prev_close": 182.9087,
       "currency": "USD",
       "change_pct": -1.45,
       "price_eur": 157.79,
       "value_eur": 0.0,
-      "pe_ratio": 36.785713,
-      "pb_ratio": 27.85074,
-      "ps_ratio": 20.28812,
-      "beta": 2.375,
+      "pe_ratio": 36.79,
+      "pb_ratio": 27.85,
+      "ps_ratio": 20.29,
+      "beta": 2.38,
       "market_cap": 4380976218112,
       "eps_ttm": 4.9,
       "dividend_yield": 0.02,
-      "roe": 1.01485,
-      "roa": 0.51188,
-      "profit_margin": 0.55603004,
-      "debt_to_equity": 7.255,
-      "current_ratio": 3.905,
+      "roe": 1.0149,
+      "roa": 0.5119,
+      "profit_margin": 0.556,
+      "gross_margin": 0.7107,
+      "ebitda_margin": 0.617,
+      "debt_to_equity": 7.25,
+      "current_ratio": 3.9,
+      "quick_ratio": 3.14,
+      "free_cashflow": 58128998400,
       "revenue_growth": 0.732,
       "earnings_growth": 0.956,
+      "short_ratio": 1.32,
+      "short_pct_float": 0.0107,
+      "shares_short": 248340872,
       "52w_high": 212.19,
       "52w_low": 86.62,
       "sector": "Technology",
       "country": "United States",
       "recommendation": "buy",
       "analyst_total": 55,
-      "analyst_target_mean": 267.5351,
+      "analyst_target_mean": 267.54,
       "analyst_target_high": 380.0,
-      "analyst_target_low": 140.0
+      "analyst_target_low": 140.0,
+      "analyst_upside_pct": 48.43,
+      "earnings_surprise": [
+        {
+          "period": "",
+          "eps_estimate": 0.75,
+          "eps_actual": 0.81,
+          "surprise_pct": 8.0,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 1.009,
+          "eps_actual": 1.05,
+          "surprise_pct": 4.1,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 1.256,
+          "eps_actual": 1.3,
+          "surprise_pct": 3.5,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 1.538,
+          "eps_actual": 1.62,
+          "surprise_pct": 5.3,
+          "beat": true
+        }
+      ],
+      "revenue_earnings_trend": [
+        {
+          "period": "2025-04-30",
+          "revenue": 44062000000,
+          "net_income": 18775000000
+        },
+        {
+          "period": "2025-07-31",
+          "revenue": 46743000000,
+          "net_income": 26422000000
+        },
+        {
+          "period": "2025-10-31",
+          "revenue": 57006000000,
+          "net_income": 31910000000
+        },
+        {
+          "period": "2026-01-31",
+          "revenue": 68127000000,
+          "net_income": 42960000000
+        }
+      ],
+      "insider_transactions": [
+        {
+          "date": "2026-03-10",
+          "insider": "PURI AJAY K",
+          "title": "Officer",
+          "transaction": "",
+          "shares": 300000,
+          "value_usd": 54756044
+        },
+        {
+          "date": "2026-03-09",
+          "insider": "SHOQUIST DEBORA C",
+          "title": "Officer",
+          "transaction": "",
+          "shares": 47048,
+          "value_usd": 0
+        },
+        {
+          "date": "2026-03-09",
+          "insider": "PURI AJAY K",
+          "title": "Officer",
+          "transaction": "",
+          "shares": 47048,
+          "value_usd": 0
+        },
+        {
+          "date": "2026-03-09",
+          "insider": "KRESS COLETTE M.",
+          "title": "Chief Financial Offi",
+          "transaction": "",
+          "shares": 47048,
+          "value_usd": 0
+        },
+        {
+          "date": "2026-03-09",
+          "insider": "TETER TIMOTHY S",
+          "title": "General Counsel",
+          "transaction": "",
+          "shares": 47048,
+          "value_usd": 0
+        },
+        {
+          "date": "2026-03-02",
+          "insider": "SHOQUIST DEBORA C",
+          "title": "Officer",
+          "transaction": "",
+          "shares": 98328,
+          "value_usd": 0
+        },
+        {
+          "date": "2026-03-02",
+          "insider": "PURI AJAY K",
+          "title": "Officer",
+          "transaction": "",
+          "shares": 103278,
+          "value_usd": 0
+        },
+        {
+          "date": "2026-03-02",
+          "insider": "HUANG JEN-HSUN",
+          "title": "Chief Executive Offi",
+          "transaction": "",
+          "shares": 936771,
+          "value_usd": 0
+        },
+        {
+          "date": "2026-03-02",
+          "insider": "KRESS COLETTE M.",
+          "title": "Chief Financial Offi",
+          "transaction": "",
+          "shares": 106660,
+          "value_usd": 0
+        },
+        {
+          "date": "2026-03-02",
+          "insider": "TETER TIMOTHY S",
+          "title": "General Counsel",
+          "transaction": "",
+          "shares": 98328,
+          "value_usd": 0
+        }
+      ]
     },
     {
       "ticker": "AMZN",
       "name": "Amazon.com, Inc.",
       "isin": "US0231351067",
       "shares": 0,
-      "timestamp": "2026-03-14T19:35:25.016823",
+      "timestamp": "2026-03-14T20:20:19.269352",
       "price_native": 207.67,
       "prev_close": 209.6782,
       "currency": "USD",
       "change_pct": -0.96,
       "price_eur": 181.79,
       "value_eur": 0.0,
-      "pe_ratio": 29.00419,
-      "pb_ratio": 5.421344,
-      "ps_ratio": 3.109564,
+      "pe_ratio": 29.0,
+      "pb_ratio": 5.42,
+      "ps_ratio": 3.11,
       "beta": 1.42,
       "market_cap": 2229321072640,
       "eps_ttm": 7.16,
       "dividend_yield": null,
-      "roe": 0.22286,
-      "roa": 0.06928,
-      "profit_margin": 0.108339995,
-      "debt_to_equity": 43.435,
-      "current_ratio": 1.051,
+      "roe": 0.2229,
+      "roa": 0.0693,
+      "profit_margin": 0.1083,
+      "gross_margin": 0.5029,
+      "ebitda_margin": 0.2033,
+      "debt_to_equity": 43.44,
+      "current_ratio": 1.05,
+      "quick_ratio": 0.84,
+      "free_cashflow": 23793125376,
       "revenue_growth": 0.136,
       "earnings_growth": 0.05,
+      "short_ratio": 1.31,
+      "short_pct_float": 0.0084,
+      "shares_short": 81891881,
       "52w_high": 258.6,
       "52w_low": 161.38,
       "sector": "Consumer Cyclical",
       "country": "United States",
       "recommendation": "buy",
       "analyst_total": 62,
-      "analyst_target_mean": 280.5484,
+      "analyst_target_mean": 280.55,
       "analyst_target_high": 360.0,
-      "analyst_target_low": 175.0
+      "analyst_target_low": 175.0,
+      "analyst_upside_pct": 35.09,
+      "earnings_surprise": [
+        {
+          "period": "",
+          "eps_estimate": 1.358,
+          "eps_actual": 1.59,
+          "surprise_pct": 17.1,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 1.332,
+          "eps_actual": 1.68,
+          "surprise_pct": 26.1,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 1.558,
+          "eps_actual": 1.95,
+          "surprise_pct": 25.2,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 1.96,
+          "eps_actual": 1.95,
+          "surprise_pct": -0.5,
+          "beat": false
+        }
+      ],
+      "revenue_earnings_trend": [
+        {
+          "period": "2025-03-31",
+          "revenue": 155667000000,
+          "net_income": 17127000000
+        },
+        {
+          "period": "2025-06-30",
+          "revenue": 167702000000,
+          "net_income": 18164000000
+        },
+        {
+          "period": "2025-09-30",
+          "revenue": 180169000000,
+          "net_income": 21187000000
+        },
+        {
+          "period": "2025-12-31",
+          "revenue": 213386000000,
+          "net_income": 21192000000
+        }
+      ],
+      "insider_transactions": []
     },
     {
       "ticker": "AAPL",
       "name": "Apple Inc.",
       "isin": "US0378331005",
       "shares": 0,
-      "timestamp": "2026-03-14T19:35:25.298217",
+      "timestamp": "2026-03-14T20:20:19.943220",
       "price_native": 250.12,
       "prev_close": 255.7,
       "currency": "USD",
       "change_pct": -2.18,
       "price_eur": 218.96,
       "value_eur": 0.0,
-      "pe_ratio": 31.660759,
-      "pb_ratio": 41.700565,
-      "ps_ratio": 8.439168,
-      "beta": 1.116,
+      "pe_ratio": 31.66,
+      "pb_ratio": 41.7,
+      "ps_ratio": 8.44,
+      "beta": 1.12,
       "market_cap": 3676245065728,
       "eps_ttm": 7.9,
       "dividend_yield": 0.42,
-      "roe": 1.5202099,
-      "roa": 0.24377,
-      "profit_margin": 0.27037,
+      "roe": 1.5202,
+      "roa": 0.2438,
+      "profit_margin": 0.2704,
+      "gross_margin": 0.4733,
+      "ebitda_margin": 0.351,
       "debt_to_equity": 102.63,
-      "current_ratio": 0.974,
+      "current_ratio": 0.97,
+      "quick_ratio": 0.84,
+      "free_cashflow": 106312753152,
       "revenue_growth": 0.157,
       "earnings_growth": 0.183,
+      "short_ratio": 2.41,
+      "short_pct_float": 0.0088,
+      "shares_short": 129553812,
       "52w_high": 288.62,
       "52w_low": 169.21,
       "sector": "Technology",
       "country": "United States",
       "recommendation": "buy",
       "analyst_total": 41,
-      "analyst_target_mean": 295.43536,
+      "analyst_target_mean": 295.44,
       "analyst_target_high": 350.0,
-      "analyst_target_low": 205.0
+      "analyst_target_low": 205.0,
+      "analyst_upside_pct": 18.12,
+      "earnings_surprise": [
+        {
+          "period": "",
+          "eps_estimate": 1.623,
+          "eps_actual": 1.65,
+          "surprise_pct": 1.7,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 1.426,
+          "eps_actual": 1.57,
+          "surprise_pct": 10.1,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 1.77,
+          "eps_actual": 1.85,
+          "surprise_pct": 4.5,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 2.671,
+          "eps_actual": 2.84,
+          "surprise_pct": 6.3,
+          "beat": true
+        }
+      ],
+      "revenue_earnings_trend": [
+        {
+          "period": "2025-03-31",
+          "revenue": 95359000000,
+          "net_income": 24780000000
+        },
+        {
+          "period": "2025-06-30",
+          "revenue": 94036000000,
+          "net_income": 23434000000
+        },
+        {
+          "period": "2025-09-30",
+          "revenue": 102466000000,
+          "net_income": 27466000000
+        },
+        {
+          "period": "2025-12-31",
+          "revenue": 143756000000,
+          "net_income": 42097000000
+        }
+      ],
+      "insider_transactions": []
     },
     {
       "ticker": "LLY",
       "name": "Eli Lilly and Company",
       "isin": "US5324571083",
       "shares": 0,
-      "timestamp": "2026-03-14T19:35:25.664216",
+      "timestamp": "2026-03-14T20:20:20.794670",
       "price_native": 985.08,
       "prev_close": 978.52,
       "currency": "USD",
       "change_pct": 0.67,
       "price_eur": 862.34,
       "value_eur": 0.0,
-      "pe_ratio": 42.922874,
-      "pb_ratio": 33.218006,
-      "ps_ratio": 13.526828,
-      "beta": 0.434,
+      "pe_ratio": 42.92,
+      "pb_ratio": 33.22,
+      "ps_ratio": 13.53,
+      "beta": 0.43,
       "market_cap": 881665114112,
       "eps_ttm": 22.95,
       "dividend_yield": 0.63,
-      "roe": 1.01159,
-      "roa": 0.19415002,
-      "profit_margin": 0.31667,
+      "roe": 1.0116,
+      "roa": 0.1942,
+      "profit_margin": 0.3167,
+      "gross_margin": 0.8304,
+      "ebitda_margin": 0.4863,
       "debt_to_equity": 165.31,
-      "current_ratio": 1.579,
+      "current_ratio": 1.58,
+      "quick_ratio": 0.78,
+      "free_cashflow": 1951000064,
       "revenue_growth": 0.426,
       "earnings_growth": 0.514,
+      "short_ratio": 1.86,
+      "short_pct_float": 0.0085,
+      "shares_short": 6785689,
       "52w_high": 1133.95,
       "52w_low": 623.78,
       "sector": "Healthcare",
       "country": "United States",
       "recommendation": "buy",
       "analyst_total": 29,
-      "analyst_target_mean": 1216.931,
+      "analyst_target_mean": 1216.93,
       "analyst_target_high": 1500.0,
-      "analyst_target_low": 870.0
+      "analyst_target_low": 870.0,
+      "analyst_upside_pct": 23.54,
+      "earnings_surprise": [
+        {
+          "period": "",
+          "eps_estimate": 3.543,
+          "eps_actual": 3.34,
+          "surprise_pct": -5.7,
+          "beat": false
+        },
+        {
+          "period": "",
+          "eps_estimate": 5.589,
+          "eps_actual": 6.31,
+          "surprise_pct": 12.9,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 5.892,
+          "eps_actual": 7.02,
+          "surprise_pct": 19.2,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 6.909,
+          "eps_actual": 7.54,
+          "surprise_pct": 9.1,
+          "beat": true
+        }
+      ],
+      "revenue_earnings_trend": [
+        {
+          "period": "2025-03-31",
+          "revenue": 12728500000,
+          "net_income": 2759300000
+        },
+        {
+          "period": "2025-06-30",
+          "revenue": 15557700000,
+          "net_income": 5660500000
+        },
+        {
+          "period": "2025-09-30",
+          "revenue": 17600800000,
+          "net_income": 5582500000
+        },
+        {
+          "period": "2025-12-31",
+          "revenue": 19292000000,
+          "net_income": 6637700000
+        }
+      ],
+      "insider_transactions": []
     },
     {
       "ticker": "GBF.DE",
       "name": "Bilfinger SE                  I",
       "isin": "",
       "shares": 0,
-      "timestamp": "2026-03-14T19:35:26.083229",
+      "timestamp": "2026-03-14T20:20:21.686564",
       "price_native": 99.05,
       "prev_close": 102.1,
       "currency": "EUR",
       "change_pct": -2.99,
       "price_eur": 99.05,
       "value_eur": 0.0,
-      "pe_ratio": 21.07447,
-      "pb_ratio": 2.7474968,
-      "ps_ratio": 0.67419934,
+      "pe_ratio": 21.07,
+      "pb_ratio": 2.75,
+      "ps_ratio": 0.67,
       "beta": 0.43,
       "market_cap": 3658879744,
       "eps_ttm": 4.7,
       "dividend_yield": 2.83,
       "roe": 0.1381,
-      "roa": 0.04932,
-      "profit_margin": 0.03243,
-      "debt_to_equity": 27.783,
-      "current_ratio": 1.252,
+      "roa": 0.0493,
+      "profit_margin": 0.0324,
+      "gross_margin": 0.1137,
+      "ebitda_margin": 0.0638,
+      "debt_to_equity": 27.78,
+      "current_ratio": 1.25,
+      "quick_ratio": 1.15,
+      "free_cashflow": 251691008,
       "revenue_growth": 0.045,
       "earnings_growth": -0.16,
+      "short_ratio": null,
+      "short_pct_float": null,
+      "shares_short": null,
       "52w_high": 129.3,
       "52w_low": 54.25,
       "sector": "Industrials",
@@ -454,106 +1186,320 @@
       "analyst_total": 4,
       "analyst_target_mean": 122.5,
       "analyst_target_high": 132.0,
-      "analyst_target_low": 109.0
+      "analyst_target_low": 109.0,
+      "analyst_upside_pct": 23.67,
+      "earnings_surprise": [
+        {
+          "period": "",
+          "eps_estimate": 0.945,
+          "eps_actual": 0.94,
+          "surprise_pct": -0.5,
+          "beat": false
+        },
+        {
+          "period": "",
+          "eps_estimate": 1.311,
+          "eps_actual": 1.27,
+          "surprise_pct": -3.2,
+          "beat": false
+        },
+        {
+          "period": "",
+          "eps_estimate": 1.439,
+          "eps_actual": 1.48,
+          "surprise_pct": 2.9,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 1.775,
+          "eps_actual": 1.5,
+          "surprise_pct": -15.5,
+          "beat": false
+        }
+      ],
+      "revenue_earnings_trend": [
+        {
+          "period": "2025-03-31",
+          "revenue": 1267400000,
+          "net_income": 31600000
+        },
+        {
+          "period": "2025-06-30",
+          "revenue": 1352900000,
+          "net_income": 47600000
+        },
+        {
+          "period": "2025-09-30",
+          "revenue": 1384100000,
+          "net_income": 54600000
+        },
+        {
+          "period": "2025-12-31",
+          "revenue": 1422600000,
+          "net_income": 42200000
+        }
+      ],
+      "insider_transactions": []
     },
     {
       "ticker": "BA.L",
       "name": "BAE SYSTEMS PLC ORD 2.5P",
       "isin": "",
       "shares": 0,
-      "timestamp": "2026-03-14T19:35:26.426870",
+      "timestamp": "2026-03-14T20:20:22.565086",
       "price_native": 2307.0,
       "prev_close": 2298.0,
       "currency": "GBX",
       "change_pct": 0.39,
       "price_eur": 26.73,
       "value_eur": 0.0,
-      "pe_ratio": 33.926468,
-      "pb_ratio": 586.27704,
-      "ps_ratio": 2.3737001,
-      "beta": 0.005,
+      "pe_ratio": 33.93,
+      "pb_ratio": 586.28,
+      "ps_ratio": 2.37,
+      "beta": 0.01,
       "market_cap": 67261169664,
       "eps_ttm": 0.68,
       "dividend_yield": 1.57,
-      "roe": 0.18141001,
-      "roa": 0.04591,
-      "profit_margin": 0.07277,
-      "debt_to_equity": 75.823,
-      "current_ratio": 0.987,
+      "roe": 0.1814,
+      "roa": 0.0459,
+      "profit_margin": 0.0728,
+      "gross_margin": 0.0882,
+      "ebitda_margin": 0.1397,
+      "debt_to_equity": 75.82,
+      "current_ratio": 0.99,
+      "quick_ratio": 0.86,
+      "free_cashflow": 1820625024,
       "revenue_growth": 0.067,
       "earnings_growth": 0.087,
+      "short_ratio": null,
+      "short_pct_float": null,
+      "shares_short": null,
       "52w_high": 2318.0,
       "52w_low": 1394.0,
       "sector": "Industrials",
       "country": "United Kingdom",
       "recommendation": "buy",
       "analyst_total": 18,
-      "analyst_target_mean": 2288.333,
+      "analyst_target_mean": 2288.33,
       "analyst_target_high": 2600.0,
-      "analyst_target_low": 1700.0
+      "analyst_target_low": 1700.0,
+      "analyst_upside_pct": -0.81,
+      "earnings_surprise": [],
+      "revenue_earnings_trend": [],
+      "insider_transactions": [
+        {
+          "date": "2026-03-11",
+          "insider": "Bae Systems Plc",
+          "title": "",
+          "transaction": "",
+          "shares": 99178,
+          "value_usd": 2936759
+        },
+        {
+          "date": "2026-03-10",
+          "insider": "Thompson (Andrea Jayne)",
+          "title": "",
+          "transaction": "",
+          "shares": 20000,
+          "value_usd": 603980
+        },
+        {
+          "date": "2026-02-27",
+          "insider": "Bae Systems Plc",
+          "title": "",
+          "transaction": "",
+          "shares": 103006,
+          "value_usd": 2952873
+        },
+        {
+          "date": "2026-02-24",
+          "insider": "Arseneault (Thomas)",
+          "title": "",
+          "transaction": "",
+          "shares": 268594,
+          "value_usd": 2108194
+        },
+        {
+          "date": "2026-02-24",
+          "insider": "Arseneault (Thomas)",
+          "title": "",
+          "transaction": "",
+          "shares": 195130,
+          "value_usd": 5597694
+        },
+        {
+          "date": "2026-02-24",
+          "insider": "Arseneault (Thomas)",
+          "title": "",
+          "transaction": "",
+          "shares": 352471,
+          "value_usd": 2305512
+        },
+        {
+          "date": "2026-02-24",
+          "insider": "Arseneault (Thomas)",
+          "title": "",
+          "transaction": "",
+          "shares": 272106,
+          "value_usd": 7805904
+        },
+        {
+          "date": "2026-02-24",
+          "insider": "Gelsthorpe (Edward)",
+          "title": "",
+          "transaction": "",
+          "shares": 30000,
+          "value_usd": 864240
+        },
+        {
+          "date": "2026-02-24",
+          "insider": "Phillips (Glyn)",
+          "title": "",
+          "transaction": "",
+          "shares": 67104,
+          "value_usd": 1931320
+        },
+        {
+          "date": "2026-02-24",
+          "insider": "Phillips (Glyn)",
+          "title": "",
+          "transaction": "",
+          "shares": 143723,
+          "value_usd": 4122981
+        }
+      ]
     },
     {
       "ticker": "BESI.AS",
       "name": "BE Semiconductor Industries N.V",
       "isin": "",
       "shares": 0,
-      "timestamp": "2026-03-14T19:35:27.066989",
+      "timestamp": "2026-03-14T20:20:23.728020",
       "price_native": 185.1,
       "prev_close": 174.3,
       "currency": "EUR",
       "change_pct": 6.2,
       "price_eur": 185.1,
       "value_eur": 0.0,
-      "pe_ratio": 110.83833,
-      "pb_ratio": 35.243717,
-      "ps_ratio": 24.663805,
-      "beta": 1.223,
+      "pe_ratio": 110.84,
+      "pb_ratio": 35.24,
+      "ps_ratio": 24.66,
+      "beta": 1.22,
       "market_cap": 14584472576,
       "eps_ttm": 1.67,
       "dividend_yield": 0.85,
-      "roe": 0.28691,
-      "roa": 0.09212,
-      "profit_margin": 0.22262,
-      "debt_to_equity": 125.178,
-      "current_ratio": 5.553,
+      "roe": 0.2869,
+      "roa": 0.0921,
+      "profit_margin": 0.2226,
+      "gross_margin": 0.6329,
+      "ebitda_margin": 0.3109,
+      "debt_to_equity": 125.18,
+      "current_ratio": 5.55,
+      "quick_ratio": 4.84,
+      "free_cashflow": 104007248,
       "revenue_growth": 0.084,
       "earnings_growth": -0.306,
+      "short_ratio": null,
+      "short_pct_float": null,
+      "shares_short": null,
       "52w_high": 200.5,
       "52w_low": 79.62,
       "sector": "Technology",
       "country": "Netherlands",
       "recommendation": "buy",
       "analyst_total": 23,
-      "analyst_target_mean": 186.1739,
+      "analyst_target_mean": 186.17,
       "analyst_target_high": 238.0,
-      "analyst_target_low": 105.0
+      "analyst_target_low": 105.0,
+      "analyst_upside_pct": 0.58,
+      "earnings_surprise": [
+        {
+          "period": "",
+          "eps_estimate": 0.395,
+          "eps_actual": 0.4,
+          "surprise_pct": 1.3,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 0.458,
+          "eps_actual": 0.4,
+          "surprise_pct": -12.6,
+          "beat": false
+        },
+        {
+          "period": "",
+          "eps_estimate": 0.314,
+          "eps_actual": 0.32,
+          "surprise_pct": 1.9,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 0.511,
+          "eps_actual": 0.54,
+          "surprise_pct": 5.7,
+          "beat": true
+        }
+      ],
+      "revenue_earnings_trend": [
+        {
+          "period": "2024-12-31",
+          "revenue": 153413000,
+          "net_income": 59294000
+        },
+        {
+          "period": "2025-03-31",
+          "revenue": 144145000,
+          "net_income": 31506000
+        },
+        {
+          "period": "2025-06-30",
+          "revenue": 148101000,
+          "net_income": 32050000
+        },
+        {
+          "period": "2025-12-31",
+          "revenue": 166354000,
+          "net_income": 42805000
+        }
+      ],
+      "insider_transactions": []
     },
     {
       "ticker": "ASM.AS",
       "name": "ASM International N.V.",
       "isin": "",
       "shares": 0,
-      "timestamp": "2026-03-14T19:35:27.437177",
+      "timestamp": "2026-03-14T20:20:24.445803",
       "price_native": 686.0,
       "prev_close": 697.4,
       "currency": "EUR",
       "change_pct": -1.63,
       "price_eur": 686.0,
       "value_eur": 0.0,
-      "pe_ratio": 46.730244,
-      "pb_ratio": 8.37106,
-      "ps_ratio": 10.614279,
+      "pe_ratio": 46.73,
+      "pb_ratio": 8.37,
+      "ps_ratio": 10.61,
       "beta": 1.46,
       "market_cap": 33681227776,
       "eps_ttm": 14.68,
       "dividend_yield": 0.47,
-      "roe": 0.18669,
-      "roa": 0.112849995,
-      "profit_margin": 0.22806999,
-      "debt_to_equity": 1.945,
-      "current_ratio": 2.253,
+      "roe": 0.1867,
+      "roa": 0.1128,
+      "profit_margin": 0.2281,
+      "gross_margin": 0.518,
+      "ebitda_margin": 0.3391,
+      "debt_to_equity": 1.95,
+      "current_ratio": 2.25,
+      "quick_ratio": 1.64,
+      "free_cashflow": 420212512,
       "revenue_growth": -0.137,
       "earnings_growth": -0.263,
+      "short_ratio": null,
+      "short_pct_float": null,
+      "shares_short": null,
       "52w_high": 759.4,
       "52w_low": 333.3,
       "sector": "Technology",
@@ -562,50 +1508,246 @@
       "analyst_total": 20,
       "analyst_target_mean": 802.5,
       "analyst_target_high": 950.0,
-      "analyst_target_low": 600.0
+      "analyst_target_low": 600.0,
+      "analyst_upside_pct": 16.98,
+      "earnings_surprise": [
+        {
+          "period": "",
+          "eps_estimate": 4.032,
+          "eps_actual": 3.908,
+          "surprise_pct": -3.1,
+          "beat": false
+        },
+        {
+          "period": "",
+          "eps_estimate": 4.163,
+          "eps_actual": 3.504,
+          "surprise_pct": -15.8,
+          "beat": false
+        },
+        {
+          "period": "",
+          "eps_estimate": 3.756,
+          "eps_actual": 4.199,
+          "surprise_pct": 11.8,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 3.056,
+          "eps_actual": 3.453,
+          "surprise_pct": 13.0,
+          "beat": true
+        }
+      ],
+      "revenue_earnings_trend": [
+        {
+          "period": "2024-12-31",
+          "revenue": 809000000,
+          "net_income": 225700000
+        },
+        {
+          "period": "2025-03-31",
+          "revenue": 839200000,
+          "net_income": -28900000
+        },
+        {
+          "period": "2025-06-30",
+          "revenue": 835600000,
+          "net_income": 202400000
+        },
+        {
+          "period": "2025-12-31",
+          "revenue": 698300000,
+          "net_income": 166000000
+        }
+      ],
+      "insider_transactions": []
     },
     {
       "ticker": "CAT",
       "name": "Caterpillar, Inc.",
       "isin": "US1491231015",
       "shares": 0,
-      "timestamp": "2026-03-14T19:35:27.772049",
+      "timestamp": "2026-03-14T20:20:25.348821",
       "price_native": 693.99,
       "prev_close": 702.0,
       "currency": "USD",
       "change_pct": -1.14,
       "price_eur": 607.52,
       "value_eur": 0.0,
-      "pe_ratio": 36.894737,
-      "pb_ratio": 15.146997,
-      "ps_ratio": 4.8051186,
-      "beta": 1.531,
+      "pe_ratio": 36.89,
+      "pb_ratio": 15.15,
+      "ps_ratio": 4.81,
+      "beta": 1.53,
       "market_cap": 324773150720,
       "eps_ttm": 18.81,
       "dividend_yield": 0.87,
-      "roe": 0.43526,
-      "roa": 0.07891,
-      "profit_margin": 0.13144,
+      "roe": 0.4353,
+      "roa": 0.0789,
+      "profit_margin": 0.1314,
+      "gross_margin": 0.2879,
+      "ebitda_margin": 0.2066,
       "debt_to_equity": 206.67,
-      "current_ratio": 1.436,
+      "current_ratio": 1.44,
+      "quick_ratio": 0.87,
+      "free_cashflow": 5838750208,
       "revenue_growth": 0.18,
       "earnings_growth": -0.114,
+      "short_ratio": 2.47,
+      "short_pct_float": 0.0179,
+      "shares_short": 8302639,
       "52w_high": 789.81,
       "52w_low": 267.3,
       "sector": "Industrials",
       "country": "United States",
       "recommendation": "buy",
       "analyst_total": 26,
-      "analyst_target_mean": 736.21387,
+      "analyst_target_mean": 736.21,
       "analyst_target_high": 877.52,
-      "analyst_target_low": 425.0
+      "analyst_target_low": 425.0,
+      "analyst_upside_pct": 6.08,
+      "earnings_surprise": [
+        {
+          "period": "",
+          "eps_estimate": 4.345,
+          "eps_actual": 4.25,
+          "surprise_pct": -2.2,
+          "beat": false
+        },
+        {
+          "period": "",
+          "eps_estimate": 4.903,
+          "eps_actual": 4.72,
+          "surprise_pct": -3.7,
+          "beat": false
+        },
+        {
+          "period": "",
+          "eps_estimate": 4.523,
+          "eps_actual": 4.95,
+          "surprise_pct": 9.4,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 4.712,
+          "eps_actual": 5.16,
+          "surprise_pct": 9.5,
+          "beat": true
+        }
+      ],
+      "revenue_earnings_trend": [
+        {
+          "period": "2025-03-31",
+          "revenue": 14249000000,
+          "net_income": 2003000000
+        },
+        {
+          "period": "2025-06-30",
+          "revenue": 16569000000,
+          "net_income": 2179000000
+        },
+        {
+          "period": "2025-09-30",
+          "revenue": 17638000000,
+          "net_income": 2300000000
+        },
+        {
+          "period": "2025-12-31",
+          "revenue": 19133000000,
+          "net_income": 2402000000
+        }
+      ],
+      "insider_transactions": [
+        {
+          "date": "2026-03-05",
+          "insider": "CREED JOSEPH E",
+          "title": "Chief Executive Offi",
+          "transaction": "",
+          "shares": 2500,
+          "value_usd": 1797317
+        },
+        {
+          "date": "2026-03-02",
+          "insider": "DE LANGE BOB",
+          "title": "Officer",
+          "transaction": "",
+          "shares": 1650,
+          "value_usd": 0
+        },
+        {
+          "date": "2026-03-02",
+          "insider": "PAMBIANCHI CHRISTINE MICHAEL",
+          "title": "Officer",
+          "transaction": "",
+          "shares": 1155,
+          "value_usd": 0
+        },
+        {
+          "date": "2026-03-02",
+          "insider": "JOHNSON DENISE C.",
+          "title": "Officer",
+          "transaction": "",
+          "shares": 1650,
+          "value_usd": 0
+        },
+        {
+          "date": "2026-03-02",
+          "insider": "KAISER JASON",
+          "title": "Officer",
+          "transaction": "",
+          "shares": 1650,
+          "value_usd": 0
+        },
+        {
+          "date": "2026-03-02",
+          "insider": "OWENS DEREK",
+          "title": "General Counsel",
+          "transaction": "",
+          "shares": 1386,
+          "value_usd": 0
+        },
+        {
+          "date": "2026-03-02",
+          "insider": "SHURMAN RODNEY MICHAEL",
+          "title": "Officer",
+          "transaction": "",
+          "shares": 1320,
+          "value_usd": 0
+        },
+        {
+          "date": "2026-03-02",
+          "insider": "CREED JOSEPH E",
+          "title": "Chief Executive Offi",
+          "transaction": "",
+          "shares": 4950,
+          "value_usd": 0
+        },
+        {
+          "date": "2026-03-02",
+          "insider": "SCHAUPP WILLIAM E",
+          "title": "Officer",
+          "transaction": "",
+          "shares": 102,
+          "value_usd": 0
+        },
+        {
+          "date": "2026-03-02",
+          "insider": "BONFIELD ANDREW ROBERT JOHN",
+          "title": "Chief Financial Offi",
+          "transaction": "",
+          "shares": 1749,
+          "value_usd": 0
+        }
+      ]
     },
     {
       "ticker": "IBE.MC",
       "name": "ACCIONES IBERDROLA",
       "isin": "ES0144580Y14",
       "shares": 0,
-      "timestamp": "2026-03-14T19:35:28.259608",
+      "timestamp": "2026-03-14T20:20:26.262237",
       "price_native": 19.805,
       "prev_close": 19.535,
       "currency": "EUR",
@@ -613,91 +1755,280 @@
       "price_eur": 19.81,
       "value_eur": 0.0,
       "pe_ratio": 23.3,
-      "pb_ratio": 2.6093545,
-      "ps_ratio": 3.0365536,
-      "beta": 0.651,
+      "pb_ratio": 2.61,
+      "ps_ratio": 3.04,
+      "beta": 0.65,
       "market_cap": 133839134720,
       "eps_ttm": 0.85,
       "dividend_yield": 3.34,
-      "roe": 0.10325,
-      "roa": 0.039100002,
-      "profit_margin": 0.14259,
-      "debt_to_equity": 93.674,
-      "current_ratio": 0.874,
+      "roe": 0.1032,
+      "roa": 0.0391,
+      "profit_margin": 0.1426,
+      "gross_margin": 0.5456,
+      "ebitda_margin": 0.3335,
+      "debt_to_equity": 93.67,
+      "current_ratio": 0.87,
+      "quick_ratio": 0.64,
+      "free_cashflow": -1719250048,
       "revenue_growth": 0.005,
       "earnings_growth": 5.598,
+      "short_ratio": null,
+      "short_pct_float": null,
+      "shares_short": null,
       "52w_high": 20.38,
       "52w_low": 13.91,
       "sector": "Utilities",
       "country": "Spain",
       "recommendation": "hold",
       "analyst_total": 22,
-      "analyst_target_mean": 18.75909,
+      "analyst_target_mean": 18.76,
       "analyst_target_high": 22.2,
-      "analyst_target_low": 14.5
+      "analyst_target_low": 14.5,
+      "analyst_upside_pct": -5.28,
+      "earnings_surprise": [
+        {
+          "period": "",
+          "eps_estimate": 0.27,
+          "eps_actual": 0.302,
+          "surprise_pct": 11.9,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 0.23,
+          "eps_actual": 0.233,
+          "surprise_pct": 1.3,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 0.22,
+          "eps_actual": 0.239,
+          "surprise_pct": 8.6,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 0.14,
+          "eps_actual": 0.151,
+          "surprise_pct": 8.1,
+          "beat": true
+        }
+      ],
+      "revenue_earnings_trend": [],
+      "insider_transactions": []
     },
     {
       "ticker": "SNDK",
       "name": "Sandisk Corporation",
       "isin": "US80004C1018",
       "shares": 0,
-      "timestamp": "2026-03-14T19:35:28.694810",
+      "timestamp": "2026-03-14T20:20:27.161170",
       "price_native": 661.62,
       "prev_close": 615.01,
       "currency": "USD",
       "change_pct": 7.58,
       "price_eur": 579.18,
       "value_eur": 0.0,
-      "pe_ratio": 7.6915307,
-      "pb_ratio": 9.587723,
-      "ps_ratio": 10.936919,
+      "pe_ratio": 7.69,
+      "pb_ratio": 9.59,
+      "ps_ratio": 10.94,
       "beta": null,
       "market_cap": 97655758848,
       "eps_ttm": -7.48,
       "dividend_yield": null,
-      "roe": -0.09372,
-      "roa": 0.05866,
-      "profit_margin": -0.11659,
+      "roe": -0.0937,
+      "roa": 0.0587,
+      "profit_margin": -0.1166,
+      "gross_margin": 0.3481,
+      "ebitda_margin": 0.1596,
       "debt_to_equity": 7.96,
-      "current_ratio": 3.114,
+      "current_ratio": 3.11,
+      "quick_ratio": 1.73,
+      "free_cashflow": 1251500032,
       "revenue_growth": 0.612,
       "earnings_growth": 6.18,
+      "short_ratio": 0.38,
+      "short_pct_float": 0.0903,
+      "shares_short": 8519014,
       "52w_high": 725.0,
-      "52w_low": 27.885,
+      "52w_low": 27.89,
       "sector": "Technology",
       "country": "United States",
       "recommendation": "buy",
       "analyst_total": 19,
-      "analyst_target_mean": 761.1053,
+      "analyst_target_mean": 761.11,
       "analyst_target_high": 1000.0,
-      "analyst_target_low": 600.0
+      "analyst_target_low": 600.0,
+      "analyst_upside_pct": 15.04,
+      "earnings_surprise": [
+        {
+          "period": "",
+          "eps_estimate": -0.387,
+          "eps_actual": -0.3,
+          "surprise_pct": 22.4,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 0.033,
+          "eps_actual": 0.29,
+          "surprise_pct": 771.1,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 0.891,
+          "eps_actual": 1.22,
+          "surprise_pct": 36.9,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 3.543,
+          "eps_actual": 6.2,
+          "surprise_pct": 75.0,
+          "beat": true
+        }
+      ],
+      "revenue_earnings_trend": [
+        {
+          "period": "2025-03-31",
+          "revenue": 1695000000,
+          "net_income": -1933000000
+        },
+        {
+          "period": "2025-06-30",
+          "revenue": 1901000000,
+          "net_income": -23000000
+        },
+        {
+          "period": "2025-09-30",
+          "revenue": 2308000000,
+          "net_income": 112000000
+        },
+        {
+          "period": "2025-12-31",
+          "revenue": 3025000000,
+          "net_income": 803000000
+        }
+      ],
+      "insider_transactions": [
+        {
+          "date": "2026-03-03",
+          "insider": "CAULFIELD THOMAS",
+          "title": "Director",
+          "transaction": "",
+          "shares": 14500,
+          "value_usd": 0
+        },
+        {
+          "date": "2026-02-25",
+          "insider": "SUZUKI MIYUKI",
+          "title": "Director",
+          "transaction": "",
+          "shares": 3500,
+          "value_usd": 2196360
+        },
+        {
+          "date": "2025-12-30",
+          "insider": "BRADLEY ALEXANDER R.",
+          "title": "Director",
+          "transaction": "",
+          "shares": 863,
+          "value_usd": 0
+        },
+        {
+          "date": "2025-12-03",
+          "insider": "SAYINER NECIP",
+          "title": "Director",
+          "transaction": "",
+          "shares": 1271,
+          "value_usd": 248027
+        },
+        {
+          "date": "2025-11-18",
+          "insider": "SAYINER NECIP",
+          "title": "Director",
+          "transaction": "",
+          "shares": 979,
+          "value_usd": 0
+        },
+        {
+          "date": "2025-11-18",
+          "insider": "CAULFIELD THOMAS",
+          "title": "Director",
+          "transaction": "",
+          "shares": 979,
+          "value_usd": 0
+        },
+        {
+          "date": "2025-11-18",
+          "insider": "KUMAR DEVINDER",
+          "title": "Director",
+          "transaction": "",
+          "shares": 979,
+          "value_usd": 0
+        },
+        {
+          "date": "2025-11-18",
+          "insider": "SHOOK ELLYN J",
+          "title": "Director",
+          "transaction": "",
+          "shares": 979,
+          "value_usd": 0
+        },
+        {
+          "date": "2025-11-18",
+          "insider": "SUZUKI MIYUKI",
+          "title": "Director",
+          "transaction": "",
+          "shares": 979,
+          "value_usd": 0
+        },
+        {
+          "date": "2025-11-18",
+          "insider": "CASSIDY RICHARD B II",
+          "title": "Director",
+          "transaction": "",
+          "shares": 1143,
+          "value_usd": 0
+        }
+      ]
     },
     {
       "ticker": "SMHN.DE",
       "name": "SUSS MicroTec SE              N",
       "isin": "DE000A1K0235",
       "shares": 0,
-      "timestamp": "2026-03-14T19:35:28.988821",
+      "timestamp": "2026-03-14T20:20:27.860590",
       "price_native": 60.0,
       "prev_close": 58.3,
       "currency": "EUR",
       "change_pct": 2.92,
       "price_eur": 60.0,
       "value_eur": 0.0,
-      "pe_ratio": 20.338984,
-      "pb_ratio": 3.7728732,
-      "ps_ratio": 2.1426532,
-      "beta": 2.074,
+      "pe_ratio": 20.34,
+      "pb_ratio": 3.77,
+      "ps_ratio": 2.14,
+      "beta": 2.07,
       "market_cap": 1146932352,
       "eps_ttm": 2.95,
       "dividend_yield": 0.5,
-      "roe": 0.19939,
-      "roa": 0.11282,
-      "profit_margin": 0.099020004,
-      "debt_to_equity": 16.607,
-      "current_ratio": 2.919,
+      "roe": 0.1994,
+      "roa": 0.1128,
+      "profit_margin": 0.099,
+      "gross_margin": 0.3857,
+      "ebitda_margin": 0.1802,
+      "debt_to_equity": 16.61,
+      "current_ratio": 2.92,
+      "quick_ratio": 1.35,
+      "free_cashflow": -35706624,
       "revenue_growth": 0.151,
       "earnings_growth": -0.294,
+      "short_ratio": null,
+      "short_pct_float": null,
+      "shares_short": null,
       "52w_high": 63.0,
       "52w_low": 24.0,
       "sector": "Technology",
@@ -706,14 +2037,68 @@
       "analyst_total": 8,
       "analyst_target_mean": 56.0,
       "analyst_target_high": 65.0,
-      "analyst_target_low": 37.0
+      "analyst_target_low": 37.0,
+      "analyst_upside_pct": -6.67,
+      "earnings_surprise": [
+        {
+          "period": "",
+          "eps_estimate": 1.19,
+          "eps_actual": 0.87,
+          "surprise_pct": -26.9,
+          "beat": false
+        },
+        {
+          "period": "",
+          "eps_estimate": 0.696,
+          "eps_actual": 0.78,
+          "surprise_pct": 12.1,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 0.725,
+          "eps_actual": 0.82,
+          "surprise_pct": 13.1,
+          "beat": true
+        },
+        {
+          "period": "",
+          "eps_estimate": 0.551,
+          "eps_actual": 0.48,
+          "surprise_pct": -12.9,
+          "beat": false
+        }
+      ],
+      "revenue_earnings_trend": [
+        {
+          "period": "2024-12-31",
+          "revenue": 150890000,
+          "net_income": 16587000
+        },
+        {
+          "period": "2025-03-31",
+          "revenue": 123193000,
+          "net_income": 14959000
+        },
+        {
+          "period": "2025-06-30",
+          "revenue": 143242000,
+          "net_income": 12274000
+        },
+        {
+          "period": "2025-09-30",
+          "revenue": 117962000,
+          "net_income": 9183000
+        }
+      ],
+      "insider_transactions": []
     },
     {
       "ticker": "SPYY.DE",
       "name": "SPDR MSCI ACW UCITS ETF       R",
       "isin": "IE00B44Z5B48",
       "shares": 47,
-      "timestamp": "2026-03-14T19:35:29.318001",
+      "timestamp": "2026-03-14T20:20:28.524838",
       "price_native": 249.4,
       "prev_close": 249.85,
       "currency": "EUR",
@@ -730,10 +2115,17 @@
       "roe": null,
       "roa": null,
       "profit_margin": null,
+      "gross_margin": null,
+      "ebitda_margin": null,
       "debt_to_equity": null,
       "current_ratio": null,
+      "quick_ratio": null,
+      "free_cashflow": null,
       "revenue_growth": null,
       "earnings_growth": null,
+      "short_ratio": null,
+      "short_pct_float": null,
+      "shares_short": null,
       "52w_high": 257.25,
       "52w_low": 182.56,
       "sector": "",
@@ -741,21 +2133,25 @@
       "analyst_total": 0,
       "analyst_target_mean": null,
       "analyst_target_high": null,
-      "analyst_target_low": null
+      "analyst_target_low": null,
+      "analyst_upside_pct": null,
+      "earnings_surprise": [],
+      "revenue_earnings_trend": [],
+      "insider_transactions": []
     },
     {
       "ticker": "EUNK.DE",
       "name": "iShsIII-C.MSCI Eu.U.E.EUR Acc R",
       "isin": "IE00B4K48X80",
       "shares": 83,
-      "timestamp": "2026-03-14T19:35:29.635802",
+      "timestamp": "2026-03-14T20:20:29.508480",
       "price_native": 94.86,
       "prev_close": 95.32,
       "currency": "EUR",
       "change_pct": -0.48,
       "price_eur": 94.86,
       "value_eur": 7873.38,
-      "pe_ratio": 18.37337,
+      "pe_ratio": 18.37,
       "pb_ratio": null,
       "ps_ratio": null,
       "beta": null,
@@ -765,10 +2161,17 @@
       "roe": null,
       "roa": null,
       "profit_margin": null,
+      "gross_margin": null,
+      "ebitda_margin": null,
       "debt_to_equity": null,
       "current_ratio": null,
+      "quick_ratio": null,
+      "free_cashflow": null,
       "revenue_growth": null,
       "earnings_growth": null,
+      "short_ratio": null,
+      "short_pct_float": null,
+      "shares_short": null,
       "52w_high": 101.1,
       "52w_low": 72.15,
       "sector": "",
@@ -776,14 +2179,18 @@
       "analyst_total": 0,
       "analyst_target_mean": null,
       "analyst_target_high": null,
-      "analyst_target_low": null
+      "analyst_target_low": null,
+      "analyst_upside_pct": null,
+      "earnings_surprise": [],
+      "revenue_earnings_trend": [],
+      "insider_transactions": []
     },
     {
       "ticker": "QDVE.DE",
       "name": "iShsV-S&P 500 Inf.Te.Sec.U.ETFR",
       "isin": "IE00B3WJKG14",
       "shares": 84,
-      "timestamp": "2026-03-14T19:35:29.921325",
+      "timestamp": "2026-03-14T20:20:30.285930",
       "price_native": 34.25,
       "prev_close": 34.515,
       "currency": "EUR",
@@ -800,10 +2207,17 @@
       "roe": null,
       "roa": null,
       "profit_margin": null,
+      "gross_margin": null,
+      "ebitda_margin": null,
       "debt_to_equity": null,
       "current_ratio": null,
+      "quick_ratio": null,
+      "free_cashflow": null,
       "revenue_growth": null,
       "earnings_growth": null,
+      "short_ratio": null,
+      "short_pct_float": null,
+      "shares_short": null,
       "52w_high": 38.54,
       "52w_low": 22.1,
       "sector": "",
@@ -811,14 +2225,18 @@
       "analyst_total": 0,
       "analyst_target_mean": null,
       "analyst_target_high": null,
-      "analyst_target_low": null
+      "analyst_target_low": null,
+      "analyst_upside_pct": null,
+      "earnings_surprise": [],
+      "revenue_earnings_trend": [],
+      "insider_transactions": []
     },
     {
       "ticker": "IS3N.DE",
       "name": "iShs Core MSCI EM IMI U.ETF   R",
       "isin": "IE00BKM4GZ66",
       "shares": 18,
-      "timestamp": "2026-03-14T19:35:30.214059",
+      "timestamp": "2026-03-14T20:20:31.072814",
       "price_native": 40.743,
       "prev_close": 40.673,
       "currency": "EUR",
@@ -835,21 +2253,32 @@
       "roe": null,
       "roa": null,
       "profit_margin": null,
+      "gross_margin": null,
+      "ebitda_margin": null,
       "debt_to_equity": null,
       "current_ratio": null,
+      "quick_ratio": null,
+      "free_cashflow": null,
       "revenue_growth": null,
       "earnings_growth": null,
-      "52w_high": 44.182,
+      "short_ratio": null,
+      "short_pct_float": null,
+      "shares_short": null,
+      "52w_high": 44.18,
       "52w_low": 27.8,
       "sector": "",
       "country": "",
       "analyst_total": 0,
       "analyst_target_mean": null,
       "analyst_target_high": null,
-      "analyst_target_low": null
+      "analyst_target_low": null,
+      "analyst_upside_pct": null,
+      "earnings_surprise": [],
+      "revenue_earnings_trend": [],
+      "insider_transactions": []
     }
   ],
   "total_eur": 30785.09,
-  "updated": "2026-03-14T19:35:30.484016",
+  "updated": "2026-03-14T20:20:31.889937",
   "count": 26
 }
