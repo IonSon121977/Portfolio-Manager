@@ -1,12 +1,14 @@
 name: Deploy Pages
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'docs/**/*.html'
-      - 'docs/**/*.css'
-      - 'docs/**/*.js'
-      - 'docs/index.html'
+  workflow_run:
+    workflows:
+      - "Price Digest"
+      - "Movement Check"
+      - "Intelligence"
+      - "Saturday Weekly Summary"
+      - "Fundamentals Update"
+    types:
+      - completed
   workflow_dispatch: {}
 permissions:
   contents: read
