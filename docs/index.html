@@ -156,8 +156,47 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
 ::-webkit-scrollbar{width:5px;height:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
 @media(max-width:760px){.page{padding:14px}.cg{grid-template-columns:1fr}nav{padding:0 14px}header{padding:0 14px}.stats{grid-template-columns:repeat(2,1fr)}}
 </style>
+
+<style>
+#login-overlay {
+  position:fixed;inset:0;background:#0d1117;display:flex;align-items:center;
+  justify-content:center;z-index:9999;
+}
+#login-box {
+  background:#161b22;border:1px solid #21293a;border-radius:14px;
+  padding:40px 48px;width:100%;max-width:360px;text-align:center;
+}
+#login-box h2 {
+  font-family:'Space Grotesk',sans-serif;font-size:20px;color:#f0f2f5;
+  margin:0 0 6px;
+}
+#login-box p {
+  color:#7d8fa8;font-size:12px;margin:0 0 28px;
+}
+#login-box input {
+  width:100%;margin-bottom:14px;font-size:15px;letter-spacing:2px;
+  text-align:center;
+}
+#login-box button {
+  width:100%;padding:11px;font-size:14px;font-weight:600;
+}
+#login-error {
+  color:#f56565;font-size:12px;margin-top:10px;min-height:18px;
+}
+</style>
 </head>
 <body>
+
+<div id="login-overlay">
+  <div id="login-box">
+    <h2>Portfolio Intelligence</h2>
+    <p>Enter password to continue</p>
+    <input type="password" id="login-input" placeholder="Password"
+      onkeydown="if(event.key==='Enter')doLogin()">
+    <button class="btn" onclick="doLogin()">Unlock</button>
+    <div id="login-error"></div>
+  </div>
+</div>
 
 <header>
   <div class="brand"><span class="brand-p">Portfolio</span> <span class="brand-i">Intelligence</span></div>
@@ -1158,7 +1197,35 @@ function scExport(fmt) {
   } else if (fmt === 'html') {
     const hdr = Object.keys(rows[0]).map(k=>`<th>${k}</th>`).join('');
     const body = rows.map(r=>'<tr>'+Object.values(r).map(v=>`<td>${v??''}</td>`).join('')+'</tr>').join('');
-    const content = `<!DOCTYPE html><html><head><title>Stock Scores</title><style>body{font-family:Arial,sans-serif;padding:20px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #ddd;padding:8px;text-align:left}th{background:#4f9ef8;color:#fff}tr:nth-child(even){background:#f5f5f5}</style></head><body><h1>Stock Scores — ${date}</h1><table><thead><tr>${hdr}</tr></thead><tbody>${body}</tbody></table></body></html>`;
+    const content = `<!DOCTYPE html><html><head><title>Stock Scores</title><style>body{font-family:Arial,sans-serif;padding:20px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #ddd;padding:8px;text-align:left}th{background:#4f9ef8;color:#fff}tr:nth-child(even){background:#f5f5f5}</style>
+<style>
+#login-overlay {
+  position:fixed;inset:0;background:#0d1117;display:flex;align-items:center;
+  justify-content:center;z-index:9999;
+}
+#login-box {
+  background:#161b22;border:1px solid #21293a;border-radius:14px;
+  padding:40px 48px;width:100%;max-width:360px;text-align:center;
+}
+#login-box h2 {
+  font-family:'Space Grotesk',sans-serif;font-size:20px;color:#f0f2f5;
+  margin:0 0 6px;
+}
+#login-box p {
+  color:#7d8fa8;font-size:12px;margin:0 0 28px;
+}
+#login-box input {
+  width:100%;margin-bottom:14px;font-size:15px;letter-spacing:2px;
+  text-align:center;
+}
+#login-box button {
+  width:100%;padding:11px;font-size:14px;font-weight:600;
+}
+#login-error {
+  color:#f56565;font-size:12px;margin-top:10px;min-height:18px;
+}
+</style>
+</head><body><h1>Stock Scores — ${date}</h1><table><thead><tr>${hdr}</tr></thead><tbody>${body}</tbody></table></body></html>`;
     blob = new Blob([content],{type:'text/html'});
     filename = `stocks_scores_${date}.html`;
   } else if (fmt === 'pdf') {
@@ -1205,8 +1272,36 @@ function toast(msg,type='ok'){
   setTimeout(()=>el.classList.remove('show'),3500);
 }
 
+
+// ── LOGIN ─────────────────────────────────────────────────────────────────────
+const _PW = 'igps';
+function doLogin() {
+  const val = document.getElementById('login-input').value;
+  if (val === _PW) {
+    sessionStorage.setItem('auth', '1');
+    document.getElementById('login-overlay').style.display = 'none';
+    reload();
+  } else {
+    const err = document.getElementById('login-error');
+    err.textContent = 'Incorrect password';
+    document.getElementById('login-input').value = '';
+    document.getElementById('login-input').focus();
+    setTimeout(() => err.textContent = '', 2000);
+  }
+}
+function checkAuth() {
+  if (sessionStorage.getItem('auth') === '1') {
+    document.getElementById('login-overlay').style.display = 'none';
+  } else {
+    // Don't auto-load data until logged in
+    return false;
+  }
+  return true;
+}
+
 // ── INIT ─────────────────────────────────────────────────────────────────────
-reload();
+if (checkAuth()) reload();
+setTimeout(() => { document.getElementById("login-input")?.focus(); }, 100);
 </script>
 </body>
 </html>
