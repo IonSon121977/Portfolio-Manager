@@ -1,7 +1,7 @@
-name: Movement Alerts
+name: Movement & Intelligence
 on:
   schedule:
-    - cron: '41 7  * * 1-5'   # 08:45 CET (UTC+1)
+    - cron: '41 7  * * 1-5'   # 08:45 CET
     - cron: '41 9  * * 1-5'   # 11:00 CET
     - cron: '41 11 * * 1-5'   # 13:00 CET
     - cron: '41 14 * * 1-5'   # 15:45 CET
@@ -11,7 +11,7 @@ on:
 permissions:
   contents: write
 jobs:
-  movement-check:
+  checks:
     runs-on: ubuntu-latest
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -23,7 +23,8 @@ jobs:
         with:
           python-version: '3.11'
           cache: 'pip'
-      - run: pip install requests yfinance mstarpy
+      - name: Install dependencies
+        run: pip install requests yfinance
       - name: Run movement check
         env:
           EMAIL_FROM:     ${{ secrets.EMAIL_FROM }}
@@ -31,10 +32,16 @@ jobs:
           EMAIL_TO:       ${{ secrets.EMAIL_TO }}
           DIGEST_MODE:    "movement"
         run: python scripts/price_digest.py
+      - name: Run intelligence check
+        env:
+          EMAIL_FROM:     ${{ secrets.EMAIL_FROM }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_TO:       ${{ secrets.EMAIL_TO }}
+        run: python scripts/intelligence.py
       - name: Commit data
         run: |
           git config user.name  "Portfolio Bot"
           git config user.email "portfolio-bot@users.noreply.github.com"
           git add docs/data/ portfolio_config.json
-          git diff --staged --quiet || git commit -m "[MOVE] Movement check $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git diff --staged --quiet || git commit -m "[CHECK] Movement + Intelligence $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push
