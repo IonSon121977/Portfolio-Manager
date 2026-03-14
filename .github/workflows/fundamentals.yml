@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: '3.11'
           cache: 'pip'
-      - run: pip install requests yfinance mstarpy
+      - run: pip install requests yfinance
       - name: Run fundamentals update
         run: python scripts/fundamentals.py
       - name: Commit fundamentals
