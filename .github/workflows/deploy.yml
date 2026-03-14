@@ -2,11 +2,11 @@ name: Deploy Pages
 on:
   workflow_run:
     workflows:
-      - "Price Digest"
-      - "Movement Check"
-      - "Intelligence"
+      - "Price Digest (08:15 CET)"
+      - "Movement Analyst Alerts"
+      - "Intelligence Check (Ratings)"
+      - "Fundamentals Update (every 2h, 08-18 CET)"
       - "Saturday Weekly Summary"
-      - "Fundamentals Update"
     types:
       - completed
   workflow_dispatch: {}
