@@ -168,6 +168,15 @@ def get_stock_data(holding: dict, _ignored: str = "") -> dict:
             out["eps_ttm"]        = info.get("trailingEps")
             out["dividend_yield"] = info.get("dividendYield")
             out["market_cap"]     = info.get("marketCap")
+            out["pb_ratio"]        = info.get("priceToBook")
+            out["ps_ratio"]        = info.get("priceToSalesTrailing12Months")
+            out["roe"]             = info.get("returnOnEquity")
+            out["roa"]             = info.get("returnOnAssets")
+            out["debt_to_equity"]  = info.get("debtToEquity")
+            out["current_ratio"]   = info.get("currentRatio")
+            out["profit_margin"]   = info.get("profitMargins")
+            out["revenue_growth"]  = info.get("revenueGrowth")
+            out["earnings_growth"] = info.get("earningsGrowth")
 
             rec_key = info.get("recommendationKey", "")
             if rec_key:
