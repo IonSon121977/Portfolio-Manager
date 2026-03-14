@@ -210,6 +210,7 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
 <nav>
   <div class="tab on"    onclick="go('dashboard',this)">Dashboard</div>
   <div class="tab"       onclick="go('scores',this)">📊 Stock Scores</div>
+  <div class="tab"       onclick="go('market',this)">🌍 Market Intelligence</div>
   <div class="tab intel" onclick="go('intelligence',this)">🧠 Intelligence</div>
   <div class="tab"       onclick="go('etf',this)">ETF Holdings</div>
   <div class="tab"       onclick="go('alerts',this)">Alerts <span id="ac"></span></div>
@@ -348,6 +349,94 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
       <button class="btn bg sm" onclick="document.getElementById('sc-breakdown').style.display='none'">✕ Close</button>
     </div>
     <div id="sc-bd-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px"></div>
+  </div>
+</div>
+
+<!-- MARKET INTELLIGENCE -->
+<div class="page" id="pg-market">
+  <div class="sh">
+    <div class="st" style="color:var(--accent)">🌍 Market Intelligence</div>
+    <div class="bdg" id="mi-updated">—</div>
+  </div>
+
+  <!-- Composite Sentiment Gauge -->
+  <div style="background:var(--s1);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:20px">
+    <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px">
+      Composite Market Sentiment — European Focus
+    </div>
+    <div style="display:flex;align-items:center;gap:32px;flex-wrap:wrap">
+      <!-- Score circle -->
+      <div style="text-align:center;flex-shrink:0">
+        <div id="mi-score-circle" style="width:100px;height:100px;border-radius:50%;border:4px solid var(--border);display:flex;align-items:center;justify-content:center;flex-direction:column;margin:0 auto 8px">
+          <div id="mi-score-num" style="font-size:28px;font-weight:700;font-family:var(--fh)">—</div>
+          <div style="font-size:9px;color:var(--muted)">/100</div>
+        </div>
+        <div id="mi-score-label" style="font-size:13px;font-weight:600">—</div>
+      </div>
+      <!-- Gauge bar -->
+      <div style="flex:1;min-width:200px">
+        <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--muted);margin-bottom:6px">
+          <span>Extreme Fear</span><span>Fear</span><span>Neutral</span><span>Greed</span><span>Extreme Greed</span>
+        </div>
+        <div style="position:relative;height:14px;border-radius:7px;background:linear-gradient(to right,#c0392b,#f56565,#f6ad55,#a8d68a,#52d68a);overflow:visible;margin-bottom:10px">
+          <div id="mi-gauge-needle" style="position:absolute;top:-4px;width:4px;height:22px;background:var(--text);border-radius:2px;transform:translateX(-50%);left:50%;transition:left 0.6s ease"></div>
+        </div>
+        <div id="mi-score-desc" style="font-size:11px;color:var(--muted);line-height:1.6">Loading sentiment data…</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 Indicator Cards -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:20px" id="mi-indicators"></div>
+
+  <!-- Per-stock data -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;flex-wrap:wrap" id="mi-stock-grid">
+
+    <!-- Analyst Upside -->
+    <div class="cb2">
+      <h3>🎯 Analyst Price Targets</h3>
+      <p style="color:var(--muted);font-size:11px;margin-bottom:12px">Upside/downside % from current price to analyst mean target</p>
+      <div class="tbox"><table>
+        <thead><tr>
+          <th>Ticker</th><th>Price EUR</th><th>Target EUR</th><th>Upside %</th><th>Analysts</th>
+        </tr></thead>
+        <tbody id="tb-upside"><tr><td colspan="5" class="empty">Loading…</td></tr></tbody>
+      </table></div>
+    </div>
+
+    <!-- Short Interest -->
+    <div class="cb2">
+      <h3>⚠ Short Interest</h3>
+      <p style="color:var(--muted);font-size:11px;margin-bottom:12px">% of float being shorted — high = bearish sentiment or squeeze potential</p>
+      <div class="tbox"><table>
+        <thead><tr>
+          <th>Ticker</th><th>Short % Float</th><th>Short Ratio</th><th>Signal</th>
+        </tr></thead>
+        <tbody id="tb-short"><tr><td colspan="4" class="empty">Loading…</td></tr></tbody>
+      </table></div>
+    </div>
+
+    <!-- Earnings Surprise -->
+    <div class="cb2">
+      <h3>📈 Earnings Surprise History</h3>
+      <p style="color:var(--muted);font-size:11px;margin-bottom:12px">Last 4 quarters — beat or miss vs estimate</p>
+      <div id="mi-earnings-surprise"><div class="empty">Loading…</div></div>
+    </div>
+
+    <!-- Insider Transactions -->
+    <div class="cb2">
+      <h3>👤 Insider Transactions</h3>
+      <p style="color:var(--muted);font-size:11px;margin-bottom:12px">Recent CEO/CFO/Director buys and sells</p>
+      <div id="mi-insiders"><div class="empty">Loading…</div></div>
+    </div>
+
+  </div>
+
+  <!-- Revenue vs Earnings Trend — full width -->
+  <div class="cb2" style="margin-top:20px">
+    <h3>📊 Revenue vs Net Income Trend</h3>
+    <p style="color:var(--muted);font-size:11px;margin-bottom:16px">Last 4 quarters per holding — is the business actually growing?</p>
+    <div id="mi-rev-trend"><div class="empty">Loading…</div></div>
   </div>
 </div>
 
@@ -498,6 +587,7 @@ let snap         = null;
 let weeklyReport = null;
 let fundamentals = null;
 let intel        = null;
+let sentiment    = null;
 let alerts       = [];
 let cfg          = null;
 let dTimes       = [];
@@ -517,12 +607,14 @@ async function reload() {
   alerts       = await fetchJSON('data/alerts.json') || [];
   weeklyReport = await fetchJSON('data/weekly_report.json');
   fundamentals = await fetchJSON('data/fundamentals.json');
+  sentiment    = await fetchJSON('data/market_sentiment.json');
   renderDashboard();
   renderIntel();
   renderAlerts();
   renderEtf();
   renderWeekly();
   renderScores();
+  renderMarket();
   document.getElementById('lu-time').textContent =
     snap?.timestamp ? snap.timestamp.slice(0,16).replace('T',' ') + ' UTC' : '—';
   toast('Data reloaded', 'inf');
@@ -545,6 +637,7 @@ function go(id, el) {
   if (id==='config') loadCfg();
   if (id==='weekly') renderWeekly();
   if (id==='scores') renderScores();
+  if (id==='market') renderMarket();
 }
 
 // ── FORMAT ──────────────────────────────────────────────────────────────────
@@ -1106,6 +1199,7 @@ function scSort(field) {
   else { scSortField = field; scSortDir = field === 'score' ? 'desc' : 'asc'; }
   scPage = 1;
   renderScores();
+  renderMarket();
 }
 
 function clearScoreFilters() {
@@ -1113,6 +1207,7 @@ function clearScoreFilters() {
     .forEach(id => { const el = document.getElementById(id); if(el) el.value=''; });
   scPage = 1;
   renderScores();
+  renderMarket();
 }
 
 function showBreakdown(idx) {
@@ -1263,6 +1358,216 @@ function scExport(fmt) {
     a.click();
     toast(fmt.toUpperCase() + ' exported');
   }
+}
+
+
+// ── MARKET INTELLIGENCE ───────────────────────────────────────────────────────
+function renderMarket() {
+  const upd = (sentiment?.updated || fundamentals?.updated || '');
+  const el  = document.getElementById('mi-updated');
+  if (el) el.textContent = upd ? upd.slice(0,16).replace('T',' ') + ' UTC' : '—';
+
+  renderSentiment();
+  renderUpsideTable();
+  renderShortTable();
+  renderEarningsSurprise();
+  renderInsiders();
+  renderRevTrend();
+}
+
+function renderSentiment() {
+  if (!sentiment?.composite) {
+    document.getElementById('mi-score-desc').textContent = 'No sentiment data yet — trigger Fundamentals workflow.';
+    return;
+  }
+  const c     = sentiment.composite;
+  const score = c.score;
+  const color = c.color;
+
+  const circle = document.getElementById('mi-score-circle');
+  const num    = document.getElementById('mi-score-num');
+  const label  = document.getElementById('mi-score-label');
+  const needle = document.getElementById('mi-gauge-needle');
+  const desc   = document.getElementById('mi-score-desc');
+
+  if (circle) circle.style.borderColor = color;
+  if (num)    { num.textContent = score; num.style.color = color; }
+  if (label)  { label.textContent = c.label; label.style.color = color; }
+  if (needle) needle.style.left = score + '%';
+
+  // Indicator cards
+  const ind = sentiment.indicators || {};
+  const cards = [
+    { key: 'vstoxx',  icon: '🇪🇺', name: 'VSTOXX',        fmt: v => v.price?.toFixed(2), unit: '' },
+    { key: 'vix',     icon: '🇺🇸', name: 'VIX',           fmt: v => v.price?.toFixed(2), unit: '' },
+    { key: 'eurusd',  icon: '💱',  name: 'EUR/USD',        fmt: v => v.price?.toFixed(4), unit: '' },
+    { key: 'stoxx50', icon: '📈',  name: 'Euro Stoxx 50',  fmt: v => v.price ? Math.round(v.price).toLocaleString() : '—', unit: '' },
+    { key: 'dax',     icon: '🏭',  name: 'DAX',            fmt: v => v.price ? Math.round(v.price).toLocaleString() : '—', unit: '' },
+  ];
+
+  const indEl = document.getElementById('mi-indicators');
+  if (indEl) {
+    indEl.innerHTML = cards.map(card => {
+      const d  = ind[card.key] || {};
+      const cv = c.components?.[card.key] || {};
+      const chg = d.chg_pct;
+      const chgCol = chg > 0 ? 'var(--up)' : chg < 0 ? 'var(--dn)' : 'var(--muted)';
+      const chgStr = chg != null ? (chg >= 0 ? '+' : '') + chg.toFixed(2) + '%' : '—';
+      const interp = cv.interpretation || '—';
+      const contrib = cv.contribution != null ? (cv.contribution >= 0 ? '+' : '') + cv.contribution : '';
+      const ma_str = d.ma50 ? ' vs MA50: ' + (d.above_ma50 ? '▲ above' : '▼ below') : '';
+      return `<div style="background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:14px">
+        <div style="font-size:11px;color:var(--muted);margin-bottom:6px">${card.icon} ${card.name}</div>
+        <div style="font-size:18px;font-weight:700;font-family:var(--fh);margin-bottom:4px">${card.fmt(d)}</div>
+        <div style="font-size:11px;color:${chgCol};margin-bottom:4px">${chgStr}${ma_str}</div>
+        <div style="font-size:10px;color:var(--muted)">${interp}</div>
+        ${contrib ? `<div style="font-size:10px;color:var(--accent);margin-top:4px">Score: ${contrib}</div>` : ''}
+      </div>`;
+    }).join('');
+  }
+
+  if (desc) {
+    const comps = c.components || {};
+    const parts = Object.values(comps).map(v => v.interpretation).filter(Boolean);
+    desc.textContent = parts.length
+      ? 'Signals: ' + parts.join(' · ')
+      : 'Composite score based on 5 European market indicators.';
+  }
+}
+
+function renderUpsideTable() {
+  const tb = document.getElementById('tb-upside');
+  if (!tb || !fundamentals?.holdings) return;
+  const rows = fundamentals.holdings
+    .filter(h => !h.error && !h.skip && h.analyst_upside_pct != null)
+    .sort((a,b) => b.analyst_upside_pct - a.analyst_upside_pct);
+  if (!rows.length) { tb.innerHTML = '<tr><td colspan="5" class="empty">No analyst target data available.</td></tr>'; return; }
+  tb.innerHTML = rows.map(h => {
+    const upside = h.analyst_upside_pct;
+    const col    = upside > 15 ? 'var(--up)' : upside > 0 ? 'var(--lime)' : 'var(--dn)';
+    const arrow  = upside > 0 ? '↑' : '↓';
+    const fx     = 1; // already in EUR
+    return `<tr>
+      <td class="tk">${h.ticker}</td>
+      <td class="mn">${fe(h.price_eur)}</td>
+      <td class="mn">${h.analyst_target_mean ? fe(h.analyst_target_mean) : '—'}</td>
+      <td style="color:${col};font-weight:700">${arrow} ${Math.abs(upside).toFixed(1)}%</td>
+      <td class="dm">${h.analyst_total || '—'}</td>
+    </tr>`;
+  }).join('');
+}
+
+function renderShortTable() {
+  const tb = document.getElementById('tb-short');
+  if (!tb || !fundamentals?.holdings) return;
+  const rows = fundamentals.holdings
+    .filter(h => !h.error && !h.skip && h.short_pct_float != null)
+    .sort((a,b) => b.short_pct_float - a.short_pct_float);
+  if (!rows.length) { tb.innerHTML = '<tr><td colspan="4" class="empty">No short interest data available.</td></tr>'; return; }
+  tb.innerHTML = rows.map(h => {
+    const pct = (h.short_pct_float * 100).toFixed(1);
+    const col = h.short_pct_float > 0.15 ? 'var(--dn)' : h.short_pct_float > 0.05 ? 'var(--warn)' : 'var(--muted)';
+    const sig = h.short_pct_float > 0.20 ? '🔴 Very high' :
+                h.short_pct_float > 0.10 ? '🟠 High' :
+                h.short_pct_float > 0.05 ? '🟡 Moderate' : '🟢 Low';
+    return `<tr>
+      <td class="tk">${h.ticker}</td>
+      <td style="color:${col};font-weight:600">${pct}%</td>
+      <td class="dm">${h.short_ratio?.toFixed(1) || '—'}</td>
+      <td style="font-size:11px">${sig}</td>
+    </tr>`;
+  }).join('');
+}
+
+function renderEarningsSurprise() {
+  const el = document.getElementById('mi-earnings-surprise');
+  if (!el || !fundamentals?.holdings) return;
+  const holdings = fundamentals.holdings.filter(h =>
+    !h.error && !h.skip && h.earnings_surprise?.length
+  );
+  if (!holdings.length) { el.innerHTML = '<div class="empty">No earnings surprise data available.</div>'; return; }
+  el.innerHTML = holdings.map(h => {
+    const rows = h.earnings_surprise.map(e => {
+      const col = e.beat ? 'var(--up)' : 'var(--dn)';
+      const icon = e.beat ? '✓ Beat' : '✗ Miss';
+      return `<tr>
+        <td class="dm" style="color:var(--muted)">${e.period}</td>
+        <td class="dm">${e.eps_estimate != null ? e.eps_estimate.toFixed(2) : '—'}</td>
+        <td class="dm">${e.eps_actual   != null ? e.eps_actual.toFixed(2)   : '—'}</td>
+        <td style="color:${col};font-size:11px;font-weight:600">${icon} ${e.surprise_pct != null ? (e.surprise_pct > 0 ? '+' : '') + e.surprise_pct + '%' : ''}</td>
+      </tr>`;
+    }).join('');
+    return `<div style="margin-bottom:14px">
+      <div style="font-size:11px;color:var(--accent);font-weight:600;margin-bottom:6px">${h.ticker} — ${(h.name||'').slice(0,24)}</div>
+      <div class="tbox"><table>
+        <thead><tr><th>Period</th><th>Est EPS</th><th>Actual EPS</th><th>Surprise</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table></div>
+    </div>`;
+  }).join('');
+}
+
+function renderInsiders() {
+  const el = document.getElementById('mi-insiders');
+  if (!el || !fundamentals?.holdings) return;
+  const holdings = fundamentals.holdings.filter(h =>
+    !h.error && !h.skip && h.insider_transactions?.length
+  );
+  if (!holdings.length) { el.innerHTML = '<div class="empty">No insider transaction data available.</div>'; return; }
+  el.innerHTML = holdings.map(h => {
+    const rows = h.insider_transactions.slice(0,5).map(t => {
+      const isBuy = (t.transaction || '').toLowerCase().includes('buy') ||
+                    (t.transaction || '').toLowerCase().includes('purchase');
+      const col = isBuy ? 'var(--up)' : 'var(--dn)';
+      const val = t.value_usd ? '$' + (t.value_usd/1000).toFixed(0) + 'K' : '—';
+      return `<tr>
+        <td class="dm" style="color:var(--muted)">${t.date}</td>
+        <td style="font-size:11px">${(t.insider||'').slice(0,18)}</td>
+        <td style="font-size:10px;color:var(--muted)">${(t.title||'').slice(0,14)}</td>
+        <td style="color:${col};font-size:11px;font-weight:600">${t.transaction||'—'}</td>
+        <td class="dm">${val}</td>
+      </tr>`;
+    }).join('');
+    return `<div style="margin-bottom:14px">
+      <div style="font-size:11px;color:var(--accent);font-weight:600;margin-bottom:6px">${h.ticker} — ${(h.name||'').slice(0,24)}</div>
+      <div class="tbox"><table>
+        <thead><tr><th>Date</th><th>Insider</th><th>Title</th><th>Type</th><th>Value</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table></div>
+    </div>`;
+  }).join('');
+}
+
+function renderRevTrend() {
+  const el = document.getElementById('mi-rev-trend');
+  if (!el || !fundamentals?.holdings) return;
+  const holdings = fundamentals.holdings.filter(h =>
+    !h.error && !h.skip && h.revenue_earnings_trend?.length
+  );
+  if (!holdings.length) { el.innerHTML = '<div class="empty">No revenue/earnings trend data available.</div>'; return; }
+  el.innerHTML = holdings.map(h => {
+    const trend = h.revenue_earnings_trend;
+    // Simple bar chart using div widths
+    const maxRev = Math.max(...trend.map(t => t.revenue || 0));
+    const bars = trend.map(t => {
+      const revPct  = maxRev > 0 ? (t.revenue  || 0) / maxRev * 100 : 0;
+      const netPos  = (t.net_income || 0) >= 0;
+      const revB    = t.revenue   ? (t.revenue   / 1e9).toFixed(2) + 'B' : '—';
+      const netB    = t.net_income? (t.net_income/ 1e9).toFixed(2) + 'B' : '—';
+      const netCol  = netPos ? 'var(--up)' : 'var(--dn)';
+      return `<div style="flex:1;min-width:60px;text-align:center">
+        <div style="font-size:9px;color:var(--muted);margin-bottom:4px">${t.period.slice(0,7)}</div>
+        <div style="background:var(--accent);height:${Math.max(4,revPct * 0.6)}px;border-radius:3px;margin-bottom:4px" title="Revenue: ${revB}"></div>
+        <div style="font-size:9px;color:var(--accent)">${revB}</div>
+        <div style="font-size:9px;color:${netCol};font-weight:600">${netB}</div>
+      </div>`;
+    }).join('');
+    return `<div style="margin-bottom:20px">
+      <div style="font-size:11px;color:var(--accent);font-weight:600;margin-bottom:8px">${h.ticker} — ${(h.name||'').slice(0,28)}</div>
+      <div style="font-size:9px;color:var(--muted);margin-bottom:8px">Blue bar = Revenue · Colored number = Net Income (green=profit, red=loss)</div>
+      <div style="display:flex;gap:12px;align-items:flex-end">${bars}</div>
+    </div>`;
+  }).join('');
 }
 
 // ── TOAST ────────────────────────────────────────────────────────────────────
