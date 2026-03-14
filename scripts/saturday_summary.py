@@ -168,6 +168,19 @@ def main():
             str(len(calendar["dividends"])) + " dividends, " +
             str(len(calendar["splits"])) + " splits next week"
         )
+
+   # Save weekly_report.json for the dashboard
+    WEEKLY_F = DATA_DIR / "weekly_report.json"
+    save_json(WEEKLY_F, {
+        "week_from":  fmt_date(next_mon),
+        "week_to":    fmt_date(next_fri),
+        "earnings":   {e["ticker"]: [e] for e in calendar["earnings"]},
+        "dividends":  {d["ticker"]: [d] for d in calendar["dividends"]},
+        "splits":     {s["ticker"]: [s] for s in calendar["splits"]},
+        "ipos":       [],
+        "generated":  datetime.utcnow().isoformat(),
+    })
+    log.info("Weekly report JSON saved -> " + str(WEEKLY_F))
     log.info("=== Done ===")
 
 
