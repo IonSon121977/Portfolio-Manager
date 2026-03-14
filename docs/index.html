@@ -743,7 +743,7 @@ function renderWeekly() {
   if (!wr) {
     ['wr-earnings-wrap','wr-div-wrap','wr-split-wrap','wr-ipo-wrap'].forEach(id => {
       const el = document.getElementById(id);
-      if (el) el.innerHTML = '<div class="empty">No weekly report yet — runs every Saturday 10:00 CET via GitHub Actions.</div>';
+      if (el) el.innerHTML = '<div class="empty">No weekly_report.json yet — the Saturday workflow needs to save this file. See instructions below.</div>';
     });
     return;
   }
@@ -1039,23 +1039,26 @@ function renderScores() {
     if (el) el.textContent = scSortField===f ? (scSortDir==='asc'?'↑':'↓') : '';
   });
 
+  // Store holdings for safe lookup by index — avoids JSON.stringify in onclick
+  window._scHoldings = slice.map(({h}) => h);
+
   // Render rows
-  document.getElementById('tb-scores').innerHTML = slice.map(({h, score, breakdown}) => {
+  document.getElementById('tb-scores').innerHTML = slice.map(({h, score}, idx) => {
     const col  = scoreBadgeColor(score);
     const roe  = h.roe   != null ? (h.roe   * 100).toFixed(1)+'%' : '—';
     const marg = h.profit_margin != null ? (h.profit_margin * 100).toFixed(1)+'%' : '—';
-    return `<tr onclick="showBreakdown('${h.ticker}',${JSON.stringify(h).replace(/'/g,"\'")})" style="cursor:pointer">
-      <td class="tk">${h.ticker}</td>
-      <td class="nm" title="${h.name||''}">${(h.name||'').slice(0,22)}</td>
-      <td><span style="background:${col}22;border:1px solid ${col}44;color:${col};border-radius:12px;padding:3px 10px;font-weight:700;font-size:12px">${score}</span></td>
-      <td class="mn">${fe(h.price_eur)}</td>
-      <td>${chgCell(h.change_pct)}</td>
-      <td class="dm">${fn(h.pe_ratio)}</td>
-      <td class="dm">${fn(h.pb_ratio)}</td>
-      <td class="dm">${roe}</td>
-      <td class="dm">${marg}</td>
-      <td class="dm">${fn(h.beta,2)}</td>
-    </tr>`;
+    return '<tr onclick="showBreakdown('+idx+')" style="cursor:pointer" title="Click for score breakdown">'
+      + '<td class="tk">'+h.ticker+'</td>'
+      + '<td class="nm">'+((h.name||'').slice(0,22))+'</td>'
+      + '<td><span style="background:'+col+'22;border:1px solid '+col+'44;color:'+col+';border-radius:12px;padding:3px 10px;font-weight:700;font-size:12px">'+score+'</span></td>'
+      + '<td class="mn">'+fe(h.price_eur)+'</td>'
+      + '<td>'+chgCell(h.change_pct)+'</td>'
+      + '<td class="dm">'+fn(h.pe_ratio)+'</td>'
+      + '<td class="dm">'+fn(h.pb_ratio)+'</td>'
+      + '<td class="dm">'+roe+'</td>'
+      + '<td class="dm">'+marg+'</td>'
+      + '<td class="dm">'+fn(h.beta,2)+'</td>'
+      + '</tr>';
   }).join('') || '<tr><td colspan="10" class="empty">No results match your filters.</td></tr>';
 }
 
@@ -1073,7 +1076,10 @@ function clearScoreFilters() {
   renderScores();
 }
 
-function showBreakdown(ticker, h) {
+function showBreakdown(idx) {
+  const h = (window._scHoldings || [])[idx];
+  if (!h) return;
+  const ticker = h.ticker;
   const {score, breakdown} = calcScore(h);
   document.getElementById('sc-bd-ticker').textContent = ticker;
   document.getElementById('sc-bd-name').textContent   = h.name || '';
