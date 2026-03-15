@@ -28,6 +28,20 @@ def safe(val, decimals=2):
         return None
 
 
+def safe_int(val):
+    """Convert to int, handling NaN and None safely."""
+    try:
+        if val is None:
+            return None
+        f = float(val)
+        import math
+        if math.isnan(f) or math.isinf(f):
+            return None
+        return int(f)
+    except Exception:
+        return None
+
+
 def fetch_earnings_surprise(t) -> list:
     """Last 4 quarters: EPS estimate vs actual — beat/miss history."""
     try:
@@ -67,8 +81,8 @@ def fetch_revenue_earnings_trend(t) -> list:
             net = df.loc["Net Income",    col] if "Net Income"    in df.index else None
             results.append({
                 "period":     str(col)[:10],
-                "revenue":    int(rev) if rev is not None else None,
-                "net_income": int(net) if net is not None else None,
+                "revenue":    safe_int(rev),
+                "net_income": safe_int(net),
             })
         return list(reversed(results))
     except Exception as e:
@@ -91,8 +105,8 @@ def fetch_insider_transactions(t) -> list:
                 "insider":     str(row.get("Insider",     ""))[:30],
                 "title":       str(row.get("Position",    "") or "")[:20],
                 "transaction": str(row.get("Transaction", "")),
-                "shares":      int(shares) if shares is not None else None,
-                "value_usd":   int(value)  if value  is not None else None,
+                "shares":      safe_int(shares),
+                "value_usd":   safe_int(value),
             })
         return results
     except Exception as e:
