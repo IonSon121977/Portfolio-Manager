@@ -267,7 +267,20 @@ def main():
         "count":     len(results),
     }
 
-    save_json(FUNDAMENTALS_F, output)
+    # Sanitize output — replace NaN/Infinity with None before saving
+    import math, json as _json
+    def _sanitize(obj):
+        if isinstance(obj, float):
+            if math.isnan(obj) or math.isinf(obj):
+                return None
+            return obj
+        if isinstance(obj, dict):
+            return {k: _sanitize(v) for k, v in obj.items()}
+        if isinstance(obj, list):
+            return [_sanitize(v) for v in obj]
+        return obj
+
+    save_json(FUNDAMENTALS_F, _sanitize(output))
     log.info("Saved " + str(len(results)) + " holdings -> " + str(FUNDAMENTALS_F))
     log.info("Total portfolio EUR: " + "{:,.2f}".format(total_eur))
     log.info("=== Done ===")
