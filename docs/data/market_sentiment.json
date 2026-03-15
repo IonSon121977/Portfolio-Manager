@@ -1,0 +1,94 @@
+{
+  "composite": {
+    "score": 29,
+    "label": "Extreme Fear",
+    "color": "#c0392b",
+    "components": {
+      "vstoxx": {
+        "value": 35.457,
+        "score": 20,
+        "contribution": -7.5,
+        "interpretation": "High fear"
+      },
+      "vix": {
+        "value": 27.19,
+        "score": 35,
+        "contribution": -3.0,
+        "interpretation": "Fear"
+      },
+      "eurusd": {
+        "value": 1.1423,
+        "chg_pct": -0.89,
+        "score": 35,
+        "contribution": -2.2,
+        "interpretation": "Risk-off"
+      },
+      "stoxx50": {
+        "value": 5716.6099,
+        "ma50": 5961.6506,
+        "pct_from_ma": -4.11,
+        "above_ma50": false,
+        "score": 35,
+        "contribution": -3.8,
+        "interpretation": "Downtrend"
+      },
+      "dax": {
+        "value": 23447.2891,
+        "ma50": 24734.7644,
+        "pct_from_ma": -5.21,
+        "above_ma50": false,
+        "score": 20,
+        "contribution": -4.5,
+        "interpretation": "Strong downtrend"
+      }
+    }
+  },
+  "indicators": {
+    "vstoxx": {
+      "ticker": "V2TX.DE",
+      "label": "VSTOXX",
+      "price": 35.457,
+      "prev": 35.457,
+      "chg_pct": 0.0,
+      "ma50": null,
+      "above_ma50": null
+    },
+    "vix": {
+      "ticker": "^VIX",
+      "label": "VIX",
+      "price": 27.19,
+      "prev": 27.27,
+      "chg_pct": -0.29,
+      "ma50": 18.9992,
+      "above_ma50": true
+    },
+    "eurusd": {
+      "ticker": "EURUSD=X",
+      "label": "EUR/USD",
+      "price": 1.1423,
+      "prev": 1.1526,
+      "chg_pct": -0.89,
+      "ma50": 1.1747,
+      "above_ma50": false
+    },
+    "stoxx50": {
+      "ticker": "^STOXX50E",
+      "label": "Euro Stoxx 50",
+      "price": 5716.6099,
+      "prev": 5741.98,
+      "chg_pct": -0.44,
+      "ma50": 5961.6506,
+      "above_ma50": false
+    },
+    "dax": {
+      "ticker": "^GDAXI",
+      "label": "DAX",
+      "price": 23447.2891,
+      "prev": 23589.65,
+      "chg_pct": -0.6,
+      "ma50": 24734.7644,
+      "above_ma50": false
+    }
+  },
+  "updated": "2026-03-15T17:45:06.406560"
+}
