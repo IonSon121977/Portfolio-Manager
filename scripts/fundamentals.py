@@ -96,15 +96,41 @@ def fetch_insider_transactions(t) -> list:
         df = t.insider_transactions
         if df is None or df.empty:
             return []
+        cols = list(df.columns)
+        log.info("  insider cols: " + str(cols))
         results = []
         for _, row in df.head(10).iterrows():
             shares = row.get("Shares")
             value  = row.get("Value")
+            # Transaction type column varies by yfinance version
+            txn = (
+                row.get("Transaction") or
+                row.get("Text") or
+                row.get("Type") or
+                row.get("Action") or ""
+            )
+            # Date column varies too
+            dt = (
+                row.get("Start Date") or
+                row.get("Date") or
+                row.get("startDate") or ""
+            )
+            insider = (
+                row.get("Insider") or
+                row.get("Name") or
+                row.get("insiderName") or ""
+            )
+            title = (
+                row.get("Position") or
+                row.get("Title") or
+                row.get("Relation") or
+                row.get("position") or ""
+            )
             results.append({
-                "date":        str(row.get("Start Date", ""))[:10],
-                "insider":     str(row.get("Insider",     ""))[:30],
-                "title":       str(row.get("Position",    "") or "")[:20],
-                "transaction": str(row.get("Transaction", "")),
+                "date":        str(dt)[:10],
+                "insider":     str(insider)[:30],
+                "title":       str(title or "")[:20],
+                "transaction": str(txn),
                 "shares":      safe_int(shares),
                 "value_usd":   safe_int(value),
             })
