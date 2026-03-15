@@ -285,7 +285,7 @@ def main():
     indicators = {}
 
     log.info("Fetching VSTOXX (European fear gauge)...")
-    indicators["vstoxx"] = fetch_indicator("^V2TX",     "VSTOXX")
+    indicators["vstoxx"] = fetch_indicator("V2TX.DE",     "VSTOXX")
 
     log.info("Fetching VIX (US fear gauge)...")
     indicators["vix"]    = fetch_indicator("^VIX",      "VIX")
