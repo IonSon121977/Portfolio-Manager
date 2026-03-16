@@ -1,6 +1,6 @@
 # 📊 Portfolio Intelligence Monitor
 
-**Free 24/7 stock & ETF monitoring via GitHub Actions + Finnhub.**  
+**Free 24/7 stock & ETF monitoring via GitHub Actions .**  
 No server. No cost. Runs while your computer is off.
 
 ## Data source: Finnhub.io
