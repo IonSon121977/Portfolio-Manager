@@ -10,7 +10,7 @@ on:
     # Summer CEST (UTC+2): subtract 1 hour from each UTC value
   workflow_dispatch: {}
 permissions:
-  contents: write
+  contents: write 
 jobs:
   fundamentals:
     runs-on: ubuntu-latest
