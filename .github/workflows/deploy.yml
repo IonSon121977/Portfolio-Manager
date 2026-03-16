@@ -1,13 +1,13 @@
 name: Deploy Pages
 on:
-  workflow_run:
-    workflows:
-      - "Price Digest (08:15 CET)"
-      - "Movement & Intelligence"
-      - "Fundamentals Update (every 2h, 08-18 CET)"
-      - "Saturday Weekly Summary"
-    types:
-      - completed
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'docs/**/*.json'
+      - 'docs/**/*.html'
+      - 'docs/**/*.css'
+      - 'docs/**/*.js'
   workflow_dispatch: {}
 permissions:
   contents: read
