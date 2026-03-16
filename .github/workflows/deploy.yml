@@ -4,6 +4,10 @@ on:
     branches: [main]
     paths:
       - 'docs/**'
+      - 'docs/**/*.json'
+      - 'docs/**/*.html'
+      - 'docs/**/*.css'
+      - 'docs/**/*.js'
   repository_dispatch:
     types: [deploy-pages]
   workflow_dispatch: {}
