@@ -1,98 +1,169 @@
 # 📊 Portfolio Intelligence Monitor
 
-**Free 24/7 stock & ETF monitoring via GitHub Actions .**  
-No server. No cost. Runs while your computer is off.
+A fully automated personal portfolio monitoring system running on GitHub Actions with zero monthly cost. Tracks stocks and ETFs across all major European and US exchanges, sends email alerts, and provides a live dashboard.
 
-## Data source: Finnhub.io
-
-All market data comes from [Finnhub](https://finnhub.io) — one free API key covers everything:
-
-| Data | Finnhub endpoint | Used by |
-|---|---|---|
-| Real-time price + day change % | `/quote` | Price digest |
-| Company name, sector, currency | `/stock/profile2` | Price digest |
-| P/E, beta, 52w high/low, EPS | `/stock/metric` | Price digest |
-| Analyst consensus (buy/hold/sell) | `/stock/recommendation` | Price digest |
-| Analyst price target | `/stock/price-target` | Price digest |
-| Analyst upgrades/downgrades | `/stock/upgrade-downgrade` | Intelligence |
-| Company news headlines | `/company-news` | Intelligence |
-| FX rates for EUR conversion | `/forex/rates` | Both |
-
-**Free tier: 60 calls/minute.** The scripts sleep 1 second between every call.
+**Dashboard:** https://ionson121977.github.io/Portfolio-Manager/
 
 ---
 
-## How it works
+## 🏗 Architecture
 
 ```
-GitHub Actions (free minutes)
-  price_digest.yml   → 07:45 · 12:00 · 15:15 · 17:00 CET (Mon-Fri)
-    5 Finnhub calls per stock × 1 s gap = ~100 s for 20 stocks
-    • Live EUR prices  • >3% movement alert  • Digest email
-    → commits docs/data/snapshot.json
+GitHub Actions (5 workflows)
+    ↓ fetch data via yfinance
+    ↓ commit JSON to docs/data/
+GitHub Pages (static dashboard)
+    ↓ serves docs/index.html + docs/data/*.json
+Browser (password protected)
+    ↓ renders dashboard from JSON files
+```
 
-  intelligence.yml   → 07:30 · 17:00 CET (Mon-Fri)
-    2 Finnhub calls per stock × 1 s gap = ~40 s for 20 stocks
-    • Analyst rating changes → separate highlighted email
-    • Company news headlines
-    → commits docs/data/intelligence.json + alerts.json
+**No server. No database. No paid APIs. 100% free.**
 
-GitHub Pages → docs/index.html (dashboard reads the JSON files)
+---
+
+## ⚡ Workflows
+
+| Workflow | Schedule (CET) | What it does |
+|---|---|---|
+| **Price Digest** | 08:15 Mon–Fri | Morning digest email, saves snapshot, morning prices baseline |
+| **Movement & Intelligence** | 08:45, 11:00, 13:00, 15:45, 17:00 Mon–Fri | Price movement alerts (±3%), analyst rating change alerts |
+| **Intelligence Check** | 08:30, 10:30, 12:30, 14:30, 16:30 Mon–Fri | Broker ratings, Morningstar data, new rating emails |
+| **Fundamentals Update** | Every 2h 08:00–18:00 Mon–Fri | Fundamentals, insider transactions, earnings surprise, sentiment |
+| **Saturday Summary** | 10:00 Saturday | Weekly summary email, portfolio change, top movers, next week calendar |
+| **Deploy Pages** | On push to docs/ | Publishes updated dashboard to GitHub Pages |
+
+---
+
+## 📁 Repository Structure
+
+```
+.github/workflows/          # 6 GitHub Actions workflow files
+scripts/
+  shared.py                 # Shared utilities, yfinance data fetching, email
+  price_digest.py           # Morning digest + movement alerts + 52W alerts
+  intelligence.py           # Broker ratings checker
+  market_sentiment.py       # Composite sentiment score (VSTOXX, VIX, EUR/USD, DAX, Stoxx50)
+  fundamentals.py           # Fundamentals + insider transactions + earnings history
+  saturday_summary.py       # Weekly summary + next week calendar
+docs/
+  index.html                # Single-page dashboard (password protected)
+  data/
+    snapshot.json           # Latest portfolio prices and values
+    intelligence.json       # Ratings and analyst data
+    fundamentals.json       # Fundamental metrics per holding
+    market_sentiment.json   # Composite sentiment score + 5 indicators
+    weekly_report.json      # Saturday weekly report data
+    alerts.json             # Alert log (last 500)
+    week_open.json          # Monday open prices for weekly change calc
+    52w_alerted_today.json  # 52W alert deduplication (resets daily)
+portfolio_config.json       # Holdings configuration (tickers, shares, ISINs)
 ```
 
 ---
 
-## Setup
+## 📈 Dashboard Tabs
 
-### 1. Get free Finnhub API key
-Register at [finnhub.io/register](https://finnhub.io/register) — 30 seconds, no card needed.
+### 🏠 Dashboard
+- Total portfolio value in EUR
+- Stocks and ETFs table with live prices, day change, value, analyst recommendation
+- Last updated timestamp
 
-### 2. Push to GitHub
-```bash
-git init && git add . && git commit -m "init"
-git remote add origin https://github.com/YOU/YOUR_REPO.git
-git push -u origin main
-```
+### 📊 Stock Scores
+- Investment score (0–100) for each holding calculated from P/E, P/B, ROE, margins, growth, beta, 52W performance
+- Sortable, filterable, paginated table
+- Click any row for full score breakdown
+- Export to CSV, JSON, XML, HTML, PDF
 
-### 3. Edit portfolio_config.json
-Replace sample stocks with your own. Each holding:
-```json
-{ "ticker": "ASML.AS", "name": "ASML Holding", "shares": 10, "finnhub_symbol": "AMS:ASML" }
-```
+### 🌍 Market Intelligence
+- **Composite Sentiment Score** (0–100) from 5 indicators: VSTOXX, VIX, EUR/USD, Euro Stoxx 50 vs MA50, DAX vs MA50
+- Analyst price targets with upside % from current price
+- Short interest per holding
+- Earnings surprise history (last 4 quarters — beat/miss)
+- Insider transactions (last 10 per holding)
+- Revenue vs Net Income trend (last 4 quarters)
 
-US stocks don't need `finnhub_symbol` — just use the ticker directly (e.g. `AAPL`).
+### 🧠 Intelligence
+- Recent analyst rating changes (today)
+- News by holding
 
-**EU exchange prefixes for Finnhub:**
+### 🗂 ETF Holdings
+- Top 15 holdings per ETF
 
-| Exchange | Prefix | Example |
-|---|---|---|
-| Amsterdam | `AMS:` | `AMS:ASML` |
-| Frankfurt/XETRA | `XETRA:` | `XETRA:SAP` |
-| Paris | `EPA:` | `EPA:MC` |
-| Milan | `MIL:` | `MIL:ENI` |
-| London | `LON:` | `LON:SHEL` |
-| Swiss | `SWX:` | `SWX:NESN` |
-| Brussels | `EBR:` | `EBR:ABI` |
-| Copenhagen | `CPH:` | `CPH:NOVO-B` |
+### 🔔 Alerts
+- Full alert log — movements, ratings, 52W highs/lows, earnings, digests
 
-If a stock shows "No price data", look up its exact symbol at finnhub.io and add it as `finnhub_symbol`.
+### 📅 Weekly Report
+- Week-over-week portfolio change
+- Top movers of the week
+- Rating changes this week
+- Next week: earnings calls, dividend ex-dates, stock splits
 
-### 4. Add GitHub Secrets
-Repo → Settings → Secrets → Actions:
+### ⚙ Configure
+- Add/remove stocks and ETFs
+- Generate `portfolio_config.json` for committing to repo
 
-| Secret | Value |
+---
+
+## 📧 Email Alerts
+
+All emails sent via **AgentMail** (SMTP) — configured via GitHub Secrets.
+
+| Alert type | Trigger |
 |---|---|
-| `FINNHUB_API_KEY` | Your Finnhub key |
-| `EMAIL_FROM` | Gmail address |
-| `EMAIL_PASSWORD` | Gmail App Password (Account → Security → 2FA → App Passwords) |
-| `EMAIL_TO` | Where to receive alerts |
-
-### 5. Enable GitHub Pages
-Settings → Pages → Source: `main` branch, `/docs` folder.  
-Dashboard: `https://YOU.github.io/YOUR_REPO/`
+| Morning Digest | Daily 08:15 CET with full portfolio + news |
+| Movement Alert | Stock moves ±3% from morning price |
+| Rating Change | New analyst upgrade/downgrade today |
+| 52W High/Low | Stock within 0.5% of 52-week high or low (once per day per ticker) |
+| Earnings Alert | Holding has earnings within 2 days |
+| Weekly Summary | Every Saturday 10:00 CET |
 
 ---
 
-## Rating Change Alerts
+## 🔐 Security
 
-New rating changes (upgrades/downgrades/initiations) found today trigger an **immediate separate email** with a purple header showing firm, old rating → new rating. Reiterations of the same grade are silently skipped. The seen-ratings history is committed to the repo so there are never duplicate alerts across runs.
+- Dashboard protected by password (client-side, stored in sessionStorage)
+- Email credentials stored as GitHub Secrets — never in config files
+- `portfolio_config.json` strips passwords before committing
+
+---
+
+## 💹 Portfolio Holdings
+
+### Stocks
+
+
+### ETFs
+
+
+---
+
+## 🛠 Tech Stack
+
+| Component | Technology |
+|---|---|
+| Data source | yfinance (free, no API key) |
+| Email | AgentMail SMTP |
+| Hosting | GitHub Pages (free) |
+| Automation | GitHub Actions (free tier) |
+| Language | Python 3.11 + vanilla HTML/JS |
+| Dependencies | `yfinance`, `requests` |
+
+---
+
+## ⚙ GitHub Secrets Required
+
+| Secret | Description |
+|---|---|
+| `EMAIL_FROM` | AgentMail sender address |
+| `EMAIL_PASSWORD` | AgentMail API key |
+| `EMAIL_TO` | Your email address for alerts |
+
+---
+
+## 📅 Summer Time Note
+
+Austria switches to CEST (UTC+2) at end of March and back to CET (UTC+1) at end of October.
+All workflow cron times are in UTC — adjust by -1 hour during CEST period (end of March to end of October).
+
+Current cron times are set for **CET (UTC+1)** — winter schedule.
