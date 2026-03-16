@@ -1,11 +1,11 @@
 name: Movement & Intelligence
 on:
   schedule:
-    - cron: '41 7  * * 1-5'   # 08:45 CET
-    - cron: '41 9  * * 1-5'   # 11:00 CET
-    - cron: '41 11 * * 1-5'   # 13:00 CET
-    - cron: '41 14 * * 1-5'   # 15:45 CET
-    - cron: '41 17 * * 1-5'   # 19:45 CET
+    - cron: '41 7  * * 1-5'   # 08:41 CET
+    - cron: '41 9  * * 1-5'   # 10:41 CET
+    - cron: '41 11 * * 1-5'   # 12:41 CET
+    - cron: '41 14 * * 1-5'   # 15:41 CET
+    - cron: '41 17 * * 1-5'   # 18:41 CET
     # Summer CEST (UTC+2): subtract 1 hour from each
   workflow_dispatch: {}
 permissions:
