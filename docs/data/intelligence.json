@@ -283,6 +283,13 @@
           "action": "up"
         },
         {
+          "date": "2026-03-12",
+          "firm": "Cantor Fitzgerald",
+          "from_grade": "Overweight",
+          "to_grade": "Overweight",
+          "action": "up"
+        },
+        {
           "date": "2026-03-05",
           "firm": "Tigress Financial",
           "from_grade": "Strong Buy",
@@ -810,6 +817,20 @@
           "action": "up"
         },
         {
+          "date": "2026-03-16",
+          "firm": "Barclays",
+          "from_grade": "Overweight",
+          "to_grade": "Overweight",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-12",
+          "firm": "Piper Sandler",
+          "from_grade": "Overweight",
+          "to_grade": "Overweight",
+          "action": "up"
+        },
+        {
           "date": "2026-03-12",
           "firm": "Piper Sandler",
           "from_grade": "Overweight",
@@ -844,6 +865,20 @@
       "ticker": "CVX",
       "name": "Chevron Corporation",
       "ratings": [
+        {
+          "date": "2026-03-16",
+          "firm": "Barclays",
+          "from_grade": "Equal-Weight",
+          "to_grade": "Equal-Weight",
+          "action": "reit"
+        },
+        {
+          "date": "2026-03-12",
+          "firm": "Piper Sandler",
+          "from_grade": "Overweight",
+          "to_grade": "Overweight",
+          "action": "up"
+        },
         {
           "date": "2026-03-16",
           "firm": "Barclays",
@@ -1007,6 +1042,41 @@
           "action": "up"
         },
         {
+          "date": "2026-03-16",
+          "firm": "Rosenblatt",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-16",
+          "firm": "TD Cowen",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-16",
+          "firm": "RBC Capital",
+          "from_grade": "Outperform",
+          "to_grade": "Outperform",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-13",
+          "firm": "Wedbush",
+          "from_grade": "Outperform",
+          "to_grade": "Outperform",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-12",
+          "firm": "Wells Fargo",
+          "from_grade": "Overweight",
+          "to_grade": "Overweight",
+          "action": "up"
+        },
+        {
           "date": "2026-03-09",
           "firm": "Citigroup",
           "from_grade": "Buy",
@@ -1259,15 +1329,7 @@
           "action": "reit"
         }
       ],
-      "new_ratings": [
-        {
-          "date": "2026-03-16",
-          "firm": "Rosenblatt",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up"
-        }
-      ]
+      "new_ratings": []
     },
     {
       "ticker": "SPYY.DE",
@@ -1348,5 +1410,5 @@
       "morningstar": {}
     }
   ],
-  "updated": "2026-03-16"
+  "updated": "2026-03-17"
 }
