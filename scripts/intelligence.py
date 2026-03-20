@@ -59,7 +59,13 @@ def main():
                 if (r["date"], r["firm"], r["to_grade"]) not in seen_keys
             ]
             entry["ratings"]     = (new_ratings + entry.get("ratings", []))[:50]
-            entry["new_ratings"] = [r for r in truly_new if r["date"] == today]
+            entry["new_ratings"] = [
+                r for r in truly_new
+                if r["date"] == today
+                and (r.get("from_grade") or "").strip().lower() != (r.get("to_grade") or "").strip().lower()
+                and r.get("to_grade")
+                and r.get("action", "").lower() != "reit"
+            ]
 
             for r in entry["new_ratings"]:
                 log.info(
