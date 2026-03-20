@@ -262,13 +262,6 @@
           "action": "up"
         },
         {
-          "date": "2026-03-12",
-          "firm": "Cantor Fitzgerald",
-          "from_grade": "Overweight",
-          "to_grade": "Overweight",
-          "action": "up"
-        },
-        {
           "date": "2026-03-19",
           "firm": "Raymond James",
           "from_grade": "Strong Buy",
@@ -539,6 +532,13 @@
           "firm": "RBC Capital",
           "from_grade": "Outperform",
           "to_grade": "Outperform",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-17",
+          "firm": "Keybanc",
+          "from_grade": "Overweight",
+          "to_grade": "Overweight",
           "action": "up"
         }
       ],
@@ -572,6 +572,13 @@
       "ticker": "AMZN",
       "name": "Amazon",
       "ratings": [
+        {
+          "date": "2026-03-17",
+          "firm": "Needham",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up"
+        },
         {
           "date": "2026-03-17",
           "firm": "Needham",
@@ -1018,6 +1025,13 @@
           "from_grade": "Hold",
           "to_grade": "Reduce",
           "action": "reit"
+        },
+        {
+          "date": "2026-03-17",
+          "firm": "HSBC",
+          "from_grade": "Hold",
+          "to_grade": "Reduce",
+          "action": "reit"
         }
       ],
       "new_ratings": [],
@@ -1169,6 +1183,20 @@
           "action": "up"
         },
         {
+          "date": "2026-03-19",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-18",
+          "firm": "KGI Securities",
+          "from_grade": "",
+          "to_grade": "Outperform",
+          "action": "up"
+        },
+        {
           "date": "2026-03-18",
           "firm": "KGI Securities",
           "from_grade": "",
@@ -1233,13 +1261,6 @@
           "action": "up"
         },
         {
-          "date": "2026-03-12",
-          "firm": "Piper Sandler",
-          "from_grade": "Overweight",
-          "to_grade": "Overweight",
-          "action": "up"
-        },
-        {
           "date": "2026-03-17",
           "firm": "Mizuho",
           "from_grade": "Neutral",
@@ -1532,6 +1553,13 @@
           "from_grade": "Overweight",
           "to_grade": "Overweight",
           "action": "up"
+        },
+        {
+          "date": "2026-03-17",
+          "firm": "Mizuho",
+          "from_grade": "Neutral",
+          "to_grade": "Neutral",
+          "action": "reit"
         },
         {
           "date": "2026-03-16",
@@ -1590,13 +1618,6 @@
           "action": "reit"
         },
         {
-          "date": "2026-03-12",
-          "firm": "Piper Sandler",
-          "from_grade": "Overweight",
-          "to_grade": "Overweight",
-          "action": "up"
-        },
-        {
           "date": "2026-03-17",
           "firm": "Mizuho",
           "from_grade": "Outperform",
@@ -1888,6 +1909,13 @@
           "firm": "Piper Sandler",
           "from_grade": "Overweight",
           "to_grade": "Overweight",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-17",
+          "firm": "Mizuho",
+          "from_grade": "Outperform",
+          "to_grade": "Outperform",
           "action": "up"
         },
         {
@@ -2110,6 +2138,13 @@
         },
         {
           "date": "2026-03-19",
+          "firm": "JP Morgan",
+          "from_grade": "Overweight",
+          "to_grade": "Overweight",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-19",
           "firm": "Mizuho",
           "from_grade": "Outperform",
           "to_grade": "Outperform",
@@ -2242,10 +2277,10 @@
           "action": "up"
         },
         {
-          "date": "2026-03-12",
-          "firm": "Wells Fargo",
-          "from_grade": "Overweight",
-          "to_grade": "Overweight",
+          "date": "2026-03-19",
+          "firm": "Mizuho",
+          "from_grade": "Outperform",
+          "to_grade": "Outperform",
           "action": "up"
         },
         {
@@ -2310,24 +2345,9 @@
           "from_grade": "Overweight",
           "to_grade": "Overweight",
           "action": "up"
-        },
-        {
-          "date": "2026-03-19",
-          "firm": "Cantor Fitzgerald",
-          "from_grade": "Overweight",
-          "to_grade": "Overweight",
-          "action": "up"
         }
       ],
-      "new_ratings": [
-        {
-          "date": "2026-03-19",
-          "firm": "JP Morgan",
-          "from_grade": "Overweight",
-          "to_grade": "Overweight",
-          "action": "up"
-        }
-      ]
+      "new_ratings": []
     },
     {
       "ticker": "SPYY.DE",
@@ -2408,5 +2428,5 @@
       "morningstar": {}
     }
   ],
-  "updated": "2026-03-19"
+  "updated": "2026-03-20"
 }
