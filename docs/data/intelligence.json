@@ -685,6 +685,20 @@
           "action": "up"
         },
         {
+          "date": "2026-03-23",
+          "firm": "TD Cowen",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-17",
+          "firm": "Needham",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up"
+        },
+        {
           "date": "2026-03-17",
           "firm": "Needham",
           "from_grade": "Buy",
@@ -890,6 +904,20 @@
       "ticker": "AAPL",
       "name": "Apple",
       "ratings": [
+        {
+          "date": "2026-03-23",
+          "firm": "Morgan Stanley",
+          "from_grade": "Overweight",
+          "to_grade": "Overweight",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-23",
+          "firm": "B of A Securities",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up"
+        },
         {
           "date": "2026-03-23",
           "firm": "Morgan Stanley",
@@ -1396,6 +1424,13 @@
           "from_grade": "Hold",
           "to_grade": "Reduce",
           "action": "reit"
+        },
+        {
+          "date": "2026-03-17",
+          "firm": "HSBC",
+          "from_grade": "Hold",
+          "to_grade": "Reduce",
+          "action": "reit"
         }
       ],
       "new_ratings": [],
@@ -1673,6 +1708,13 @@
           "action": "up"
         },
         {
+          "date": "2026-03-23",
+          "firm": "B of A Securities",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up"
+        },
+        {
           "date": "2026-03-19",
           "firm": "Citigroup",
           "from_grade": "Buy",
@@ -1827,17 +1869,10 @@
           "action": "up"
         },
         {
-          "date": "2026-03-18",
-          "firm": "KGI Securities",
-          "from_grade": "",
-          "to_grade": "Outperform",
-          "action": "up"
-        },
-        {
-          "date": "2026-03-18",
-          "firm": "KGI Securities",
-          "from_grade": "",
-          "to_grade": "Outperform",
+          "date": "2026-03-19",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
           "action": "up"
         },
         {
@@ -1940,6 +1975,20 @@
           "action": "reit"
         },
         {
+          "date": "2026-03-20",
+          "firm": "HSBC",
+          "from_grade": "Hold",
+          "to_grade": "Hold",
+          "action": "reit"
+        },
+        {
+          "date": "2026-03-17",
+          "firm": "Mizuho",
+          "from_grade": "Neutral",
+          "to_grade": "Neutral",
+          "action": "reit"
+        },
+        {
           "date": "2026-03-16",
           "firm": "Barclays",
           "from_grade": "Overweight",
@@ -2201,20 +2250,6 @@
         {
           "date": "2026-03-12",
           "firm": "Piper Sandler",
-          "from_grade": "Overweight",
-          "to_grade": "Overweight",
-          "action": "up"
-        },
-        {
-          "date": "2026-03-17",
-          "firm": "Mizuho",
-          "from_grade": "Neutral",
-          "to_grade": "Neutral",
-          "action": "reit"
-        },
-        {
-          "date": "2026-03-16",
-          "firm": "Barclays",
           "from_grade": "Overweight",
           "to_grade": "Overweight",
           "action": "up"
@@ -2262,13 +2297,6 @@
           "action": "up"
         },
         {
-          "date": "2026-03-16",
-          "firm": "Barclays",
-          "from_grade": "Equal-Weight",
-          "to_grade": "Equal-Weight",
-          "action": "reit"
-        },
-        {
           "date": "2026-03-17",
           "firm": "Mizuho",
           "from_grade": "Outperform",
@@ -2435,34 +2463,6 @@
           "from_grade": "Equal-Weight",
           "to_grade": "Equal-Weight",
           "action": "reit"
-        },
-        {
-          "date": "2026-03-12",
-          "firm": "Piper Sandler",
-          "from_grade": "Overweight",
-          "to_grade": "Overweight",
-          "action": "up"
-        },
-        {
-          "date": "2026-03-17",
-          "firm": "Mizuho",
-          "from_grade": "Outperform",
-          "to_grade": "Outperform",
-          "action": "up"
-        },
-        {
-          "date": "2026-03-16",
-          "firm": "Barclays",
-          "from_grade": "Equal-Weight",
-          "to_grade": "Equal-Weight",
-          "action": "reit"
-        },
-        {
-          "date": "2026-03-12",
-          "firm": "Piper Sandler",
-          "from_grade": "Overweight",
-          "to_grade": "Overweight",
-          "action": "up"
         },
         {
           "date": "2026-03-17",
@@ -2574,6 +2574,41 @@
           "firm": "Mizuho",
           "from_grade": "Outperform",
           "to_grade": "Outperform",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-16",
+          "firm": "Barclays",
+          "from_grade": "Equal-Weight",
+          "to_grade": "Equal-Weight",
+          "action": "reit"
+        },
+        {
+          "date": "2026-03-12",
+          "firm": "Piper Sandler",
+          "from_grade": "Overweight",
+          "to_grade": "Overweight",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-17",
+          "firm": "Mizuho",
+          "from_grade": "Outperform",
+          "to_grade": "Outperform",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-16",
+          "firm": "Barclays",
+          "from_grade": "Equal-Weight",
+          "to_grade": "Equal-Weight",
+          "action": "reit"
+        },
+        {
+          "date": "2026-03-12",
+          "firm": "Piper Sandler",
+          "from_grade": "Overweight",
+          "to_grade": "Overweight",
           "action": "up"
         }
       ],
