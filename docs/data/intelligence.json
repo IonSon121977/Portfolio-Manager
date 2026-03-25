@@ -3,7 +3,15 @@
     {
       "ticker": "MSFT",
       "name": "Microsoft",
-      "ratings": [],
+      "ratings": [
+        {
+          "date": "2026-03-25",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up"
+        }
+      ],
       "new_ratings": [],
       "news": [
         {
@@ -360,48 +368,6 @@
           "action": "up"
         },
         {
-          "date": "2026-03-17",
-          "firm": "TD Cowen",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up"
-        },
-        {
-          "date": "2026-03-17",
-          "firm": "RBC Capital",
-          "from_grade": "Outperform",
-          "to_grade": "Outperform",
-          "action": "up"
-        },
-        {
-          "date": "2026-03-17",
-          "firm": "Keybanc",
-          "from_grade": "Overweight",
-          "to_grade": "Overweight",
-          "action": "up"
-        },
-        {
-          "date": "2026-03-17",
-          "firm": "Rosenblatt",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up"
-        },
-        {
-          "date": "2026-03-17",
-          "firm": "Cantor Fitzgerald",
-          "from_grade": "Overweight",
-          "to_grade": "Overweight",
-          "action": "up"
-        },
-        {
-          "date": "2026-03-17",
-          "firm": "Benchmark",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up"
-        },
-        {
           "date": "2026-03-23",
           "firm": "Rosenblatt",
           "from_grade": "Buy",
@@ -539,6 +505,48 @@
           "firm": "RBC Capital",
           "from_grade": "Outperform",
           "to_grade": "Outperform",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-17",
+          "firm": "Keybanc",
+          "from_grade": "Overweight",
+          "to_grade": "Overweight",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-17",
+          "firm": "Rosenblatt",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-17",
+          "firm": "Cantor Fitzgerald",
+          "from_grade": "Overweight",
+          "to_grade": "Overweight",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-17",
+          "firm": "Benchmark",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-23",
+          "firm": "Rosenblatt",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-23",
+          "firm": "Cantor Fitzgerald",
+          "from_grade": "Overweight",
+          "to_grade": "Overweight",
           "action": "up"
         }
       ],
@@ -572,6 +580,27 @@
       "ticker": "AMZN",
       "name": "Amazon",
       "ratings": [
+        {
+          "date": "2026-03-25",
+          "firm": "JP Morgan",
+          "from_grade": "Overweight",
+          "to_grade": "Overweight",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-25",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-23",
+          "firm": "TD Cowen",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up"
+        },
         {
           "date": "2026-03-25",
           "firm": "JP Morgan",
@@ -900,27 +929,6 @@
           "from_grade": "Buy",
           "to_grade": "Buy",
           "action": "up"
-        },
-        {
-          "date": "2026-03-17",
-          "firm": "Needham",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up"
-        },
-        {
-          "date": "2026-03-17",
-          "firm": "Needham",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up"
-        },
-        {
-          "date": "2026-03-17",
-          "firm": "Needham",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up"
         }
       ],
       "new_ratings": [],
@@ -953,6 +961,20 @@
       "ticker": "AAPL",
       "name": "Apple",
       "ratings": [
+        {
+          "date": "2026-03-23",
+          "firm": "Morgan Stanley",
+          "from_grade": "Overweight",
+          "to_grade": "Overweight",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-23",
+          "firm": "B of A Securities",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up"
+        },
         {
           "date": "2026-03-23",
           "firm": "Morgan Stanley",
@@ -1925,6 +1947,13 @@
           "action": "up"
         },
         {
+          "date": "2026-03-23",
+          "firm": "B of A Securities",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up"
+        },
+        {
           "date": "2026-03-19",
           "firm": "Citigroup",
           "from_grade": "Buy",
@@ -1992,13 +2021,6 @@
           "firm": "KGI Securities",
           "from_grade": "",
           "to_grade": "Outperform",
-          "action": "up"
-        },
-        {
-          "date": "2026-03-19",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
           "action": "up"
         }
       ],
@@ -2045,13 +2067,6 @@
           "action": "reit"
         },
         {
-          "date": "2026-03-17",
-          "firm": "Mizuho",
-          "from_grade": "Neutral",
-          "to_grade": "Neutral",
-          "action": "reit"
-        },
-        {
           "date": "2026-03-20",
           "firm": "HSBC",
           "from_grade": "Hold",
@@ -2134,34 +2149,6 @@
           "from_grade": "Neutral",
           "to_grade": "Neutral",
           "action": "reit"
-        },
-        {
-          "date": "2026-03-16",
-          "firm": "Barclays",
-          "from_grade": "Overweight",
-          "to_grade": "Overweight",
-          "action": "up"
-        },
-        {
-          "date": "2026-03-20",
-          "firm": "HSBC",
-          "from_grade": "Hold",
-          "to_grade": "Hold",
-          "action": "reit"
-        },
-        {
-          "date": "2026-03-17",
-          "firm": "Mizuho",
-          "from_grade": "Neutral",
-          "to_grade": "Neutral",
-          "action": "reit"
-        },
-        {
-          "date": "2026-03-16",
-          "firm": "Barclays",
-          "from_grade": "Overweight",
-          "to_grade": "Overweight",
-          "action": "up"
         },
         {
           "date": "2026-03-20",
@@ -2332,6 +2319,34 @@
           "action": "up"
         },
         {
+          "date": "2026-03-20",
+          "firm": "HSBC",
+          "from_grade": "Hold",
+          "to_grade": "Hold",
+          "action": "reit"
+        },
+        {
+          "date": "2026-03-17",
+          "firm": "Mizuho",
+          "from_grade": "Neutral",
+          "to_grade": "Neutral",
+          "action": "reit"
+        },
+        {
+          "date": "2026-03-16",
+          "firm": "Barclays",
+          "from_grade": "Overweight",
+          "to_grade": "Overweight",
+          "action": "up"
+        },
+        {
+          "date": "2026-03-20",
+          "firm": "HSBC",
+          "from_grade": "Hold",
+          "to_grade": "Hold",
+          "action": "reit"
+        },
+        {
           "date": "2026-03-17",
           "firm": "Mizuho",
           "from_grade": "Neutral",
@@ -2365,6 +2380,13 @@
           "from_grade": "Neutral",
           "to_grade": "Neutral",
           "action": "reit"
+        },
+        {
+          "date": "2026-03-16",
+          "firm": "Barclays",
+          "from_grade": "Overweight",
+          "to_grade": "Overweight",
+          "action": "up"
         }
       ],
       "new_ratings": []
