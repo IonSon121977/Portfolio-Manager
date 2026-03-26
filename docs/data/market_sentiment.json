@@ -11,31 +11,31 @@
         "interpretation": "High fear"
       },
       "vix": {
-        "value": 27.54,
+        "value": 28.25,
         "score": 35,
         "contribution": -3.0,
         "interpretation": "Fear"
       },
       "eurusd": {
-        "value": 1.1541,
-        "chg_pct": -0.21,
+        "value": 1.1533,
+        "chg_pct": -0.28,
         "score": 50,
         "contribution": 0.0,
         "interpretation": "Neutral"
       },
       "stoxx50": {
-        "value": 5562.0498,
-        "ma50": 5900.7316,
-        "pct_from_ma": -5.74,
+        "value": 5565.9302,
+        "ma50": 5900.8092,
+        "pct_from_ma": -5.68,
         "above_ma50": false,
         "score": 20,
         "contribution": -7.5,
         "interpretation": "Strong downtrend"
       },
       "dax": {
-        "value": 22581.0703,
-        "ma50": 24336.9438,
-        "pct_from_ma": -7.21,
+        "value": 22612.9707,
+        "ma50": 24337.5818,
+        "pct_from_ma": -7.09,
         "above_ma50": false,
         "score": 20,
         "contribution": -4.5,
@@ -56,39 +56,39 @@
     "vix": {
       "ticker": "^VIX",
       "label": "VIX",
-      "price": 27.54,
+      "price": 28.25,
       "prev": 25.35,
-      "chg_pct": 8.64,
-      "ma50": 20.8442,
+      "chg_pct": 11.44,
+      "ma50": 20.8584,
       "above_ma50": true
     },
     "eurusd": {
       "ticker": "EURUSD=X",
       "label": "EUR/USD",
-      "price": 1.1541,
+      "price": 1.1533,
       "prev": 1.1565,
-      "chg_pct": -0.21,
+      "chg_pct": -0.28,
       "ma50": 1.1725,
       "above_ma50": false
     },
     "stoxx50": {
       "ticker": "^STOXX50E",
       "label": "Euro Stoxx 50",
-      "price": 5562.0498,
+      "price": 5565.9302,
       "prev": 5637.1099,
-      "chg_pct": -1.33,
-      "ma50": 5900.7316,
+      "chg_pct": -1.26,
+      "ma50": 5900.8092,
       "above_ma50": false
     },
     "dax": {
       "ticker": "^GDAXI",
       "label": "DAX",
-      "price": 22581.0703,
-      "prev": 22934.2891,
-      "chg_pct": -1.54,
-      "ma50": 24336.9438,
+      "price": 22612.9707,
+      "prev": 22957.08,
+      "chg_pct": -1.5,
+      "ma50": 24337.5818,
       "above_ma50": false
     }
   },
-  "updated": "2026-03-26T16:46:10.338929"
+  "updated": "2026-03-26T18:12:55.326735"
 }
