@@ -102,14 +102,12 @@ def fetch_insider_transactions(t) -> list:
         for _, row in df.head(10).iterrows():
             shares = row.get("Shares")
             value  = row.get("Value")
-            # Transaction type column varies by yfinance version
             txn = (
                 row.get("Transaction") or
                 row.get("Text") or
                 row.get("Type") or
                 row.get("Action") or ""
             )
-            # Date column varies too
             dt = (
                 row.get("Start Date") or
                 row.get("Date") or
@@ -233,17 +231,21 @@ def fetch_fundamentals(holding: dict) -> dict:
                 }
                 out["recommendation"] = rec_map.get(rec_key.lower(), "hold")
 
-            out["analyst_total"]       = info.get("numberOfAnalystOpinions", 0) or 0
-            out["analyst_target_mean"] = safe(info.get("targetMeanPrice"))
-            out["analyst_target_high"] = safe(info.get("targetHighPrice"))
-            out["analyst_target_low"]  = safe(info.get("targetLowPrice"))
+            out["analyst_total"] = info.get("numberOfAnalystOpinions", 0) or 0
 
-            # Analyst upside % — current price vs mean target in EUR
+            # Convert analyst targets to EUR at fetch time
+            fx     = _get_fx_rate(currency)
+            t_mean = info.get("targetMeanPrice")
+            t_high = info.get("targetHighPrice")
+            t_low  = info.get("targetLowPrice")
+            out["analyst_target_mean"] = safe(t_mean * fx) if t_mean else None
+            out["analyst_target_high"] = safe(t_high * fx) if t_high else None
+            out["analyst_target_low"]  = safe(t_low  * fx) if t_low  else None
+
+            # Analyst upside % — both already in EUR
             if out["analyst_target_mean"] and price_eur and price_eur > 0:
-                fx = _get_fx_rate(currency)
-                target_eur = out["analyst_target_mean"] * fx
                 out["analyst_upside_pct"] = safe(
-                    (target_eur - price_eur) / price_eur * 100
+                    (out["analyst_target_mean"] - price_eur) / price_eur * 100
                 )
             else:
                 out["analyst_upside_pct"] = None
@@ -294,7 +296,7 @@ def main():
     }
 
     # Sanitize output — replace NaN/Infinity with None before saving
-    import math, json as _json
+    import math
     def _sanitize(obj):
         if isinstance(obj, float):
             if math.isnan(obj) or math.isinf(obj):
