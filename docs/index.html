@@ -957,155 +957,225 @@ let scPage      = 1;
 let scFiltered  = [];
 
 function calcScore(h) {
-  let score = 50;
-  const bd = {
-    baseScore: 50,
-    peRatio:       { value: h.pe_ratio,       contribution: 0, reason: 'Not available' },
-    pbRatio:       { value: h.pb_ratio,       contribution: 0, reason: 'Not available' },
-    priceChange:   { value: h.change_pct||0,  contribution: 0, reason: 'Stable' },
-    roe:           { value: null,             contribution: 0, reason: 'Not available' },
-    roa:           { value: null,             contribution: 0, reason: 'Not available' },
-    profitMargin:  { value: null,             contribution: 0, reason: 'Not available' },
-    debtToEquity:  { value: h.debt_to_equity, contribution: 0, reason: 'Not available' },
-    currentRatio:  { value: h.current_ratio,  contribution: 0, reason: 'Not available' },
-    dividendYield: { value: null,             contribution: 0, reason: 'Not available' },
-    revenueGrowth: { value: null,             contribution: 0, reason: 'Not available' },
-    earningsGrowth:{ value: null,             contribution: 0, reason: 'Not available' },
-    beta:          { value: h.beta,           contribution: 0, reason: 'Not available' },
-    fiftyTwoWeekChange: { value: null,        contribution: 0, reason: 'Not available' },
-  };
+  /**
+   * QVM Score (0-100) — Quality + Value + Momentum
+   * Based on Stockopedia StockRanks, Fintel QVM, and academic research:
+   * - Piotroski (2002): profitability, leverage, efficiency signals
+   * - Springer (2020): P/B + ROE + momentum as optimal factor combination
+   * - Gray & Vogel "Quantitative Momentum": value+momentum outperforms
+   *
+   * Three pillars, each scored 0-100, then weighted:
+   *   QUALITY  40% — profitability, financial health, earnings quality
+   *   VALUE    35% — how cheap vs fundamentals (P/B most important per research)
+   *   MOMENTUM 25% — 52-week price trend, analyst upgrades
+   *
+   * Final score = 0.40*Q + 0.35*V + 0.25*M  → scaled to 0-100
+   */
 
-  // Convert decimal ratios to %
-  const roe    = h.roe            != null ? h.roe            * 100 : undefined;
-  const roa    = h.roa            != null ? h.roa            * 100 : undefined;
-  const margin = h.profit_margin  != null ? h.profit_margin  * 100 : undefined;
-  const dYield = h.dividend_yield != null ? h.dividend_yield * 100 : undefined;
-  const revG   = h.revenue_growth != null ? h.revenue_growth * 100 : undefined;
-  const epsG   = h.earnings_growth!= null ? h.earnings_growth* 100 : undefined;
-  bd.roe.value          = roe;
-  bd.roa.value          = roa;
-  bd.profitMargin.value = margin;
-  bd.dividendYield.value= dYield;
-  bd.revenueGrowth.value= revG;
-  bd.earningsGrowth.value= epsG;
+  const roe    = h.roe           != null ? h.roe           * 100 : null;
+  const roa    = h.roa           != null ? h.roa           * 100 : null;
+  const margin = h.profit_margin != null ? h.profit_margin * 100 : null;
+  const gmarg  = h.gross_margin  != null ? h.gross_margin  * 100 : null;
+  const revG   = h.revenue_growth!= null ? h.revenue_growth* 100 : null;
+  const epsG   = h.earnings_growth!=null ? h.earnings_growth*100 : null;
+  const dYield = h.dividend_yield!= null ? h.dividend_yield* 100 : null;
+  const pe     = h.pe_ratio;
+  const pb     = h.pb_ratio;
+  const ps     = h.ps_ratio;
+  const de     = h.debt_to_equity;
+  const cr     = h.current_ratio;
+  const qr     = h.quick_ratio;
 
-  // 52w change from price vs high
-  let fw52 = undefined;
-  if (h['52w_high'] && h.price_eur && h['52w_high'] > 0)
-    fw52 = ((h.price_eur - h['52w_high']) / h['52w_high']) * 100;
-  bd.fiftyTwoWeekChange.value = fw52;
-
-  // P/E
-  const pe = h.pe_ratio;
-  if (pe != null && pe > 0) {
-    if (pe < 10)      { bd.peRatio.contribution = 15;  bd.peRatio.reason = 'Excellent (P/E < 10)';   score += 15; }
-    else if (pe < 15) { bd.peRatio.contribution = 10;  bd.peRatio.reason = 'Good (P/E < 15)';        score += 10; }
-    else if (pe < 20) { bd.peRatio.contribution = 5;   bd.peRatio.reason = 'Fair (P/E < 20)';        score += 5;  }
-    else if (pe > 50) { bd.peRatio.contribution = -20; bd.peRatio.reason = 'Poor (P/E > 50)';        score -= 20; }
-    else if (pe > 30) { bd.peRatio.contribution = -10; bd.peRatio.reason = 'High (P/E > 30)';        score -= 10; }
-    else              { bd.peRatio.reason = 'Moderate (P/E 20-30)'; }
+  // 52W position: where is price between 52W low and high (0-100%)
+  let fw52pos = null;
+  if (h['52w_high'] && h['52w_low'] && h.price_eur) {
+    const range = h['52w_high'] - h['52w_low'];
+    if (range > 0) fw52pos = Math.min(100, Math.max(0,
+      (h.price_eur - h['52w_low']) / range * 100
+    ));
   }
-  // P/B
-  const pb = h.pb_ratio;
-  if (pb != null) {
-    if (pb < 1)      { bd.pbRatio.contribution = 10;  bd.pbRatio.reason = 'Excellent (P/B < 1)';   score += 10; }
-    else if (pb < 1.5){ bd.pbRatio.contribution = 5;   bd.pbRatio.reason = 'Good (P/B < 1.5)';      score += 5;  }
-    else if (pb > 5) { bd.pbRatio.contribution = -10; bd.pbRatio.reason = 'Poor (P/B > 5)';        score -= 10; }
-    else if (pb > 3) { bd.pbRatio.contribution = -5;  bd.pbRatio.reason = 'High (P/B > 3)';        score -= 5;  }
-    else             { bd.pbRatio.reason = 'Moderate (P/B 1.5-3)'; }
+
+  // Analyst upside (already in %)
+  const upside = h.analyst_upside_pct;
+
+  // ── QUALITY PILLAR (0-100) ──────────────────────────────────────────────
+  // Based on Piotroski F-score components + profitability metrics
+  // Weighted: ROE 30%, profit margin 25%, revenue growth 20%, debt 15%, liquidity 10%
+  const bd = { quality: {}, value: {}, momentum: {} };
+  let qPoints = 0, qMax = 0;
+
+  function qAdd(label, val, pts, maxPts, reason) {
+    bd.quality[label] = { value: val, contribution: pts, max: maxPts, reason };
+    qPoints += pts; qMax += maxPts;
   }
-  // Price change
-  const chg = h.change_pct || 0;
-  if (chg > 10)       { bd.priceChange.contribution = 10;  bd.priceChange.reason = 'Strong growth (>10%)';       score += 10; }
-  else if (chg > 5)   { bd.priceChange.contribution = 5;   bd.priceChange.reason = 'Positive growth (5-10%)';    score += 5;  }
-  else if (chg < -10) { bd.priceChange.contribution = -10; bd.priceChange.reason = 'Significant decline (<-10%)'; score -= 10; }
-  else if (chg < -5)  { bd.priceChange.contribution = -5;  bd.priceChange.reason = 'Negative trend (-5% to -10%)'; score -= 5; }
-  // ROE
+
+  // ROE — Springer (2020): primary quality signal, weight 30%
   if (roe != null) {
-    if (roe > 20)      { bd.roe.contribution = 8;  bd.roe.reason = 'Excellent ROE (>20%)';  score += 8; }
-    else if (roe > 15) { bd.roe.contribution = 5;  bd.roe.reason = 'Good ROE (15-20%)';     score += 5; }
-    else if (roe > 10) { bd.roe.contribution = 2;  bd.roe.reason = 'Fair ROE (10-15%)';     score += 2; }
-    else if (roe < 0)  { bd.roe.contribution = -5; bd.roe.reason = 'Negative ROE';          score -= 5; }
-    else               { bd.roe.reason = 'Low ROE (<10%)'; }
-  }
-  // ROA
-  if (roa != null) {
-    if (roa > 10)      { bd.roa.contribution = 5;  bd.roa.reason = 'Excellent ROA (>10%)'; score += 5; }
-    else if (roa > 5)  { bd.roa.contribution = 3;  bd.roa.reason = 'Good ROA (5-10%)';     score += 3; }
-    else if (roa < 0)  { bd.roa.contribution = -3; bd.roa.reason = 'Negative ROA';         score -= 3; }
-    else               { bd.roa.reason = 'Low ROA (<5%)'; }
-  }
-  // Profit margin
+    const p = roe > 25 ? 30 : roe > 15 ? 22 : roe > 10 ? 15 : roe > 0 ? 8 : 0;
+    const r = roe > 25 ? 'Excellent — top quartile (>25%)' :
+              roe > 15 ? 'Good (15-25%)' :
+              roe > 10 ? 'Fair (10-15%)' :
+              roe > 0  ? 'Weak but positive (<10%)' : 'Negative — destroying equity value';
+    qAdd('ROE', roe, p, 30, r);
+  } else qAdd('ROE', null, 0, 30, 'Not available');
+
+  // Profit margin — Piotroski: earnings quality signal, weight 25%
   if (margin != null) {
-    if (margin > 20)      { bd.profitMargin.contribution = 8;  bd.profitMargin.reason = 'Excellent margin (>20%)'; score += 8; }
-    else if (margin > 10) { bd.profitMargin.contribution = 5;  bd.profitMargin.reason = 'Good margin (10-20%)';    score += 5; }
-    else if (margin > 5)  { bd.profitMargin.contribution = 2;  bd.profitMargin.reason = 'Fair margin (5-10%)';     score += 2; }
-    else if (margin < 0)  { bd.profitMargin.contribution = -8; bd.profitMargin.reason = 'Negative margin';         score -= 8; }
-    else                  { bd.profitMargin.reason = 'Low margin (<5%)'; }
-  }
-  // Debt/Equity
-  const de = h.debt_to_equity;
-  if (de != null) {
-    if (de < 0.5)      { bd.debtToEquity.contribution = 5;  bd.debtToEquity.reason = 'Low debt (<0.5)';       score += 5; }
-    else if (de < 1)   { bd.debtToEquity.contribution = 3;  bd.debtToEquity.reason = 'Moderate debt (0.5-1)'; score += 3; }
-    else if (de > 2)   { bd.debtToEquity.contribution = -5; bd.debtToEquity.reason = 'High debt (>2)';        score -= 5; }
-    else               { bd.debtToEquity.reason = 'Elevated debt (1-2)'; }
-  }
-  // Current ratio
-  const cr = h.current_ratio;
-  if (cr != null) {
-    if (cr > 2)        { bd.currentRatio.contribution = 3;  bd.currentRatio.reason = 'Strong liquidity (>2)';    score += 3; }
-    else if (cr > 1.5) { bd.currentRatio.contribution = 2;  bd.currentRatio.reason = 'Good liquidity (1.5-2)';  score += 2; }
-    else if (cr < 1)   { bd.currentRatio.contribution = -5; bd.currentRatio.reason = 'Poor liquidity (<1)';     score -= 5; }
-    else               { bd.currentRatio.reason = 'Adequate liquidity (1-1.5)'; }
-  }
-  // Dividend yield
-  if (dYield != null && dYield > 0) {
-    if (dYield > 4)      { bd.dividendYield.contribution = 4; bd.dividendYield.reason = 'High yield (>4%)';  score += 4; }
-    else if (dYield > 2) { bd.dividendYield.contribution = 2; bd.dividendYield.reason = 'Good yield (2-4%)'; score += 2; }
-    else                 { bd.dividendYield.reason = 'Low yield (<2%)'; }
-  }
-  // Revenue growth
+    const p = margin > 20 ? 25 : margin > 10 ? 18 : margin > 5 ? 12 :
+              margin > 0  ? 6  : 0;
+    const r = margin > 20 ? 'Excellent — high-margin business (>20%)' :
+              margin > 10 ? 'Good (10-20%)' :
+              margin > 5  ? 'Moderate (5-10%)' :
+              margin > 0  ? 'Thin margin (<5%)' : 'Loss-making — negative margin';
+    qAdd('Profit Margin', margin, p, 25, r);
+  } else qAdd('Profit Margin', null, 0, 25, 'Not available');
+
+  // Revenue growth — forward-looking quality signal, weight 20%
   if (revG != null) {
-    if (revG > 20)       { bd.revenueGrowth.contribution = 8;  bd.revenueGrowth.reason = 'Strong growth (>20%)';      score += 8; }
-    else if (revG > 10)  { bd.revenueGrowth.contribution = 5;  bd.revenueGrowth.reason = 'Good growth (10-20%)';      score += 5; }
-    else if (revG > 5)   { bd.revenueGrowth.contribution = 2;  bd.revenueGrowth.reason = 'Moderate growth (5-10%)';   score += 2; }
-    else if (revG < -10) { bd.revenueGrowth.contribution = -8; bd.revenueGrowth.reason = 'Declining revenue (<-10%)'; score -= 8; }
-    else if (revG < 0)   { bd.revenueGrowth.contribution = -3; bd.revenueGrowth.reason = 'Negative growth';           score -= 3; }
-    else                 { bd.revenueGrowth.reason = 'Slow growth (<5%)'; }
-  }
-  // Earnings growth
-  if (epsG != null) {
-    if (epsG > 25)       { bd.earningsGrowth.contribution = 8;   bd.earningsGrowth.reason = 'Strong EPS growth (>25%)';    score += 8;  }
-    else if (epsG > 15)  { bd.earningsGrowth.contribution = 5;   bd.earningsGrowth.reason = 'Good EPS growth (15-25%)';    score += 5;  }
-    else if (epsG > 5)   { bd.earningsGrowth.contribution = 2;   bd.earningsGrowth.reason = 'Moderate EPS growth (5-15%)'; score += 2;  }
-    else if (epsG < -20) { bd.earningsGrowth.contribution = -10; bd.earningsGrowth.reason = 'Declining EPS (<-20%)';       score -= 10; }
-    else if (epsG < 0)   { bd.earningsGrowth.contribution = -5;  bd.earningsGrowth.reason = 'Negative EPS growth';         score -= 5;  }
-    else                 { bd.earningsGrowth.reason = 'Slow EPS growth (<5%)'; }
-  }
-  // Beta
-  const b = h.beta;
-  if (b != null) {
-    if (b >= 0.8 && b <= 1.2) { bd.beta.contribution = 3;  bd.beta.reason = 'Stable (0.8-1.2)'; score += 3; }
-    else if (b > 1.5)         { bd.beta.contribution = -3; bd.beta.reason = 'High volatility (>1.5)'; score -= 3; }
-    else if (b < 0.5)         { bd.beta.contribution = 2;  bd.beta.reason = 'Low volatility (<0.5)'; score += 2; }
-    else                      { bd.beta.reason = 'Moderate volatility'; }
-  }
-  // 52w change
-  if (fw52 != null) {
-    if (fw52 > 50)       { bd.fiftyTwoWeekChange.contribution = 8;  bd.fiftyTwoWeekChange.reason = 'Strong 52w (>50%)';         score += 8; }
-    else if (fw52 > 20)  { bd.fiftyTwoWeekChange.contribution = 5;  bd.fiftyTwoWeekChange.reason = 'Good 52w (20-50%)';         score += 5; }
-    else if (fw52 < -30) { bd.fiftyTwoWeekChange.contribution = -8; bd.fiftyTwoWeekChange.reason = 'Poor 52w (<-30%)';          score -= 8; }
-    else if (fw52 < -10) { bd.fiftyTwoWeekChange.contribution = -3; bd.fiftyTwoWeekChange.reason = 'Negative 52w (-10% to -30%)'; score -= 3; }
-    else                 { bd.fiftyTwoWeekChange.reason = 'Moderate 52w performance'; }
+    const p = revG > 20 ? 20 : revG > 10 ? 15 : revG > 5 ? 10 :
+              revG > 0  ? 5  : revG > -5 ? 2 : 0;
+    const r = revG > 20 ? 'Strong growth (>20%)' :
+              revG > 10 ? 'Good growth (10-20%)' :
+              revG > 5  ? 'Moderate growth (5-10%)' :
+              revG > 0  ? 'Slow growth (<5%)' :
+              revG > -5 ? 'Slight decline' : 'Revenue declining significantly';
+    qAdd('Revenue Growth', revG, p, 20, r);
+  } else qAdd('Revenue Growth', null, 0, 20, 'Not available');
+
+  // Debt/Equity — Piotroski: financial leverage signal, weight 15%
+  if (de != null) {
+    const p = de < 0.3 ? 15 : de < 0.7 ? 12 : de < 1.5 ? 8 :
+              de < 3   ? 4  : 0;
+    const r = de < 0.3  ? 'Very low debt — strong balance sheet' :
+              de < 0.7  ? 'Low debt (D/E < 0.7)' :
+              de < 1.5  ? 'Moderate debt (D/E 0.7-1.5)' :
+              de < 3    ? 'High debt (D/E 1.5-3) — watch cash flows' :
+                          'Very high debt (D/E > 3) — financial risk';
+    qAdd('Debt/Equity', de, p, 15, r);
+  } else qAdd('Debt/Equity', null, 0, 15, 'Not available');
+
+  // Current ratio — Piotroski: liquidity signal, weight 10%
+  if (cr != null) {
+    const p = cr > 2 ? 10 : cr > 1.5 ? 8 : cr > 1 ? 5 : 0;
+    const r = cr > 2   ? 'Strong liquidity (CR > 2)' :
+              cr > 1.5 ? 'Good liquidity (CR 1.5-2)' :
+              cr > 1   ? 'Adequate liquidity (CR 1-1.5)' :
+                         'Weak liquidity (CR < 1) — short-term risk';
+    qAdd('Current Ratio', cr, p, 10, r);
+  } else qAdd('Current Ratio', null, 0, 10, 'Not available');
+
+  const qualityScore = qMax > 0 ? Math.round(qPoints / qMax * 100) : 50;
+
+  // ── VALUE PILLAR (0-100) ────────────────────────────────────────────────
+  // Springer (2020): P/B is most important value factor, P/E secondary
+  // P/B 45%, P/E 35%, P/S 20%
+  let vPoints = 0, vMax = 0;
+
+  function vAdd(label, val, pts, maxPts, reason) {
+    bd.value[label] = { value: val, contribution: pts, max: maxPts, reason };
+    vPoints += pts; vMax += maxPts;
   }
 
-  return { score: Math.max(0, Math.min(100, Math.round(score))), breakdown: bd };
+  // P/B — Springer (2020): primary value factor, weight 45%
+  if (pb != null && pb > 0) {
+    const p = pb < 1   ? 45 : pb < 1.5 ? 36 : pb < 2.5 ? 27 :
+              pb < 4   ? 18 : pb < 6   ? 9  : 0;
+    const r = pb < 1   ? 'Trading below book value — deep value' :
+              pb < 1.5 ? 'Good value (P/B < 1.5)' :
+              pb < 2.5 ? 'Fair value (P/B 1.5-2.5)' :
+              pb < 4   ? 'Moderate premium (P/B 2.5-4)' :
+              pb < 6   ? 'High premium (P/B 4-6)' : 'Very expensive vs book value';
+    vAdd('P/B Ratio', pb, p, 45, r);
+  } else vAdd('P/B Ratio', null, 0, 45, 'Not available');
+
+  // P/E — weight 35%
+  if (pe != null && pe > 0) {
+    const p = pe < 12  ? 35 : pe < 18 ? 28 : pe < 25 ? 21 :
+              pe < 35  ? 12 : pe < 50 ? 5  : 0;
+    const r = pe < 12  ? 'Cheap — potentially undervalued (P/E < 12)' :
+              pe < 18  ? 'Good value (P/E 12-18)' :
+              pe < 25  ? 'Fair (P/E 18-25) — market average' :
+              pe < 35  ? 'Moderate premium (P/E 25-35)' :
+              pe < 50  ? 'Expensive (P/E 35-50) — needs high growth' :
+                         'Very expensive (P/E > 50)';
+    vAdd('P/E Ratio', pe, p, 35, r);
+  } else vAdd('P/E Ratio', null, 0, 35, 'Not available');
+
+  // P/S — weight 20%
+  if (ps != null && ps > 0) {
+    const p = ps < 1  ? 20 : ps < 2 ? 16 : ps < 4 ? 12 :
+              ps < 8  ? 6  : ps < 12? 2  : 0;
+    const r = ps < 1  ? 'Excellent — trading near revenue (P/S < 1)' :
+              ps < 2  ? 'Good (P/S 1-2)' :
+              ps < 4  ? 'Moderate (P/S 2-4)' :
+              ps < 8  ? 'High (P/S 4-8)' : 'Very expensive vs revenue';
+    vAdd('P/S Ratio', ps, p, 20, r);
+  } else vAdd('P/S Ratio', null, 0, 20, 'Not available');
+
+  const valueScore = vMax > 0 ? Math.round(vPoints / vMax * 100) : 50;
+
+  // ── MOMENTUM PILLAR (0-100) ─────────────────────────────────────────────
+  // Gray & Vogel "Quantitative Momentum": 52W position + analyst sentiment
+  // 52W position 60%, analyst upside 40%
+  let mPoints = 0, mMax = 0;
+
+  function mAdd(label, val, pts, maxPts, reason) {
+    bd.momentum[label] = { value: val, contribution: pts, max: maxPts, reason };
+    mPoints += pts; mMax += maxPts;
+  }
+
+  // 52W position — where in the range (higher = stronger momentum)
+  if (fw52pos != null) {
+    // Research shows stocks near 52W highs outperform (momentum effect)
+    // But extreme proximity can mean overbought — peak at 70-85% range
+    const p = fw52pos > 85 ? 52 : fw52pos > 70 ? 60 : fw52pos > 50 ? 48 :
+              fw52pos > 35 ? 36 : fw52pos > 20 ? 24 : 12;
+    const r = fw52pos > 85 ? 'Near 52W high — strong uptrend (watch for pullback)' :
+              fw52pos > 70 ? 'Strong momentum — upper range' :
+              fw52pos > 50 ? 'Positive — above midpoint of 52W range' :
+              fw52pos > 35 ? 'Below midpoint — moderate weakness' :
+              fw52pos > 20 ? 'Near 52W low — significant downtrend' :
+                             'At/near 52W low — strong downtrend or deep value';
+    mAdd('52W Position', fw52pos, p, 60, r);
+  } else mAdd('52W Position', null, 0, 60, 'Not available');
+
+  // Analyst upside — consensus price target vs current price
+  if (upside != null) {
+    const p = upside > 30 ? 40 : upside > 20 ? 32 : upside > 10 ? 24 :
+              upside > 0  ? 16 : upside > -10 ? 8 : 0;
+    const r = upside > 30 ? 'Strong analyst conviction — >30% upside' :
+              upside > 20 ? 'Good upside — 20-30% to analyst target' :
+              upside > 10 ? 'Moderate upside — 10-20% to target' :
+              upside > 0  ? 'Limited upside — <10% to target' :
+              upside > -10? 'At/above analyst target — limited reward' :
+                            'Above analyst target — downside risk';
+    mAdd('Analyst Upside', upside, p, 40, r);
+  } else mAdd('Analyst Upside', null, 0, 40, 'Not available');
+
+  const momentumScore = mMax > 0 ? Math.round(mPoints / mMax * 100) : 50;
+
+  // ── COMPOSITE SCORE ─────────────────────────────────────────────────────
+  // Quality 40%, Value 35%, Momentum 25% — based on academic research weights
+  const composite = Math.round(0.40 * qualityScore + 0.35 * valueScore + 0.25 * momentumScore);
+  const final = Math.max(0, Math.min(100, composite));
+
+  return {
+    score: final,
+    qualityScore,
+    valueScore,
+    momentumScore,
+    breakdown: bd
+  };
 }
 
 function scoreBadgeColor(s) {
   if (s >= 70) return 'var(--up)';
-  if (s >= 55) return 'var(--warn)';
+  if (s >= 50) return 'var(--warn)';
+  return 'var(--dn)';
+}
+function pillarColor(s) {
+  if (s >= 65) return 'var(--up)';
+  if (s >= 45) return 'var(--warn)';
   return 'var(--dn)';
 }
 
@@ -1229,45 +1299,62 @@ function showBreakdown(idx) {
   const h = (window._scHoldings || [])[idx];
   if (!h) return;
   const ticker = h.ticker;
-  const {score, breakdown} = calcScore(h);
+  const {score, qualityScore, valueScore, momentumScore, breakdown} = calcScore(h);
   document.getElementById('sc-bd-ticker').textContent = ticker;
   document.getElementById('sc-bd-name').textContent   = h.name || '';
-  const items = [
-    ['Base Score',     breakdown.baseScore, 'Starting point', null],
-    ['P/E Ratio',      breakdown.peRatio.contribution,       breakdown.peRatio.reason,       breakdown.peRatio.value],
-    ['P/B Ratio',      breakdown.pbRatio.contribution,       breakdown.pbRatio.reason,       breakdown.pbRatio.value],
-    ['Price Change',   breakdown.priceChange.contribution,   breakdown.priceChange.reason,   breakdown.priceChange.value],
-    ['ROE',            breakdown.roe.contribution,           breakdown.roe.reason,           breakdown.roe.value],
-    ['ROA',            breakdown.roa.contribution,           breakdown.roa.reason,           breakdown.roa.value],
-    ['Profit Margin',  breakdown.profitMargin.contribution,  breakdown.profitMargin.reason,  breakdown.profitMargin.value],
-    ['Debt/Equity',    breakdown.debtToEquity.contribution,  breakdown.debtToEquity.reason,  breakdown.debtToEquity.value],
-    ['Current Ratio',  breakdown.currentRatio.contribution,  breakdown.currentRatio.reason,  breakdown.currentRatio.value],
-    ['Dividend Yield', breakdown.dividendYield.contribution, breakdown.dividendYield.reason, breakdown.dividendYield.value],
-    ['Revenue Growth', breakdown.revenueGrowth.contribution, breakdown.revenueGrowth.reason, breakdown.revenueGrowth.value],
-    ['Earnings Growth',breakdown.earningsGrowth.contribution,breakdown.earningsGrowth.reason,breakdown.earningsGrowth.value],
-    ['Beta',           breakdown.beta.contribution,          breakdown.beta.reason,          breakdown.beta.value],
-    ['52W Change',     breakdown.fiftyTwoWeekChange.contribution, breakdown.fiftyTwoWeekChange.reason, breakdown.fiftyTwoWeekChange.value],
-  ];
-  document.getElementById('sc-bd-grid').innerHTML = items.map(([label, contrib, reason, value]) => {
-    const c   = typeof contrib === 'number' && contrib !== breakdown.baseScore ? contrib : (label==='Base Score' ? 0 : contrib);
-    const col = label==='Base Score' ? 'var(--muted)' : c > 0 ? 'var(--up)' : c < 0 ? 'var(--dn)' : 'var(--muted)';
-    const val = label==='Base Score' ? breakdown.baseScore : (c > 0 ? '+'+c : c);
-    const valDisp = value != null ? ` (${typeof value === 'number' ? value.toFixed(2) : value})` : '';
-    const isTotal = label==='Base Score';
-    return `<div style="padding:10px;background:var(--s2);border-radius:8px;border-left:3px solid ${col}">
-      <div style="font-size:10px;color:var(--muted);margin-bottom:4px">${label}${valDisp}</div>
-      <div style="font-size:${isTotal?'20':'16'}px;font-weight:700;color:${col}">${val}</div>
-      <div style="font-size:10px;color:var(--dim);font-style:italic;margin-top:2px">${reason}</div>
-    </div>`;
-  });
-  // Total score card
+
   const tcol = scoreBadgeColor(score);
-  document.getElementById('sc-bd-grid').innerHTML +=
-    `<div style="padding:10px;background:${tcol}22;border-radius:8px;border:1px solid ${tcol}44;grid-column:1/-1">
-      <div style="font-size:10px;color:var(--muted);margin-bottom:4px">Total Investment Score</div>
-      <div style="font-size:28px;font-weight:700;color:${tcol}">${score}</div>
-      <div style="font-size:10px;color:var(--dim);font-style:italic">Final score (0–100)</div>
+
+  // Three pillar summary bars
+  function pillarBar(label, s, weight, icon) {
+    const col = pillarColor(s);
+    return `<div style="background:var(--s2);border-radius:10px;padding:14px 16px;flex:1;min-width:140px">
+      <div style="font-size:10px;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">${icon} ${label} <span style="color:var(--dim)">${weight}%</span></div>
+      <div style="font-size:24px;font-weight:700;color:${col};font-family:var(--fh)">${s}</div>
+      <div style="margin-top:8px;height:4px;background:var(--s3);border-radius:2px;overflow:hidden">
+        <div style="height:100%;width:${s}%;background:${col};border-radius:2px;transition:width .4s"></div>
+      </div>
     </div>`;
+  }
+
+  const pillarsHtml = `<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px">
+    ${pillarBar('Quality', qualityScore, 40, '🏆')}
+    ${pillarBar('Value', valueScore, 35, '💰')}
+    ${pillarBar('Momentum', momentumScore, 25, '📈')}
+    <div style="background:${tcol}18;border:1px solid ${tcol}44;border-radius:10px;padding:14px 16px;flex:1;min-width:140px;display:flex;flex-direction:column;align-items:center;justify-content:center">
+      <div style="font-size:10px;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px">⭐ QVM Score</div>
+      <div style="font-size:32px;font-weight:700;color:${tcol};font-family:var(--fh)">${score}</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">/ 100</div>
+    </div>
+  </div>`;
+
+  // Detail cards per pillar
+  function pillarSection(title, icon, items, col) {
+    const cards = Object.entries(items).map(([label, d]) => {
+      const pct = d.max > 0 ? Math.round(d.contribution / d.max * 100) : 0;
+      const c = d.contribution > 0 ? 'var(--up)' : d.contribution === 0 ? 'var(--muted)' : 'var(--dn)';
+      const valStr = d.value != null ? (typeof d.value === 'number' ? d.value.toFixed(2) : d.value) : '—';
+      return `<div style="padding:10px 12px;background:var(--s3);border-radius:7px;border-left:2px solid ${c}">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:3px">
+          <span style="font-size:10px;color:var(--muted)">${label}</span>
+          <span style="font-size:11px;font-weight:600;color:${c}">${d.contribution}/${d.max}</span>
+        </div>
+        <div style="font-size:11px;color:var(--text);margin-bottom:2px">${valStr}</div>
+        <div style="font-size:10px;color:var(--dim);font-style:italic">${d.reason}</div>
+      </div>`;
+    }).join('');
+    return `<div style="margin-bottom:12px">
+      <div style="font-size:11px;font-weight:600;color:${col};margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px">${icon} ${title}</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:7px">${cards}</div>
+    </div>`;
+  }
+
+  document.getElementById('sc-bd-grid').innerHTML =
+    pillarsHtml +
+    pillarSection('Quality — 40%', '🏆', breakdown.quality, 'var(--up)') +
+    pillarSection('Value — 35%', '💰', breakdown.value, 'var(--accent)') +
+    pillarSection('Momentum — 25%', '📈', breakdown.momentum, 'var(--intel)');
+
   document.getElementById('sc-breakdown').style.display = 'block';
   document.getElementById('sc-breakdown').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
