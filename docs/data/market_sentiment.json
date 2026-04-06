@@ -1,6 +1,6 @@
 {
   "composite": {
-    "score": 36,
+    "score": 34,
     "label": "Fear",
     "color": "#f56565",
     "components": {
@@ -11,14 +11,14 @@
         "interpretation": "High fear"
       },
       "vix": {
-        "value": 23.87,
-        "score": 50,
-        "contribution": 0.0,
-        "interpretation": "Neutral"
+        "value": 25.02,
+        "score": 35,
+        "contribution": -3.0,
+        "interpretation": "Fear"
       },
       "eurusd": {
-        "value": 1.1518,
-        "chg_pct": -0.22,
+        "value": 1.1549,
+        "chg_pct": 0.23,
         "score": 50,
         "contribution": 0.0,
         "interpretation": "Neutral"
@@ -56,19 +56,19 @@
     "vix": {
       "ticker": "^VIX",
       "label": "VIX",
-      "price": 23.87,
-      "prev": 24.53,
-      "chg_pct": -2.69,
-      "ma50": 21.8398,
+      "price": 25.02,
+      "prev": 23.9,
+      "chg_pct": 4.69,
+      "ma50": 22.0274,
       "above_ma50": true
     },
     "eurusd": {
       "ticker": "EURUSD=X",
       "label": "EUR/USD",
-      "price": 1.1518,
-      "prev": 1.1543,
-      "chg_pct": -0.22,
-      "ma50": 1.1708,
+      "price": 1.1549,
+      "prev": 1.1522,
+      "chg_pct": 0.23,
+      "ma50": 1.1703,
       "above_ma50": false
     },
     "stoxx50": {
@@ -90,5 +90,5 @@
       "above_ma50": false
     }
   },
-  "updated": "2026-04-03T19:28:12.760554"
+  "updated": "2026-04-06T11:57:00.011093"
 }
