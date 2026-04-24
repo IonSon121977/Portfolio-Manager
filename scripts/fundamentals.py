@@ -49,14 +49,16 @@ def fetch_earnings_surprise(t) -> list:
         if df is None or df.empty:
             return []
         results = []
-        for _, row in df.tail(4).iterrows():
+        for idx, row in df.tail(4).iterrows():
             est = row.get("epsEstimate")
             act = row.get("epsActual")
             if est is None or act is None:
                 continue
             surprise_pct = ((act - est) / abs(est) * 100) if est != 0 else 0
+            # "period" is stored in the DataFrame index, not as a column
+            period_val = row.get("period") or row.get("quarterDate") or row.get("date") or idx
             results.append({
-                "period":       str(row.get("period", "")),
+                "period":       str(period_val)[:10],
                 "eps_estimate": safe(est, 3),
                 "eps_actual":   safe(act, 3),
                 "surprise_pct": safe(surprise_pct, 1),
