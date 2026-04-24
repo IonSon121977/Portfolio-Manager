@@ -358,11 +358,15 @@ def get_company_news(ticker: str, _ignored: str = "",
                 continue
             seen.add(title)
             pub = item.findtext("pubDate") or ""
-            try:
-                dt = datetime.strptime(pub[:16].strip(), "%a, %d %b %Y")
-                d  = dt.strftime("%Y-%m-%d")
-            except Exception:
-                d = ""
+            d = ""
+            for _fmt in ("%a, %d %b %Y %H:%M:%S %Z",
+                         "%a, %d %b %Y %H:%M:%S %z",
+                         "%a, %d %b %Y"):
+                try:
+                    d = datetime.strptime(pub.strip(), _fmt).strftime("%Y-%m-%d")
+                    break
+                except Exception:
+                    continue
             if d and d < cutoff:
                 continue
             results.append({
@@ -461,7 +465,7 @@ def get_earnings_calendar(ticker: str, _ignored: str = "",
         if not ed:
             return []
         d = str(ed[0].date()) if hasattr(ed[0], "date") else str(ed[0])[:10]
-        if from_date <= d <= to_date:
+        if (not from_date or from_date <= d) and (not to_date or d <= to_date):
             return [{
                 "date":         d,
                 "hour":         "",
@@ -487,7 +491,7 @@ def get_dividends(ticker: str, _ignored: str = "",
         results = []
         for idx, val in df.items():
             d = str(idx.date()) if hasattr(idx, "date") else str(idx)[:10]
-            if from_date <= d <= to_date:
+            if (not from_date or from_date <= d) and (not to_date or d <= to_date):
                 results.append({
                     "ex_date":  d,
                     "pay_date": "",
@@ -510,7 +514,7 @@ def get_stock_splits(ticker: str, _ignored: str = "",
         results = []
         for idx, val in df.items():
             d = str(idx.date()) if hasattr(idx, "date") else str(idx)[:10]
-            if from_date <= d <= to_date:
+            if (not from_date or from_date <= d) and (not to_date or d <= to_date):
                 results.append({"date": d, "ratio": str(val) + ":1"})
         return results
     except Exception:
