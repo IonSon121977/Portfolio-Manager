@@ -18,7 +18,7 @@ from shared import (
 import yfinance as yf
 
 FUNDAMENTALS_F = DATA_DIR / "fundamentals.json"
-SKIP_TICKERS   = {"BTC-USD", "GC=F", "SI=F", "ETH-USD"}
+SKIP_TICKERS   = {"BTC-USD", "GC=F", "SI=F", "ETH-USD", "SNDK"}
 
 
 def safe(val, decimals=2):
@@ -235,14 +235,17 @@ def fetch_fundamentals(holding: dict) -> dict:
 
             out["analyst_total"] = info.get("numberOfAnalystOpinions", 0) or 0
 
-            # Convert analyst targets to EUR at fetch time
-            fx     = _get_fx_rate(currency)
+            # Convert analyst targets to EUR at fetch time.
+            # yfinance always returns analyst targets in the stock's base currency (GBP
+            # for LSE stocks), even when fast_info.currency was overridden to GBX.
+            # Using the GBX rate here would divide by 100 a second time, so we force GBP.
+            fx_targets = _get_fx_rate("GBP" if currency == "GBX" else currency)
             t_mean = info.get("targetMeanPrice")
             t_high = info.get("targetHighPrice")
             t_low  = info.get("targetLowPrice")
-            out["analyst_target_mean"] = safe(t_mean * fx) if t_mean else None
-            out["analyst_target_high"] = safe(t_high * fx) if t_high else None
-            out["analyst_target_low"]  = safe(t_low  * fx) if t_low  else None
+            out["analyst_target_mean"] = safe(t_mean * fx_targets) if t_mean else None
+            out["analyst_target_high"] = safe(t_high * fx_targets) if t_high else None
+            out["analyst_target_low"]  = safe(t_low  * fx_targets) if t_low  else None
 
             # Analyst upside % — both already in EUR
             if out["analyst_target_mean"] and price_eur and price_eur > 0:
