@@ -1109,8 +1109,18 @@ function renderWeekly() {
     });
     return;
   }
+
+  // ── Week label: detect if stored week is current or upcoming ───────────────
   const wl = document.getElementById('wr-week-label');
-  if (wl) wl.textContent = (wr.week_from||'—') + ' → ' + (wr.week_to||'—');
+  if (wl) {
+    const today        = new Date().toISOString().slice(0,10);
+    const weekFromIso  = wr.week_from_iso || '';
+    const weekToIso    = wr.week_to_iso   || '';
+    const isCurrentWk  = weekFromIso && weekToIso && today >= weekFromIso && today <= weekToIso;
+    const isFutureWk   = weekFromIso && today < weekFromIso;
+    const prefix       = isCurrentWk ? '📅 This week: ' : isFutureWk ? '📅 Next week: ' : '📅 ';
+    wl.textContent     = prefix + (wr.week_from||'—') + ' → ' + (wr.week_to||'—');
+  }
 
   const earn   = wr.earnings  || {};
   const divs   = wr.dividends || {};
@@ -1139,25 +1149,56 @@ function renderWeekly() {
   const tbl = (heads,rows) => `<table style="width:100%;border-collapse:collapse"><thead><tr>${heads.map(th).join('')}</tr></thead><tbody>${rows.join('')}</tbody></table>`;
   const setHtml = (id, html) => { const el = document.getElementById(id); if(el) el.innerHTML = html; };
 
+  // ── Earnings ────────────────────────────────────────────────────────────────
   const earnFlat = Object.entries(earn).flatMap(([t,evts])=>evts.map(e=>({t,...e}))).sort((a,b)=>a.date.localeCompare(b.date));
-  const hourLbl = h => ({'bmo':'Before open','amc':'After close','dmh':'During mkt'}[h]||h||'—');
+  const hourLbl  = h => ({'bmo':'Before open','amc':'After close','dmh':'During mkt'}[h]||h||'—');
+  const fmtEps   = v => v != null ? (v >= 0 ? '+' : '') + Number(v).toFixed(2) : '—';
+  const fmtRev   = v => {
+    if (v == null) return '—';
+    const n = Number(v);
+    if (n >= 1e9)  return '$' + (n/1e9).toFixed(2)  + 'B';
+    if (n >= 1e6)  return '$' + (n/1e6).toFixed(1)  + 'M';
+    return '$' + n.toFixed(0);
+  };
   setHtml('wr-earnings-wrap', earnFlat.length ? tbl(
     ['Date','Ticker','Quarter','When','EPS Est.','Revenue Est.'],
-    earnFlat.map(e=>`<tr>${td(e.date,'color:var(--muted)')}${td(tkBadge(e.t))}${td(`Q${e.quarter||'?'} ${e.year||''}`,'color:var(--muted)')}${td(hourLbl(e.hour),'color:var(--muted);font-size:11px')}${td(e.eps_estimate!=null?`$${Number(e.eps_estimate).toFixed(2)}`:'—','color:var(--lime)')}${td(e.revenue_est>1e6?`$${(e.revenue_est/1e9).toFixed(2)}B`:'—','color:var(--lime)')}</tr>`)
+    earnFlat.map(e=>`<tr>
+      ${td(e.date,'color:var(--muted)')}
+      ${td(tkBadge(e.t))}
+      ${td(e.quarter ? `Q${e.quarter} ${e.year||''}` : '—','color:var(--muted)')}
+      ${td(hourLbl(e.hour),'color:var(--muted);font-size:11px')}
+      ${td(fmtEps(e.eps_estimate),'color:var(--lime);font-weight:600')}
+      ${td(fmtRev(e.revenue_est),'color:var(--lime)')}
+    </tr>`)
   ) : '<div class="empty">No earnings calls for your holdings next week.</div>');
 
+  // ── Dividends ────────────────────────────────────────────────────────────────
   const divFlat = Object.entries(divs).flatMap(([t,evts])=>evts.map(d=>({t,...d}))).sort((a,b)=>(a.ex_date||'').localeCompare(b.ex_date||''));
+  const fmtAmt  = (amt, cur) => {
+    if (amt == null) return '—';
+    const sym = cur === 'EUR' ? '€' : cur === 'GBP' ? '£' : cur === 'GBX' ? 'p' : '$';
+    const val = cur === 'GBX' ? Number(amt).toFixed(2) + 'p' : sym + Number(amt).toFixed(4);
+    return val;
+  };
   setHtml('wr-div-wrap', divFlat.length ? tbl(
-    ['Ex-Date','Ticker','Amount','Currency','Record Date','Pay Date'],
-    divFlat.map(d=>`<tr>${td(d.ex_date||'—','color:var(--muted)')}${td(tkBadge(d.t))}${td(d.amount!=null?`$${Number(d.amount).toFixed(4)}`:'—','color:var(--up);font-weight:600')}${td(d.currency||'USD','color:var(--muted);font-size:11px')}${td(d.record_date||'—','color:var(--muted);font-size:11px')}${td(d.pay_date||'—','color:var(--muted);font-size:11px')}</tr>`)
+    ['Ex-Date','Ticker','Amount','Currency','Pay Date'],
+    divFlat.map(d=>`<tr>
+      ${td(d.ex_date||'—','color:var(--muted)')}
+      ${td(tkBadge(d.t))}
+      ${td(fmtAmt(d.amount, d.currency),'color:var(--up);font-weight:600')}
+      ${td(d.currency||'—','color:var(--muted);font-size:11px')}
+      ${td(d.pay_date||'—','color:var(--muted);font-size:11px')}
+    </tr>`)
   ) : '<div class="empty">No dividend events next week.</div>');
 
+  // ── Splits ───────────────────────────────────────────────────────────────────
   const splitFlat = Object.entries(splits).flatMap(([t,evts])=>evts.map(s=>({t,...s}))).sort((a,b)=>a.date.localeCompare(b.date));
   setHtml('wr-split-wrap', splitFlat.length ? tbl(
     ['Date','Ticker','Ratio'],
     splitFlat.map(s=>`<tr>${td(s.date,'color:var(--muted)')}${td(tkBadge(s.t))}${td(s.ratio||'—','color:var(--warn);font-weight:600')}</tr>`)
   ) : '<div class="empty">No stock splits next week.</div>');
 
+  // ── IPOs ─────────────────────────────────────────────────────────────────────
   setHtml('wr-ipo-wrap', ipos.length ? tbl(
     ['Date','Company','Ticker','Exchange','Price','Status'],
     [...ipos].sort((a,b)=>a.date.localeCompare(b.date)).map(i=>`<tr>${td(i.date,'color:var(--muted)')}${td(i.name||'—')}${td(tkBadge(i.ticker||'—'))}${td(i.exchange||'—','color:var(--muted);font-size:11px')}${td(i.price_range||'—','color:var(--lime)')}${td(i.status||'—','color:var(--muted);font-size:11px')}</tr>`)
