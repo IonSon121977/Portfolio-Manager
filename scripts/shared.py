@@ -465,13 +465,45 @@ def get_morningstar_data(ticker: str, isin: str) -> dict:
         
 # -- COMPANY NEWS -------------------------------------------------------------
 def get_company_news(ticker: str, _ignored: str = "",
-                     days_back: int = 1, max_articles: int = 3,
+                     days_back: int = 1, max_articles: int = 6,
                      holding_name: str = "") -> list:
-    cutoff = (date.today() - timedelta(days=days_back)).isoformat()
+    """
+    Fetch news from multiple free sources in parallel.
+
+    Sources (all no API key required):
+      1. yfinance  .news       — Yahoo Finance JSON news, best ticker-specific coverage
+      2. Yahoo Finance RSS     — RSS fallback / extra articles
+      3. Google News RSS       — broad coverage, good for European names by company name
+      4. Bing News RSS         — different index, catches EU/regional press well
+      5. Seeking Alpha RSS     — in-depth analysis pieces, US stocks mainly
+
+    Articles are deduplicated by normalised title, interleaved across sources
+    so the final list always represents multiple outlets.
+    """
+    cutoff       = (date.today() - timedelta(days=days_back)).isoformat()
     holding_name = holding_name or ticker.split(".")[0]
 
     import urllib.request
+    import urllib.parse
     import xml.etree.ElementTree as ET
+    import threading
+
+    is_european = any(ticker.endswith(x) for x in
+                      [".DE", ".PA", ".L", ".AS", ".ST", ".MI", ".BR",
+                       ".CO", ".HE", ".OL", ".VI", ".SW", ".MC"])
+
+    # ── helpers ──────────────────────────────────────────────────────────────
+
+    def _norm_title(t: str) -> str:
+        """Lowercase + strip punctuation for dedup comparison."""
+        import re
+        return re.sub(r"[^a-z0-9 ]", "", t.lower()).strip()
+
+    def _ts_to_date(ts) -> str:
+        try:
+            return datetime.utcfromtimestamp(int(ts)).strftime("%Y-%m-%d")
+        except Exception:
+            return ""
 
     def _parse_rss(raw: bytes, default_source: str) -> list:
         try:
@@ -498,86 +530,128 @@ def get_company_news(ticker: str, _ignored: str = "",
                     continue
             if d and d < cutoff:
                 continue
+            # try <source> tag first, fall back to default
+            src_el = item.find("source")
+            source = (src_el.text if src_el is not None and src_el.text else default_source)
             results.append({
                 "title":   title,
-                "source":  item.findtext("source") or default_source,
+                "source":  source,
                 "url":     item.findtext("link") or "",
                 "date":    d,
-                "summary": "",
+                "summary": (item.findtext("description") or "")[:200],
             })
         return results
 
-    def _fetch(url: str, default_source: str) -> list:
+    def _fetch_rss(url: str, default_source: str) -> list:
         try:
             req = urllib.request.Request(
-                url, headers={"User-Agent": "Mozilla/5.0"}
+                url,
+                headers={"User-Agent": "Mozilla/5.0 (compatible; portfolio-bot/1.0)"}
             )
             with urllib.request.urlopen(req, timeout=10) as resp:
                 raw = resp.read()
             return _parse_rss(raw, default_source)
         except Exception as e:
-            log.warning("  " + default_source + " failed for " + ticker + ": " + str(e))
+            log.warning("  " + default_source + " RSS failed for " + ticker + ": " + str(e))
             return []
 
-    # Fetch from BOTH sources always, in parallel via threads
-    import threading
+    # ── source fetch functions (run in threads) ───────────────────────────────
 
-    yahoo_results  = []
-    google_results = []
+    results: dict = {k: [] for k in
+                     ["yf", "yahoo_rss", "google", "bing", "seekalpha"]}
 
-    def _fetch_yahoo():
-        url = (
-            "https://feeds.finance.yahoo.com/rss/2.0/headline?s="
-            + ticker + "&region=US&lang=en-US"
-        )
-        yahoo_results.extend(_fetch(url, "Yahoo Finance"))
+    # 1. yfinance .news — best ticker-specific, works for EU stocks
+    def _fetch_yf_news():
+        try:
+            t   = yf.Ticker(ticker)
+            raw = t.news or []
+            for item in raw:
+                ts    = item.get("providerPublishTime") or item.get("publishedAt") or 0
+                d     = _ts_to_date(ts)
+                if d and d < cutoff:
+                    continue
+                title = (item.get("title") or "").strip()
+                if not title:
+                    continue
+                results["yf"].append({
+                    "title":   title,
+                    "source":  item.get("publisher") or "Yahoo Finance",
+                    "url":     item.get("link") or item.get("url") or "",
+                    "date":    d,
+                    "summary": (item.get("summary") or "")[:200],
+                })
+        except Exception as e:
+            log.warning("  yfinance news failed for " + ticker + ": " + str(e))
 
+    # 2. Yahoo Finance RSS (supplement — sometimes has different articles)
+    def _fetch_yahoo_rss():
+        url = ("https://feeds.finance.yahoo.com/rss/2.0/headline?s="
+               + ticker + "&region=US&lang=en-US")
+        results["yahoo_rss"].extend(_fetch_rss(url, "Yahoo Finance"))
+
+    # 3. Google News RSS — uses company name, great for European stocks
     def _fetch_google():
-        # Use full company name for much better results
-        # e.g. "Siemens Energy stock" instead of "ENR stock"
-        name  = holding_name.split(" ")[:3]  # first 3 words of company name
-        query = urllib.request.quote(" ".join(name) + " stock")
-        url   = (
-            "https://news.google.com/rss/search?q="
-            + query + "&hl=en-US&gl=US&ceid=US:en"
-        )
-        google_results.extend(_fetch(url, "Google News"))
+        words = holding_name.split()[:3]
+        query = urllib.parse.quote(" ".join(words) + " stock")
+        url   = ("https://news.google.com/rss/search?q="
+                 + query + "&hl=en-US&gl=US&ceid=US:en")
+        results["google"].extend(_fetch_rss(url, "Google News"))
 
-    t1 = threading.Thread(target=_fetch_yahoo)
-    t2 = threading.Thread(target=_fetch_google)
-    t1.start()
-    t2.start()
-    t1.join(timeout=12)
-    t2.join(timeout=12)
+    # 4. Bing News RSS — different corpus, catches European/regional press
+    def _fetch_bing():
+        # For European stocks use the local company name without "stock"
+        # suffix — Bing indexes more regional language sources
+        words = holding_name.split()[:3]
+        query = urllib.parse.quote(" ".join(words) + (" stock" if not is_european else ""))
+        url   = ("https://www.bing.com/news/search?q=" + query
+                 + "&format=RSS&mkt=en-US")
+        results["bing"].extend(_fetch_rss(url, "Bing News"))
 
-    # Merge both — deduplicate by title, interleave so both sources represented
-    seen    = set()
-    merged  = []
+    # 5. Seeking Alpha RSS — in-depth articles, mainly US but valuable
+    def _fetch_seekalpha():
+        if is_european:
+            return   # SA has very limited EU stock coverage
+        base_ticker = ticker.split(".")[0]
+        url  = ("https://seekingalpha.com/api/sa/combined/"
+                + base_ticker.upper() + ".xml")
+        items = _fetch_rss(url, "Seeking Alpha")
+        results["seekalpha"].extend(items)
 
-    # Interleave: take 1 from yahoo, 1 from google, 1 from yahoo etc
-    # so final result always has mix of both sources when both return results
-    yi = 0
-    gi = 0
-    while len(merged) < max_articles * 2:
+    threads = [
+        threading.Thread(target=_fetch_yf_news),
+        threading.Thread(target=_fetch_yahoo_rss),
+        threading.Thread(target=_fetch_google),
+        threading.Thread(target=_fetch_bing),
+        threading.Thread(target=_fetch_seekalpha),
+    ]
+    for t_ in threads:
+        t_.start()
+    for t_ in threads:
+        t_.join(timeout=12)
+
+    # ── merge: interleave across sources, dedup by normalised title ───────────
+    # Priority order: yfinance news first (most relevant), then others
+    source_order = ["yf", "google", "bing", "yahoo_rss", "seekalpha"]
+    seen_norm  = set()
+    merged     = []
+    indices    = {k: 0 for k in source_order}
+
+    while len(merged) < max_articles * 3:   # fetch more, trim at end
         added = False
-        if yi < len(yahoo_results):
-            r = yahoo_results[yi]
-            yi += 1
-            if r["title"] not in seen:
-                seen.add(r["title"])
-                merged.append(r)
-                added = True
-        if gi < len(google_results):
-            r = google_results[gi]
-            gi += 1
-            if r["title"] not in seen:
-                seen.add(r["title"])
-                merged.append(r)
-                added = True
+        for src in source_order:
+            pool = results[src]
+            i    = indices[src]
+            if i < len(pool):
+                article = pool[i]
+                indices[src] += 1
+                norm = _norm_title(article["title"])
+                if norm and norm not in seen_norm:
+                    seen_norm.add(norm)
+                    merged.append(article)
+                    added = True
         if not added:
             break
 
-    # Sort by date descending, cap at max_articles
     merged.sort(key=lambda x: x.get("date", ""), reverse=True)
     return merged[:max_articles]
 

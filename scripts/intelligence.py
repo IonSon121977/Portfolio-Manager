@@ -20,6 +20,7 @@ from shared import (
     INTEL_F,
     get_analyst_upgrades,
     get_analyst_consensus,
+    get_company_news,
     append_alert, send_email,
     rating_change_html, log
 )
@@ -105,6 +106,17 @@ def main():
             # keep previous consensus if fresh fetch returned nothing
             if "consensus" not in entry:
                 entry["consensus"] = {}
+
+        # ── News (multi-source: yfinance, Google, Bing, Seeking Alpha) ──────────
+        log.info("  News: " + ticker)
+        news = get_company_news(
+            ticker,
+            days_back=3,          # last 3 days — more than digest's 1 day
+            max_articles=6,
+            holding_name=name,
+        )
+        entry["news"] = news
+        log.info("    " + ticker + ": " + str(len(news)) + " article(s)")
 
         updated.append(entry)
 
