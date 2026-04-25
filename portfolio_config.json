@@ -10,7 +10,7 @@
       {
         "ticker": "ENR.DE",
         "name": "Siemens Energy",
-        "shares": 9,
+        "shares": 5,
         "isin": "DE000ENER6Y0",
         "finnhub_symbol": "XETRA:ENR"
       },
@@ -24,7 +24,7 @@
       {
         "ticker": "MILDEF.ST",
         "name": "MilDef Group",
-        "shares": 60,
+        "shares": 40,
         "isin": "SE0016074249",
         "finnhub_symbol": "STO:MILDEF"
       },
@@ -37,14 +37,14 @@
       {
         "ticker": "AIR.PA",
         "name": "Airbus",
-        "shares": 7,
+        "shares": 5,
         "isin": "NL0000235190",
         "finnhub_symbol": "EPA:AIR"
       },
       {
         "ticker": "HO.PA",
         "name": "Thales",
-        "shares": 5,
+        "shares": 0,
         "isin": "FR0000121329",
         "finnhub_symbol": "EPA:HO"
       },
@@ -85,12 +85,6 @@
         "isin": "US0378331005"
       },
       {
-        "ticker": "LLY",
-        "name": "Eli Lilly",
-        "shares": 0,
-        "isin": "US5324571083"
-      },
-      {
         "ticker": "GBF.DE",
         "name": "Bilfinger",
         "shares": 0,
@@ -107,12 +101,6 @@
         "name": "BE Semiconductor (BESI)",
         "shares": 0,
         "finnhub_symbol": "AMS:BESI"
-      },
-      {
-        "ticker": "ASM.AS",
-        "name": "ASM International (ASMI)",
-        "shares": 0,
-        "finnhub_symbol": "AMS:ASM"
       },
       {
         "ticker": "CAT",
@@ -139,34 +127,10 @@
         "isin": "DE000A1K0235"
       },
       {
-        "ticker": "XOM",
-        "name": "Exxon Mobil Corporation",
-        "shares": 0,
-        "isin": ""
-      },
-      {
-        "ticker": "CVX",
-        "name": "Chevron Corporation",
-        "shares": 0,
-        "isin": ""
-      },
-      {
         "ticker": "ALV.DE",
         "name": "Allianz SE",
         "shares": 0,
         "isin": "DE0008404005"
-      },
-      {
-        "ticker": "SHEL.L",
-        "name": "Shell plc",
-        "shares": 0,
-        "isin": "GB00BP6MXD84"
-      },
-      {
-        "ticker": "REP.MC",
-        "name": "Repsol SA",
-        "shares": 0,
-        "isin": "ES0173516115"
       },
       {
         "ticker": "GE",
@@ -181,16 +145,48 @@
         "isin": "FR0014000MR3"
       },
       {
-        "ticker": "BP.L",
-        "name": "BP plc",
-        "shares": 0,
-        "isin": "GB0007980591"
-      },
-      {
         "ticker": "MU",
         "name": "Micron Technology Inc.",
         "shares": 0,
         "isin": ""
+      },
+      {
+        "ticker": "INTC",
+        "name": "Intel",
+        "shares": 0,
+        "isin": "US4581401001"
+      },
+      {
+        "ticker": "AMD",
+        "name": "Advanced Micro Devices",
+        "shares": 0,
+        "isin": "US0079031078"
+      },
+      {
+        "ticker": "TXN",
+        "name": "Texas Instruments",
+        "shares": 0,
+        "isin": "US8825081040"
+      },
+      {
+        "ticker": "ASML",
+        "name": "ASML Holding",
+        "shares": 0,
+        "isin": "NL0010273215"
+      },
+      {
+        "ticker": "STM.PA",
+        "name": "STMicroelectronics",
+        "shares": 0,
+        "isin": "NL0000226223",
+        "finnhub_symbol": "EPA:STM"
+      },
+      {
+        "ticker": "SU.PA",
+        "name": "Schneider Electric S.E.",
+        "shares": 0,
+        "isin": "FR0000121972",
+        "finnhub_symbol": "EPA:SU"
       }
     ],
     "etfs": [
@@ -209,18 +205,18 @@
         "finnhub_symbol": "XETRA:EUNK"
       },
       {
-        "ticker": "QDVE.DE",
-        "name": "iShares S&P 500 IT Sector UCITS ETF",
-        "shares": 10,
-        "isin": "IE00B3WJKG14",
-        "finnhub_symbol": "XETRA:QDVE"
-      },
-      {
         "ticker": "IS3N.DE",
         "name": "iShares Core MSCI EM IMI UCITS ETF",
         "shares": 10,
         "isin": "IE00BKM4GZ66",
         "finnhub_symbol": "XETRA:IS3N"
+      },
+      {
+        "ticker": "SEMI.AS",
+        "name": "iShares MSCI Global Semiconductors UCITS ETF",
+        "shares": 10,
+        "isin": "IE000I8KRLL9",
+        "finnhub_symbol": "AMS:SEMI"
       }
     ]
   },
@@ -238,77 +234,80 @@
     "ratings_days_back": 7
   },
   "last_prices": {
-    "MSFT": 362.12,
+    "MSFT": 359.37,
     "ENR.DE": 187.62,
     "VH2.DE": 72.55,
-    "MILDEF.ST": 17.45,
-    "GOOG": 291.93,
+    "MILDEF.ST": 17.42,
+    "GOOG": 291.98,
     "AIR.PA": 165.92,
     "HO.PA": 232.8,
-    "BTC-USD": 66236.06,
-    "GC=F": 4027.18,
-    "SI=F": 65.14,
-    "NVDA": 177.61,
-    "AMZN": 225.13,
-    "AAPL": 231.16,
-    "LLY": 753.84,
+    "BTC-USD": 66247.22,
+    "GC=F": 4045.85,
+    "SI=F": 65.31,
+    "NVDA": 178.48,
+    "AMZN": 224.9,
+    "AAPL": 230.42,
+    "LLY": 751.93,
     "GBF.DE": 98.9,
-    "BA.L": 23.33,
+    "BA.L": 23.32,
     "BESI.AS": 252.2,
     "ASM.AS": 867.4,
-    "CAT": 708.5,
+    "CAT": 710.47,
     "IBE.MC": 19.92,
-    "SNDK": 844.19,
+    "SNDK": 844.98,
     "SMHN.DE": 69.9,
-    "XOM": 126.99,
-    "CVX": 157.95,
     "ALV.DE": 388.0,
-    "SHEL.L": 38.19,
     "REP.MC": 20.89,
-    "GE": 242.71,
+    "GE": 242.39,
     "TTE.PA": 77.0,
     "BP.L": 6.6,
-    "MU": 423.6,
+    "MU": 423.41,
+    "INTC": 20.50,
+    "AMD": 96.30,
+    "TXN": 172.40,
+    "ASML": 580.00,
+    "STM.PA": 20.80,
+    "SU.PA": 230.00,
     "SPYY.DE": 261.65,
     "EUNK.DE": 97.64,
-    "QDVE.DE": 38.49,
-    "IS3N.DE": 44.38
+    "IS3N.DE": 44.38,
+    "SEMI.AS": 16.70
   },
   "morning_prices": {
-    "MSFT": 362.12,
-    "ENR.DE": 187.62,
-    "VH2.DE": 72.55,
-    "MILDEF.ST": 17.45,
-    "GOOG": 291.93,
-    "AIR.PA": 165.92,
-    "HO.PA": 232.8,
-    "BTC-USD": 66129.44,
-    "GC=F": 4027.18,
-    "SI=F": 65.14,
-    "NVDA": 177.61,
-    "AMZN": 225.13,
-    "AAPL": 231.16,
-    "LLY": 753.84,
-    "GBF.DE": 98.9,
-    "BA.L": 23.33,
-    "BESI.AS": 252.2,
-    "ASM.AS": 867.4,
-    "CAT": 708.5,
-    "IBE.MC": 19.92,
-    "SNDK": 844.19,
-    "SMHN.DE": 69.9,
-    "XOM": 126.99,
-    "CVX": 157.95,
-    "ALV.DE": 388.0,
-    "SHEL.L": 38.19,
-    "REP.MC": 20.89,
-    "GE": 242.71,
-    "TTE.PA": 77.0,
-    "BP.L": 6.6,
-    "MU": 423.6,
-    "SPYY.DE": 261.65,
-    "EUNK.DE": 97.64,
-    "QDVE.DE": 38.49,
-    "IS3N.DE": 44.38
+    "MSFT": 355.59,
+    "ENR.DE": 185.94,
+    "VH2.DE": 73.0,
+    "MILDEF.ST": 16.55,
+    "GOOG": 288.88,
+    "AIR.PA": 163.32,
+    "HO.PA": 237.1,
+    "BTC-USD": 66400.63,
+    "GC=F": 4024.36,
+    "SI=F": 64.0,
+    "NVDA": 170.75,
+    "AMZN": 218.17,
+    "AAPL": 233.86,
+    "GBF.DE": 98.15,
+    "BA.L": 23.47,
+    "BESI.AS": 247.7,
+    "ASM.AS": 851.4,
+    "CAT": 714.38,
+    "IBE.MC": 19.89,
+    "SNDK": 797.51,
+    "SMHN.DE": 69.15,
+    "ALV.DE": 386.7,
+    "GE": 241.49,
+    "TTE.PA": 77.88,
+    "MU": 412.02,
+    "INTC": 20.50,
+    "AMD": 96.30,
+    "TXN": 172.40,
+    "ASML": 580.00,
+    "STM.PA": 20.80,
+    "SU.PA": 230.00,
+    "SPYY.DE": 260.75,
+    "EUNK.DE": 97.38,
+    "IS3N.DE": 44.02,
+    "SEMI.AS": 16.70
   }
 }
