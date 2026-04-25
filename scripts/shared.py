@@ -221,41 +221,170 @@ def get_stock_data(holding: dict, _ignored: str = "") -> dict:
 
 # -- ANALYST UPGRADES ---------------------------------------------------------
 def get_analyst_upgrades(ticker: str, _ignored: str = "", days_back: int = 7) -> list:
-    is_european = any(ticker.endswith(x) for x in
-                      [".DE", ".PA", ".L", ".AS", ".ST", ".MI", ".BR",
-                       ".CO", ".HE", ".OL", ".VI", ".SW", ".MC"])
-    if is_european:
-        return []
-
+    """
+    Fetch individual broker upgrades/downgrades for any exchange.
+    Works for US and major European tickers via yfinance (Yahoo Finance data).
+    Falls back to synthesised entries from monthly recommendations when
+    upgrades_downgrades is empty (common for smaller European names).
+    """
     cutoff = (date.today() - timedelta(days=days_back)).isoformat()
+
+    # ── 1. Try upgrades_downgrades (works for US + large-cap EU) ─────────────
+    results = []
     try:
         t  = yf.Ticker(ticker)
         df = t.upgrades_downgrades
-        if df is None or df.empty:
-            return []
-        results = []
-        for idx, row in df.iterrows():
-            d = str(idx.date()) if hasattr(idx, "date") else str(idx)[:10]
-            if d < cutoff:
-                continue
-            fg = str(row.get("FromGrade", "") or "")
-            tg = str(row.get("ToGrade",   "") or "")
-            action = (
-                "up"   if tg.lower() in ["buy", "outperform", "overweight", "strong buy"]
-                else "down" if tg.lower() in ["sell", "underperform", "underweight"]
-                else "reit"
-            )
-            results.append({
-                "date":       d,
-                "firm":       str(row.get("Firm", "") or ""),
-                "from_grade": fg,
-                "to_grade":   tg,
-                "action":     action,
-            })
-        return results[:20]
+        if df is not None and not df.empty:
+            for idx, row in df.iterrows():
+                d = str(idx.date()) if hasattr(idx, "date") else str(idx)[:10]
+                if d < cutoff:
+                    continue
+                fg = str(row.get("FromGrade", "") or "")
+                tg = str(row.get("ToGrade",   "") or "")
+                action = _grade_action(tg)
+                results.append({
+                    "date":       d,
+                    "firm":       str(row.get("Firm", "") or ""),
+                    "from_grade": fg,
+                    "to_grade":   tg,
+                    "action":     action,
+                    "source":     "broker",
+                })
     except Exception as e:
-        log.warning("  upgrades fetch failed for " + ticker + ": " + str(e))
-        return []
+        log.warning("  upgrades_downgrades failed for " + ticker + ": " + str(e))
+
+    # ── 2. Fallback: synthesise from recommendations consensus ────────────────
+    # recommendations gives monthly Buy/Hold/Sell counts; derive direction
+    # by comparing the latest two months. Useful for EU mid-caps where
+    # broker-by-broker history is not available on Yahoo.
+    if not results:
+        try:
+            t   = yf.Ticker(ticker)
+            rec = t.recommendations
+            if rec is not None and not rec.empty:
+                # keep last 2 months only
+                recent = rec.tail(2)
+                rows   = list(recent.itertuples())
+                if len(rows) >= 1:
+                    last = rows[-1]
+                    prev = rows[-2] if len(rows) >= 2 else None
+                    # build counts
+                    def _counts(r):
+                        sb = getattr(r, "strongBuy",  0) or 0
+                        b  = getattr(r, "buy",        0) or 0
+                        h  = getattr(r, "hold",       0) or 0
+                        s  = getattr(r, "sell",       0) or 0
+                        ss = getattr(r, "strongSell", 0) or 0
+                        return int(sb+b), int(h), int(s+ss)
+                    lb, lh, ls = _counts(last)
+                    total = lb + lh + ls
+                    if total > 0:
+                        # Map to a grade label
+                        if lb / total >= 0.60:   tg = "Buy"
+                        elif ls / total >= 0.40: tg = "Sell"
+                        else:                     tg = "Hold"
+                        # Compare with previous month to detect direction
+                        action = "reit"
+                        if prev:
+                            pb, ph, ps = _counts(prev)
+                            ptotal = pb + ph + ps
+                            if ptotal > 0:
+                                prev_buy_pct = pb / ptotal
+                                curr_buy_pct = lb / total
+                                if curr_buy_pct - prev_buy_pct >= 0.10:
+                                    action = "up"
+                                elif prev_buy_pct - curr_buy_pct >= 0.10:
+                                    action = "down"
+                        # Date: use index of last row
+                        idx = last.Index
+                        d = str(idx.date()) if hasattr(idx, "date") else str(idx)[:7]
+                        results.append({
+                            "date":       d,
+                            "firm":       f"{lb} Buy · {lh} Hold · {ls} Sell ({total} analysts)",
+                            "from_grade": "",
+                            "to_grade":   tg,
+                            "action":     action,
+                            "source":     "consensus",
+                        })
+        except Exception as e:
+            log.warning("  recommendations fallback failed for " + ticker + ": " + str(e))
+
+    return results[:20]
+
+
+def _grade_action(tg: str) -> str:
+    """Map a grade string to up/down/reit."""
+    tl = (tg or "").lower()
+    if any(w in tl for w in ["buy", "outperform", "overweight", "strong buy",
+                               "accumulate", "add", "positive"]):
+        return "up"
+    if any(w in tl for w in ["sell", "underperform", "underweight", "strong sell",
+                               "reduce", "negative"]):
+        return "down"
+    return "reit"
+
+
+def get_analyst_consensus(ticker: str) -> dict:
+    """
+    Fetch monthly analyst consensus counts (strongBuy/buy/hold/sell/strongSell)
+    from yfinance recommendations. Works reliably for both US and European tickers.
+
+    Returns a dict with:
+      - months: list of {period, strongBuy, buy, hold, sell, strongSell, total, grade}
+      - latest: the most recent month's data
+      - trend:  'improving' | 'deteriorating' | 'stable' | 'unknown'
+    """
+    try:
+        t   = yf.Ticker(ticker)
+        rec = t.recommendations
+        if rec is None or rec.empty:
+            return {}
+
+        months = []
+        for idx, row in rec.tail(6).iterrows():
+            sb = int(row.get("strongBuy",  0) or 0)
+            b  = int(row.get("buy",        0) or 0)
+            h  = int(row.get("hold",       0) or 0)
+            s  = int(row.get("sell",       0) or 0)
+            ss = int(row.get("strongSell", 0) or 0)
+            total = sb + b + h + s + ss
+            if total == 0:
+                continue
+            buy_pct = (sb + b) / total
+            if buy_pct >= 0.60:   grade = "Buy"
+            elif (s + ss) / total >= 0.40: grade = "Sell"
+            else:                  grade = "Hold"
+            period = str(idx.date())[:7] if hasattr(idx, "date") else str(idx)[:7]
+            months.append({
+                "period":     period,
+                "strongBuy":  sb,
+                "buy":        b,
+                "hold":       h,
+                "sell":       s,
+                "strongSell": ss,
+                "total":      total,
+                "buy_pct":    round(buy_pct * 100, 1),
+                "grade":      grade,
+            })
+
+        if not months:
+            return {}
+
+        latest = months[-1]
+
+        # Trend: compare last vs second-last buy_pct
+        trend = "unknown"
+        if len(months) >= 2:
+            delta = months[-1]["buy_pct"] - months[-2]["buy_pct"]
+            if delta >= 5:   trend = "improving"
+            elif delta <= -5: trend = "deteriorating"
+            else:             trend = "stable"
+
+        return {"months": months, "latest": latest, "trend": trend}
+
+    except Exception as e:
+        log.warning("  consensus fetch failed for " + ticker + ": " + str(e))
+        return {}
 
 def get_morningstar_data(ticker: str, isin: str) -> dict:
     """

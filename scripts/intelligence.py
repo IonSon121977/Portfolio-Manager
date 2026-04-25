@@ -3,8 +3,11 @@
 intelligence.py - Triggered multiple times daily by GitHub Actions
 
 For every holding in the portfolio (stocks + ETFs):
-  1. Analyst rating changes (last 7 days)
-  2. Sends immediate email on new rating changes today
+  1. Analyst rating changes (last 7 days) — broker-by-broker upgrades/downgrades
+     Works for US tickers and major European names via Yahoo Finance.
+     Falls back to synthesised entries from monthly consensus for EU mid-caps.
+  2. Analyst consensus — monthly buy/hold/sell counts (works for all exchanges)
+  3. Sends immediate email on new rating changes today
 """
 
 import sys
@@ -16,6 +19,7 @@ from shared import (
     load_config, save_json, load_json,
     INTEL_F,
     get_analyst_upgrades,
+    get_analyst_consensus,
     append_alert, send_email,
     rating_change_html, log
 )
@@ -45,7 +49,7 @@ def main():
         })
         entry["name"] = name
 
-        # Broker upgrades/downgrades
+        # ── Broker upgrades/downgrades (+ consensus fallback for EU) ──────────
         log.info("  Broker ratings: " + ticker)
         new_ratings = get_analyst_upgrades(ticker, days_back=ratings_days_back)
 
@@ -65,6 +69,7 @@ def main():
                 and (r.get("from_grade") or "").strip().lower() != (r.get("to_grade") or "").strip().lower()
                 and r.get("to_grade")
                 and r.get("action", "").lower() != "reit"
+                and r.get("source", "broker") == "broker"   # only alert on real broker changes
             ]
 
             for r in entry["new_ratings"]:
@@ -85,6 +90,21 @@ def main():
                 )
         else:
             entry["new_ratings"] = []
+
+        # ── Monthly consensus (buy/hold/sell counts) — all exchanges ──────────
+        log.info("  Analyst consensus: " + ticker)
+        consensus = get_analyst_consensus(ticker)
+        if consensus:
+            entry["consensus"] = consensus
+            log.info(
+                "    " + ticker + " consensus: " +
+                str(consensus.get("latest", {}).get("grade", "?")) +
+                " trend=" + str(consensus.get("trend", "?"))
+            )
+        else:
+            # keep previous consensus if fresh fetch returned nothing
+            if "consensus" not in entry:
+                entry["consensus"] = {}
 
         updated.append(entry)
 
