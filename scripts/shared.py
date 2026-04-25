@@ -662,75 +662,175 @@ def get_earnings_calendar(ticker: str, _ignored: str = "",
     """
     Return next scheduled earnings date for ticker, with EPS and revenue estimates.
 
-    Data sources tried in order:
-      1. t.calendar  — Earnings Date, EPS Estimate, Revenue Estimate
-      2. t.info      — epsForward, revenueEstimate (fallback when calendar is sparse)
+    yfinance data sources tried in order of reliability:
+      1. t.earnings_dates  — DataFrame with upcoming + recent dates, has 'EPS Estimate'
+                             column for future dates. Most reliable for US stocks.
+      2. t.calendar        — dict with 'Earnings Date' list; sometimes has EPS/Rev est.
+      3. t.info            — 'epsForward' as last-resort EPS fallback
+                             'revenueEstimate' key does NOT exist in yfinance info —
+                             use 'revenueForecasts' or derive from t.revenue_estimate
+      4. t.revenue_estimate — DataFrame with forward revenue by quarter
     """
     try:
-        t   = yf.Ticker(ticker)
-        cal = t.calendar
-        if cal is None:
-            return []
-        ed = cal.get("Earnings Date")
-        if not ed:
-            return []
-        d = str(ed[0].date()) if hasattr(ed[0], "date") else str(ed[0])[:10]
-        if not ((not from_date or from_date <= d) and (not to_date or d <= to_date)):
+        t = yf.Ticker(ticker)
+
+        # ── Step 1: find the earnings date ───────────────────────────────────
+        target_date = None
+        eps_est     = None
+        rev_est     = None
+
+        # Try earnings_dates first — most complete source
+        try:
+            ed_df = t.earnings_dates
+            if ed_df is not None and not ed_df.empty:
+                today_str = date.today().isoformat()
+                # Filter to future (or very recent — within 7 days past)
+                cutoff_past = (date.today() - timedelta(days=7)).isoformat()
+                for idx in ed_df.index:
+                    d_str = str(idx.date()) if hasattr(idx, "date") else str(idx)[:10]
+                    if d_str < cutoff_past:
+                        continue
+                    # Check date window
+                    if (not from_date or from_date <= d_str) and (not to_date or d_str <= to_date):
+                        target_date = d_str
+                        # EPS Estimate column
+                        row = ed_df.loc[idx]
+                        for col in ["EPS Estimate", "epsEstimate", "Eps Estimate"]:
+                            val = row.get(col) if hasattr(row, "get") else (
+                                row[col] if col in row.index else None
+                            )
+                            if val is not None and str(val) not in ("nan", "None", ""):
+                                try:
+                                    eps_est = float(val)
+                                except Exception:
+                                    pass
+                            if eps_est is not None:
+                                break
+                        break
+        except Exception as e:
+            log.warning("  earnings_dates failed for " + ticker + ": " + str(e))
+
+        # Fallback to t.calendar for the date
+        if target_date is None:
+            try:
+                cal = t.calendar
+                if cal:
+                    ed = cal.get("Earnings Date")
+                    if ed:
+                        d_str = str(ed[0].date()) if hasattr(ed[0], "date") else str(ed[0])[:10]
+                        if (not from_date or from_date <= d_str) and (not to_date or d_str <= to_date):
+                            target_date = d_str
+                            # Try calendar EPS/Rev estimates
+                            raw_eps = cal.get("EPS Estimate")
+                            raw_rev = cal.get("Revenue Estimate")
+                            if raw_eps is not None and str(raw_eps) not in ("nan","None",""):
+                                try: eps_est = float(raw_eps)
+                                except Exception: pass
+                            if raw_rev is not None and str(raw_rev) not in ("nan","None",""):
+                                try: rev_est = float(raw_rev)
+                                except Exception: pass
+            except Exception as e:
+                log.warning("  t.calendar failed for " + ticker + ": " + str(e))
+
+        if target_date is None:
             return []
 
-        # ── EPS estimate ────────────────────────────────────────────────────
-        eps_est = cal.get("EPS Estimate")
+        # ── Step 2: EPS fallback — t.info epsForward ─────────────────────────
+        info = {}
         if eps_est is None:
             try:
-                info    = t.info
-                eps_est = info.get("epsForward") or info.get("epsEstimate")
+                info    = t.info or {}
+                raw     = info.get("epsForward") or info.get("forwardEps")
+                if raw is not None:
+                    eps_est = float(raw)
             except Exception:
                 pass
 
-        # ── Revenue estimate ─────────────────────────────────────────────────
-        rev_est = cal.get("Revenue Estimate")
-        if rev_est is None or (isinstance(rev_est, float) and rev_est != rev_est):
+        # ── Step 3: Revenue estimate — t.revenue_estimate DataFrame ─────────
+        # t.info does NOT have a reliable revenueEstimate key.
+        # t.revenue_estimate has rows like "0q" (current quarter), "+1q", "+1y" etc.
+        if rev_est is None:
             try:
-                info    = t.info
-                rev_est = (info.get("revenueEstimate")
-                           or info.get("totalRevenue"))
+                re_df = t.revenue_estimate
+                if re_df is not None and not re_df.empty:
+                    # prefer "0q" (current quarter) over annual
+                    for idx_label in ["0q", "+1q", "0y"]:
+                        if idx_label in re_df.index:
+                            row = re_df.loc[idx_label]
+                            for col in ["avg", "Avg", "mean"]:
+                                val = row.get(col) if hasattr(row, "get") else (
+                                    row[col] if col in row.index else None
+                                )
+                                if val is not None and str(val) not in ("nan","None",""):
+                                    try:
+                                        rev_est = float(val)
+                                        break
+                                    except Exception:
+                                        pass
+                            if rev_est is not None:
+                                break
             except Exception:
                 pass
-            # try earnings_estimate DataFrame (yfinance ≥ 0.2.x)
-            if rev_est is None:
-                try:
-                    ee = t.earnings_estimate
-                    if ee is not None and not ee.empty and "0q" in ee.index:
-                        rev_est = ee.loc["0q", "avg"] if "avg" in ee.columns else None
-                except Exception:
-                    pass
 
-        # ── Quarter / year ───────────────────────────────────────────────────
+        # Further fallback: quarterly revenue from earnings_estimate DataFrame
+        if rev_est is None:
+            try:
+                ee_df = t.earnings_estimate
+                if ee_df is not None and not ee_df.empty:
+                    for idx_label in ["0q", "+1q"]:
+                        if idx_label in ee_df.index:
+                            row = ee_df.loc[idx_label]
+                            for col in ["avg", "Avg"]:
+                                val = row.get(col) if hasattr(row, "get") else (
+                                    row[col] if col in row.index else None
+                                )
+                                if val is not None and str(val) not in ("nan","None",""):
+                                    try:
+                                        rev_est = float(val)
+                                        break
+                                    except Exception:
+                                        pass
+                            if rev_est is not None:
+                                break
+            except Exception:
+                pass
+
+        # ── Step 4: Quarter derivation ────────────────────────────────────────
+        # yfinance info["fiscalYearEnd"] returns a MONTH NAME string e.g. "December"
+        # not a numeric prefix — the previous attempt to do int(fy_end[:2]) was wrong.
         quarter = None
-        year    = None
+        year    = int(target_date[:4])
         try:
-            info    = t.info
-            fy_end  = info.get("fiscalYearEnd", "")
-            # yfinance doesn't expose the exact quarter directly;
-            # derive from earnings date month vs fiscal year end month
-            em = int(d[5:7])
-            fy = int(fy_end[:2]) if fy_end and len(fy_end) >= 2 else None
-            if fy:
-                quarter = ((em - fy - 1) % 12) // 3 + 1
-            year = int(d[:4])
+            if not info:
+                info = t.info or {}
+            fy_end_month_name = (info.get("fiscalYearEnd") or "").strip().lower()
+            month_map = {
+                "january":1,"february":2,"march":3,"april":4,"may":5,"june":6,
+                "july":7,"august":8,"september":9,"october":10,"november":11,"december":12
+            }
+            fy_end_month = month_map.get(fy_end_month_name)
+            earn_month   = int(target_date[5:7])
+            if fy_end_month:
+                # Q1 ends 3 months after FY end, Q2 = 6 months, etc.
+                offset = (earn_month - fy_end_month) % 12
+                quarter = (offset // 3) % 4 + 1
+            else:
+                # Default: assume Dec fiscal year end (most common)
+                quarter = (earn_month - 1) // 3 + 1
         except Exception:
-            pass
+            quarter = (int(target_date[5:7]) - 1) // 3 + 1
 
         return [{
-            "date":         d,
+            "date":         target_date,
             "hour":         "",
-            "eps_estimate": float(eps_est) if eps_est is not None else None,
+            "eps_estimate": eps_est,
             "eps_actual":   None,
-            "revenue_est":  float(rev_est) if rev_est is not None else None,
+            "revenue_est":  rev_est,
             "revenue_act":  None,
             "quarter":      quarter,
             "year":         year,
         }]
+
     except Exception as e:
         log.warning("  earnings_calendar failed for " + ticker + ": " + str(e))
     return []
