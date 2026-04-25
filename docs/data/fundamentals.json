@@ -5,7 +5,7 @@
       "name": "Microsoft Corporation",
       "isin": "US5949181045",
       "shares": 5,
-      "timestamp": "2026-04-25T08:09:10.341996",
+      "timestamp": "2026-04-25T13:54:17.846682",
       "price_native": 424.62,
       "prev_close": 418.65,
       "currency": "USD",
@@ -183,7 +183,7 @@
       "name": "Siemens Energy AG             N",
       "isin": "DE000ENER6Y0",
       "shares": 9,
-      "timestamp": "2026-04-25T08:09:11.175345",
+      "timestamp": "2026-04-25T13:54:18.740431",
       "price_native": 187.62,
       "prev_close": 182.8,
       "currency": "EUR",
@@ -280,7 +280,7 @@
       "name": "Friedrich Vorwerk Group SE    I",
       "isin": "DE000A255F11",
       "shares": 11,
-      "timestamp": "2026-04-25T08:09:11.720468",
+      "timestamp": "2026-04-25T13:54:19.381176",
       "price_native": 72.55,
       "prev_close": 73.0,
       "currency": "EUR",
@@ -348,7 +348,7 @@
       "name": "Mildef Group AB",
       "isin": "SE0016074249",
       "shares": 60,
-      "timestamp": "2026-04-25T08:09:12.247129",
+      "timestamp": "2026-04-25T13:54:20.117911",
       "price_native": 188.4,
       "prev_close": 178.15,
       "currency": "SEK",
@@ -445,7 +445,7 @@
       "name": "Alphabet Inc.",
       "isin": "US02079K1079",
       "shares": 2,
-      "timestamp": "2026-04-25T08:09:12.931192",
+      "timestamp": "2026-04-25T13:54:20.946867",
       "price_native": 342.32,
       "prev_close": 338.7,
       "currency": "USD",
@@ -623,7 +623,7 @@
       "name": "AIRBUS SE",
       "isin": "NL0000235190",
       "shares": 7,
-      "timestamp": "2026-04-25T08:09:13.498844",
+      "timestamp": "2026-04-25T13:54:21.592735",
       "price_native": 165.92,
       "prev_close": 168.58,
       "currency": "EUR",
@@ -720,7 +720,7 @@
       "name": "THALES",
       "isin": "FR0000121329",
       "shares": 5,
-      "timestamp": "2026-04-25T08:09:14.172063",
+      "timestamp": "2026-04-25T13:54:22.192203",
       "price_native": 232.8,
       "prev_close": 242.7,
       "currency": "EUR",
@@ -767,7 +767,7 @@
       "name": "Bitcoin",
       "isin": "",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:14.866701",
+      "timestamp": "2026-04-25T13:54:22.841817",
       "skip": true
     },
     {
@@ -775,7 +775,7 @@
       "name": "Gold",
       "isin": "",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:14.866750",
+      "timestamp": "2026-04-25T13:54:22.841859",
       "skip": true
     },
     {
@@ -783,7 +783,7 @@
       "name": "Silver",
       "isin": "",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:14.866770",
+      "timestamp": "2026-04-25T13:54:22.841886",
       "skip": true
     },
     {
@@ -791,7 +791,7 @@
       "name": "NVIDIA Corporation",
       "isin": "US67066G1040",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:14.866791",
+      "timestamp": "2026-04-25T13:54:22.841916",
       "price_native": 208.27,
       "prev_close": 199.5,
       "currency": "USD",
@@ -884,19 +884,19 @@
       "insider_transactions": [
         {
           "date": "2026-03-20",
-          "insider": "KRESS COLETTE M.",
-          "title": "Chief Financial Offi",
-          "transaction": "Sale at price 171.97 - 177.51 per share.",
-          "shares": 62650,
-          "value_usd": 10956706
-        },
-        {
-          "date": "2026-03-20",
           "insider": "ROBERTSON DONALD F JR",
           "title": "Officer",
           "transaction": "Sale at price 172.58 - 177.31 per share.",
           "shares": 5396,
           "value_usd": 942944
+        },
+        {
+          "date": "2026-03-20",
+          "insider": "KRESS COLETTE M.",
+          "title": "Chief Financial Offi",
+          "transaction": "Sale at price 171.97 - 177.51 per share.",
+          "shares": 62650,
+          "value_usd": 10956706
         },
         {
           "date": "2026-03-20",
@@ -956,8 +956,8 @@
         },
         {
           "date": "2026-03-09",
-          "insider": "KRESS COLETTE M.",
-          "title": "Chief Financial Offi",
+          "insider": "TETER TIMOTHY S",
+          "title": "General Counsel",
           "transaction": "Stock Award(Grant) at price 0.00 per share.",
           "shares": 47048,
           "value_usd": 0
@@ -969,7 +969,7 @@
       "name": "Amazon.com, Inc.",
       "isin": "US0231351067",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:15.467294",
+      "timestamp": "2026-04-25T13:54:23.483240",
       "price_native": 263.99,
       "prev_close": 255.27,
       "currency": "USD",
@@ -1147,7 +1147,7 @@
       "name": "Apple Inc.",
       "isin": "US0378331005",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:15.993187",
+      "timestamp": "2026-04-25T13:54:24.073030",
       "price_native": 271.06,
       "prev_close": 272.7,
       "currency": "USD",
@@ -1325,7 +1325,7 @@
       "name": "Eli Lilly and Company",
       "isin": "US5324571083",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:16.634684",
+      "timestamp": "2026-04-25T13:54:24.766328",
       "price_native": 883.96,
       "prev_close": 917.98,
       "currency": "USD",
@@ -1503,7 +1503,7 @@
       "name": "Bilfinger SE                  I",
       "isin": "",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:17.364588",
+      "timestamp": "2026-04-25T13:54:25.497144",
       "price_native": 98.9,
       "prev_close": 101.9,
       "currency": "EUR",
@@ -1600,7 +1600,7 @@
       "name": "BAE SYSTEMS PLC ORD 2.5P",
       "isin": "",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:17.968491",
+      "timestamp": "2026-04-25T13:54:26.133241",
       "price_native": 2020.5,
       "prev_close": 2080.0,
       "currency": "GBX",
@@ -1675,22 +1675,6 @@
         },
         {
           "date": "2026-04-14",
-          "insider": "Veignat (Eric)",
-          "title": "",
-          "transaction": "Bought at price 30.04 per share.",
-          "shares": 7,
-          "value_usd": 210
-        },
-        {
-          "date": "2026-04-14",
-          "insider": "Veignat (Eric)",
-          "title": "",
-          "transaction": "",
-          "shares": 3,
-          "value_usd": null
-        },
-        {
-          "date": "2026-04-14",
           "insider": "Thompson (Andrea Jayne)",
           "title": "",
           "transaction": "Bought at price 30.04 per share.",
@@ -1707,15 +1691,31 @@
         },
         {
           "date": "2026-04-14",
-          "insider": "Gelsthorpe (Edward)",
+          "insider": "Veignat (Eric)",
           "title": "",
           "transaction": "Bought at price 30.04 per share.",
-          "shares": 6,
-          "value_usd": 180
+          "shares": 7,
+          "value_usd": 210
         },
         {
           "date": "2026-04-14",
-          "insider": "Gelsthorpe (Edward)",
+          "insider": "Veignat (Eric)",
+          "title": "",
+          "transaction": "",
+          "shares": 3,
+          "value_usd": null
+        },
+        {
+          "date": "2026-04-14",
+          "insider": "Hayden (Caitlin)",
+          "title": "",
+          "transaction": "Bought at price 30.04 per share.",
+          "shares": 7,
+          "value_usd": 210
+        },
+        {
+          "date": "2026-04-14",
+          "insider": "Hayden (Caitlin)",
           "title": "",
           "transaction": "",
           "shares": 3,
@@ -1728,7 +1728,7 @@
       "name": "BE Semiconductor Industries N.V",
       "isin": "",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:18.680583",
+      "timestamp": "2026-04-25T13:54:26.880259",
       "price_native": 252.2,
       "prev_close": 245.1,
       "currency": "EUR",
@@ -1825,7 +1825,7 @@
       "name": "ASM International N.V.",
       "isin": "",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:19.263601",
+      "timestamp": "2026-04-25T13:54:27.500722",
       "price_native": 867.4,
       "prev_close": 847.4,
       "currency": "EUR",
@@ -1833,7 +1833,7 @@
       "price_eur": 867.4,
       "value_eur": 0.0,
       "pe_ratio": 43.11,
-      "pb_ratio": 10.58,
+      "pb_ratio": 9.89,
       "ps_ratio": 13.27,
       "beta": 1.43,
       "market_cap": 42403778560,
@@ -1922,7 +1922,7 @@
       "name": "Caterpillar, Inc.",
       "isin": "US1491231015",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:19.869210",
+      "timestamp": "2026-04-25T13:54:28.180886",
       "price_native": 830.79,
       "prev_close": 837.84,
       "currency": "USD",
@@ -2100,7 +2100,7 @@
       "name": "ACCIONES IBERDROLA",
       "isin": "ES0144580Y14",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:20.625677",
+      "timestamp": "2026-04-25T13:54:28.965553",
       "price_native": 19.925,
       "prev_close": 20.03,
       "currency": "EUR",
@@ -2197,7 +2197,7 @@
       "name": "SanDisk",
       "isin": "US80004C1018",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:21.255144",
+      "timestamp": "2026-04-25T13:54:29.629933",
       "skip": true
     },
     {
@@ -2205,7 +2205,7 @@
       "name": "SUSS MicroTec SE              N",
       "isin": "DE000A1K0235",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:21.255174",
+      "timestamp": "2026-04-25T13:54:29.629963",
       "price_native": 69.9,
       "prev_close": 69.35,
       "currency": "EUR",
@@ -2302,7 +2302,7 @@
       "name": "Exxon Mobil Corporation",
       "isin": "",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:21.864295",
+      "timestamp": "2026-04-25T13:54:30.265426",
       "price_native": 148.91,
       "prev_close": 150.41,
       "currency": "USD",
@@ -2480,7 +2480,7 @@
       "name": "Chevron Corporation",
       "isin": "",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:22.841008",
+      "timestamp": "2026-04-25T13:54:31.031287",
       "price_native": 185.21,
       "prev_close": 187.4465,
       "currency": "USD",
@@ -2658,7 +2658,7 @@
       "name": "Allianz SE                    v",
       "isin": "DE0008404005",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:23.623704",
+      "timestamp": "2026-04-25T13:54:31.712118",
       "price_native": 388.0,
       "prev_close": 390.1,
       "currency": "EUR",
@@ -2755,7 +2755,7 @@
       "name": "SHELL PLC ORD EUR0.07",
       "isin": "GB00BP6MXD84",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:24.201484",
+      "timestamp": "2026-04-25T13:54:32.323304",
       "price_native": 3307.5,
       "prev_close": 3293.5,
       "currency": "GBX",
@@ -2856,14 +2856,6 @@
         },
         {
           "date": "2026-04-01",
-          "insider": "Smith (Andrew)",
-          "title": "",
-          "transaction": "Bought at price 46.88 per share.",
-          "shares": 342,
-          "value_usd": 16034
-        },
-        {
-          "date": "2026-04-01",
           "insider": "Sawan (Wael)",
           "title": "",
           "transaction": "Bought at price 46.88 per share.",
@@ -2877,6 +2869,14 @@
           "transaction": "Bought at price 46.90 per share.",
           "shares": 528,
           "value_usd": 24761
+        },
+        {
+          "date": "2026-04-01",
+          "insider": "Smith (Andrew)",
+          "title": "",
+          "transaction": "Bought at price 46.88 per share.",
+          "shares": 342,
+          "value_usd": 16034
         },
         {
           "date": "2026-04-01",
@@ -2912,19 +2912,19 @@
         },
         {
           "date": "2026-04-01",
-          "insider": "Bounds (Philippa Alice May)",
-          "title": "",
-          "transaction": "Bought at price 46.91 per share.",
-          "shares": 99,
-          "value_usd": 4644
-        },
-        {
-          "date": "2026-04-01",
           "insider": "de Haan (Machteld)",
           "title": "",
           "transaction": "Bought at price 46.87 per share.",
           "shares": 237,
           "value_usd": 11109
+        },
+        {
+          "date": "2026-04-01",
+          "insider": "de Haan (Machteld)",
+          "title": "",
+          "transaction": "Bought at price 93.59 per share.",
+          "shares": 18,
+          "value_usd": 1684
         }
       ]
     },
@@ -2933,7 +2933,7 @@
       "name": "REPSOL,  S.A.",
       "isin": "ES0173516115",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:24.879550",
+      "timestamp": "2026-04-25T13:54:33.002664",
       "price_native": 20.89,
       "prev_close": 20.94,
       "currency": "EUR",
@@ -3030,7 +3030,7 @@
       "name": "GE Aerospace",
       "isin": "",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:25.596828",
+      "timestamp": "2026-04-25T13:54:33.641465",
       "price_native": 284.6,
       "prev_close": 281.97,
       "currency": "USD",
@@ -3139,22 +3139,6 @@
         },
         {
           "date": "2026-02-27",
-          "insider": "GHAI RAHUL",
-          "title": "Officer",
-          "transaction": "Stock Award(Grant) at price 0.00 per share.",
-          "shares": 45255,
-          "value_usd": 0
-        },
-        {
-          "date": "2026-02-27",
-          "insider": "GHAI RAHUL",
-          "title": "Officer",
-          "transaction": "",
-          "shares": 14386,
-          "value_usd": null
-        },
-        {
-          "date": "2026-02-27",
           "insider": "GOWDER AMY L",
           "title": "Officer",
           "transaction": "Stock Award(Grant) at price 0.00 per share.",
@@ -3200,6 +3184,22 @@
           "transaction": "",
           "shares": 18222,
           "value_usd": null
+        },
+        {
+          "date": "2026-02-27",
+          "insider": "ALI MOHAMED",
+          "title": "Officer",
+          "transaction": "Stock Award(Grant) at price 0.00 per share.",
+          "shares": 15090,
+          "value_usd": 0
+        },
+        {
+          "date": "2026-02-27",
+          "insider": "ALI MOHAMED",
+          "title": "Officer",
+          "transaction": "",
+          "shares": 4796,
+          "value_usd": null
         }
       ]
     },
@@ -3208,7 +3208,7 @@
       "name": "TOTALENERGIES",
       "isin": "FR0014000MR3",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:26.378147",
+      "timestamp": "2026-04-25T13:54:34.622003",
       "price_native": 77.0,
       "prev_close": 76.83,
       "currency": "EUR",
@@ -3330,7 +3330,7 @@
       "name": "BP PLC $0.25",
       "isin": "GB0007980591",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:27.099833",
+      "timestamp": "2026-04-25T13:54:35.332857",
       "price_native": 571.8,
       "prev_close": 570.3,
       "currency": "GBX",
@@ -3431,14 +3431,6 @@
         },
         {
           "date": "2026-04-10",
-          "insider": "Sosso (Mike)",
-          "title": "",
-          "transaction": "Bought at price 7.82 per share.",
-          "shares": 65,
-          "value_usd": 508
-        },
-        {
-          "date": "2026-04-10",
           "insider": "Delaney (Emma)",
           "title": "",
           "transaction": "Bought at price 7.81 per share.",
@@ -3462,12 +3454,20 @@
           "value_usd": 508
         },
         {
+          "date": "2026-04-10",
+          "insider": "Sosso (Mike)",
+          "title": "",
+          "transaction": "Bought at price 7.82 per share.",
+          "shares": 65,
+          "value_usd": 508
+        },
+        {
           "date": "2026-04-02",
-          "insider": "Birrell (Gordon)",
+          "insider": "Sosso (Mike)",
           "title": "",
           "transaction": "Bought at price 7.72 per share.",
-          "shares": 110,
-          "value_usd": 849
+          "shares": 20,
+          "value_usd": 154
         },
         {
           "date": "2026-04-02",
@@ -3487,19 +3487,19 @@
         },
         {
           "date": "2026-04-02",
-          "insider": "Sosso (Mike)",
-          "title": "",
-          "transaction": "Bought at price 7.72 per share.",
-          "shares": 20,
-          "value_usd": 154
-        },
-        {
-          "date": "2026-04-02",
           "insider": "Thomson (Kate)",
           "title": "",
           "transaction": "Bought at price 7.72 per share.",
           "shares": 58,
           "value_usd": 447
+        },
+        {
+          "date": "2026-04-02",
+          "insider": "Birrell (Gordon)",
+          "title": "",
+          "transaction": "Bought at price 7.72 per share.",
+          "shares": 110,
+          "value_usd": 849
         }
       ]
     },
@@ -3508,7 +3508,7 @@
       "name": "Micron Technology, Inc.",
       "isin": "",
       "shares": 0,
-      "timestamp": "2026-04-25T08:09:27.822608",
+      "timestamp": "2026-04-25T13:54:36.026391",
       "price_native": 496.72,
       "prev_close": 485.0,
       "currency": "USD",
@@ -3686,7 +3686,7 @@
       "name": "SPDR MSCI ACW UCITS ETF       R",
       "isin": "IE00B44Z5B48",
       "shares": 30,
-      "timestamp": "2026-04-25T08:09:28.566362",
+      "timestamp": "2026-04-25T13:54:36.816152",
       "price_native": 261.65,
       "prev_close": 261.7,
       "currency": "EUR",
@@ -3732,7 +3732,7 @@
       "name": "iShsIII-C.MSCI Eu.U.E.EUR Acc R",
       "isin": "IE00B4K48X80",
       "shares": 20,
-      "timestamp": "2026-04-25T08:09:29.245573",
+      "timestamp": "2026-04-25T13:54:37.591829",
       "price_native": 97.64,
       "prev_close": 98.1,
       "currency": "EUR",
@@ -3778,7 +3778,7 @@
       "name": "iShsV-S&P 500 Inf.Te.Sec.U.ETFR",
       "isin": "IE00B3WJKG14",
       "shares": 10,
-      "timestamp": "2026-04-25T08:09:29.948022",
+      "timestamp": "2026-04-25T13:54:38.517752",
       "price_native": 38.485,
       "prev_close": 38.135,
       "currency": "EUR",
@@ -3824,7 +3824,7 @@
       "name": "iShs Core MSCI EM IMI U.ETF   R",
       "isin": "IE00BKM4GZ66",
       "shares": 10,
-      "timestamp": "2026-04-25T08:09:30.643557",
+      "timestamp": "2026-04-25T13:54:39.268781",
       "price_native": 44.376,
       "prev_close": 44.056,
       "currency": "EUR",
@@ -3867,6 +3867,6 @@
     }
   ],
   "total_eur": 18884.58,
-  "updated": "2026-04-25T08:09:31.300883",
+  "updated": "2026-04-25T13:54:39.955282",
   "count": 35
 }
