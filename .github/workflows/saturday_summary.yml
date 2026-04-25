@@ -19,13 +19,14 @@ jobs:
           cache: 'pip'
 
       - name: Install dependencies
-        run: pip install requests yfinance mstarpy
+        run: pip install requests yfinance mstarpy anthropic
 
       - name: Run Saturday summary
         env:
           EMAIL_FROM:          ${{ secrets.EMAIL_FROM }}
           EMAIL_PASSWORD:      ${{ secrets.EMAIL_PASSWORD }}
           EMAIL_TO:            ${{ secrets.EMAIL_TO }}
+          ANTHROPIC_API_KEY:   ${{ secrets.ANTHROPIC_API_KEY }}
           OPENROUTER_API_KEY:  ${{ secrets.OPENROUTER_API_KEY }}
         run: python scripts/saturday_summary.py
 
