@@ -163,11 +163,39 @@ def fetch_fundamentals(holding: dict) -> dict:
 
     try:
         t  = yf.Ticker(ticker)
-        fi = t.fast_info
 
-        price    = float(fi.last_price or fi.previous_close or 0)
-        prev     = float(fi.previous_close or fi.last_price or 0)
-        currency = str(fi.currency or "USD").upper()
+        # fast_info raises 'PriceHistory has no attribute _dividends' for some
+        # Euronext tickers (yfinance regression). Fall back to t.history().
+        price    = 0.0
+        prev     = 0.0
+        currency = "EUR"
+        try:
+            fi       = t.fast_info
+            price    = float(fi.last_price    or fi.previous_close or 0)
+            prev     = float(fi.previous_close or fi.last_price    or 0)
+            currency = str(fi.currency or "EUR").upper()
+        except Exception as fi_err:
+            log.warning("  fast_info failed for " + ticker + " (" + str(fi_err) + ") — using history()")
+            try:
+                hist = t.history(period="5d")
+                if hist is not None and not hist.empty:
+                    price = float(hist["Close"].iloc[-1])
+                    prev  = float(hist["Close"].iloc[-2]) if len(hist) >= 2 else price
+                # derive currency from ticker suffix
+                if ticker.endswith(".DE") or ticker.endswith(".PA") or \
+                   ticker.endswith(".AS") or ticker.endswith(".MI") or \
+                   ticker.endswith(".BR") or ticker.endswith(".MC"):
+                    currency = "EUR"
+                elif ticker.endswith(".L"):
+                    currency = "GBP"
+                elif ticker.endswith(".ST") or ticker.endswith(".HE") or \
+                     ticker.endswith(".OL") or ticker.endswith(".CO"):
+                    currency = "SEK"  # approximate; ST=SEK, HE=EUR, OL=NOK, CO=DKK
+                else:
+                    currency = "USD"
+            except Exception as hist_err:
+                log.warning("  history() also failed for " + ticker + ": " + str(hist_err))
+
         if currency == "GBP" and price > 500:
             currency = "GBX"
 

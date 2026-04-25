@@ -132,16 +132,42 @@ def get_stock_data(holding: dict, _ignored: str = "") -> dict:
     }
 
     try:
-        t     = yf.Ticker(ticker)
-        fi    = t.fast_info
-        price = float(fi.last_price or fi.previous_close or 0)
-        prev  = float(fi.previous_close or fi.last_price or 0)
+        t = yf.Ticker(ticker)
+
+        # fast_info raises 'PriceHistory has no attribute _dividends' for some
+        # Euronext tickers (yfinance regression). Fall back to t.history().
+        price    = 0.0
+        prev     = 0.0
+        currency = "EUR"
+        try:
+            fi       = t.fast_info
+            price    = float(fi.last_price    or fi.previous_close or 0)
+            prev     = float(fi.previous_close or fi.last_price    or 0)
+            currency = str(fi.currency or "EUR").upper()
+        except Exception as fi_err:
+            log.warning("  fast_info failed for " + ticker + " (" + str(fi_err) + ") — using history()")
+            try:
+                hist = t.history(period="5d")
+                if hist is not None and not hist.empty:
+                    price = float(hist["Close"].iloc[-1])
+                    prev  = float(hist["Close"].iloc[-2]) if len(hist) >= 2 else price
+                if ticker.endswith(".DE") or ticker.endswith(".PA") or \
+                   ticker.endswith(".AS") or ticker.endswith(".MI") or \
+                   ticker.endswith(".BR") or ticker.endswith(".MC"):
+                    currency = "EUR"
+                elif ticker.endswith(".L"):
+                    currency = "GBP"
+                elif ticker.endswith(".ST"):
+                    currency = "SEK"
+                else:
+                    currency = "USD"
+            except Exception as hist_err:
+                log.warning("  history() also failed for " + ticker + ": " + str(hist_err))
 
         if not price and not prev:
             out["error"] = "No price data from yfinance for " + ticker
             return out
 
-        currency = str(fi.currency or "USD").upper()
         if currency == "GBP" and price > 500:
             currency = "GBX"
 
@@ -849,7 +875,15 @@ def get_dividends(ticker: str, _ignored: str = "",
     results = []
     try:
         t   = yf.Ticker(ticker)
-        cal = t.calendar or {}
+
+        # t.calendar internally accesses t.dividends which triggers the
+        # 'PriceHistory has no attribute _dividends' yfinance regression
+        # for some Euronext tickers. Isolate it.
+        cal = {}
+        try:
+            cal = t.calendar or {}
+        except Exception as cal_err:
+            log.warning("  t.calendar failed for " + ticker + " (" + str(cal_err) + ")")
 
         # ── Upcoming ex-date from calendar ───────────────────────────────────
         ex_raw  = cal.get("Ex-Dividend Date") or cal.get("exDividendDate")
