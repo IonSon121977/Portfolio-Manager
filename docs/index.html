@@ -954,7 +954,18 @@ function renderIntel() {
   // Per-holding cards
   document.getElementById('news-grid').innerHTML = (intel.holdings||[]).map(h=>{
     const newsHtml = (h.news||[]).length
-      ? (h.news).slice(0,3).map(a=>`<div class="no">• <a href="${a.url}" target="_blank">${a.title}</a> <span style="color:var(--dim)">(${a.source})</span></div>`).join('')
+      ? (h.news).slice(0,6).map(a => {
+          const src = a.source || '';
+          const srcCls = src.toLowerCase().includes('seeking') ? 'color:var(--warn)' :
+                         src.toLowerCase().includes('bing')    ? 'color:var(--intel)' :
+                         src.toLowerCase().includes('google')  ? 'color:var(--up)' :
+                                                                  'color:var(--dim)';
+          const dateStr = a.date ? `<span style="color:var(--dim);font-size:10px">${a.date}</span>` : '';
+          return `<div class="no">• <a href="${a.url}" target="_blank">${a.title}</a>
+            <span style="font-size:10px;margin-left:4px">
+              <span style="${srcCls}">${src}</span>${dateStr ? ' · ' + dateStr : ''}
+            </span></div>`;
+        }).join('')
       : `<div class="no" style="color:var(--dim)">No news available.</div>`;
     const newRat = (h.new_ratings||[]).length
       ? `<div class="ics">⚡ New Rating Changes</div>` + h.new_ratings.map(r=>`<div class="nr"><span style="color:var(--muted);text-decoration:line-through">${r.from_grade||'—'}</span><span>→</span><span style="color:${rColor(r.to_grade)};font-weight:700">${r.to_grade}</span><span class="dm" style="font-size:11px">${r.firm}</span></div>`).join('') : '';
