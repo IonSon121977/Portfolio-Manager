@@ -173,6 +173,32 @@ tr:hover td{background:rgba(79,158,248,.07)}
 .mcal-filter{background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:4px 13px;font-size:11px;color:var(--muted);cursor:pointer;transition:all .15s;user-select:none}
 .mcal-filter.on{background:var(--accent);color:#0d1520;border-color:var(--accent);font-weight:600}
 
+/* ── WEEKLY EXTRAS ── */
+.sent-banner{display:flex;flex-wrap:wrap;align-items:center;gap:16px;background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:14px 20px;margin-bottom:20px}
+.sent-item{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:70px}
+.sent-lbl{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--dim)}
+.sent-val{font-size:17px;font-weight:700}
+.sent-sub{font-size:10px;color:var(--muted)}
+.sent-divider{width:1px;height:40px;background:var(--border);flex-shrink:0}
+.sent-summary{flex:1;min-width:180px;font-size:12px;color:var(--muted);line-height:1.6;border-left:2px solid var(--border);padding-left:16px}
+.w52-bar-wrap{display:flex;align-items:center;gap:8px}
+.w52-bar{flex:1;height:6px;background:var(--s3);border-radius:3px;position:relative;min-width:80px}
+.w52-bar-fill{height:100%;border-radius:3px;transition:width .3s}
+.w52-pct{font-size:10px;color:var(--muted);width:32px;text-align:right;flex-shrink:0}
+.ai-brief{background:linear-gradient(135deg,var(--s1) 0%,#1a1f35 100%);border:1px solid var(--intel);border-radius:10px;padding:18px 22px;margin-bottom:24px;position:relative;overflow:hidden}
+.ai-brief::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--intel),var(--accent),var(--lime))}
+.ai-brief-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.ai-brief-icon{font-size:18px}
+.ai-brief-title{font-size:12px;font-weight:600;color:var(--intel);text-transform:uppercase;letter-spacing:.8px}
+.ai-brief-body{font-size:13px;color:var(--muted);line-height:1.75;min-height:40px}
+.ai-brief-footer{font-size:9px;color:var(--dim);margin-top:10px;text-align:right}
+.ai-brief-refresh{background:none;border:1px solid var(--border);border-radius:5px;color:var(--dim);font-size:10px;padding:3px 10px;cursor:pointer;transition:.15s;font-family:var(--ff)}
+.ai-brief-refresh:hover{color:var(--intel);border-color:var(--intel)}
+.ai-loading{display:flex;align-items:center;gap:8px;color:var(--dim);font-size:12px}
+.ai-dot{width:6px;height:6px;border-radius:50%;background:var(--intel);animation:ai-pulse 1.2s ease-in-out infinite}
+.ai-dot:nth-child(2){animation-delay:.2s}.ai-dot:nth-child(3){animation-delay:.4s}
+@keyframes ai-pulse{0%,80%,100%{opacity:.2}40%{opacity:1}}
+
 /* ── CONFIG ── */
 .cg{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .cb2{background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:20px}
@@ -603,7 +629,32 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
     </div>
   </div>
 
+  <!-- AI BRIEF -->
+  <div class="ai-brief">
+    <div class="ai-brief-head">
+      <span class="ai-brief-icon">🤖</span>
+      <span class="ai-brief-title">AI Weekly Brief</span>
+      <button class="ai-brief-refresh" onclick="generateAiBrief(true)" style="margin-left:auto">↺ Regenerate</button>
+    </div>
+    <div class="ai-brief-body" id="ai-brief-body">
+      <div class="ai-loading"><div class="ai-dot"></div><div class="ai-dot"></div><div class="ai-dot"></div><span>Generating weekly brief…</span></div>
+    </div>
+    <div class="ai-brief-footer" id="ai-brief-footer"></div>
+  </div>
+
+  <!-- SENTIMENT BANNER -->
+  <div id="wr-sentiment-banner" class="sent-banner" style="display:none"></div>
+
   <div id="wr-pills" style="margin-bottom:22px;display:flex;flex-wrap:wrap;gap:8px"></div>
+
+  <!-- ANALYST TARGETS & 52W RANGE -->
+  <div class="sh" style="margin-top:4px">
+    <div class="st" style="font-size:13px;color:var(--accent)">🎯 Analyst Targets & 52W Range</div>
+    <div class="bdg" id="wr-targets-cnt">0</div>
+  </div>
+  <div class="tbox" id="wr-targets-wrap">
+    <div class="empty">Loading…</div>
+  </div>
 
   <div class="sh" style="margin-top:4px">
     <div class="st" style="font-size:13px;color:var(--intel)">📅 Earnings Calls</div>
@@ -692,6 +743,7 @@ async function fetchJSON(path) {
 }
 
 async function reload() {
+  _aiBriefGenerated = false;
   snap         = await fetchJSON('data/snapshot.json');
   intel        = await fetchJSON('data/intelligence.json');
   alerts       = await fetchJSON('data/alerts.json') || [];
@@ -1100,7 +1152,245 @@ function copyCfgJson() {
 }
 
 // ── WEEKLY REPORT ─────────────────────────────────────────────────────────────
+// ── SENTIMENT BANNER ─────────────────────────────────────────────────────────
+function renderSentimentBanner() {
+  const el = document.getElementById('wr-sentiment-banner');
+  if (!el || !sentiment) return;
+
+  const comp   = sentiment.composite   || {};
+  const vix    = sentiment.indicators?.vix    || {};
+  const vstoxx = sentiment.indicators?.vstoxx || {};
+
+  const score  = comp.score ?? null;
+  const label  = comp.label || '—';
+  const scoreColor = score == null ? 'var(--muted)'
+    : score >= 70 ? 'var(--up)' : score >= 55 ? 'var(--lime)'
+    : score >= 40 ? 'var(--warn)' : score >= 25 ? 'var(--dn)' : '#ff4444';
+  const moodEmoji = score == null ? '❓'
+    : score >= 70 ? '😄' : score >= 55 ? '🙂' : score >= 40 ? '😐'
+    : score >= 25 ? '😟' : '😰';
+
+  const fmtIndicator = (ind) => {
+    if (!ind || ind.value == null) return '—';
+    return Number(ind.value).toFixed(1);
+  };
+  const vixVal    = fmtIndicator(vix);
+  const vstoxxVal = fmtIndicator(vstoxx);
+
+  const vixColor    = vix.value    == null ? 'var(--muted)' : vix.value    > 30 ? 'var(--dn)' : vix.value    > 20 ? 'var(--warn)' : 'var(--up)';
+  const vstoxxColor = vstoxx.value == null ? 'var(--muted)' : vstoxx.value > 30 ? 'var(--dn)' : vstoxx.value > 20 ? 'var(--warn)' : 'var(--up)';
+
+  const vixDesc    = vix.value    == null ? '' : vix.value    > 30 ? 'High fear' : vix.value    > 20 ? 'Elevated' : 'Calm';
+  const vstoxxDesc = vstoxx.value == null ? '' : vstoxx.value > 30 ? 'High fear' : vstoxx.value > 20 ? 'Elevated' : 'Calm';
+
+  // Plain-English summary
+  const summaryText = (() => {
+    if (score == null) return 'Sentiment data unavailable.';
+    const mood  = score >= 60 ? 'positive' : score >= 40 ? 'neutral' : 'cautious';
+    const vol   = (vix.value || 0) > 25 || (vstoxx.value || 0) > 25 ? 'Volatility is elevated — consider position sizing carefully.' : 'Volatility is moderate to low.';
+    const risk  = score < 35 ? ' Risk-off tone dominates; defensive positioning may be prudent.' : score > 65 ? ' Risk-on tone — growth and momentum names may outperform.' : '';
+    return `Market sentiment is ${mood} entering the week. ${vol}${risk}`;
+  })();
+
+  el.style.display = 'flex';
+  el.innerHTML = `
+    <div class="sent-item">
+      <span class="sent-lbl">Sentiment</span>
+      <span class="sent-val" style="color:${scoreColor}">${moodEmoji} ${score ?? '—'}</span>
+      <span class="sent-sub">${label}</span>
+    </div>
+    <div class="sent-divider"></div>
+    <div class="sent-item">
+      <span class="sent-lbl">VIX (US)</span>
+      <span class="sent-val" style="color:${vixColor}">${vixVal}</span>
+      <span class="sent-sub">${vixDesc}</span>
+    </div>
+    <div class="sent-divider"></div>
+    <div class="sent-item">
+      <span class="sent-lbl">VSTOXX (EU)</span>
+      <span class="sent-val" style="color:${vstoxxColor}">${vstoxxVal}</span>
+      <span class="sent-sub">${vstoxxDesc}</span>
+    </div>
+    <div class="sent-summary">${summaryText}</div>`;
+}
+
+
+// ── ANALYST TARGETS & 52W RANGE ───────────────────────────────────────────────
+function renderTargets() {
+  const el    = document.getElementById('wr-targets-wrap');
+  const cntEl = document.getElementById('wr-targets-cnt');
+  if (!el || !fundamentals?.holdings) {
+    if (el) el.innerHTML = '<div class="empty">Run fundamentals workflow to populate data.</div>';
+    return;
+  }
+
+  const rows = fundamentals.holdings
+    .filter(h => !h.error && !h.skip && h.price_eur != null)
+    .map(h => {
+      const price  = h.price_eur;
+      const target = h.analyst_target_mean;
+      const upside = h.analyst_upside;
+      const hi     = h['52w_high'];
+      const lo     = h['52w_low'];
+
+      // 52W range position (0–100%)
+      let rangePct = null;
+      if (hi != null && lo != null && hi > lo) {
+        rangePct = Math.min(100, Math.max(0, Math.round((price - lo) / (hi - lo) * 100)));
+      }
+
+      // Upside color
+      const upsideColor = upside == null ? 'var(--muted)'
+        : upside >= 20  ? 'var(--up)'
+        : upside >= 5   ? 'var(--lime)'
+        : upside >= -5  ? 'var(--warn)'
+        : 'var(--dn)';
+
+      // 52W bar color — near high = green, near low = red
+      const barColor = rangePct == null ? 'var(--s3)'
+        : rangePct >= 80 ? 'var(--up)'
+        : rangePct >= 50 ? 'var(--accent)'
+        : rangePct >= 25 ? 'var(--warn)'
+        : 'var(--dn)';
+
+      // Consensus from intel
+      let consHtml = '—';
+      const intelH = (intel?.holdings || []).find(ih => ih.ticker === h.ticker);
+      if (intelH?.consensus?.latest?.grade) {
+        const g = intelH.consensus.latest.grade;
+        const gc = g === 'Buy' ? 'var(--up)' : g === 'Sell' ? 'var(--dn)' : 'var(--warn)';
+        const n  = intelH.consensus.latest.total || '';
+        consHtml = `<span style="color:${gc};font-weight:600">${g}</span>${n ? `<span style="color:var(--dim);font-size:10px"> (${n})</span>` : ''}`;
+      }
+
+      return { h, price, target, upside, rangePct, barColor, upsideColor, consHtml };
+    })
+    .sort((a, b) => (b.upside ?? -999) - (a.upside ?? -999));
+
+  if (cntEl) cntEl.textContent = rows.length;
+  if (!rows.length) {
+    el.innerHTML = '<div class="empty">No target data available yet.</div>';
+    return;
+  }
+
+  const th  = s => `<th style="padding:8px 14px;text-align:left;background:var(--s2);color:var(--muted);font-size:9.5px;text-transform:uppercase;letter-spacing:1px">${s}</th>`;
+  const td  = (v, x='') => `<td style="padding:9px 14px;border-bottom:1px solid var(--border);${x}">${v}</td>`;
+
+  const tableRows = rows.map(({h, price, target, upside, rangePct, barColor, upsideColor, consHtml}) => {
+    const tkBadge = `<span style="color:var(--accent);font-weight:600;background:var(--s3);padding:2px 7px;border-radius:4px;font-size:11px">${h.ticker}</span>`;
+    const priceStr  = price  != null ? '€' + Number(price).toFixed(2)  : '—';
+    const targetStr = target != null ? '€' + Number(target).toFixed(2) : '—';
+    const upsideStr = upside != null ? (upside >= 0 ? '+' : '') + Number(upside).toFixed(1) + '%' : '—';
+
+    const barHtml = rangePct != null
+      ? `<div class="w52-bar-wrap">
+           <div class="w52-bar"><div class="w52-bar-fill" style="width:${rangePct}%;background:${barColor}"></div></div>
+           <span class="w52-pct">${rangePct}%</span>
+         </div>`
+      : '—';
+
+    return `<tr>
+      ${td(tkBadge)}
+      ${td(`<span style="color:var(--muted);font-size:11px">${(h.name||'').slice(0,22)}</span>`)}
+      ${td(priceStr, 'color:var(--text)')}
+      ${td(targetStr, 'color:var(--accent)')}
+      ${td(`<span style="color:${upsideColor};font-weight:700">${upsideStr}</span>`)}
+      ${td(barHtml)}
+      ${td(consHtml)}
+    </tr>`;
+  }).join('');
+
+  el.innerHTML = `<table style="width:100%;border-collapse:collapse">
+    <thead><tr>${['Ticker','Name','Price','Target','Upside','52W Range','Consensus'].map(th).join('')}</tr></thead>
+    <tbody>${tableRows}</tbody>
+  </table>`;
+}
+
+
+// ── AI WEEKLY BRIEF ───────────────────────────────────────────────────────────
+let _aiBriefGenerated = false;
+
+async function generateAiBrief(force = false) {
+  if (_aiBriefGenerated && !force) return;
+  const bodyEl   = document.getElementById('ai-brief-body');
+  const footerEl = document.getElementById('ai-brief-footer');
+  if (!bodyEl) return;
+
+  bodyEl.innerHTML = `<div class="ai-loading"><div class="ai-dot"></div><div class="ai-dot"></div><div class="ai-dot"></div><span>Generating weekly brief…</span></div>`;
+  if (footerEl) footerEl.textContent = '';
+
+  // Build a compact data summary to feed the model
+  const today = new Date().toISOString().slice(0,10);
+  const wr    = weeklyReport || {};
+  const sent  = sentiment   || {};
+
+  const earnFlat = Object.entries(wr.earnings  || {}).flatMap(([t,evts])=>evts.map(e=>({t,...e})));
+  const divFlat  = Object.entries(wr.dividends || {}).flatMap(([t,evts])=>evts.map(d=>({t,...d})));
+  const macroEvts = (macroCal?.events || []).filter(e => e.impact_raw === 'high').slice(0, 6);
+
+  const topMovers = (fundamentals?.holdings || [])
+    .filter(h => !h.error && !h.skip && h.analyst_upside != null)
+    .sort((a,b) => (b.analyst_upside||0) - (a.analyst_upside||0));
+  const topUp   = topMovers.slice(0,3).map(h=>`${h.ticker} +${Number(h.analyst_upside).toFixed(1)}%`).join(', ');
+  const topDown = [...topMovers].reverse().slice(0,3).map(h=>`${h.ticker} ${Number(h.analyst_upside).toFixed(1)}%`).join(', ');
+
+  const sentScore = sent.composite?.score;
+  const sentLabel = sent.composite?.label || '';
+  const vixVal    = sent.indicators?.vix?.value;
+  const vstoxxVal = sent.indicators?.vstoxx?.value;
+
+  const macroSummary = macroEvts.map(e=>`${e.date} ${e.currency} ${e.title}`).join('; ') || 'None';
+  const earnSummary  = earnFlat.map(e=>`${e.t} on ${e.date}${e.eps_estimate!=null?' EPS est '+Number(e.eps_estimate).toFixed(2):''}`).join('; ') || 'None';
+  const divSummary   = divFlat.map(d=>`${d.t} ex-div ${d.ex_date}`).join('; ') || 'None';
+
+  const prompt = `You are a concise portfolio analyst. Write a 120-150 word plain-English briefing for a private investor reviewing their portfolio for the week ahead. Do NOT use bullet points or markdown. Write in flowing prose. Be specific and actionable.
+
+Today: ${today}
+Week: ${wr.week_from||'?'} → ${wr.week_to||'?'}
+
+Market sentiment: ${sentScore != null ? sentScore + '/100 (' + sentLabel + ')' : 'unknown'}
+VIX: ${vixVal != null ? Number(vixVal).toFixed(1) : 'unknown'}
+VSTOXX: ${vstoxxVal != null ? Number(vstoxxVal).toFixed(1) : 'unknown'}
+
+Earnings calls this week: ${earnSummary}
+Ex-dividend dates: ${divSummary}
+High-impact macro events: ${macroSummary}
+
+Highest analyst upside: ${topUp || 'none'}
+Lowest analyst upside: ${topDown || 'none'}
+
+Write the brief now. Start directly with the content, no preamble.`;
+
+  try {
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 300,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const data = await resp.json();
+    const text = (data.content || []).filter(b => b.type === 'text').map(b => b.text).join('');
+    if (text) {
+      bodyEl.textContent = text;
+      _aiBriefGenerated = true;
+      if (footerEl) footerEl.textContent = 'Generated ' + new Date().toLocaleTimeString() + ' · claude-sonnet-4';
+    } else {
+      bodyEl.innerHTML = `<span style="color:var(--warn)">Brief unavailable — check API connection.</span>`;
+    }
+  } catch (err) {
+    bodyEl.innerHTML = `<span style="color:var(--warn)">Could not generate brief: ${err.message}</span>`;
+  }
+}
+
+
 function renderWeekly() {
+  renderSentimentBanner();
+  renderTargets();
+  generateAiBrief();
+
   const wr = weeklyReport;
   if (!wr) {
     ['wr-earnings-wrap','wr-div-wrap','wr-split-wrap','wr-ipo-wrap'].forEach(id => {
