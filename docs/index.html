@@ -811,12 +811,46 @@ function gradeClass(g) {
   return 'hold';
 }
 
-// Build consensus pill html from a ratings array (last 30 days)
-function consensusHtml(ratings) {
-  if (!ratings || !ratings.length) return '';
+// Build consensus pill html.
+// Prefers h.consensus (monthly counts from yfinance recommendations — works for
+// ALL exchanges including European) over the 30-day ratings array fallback.
+function consensusHtml(h) {
+  const con = h.consensus;
+
+  // ── Path A: rich consensus object from get_analyst_consensus() ─────────────
+  if (con && con.latest && con.latest.total > 0) {
+    const l = con.latest;
+    const buy  = (l.strongBuy||0) + (l.buy||0);
+    const hold = l.hold||0;
+    const sell = (l.sell||0) + (l.strongSell||0);
+    const grade = l.grade || 'Hold';
+    const gradeCls = grade==='Buy' ? 'cons-buy' : grade==='Sell' ? 'cons-sell' : 'cons-hold';
+    const gradeIcon = grade==='Buy' ? '▲' : grade==='Sell' ? '▼' : '—';
+    const trend = con.trend || 'unknown';
+    const trendHtml = trend === 'improving'
+      ? `<span class="cons-pill cons-buy" style="font-size:9px">↑ Improving</span>`
+      : trend === 'deteriorating'
+      ? `<span class="cons-pill cons-sell" style="font-size:9px">↓ Deteriorating</span>`
+      : trend === 'stable'
+      ? `<span class="cons-pill cons-hold" style="font-size:9px">→ Stable</span>`
+      : '';
+    const parts = [];
+    if (buy)  parts.push(`<span class="cons-pill cons-buy">${buy} Buy</span>`);
+    if (hold) parts.push(`<span class="cons-pill cons-hold">${hold} Hold</span>`);
+    if (sell) parts.push(`<span class="cons-pill cons-sell">${sell} Sell</span>`);
+    parts.push(`<span class="cons-pill ${gradeCls}">${gradeIcon} ${grade}</span>`);
+    if (trendHtml) parts.push(trendHtml);
+    parts.push(`<span class="cons-label">${l.total} analysts · ${l.period||''}</span>`);
+    return `<div class="cons">${parts.join('')}</div>`;
+  }
+
+  // ── Path B: fallback — derive from ratings[] array (30-day window) ─────────
+  const ratings = h.ratings || [];
+  if (!ratings.length) return '';
   const cutoff = new Date(); cutoff.setDate(cutoff.getDate() - 30);
   const cutoffStr = cutoff.toISOString().slice(0,10);
-  const recent = ratings.filter(r => r.date >= cutoffStr && r.to_grade);
+  const recent = ratings.filter(r => r.date >= cutoffStr && r.to_grade
+                                  && r.source !== 'consensus');
   if (!recent.length) return '';
   let buy=0, hold=0, sell=0;
   recent.forEach(r => {
@@ -827,13 +861,42 @@ function consensusHtml(ratings) {
   const dominant = buy>=hold && buy>=sell ? 'buy' : sell>=hold && sell>=buy ? 'sell' : 'hold';
   const domLabel = dominant==='buy' ? '▲ Bullish' : dominant==='sell' ? '▼ Bearish' : '— Neutral';
   const domCls   = dominant==='buy' ? 'cons-buy'  : dominant==='sell' ? 'cons-sell'  : 'cons-hold';
-  const parts = [];
-  if (buy)  parts.push(`<span class="cons-pill cons-buy">${buy} Buy</span>`);
-  if (hold) parts.push(`<span class="cons-pill cons-hold">${hold} Hold</span>`);
-  if (sell) parts.push(`<span class="cons-pill cons-sell">${sell} Sell</span>`);
-  parts.push(`<span class="cons-pill ${domCls}">${domLabel}</span>`);
-  parts.push(`<span class="cons-label">${total} rating${total>1?'s':''} · 30d</span>`);
-  return `<div class="cons">${parts.join('')}</div>`;
+  const parts2 = [];
+  if (buy)  parts2.push(`<span class="cons-pill cons-buy">${buy} Buy</span>`);
+  if (hold) parts2.push(`<span class="cons-pill cons-hold">${hold} Hold</span>`);
+  if (sell) parts2.push(`<span class="cons-pill cons-sell">${sell} Sell</span>`);
+  parts2.push(`<span class="cons-pill ${domCls}">${domLabel}</span>`);
+  parts2.push(`<span class="cons-label">${total} change${total>1?'s':''} · 30d</span>`);
+  return `<div class="cons">${parts2.join('')}</div>`;
+}
+
+// Build consensus trend sparkline (last 6 months mini bar chart)
+function consensusTrendHtml(h) {
+  const con = h.consensus;
+  if (!con || !con.months || con.months.length < 2) return '';
+  const months = con.months.slice(-6);
+  const maxTotal = Math.max(...months.map(m => m.total), 1);
+  const bars = months.map(m => {
+    const buyH  = Math.round((((m.strongBuy||0)+(m.buy||0)) / maxTotal) * 28);
+    const holdH = Math.round(((m.hold||0) / maxTotal) * 28);
+    const sellH = Math.round((((m.sell||0)+(m.strongSell||0)) / maxTotal) * 28);
+    const tip = `${m.period}: ${(m.strongBuy||0)+(m.buy||0)} Buy · ${m.hold||0} Hold · ${(m.sell||0)+(m.strongSell||0)} Sell`;
+    return `<div style="display:flex;flex-direction:column;align-items:center;gap:1px;cursor:default" title="${tip}">
+      <div style="width:10px;height:${buyH}px;background:var(--up);border-radius:2px 2px 0 0;min-height:${buyH?1:0}px"></div>
+      <div style="width:10px;height:${holdH}px;background:var(--warn);min-height:${holdH?1:0}px"></div>
+      <div style="width:10px;height:${sellH}px;background:var(--dn);border-radius:0 0 2px 2px;min-height:${sellH?1:0}px"></div>
+      <div style="font-size:8px;color:var(--dim);margin-top:2px;writing-mode:vertical-lr;transform:rotate(180deg);height:22px;overflow:hidden">${m.period.slice(5)}</div>
+    </div>`;
+  }).join('');
+  return `<div class="ics">📊 Analyst consensus trend (6 months)</div>
+  <div style="display:flex;align-items:flex-end;gap:4px;padding:4px 0 2px;margin-bottom:4px">
+    ${bars}
+    <div style="display:flex;flex-direction:column;gap:3px;margin-left:6px;font-size:9px">
+      <span style="color:var(--up)">■ Buy</span>
+      <span style="color:var(--warn)">■ Hold</span>
+      <span style="color:var(--dn)">■ Sell</span>
+    </div>
+  </div>`;
 }
 
 // Build timeline dots html from a ratings array
@@ -841,8 +904,9 @@ function timelineHtml(ratings) {
   if (!ratings || !ratings.length) return '';
   const cutoff = new Date(); cutoff.setDate(cutoff.getDate() - 30);
   const cutoffStr = cutoff.toISOString().slice(0,10);
+  // only show real broker changes, not synthesised consensus entries
   const recent = [...ratings]
-    .filter(r => r.date >= cutoffStr)
+    .filter(r => r.date >= cutoffStr && r.source !== 'consensus')
     .sort((a,b) => a.date.localeCompare(b.date));
   if (!recent.length) return '';
   const dots = recent.map(r => {
@@ -851,7 +915,7 @@ function timelineHtml(ratings) {
     const tip = `${r.date} · ${r.firm||'?'} · ${r.from_grade||'—'} → ${r.to_grade||'—'}`;
     return `<div class="rtl-dot ${cls}" title="${tip}"><span class="rtl-tip">${tip}</span></div>`;
   }).join('');
-  return `<div class="ics">📅 30-day rating timeline <span style="color:var(--dim);font-size:9px">(hover dots)</span></div>
+  return `<div class="ics">📅 30-day broker changes <span style="color:var(--dim);font-size:9px">(hover dots)</span></div>
   <div class="rtl">${dots}</div>`;
 }
 
@@ -862,10 +926,12 @@ function renderIntel() {
     return;
   }
 
+  // Rating changes table — broker-only (exclude synthesised consensus entries)
   let allChanges = [];
   for (const h of intel.holdings||[]) {
     for (const r of h.new_ratings||[]) allChanges.push({ticker:h.ticker,...r});
     for (const r of h.ratings||[]) {
+      if (r.source === 'consensus') continue;
       if (r.from_grade && r.to_grade && r.from_grade!==r.to_grade)
         allChanges.push({ticker:h.ticker,...r});
     }
@@ -883,20 +949,23 @@ function renderIntel() {
     <td style="color:var(--muted);text-decoration:line-through">${r.from_grade||'—'}</td>
     <td style="color:${rColor(r.to_grade)};font-weight:700">→ ${r.to_grade}</td>
     <td><span class="tag tnw">${r.action||'change'}</span></td>
-  </tr>`).join('') || `<tr><td colspan="6" class="empty">No rating changes detected today.</td></tr>`;
+  </tr>`).join('') || `<tr><td colspan="6" class="empty">No rating changes detected recently.</td></tr>`;
 
+  // Per-holding cards
   document.getElementById('news-grid').innerHTML = (intel.holdings||[]).map(h=>{
     const newsHtml = (h.news||[]).length
       ? (h.news).slice(0,3).map(a=>`<div class="no">• <a href="${a.url}" target="_blank">${a.title}</a> <span style="color:var(--dim)">(${a.source})</span></div>`).join('')
       : `<div class="no" style="color:var(--dim)">No news available.</div>`;
     const newRat = (h.new_ratings||[]).length
       ? `<div class="ics">⚡ New Rating Changes</div>` + h.new_ratings.map(r=>`<div class="nr"><span style="color:var(--muted);text-decoration:line-through">${r.from_grade||'—'}</span><span>→</span><span style="color:${rColor(r.to_grade)};font-weight:700">${r.to_grade}</span><span class="dm" style="font-size:11px">${r.firm}</span></div>`).join('') : '';
-    const consBadge = consensusHtml(h.ratings||[]);
-    const timeline  = timelineHtml(h.ratings||[]);
+    const consBadge   = consensusHtml(h);
+    const consTrend   = consensusTrendHtml(h);
+    const timeline    = timelineHtml(h.ratings||[]);
     return `<div class="ic">
       <div class="ick">${h.ticker}</div>
       <div class="icn">${h.name||''}</div>
       ${consBadge}
+      ${consTrend}
       ${timeline}
       ${newRat}
       <div class="ics">📰 News</div>
