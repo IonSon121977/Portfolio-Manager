@@ -634,10 +634,9 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
     <div class="ai-brief-head">
       <span class="ai-brief-icon">🤖</span>
       <span class="ai-brief-title">AI Weekly Brief</span>
-      <button class="ai-brief-refresh" onclick="generateAiBrief(true)" style="margin-left:auto">↺ Regenerate</button>
     </div>
     <div class="ai-brief-body" id="ai-brief-body">
-      <div class="ai-loading"><div class="ai-dot"></div><div class="ai-dot"></div><div class="ai-dot"></div><span>Generating weekly brief…</span></div>
+      <span style="color:var(--dim)">Loading…</span>
     </div>
     <div class="ai-brief-footer" id="ai-brief-footer"></div>
   </div>
@@ -670,6 +669,16 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
   </div>
   <div class="tbox" id="wr-div-wrap">
     <div class="empty">No dividend ex-dates or pay-dates next week.</div>
+  </div>
+
+  <!-- EX-DIVIDEND 4-WEEK CALENDAR -->
+  <div class="sh" style="margin-top:4px">
+    <div class="st" style="font-size:13px;color:var(--up)">📆 Ex-Dividend Calendar — Next 4 Weeks</div>
+    <div class="bdg" id="wr-exdiv-cnt">0</div>
+    <div class="shr"><span style="color:var(--muted);font-size:11px">All holdings with upcoming ex-dates</span></div>
+  </div>
+  <div id="wr-exdiv-wrap">
+    <div class="empty">No upcoming ex-dividend dates in the next 4 weeks.</div>
   </div>
 
   <div class="sh">
@@ -1153,6 +1162,120 @@ function copyCfgJson() {
 
 // ── WEEKLY REPORT ─────────────────────────────────────────────────────────────
 // ── SENTIMENT BANNER ─────────────────────────────────────────────────────────
+// ── EX-DIVIDEND 4-WEEK CALENDAR ───────────────────────────────────────────────
+function renderDividendCalendar() {
+  const el    = document.getElementById('wr-exdiv-wrap');
+  const cntEl = document.getElementById('wr-exdiv-cnt');
+  if (!el) return;
+
+  const events = weeklyReport?.dividend_calendar || [];
+  if (cntEl) cntEl.textContent = events.length;
+
+  if (!events.length) {
+    el.innerHTML = '<div class="empty">No upcoming ex-dividend dates found for your holdings in the next 4 weeks.</div>';
+    return;
+  }
+
+  const today = new Date().toISOString().slice(0, 10);
+
+  // Group by week label for the timeline
+  const grouped = {};
+  events.forEach(d => {
+    const ex = d.ex_date || '';
+    if (!ex) return;
+    // Compute week label: "Week of Mon DD Mon"
+    const dt  = new Date(ex + 'T12:00:00Z');
+    const dow = dt.getUTCDay();                      // 0=Sun
+    const diffToMon = (dow === 0 ? -6 : 1 - dow);   // days back to Monday
+    const mon = new Date(dt);
+    mon.setUTCDate(dt.getUTCDate() + diffToMon);
+    const wk = mon.toISOString().slice(0, 10);       // key = Monday ISO date
+    (grouped[wk] = grouped[wk] || []).push(d);
+  });
+
+  const fmtDate = iso => {
+    try {
+      return new Date(iso + 'T12:00:00Z').toLocaleDateString('en-GB', {
+        weekday: 'short', day: 'numeric', month: 'short'
+      });
+    } catch { return iso; }
+  };
+  const fmtWeek = iso => {
+    try {
+      const fri = new Date(iso + 'T12:00:00Z');
+      fri.setUTCDate(fri.getUTCDate() + 4);
+      return new Date(iso + 'T12:00:00Z').toLocaleDateString('en-GB', {day:'numeric',month:'short'})
+           + ' – ' + fri.toLocaleDateString('en-GB', {day:'numeric',month:'short'});
+    } catch { return iso; }
+  };
+  const fmtAmt = (amt, cur) => {
+    if (amt == null) return '';
+    const sym = cur === 'EUR' ? '€' : cur === 'GBP' ? '£' : cur === 'GBX' ? 'p' : '$';
+    return sym + Number(amt).toFixed(4).replace(/\.?0+$/, '');
+  };
+  const tkBadge = t =>
+    `<span style="color:var(--accent);font-weight:600;background:var(--s3);
+     padding:2px 7px;border-radius:4px;font-size:11px">${t}</span>`;
+
+  const weeks = Object.keys(grouped).sort();
+
+  el.innerHTML = weeks.map(wk => {
+    const isCurrentWk = today >= wk && today <= wk.slice(0,8) + (parseInt(wk.slice(8)) + 4).toString().padStart(2,'0');
+    const rows = grouped[wk].map(d => {
+      const isToday   = d.ex_date === today;
+      const isPast    = d.ex_date < today;
+      const rowStyle  = isPast ? 'opacity:0.5' : '';
+      const exStyle   = isToday
+        ? 'color:var(--accent);font-weight:700'
+        : isPast ? 'color:var(--dim)' : 'color:var(--text)';
+      const amtHtml   = d.amount
+        ? `<span style="color:var(--up);font-weight:600">${fmtAmt(d.amount, d.currency)}</span>`
+        : '<span style="color:var(--dim)">—</span>';
+      const payHtml   = d.pay_date
+        ? `<span style="color:var(--muted);font-size:11px">${fmtDate(d.pay_date)}</span>`
+        : '<span style="color:var(--dim)">—</span>';
+      const todayPill = isToday
+        ? `<span style="background:var(--accent);color:#0d1520;font-size:9px;font-weight:700;
+            padding:1px 6px;border-radius:10px;margin-left:6px">TODAY</span>`
+        : '';
+      return `<tr style="${rowStyle}">
+        <td style="padding:9px 14px;border-bottom:1px solid var(--border);${exStyle}">
+          ${fmtDate(d.ex_date)}${todayPill}
+        </td>
+        <td style="padding:9px 14px;border-bottom:1px solid var(--border)">${tkBadge(d.ticker)}</td>
+        <td style="padding:9px 14px;border-bottom:1px solid var(--border);color:var(--muted);font-size:11px">
+          ${(d.name||'').slice(0,26)}
+        </td>
+        <td style="padding:9px 14px;border-bottom:1px solid var(--border)">${amtHtml}</td>
+        <td style="padding:9px 14px;border-bottom:1px solid var(--border);color:var(--muted);font-size:11px">
+          ${d.currency||'—'}
+        </td>
+        <td style="padding:9px 14px;border-bottom:1px solid var(--border)">${payHtml}</td>
+      </tr>`;
+    }).join('');
+
+    return `<div style="margin-bottom:20px">
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;
+                  color:var(--muted);padding:6px 0 8px;border-bottom:1px solid var(--border);
+                  margin-bottom:8px">
+        Week of ${fmtWeek(wk)}
+      </div>
+      <div class="tbox" style="margin-bottom:0">
+        <table style="width:100%;border-collapse:collapse">
+          <thead><tr>
+            ${['Ex-Date','Ticker','Company','Amount','Currency','Pay Date'].map(h =>
+              `<th style="padding:8px 14px;text-align:left;background:var(--s2);
+               color:var(--muted);font-size:9.5px;text-transform:uppercase;letter-spacing:1px">${h}</th>`
+            ).join('')}
+          </tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+
 function renderSentimentBanner() {
   const el = document.getElementById('wr-sentiment-banner');
   if (!el || !sentiment) return;
@@ -1310,78 +1433,23 @@ function renderTargets() {
 // ── AI WEEKLY BRIEF ───────────────────────────────────────────────────────────
 let _aiBriefGenerated = false;
 
-async function generateAiBrief(force = false) {
+function generateAiBrief(force = false) {
   if (_aiBriefGenerated && !force) return;
   const bodyEl   = document.getElementById('ai-brief-body');
   const footerEl = document.getElementById('ai-brief-footer');
   if (!bodyEl) return;
 
-  bodyEl.innerHTML = `<div class="ai-loading"><div class="ai-dot"></div><div class="ai-dot"></div><div class="ai-dot"></div><span>Generating weekly brief…</span></div>`;
-  if (footerEl) footerEl.textContent = '';
-
-  // Build a compact data summary to feed the model
-  const today = new Date().toISOString().slice(0,10);
-  const wr    = weeklyReport || {};
-  const sent  = sentiment   || {};
-
-  const earnFlat = Object.entries(wr.earnings  || {}).flatMap(([t,evts])=>evts.map(e=>({t,...e})));
-  const divFlat  = Object.entries(wr.dividends || {}).flatMap(([t,evts])=>evts.map(d=>({t,...d})));
-  const macroEvts = (macroCal?.events || []).filter(e => e.impact_raw === 'high').slice(0, 6);
-
-  const topMovers = (fundamentals?.holdings || [])
-    .filter(h => !h.error && !h.skip && h.analyst_upside != null)
-    .sort((a,b) => (b.analyst_upside||0) - (a.analyst_upside||0));
-  const topUp   = topMovers.slice(0,3).map(h=>`${h.ticker} +${Number(h.analyst_upside).toFixed(1)}%`).join(', ');
-  const topDown = [...topMovers].reverse().slice(0,3).map(h=>`${h.ticker} ${Number(h.analyst_upside).toFixed(1)}%`).join(', ');
-
-  const sentScore = sent.composite?.score;
-  const sentLabel = sent.composite?.label || '';
-  const vixVal    = sent.indicators?.vix?.value;
-  const vstoxxVal = sent.indicators?.vstoxx?.value;
-
-  const macroSummary = macroEvts.map(e=>`${e.date} ${e.currency} ${e.title}`).join('; ') || 'None';
-  const earnSummary  = earnFlat.map(e=>`${e.t} on ${e.date}${e.eps_estimate!=null?' EPS est '+Number(e.eps_estimate).toFixed(2):''}`).join('; ') || 'None';
-  const divSummary   = divFlat.map(d=>`${d.t} ex-div ${d.ex_date}`).join('; ') || 'None';
-
-  const prompt = `You are a concise portfolio analyst. Write a 120-150 word plain-English briefing for a private investor reviewing their portfolio for the week ahead. Do NOT use bullet points or markdown. Write in flowing prose. Be specific and actionable.
-
-Today: ${today}
-Week: ${wr.week_from||'?'} → ${wr.week_to||'?'}
-
-Market sentiment: ${sentScore != null ? sentScore + '/100 (' + sentLabel + ')' : 'unknown'}
-VIX: ${vixVal != null ? Number(vixVal).toFixed(1) : 'unknown'}
-VSTOXX: ${vstoxxVal != null ? Number(vstoxxVal).toFixed(1) : 'unknown'}
-
-Earnings calls this week: ${earnSummary}
-Ex-dividend dates: ${divSummary}
-High-impact macro events: ${macroSummary}
-
-Highest analyst upside: ${topUp || 'none'}
-Lowest analyst upside: ${topDown || 'none'}
-
-Write the brief now. Start directly with the content, no preamble.`;
-
-  try {
-    const resp = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 300,
-        messages: [{ role: 'user', content: prompt }]
-      })
-    });
-    const data = await resp.json();
-    const text = (data.content || []).filter(b => b.type === 'text').map(b => b.text).join('');
-    if (text) {
-      bodyEl.textContent = text;
-      _aiBriefGenerated = true;
-      if (footerEl) footerEl.textContent = 'Generated ' + new Date().toLocaleTimeString() + ' · claude-sonnet-4';
-    } else {
-      bodyEl.innerHTML = `<span style="color:var(--warn)">Brief unavailable — check API connection.</span>`;
-    }
-  } catch (err) {
-    bodyEl.innerHTML = `<span style="color:var(--warn)">Could not generate brief: ${err.message}</span>`;
+  const brief = weeklyReport?.ai_brief;
+  if (brief && brief.trim()) {
+    bodyEl.textContent = brief;
+    _aiBriefGenerated  = true;
+    const generated    = weeklyReport?.generated
+      ? 'Generated ' + weeklyReport.generated.slice(0,10) + ' · claude-sonnet'
+      : 'Generated by Saturday workflow · claude-sonnet';
+    if (footerEl) footerEl.textContent = generated;
+  } else {
+    bodyEl.innerHTML = `<span style="color:var(--dim)">Brief not yet available — will be generated automatically on the next Saturday workflow run.</span>`;
+    if (footerEl) footerEl.textContent = '';
   }
 }
 
@@ -1390,10 +1458,11 @@ function renderWeekly() {
   renderSentimentBanner();
   renderTargets();
   generateAiBrief();
+  renderDividendCalendar();
 
   const wr = weeklyReport;
   if (!wr) {
-    ['wr-earnings-wrap','wr-div-wrap','wr-split-wrap','wr-ipo-wrap'].forEach(id => {
+    ['wr-earnings-wrap','wr-div-wrap','wr-split-wrap','wr-ipo-wrap','wr-exdiv-wrap'].forEach(id => {
       const el = document.getElementById(id);
       if (el) el.innerHTML = '<div class="empty">No weekly_report.json yet — the Saturday workflow needs to save this file. See instructions below.</div>';
     });
