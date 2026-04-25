@@ -143,6 +143,36 @@ tr:hover td{background:rgba(79,158,248,.07)}
 .earn-summary span{color:var(--muted)}
 .earn-summary strong{color:var(--text)}
 
+/* ── MACRO CALENDAR ── */
+.mcal{display:flex;flex-direction:column;gap:0}
+.mcal-day{margin-bottom:18px}
+.mcal-date{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);padding:6px 0 8px;border-bottom:1px solid var(--border);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.mcal-date-today{color:var(--accent)}
+.mcal-today-pill{background:var(--accent);color:#0d1520;font-size:9px;font-weight:700;padding:1px 7px;border-radius:10px;text-transform:uppercase;letter-spacing:.5px}
+.mcal-row{display:flex;align-items:flex-start;gap:10px;padding:7px 10px;border-radius:7px;margin-bottom:5px;border:1px solid var(--border);background:var(--s1);transition:background .15s}
+.mcal-row:hover{background:var(--s2)}
+.mcal-imp{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.mcal-imp-high{background:var(--dn)}
+.mcal-imp-medium{background:var(--warn)}
+.mcal-imp-low{background:var(--dim)}
+.mcal-cur{font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;flex-shrink:0;min-width:34px;text-align:center}
+.mcal-cur-eur{background:rgba(79,158,248,.15);color:var(--accent)}
+.mcal-cur-usd{background:rgba(82,214,138,.15);color:var(--up)}
+.mcal-cur-gbp{background:rgba(246,173,85,.15);color:var(--warn)}
+.mcal-body{flex:1;min-width:0}
+.mcal-title{font-size:12px;font-weight:500;color:var(--text);margin-bottom:2px}
+.mcal-meta{font-size:10px;color:var(--dim);display:flex;gap:10px;flex-wrap:wrap}
+.mcal-time{color:var(--muted)}
+.mcal-prev{color:var(--dim)}
+.mcal-fcst{color:var(--up)}
+.mcal-src{color:var(--dim);font-size:9px;text-transform:uppercase;letter-spacing:.5px}
+.mcal-imp-badge{font-size:9px;padding:1px 6px;border-radius:3px;font-weight:600;flex-shrink:0;align-self:flex-start;margin-top:2px}
+.mcal-imp-badge-high{background:rgba(245,101,101,.15);color:var(--dn)}
+.mcal-imp-badge-med{background:rgba(246,173,85,.12);color:var(--warn)}
+.mcal-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.mcal-filter{background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:4px 13px;font-size:11px;color:var(--muted);cursor:pointer;transition:all .15s;user-select:none}
+.mcal-filter.on{background:var(--accent);color:#0d1520;border-color:var(--accent);font-weight:600}
+
 /* ── CONFIG ── */
 .cg{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .cb2{background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:20px}
@@ -606,6 +636,25 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
   <div class="tbox" id="wr-ipo-wrap">
     <div class="empty">No notable IPOs scheduled.</div>
   </div>
+
+  <!-- MACRO CALENDAR -->
+  <div class="sh" style="margin-top:28px">
+    <div class="st" style="font-size:13px;color:var(--lime)">🌐 Macro Event Calendar</div>
+    <div class="bdg" id="mc-cnt">0</div>
+    <div class="shr">
+      <span style="color:var(--muted);font-size:11px">Next 4 weeks · EUR/USD/GBP events</span>
+    </div>
+  </div>
+  <div class="mcal-filters">
+    <div class="mcal-filter on"  id="mcf-all"    onclick="mcFilter('all')">All</div>
+    <div class="mcal-filter"     id="mcf-high"   onclick="mcFilter('high')">🔴 High Impact</div>
+    <div class="mcal-filter"     id="mcf-eur"    onclick="mcFilter('EUR')">EUR</div>
+    <div class="mcal-filter"     id="mcf-usd"    onclick="mcFilter('USD')">USD</div>
+    <div class="mcal-filter"     id="mcf-gbp"    onclick="mcFilter('GBP')">GBP</div>
+  </div>
+  <div id="mc-body">
+    <div class="empty">Macro calendar data will appear after the next fundamentals run.</div>
+  </div>
 </div>
 
 
@@ -619,6 +668,7 @@ let weeklyReport = null;
 let fundamentals = null;
 let intel        = null;
 let sentiment    = null;
+let macroCal     = null;
 let alerts       = [];
 let cfg          = null;
 let dTimes       = [];
@@ -648,6 +698,7 @@ async function reload() {
   weeklyReport = await fetchJSON('data/weekly_report.json');
   fundamentals = await fetchJSON('data/fundamentals.json');
   sentiment    = await fetchJSON('data/market_sentiment.json');
+  macroCal     = await fetchJSON('data/macro_calendar.json');
   renderDashboard();
   renderIntel();
   renderAlerts();
@@ -655,6 +706,7 @@ async function reload() {
   renderWeekly();
   renderScores();
   renderMarket();
+  renderMacro();
   document.getElementById('lu-time').textContent =
     snap?.timestamp ? snap.timestamp.slice(0,16).replace('T',' ') + ' UTC' : '—';
   toast('Data reloaded', 'inf');
@@ -674,10 +726,10 @@ function go(id, el) {
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
   el.classList.add('on');
   document.getElementById('pg-'+id).classList.add('on');
-  if (id==='config') loadCfg();
-  if (id==='weekly') renderWeekly();
-  if (id==='scores') renderScores();
-  if (id==='market') renderMarket();
+  if (id==='config')  loadCfg();
+  if (id==='weekly')  { renderWeekly(); renderMacro(); }
+  if (id==='scores')  renderScores();
+  if (id==='market')  renderMarket();
 }
 
 // ── FORMAT ──────────────────────────────────────────────────────────────────
@@ -1030,6 +1082,103 @@ function renderWeekly() {
     ['Date','Company','Ticker','Exchange','Price','Status'],
     [...ipos].sort((a,b)=>a.date.localeCompare(b.date)).map(i=>`<tr>${td(i.date,'color:var(--muted)')}${td(i.name||'—')}${td(tkBadge(i.ticker||'—'))}${td(i.exchange||'—','color:var(--muted);font-size:11px')}${td(i.price_range||'—','color:var(--lime)')}${td(i.status||'—','color:var(--muted);font-size:11px')}</tr>`)
   ) : '<div class="empty">No notable IPOs scheduled.</div>');
+}
+
+
+// ── MACRO CALENDAR ────────────────────────────────────────────────────────────
+let _mcActiveFilter = 'all';
+
+function mcFilter(f) {
+  _mcActiveFilter = f;
+  // update filter pill styles
+  ['all','high','EUR','USD','GBP'].forEach(k => {
+    const id = 'mcf-' + (k==='high' ? 'high' : k.toLowerCase());
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle('on', k === f);
+  });
+  _renderMacroBody();
+}
+
+function renderMacro() {
+  const cntEl = document.getElementById('mc-cnt');
+  if (!macroCal) {
+    if (cntEl) cntEl.textContent = '0';
+    const b = document.getElementById('mc-body');
+    if (b) b.innerHTML = '<div class="empty">Run the fundamentals workflow to populate macro_calendar.json.</div>';
+    return;
+  }
+  if (cntEl) cntEl.textContent = macroCal.count || 0;
+  _renderMacroBody();
+}
+
+function _renderMacroBody() {
+  const el = document.getElementById('mc-body');
+  if (!el || !macroCal) return;
+
+  const today = new Date().toISOString().slice(0,10);
+  const f = _mcActiveFilter;
+
+  // Filter events
+  const events = (macroCal.events || []).filter(e => {
+    if (f === 'high')   return e.impact_raw === 'high';
+    if (f === 'EUR')    return e.currency === 'EUR';
+    if (f === 'USD')    return e.currency === 'USD';
+    if (f === 'GBP')    return e.currency === 'GBP';
+    return true;
+  });
+
+  if (!events.length) {
+    el.innerHTML = '<div class="empty">No events match the selected filter.</div>';
+    return;
+  }
+
+  // Group by date
+  const byDate = {};
+  events.forEach(e => { (byDate[e.date] = byDate[e.date] || []).push(e); });
+  const dates = Object.keys(byDate).sort();
+
+  const curCls  = c => c==='EUR' ? 'mcal-cur-eur' : c==='USD' ? 'mcal-cur-usd' : 'mcal-cur-gbp';
+  const impCls  = r => r==='high' ? 'mcal-imp-high' : r==='medium' ? 'mcal-imp-medium' : 'mcal-imp-low';
+  const impBadge = r => r==='high'
+    ? `<span class="mcal-imp-badge mcal-imp-badge-high">High</span>`
+    : r==='medium'
+    ? `<span class="mcal-imp-badge mcal-imp-badge-med">Med</span>`
+    : '';
+
+  const fmtDate = d => {
+    try {
+      const dt = new Date(d + 'T12:00:00Z');
+      return dt.toLocaleDateString('en-GB', {weekday:'short', day:'numeric', month:'short', year:'numeric'});
+    } catch { return d; }
+  };
+
+  el.innerHTML = '<div class="mcal">' + dates.map(d => {
+    const isToday = d === today;
+    const evRows = byDate[d].map(e => {
+      const fc = e.forecast ? `<span class="mcal-fcst">Fcst: ${e.forecast}</span>` : '';
+      const pv = e.previous ? `<span class="mcal-prev">Prev: ${e.previous}</span>` : '';
+      const src = e.source !== 'ForexFactory' ? `<span class="mcal-src">${e.source}</span>` : '';
+      return `<div class="mcal-row">
+        <div class="mcal-imp ${impCls(e.impact_raw)}"></div>
+        <div class="mcal-cur ${curCls(e.currency)}">${e.currency}</div>
+        <div class="mcal-body">
+          <div class="mcal-title">${e.title}</div>
+          <div class="mcal-meta">
+            <span class="mcal-time">⏰ ${e.time}</span>
+            ${fc}${pv}${src}
+          </div>
+        </div>
+        ${impBadge(e.impact_raw)}
+      </div>`;
+    }).join('');
+
+    return `<div class="mcal-day">
+      <div class="mcal-date ${isToday ? 'mcal-date-today' : ''}">
+        ${fmtDate(d)}${isToday ? ' <span class="mcal-today-pill">Today</span>' : ''}
+      </div>
+      ${evRows}
+    </div>`;
+  }).join('') + '</div>';
 }
 
 
