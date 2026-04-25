@@ -29,6 +29,8 @@ jobs:
         run: python scripts/fundamentals.py
       - name: Run market sentiment
         run: python scripts/market_sentiment.py
+      - name: Run macro calendar
+        run: python scripts/macro_calendar.py
       - name: Commit data files
         run: |
           git config user.name  "Portfolio Bot"
