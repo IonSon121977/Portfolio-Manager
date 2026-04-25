@@ -171,14 +171,30 @@ def main():
 
    # Save weekly_report.json for the dashboard
     WEEKLY_F = DATA_DIR / "weekly_report.json"
+
+    # Deduplicate by ticker — keep all events per ticker (bug fix: dict overwrite)
+    earn_map = {}
+    for e in calendar["earnings"]:
+        earn_map.setdefault(e["ticker"], []).append(e)
+
+    div_map = {}
+    for d in calendar["dividends"]:
+        div_map.setdefault(d["ticker"], []).append(d)
+
+    split_map = {}
+    for s in calendar["splits"]:
+        split_map.setdefault(s["ticker"], []).append(s)
+
     save_json(WEEKLY_F, {
-      "week_from":  fmt_date(next_mon),
-      "week_to":    fmt_date(next_fri),
-      "earnings":   {e["ticker"]: [e] for e in calendar["earnings"]},
-      "dividends":  {d["ticker"]: [d] for d in calendar["dividends"]},
-      "splits":     {s["ticker"]: [s] for s in calendar["splits"]},
-      "ipos":       [],
-      "generated":  datetime.utcnow().isoformat(),
+      "week_from":     fmt_date(next_mon),
+      "week_to":       fmt_date(next_fri),
+      "week_from_iso": next_mon,
+      "week_to_iso":   next_fri,
+      "earnings":      earn_map,
+      "dividends":     div_map,
+      "splits":        split_map,
+      "ipos":          [],
+      "generated":     datetime.utcnow().isoformat(),
     })
     log.info("Weekly report JSON saved -> " + str(WEEKLY_F))
     log.info("=== Done ===")

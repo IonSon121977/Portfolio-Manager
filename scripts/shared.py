@@ -659,6 +659,13 @@ def get_company_news(ticker: str, _ignored: str = "",
 # -- CALENDAR -----------------------------------------------------------------
 def get_earnings_calendar(ticker: str, _ignored: str = "",
                            from_date: str = "", to_date: str = "") -> list:
+    """
+    Return next scheduled earnings date for ticker, with EPS and revenue estimates.
+
+    Data sources tried in order:
+      1. t.calendar  — Earnings Date, EPS Estimate, Revenue Estimate
+      2. t.info      — epsForward, revenueEstimate (fallback when calendar is sparse)
+    """
     try:
         t   = yf.Ticker(ticker)
         cal = t.calendar
@@ -668,43 +675,140 @@ def get_earnings_calendar(ticker: str, _ignored: str = "",
         if not ed:
             return []
         d = str(ed[0].date()) if hasattr(ed[0], "date") else str(ed[0])[:10]
-        if (not from_date or from_date <= d) and (not to_date or d <= to_date):
-            return [{
-                "date":         d,
-                "hour":         "",
-                "eps_estimate": cal.get("EPS Estimate"),
-                "eps_actual":   None,
-                "revenue_est":  cal.get("Revenue Estimate"),
-                "revenue_act":  None,
-                "quarter":      None,
-                "year":         None,
-            }]
-    except Exception:
-        pass
+        if not ((not from_date or from_date <= d) and (not to_date or d <= to_date)):
+            return []
+
+        # ── EPS estimate ────────────────────────────────────────────────────
+        eps_est = cal.get("EPS Estimate")
+        if eps_est is None:
+            try:
+                info    = t.info
+                eps_est = info.get("epsForward") or info.get("epsEstimate")
+            except Exception:
+                pass
+
+        # ── Revenue estimate ─────────────────────────────────────────────────
+        rev_est = cal.get("Revenue Estimate")
+        if rev_est is None or (isinstance(rev_est, float) and rev_est != rev_est):
+            try:
+                info    = t.info
+                rev_est = (info.get("revenueEstimate")
+                           or info.get("totalRevenue"))
+            except Exception:
+                pass
+            # try earnings_estimate DataFrame (yfinance ≥ 0.2.x)
+            if rev_est is None:
+                try:
+                    ee = t.earnings_estimate
+                    if ee is not None and not ee.empty and "0q" in ee.index:
+                        rev_est = ee.loc["0q", "avg"] if "avg" in ee.columns else None
+                except Exception:
+                    pass
+
+        # ── Quarter / year ───────────────────────────────────────────────────
+        quarter = None
+        year    = None
+        try:
+            info    = t.info
+            fy_end  = info.get("fiscalYearEnd", "")
+            # yfinance doesn't expose the exact quarter directly;
+            # derive from earnings date month vs fiscal year end month
+            em = int(d[5:7])
+            fy = int(fy_end[:2]) if fy_end and len(fy_end) >= 2 else None
+            if fy:
+                quarter = ((em - fy - 1) % 12) // 3 + 1
+            year = int(d[:4])
+        except Exception:
+            pass
+
+        return [{
+            "date":         d,
+            "hour":         "",
+            "eps_estimate": float(eps_est) if eps_est is not None else None,
+            "eps_actual":   None,
+            "revenue_est":  float(rev_est) if rev_est is not None else None,
+            "revenue_act":  None,
+            "quarter":      quarter,
+            "year":         year,
+        }]
+    except Exception as e:
+        log.warning("  earnings_calendar failed for " + ticker + ": " + str(e))
     return []
 
 
 def get_dividends(ticker: str, _ignored: str = "",
                   from_date: str = "", to_date: str = "") -> list:
+    """
+    Return upcoming dividend events within the date window.
+
+    t.dividends only contains historical ex-dates so it will never match a
+    future window.  The upcoming ex-date lives in t.calendar under the key
+    'Ex-Dividend Date'; the pay date is 'Dividend Date'.  We use that first,
+    then fall back to historical data only when no date filter is applied.
+    """
+    results = []
     try:
-        t  = yf.Ticker(ticker)
-        df = t.dividends
-        if df is None or df.empty:
-            return []
-        results = []
-        for idx, val in df.items():
-            d = str(idx.date()) if hasattr(idx, "date") else str(idx)[:10]
-            if (not from_date or from_date <= d) and (not to_date or d <= to_date):
+        t   = yf.Ticker(ticker)
+        cal = t.calendar or {}
+
+        # ── Upcoming ex-date from calendar ───────────────────────────────────
+        ex_raw  = cal.get("Ex-Dividend Date") or cal.get("exDividendDate")
+        pay_raw = cal.get("Dividend Date")    or cal.get("dividendDate")
+
+        if ex_raw is not None:
+            try:
+                ex_d  = str(ex_raw.date())  if hasattr(ex_raw,  "date") else str(ex_raw)[:10]
+            except Exception:
+                ex_d  = str(ex_raw)[:10]
+            try:
+                pay_d = str(pay_raw.date()) if hasattr(pay_raw, "date") else str(pay_raw)[:10]
+            except Exception:
+                pay_d = ""
+
+            if (not from_date or from_date <= ex_d) and (not to_date or ex_d <= to_date):
+                # Amount: prefer lastDividendValue from info
+                amount   = None
+                currency = "USD"
+                try:
+                    info     = t.info
+                    amount   = (info.get("lastDividendValue")
+                                or info.get("dividendRate"))
+                    currency = info.get("currency", "USD")
+                    # dividendRate is annual; lastDividendValue is per-payment
+                    # if only annual rate is available, divide by typical freq
+                    if amount and not info.get("lastDividendValue"):
+                        freq = info.get("dividendFrequency") or 4
+                        amount = round(amount / freq, 6)
+                except Exception:
+                    pass
                 results.append({
-                    "ex_date":  d,
-                    "pay_date": "",
-                    "amount":   float(val),
-                    "currency": "USD",
-                    "freq":     "",
+                    "ex_date":     ex_d,
+                    "pay_date":    pay_d,
+                    "record_date": "",
+                    "amount":      float(amount) if amount else None,
+                    "currency":    currency,
+                    "freq":        "",
                 })
-        return results
-    except Exception:
-        return []
+                return results
+
+        # ── Fallback: historical dividends (only useful without date filter) ──
+        if not from_date and not to_date:
+            df = t.dividends
+            if df is not None and not df.empty:
+                for idx, val in df.items():
+                    d = str(idx.date()) if hasattr(idx, "date") else str(idx)[:10]
+                    results.append({
+                        "ex_date":     d,
+                        "pay_date":    "",
+                        "record_date": "",
+                        "amount":      float(val),
+                        "currency":    "USD",
+                        "freq":        "",
+                    })
+
+    except Exception as e:
+        log.warning("  dividends failed for " + ticker + ": " + str(e))
+    return results
 
 
 def get_stock_splits(ticker: str, _ignored: str = "",
