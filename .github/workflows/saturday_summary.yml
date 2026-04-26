@@ -19,7 +19,7 @@ jobs:
           cache: 'pip'
 
       - name: Install dependencies
-        run: pip install requests yfinance mstarpy anthropic lxml
+        run: pip install -r requirements.txt
 
       - name: Run Saturday summary
         env:

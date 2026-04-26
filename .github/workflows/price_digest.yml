@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: '3.11'
           cache: 'pip'
-      - run: pip install requests yfinance mstarpy
+      - run: pip install -r requirements.txt
       - name: Run price digest
         env:
           EMAIL_FROM:     ${{ secrets.EMAIL_FROM }}
