@@ -30,6 +30,8 @@ jobs:
       - name: Run market sentiment
         run: python scripts/market_sentiment.py
       - name: Run macro calendar
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: python scripts/macro_calendar.py
       - name: Commit data files
         run: |
