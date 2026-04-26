@@ -1,19 +1,30 @@
 #!/usr/bin/env python3
 """
-macro_calendar.py — Fetch upcoming macro events relevant to a European investor.
+macro_calendar.py — Upcoming macro events relevant to a European equity investor.
 
-Sources (all free, no API key required):
-  1. ForexFactory public JSON calendar  — structured events with impact/currency
-  2. Hardcoded ECB + Fed schedule       — meeting dates published annually
+Two sources:
+  1. HARDCODED — ECB rate decisions + press conferences, FOMC decisions.
+     These are published annually and never change mid-year. Always present
+     regardless of whether a FRED key is available.
+
+  2. FRED API (requires FRED_API_KEY env var, free key at fred.stlouisfed.org)
+     Fetches official future release dates for:
+       • US CPI       (release_id=10, BLS)
+       • US NFP       (release_id=50, BLS — Employment Situation)
+     Eurozone Flash CPI is fetched from Eurostat's public release calendar
+     (no key required — it's a stable government JSON endpoint).
+
+     If FRED_API_KEY is not set, only ECB + FOMC events are shown.
 
 Saves docs/data/macro_calendar.json
 Runs as part of the fundamentals workflow (every 2h on weekdays).
 """
 
+import os
 import sys
 import json
 import urllib.request
-import urllib.error
+import urllib.parse
 from pathlib import Path
 from datetime import datetime, date, timedelta
 
@@ -22,216 +33,233 @@ from shared import save_json, DATA_DIR, log
 
 MACRO_F = DATA_DIR / "macro_calendar.json"
 
-# ── IMPACT / CATEGORY HELPERS ────────────────────────────────────────────────
 
-WATCHED_CURRENCIES = {"EUR", "USD", "GBP"}
-
-# Events we always keep regardless of ForexFactory impact rating
-ALWAYS_KEEP = {
-    "cpi", "ppi", "gdp", "nfp", "non-farm", "payroll", "fomc", "ecb",
-    "fed rate", "interest rate", "pmi", "inflation", "unemployment",
-    "retail sales", "industrial production", "trade balance",
-    "consumer confidence", "ism", "jolts", "durable goods",
-    "flash pmi", "composite pmi", "services pmi", "manufacturing pmi",
-    "core cpi", "core pce", "pce", "zew", "ifo",
-}
-
-def _is_relevant(event: dict) -> bool:
-    """Keep high-impact EUR/USD/GBP events and always-watch event types."""
-    currency = (event.get("currency") or "").upper()
-    title    = (event.get("title")    or "").lower()
-    impact   = (event.get("impact")   or "").lower()
-
-    if currency not in WATCHED_CURRENCIES:
-        return False
-    if impact in ("high", "medium"):
-        return True
-    # keep named key events even if ForexFactory marks them low
-    return any(kw in title for kw in ALWAYS_KEEP)
-
-
-def _fmt_impact(impact: str) -> str:
-    return {"high": "🔴 High", "medium": "🟡 Medium", "low": "🟢 Low"}.get(
-        (impact or "").lower(), impact or "—"
-    )
-
-
-# ── FOREXFACTORY FETCH ───────────────────────────────────────────────────────
-
-FF_URLS = [
-    "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
-    "https://nfs.faireconomy.media/ff_calendar_nextweek.json",
+# ── HARDCODED: ECB ────────────────────────────────────────────────────────────
+# Source: https://www.ecb.europa.eu/press/govcdec/mopo/
+# Decision 13:15 CET, Press Conference 13:45 CET (same day)
+ECB_DATES = [
+    "2025-01-30","2025-03-06","2025-04-17","2025-06-05",
+    "2025-07-24","2025-09-11","2025-10-30","2025-12-18",
+    "2026-01-29","2026-03-05","2026-04-16","2026-06-04",
+    "2026-07-23","2026-09-10","2026-10-22","2026-12-17",
 ]
 
-def _fetch_ff(url: str) -> list:
+# ── HARDCODED: FOMC ───────────────────────────────────────────────────────────
+# Source: https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+# Decision ~20:00 CET, Press Conference ~20:30 CET
+FOMC_DATES = [
+    "2025-01-29","2025-03-19","2025-05-07","2025-06-18",
+    "2025-07-30","2025-09-17","2025-10-29","2025-12-10",
+    "2026-01-28","2026-03-18","2026-04-29","2026-06-17",
+    "2026-07-29","2026-09-16","2026-10-28","2026-12-09",
+]
+
+
+# ── FRED: US CPI + NFP ────────────────────────────────────────────────────────
+
+FRED_RELEASES = [
+    {"release_id": 10,  "title": "US CPI (Consumer Price Index)",
+     "currency": "USD", "time": "14:30 CET", "source": "BLS via FRED"},
+    {"release_id": 50,  "title": "US Non-Farm Payrolls (NFP)",
+     "currency": "USD", "time": "14:30 CET", "source": "BLS via FRED"},
+]
+
+
+def _fetch_fred_dates(release_id: int, api_key: str,
+                      from_date: str, to_date: str) -> list:
+    """
+    Fetch future release dates for a FRED release via fred/release/dates.
+    include_release_dates_with_no_data=true is required to get future dates.
+    """
+    url = ("https://api.stlouisfed.org/fred/release/dates?"
+           + urllib.parse.urlencode({
+               "release_id":   release_id,
+               "realtime_start": from_date,
+               "realtime_end":   to_date,
+               "include_release_dates_with_no_data": "true",
+               "sort_order":   "asc",
+               "file_type":    "json",
+               "api_key":      api_key,
+           }))
     try:
         req = urllib.request.Request(
-            url,
-            headers={"User-Agent": "Mozilla/5.0 (compatible; portfolio-bot/1.0)"},
+            url, headers={"User-Agent": "portfolio-bot/1.0"}
         )
         with urllib.request.urlopen(req, timeout=15) as resp:
-            raw = json.loads(resp.read().decode("utf-8"))
-        events = []
-        for e in raw:
-            if not _is_relevant(e):
-                continue
-            # ForexFactory date field: "01-27-2026" or ISO
-            raw_date = e.get("date") or ""
-            try:
-                if "-" in raw_date and len(raw_date) == 10:
-                    # try MM-DD-YYYY first, then YYYY-MM-DD
-                    parts = raw_date.split("-")
-                    if len(parts[0]) == 4:
-                        d = raw_date          # already YYYY-MM-DD
-                    else:
-                        d = f"{parts[2]}-{parts[0]}-{parts[1]}"
-                else:
-                    d = raw_date[:10]
-            except Exception:
-                d = raw_date[:10]
-
-            events.append({
-                "date":     d,
-                "time":     (e.get("time") or "").strip() or "All day",
-                "currency": (e.get("currency") or "").upper(),
-                "impact":   _fmt_impact(e.get("impact")),
-                "impact_raw": (e.get("impact") or "").lower(),
-                "title":    (e.get("title") or "").strip(),
-                "forecast": str(e.get("forecast") or ""),
-                "previous": str(e.get("previous") or ""),
-                "source":   "ForexFactory",
-            })
-        log.info(f"  ForexFactory {url.split('/')[-1]}: {len(events)} relevant events")
-        return events
-    except Exception as exc:
-        log.warning(f"  ForexFactory fetch failed ({url}): {exc}")
+            data = json.loads(resp.read().decode())
+        dates = [
+            item["date"]
+            for item in data.get("release_dates", [])
+            if from_date <= item.get("date", "") <= to_date
+        ]
+        log.info(f"  FRED release {release_id}: {len(dates)} dates in window")
+        return dates
+    except Exception as e:
+        log.warning(f"  FRED release {release_id} failed: {e}")
         return []
 
 
-# ── ECB HARDCODED SCHEDULE ───────────────────────────────────────────────────
-# Source: https://www.ecb.europa.eu/press/govcdec/mopo/2025/html/index.en.html
-# Updated for 2025-2026. Re-check annually.
+def _fetch_fred_events(from_date: str, to_date: str) -> list:
+    api_key = os.environ.get("FRED_API_KEY", "")
+    if not api_key:
+        log.warning("  FRED_API_KEY not set — skipping CPI/NFP dates")
+        return []
 
-ECB_DATES_2025 = [
-    "2025-01-30", "2025-03-06", "2025-04-17", "2025-06-05",
-    "2025-07-24", "2025-09-11", "2025-10-30", "2025-12-18",
-]
-ECB_DATES_2026 = [
-    "2026-01-29", "2026-03-05", "2026-04-16", "2026-06-04",
-    "2026-07-23", "2026-09-10", "2026-10-22", "2026-12-17",
-]
-
-# ── FED FOMC HARDCODED SCHEDULE ──────────────────────────────────────────────
-# Source: https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
-# Decision day (second day of two-day meeting).
-
-FOMC_DATES_2025 = [
-    "2025-01-29", "2025-03-19", "2025-05-07", "2025-06-18",
-    "2025-07-30", "2025-09-17", "2025-10-29", "2025-12-10",
-]
-FOMC_DATES_2026 = [
-    "2026-01-28", "2026-03-18", "2026-04-29", "2026-06-17",
-    "2026-07-29", "2026-09-16", "2026-10-28", "2026-12-09",
-]
-
-
-def _hardcoded_events(from_date: date, to_date: date) -> list:
     events = []
-    all_ecb  = ECB_DATES_2025 + ECB_DATES_2026
-    all_fomc = FOMC_DATES_2025 + FOMC_DATES_2026
-
-    for d_str in all_ecb:
-        d = date.fromisoformat(d_str)
-        if from_date <= d <= to_date:
+    for rel in FRED_RELEASES:
+        dates = _fetch_fred_dates(rel["release_id"], api_key, from_date, to_date)
+        for d in dates:
             events.append({
-                "date":       d_str,
-                "time":       "13:45 CET",
-                "currency":   "EUR",
+                "date":       d,
+                "time":       rel["time"],
+                "currency":   rel["currency"],
                 "impact":     "🔴 High",
                 "impact_raw": "high",
-                "title":      "ECB Interest Rate Decision",
+                "title":      rel["title"],
                 "forecast":   "",
                 "previous":   "",
-                "source":     "ECB Schedule",
+                "source":     rel["source"],
             })
-
-    for d_str in all_fomc:
-        d = date.fromisoformat(d_str)
-        if from_date <= d <= to_date:
-            events.append({
-                "date":       d_str,
-                "time":       "19:00 CET",
-                "currency":   "USD",
-                "impact":     "🔴 High",
-                "impact_raw": "high",
-                "title":      "Fed Interest Rate Decision (FOMC)",
-                "forecast":   "",
-                "previous":   "",
-                "source":     "Fed Schedule",
-            })
-
     return events
 
 
-# ── DEDUPLICATE ──────────────────────────────────────────────────────────────
+# ── EUROSTAT: Eurozone Flash CPI ──────────────────────────────────────────────
+# Eurostat publishes a release calendar as a public JSON endpoint — no key.
+# Endpoint: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/
+# However the structured calendar endpoint is easier:
+# https://ec.europa.eu/eurostat/web/main/news/euroindicators
+# The most reliable free approach: Eurostat's "upcoming releases" RSS feed.
+# https://ec.europa.eu/eurostat/en/rss/news
+# Or: use the direct SDMX calendar endpoint for the "prc_hicp_midx" dataset.
+#
+# In practice, the cleanest available endpoint is the Eurostat release calendar
+# at: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/releaseCalendar
+# which returns structured JSON with datasetCode and date fields.
 
-def _dedup(events: list) -> list:
-    seen = set()
-    out  = []
-    for e in events:
-        key = (e["date"], e["currency"], e["title"][:30].lower())
-        if key not in seen:
-            seen.add(key)
-            out.append(e)
-    return out
+def _fetch_eurostat_cpi(from_date: str, to_date: str) -> list:
+    """
+    Fetch Eurozone Flash CPI release dates from Eurostat's public release
+    calendar API. No authentication required.
+    Dataset code for Flash CPI: 'prc_hicp_manr' or filter by title.
+    """
+    url = ("https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/"
+           "releaseCalendar?lang=en&sinceDate=" + from_date
+           + "&untilDate=" + to_date)
+    try:
+        req = urllib.request.Request(
+            url, headers={
+                "User-Agent": "portfolio-bot/1.0",
+                "Accept":     "application/json",
+            }
+        )
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            data = json.loads(resp.read().decode())
+
+        events = []
+        releases = data if isinstance(data, list) else data.get("releases", [])
+        for item in releases:
+            title = (item.get("title") or item.get("label") or "").lower()
+            # Flash CPI identifiers in Eurostat calendar
+            if not any(kw in title for kw in
+                       ("hicp", "flash estimate", "euro area annual inflation",
+                        "inflation flash", "consumer price")):
+                continue
+            rel_date = (item.get("date") or item.get("releaseDate") or "")[:10]
+            if not rel_date or not (from_date <= rel_date <= to_date):
+                continue
+            display_title = (item.get("title") or item.get("label") or
+                             "Eurozone Flash CPI (Inflation)")
+            events.append({
+                "date":       rel_date,
+                "time":       "11:00 CET",
+                "currency":   "EUR",
+                "impact":     "🔴 High",
+                "impact_raw": "high",
+                "title":      display_title[:60],
+                "forecast":   "",
+                "previous":   "",
+                "source":     "Eurostat",
+            })
+
+        log.info(f"  Eurostat CPI dates: {len(events)} in window")
+        return events
+
+    except Exception as e:
+        log.warning(f"  Eurostat calendar failed: {e}")
+        return []
 
 
-# ── MAIN ─────────────────────────────────────────────────────────────────────
+# ── BUILD FULL EVENT LIST ─────────────────────────────────────────────────────
+
+def _build_hardcoded(from_date: str, to_date: str) -> list:
+    events = []
+
+    def _add(d, currency, title, time_cet, source):
+        if from_date <= d <= to_date:
+            events.append({
+                "date":       d,
+                "time":       time_cet,
+                "currency":   currency,
+                "impact":     "🔴 High",
+                "impact_raw": "high",
+                "title":      title,
+                "forecast":   "",
+                "previous":   "",
+                "source":     source,
+            })
+
+    for d in ECB_DATES:
+        _add(d, "EUR", "ECB Interest Rate Decision", "13:15 CET", "ECB")
+        _add(d, "EUR", "ECB Press Conference",       "13:45 CET", "ECB")
+    for d in FOMC_DATES:
+        _add(d, "USD", "Fed Interest Rate Decision (FOMC)", "20:00 CET",
+             "Federal Reserve")
+    return events
+
 
 def main():
     log.info("=== Macro Calendar ===")
 
-    today    = date.today()
-    # Fetch events for next 4 weeks (covers this week + 3 more)
-    to_date  = today + timedelta(weeks=4)
+    today   = date.today()
+    to_date = today + timedelta(weeks=4)
+    fd      = today.isoformat()
+    td      = to_date.isoformat()
 
-    # 1. ForexFactory — this week and next week
-    ff_events: list = []
-    for url in FF_URLS:
-        ff_events.extend(_fetch_ff(url))
+    # 1. Hardcoded ECB + FOMC — always present
+    events = _build_hardcoded(fd, td)
+    log.info(f"  Hardcoded events (ECB+FOMC): {len(events)}")
 
-    # 2. Hardcoded ECB / FOMC — 4-week window
-    hc_events = _hardcoded_events(today, to_date)
-    log.info(f"  Hardcoded ECB/FOMC events in window: {len(hc_events)}")
+    # 2. FRED — US CPI + NFP (requires FRED_API_KEY)
+    fred_events = _fetch_fred_events(fd, td)
+    events.extend(fred_events)
 
-    # 3. Merge: hardcoded first (authoritative for ECB/FOMC), then FF fills the rest
-    all_events = _dedup(hc_events + ff_events)
+    # 3. Eurostat — Eurozone Flash CPI (no key)
+    eurostat_events = _fetch_eurostat_cpi(fd, td)
+    events.extend(eurostat_events)
 
-    # 4. Filter to window & sort
-    in_window = [
-        e for e in all_events
-        if today.isoformat() <= e["date"] <= to_date.isoformat()
-    ]
-    in_window.sort(key=lambda e: (e["date"], e["time"]))
+    # Deduplicate by (date, title[:30]) then sort
+    seen = set()
+    unique = []
+    for e in events:
+        key = (e["date"], e["title"][:30])
+        if key not in seen:
+            seen.add(key)
+            unique.append(e)
+    unique.sort(key=lambda e: (e["date"], e["time"]))
 
-    log.info(f"  Total events in 4-week window: {len(in_window)}")
-
-    # 5. Group by date for easy dashboard rendering
-    by_date: dict = {}
-    for e in in_window:
+    by_date = {}
+    for e in unique:
         by_date.setdefault(e["date"], []).append(e)
 
-    output = {
-        "events":    in_window,
+    save_json(MACRO_F, {
+        "events":    unique,
         "by_date":   by_date,
-        "from_date": today.isoformat(),
-        "to_date":   to_date.isoformat(),
+        "from_date": fd,
+        "to_date":   td,
         "updated":   datetime.utcnow().isoformat(),
-        "count":     len(in_window),
-    }
-
-    save_json(MACRO_F, output)
-    log.info(f"  Saved {len(in_window)} events -> {MACRO_F}")
+        "count":     len(unique),
+    })
+    log.info(f"  Saved {len(unique)} events -> {MACRO_F}")
     log.info("=== Done ===")
 
 
