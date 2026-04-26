@@ -1052,13 +1052,39 @@ function renderEtf() {
     document.getElementById('etf-wrap').innerHTML = `<div class="empty">No ETF data in snapshot.</div>`;
     return;
   }
-  document.getElementById('etf-wrap').innerHTML = snap.etfs.map(e=>{
+  document.getElementById('etf-wrap').innerHTML = snap.etfs.map(e => {
     const h = e.holdings;
-    const tbl = h?.length ? `<div class="tbox"><table>
+    if (!h?.length) {
+      return `<div class="sh" style="margin-top:16px">
+        <div class="st" style="font-size:13px">${e.name||e.ticker} <span class="bdg">${e.ticker}</span></div>
+      </div>
+      <div class="empty" style="padding:12px">ETF holdings data not available for this ticker.</div>`;
+    }
+    const maxW = Math.max(...h.map(r => r.weight_pct || 0), 0.01);
+    const rows = h.map((r, i) => {
+      const w     = r.weight_pct ?? null;
+      const wStr  = w != null ? Number(w).toFixed(2) + '%' : '—';
+      const barW  = w != null ? Math.round((w / maxW) * 80) : 0;
+      const bar   = w != null
+        ? `<div style="display:flex;align-items:center;gap:6px">
+             <div style="width:${barW}px;height:5px;background:var(--accent);border-radius:3px;opacity:.7"></div>
+             <span>${wStr}</span>
+           </div>`
+        : '—';
+      return `<tr>
+        <td class="dm">${i+1}</td>
+        <td class="tk">${r.ticker||'—'}</td>
+        <td class="nm">${r.name||'—'}</td>
+        <td class="dm" style="min-width:110px">${bar}</td>
+      </tr>`;
+    }).join('');
+    return `<div class="sh" style="margin-top:16px">
+      <div class="st" style="font-size:13px">${e.name||e.ticker} <span class="bdg">${e.ticker}</span></div>
+    </div>
+    <div class="tbox"><table>
       <thead><tr><th>#</th><th>Ticker</th><th>Name</th><th>Weight %</th></tr></thead>
-      <tbody>${h.map((r,i)=>`<tr><td class="dm">${i+1}</td><td class="tk">${r.ticker||'—'}</td><td class="nm">${r.name||'—'}</td><td class="dm">${r.weight_pct??'—'}%</td></tr>`).join('')}</tbody>
-    </table></div>` : `<div class="empty" style="padding:12px">ETF holdings data not available for this ticker.</div>`;
-    return `<div class="sh" style="margin-top:16px"><div class="st" style="font-size:13px">${e.name||e.ticker} <span class="bdg">${e.ticker}</span></div></div>${tbl}`;
+      <tbody>${rows}</tbody>
+    </table></div>`;
   }).join('');
 }
 
