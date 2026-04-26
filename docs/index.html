@@ -1520,10 +1520,11 @@ function renderWeekly() {
     return '$' + n.toFixed(0);
   };
   setHtml('wr-earnings-wrap', earnFlat.length ? tbl(
-    ['Date','Ticker','Quarter','When','EPS Est.','Revenue Est.'],
+    ['Date','Ticker','Company','Quarter','When','EPS Est.','Revenue Est.'],
     earnFlat.map(e=>`<tr>
       ${td(e.date,'color:var(--muted)')}
       ${td(tkBadge(e.t))}
+      ${td(`<span style="color:var(--muted);font-size:11px">${(e.name||'').slice(0,24)}</span>`)}
       ${td(e.quarter ? `Q${e.quarter} ${e.year||''}` : '—','color:var(--muted)')}
       ${td(hourLbl(e.hour),'color:var(--muted);font-size:11px')}
       ${td(fmtEps(e.eps_estimate),'color:var(--lime);font-weight:600')}
@@ -1540,10 +1541,11 @@ function renderWeekly() {
     return val;
   };
   setHtml('wr-div-wrap', divFlat.length ? tbl(
-    ['Ex-Date','Ticker','Amount','Currency','Pay Date'],
+    ['Ex-Date','Ticker','Company','Amount','Currency','Pay Date'],
     divFlat.map(d=>`<tr>
       ${td(d.ex_date||'—','color:var(--muted)')}
       ${td(tkBadge(d.t))}
+      ${td(`<span style="color:var(--muted);font-size:11px">${(d.name||'').slice(0,24)}</span>`)}
       ${td(fmtAmt(d.amount, d.currency),'color:var(--up);font-weight:600')}
       ${td(d.currency||'—','color:var(--muted);font-size:11px')}
       ${td(d.pay_date||'—','color:var(--muted);font-size:11px')}
