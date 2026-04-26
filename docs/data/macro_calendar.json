@@ -2,33 +2,81 @@
   "events": [
     {
       "date": "2026-04-29",
-      "time": "19:00 CET",
+      "time": "20:00 CET",
       "currency": "USD",
       "impact": "\ud83d\udd34 High",
       "impact_raw": "high",
       "title": "Fed Interest Rate Decision (FOMC)",
       "forecast": "",
       "previous": "",
-      "source": "Fed Schedule"
+      "source": "Federal Reserve"
+    },
+    {
+      "date": "2026-05-08",
+      "time": "14:30 CET",
+      "currency": "USD",
+      "impact": "\ud83d\udd34 High",
+      "impact_raw": "high",
+      "title": "US Non-Farm Payrolls (NFP)",
+      "forecast": "",
+      "previous": "",
+      "source": "BLS via FRED"
+    },
+    {
+      "date": "2026-05-12",
+      "time": "14:30 CET",
+      "currency": "USD",
+      "impact": "\ud83d\udd34 High",
+      "impact_raw": "high",
+      "title": "US CPI (Consumer Price Index)",
+      "forecast": "",
+      "previous": "",
+      "source": "BLS via FRED"
     }
   ],
   "by_date": {
     "2026-04-29": [
       {
         "date": "2026-04-29",
-        "time": "19:00 CET",
+        "time": "20:00 CET",
         "currency": "USD",
         "impact": "\ud83d\udd34 High",
         "impact_raw": "high",
         "title": "Fed Interest Rate Decision (FOMC)",
         "forecast": "",
         "previous": "",
-        "source": "Fed Schedule"
+        "source": "Federal Reserve"
+      }
+    ],
+    "2026-05-08": [
+      {
+        "date": "2026-05-08",
+        "time": "14:30 CET",
+        "currency": "USD",
+        "impact": "\ud83d\udd34 High",
+        "impact_raw": "high",
+        "title": "US Non-Farm Payrolls (NFP)",
+        "forecast": "",
+        "previous": "",
+        "source": "BLS via FRED"
+      }
+    ],
+    "2026-05-12": [
+      {
+        "date": "2026-05-12",
+        "time": "14:30 CET",
+        "currency": "USD",
+        "impact": "\ud83d\udd34 High",
+        "impact_raw": "high",
+        "title": "US CPI (Consumer Price Index)",
+        "forecast": "",
+        "previous": "",
+        "source": "BLS via FRED"
       }
     ]
   },
   "from_date": "2026-04-26",
   "to_date": "2026-05-24",
-  "updated": "2026-04-26T07:38:01.424627",
-  "count": 1
+  "updated": "2026-04-26T14:03:41.576532",
+  "count": 3
 }
