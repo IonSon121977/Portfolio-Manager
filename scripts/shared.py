@@ -246,38 +246,53 @@ def get_stock_data(holding: dict, _ignored: str = "") -> dict:
 
 
 # -- ANALYST UPGRADES ---------------------------------------------------------
-def get_analyst_upgrades(ticker: str, _ignored: str = "", days_back: int = 7) -> list:
+def get_analyst_upgrades(ticker: str, _ignored: str = "", days_back: int = 7,
+                         finnhub_symbol: str = "") -> list:
     """
-    Fetch individual broker upgrades/downgrades for any exchange.
-    Works for US and major European tickers via yfinance (Yahoo Finance data).
-    Falls back to synthesised entries from monthly recommendations when
-    upgrades_downgrades is empty (common for smaller European names).
+    Fetch broker upgrades/downgrades via yfinance.
+    - US tickers: yfinance upgrades_downgrades works reliably.
+    - European tickers: Yahoo Finance has no broker data for .PA/.DE/.AS etc.
+      Falls back to synthesising a single entry from t.recommendations
+      (monthly consensus counts — works for all exchanges).
     """
     cutoff = (date.today() - timedelta(days=days_back)).isoformat()
 
-    # ── 1. Try upgrades_downgrades (works for US + large-cap EU) ─────────────
+    is_european = any(ticker.upper().endswith(x) for x in (
+        ".PA", ".DE", ".AS", ".MI", ".L", ".ST", ".HE", ".CO",
+        ".OL", ".VI", ".SW", ".MC", ".BR", ".LS", ".AT",
+    ))
+
+    import logging as _logging
+    _yf_log     = _logging.getLogger("yfinance")
+    _prev_level = _yf_log.level
+    _yf_log.setLevel(_logging.CRITICAL)
+
     results = []
-    try:
-        t  = yf.Ticker(ticker)
-        df = t.upgrades_downgrades
-        if df is not None and not df.empty:
-            for idx, row in df.iterrows():
-                d = str(idx.date()) if hasattr(idx, "date") else str(idx)[:10]
-                if d < cutoff:
-                    continue
-                fg = str(row.get("FromGrade", "") or "")
-                tg = str(row.get("ToGrade",   "") or "")
-                action = _grade_action(tg)
-                results.append({
-                    "date":       d,
-                    "firm":       str(row.get("Firm", "") or ""),
-                    "from_grade": fg,
-                    "to_grade":   tg,
-                    "action":     action,
-                    "source":     "broker",
-                })
-    except Exception as e:
-        log.warning("  upgrades_downgrades failed for " + ticker + ": " + str(e))
+
+    # ── 1. yfinance upgrades_downgrades — US tickers only ────────────────────
+    if not is_european:
+        try:
+            t  = yf.Ticker(ticker)
+            df = t.upgrades_downgrades
+            if df is not None and not df.empty:
+                for idx, row in df.iterrows():
+                    d = str(idx.date()) if hasattr(idx, "date") else str(idx)[:10]
+                    if d < cutoff:
+                        continue
+                    fg = str(row.get("FromGrade", "") or "")
+                    tg = str(row.get("ToGrade",   "") or "")
+                    results.append({
+                        "date":       d,
+                        "firm":       str(row.get("Firm", "") or ""),
+                        "from_grade": fg,
+                        "to_grade":   tg,
+                        "action":     _grade_action(tg),
+                        "source":     "broker",
+                    })
+        except Exception as e:
+            log.warning("  upgrades_downgrades failed for " + ticker + ": " + str(e))
+        finally:
+            _yf_log.setLevel(_prev_level)
 
     # ── 2. Fallback: synthesise from recommendations consensus ────────────────
     # recommendations gives monthly Buy/Hold/Sell counts; derive direction
@@ -285,6 +300,7 @@ def get_analyst_upgrades(ticker: str, _ignored: str = "", days_back: int = 7) ->
     # broker-by-broker history is not available on Yahoo.
     if not results:
         try:
+            _yf_log.setLevel(_logging.CRITICAL)
             t   = yf.Ticker(ticker)
             rec = t.recommendations
             if rec is not None and not rec.empty:
@@ -334,6 +350,8 @@ def get_analyst_upgrades(ticker: str, _ignored: str = "", days_back: int = 7) ->
                         })
         except Exception as e:
             log.warning("  recommendations fallback failed for " + ticker + ": " + str(e))
+        finally:
+            _yf_log.setLevel(_prev_level)
 
     return results[:20]
 
@@ -488,8 +506,77 @@ def get_morningstar_data(ticker: str, isin: str) -> dict:
     except Exception as e:
         log.warning("  Morningstar fetch failed for " + ticker + ": " + str(e))
         return {}
-        
-# -- COMPANY NEWS -------------------------------------------------------------
+
+
+def get_etf_holdings(ticker: str, max_holdings: int = 15) -> list:
+    """
+    Return top holdings for an ETF using yfinance.
+
+    Sources tried in order:
+      1. t.funds_data.top_holdings  — best source, returns name + weight for
+                                      most iShares / SPDR ETFs on any exchange
+      2. t.info topHoldings field   — older yfinance fallback
+    Returns list of {ticker, name, weight_pct} dicts, capped at max_holdings.
+    """
+    try:
+        t = yf.Ticker(ticker)
+
+        # ── Source 1: funds_data.top_holdings ────────────────────────────────
+        try:
+            fd = t.funds_data
+            if fd is not None:
+                th = getattr(fd, "top_holdings", None)
+                if th is not None and not (hasattr(th, "empty") and th.empty):
+                    results = []
+                    # top_holdings is a DataFrame with index = ticker symbol
+                    # and columns including 'holdingName', 'holdingPercent'
+                    for idx, row in th.head(max_holdings).iterrows():
+                        name   = (row.get("holdingName") or
+                                  row.get("name")        or
+                                  row.get("Name")        or str(idx))
+                        weight = (row.get("holdingPercent") or
+                                  row.get("weight")         or
+                                  row.get("Weight")         or 0)
+                        results.append({
+                            "ticker":     str(idx),
+                            "name":       str(name)[:40],
+                            "weight_pct": round(float(weight) * 100, 2)
+                            if weight and float(weight) <= 1
+                            else round(float(weight), 2),
+                        })
+                    if results:
+                        log.info("    ETF holdings (funds_data): " + str(len(results)) + " for " + ticker)
+                        return results
+        except Exception as e:
+            log.warning("    funds_data failed for " + ticker + ": " + str(e))
+
+        # ── Source 2: t.info topHoldings ─────────────────────────────────────
+        try:
+            info = t.info
+            top  = info.get("topHoldings") or info.get("holdings") or []
+            if top:
+                results = []
+                for h in top[:max_holdings]:
+                    weight = h.get("holdingPercent") or h.get("weight") or 0
+                    results.append({
+                        "ticker":     h.get("symbol") or h.get("ticker") or "—",
+                        "name":       str(h.get("holdingName") or h.get("name") or "")[:40],
+                        "weight_pct": round(float(weight) * 100, 2)
+                        if weight and float(weight) <= 1
+                        else round(float(weight), 2),
+                    })
+                if results:
+                    log.info("    ETF holdings (t.info): " + str(len(results)) + " for " + ticker)
+                    return results
+        except Exception as e:
+            log.warning("    t.info topHoldings failed for " + ticker + ": " + str(e))
+
+        log.warning("    No ETF holdings data found for " + ticker)
+        return []
+
+    except Exception as e:
+        log.warning("  get_etf_holdings failed for " + ticker + ": " + str(e))
+        return []
 def get_company_news(ticker: str, _ignored: str = "",
                      days_back: int = 1, max_articles: int = 6,
                      holding_name: str = "") -> list:

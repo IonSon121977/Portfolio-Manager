@@ -16,6 +16,7 @@ from shared import (
     load_config, save_config, save_json, load_json,
     SNAPSHOT_F, INTEL_F, DATA_DIR,
     get_stock_data, get_company_news, get_earnings_calendar,
+    get_etf_holdings,
     append_alert, send_email,
     digest_html, news_digest_html, _BASE, log
 )
@@ -55,12 +56,15 @@ def build_snapshot(cfg: dict) -> dict:
         data = get_stock_data(holding)
         data["shares"]    = holding.get("shares", 0)
         data["value_eur"] = round((data.get("price_eur") or 0) * data["shares"], 2)
+        # Fetch top holdings for the ETF holdings tab
+        data["holdings"] = get_etf_holdings(data["ticker"])
         snapshot["etfs"].append(data)
         if "error" not in data:
             snapshot["total_eur"] += data["value_eur"]
             log.info("    OK  EUR " + str(data["price_eur"]) +
                      "  (" + "{:+.2f}".format(data["change_pct"]) + "%)" +
-                     "  value EUR " + str(data["value_eur"]))
+                     "  value EUR " + str(data["value_eur"]) +
+                     "  holdings=" + str(len(data["holdings"])))
         else:
             log.warning("    FAIL " + data["error"])
 
