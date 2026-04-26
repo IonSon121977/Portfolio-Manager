@@ -4,15 +4,16 @@ macro_calendar.py — Upcoming macro events relevant to a European equity invest
 
 Two sources:
   1. HARDCODED — ECB rate decisions + press conferences, FOMC decisions.
-     These are published annually and never change mid-year. Always present
-     regardless of whether a FRED key is available.
+     Published annually, never change mid-year. Always present regardless
+     of whether a FRED key is available.
 
   2. FRED API (requires FRED_API_KEY env var, free key at fred.stlouisfed.org)
      Fetches official future release dates for:
-       • US CPI       (release_id=10, BLS)
-       • US NFP       (release_id=50, BLS — Employment Situation)
-     Eurozone Flash CPI is fetched from Eurostat's public release calendar
-     (no key required — it's a stable government JSON endpoint).
+       • US CPI            (release_id=10,  BLS)
+       • US NFP            (release_id=50,  BLS — Employment Situation)
+       • Eurozone HICP CPI (release_id=251, Eurostat via FRED)
+     All three use the same FRED key and the same endpoint — no separate
+     Eurostat API needed.
 
      If FRED_API_KEY is not set, only ECB + FOMC events are shown.
 
@@ -62,6 +63,8 @@ FRED_RELEASES = [
      "currency": "USD", "time": "14:30 CET", "source": "BLS via FRED"},
     {"release_id": 50,  "title": "US Non-Farm Payrolls (NFP)",
      "currency": "USD", "time": "14:30 CET", "source": "BLS via FRED"},
+    {"release_id": 251, "title": "Eurozone HICP (Flash CPI)",
+     "currency": "EUR", "time": "11:00 CET", "source": "Eurostat via FRED"},
 ]
 
 
@@ -123,72 +126,6 @@ def _fetch_fred_events(from_date: str, to_date: str) -> list:
     return events
 
 
-# ── EUROSTAT: Eurozone Flash CPI ──────────────────────────────────────────────
-# Eurostat publishes a release calendar as a public JSON endpoint — no key.
-# Endpoint: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/
-# However the structured calendar endpoint is easier:
-# https://ec.europa.eu/eurostat/web/main/news/euroindicators
-# The most reliable free approach: Eurostat's "upcoming releases" RSS feed.
-# https://ec.europa.eu/eurostat/en/rss/news
-# Or: use the direct SDMX calendar endpoint for the "prc_hicp_midx" dataset.
-#
-# In practice, the cleanest available endpoint is the Eurostat release calendar
-# at: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/releaseCalendar
-# which returns structured JSON with datasetCode and date fields.
-
-def _fetch_eurostat_cpi(from_date: str, to_date: str) -> list:
-    """
-    Fetch Eurozone Flash CPI release dates from Eurostat's public release
-    calendar API. No authentication required.
-    Dataset code for Flash CPI: 'prc_hicp_manr' or filter by title.
-    """
-    url = ("https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/"
-           "releaseCalendar?lang=en&sinceDate=" + from_date
-           + "&untilDate=" + to_date)
-    try:
-        req = urllib.request.Request(
-            url, headers={
-                "User-Agent": "portfolio-bot/1.0",
-                "Accept":     "application/json",
-            }
-        )
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            data = json.loads(resp.read().decode())
-
-        events = []
-        releases = data if isinstance(data, list) else data.get("releases", [])
-        for item in releases:
-            title = (item.get("title") or item.get("label") or "").lower()
-            # Flash CPI identifiers in Eurostat calendar
-            if not any(kw in title for kw in
-                       ("hicp", "flash estimate", "euro area annual inflation",
-                        "inflation flash", "consumer price")):
-                continue
-            rel_date = (item.get("date") or item.get("releaseDate") or "")[:10]
-            if not rel_date or not (from_date <= rel_date <= to_date):
-                continue
-            display_title = (item.get("title") or item.get("label") or
-                             "Eurozone Flash CPI (Inflation)")
-            events.append({
-                "date":       rel_date,
-                "time":       "11:00 CET",
-                "currency":   "EUR",
-                "impact":     "🔴 High",
-                "impact_raw": "high",
-                "title":      display_title[:60],
-                "forecast":   "",
-                "previous":   "",
-                "source":     "Eurostat",
-            })
-
-        log.info(f"  Eurostat CPI dates: {len(events)} in window")
-        return events
-
-    except Exception as e:
-        log.warning(f"  Eurostat calendar failed: {e}")
-        return []
-
-
 # ── BUILD FULL EVENT LIST ─────────────────────────────────────────────────────
 
 def _build_hardcoded(from_date: str, to_date: str) -> list:
@@ -229,13 +166,9 @@ def main():
     events = _build_hardcoded(fd, td)
     log.info(f"  Hardcoded events (ECB+FOMC): {len(events)}")
 
-    # 2. FRED — US CPI + NFP (requires FRED_API_KEY)
+    # 2. FRED — US CPI + NFP + Eurozone HICP (requires FRED_API_KEY)
     fred_events = _fetch_fred_events(fd, td)
     events.extend(fred_events)
-
-    # 3. Eurostat — Eurozone Flash CPI (no key)
-    eurostat_events = _fetch_eurostat_cpi(fd, td)
-    events.extend(eurostat_events)
 
     # Deduplicate by (date, title[:30]) then sort
     seen = set()

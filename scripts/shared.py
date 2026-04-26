@@ -513,11 +513,31 @@ def get_etf_holdings(ticker: str, max_holdings: int = 15) -> list:
     Return top holdings for an ETF using yfinance.
 
     Sources tried in order:
-      1. t.funds_data.top_holdings  — best source, returns name + weight for
-                                      most iShares / SPDR ETFs on any exchange
-      2. t.info topHoldings field   — older yfinance fallback
+      1. t.funds_data.top_holdings  — DataFrame with index=symbol,
+                                      columns: holdingName, holdingPercent
+                                      holdingPercent is a decimal (0.059 = 5.9%)
+      2. t.info["holdings"]         — list of dicts fallback
     Returns list of {ticker, name, weight_pct} dicts, capped at max_holdings.
     """
+    import math
+
+    def _safe_weight(val) -> float:
+        """Convert a weight value to a percentage float, handling NaN/None."""
+        try:
+            f = float(val)
+            if math.isnan(f):
+                return 0.0
+            # yfinance returns decimal fractions (0.059 = 5.9%)
+            # guard against already-percentage values > 1
+            return round(f * 100, 2) if f <= 1.0 else round(f, 2)
+        except (TypeError, ValueError):
+            return 0.0
+
+    def _safe_str(val, fallback: str = "") -> str:
+        if val is None or (isinstance(val, float) and math.isnan(val)):
+            return fallback
+        return str(val).strip()
+
     try:
         t = yf.Ticker(ticker)
 
@@ -527,49 +547,66 @@ def get_etf_holdings(ticker: str, max_holdings: int = 15) -> list:
             if fd is not None:
                 th = getattr(fd, "top_holdings", None)
                 if th is not None and not (hasattr(th, "empty") and th.empty):
+                    log.info("    top_holdings columns: " + str(list(th.columns)))
                     results = []
-                    # top_holdings is a DataFrame with index = ticker symbol
-                    # and columns including 'holdingName', 'holdingPercent'
                     for idx, row in th.head(max_holdings).iterrows():
-                        name   = (row.get("holdingName") or
-                                  row.get("name")        or
-                                  row.get("Name")        or str(idx))
-                        weight = (row.get("holdingPercent") or
-                                  row.get("weight")         or
-                                  row.get("Weight")         or 0)
+                        # Name: try multiple column variants
+                        name = ""
+                        for col in ("holdingName", "name", "Name", "security"):
+                            try:
+                                v = row[col]
+                                name = _safe_str(v)
+                                if name:
+                                    break
+                            except (KeyError, TypeError):
+                                pass
+                        if not name:
+                            name = _safe_str(idx)
+
+                        # Weight: try multiple column variants
+                        weight_pct = 0.0
+                        for col in ("holdingPercent", "percent", "weight",
+                                    "Weight", "pct", "Percent"):
+                            try:
+                                weight_pct = _safe_weight(row[col])
+                                if weight_pct > 0:
+                                    break
+                            except (KeyError, TypeError):
+                                pass
+
                         results.append({
-                            "ticker":     str(idx),
-                            "name":       str(name)[:40],
-                            "weight_pct": round(float(weight) * 100, 2)
-                            if weight and float(weight) <= 1
-                            else round(float(weight), 2),
+                            "ticker":     _safe_str(idx) or "—",
+                            "name":       name[:40],
+                            "weight_pct": weight_pct,
                         })
                     if results:
-                        log.info("    ETF holdings (funds_data): " + str(len(results)) + " for " + ticker)
+                        log.info("    ETF holdings (funds_data): "
+                                 + str(len(results)) + " for " + ticker)
                         return results
         except Exception as e:
             log.warning("    funds_data failed for " + ticker + ": " + str(e))
 
-        # ── Source 2: t.info topHoldings ─────────────────────────────────────
+        # ── Source 2: t.info["holdings"] ─────────────────────────────────────
         try:
             info = t.info
-            top  = info.get("topHoldings") or info.get("holdings") or []
-            if top:
+            holdings = info.get("holdings") or []
+            if holdings:
                 results = []
-                for h in top[:max_holdings]:
-                    weight = h.get("holdingPercent") or h.get("weight") or 0
+                for h in holdings[:max_holdings]:
+                    raw_w = h.get("holdingPercent", 0)
                     results.append({
-                        "ticker":     h.get("symbol") or h.get("ticker") or "—",
-                        "name":       str(h.get("holdingName") or h.get("name") or "")[:40],
-                        "weight_pct": round(float(weight) * 100, 2)
-                        if weight and float(weight) <= 1
-                        else round(float(weight), 2),
+                        "ticker":     _safe_str(h.get("symbol") or
+                                                h.get("ticker") or "—"),
+                        "name":       _safe_str(h.get("holdingName") or
+                                                h.get("name") or "")[:40],
+                        "weight_pct": _safe_weight(raw_w),
                     })
                 if results:
-                    log.info("    ETF holdings (t.info): " + str(len(results)) + " for " + ticker)
+                    log.info("    ETF holdings (t.info): "
+                             + str(len(results)) + " for " + ticker)
                     return results
         except Exception as e:
-            log.warning("    t.info topHoldings failed for " + ticker + ": " + str(e))
+            log.warning("    t.info holdings failed for " + ticker + ": " + str(e))
 
         log.warning("    No ETF holdings data found for " + ticker)
         return []
