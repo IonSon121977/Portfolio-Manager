@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: '3.11'
           cache: 'pip'
-      - run: pip install requests yfinance
+      - run: pip install requests yfinance lxml
       - name: Run fundamentals
         run: python scripts/fundamentals.py
       - name: Run market sentiment
