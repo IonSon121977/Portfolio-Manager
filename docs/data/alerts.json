@@ -1,5 +1,23 @@
 [
   {
+    "ts": "2026-04-27 20:18 UTC",
+    "type": "movement",
+    "ticker": "AMD",
+    "message": "AMD DOWN [CROSSED 3%] | vs morning: -3.6% | vs last check: -0.8% (morning EUR 296.02, last EUR 287.72, now EUR 285.41)"
+  },
+  {
+    "ts": "2026-04-27 20:18 UTC",
+    "type": "movement",
+    "ticker": "INTC",
+    "message": "INTC UP [CROSSED 3%] | vs morning: +3.2% | vs last check: +2.1% (morning EUR 70.25, last EUR 71.01, now EUR 72.49)"
+  },
+  {
+    "ts": "2026-04-27 20:18 UTC",
+    "type": "movement",
+    "ticker": "MU",
+    "message": "MU UP | vs morning: +5.8% | vs last check: +1.4% (morning EUR 422.76, last EUR 441.25, now EUR 447.40)"
+  },
+  {
     "ts": "2026-04-27 18:52 UTC",
     "type": "rating_change",
     "ticker": "MU",
@@ -2980,23 +2998,5 @@
     "type": "52w_high",
     "ticker": "BA.L",
     "message": "BA.L 52W HIGH EUR 26.63"
-  },
-  {
-    "ts": "2026-03-12 09:30 UTC",
-    "type": "digest",
-    "ticker": "",
-    "message": "Morning digest sent at 09:30 UTC"
-  },
-  {
-    "ts": "2026-03-12 08:46 UTC",
-    "type": "52w_high",
-    "ticker": "BA.L",
-    "message": "BA.L 52W HIGH EUR 26.47"
-  },
-  {
-    "ts": "2026-03-12 08:44 UTC",
-    "type": "52w_high",
-    "ticker": "BA.L",
-    "message": "BA.L 52W HIGH EUR 26.53"
   }
 ]
