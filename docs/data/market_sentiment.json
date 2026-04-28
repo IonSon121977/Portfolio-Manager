@@ -5,7 +5,7 @@
     "color": "#f6ad55",
     "components": {
       "vix": {
-        "value": 18.39,
+        "value": 18.6,
         "score": 60,
         "contribution": 2.0,
         "interpretation": "Calm"
@@ -18,18 +18,18 @@
         "interpretation": "Neutral"
       },
       "stoxx50": {
-        "value": 5842.6499,
-        "ma50": 5843.5574,
-        "pct_from_ma": -0.02,
+        "value": 5836.1001,
+        "ma50": 5843.4264,
+        "pct_from_ma": -0.13,
         "above_ma50": false,
         "score": 45,
         "contribution": -1.2,
         "interpretation": "Downtrend"
       },
       "dax": {
-        "value": 24038.2793,
-        "ma50": 23894.1282,
-        "pct_from_ma": 0.6,
+        "value": 24018.2598,
+        "ma50": 23893.7278,
+        "pct_from_ma": 0.52,
         "above_ma50": true,
         "score": 55,
         "contribution": 0.8,
@@ -46,10 +46,10 @@
     "vix": {
       "ticker": "^VIX",
       "label": "VIX",
-      "price": 18.39,
+      "price": 18.6,
       "prev": 18.03,
-      "chg_pct": 2.0,
-      "ma50": 22.405,
+      "chg_pct": 3.16,
+      "ma50": 22.4092,
       "above_ma50": false
     },
     "eurusd": {
@@ -64,21 +64,21 @@
     "stoxx50": {
       "ticker": "^STOXX50E",
       "label": "Euro Stoxx 50",
-      "price": 5842.6499,
+      "price": 5836.1001,
       "prev": 5859.3901,
-      "chg_pct": -0.29,
-      "ma50": 5843.5574,
+      "chg_pct": -0.4,
+      "ma50": 5843.4264,
       "above_ma50": false
     },
     "dax": {
       "ticker": "^GDAXI",
       "label": "DAX",
-      "price": 24038.2793,
-      "prev": 24093.1406,
-      "chg_pct": -0.23,
-      "ma50": 23894.1282,
+      "price": 24018.2598,
+      "prev": 24083.53,
+      "chg_pct": -0.27,
+      "ma50": 23893.7278,
       "above_ma50": true
     }
   },
-  "updated": "2026-04-28T15:30:18.519847"
+  "updated": "2026-04-28T16:56:42.859776"
 }
