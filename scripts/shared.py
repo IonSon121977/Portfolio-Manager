@@ -561,7 +561,11 @@ def get_etf_holdings(ticker: str, max_holdings: int = 15) -> list:
             if fd is not None:
                 th = getattr(fd, "top_holdings", None)
                 if th is not None and not (hasattr(th, "empty") and th.empty):
-                    log.info("    top_holdings columns: " + str(list(th.columns)))
+                    cols = list(th.columns)
+                    log.info("    top_holdings columns: " + str(cols))
+                    if not th.empty:
+                        first_row = th.iloc[0]
+                        log.info("    top_holdings first row: " + str({c: first_row[c] for c in cols}))
                     results = []
                     for idx, row in th.head(max_holdings).iterrows():
                         # Name: try multiple column variants
