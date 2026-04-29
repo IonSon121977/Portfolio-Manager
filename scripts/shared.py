@@ -508,15 +508,31 @@ def get_morningstar_data(ticker: str, isin: str) -> dict:
         return {}
 
 
-def get_etf_holdings(ticker: str, max_holdings: int = 15) -> list:
+def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
     import math
+    import io
+    import csv
+    import urllib.request
+
+    # ── iShares product ID map ────────────────────────────────────────────────
+    # Confirmed product IDs from ishares.com/uk product pages.
+    # URL pattern: ishares.com/uk/individual/en/products/{id}/{slug}/1506575576011.ajax
+    #              ?fileType=csv&fileName={TICKER}_holdings&dataType=fund
+    # CSV has 2 header rows (fund info) + 1 column header row — skip 2, use row 3.
+    ISHARES_PRODUCTS = {
+        "EUNK.DE": ("251861", "ishares-core-msci-europe-ucits-etf",       "EUNK"),
+        "IS3N.DE": ("264659", "ishares-msci-emerging-markets-imi-ucits-etf", "IS3N"),
+        "QDVE.DE": ("280510", "ishares-sp-500-information-technology-sector-ucits-etf", "QDVE"),
+        "SEMI.AS": ("319084", "ishares-msci-global-semiconductors-ucits-etf", "SEMI"),
+    }
+    ISHARES_AJAX = "1506575576011"
 
     def _safe_weight(val) -> float:
         try:
             if isinstance(val, dict):
                 val = val.get("raw") or val.get("fmt", "0")
             if isinstance(val, str):
-                val = val.strip().rstrip("%")
+                val = val.strip().rstrip("%").replace(",", "")
                 return round(float(val), 2)
             f = float(val)
             if math.isnan(f):
@@ -530,87 +546,159 @@ def get_etf_holdings(ticker: str, max_holdings: int = 15) -> list:
             return fallback
         return str(val).strip()
 
-    try:
-        t = yf.Ticker(ticker)
-
-        # ── Source 1: funds_data.top_holdings ────────────────────────────────
+    # ── Source 1: iShares CSV (for EUNK, IS3N, QDVE, SEMI) ───────────────────
+    if ticker in ISHARES_PRODUCTS:
+        prod_id, slug, file_ticker = ISHARES_PRODUCTS[ticker]
+        url = (f"https://www.ishares.com/uk/individual/en/products/"
+               f"{prod_id}/{slug}/{ISHARES_AJAX}.ajax"
+               f"?fileType=csv&fileName={file_ticker}_holdings&dataType=fund")
         try:
-            fd = t.funds_data
-            if fd is not None:
-                th = getattr(fd, "top_holdings", None)
-                if th is not None and not (hasattr(th, "empty") and th.empty):
-                    cols = list(th.columns)
-                    log.info("    top_holdings columns: " + str(cols))
-                    if not th.empty:
-                        first_row = th.iloc[0]
-                        log.info("    top_holdings first row: " + str({c: first_row[c] for c in cols}))
-                    results = []
-                    for idx, row in th.head(max_holdings).iterrows():
-                        name = ""
-                        for col in ("Name", "holdingName", "name", "security"):
-                            try:
-                                v = row[col]
-                                name = _safe_str(v)
-                                if name:
-                                    break
-                            except (KeyError, TypeError):
-                                pass
-                        if not name:
-                            name = _safe_str(idx)
+            req = urllib.request.Request(
+                url,
+                headers={
+                    "User-Agent":   "Mozilla/5.0 (compatible; portfolio-bot/1.0)",
+                    "Accept":       "text/csv,*/*",
+                    "Referer":      "https://www.ishares.com/",
+                }
+            )
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                raw = resp.read().decode("utf-8", errors="replace")
 
-                        weight_pct = 0.0
-                        for col in ("Holding Percent", "holdingPercent", "percent",
-                                    "weight", "Weight", "pct", "Percent"):
-                            try:
-                                weight_pct = _safe_weight(row[col])
-                                if weight_pct > 0:
-                                    break
-                            except (KeyError, TypeError):
-                                pass
+            # iShares CSV format:
+            # Row 0: fund name / as-of date header
+            # Row 1: blank or sub-header
+            # Row 2: column headers (Ticker, Name, Asset Class, Weight (%), ...)
+            # Row 3+: data rows
+            # Rows after the holdings end with a blank Ticker — stop there.
+            reader    = csv.reader(io.StringIO(raw))
+            rows      = list(reader)
+            # Find header row — it contains "Ticker" or "Name"
+            hdr_idx   = None
+            for i, row in enumerate(rows):
+                if row and row[0].strip().lower() in ("ticker", "name") or \
+                   any(c.strip().lower() in ("ticker", "weight (%)", "weight(%)") for c in row):
+                    hdr_idx = i
+                    break
+            if hdr_idx is None:
+                raise ValueError("Could not find header row in iShares CSV")
 
-                        results.append({
-                            "ticker":     _safe_str(idx) or "—",
-                            "name":       name[:40],
-                            "weight_pct": weight_pct,
-                        })
-                    if results:
-                        log.info("    ETF holdings (funds_data): "
-                                 + str(len(results)) + " for " + ticker)
-                        return results
+            headers = [c.strip().lower() for c in rows[hdr_idx]]
+            # Find column indices
+            def _col(*names):
+                for n in names:
+                    for i, h in enumerate(headers):
+                        if n.lower() in h:
+                            return i
+                return None
+
+            ticker_col = _col("ticker")
+            name_col   = _col("name")
+            weight_col = _col("weight")
+
+            if weight_col is None:
+                raise ValueError(f"No weight column in iShares CSV. Headers: {headers}")
+
+            results = []
+            for row in rows[hdr_idx + 1:]:
+                if not row or len(row) <= max(filter(lambda x: x is not None,
+                                               [ticker_col, name_col, weight_col])):
+                    continue
+                tk   = _safe_str(row[ticker_col]) if ticker_col is not None else "—"
+                nm   = _safe_str(row[name_col])   if name_col   is not None else "—"
+                wt   = _safe_weight(row[weight_col])
+                # Stop at cash/end rows (empty ticker or weight=0 for equity rows)
+                if not tk or tk in ("-", "—", "") and not nm:
+                    continue
+                # Skip cash, derivatives, other non-equity lines
+                asset_col = _col("asset class")
+                if asset_col is not None and len(row) > asset_col:
+                    ac = row[asset_col].strip().lower()
+                    if ac in ("cash", "money market", "futures", "options", "fx"):
+                        continue
+                results.append({
+                    "ticker":     tk[:20],
+                    "name":       nm[:40],
+                    "weight_pct": wt,
+                })
+                if len(results) >= max_holdings:
+                    break
+
+            if results:
+                log.info(f"    iShares CSV: {len(results)} holdings for {ticker}")
+                return results
+            log.warning(f"    iShares CSV returned 0 usable rows for {ticker}")
+
         except Exception as e:
-            log.warning("    funds_data failed for " + ticker + ": " + str(e))
+            log.warning(f"    iShares CSV failed for {ticker}: {e} — falling back to yfinance")
 
-        # ── Source 2: t.info["holdings"] ─────────────────────────────────────
-        try:
-            info = t.info
-            holdings = info.get("holdings") or []
-            if holdings:
+    # ── Source 2: yfinance funds_data.top_holdings (fallback / SPYY) ─────────
+    try:
+        t  = yf.Ticker(ticker)
+        fd = t.funds_data
+        if fd is not None:
+            th = getattr(fd, "top_holdings", None)
+            if th is not None and not (hasattr(th, "empty") and th.empty):
+                cols = list(th.columns)
+                log.info(f"    top_holdings columns: {cols}")
+                if not th.empty:
+                    first_row = th.iloc[0]
+                    log.info(f"    top_holdings first row: { {c: first_row[c] for c in cols} }")
                 results = []
-                for h in holdings[:max_holdings]:
-                    raw_w = h.get("holdingPercent", 0)
-                    if isinstance(raw_w, dict):
-                        raw_w = raw_w.get("raw", 0)
+                for idx, row in th.head(max_holdings).iterrows():
+                    name = ""
+                    for col in ("Name", "holdingName", "name", "security"):
+                        try:
+                            v = row[col]; name = _safe_str(v)
+                            if name: break
+                        except (KeyError, TypeError):
+                            pass
+                    if not name:
+                        name = _safe_str(idx)
+                    weight_pct = 0.0
+                    for col in ("Holding Percent", "holdingPercent", "percent",
+                                "weight", "Weight", "pct", "Percent"):
+                        try:
+                            weight_pct = _safe_weight(row[col])
+                            if weight_pct > 0: break
+                        except (KeyError, TypeError):
+                            pass
                     results.append({
-                        "ticker":     _safe_str(h.get("symbol") or
-                                                h.get("ticker") or "—"),
-                        "name":       _safe_str(h.get("holdingName") or
-                                                h.get("name") or "")[:40],
-                        "weight_pct": _safe_weight(raw_w),
+                        "ticker":     _safe_str(idx) or "—",
+                        "name":       name[:40],
+                        "weight_pct": weight_pct,
                     })
                 if results:
-                    log.info("    ETF holdings (t.info): "
-                             + str(len(results)) + " for " + ticker)
+                    log.info(f"    ETF holdings (funds_data): {len(results)} for {ticker}")
                     return results
-        except Exception as e:
-            log.warning("    t.info holdings failed for " + ticker + ": " + str(e))
-
-        log.warning("    No ETF holdings data found for " + ticker)
-        return []
-
     except Exception as e:
-        log.warning("  get_etf_holdings failed for " + ticker + ": " + str(e))
-        return []
-        
+        log.warning(f"    funds_data failed for {ticker}: {e}")
+
+    # ── Source 3: t.info["holdings"] ─────────────────────────────────────────
+    try:
+        t   = yf.Ticker(ticker)
+        info = t.info
+        holdings = info.get("holdings") or []
+        if holdings:
+            results = []
+            for h in holdings[:max_holdings]:
+                raw_w = h.get("holdingPercent", 0)
+                if isinstance(raw_w, dict):
+                    raw_w = raw_w.get("raw", 0)
+                results.append({
+                    "ticker":     _safe_str(h.get("symbol") or h.get("ticker") or "—"),
+                    "name":       _safe_str(h.get("holdingName") or h.get("name") or "")[:40],
+                    "weight_pct": _safe_weight(raw_w),
+                })
+            if results:
+                log.info(f"    ETF holdings (t.info): {len(results)} for {ticker}")
+                return results
+    except Exception as e:
+        log.warning(f"    t.info holdings failed for {ticker}: {e}")
+
+    log.warning(f"    No ETF holdings data found for {ticker}")
+    return []
+
+
 def get_company_news(ticker: str, _ignored: str = "",
                      days_back: int = 1, max_articles: int = 6,
                      holding_name: str = "") -> list:
