@@ -509,40 +509,18 @@ def get_morningstar_data(ticker: str, isin: str) -> dict:
 
 
 def get_etf_holdings(ticker: str, max_holdings: int = 15) -> list:
-    """
-    Return top holdings for an ETF using yfinance.
-
-    Sources tried in order:
-      1. t.funds_data.top_holdings  — DataFrame with index=symbol,
-                                      columns: holdingName, holdingPercent
-                                      holdingPercent is a decimal (0.059 = 5.9%)
-      2. t.info["holdings"]         — list of dicts fallback
-    Returns list of {ticker, name, weight_pct} dicts, capped at max_holdings.
-    """
     import math
 
     def _safe_weight(val) -> float:
-        """Convert a weight value to a percentage float, handling all yfinance formats:
-        - dict {"raw": 0.059, "fmt": "5.90%"} — raw Yahoo Finance API response
-        - plain float 0.059 — unwrapped by newer yfinance versions
-        - string "5.90%" — fmt value
-        - NaN / None
-        """
         try:
-            # Handle dict format {"raw": 0.059, "fmt": "5.90%"}
             if isinstance(val, dict):
                 val = val.get("raw") or val.get("fmt", "0")
-            # Handle string percentage "5.90%"
             if isinstance(val, str):
                 val = val.strip().rstrip("%")
-                f = float(val)
-                # If already a percentage string like "5.90", return as-is
-                return round(f, 2)
+                return round(float(val), 2)
             f = float(val)
             if math.isnan(f):
                 return 0.0
-            # yfinance returns decimal fractions (0.059 = 5.9%)
-            # guard against already-percentage values > 1
             return round(f * 100, 2) if f <= 1.0 else round(f, 2)
         except (TypeError, ValueError):
             return 0.0
@@ -568,9 +546,8 @@ def get_etf_holdings(ticker: str, max_holdings: int = 15) -> list:
                         log.info("    top_holdings first row: " + str({c: first_row[c] for c in cols}))
                     results = []
                     for idx, row in th.head(max_holdings).iterrows():
-                        # Name: try multiple column variants
                         name = ""
-                        for col in ("holdingName", "name", "Name", "security"):
+                        for col in ("Name", "holdingName", "name", "security"):
                             try:
                                 v = row[col]
                                 name = _safe_str(v)
@@ -581,10 +558,9 @@ def get_etf_holdings(ticker: str, max_holdings: int = 15) -> list:
                         if not name:
                             name = _safe_str(idx)
 
-                        # Weight: try multiple column variants
                         weight_pct = 0.0
-                        for col in ("holdingPercent", "percent", "weight",
-                                    "Weight", "pct", "Percent"):
+                        for col in ("Holding Percent", "holdingPercent", "percent",
+                                    "weight", "Weight", "pct", "Percent"):
                             try:
                                 weight_pct = _safe_weight(row[col])
                                 if weight_pct > 0:
@@ -612,7 +588,6 @@ def get_etf_holdings(ticker: str, max_holdings: int = 15) -> list:
                 results = []
                 for h in holdings[:max_holdings]:
                     raw_w = h.get("holdingPercent", 0)
-                    # Yahoo may return {"raw": 0.059, "fmt": "5.90%"}
                     if isinstance(raw_w, dict):
                         raw_w = raw_w.get("raw", 0)
                     results.append({
