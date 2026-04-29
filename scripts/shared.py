@@ -522,8 +522,22 @@ def get_etf_holdings(ticker: str, max_holdings: int = 15) -> list:
     import math
 
     def _safe_weight(val) -> float:
-        """Convert a weight value to a percentage float, handling NaN/None."""
+        """Convert a weight value to a percentage float, handling all yfinance formats:
+        - dict {"raw": 0.059, "fmt": "5.90%"} — raw Yahoo Finance API response
+        - plain float 0.059 — unwrapped by newer yfinance versions
+        - string "5.90%" — fmt value
+        - NaN / None
+        """
         try:
+            # Handle dict format {"raw": 0.059, "fmt": "5.90%"}
+            if isinstance(val, dict):
+                val = val.get("raw") or val.get("fmt", "0")
+            # Handle string percentage "5.90%"
+            if isinstance(val, str):
+                val = val.strip().rstrip("%")
+                f = float(val)
+                # If already a percentage string like "5.90", return as-is
+                return round(f, 2)
             f = float(val)
             if math.isnan(f):
                 return 0.0
@@ -594,6 +608,9 @@ def get_etf_holdings(ticker: str, max_holdings: int = 15) -> list:
                 results = []
                 for h in holdings[:max_holdings]:
                     raw_w = h.get("holdingPercent", 0)
+                    # Yahoo may return {"raw": 0.059, "fmt": "5.90%"}
+                    if isinstance(raw_w, dict):
+                        raw_w = raw_w.get("raw", 0)
                     results.append({
                         "ticker":     _safe_str(h.get("symbol") or
                                                 h.get("ticker") or "—"),
@@ -614,6 +631,7 @@ def get_etf_holdings(ticker: str, max_holdings: int = 15) -> list:
     except Exception as e:
         log.warning("  get_etf_holdings failed for " + ticker + ": " + str(e))
         return []
+        
 def get_company_news(ticker: str, _ignored: str = "",
                      days_back: int = 1, max_articles: int = 6,
                      holding_name: str = "") -> list:
