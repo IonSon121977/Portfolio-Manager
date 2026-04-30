@@ -646,7 +646,7 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
             wb.close()
 
             # Log first 6 rows so we can see the exact layout if it fails
-            log.info(f"    SSGA xlsx first 5 rows for {ticker}:")
+            log.info(f"    SSGA xlsx first 6 rows for {ticker}:")
             for i, row in enumerate(all_rows[:6]):
                 log.info(f"      row[{i}]: {[str(c)[:30] if c is not None else None for c in row[:8]]}")
 
