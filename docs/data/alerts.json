@@ -1,5 +1,23 @@
 [
   {
+    "ts": "2026-04-30 20:19 UTC",
+    "type": "52w_high",
+    "ticker": "AMD",
+    "message": "AMD 52W HIGH EUR 302.03"
+  },
+  {
+    "ts": "2026-04-30 20:19 UTC",
+    "type": "52w_high",
+    "ticker": "GOOG",
+    "message": "GOOG 52W HIGH EUR 325.41"
+  },
+  {
+    "ts": "2026-04-30 20:19 UTC",
+    "type": "movement",
+    "ticker": "NVDA",
+    "message": "NVDA DOWN | vs morning: -5.0% | vs last check: -1.0% (morning EUR 179.03, last EUR 171.75, now EUR 170.03)"
+  },
+  {
     "ts": "2026-04-30 18:54 UTC",
     "type": "movement",
     "ticker": "TXN",
@@ -2980,23 +2998,5 @@
     "type": "rating_change",
     "ticker": "MU",
     "message": "B of A Securities: Buy -> Buy"
-  },
-  {
-    "ts": "2026-03-19 17:44 UTC",
-    "type": "rating_change",
-    "ticker": "SNDK",
-    "message": "Citigroup: Buy -> Buy"
-  },
-  {
-    "ts": "2026-03-19 17:44 UTC",
-    "type": "movement",
-    "ticker": "MU",
-    "message": "MU DOWN [CROSSED 3%] | vs morning: -4.6% | vs last check: -2.2% (morning EUR 402.81, last EUR 393.16, now EUR 384.37)"
-  },
-  {
-    "ts": "2026-03-19 17:44 UTC",
-    "type": "movement",
-    "ticker": "BP.L",
-    "message": "BP.L UP [CROSSED 3%] | vs morning: +3.0% | vs last check: +0.4% (morning EUR 6.56, last EUR 6.73, now EUR 6.76)"
   }
 ]
