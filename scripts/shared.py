@@ -645,9 +645,9 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
             all_rows = list(ws.iter_rows(values_only=True))
             wb.close()
 
-            # Log first 5 rows so we can see the exact layout if it fails
+            # Log first 6 rows so we can see the exact layout if it fails
             log.info(f"    SSGA xlsx first 5 rows for {ticker}:")
-            for i, row in enumerate(all_rows[:5]):
+            for i, row in enumerate(all_rows[:6]):
                 log.info(f"      row[{i}]: {[str(c)[:30] if c is not None else None for c in row[:8]]}")
 
             hdr_idx = None
@@ -656,7 +656,7 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
                     continue
                 cells = [str(c).strip().lower() if c is not None else "" for c in row]
                 # Match any row containing at least 2 of: name, ticker, weight
-                if sum(1 for k in ("name", "ticker", "weight") if any(k in c for c in cells)) >= 2:
+                if sum(1 for k in ("Security Name", "ISIN", "Percent of Fund") if any(k in c for c in cells)) >= 2:
                     hdr_idx = i
                     break
 
@@ -672,9 +672,9 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
                             return i
                 return None
 
-            ticker_col = _col_idx("ticker")
-            name_col   = _col_idx("name")
-            weight_col = _col_idx("weight")
+            ticker_col = _col_idx("ISIN")
+            name_col   = _col_idx("Security Name")
+            weight_col = _col_idx("Percent of Fund")
 
             if weight_col is None:
                 raise ValueError(f"No weight column. Headers: {headers}")
