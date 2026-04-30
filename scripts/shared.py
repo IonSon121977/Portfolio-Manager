@@ -525,7 +525,7 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
 
     # ── SSGA/SPDR xlsx map ────────────────────────────────────────────────────
     SSGA_PRODUCTS = {
-         "SPYY.DE": "https://www.ssga.com/at/en_gb/intermediary/library-content/products/fund-data/etfs/emea/holdings-daily-emea-en-spyi-gy.xlsx",
+       "SPYY.DE": "https://www.ssga.com/at/en_gb/intermediary/library-content/products/fund-data/etfs/emea/holdings-daily-emea-en-spyy-gy.xlsx",
     }
 
     def _safe_weight(val) -> float:
@@ -643,10 +643,20 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
             ws  = wb.active
 
             all_rows = list(ws.iter_rows(values_only=True))
-            hdr_idx  = None
+            wb.close()
+
+            # Log first 5 rows so we can see the exact layout if it fails
+            log.info(f"    SSGA xlsx first 5 rows for {ticker}:")
+            for i, row in enumerate(all_rows[:5]):
+                log.info(f"      row[{i}]: {[str(c)[:30] if c is not None else None for c in row[:8]]}")
+
+            hdr_idx = None
             for i, row in enumerate(all_rows):
-                cells = [str(c).strip().lower() if c else "" for c in row]
-                if any(k in cells for k in ("name", "ticker", "weight", "weight (%)")):
+                if row is None:
+                    continue
+                cells = [str(c).strip().lower() if c is not None else "" for c in row]
+                # Match any row containing at least 2 of: name, ticker, weight
+                if sum(1 for k in ("name", "ticker", "weight") if any(k in c for c in cells)) >= 2:
                     hdr_idx = i
                     break
 
@@ -688,7 +698,6 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
                 if len(results) >= max_holdings:
                     break
 
-            wb.close()
             if results:
                 log.info(f"    SSGA xlsx: {len(results)} holdings for {ticker}")
                 return results
