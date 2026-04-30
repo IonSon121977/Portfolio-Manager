@@ -1,5 +1,41 @@
 [
   {
+    "ts": "2026-04-30 16:07 UTC",
+    "type": "52w_high",
+    "ticker": "STMPA.PA",
+    "message": "STMPA.PA 52W HIGH EUR 46.01"
+  },
+  {
+    "ts": "2026-04-30 16:07 UTC",
+    "type": "52w_high",
+    "ticker": "CAT",
+    "message": "CAT 52W HIGH EUR 759.67"
+  },
+  {
+    "ts": "2026-04-30 16:07 UTC",
+    "type": "movement",
+    "ticker": "CAT",
+    "message": "CAT UP [CROSSED 3%] | vs morning: +9.6% | vs last check: +9.7% (morning EUR 693.08, last EUR 692.43, now EUR 759.67)"
+  },
+  {
+    "ts": "2026-04-30 16:07 UTC",
+    "type": "movement",
+    "ticker": "NVDA",
+    "message": "NVDA DOWN [CROSSED 3%] | vs morning: -4.6% | vs last check: -4.6% (morning EUR 179.03, last EUR 178.87, now EUR 170.71)"
+  },
+  {
+    "ts": "2026-04-30 16:07 UTC",
+    "type": "movement",
+    "ticker": "GOOG",
+    "message": "GOOG UP [CROSSED 3%] | vs morning: +6.6% | vs last check: +6.7% (morning EUR 297.16, last EUR 296.88, now EUR 316.85)"
+  },
+  {
+    "ts": "2026-04-30 16:07 UTC",
+    "type": "movement",
+    "ticker": "MSFT",
+    "message": "MSFT DOWN [CROSSED 3%] | vs morning: -5.4% | vs last check: -5.3% (morning EUR 363.17, last EUR 362.83, now EUR 343.54)"
+  },
+  {
     "ts": "2026-04-30 13:09 UTC",
     "type": "52w_high",
     "ticker": "SPYY.DE",
@@ -2962,41 +2998,5 @@
     "type": "rating_change",
     "ticker": "MU",
     "message": "Cantor Fitzgerald: Overweight -> Overweight"
-  },
-  {
-    "ts": "2026-03-19 14:38 UTC",
-    "type": "rating_change",
-    "ticker": "MU",
-    "message": "Keybanc: Overweight -> Overweight"
-  },
-  {
-    "ts": "2026-03-19 14:38 UTC",
-    "type": "rating_change",
-    "ticker": "MU",
-    "message": "RBC Capital: Outperform -> Outperform"
-  },
-  {
-    "ts": "2026-03-19 14:38 UTC",
-    "type": "rating_change",
-    "ticker": "MU",
-    "message": "Wells Fargo: Overweight -> Overweight"
-  },
-  {
-    "ts": "2026-03-19 14:38 UTC",
-    "type": "52w_high",
-    "ticker": "REP.MC",
-    "message": "REP.MC 52W HIGH EUR 24.85"
-  },
-  {
-    "ts": "2026-03-19 14:38 UTC",
-    "type": "52w_high",
-    "ticker": "CVX",
-    "message": "CVX 52W HIGH EUR 175.23"
-  },
-  {
-    "ts": "2026-03-19 14:38 UTC",
-    "type": "movement",
-    "ticker": "TTE.PA",
-    "message": "TTE.PA UP [CROSSED 3%] | vs morning: +3.1% | vs last check: +2.2% (morning EUR 76.46, last EUR 77.18, now EUR 78.84)"
   }
 ]
