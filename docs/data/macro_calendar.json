@@ -1,15 +1,15 @@
 {
   "events": [
     {
-      "date": "2026-04-29",
-      "time": "20:00 CET",
+      "date": "2026-05-08",
+      "time": "14:30 CET",
       "currency": "USD",
       "impact": "\ud83d\udd34 High",
       "impact_raw": "high",
-      "title": "Fed Interest Rate Decision (FOMC)",
+      "title": "US Non-Farm Payrolls (NFP)",
       "forecast": "",
       "previous": "",
-      "source": "Federal Reserve"
+      "source": "BLS via FRED"
     },
     {
       "date": "2026-05-12",
@@ -35,17 +35,17 @@
     }
   ],
   "by_date": {
-    "2026-04-29": [
+    "2026-05-08": [
       {
-        "date": "2026-04-29",
-        "time": "20:00 CET",
+        "date": "2026-05-08",
+        "time": "14:30 CET",
         "currency": "USD",
         "impact": "\ud83d\udd34 High",
         "impact_raw": "high",
-        "title": "Fed Interest Rate Decision (FOMC)",
+        "title": "US Non-Farm Payrolls (NFP)",
         "forecast": "",
         "previous": "",
-        "source": "Federal Reserve"
+        "source": "BLS via FRED"
       }
     ],
     "2026-05-12": [
@@ -75,8 +75,8 @@
       }
     ]
   },
-  "from_date": "2026-04-29",
-  "to_date": "2026-05-27",
-  "updated": "2026-04-29T18:15:43.450545",
+  "from_date": "2026-04-30",
+  "to_date": "2026-05-28",
+  "updated": "2026-04-30T09:28:09.454040",
   "count": 3
 }
