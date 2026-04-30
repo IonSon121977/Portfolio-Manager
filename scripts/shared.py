@@ -515,10 +515,6 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
     import urllib.request
 
     # ── iShares product ID map ────────────────────────────────────────────────
-    # Confirmed product IDs from ishares.com/uk product pages.
-    # URL pattern: ishares.com/uk/individual/en/products/{id}/{slug}/1506575576011.ajax
-    #              ?fileType=csv&fileName={TICKER}_holdings&dataType=fund
-    # CSV has 2 header rows (fund info) + 1 column header row — skip 2, use row 3.
     ISHARES_PRODUCTS = {
         "EUNK.DE": ("251861", "ishares-core-msci-europe-ucits-etf",       "EUNK"),
         "IS3N.DE": ("264659", "ishares-msci-emerging-markets-imi-ucits-etf", "IS3N"),
@@ -526,6 +522,11 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
         "SEMI.AS": ("319084", "ishares-msci-global-semiconductors-ucits-etf", "SEMI"),
     }
     ISHARES_AJAX = "1506575576011"
+
+    # ── SSGA/SPDR xlsx map ────────────────────────────────────────────────────
+    SSGA_PRODUCTS = {
+        "SPYY.DE": "https://prd-ams.ssga.com/library-content/products/fund-data/etfs/emea/holdings-daily-emea-en-spyy-gy.xlsx",
+    }
 
     def _safe_weight(val) -> float:
         try:
@@ -546,7 +547,7 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
             return fallback
         return str(val).strip()
 
-    # ── Source 1: iShares CSV (for EUNK, IS3N, QDVE, SEMI) ───────────────────
+    # ── Source 1: iShares CSV (EUNK, IS3N, QDVE, SEMI) ───────────────────────
     if ticker in ISHARES_PRODUCTS:
         prod_id, slug, file_ticker = ISHARES_PRODUCTS[ticker]
         url = (f"https://www.ishares.com/uk/individual/en/products/"
@@ -556,24 +557,17 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
             req = urllib.request.Request(
                 url,
                 headers={
-                    "User-Agent":   "Mozilla/5.0 (compatible; portfolio-bot/1.0)",
-                    "Accept":       "text/csv,*/*",
-                    "Referer":      "https://www.ishares.com/",
+                    "User-Agent": "Mozilla/5.0 (compatible; portfolio-bot/1.0)",
+                    "Accept":     "text/csv,*/*",
+                    "Referer":    "https://www.ishares.com/",
                 }
             )
             with urllib.request.urlopen(req, timeout=20) as resp:
                 raw = resp.read().decode("utf-8", errors="replace")
 
-            # iShares CSV format:
-            # Row 0: fund name / as-of date header
-            # Row 1: blank or sub-header
-            # Row 2: column headers (Ticker, Name, Asset Class, Weight (%), ...)
-            # Row 3+: data rows
-            # Rows after the holdings end with a blank Ticker — stop there.
-            reader    = csv.reader(io.StringIO(raw))
-            rows      = list(reader)
-            # Find header row — it contains "Ticker" or "Name"
-            hdr_idx   = None
+            reader  = csv.reader(io.StringIO(raw))
+            rows    = list(reader)
+            hdr_idx = None
             for i, row in enumerate(rows):
                 if row and row[0].strip().lower() in ("ticker", "name") or \
                    any(c.strip().lower() in ("ticker", "weight (%)", "weight(%)") for c in row):
@@ -583,7 +577,7 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
                 raise ValueError("Could not find header row in iShares CSV")
 
             headers = [c.strip().lower() for c in rows[hdr_idx]]
-            # Find column indices
+
             def _col(*names):
                 for n in names:
                     for i, h in enumerate(headers):
@@ -603,13 +597,11 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
                 if not row or len(row) <= max(filter(lambda x: x is not None,
                                                [ticker_col, name_col, weight_col])):
                     continue
-                tk   = _safe_str(row[ticker_col]) if ticker_col is not None else "—"
-                nm   = _safe_str(row[name_col])   if name_col   is not None else "—"
-                wt   = _safe_weight(row[weight_col])
-                # Stop at cash/end rows (empty ticker or weight=0 for equity rows)
+                tk = _safe_str(row[ticker_col]) if ticker_col is not None else "—"
+                nm = _safe_str(row[name_col])   if name_col   is not None else "—"
+                wt = _safe_weight(row[weight_col])
                 if not tk or tk in ("-", "—", "") and not nm:
                     continue
-                # Skip cash, derivatives, other non-equity lines
                 asset_col = _col("asset class")
                 if asset_col is not None and len(row) > asset_col:
                     ac = row[asset_col].strip().lower()
@@ -631,7 +623,81 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
         except Exception as e:
             log.warning(f"    iShares CSV failed for {ticker}: {e} — falling back to yfinance")
 
-    # ── Source 2: yfinance funds_data.top_holdings (fallback / SPYY) ─────────
+    # ── Source 2: SSGA xlsx (SPYY.DE) ────────────────────────────────────────
+    if ticker in SSGA_PRODUCTS:
+        try:
+            url = SSGA_PRODUCTS[ticker]
+            req = urllib.request.Request(
+                url,
+                headers={
+                    "User-Agent": "Mozilla/5.0 (compatible; portfolio-bot/1.0)",
+                    "Accept":     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,*/*",
+                    "Referer":    "https://www.ssga.com/",
+                }
+            )
+            with urllib.request.urlopen(req, timeout=25) as resp:
+                xlsx_bytes = resp.read()
+
+            import openpyxl
+            wb  = openpyxl.load_workbook(io.BytesIO(xlsx_bytes), read_only=True, data_only=True)
+            ws  = wb.active
+
+            all_rows = list(ws.iter_rows(values_only=True))
+            hdr_idx  = None
+            for i, row in enumerate(all_rows):
+                cells = [str(c).strip().lower() if c else "" for c in row]
+                if any(k in cells for k in ("name", "ticker", "weight", "weight (%)")):
+                    hdr_idx = i
+                    break
+
+            if hdr_idx is None:
+                raise ValueError("Could not find header row in SSGA xlsx")
+
+            headers = [str(c).strip().lower() if c else "" for c in all_rows[hdr_idx]]
+
+            def _col_idx(*names):
+                for n in names:
+                    for i, h in enumerate(headers):
+                        if n.lower() in h:
+                            return i
+                return None
+
+            ticker_col = _col_idx("ticker")
+            name_col   = _col_idx("name")
+            weight_col = _col_idx("weight")
+
+            if weight_col is None:
+                raise ValueError(f"No weight column. Headers: {headers}")
+
+            results = []
+            for row in all_rows[hdr_idx + 1:]:
+                if not row or all(c is None for c in row):
+                    continue
+                tk = str(row[ticker_col]).strip() if ticker_col is not None and row[ticker_col] else "—"
+                nm = str(row[name_col]).strip()   if name_col   is not None and row[name_col]   else "—"
+                wt = _safe_weight(row[weight_col]) if row[weight_col] is not None else 0.0
+                if tk in ("-", "—", "", "None") and nm in ("-", "—", "", "None"):
+                    continue
+                if nm.upper() in ("CASH", "USD CASH", "EUR CASH", "FX") or tk.upper() in ("CASH",):
+                    continue
+                results.append({
+                    "ticker":     tk[:20],
+                    "name":       nm[:40],
+                    "weight_pct": wt,
+                })
+                if len(results) >= max_holdings:
+                    break
+
+            wb.close()
+            if results:
+                log.info(f"    SSGA xlsx: {len(results)} holdings for {ticker}")
+                return results
+            log.warning(f"    SSGA xlsx returned 0 usable rows for {ticker}")
+
+        except Exception as e:
+            log.warning(f"    SSGA xlsx failed for {ticker}: {e} — falling back to yfinance")
+
+    # ── Source 3: yfinance funds_data.top_holdings (fallback / any ticker) ───
     try:
         t  = yf.Ticker(ticker)
         fd = t.funds_data
@@ -673,9 +739,9 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
     except Exception as e:
         log.warning(f"    funds_data failed for {ticker}: {e}")
 
-    # ── Source 3: t.info["holdings"] ─────────────────────────────────────────
+    # ── Source 4: t.info["holdings"] ─────────────────────────────────────────
     try:
-        t   = yf.Ticker(ticker)
+        t    = yf.Ticker(ticker)
         info = t.info
         holdings = info.get("holdings") or []
         if holdings:
