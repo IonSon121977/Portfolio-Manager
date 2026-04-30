@@ -525,7 +525,7 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
 
     # ── SSGA/SPDR xlsx map ────────────────────────────────────────────────────
     SSGA_PRODUCTS = {
-        "SPYY.DE": "https://prd-ams.ssga.com/library-content/products/fund-data/etfs/emea/holdings-daily-emea-en-spyy-gy.xlsx",
+         "SPYY.DE": "https://www.ssga.com/at/en_gb/intermediary/library-content/products/fund-data/etfs/emea/holdings-daily-emea-en-spyi-gy.xlsx",
     }
 
     def _safe_weight(val) -> float:
