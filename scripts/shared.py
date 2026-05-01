@@ -681,7 +681,17 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
                     continue
                 tk = str(row[ticker_col]).strip() if ticker_col is not None and row[ticker_col] else "—"
                 nm = str(row[name_col]).strip()   if name_col   is not None and row[name_col]   else "—"
-                wt = _safe_weight(row[weight_col]) if row[weight_col] is not None else 0.0
+                try:
+                    raw_w = row[weight_col]
+                    if raw_w is None:
+                        wt = 0.0
+                    elif isinstance(raw_w, str):
+                        # SSGA uses comma as decimal separator: "0,854964" → 0.854964
+                        wt = round(float(raw_w.replace(",", ".")), 4)
+                    else:
+                        wt = round(float(raw_w), 4)
+                except (TypeError, ValueError):
+                    wt = 0.0
                 if tk in ("-", "—", "", "None") and nm in ("-", "—", "", "None"):
                     continue
                 if nm.upper() in ("CASH", "USD CASH", "EUR CASH", "FX") or tk.upper() in ("CASH",):
