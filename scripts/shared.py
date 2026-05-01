@@ -516,10 +516,11 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
 
     # ── iShares product ID map ────────────────────────────────────────────────
     ISHARES_PRODUCTS = {
-        "EUNK.DE": ("251861", "ishares-core-msci-europe-ucits-etf",       "EUNK"),
-        "IS3N.DE": ("264659", "ishares-msci-emerging-markets-imi-ucits-etf", "IS3N"),
-        "QDVE.DE": ("280510", "ishares-sp-500-information-technology-sector-ucits-etf", "QDVE"),
-        "SEMI.AS": ("319084", "ishares-msci-global-semiconductors-ucits-etf", "SEMI"),
+        "EUNK.DE": ("251861", "ishares-core-msci-europe-ucits-etf",                    "EUNK"),
+        "IS3N.DE": ("264659", "ishares-msci-emerging-markets-imi-ucits-etf",           "IS3N"),
+        "QDVE.DE": ("280510", "ishares-sp-500-information-technology-sector-ucits-etf","QDVE"),
+        "SEMI.AS": ("319084", "ishares-msci-global-semiconductors-ucits-etf",          "SEMI"),
+        "SXRV.DE": ("253741", "ishares-nasdaq-100-ucits-etf",                          "SXRV"),
     }
     ISHARES_AJAX = "1506575576011"
 
