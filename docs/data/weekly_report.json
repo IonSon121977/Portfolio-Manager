@@ -1,185 +1,81 @@
 {
-  "week_from": "Mon 27 Apr",
-  "week_to": "Fri 01 May",
-  "week_from_iso": "2026-04-27",
-  "week_to_iso": "2026-05-01",
+  "week_from": "Mon 04 May",
+  "week_to": "Fri 08 May",
+  "week_from_iso": "2026-05-04",
+  "week_to_iso": "2026-05-08",
   "earnings": {
-    "AIR.PA": [
+    "AMD": [
       {
-        "date": "2026-04-28",
+        "date": "2026-05-05",
         "hour": "",
-        "eps_estimate": 0.42,
+        "eps_estimate": 1.29,
         "eps_actual": null,
-        "revenue_est": 12854473930.0,
+        "revenue_est": 9894224670.0,
         "revenue_act": null,
         "quarter": 2,
         "year": 2026,
-        "ticker": "AIR.PA",
-        "name": "Airbus"
+        "ticker": "AMD",
+        "name": "Advanced Micro Devices"
       }
     ],
-    "MSFT": [
+    "HSBA.L": [
       {
-        "date": "2026-04-29",
+        "date": "2026-05-05",
         "hour": "",
-        "eps_estimate": 4.06,
+        "eps_estimate": 0.43,
         "eps_actual": null,
-        "revenue_est": 81399822550.0,
+        "revenue_est": 18535045670.0,
         "revenue_act": null,
         "quarter": 2,
         "year": 2026,
-        "ticker": "MSFT",
-        "name": "Microsoft"
+        "ticker": "HSBA.L",
+        "name": "HSBC Holdings"
       }
     ],
-    "GOOG": [
+    "SMHN.DE": [
       {
-        "date": "2026-04-29",
+        "date": "2026-05-07",
         "hour": "",
-        "eps_estimate": 2.63,
+        "eps_estimate": 0.34,
         "eps_actual": null,
-        "revenue_est": 106936712920.0,
+        "revenue_est": 101966250.0,
         "revenue_act": null,
         "quarter": 2,
         "year": 2026,
-        "ticker": "GOOG",
-        "name": "Alphabet (Google) Class C"
-      }
-    ],
-    "AMZN": [
-      {
-        "date": "2026-04-29",
-        "hour": "",
-        "eps_estimate": 1.65,
-        "eps_actual": null,
-        "revenue_est": 177174591520.0,
-        "revenue_act": null,
-        "quarter": 2,
-        "year": 2026,
-        "ticker": "AMZN",
-        "name": "Amazon"
-      }
-    ],
-    "IBE.MC": [
-      {
-        "date": "2026-04-29",
-        "hour": "",
-        "eps_estimate": 0.25,
-        "eps_actual": null,
-        "revenue_est": 12045003630.0,
-        "revenue_act": null,
-        "quarter": 2,
-        "year": 2026,
-        "ticker": "IBE.MC",
-        "name": "Iberdrola"
-      }
-    ],
-    "TTE.PA": [
-      {
-        "date": "2026-04-29",
-        "hour": "",
-        "eps_estimate": 2.4,
-        "eps_actual": null,
-        "revenue_est": 46282777330.0,
-        "revenue_act": null,
-        "quarter": 2,
-        "year": 2026,
-        "ticker": "TTE.PA",
-        "name": "TotalEnergies SE"
-      }
-    ],
-    "AAPL": [
-      {
-        "date": "2026-04-30",
-        "hour": "",
-        "eps_estimate": 1.95,
-        "eps_actual": null,
-        "revenue_est": 109689807090.0,
-        "revenue_act": null,
-        "quarter": 2,
-        "year": 2026,
-        "ticker": "AAPL",
-        "name": "Apple"
-      }
-    ],
-    "CAT": [
-      {
-        "date": "2026-04-30",
-        "hour": "",
-        "eps_estimate": 4.64,
-        "eps_actual": null,
-        "revenue_est": 16423373790.0,
-        "revenue_act": null,
-        "quarter": 2,
-        "year": 2026,
-        "ticker": "CAT",
-        "name": "Caterpillar"
-      }
-    ],
-    "SNDK": [
-      {
-        "date": "2026-04-30",
-        "hour": "",
-        "eps_estimate": 14.55,
-        "eps_actual": null,
-        "revenue_est": 4716767160.0,
-        "revenue_act": null,
-        "quarter": 2,
-        "year": 2026,
-        "ticker": "SNDK",
-        "name": "SanDisk"
+        "ticker": "SMHN.DE",
+        "name": "S\u00dcSS MicroTec"
       }
     ]
   },
   "dividends": {
-    "BESI.AS": [
+    "TXN": [
       {
-        "ex_date": "2026-04-27",
-        "pay_date": "None",
+        "ex_date": "2026-05-05",
+        "pay_date": "2026-05-19",
         "record_date": "",
-        "amount": 1.58,
-        "currency": "EUR",
-        "freq": "",
-        "ticker": "BESI.AS",
-        "name": "BE Semiconductor (BESI)"
-      }
-    ],
-    "ASML": [
-      {
-        "ex_date": "2026-04-27",
-        "pay_date": "2026-05-05",
-        "record_date": "",
-        "amount": 1.883,
+        "amount": 1.42,
         "currency": "USD",
         "freq": "",
-        "ticker": "ASML",
-        "name": "ASML Holding"
+        "ticker": "TXN",
+        "name": "Texas Instruments"
+      }
+    ],
+    "ALV.DE": [
+      {
+        "ex_date": "2026-05-08",
+        "pay_date": "None",
+        "record_date": "",
+        "amount": 17.1,
+        "currency": "EUR",
+        "freq": "",
+        "ticker": "ALV.DE",
+        "name": "Allianz SE"
       }
     ]
   },
   "splits": {},
   "ipos": [],
   "dividend_calendar": [
-    {
-      "ex_date": "2026-04-27",
-      "pay_date": "None",
-      "record_date": "",
-      "amount": 1.58,
-      "currency": "EUR",
-      "freq": "",
-      "ticker": "BESI.AS",
-      "name": "BE Semiconductor (BESI)"
-    },
-    {
-      "ex_date": "2026-04-27",
-      "pay_date": "2026-05-05",
-      "record_date": "",
-      "amount": 1.883,
-      "currency": "USD",
-      "freq": "",
-      "ticker": "ASML",
-      "name": "ASML Holding"
-    },
     {
       "ex_date": "2026-05-05",
       "pay_date": "2026-05-19",
@@ -202,6 +98,16 @@
     },
     {
       "ex_date": "2026-05-11",
+      "pay_date": "2026-02-12",
+      "record_date": "",
+      "amount": 0.26,
+      "currency": "USD",
+      "freq": "",
+      "ticker": "AAPL",
+      "name": "Apple"
+    },
+    {
+      "ex_date": "2026-05-11",
       "pay_date": "None",
       "record_date": "",
       "amount": 4.2,
@@ -209,6 +115,26 @@
       "freq": "",
       "ticker": "SU.PA",
       "name": "Schneider Electric S.E."
+    },
+    {
+      "ex_date": "2026-05-13",
+      "pay_date": "None",
+      "record_date": "",
+      "amount": 3.25,
+      "currency": "EUR",
+      "freq": "",
+      "ticker": "ASM.AS",
+      "name": "ASM International (ASMI)"
+    },
+    {
+      "ex_date": "2026-05-14",
+      "pay_date": "None",
+      "record_date": "",
+      "amount": 0.0832,
+      "currency": "GBp",
+      "freq": "",
+      "ticker": "BP.L",
+      "name": "BP plc"
     },
     {
       "ex_date": "2026-05-18",
@@ -249,8 +175,18 @@
       "freq": "",
       "ticker": "MILDEF.ST",
       "name": "MilDef Group"
+    },
+    {
+      "ex_date": "2026-05-28",
+      "pay_date": "None",
+      "record_date": "",
+      "amount": 0.427,
+      "currency": "EUR",
+      "freq": "",
+      "ticker": "IBE.MC",
+      "name": "Iberdrola"
     }
   ],
   "ai_brief": "",
-  "generated": "2026-04-26T19:49:49.004387"
+  "generated": "2026-05-02T10:05:19.970900"
 }
