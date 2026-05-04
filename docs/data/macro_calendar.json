@@ -1,28 +1,6 @@
 {
   "events": [
     {
-      "date": "2026-05-08",
-      "time": "14:30 CET",
-      "currency": "USD",
-      "impact": "\ud83d\udd34 High",
-      "impact_raw": "high",
-      "title": "US Non-Farm Payrolls (NFP)",
-      "forecast": "",
-      "previous": "",
-      "source": "BLS via FRED"
-    },
-    {
-      "date": "2026-05-12",
-      "time": "14:30 CET",
-      "currency": "USD",
-      "impact": "\ud83d\udd34 High",
-      "impact_raw": "high",
-      "title": "US CPI (Consumer Price Index)",
-      "forecast": "",
-      "previous": "",
-      "source": "BLS via FRED"
-    },
-    {
       "date": "2026-05-20",
       "time": "11:00 CET",
       "currency": "EUR",
@@ -35,32 +13,6 @@
     }
   ],
   "by_date": {
-    "2026-05-08": [
-      {
-        "date": "2026-05-08",
-        "time": "14:30 CET",
-        "currency": "USD",
-        "impact": "\ud83d\udd34 High",
-        "impact_raw": "high",
-        "title": "US Non-Farm Payrolls (NFP)",
-        "forecast": "",
-        "previous": "",
-        "source": "BLS via FRED"
-      }
-    ],
-    "2026-05-12": [
-      {
-        "date": "2026-05-12",
-        "time": "14:30 CET",
-        "currency": "USD",
-        "impact": "\ud83d\udd34 High",
-        "impact_raw": "high",
-        "title": "US CPI (Consumer Price Index)",
-        "forecast": "",
-        "previous": "",
-        "source": "BLS via FRED"
-      }
-    ],
     "2026-05-20": [
       {
         "date": "2026-05-20",
@@ -77,6 +29,6 @@
   },
   "from_date": "2026-05-04",
   "to_date": "2026-06-01",
-  "updated": "2026-05-04T16:50:54.889016",
-  "count": 3
+  "updated": "2026-05-04T18:18:57.444807",
+  "count": 1
 }
