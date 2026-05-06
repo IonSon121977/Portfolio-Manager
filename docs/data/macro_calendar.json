@@ -1,6 +1,17 @@
 {
   "events": [
     {
+      "date": "2026-05-08",
+      "time": "14:30 CET",
+      "currency": "USD",
+      "impact": "\ud83d\udd34 High",
+      "impact_raw": "high",
+      "title": "US Non-Farm Payrolls (NFP)",
+      "forecast": "",
+      "previous": "",
+      "source": "BLS via FRED"
+    },
+    {
       "date": "2026-05-12",
       "time": "14:30 CET",
       "currency": "USD",
@@ -10,9 +21,33 @@
       "forecast": "",
       "previous": "",
       "source": "BLS via FRED"
+    },
+    {
+      "date": "2026-05-20",
+      "time": "11:00 CET",
+      "currency": "EUR",
+      "impact": "\ud83d\udd34 High",
+      "impact_raw": "high",
+      "title": "Eurozone HICP (Flash CPI)",
+      "forecast": "",
+      "previous": "",
+      "source": "Eurostat via FRED"
     }
   ],
   "by_date": {
+    "2026-05-08": [
+      {
+        "date": "2026-05-08",
+        "time": "14:30 CET",
+        "currency": "USD",
+        "impact": "\ud83d\udd34 High",
+        "impact_raw": "high",
+        "title": "US Non-Farm Payrolls (NFP)",
+        "forecast": "",
+        "previous": "",
+        "source": "BLS via FRED"
+      }
+    ],
     "2026-05-12": [
       {
         "date": "2026-05-12",
@@ -25,10 +60,23 @@
         "previous": "",
         "source": "BLS via FRED"
       }
+    ],
+    "2026-05-20": [
+      {
+        "date": "2026-05-20",
+        "time": "11:00 CET",
+        "currency": "EUR",
+        "impact": "\ud83d\udd34 High",
+        "impact_raw": "high",
+        "title": "Eurozone HICP (Flash CPI)",
+        "forecast": "",
+        "previous": "",
+        "source": "Eurostat via FRED"
+      }
     ]
   },
   "from_date": "2026-05-06",
   "to_date": "2026-06-03",
-  "updated": "2026-05-06T13:00:24.100401",
-  "count": 1
+  "updated": "2026-05-06T15:29:00.811114",
+  "count": 3
 }
