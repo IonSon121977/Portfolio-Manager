@@ -1,5 +1,29 @@
 [
   {
+    "ts": "2026-05-06 20:45 UTC",
+    "type": "52w_high",
+    "ticker": "ASML",
+    "message": "ASML 52W HIGH EUR 1314.73"
+  },
+  {
+    "ts": "2026-05-06 20:45 UTC",
+    "type": "52w_high",
+    "ticker": "INTC",
+    "message": "INTC 52W HIGH EUR 96.18"
+  },
+  {
+    "ts": "2026-05-06 20:45 UTC",
+    "type": "52w_high",
+    "ticker": "MU",
+    "message": "MU 52W HIGH EUR 567.33"
+  },
+  {
+    "ts": "2026-05-06 20:45 UTC",
+    "type": "movement",
+    "ticker": "MU",
+    "message": "MU UP [CROSSED 3%] | vs morning: +4.0% | vs last check: +1.3% (morning EUR 545.71, last EUR 560.21, now EUR 567.33)"
+  },
+  {
     "ts": "2026-05-06 19:12 UTC",
     "type": "rating_change",
     "ticker": "AMD",
@@ -2974,29 +2998,5 @@
     "type": "52w_high",
     "ticker": "SHEL.L",
     "message": "SHEL.L 52W HIGH EUR 40.12"
-  },
-  {
-    "ts": "2026-03-27 17:38 UTC",
-    "type": "movement",
-    "ticker": "XOM",
-    "message": "XOM UP [CROSSED 3%] | vs morning: +3.0% | vs last check: +0.6% (morning EUR 143.53, last EUR 146.95, now EUR 147.89)"
-  },
-  {
-    "ts": "2026-03-27 14:41 UTC",
-    "type": "52w_high",
-    "ticker": "BP.L",
-    "message": "BP.L 52W HIGH EUR 6.71"
-  },
-  {
-    "ts": "2026-03-27 14:41 UTC",
-    "type": "52w_high",
-    "ticker": "CVX",
-    "message": "CVX 52W HIGH EUR 183.08"
-  },
-  {
-    "ts": "2026-03-27 14:41 UTC",
-    "type": "movement",
-    "ticker": "AMZN",
-    "message": "AMZN DOWN [CROSSED 3%] | vs morning: -3.1% | vs last check: -3.2% (morning EUR 180.06, last EUR 180.27, now EUR 174.45)"
   }
 ]
