@@ -1,5 +1,47 @@
 [
   {
+    "ts": "2026-05-06 10:02 UTC",
+    "type": "rating_change",
+    "ticker": "AMD",
+    "message": "Goldman Sachs: Neutral -> Buy"
+  },
+  {
+    "ts": "2026-05-06 10:01 UTC",
+    "type": "52w_high",
+    "ticker": "SXRV.DE",
+    "message": "SXRV.DE 52W HIGH EUR 1383.40"
+  },
+  {
+    "ts": "2026-05-06 10:01 UTC",
+    "type": "52w_high",
+    "ticker": "QDVE.DE",
+    "message": "QDVE.DE 52W HIGH EUR 39.57"
+  },
+  {
+    "ts": "2026-05-06 10:01 UTC",
+    "type": "52w_high",
+    "ticker": "SEMI.AS",
+    "message": "SEMI.AS 52W HIGH EUR 15.85"
+  },
+  {
+    "ts": "2026-05-06 10:01 UTC",
+    "type": "52w_high",
+    "ticker": "IS3N.DE",
+    "message": "IS3N.DE 52W HIGH EUR 46.59"
+  },
+  {
+    "ts": "2026-05-06 10:01 UTC",
+    "type": "52w_high",
+    "ticker": "SPYY.DE",
+    "message": "SPYY.DE 52W HIGH EUR 267.70"
+  },
+  {
+    "ts": "2026-05-06 10:01 UTC",
+    "type": "52w_high",
+    "ticker": "CAT",
+    "message": "CAT 52W HIGH EUR 768.09"
+  },
+  {
     "ts": "2026-05-06 07:42 UTC",
     "type": "earnings",
     "ticker": "SMHN.DE",
@@ -2956,47 +2998,5 @@
     "type": "movement",
     "ticker": "MU",
     "message": "MU DOWN [CROSSED 3%] | vs morning: -4.2% | vs last check: -4.2% (morning EUR 340.79, last EUR 340.79, now EUR 326.58)"
-  },
-  {
-    "ts": "2026-03-25 15:48 UTC",
-    "type": "movement",
-    "ticker": "SNDK",
-    "message": "SNDK DOWN [CROSSED 3%] | vs morning: -4.9% | vs last check: -4.9% (morning EUR 605.26, last EUR 605.26, now EUR 575.55)"
-  },
-  {
-    "ts": "2026-03-25 10:12 UTC",
-    "type": "digest",
-    "ticker": "",
-    "message": "Morning digest sent at 10:11 UTC"
-  },
-  {
-    "ts": "2026-03-24 21:08 UTC",
-    "type": "movement",
-    "ticker": "SI=F",
-    "message": "SI=F UP | vs morning: +10.0% | vs last check: +2.2% (morning EUR 55.85, last EUR 60.12, now EUR 61.45)"
-  },
-  {
-    "ts": "2026-03-24 21:08 UTC",
-    "type": "movement",
-    "ticker": "GC=F",
-    "message": "GC=F UP [CROSSED 3%] | vs morning: +3.8% | vs last check: +1.5% (morning EUR 3715.09, last EUR 3798.49, now EUR 3857.26)"
-  },
-  {
-    "ts": "2026-03-24 17:44 UTC",
-    "type": "movement",
-    "ticker": "SNDK",
-    "message": "SNDK DOWN [CROSSED 3%] | vs morning: -3.8% | vs last check: -1.0% (morning EUR 617.31, last EUR 600.27, now EUR 594.09)"
-  },
-  {
-    "ts": "2026-03-24 17:44 UTC",
-    "type": "movement",
-    "ticker": "GOOG",
-    "message": "GOOG DOWN [CROSSED 3%] | vs morning: -3.5% | vs last check: -0.9% (morning EUR 259.89, last EUR 252.90, now EUR 250.68)"
-  },
-  {
-    "ts": "2026-03-24 17:44 UTC",
-    "type": "movement",
-    "ticker": "MSFT",
-    "message": "MSFT DOWN [CROSSED 3%] | vs morning: -3.1% | vs last check: -0.1% (morning EUR 332.13, last EUR 322.26, now EUR 321.88)"
   }
 ]
