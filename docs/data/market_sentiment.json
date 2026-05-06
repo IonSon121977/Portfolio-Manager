@@ -5,31 +5,31 @@
     "color": "#a8d68a",
     "components": {
       "vix": {
-        "value": 17.16,
+        "value": 17.23,
         "score": 60,
         "contribution": 2.0,
         "interpretation": "Calm"
       },
       "eurusd": {
-        "value": 1.1756,
-        "chg_pct": 0.41,
+        "value": 1.1754,
+        "chg_pct": 0.39,
         "score": 65,
         "contribution": 2.2,
         "interpretation": "Risk-on"
       },
       "stoxx50": {
-        "value": 6024.8999,
-        "ma50": 5824.6484,
-        "pct_from_ma": 3.44,
+        "value": 6027.1299,
+        "ma50": 5824.693,
+        "pct_from_ma": 3.48,
         "above_ma50": true,
         "score": 65,
         "contribution": 3.8,
         "interpretation": "Uptrend"
       },
       "dax": {
-        "value": 24918.8398,
-        "ma50": 23817.2671,
-        "pct_from_ma": 4.63,
+        "value": 24918.6895,
+        "ma50": 23817.2641,
+        "pct_from_ma": 4.62,
         "above_ma50": true,
         "score": 65,
         "contribution": 2.2,
@@ -46,39 +46,39 @@
     "vix": {
       "ticker": "^VIX",
       "label": "VIX",
-      "price": 17.16,
+      "price": 17.23,
       "prev": 17.4,
-      "chg_pct": -1.38,
-      "ma50": 22.1084,
+      "chg_pct": -0.98,
+      "ma50": 22.1098,
       "above_ma50": false
     },
     "eurusd": {
       "ticker": "EURUSD=X",
       "label": "EUR/USD",
-      "price": 1.1756,
+      "price": 1.1754,
       "prev": 1.1708,
-      "chg_pct": 0.41,
+      "chg_pct": 0.39,
       "ma50": 1.1642,
       "above_ma50": true
     },
     "stoxx50": {
       "ticker": "^STOXX50E",
       "label": "Euro Stoxx 50",
-      "price": 6024.8999,
+      "price": 6027.1299,
       "prev": 5866.8999,
-      "chg_pct": 2.69,
-      "ma50": 5824.6484,
+      "chg_pct": 2.73,
+      "ma50": 5824.693,
       "above_ma50": true
     },
     "dax": {
       "ticker": "^GDAXI",
       "label": "DAX",
-      "price": 24918.8398,
-      "prev": 24393.1602,
-      "chg_pct": 2.16,
-      "ma50": 23817.2671,
+      "price": 24918.6895,
+      "prev": 24401.7,
+      "chg_pct": 2.12,
+      "ma50": 23817.2641,
       "above_ma50": true
     }
   },
-  "updated": "2026-05-06T15:28:59.231397"
+  "updated": "2026-05-06T16:45:45.963713"
 }
