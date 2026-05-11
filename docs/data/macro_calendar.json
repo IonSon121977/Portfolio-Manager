@@ -1,28 +1,6 @@
 {
   "events": [
     {
-      "date": "2026-05-12",
-      "time": "14:30 CET",
-      "currency": "USD",
-      "impact": "\ud83d\udd34 High",
-      "impact_raw": "high",
-      "title": "US CPI (Consumer Price Index)",
-      "forecast": "",
-      "previous": "",
-      "source": "BLS via FRED"
-    },
-    {
-      "date": "2026-05-20",
-      "time": "11:00 CET",
-      "currency": "EUR",
-      "impact": "\ud83d\udd34 High",
-      "impact_raw": "high",
-      "title": "Eurozone HICP (Flash CPI)",
-      "forecast": "",
-      "previous": "",
-      "source": "Eurostat via FRED"
-    },
-    {
       "date": "2026-06-04",
       "time": "13:15 CET",
       "currency": "EUR",
@@ -57,32 +35,6 @@
     }
   ],
   "by_date": {
-    "2026-05-12": [
-      {
-        "date": "2026-05-12",
-        "time": "14:30 CET",
-        "currency": "USD",
-        "impact": "\ud83d\udd34 High",
-        "impact_raw": "high",
-        "title": "US CPI (Consumer Price Index)",
-        "forecast": "",
-        "previous": "",
-        "source": "BLS via FRED"
-      }
-    ],
-    "2026-05-20": [
-      {
-        "date": "2026-05-20",
-        "time": "11:00 CET",
-        "currency": "EUR",
-        "impact": "\ud83d\udd34 High",
-        "impact_raw": "high",
-        "title": "Eurozone HICP (Flash CPI)",
-        "forecast": "",
-        "previous": "",
-        "source": "Eurostat via FRED"
-      }
-    ],
     "2026-06-04": [
       {
         "date": "2026-06-04",
@@ -123,6 +75,6 @@
   },
   "from_date": "2026-05-11",
   "to_date": "2026-06-08",
-  "updated": "2026-05-11T15:58:25.861350",
-  "count": 5
+  "updated": "2026-05-11T17:28:02.290220",
+  "count": 3
 }
