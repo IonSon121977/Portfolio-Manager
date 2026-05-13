@@ -1,35 +1,35 @@
 {
   "composite": {
-    "score": 52,
+    "score": 54,
     "label": "Neutral",
     "color": "#f6ad55",
     "components": {
       "vix": {
-        "value": 18.09,
+        "value": 17.88,
         "score": 60,
         "contribution": 2.0,
         "interpretation": "Calm"
       },
       "eurusd": {
-        "value": 1.1745,
-        "chg_pct": -0.36,
-        "score": 35,
-        "contribution": -2.2,
-        "interpretation": "Risk-off"
+        "value": 1.171,
+        "chg_pct": -0.28,
+        "score": 50,
+        "contribution": 0.0,
+        "interpretation": "Neutral"
       },
       "stoxx50": {
-        "value": 5808.4502,
-        "ma50": 5805.1466,
-        "pct_from_ma": 0.06,
+        "value": 5830.6401,
+        "ma50": 5798.9912,
+        "pct_from_ma": 0.55,
         "above_ma50": true,
         "score": 55,
         "contribution": 1.2,
         "interpretation": "Uptrend"
       },
       "dax": {
-        "value": 23954.9297,
-        "ma50": 23754.5495,
-        "pct_from_ma": 0.84,
+        "value": 24106.8203,
+        "ma50": 23731.0007,
+        "pct_from_ma": 1.58,
         "above_ma50": true,
         "score": 55,
         "contribution": 0.8,
@@ -46,39 +46,39 @@
     "vix": {
       "ticker": "^VIX",
       "label": "VIX",
-      "price": 18.09,
-      "prev": 18.37,
-      "chg_pct": -1.52,
-      "ma50": 21.9706,
+      "price": 17.88,
+      "prev": 17.99,
+      "chg_pct": -0.61,
+      "ma50": 21.8548,
       "above_ma50": false
     },
     "eurusd": {
       "ticker": "EURUSD=X",
       "label": "EUR/USD",
-      "price": 1.1745,
-      "prev": 1.1788,
-      "chg_pct": -0.36,
-      "ma50": 1.164,
+      "price": 1.171,
+      "prev": 1.1743,
+      "chg_pct": -0.28,
+      "ma50": 1.1643,
       "above_ma50": true
     },
     "stoxx50": {
       "ticker": "^STOXX50E",
       "label": "Euro Stoxx 50",
-      "price": 5808.4502,
-      "prev": 5895.0298,
-      "chg_pct": -1.47,
-      "ma50": 5805.1466,
+      "price": 5830.6401,
+      "prev": 5808.04,
+      "chg_pct": 0.39,
+      "ma50": 5798.9912,
       "above_ma50": true
     },
     "dax": {
       "ticker": "^GDAXI",
       "label": "DAX",
-      "price": 23954.9297,
-      "prev": 24350.28,
-      "chg_pct": -1.62,
-      "ma50": 23754.5495,
+      "price": 24106.8203,
+      "prev": 23970.75,
+      "chg_pct": 0.57,
+      "ma50": 23731.0007,
       "above_ma50": true
     }
   },
-  "updated": "2026-05-12T19:00:28.409946"
+  "updated": "2026-05-13T10:01:03.883462"
 }
