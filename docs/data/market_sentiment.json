@@ -5,14 +5,14 @@
     "color": "#f6ad55",
     "components": {
       "vix": {
-        "value": 17.84,
+        "value": 17.85,
         "score": 60,
         "contribution": 2.0,
         "interpretation": "Calm"
       },
       "eurusd": {
-        "value": 1.1712,
-        "chg_pct": -0.07,
+        "value": 1.1711,
+        "chg_pct": -0.08,
         "score": 50,
         "contribution": 0.0,
         "interpretation": "Neutral"
@@ -27,8 +27,8 @@
         "interpretation": "Uptrend"
       },
       "dax": {
-        "value": 24442.3105,
-        "ma50": 23727.6868,
+        "value": 24442.9707,
+        "ma50": 23727.7,
         "pct_from_ma": 3.01,
         "above_ma50": true,
         "score": 65,
@@ -46,18 +46,18 @@
     "vix": {
       "ticker": "^VIX",
       "label": "VIX",
-      "price": 17.84,
+      "price": 17.85,
       "prev": 17.87,
-      "chg_pct": -0.17,
-      "ma50": 21.7884,
+      "chg_pct": -0.11,
+      "ma50": 21.7886,
       "above_ma50": false
     },
     "eurusd": {
       "ticker": "EURUSD=X",
       "label": "EUR/USD",
-      "price": 1.1712,
+      "price": 1.1711,
       "prev": 1.1721,
-      "chg_pct": -0.07,
+      "chg_pct": -0.08,
       "ma50": 1.1645,
       "above_ma50": true
     },
@@ -73,12 +73,12 @@
     "dax": {
       "ticker": "^GDAXI",
       "label": "DAX",
-      "price": 24442.3105,
+      "price": 24442.9707,
       "prev": 24102.4297,
       "chg_pct": 1.41,
-      "ma50": 23727.6868,
+      "ma50": 23727.7,
       "above_ma50": true
     }
   },
-  "updated": "2026-05-14T09:45:17.907238"
+  "updated": "2026-05-14T11:21:08.915701"
 }
