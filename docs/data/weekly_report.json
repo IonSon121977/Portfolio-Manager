@@ -1,203 +1,77 @@
 {
-  "week_from": "Mon 11 May",
-  "week_to": "Fri 15 May",
-  "week_from_iso": "2026-05-11",
-  "week_to_iso": "2026-05-15",
+  "week_from": "Mon 18 May",
+  "week_to": "Fri 22 May",
+  "week_from_iso": "2026-05-18",
+  "week_to_iso": "2026-05-22",
   "earnings": {
-    "ENR.DE": [
+    "NVDA": [
       {
-        "date": "2026-05-12",
+        "date": "2026-05-20",
         "hour": "",
-        "eps_estimate": 0.97,
+        "eps_estimate": 1.78,
         "eps_actual": null,
-        "revenue_est": 10691592300.0,
+        "revenue_est": 79166840620.0,
         "revenue_act": null,
         "quarter": 2,
         "year": 2026,
-        "ticker": "ENR.DE",
-        "name": "Siemens Energy"
-      }
-    ],
-    "VH2.DE": [
-      {
-        "date": "2026-05-12",
-        "hour": "",
-        "eps_estimate": 5.0625,
-        "eps_actual": null,
-        "revenue_est": 0.0,
-        "revenue_act": null,
-        "quarter": 2,
-        "year": 2026,
-        "ticker": "VH2.DE",
-        "name": "Friedrich Vorwerk Group"
-      }
-    ],
-    "GBF.DE": [
-      {
-        "date": "2026-05-13",
-        "hour": "",
-        "eps_estimate": 1.07,
-        "eps_actual": null,
-        "revenue_est": 0.0,
-        "revenue_act": null,
-        "quarter": 2,
-        "year": 2026,
-        "ticker": "GBF.DE",
-        "name": "Bilfinger"
-      }
-    ],
-    "ALV.DE": [
-      {
-        "date": "2026-05-13",
-        "hour": "",
-        "eps_estimate": 9.61,
-        "eps_actual": null,
-        "revenue_est": 0.0,
-        "revenue_act": null,
-        "quarter": 2,
-        "year": 2026,
-        "ticker": "ALV.DE",
-        "name": "Allianz SE"
+        "ticker": "NVDA",
+        "name": "NVIDIA"
       }
     ]
   },
   "dividends": {
-    "AAPL": [
+    "HO.PA": [
       {
-        "ex_date": "2026-05-11",
-        "pay_date": "2026-05-14",
-        "record_date": "",
-        "amount": 0.26,
-        "currency": "USD",
-        "freq": "",
-        "ticker": "AAPL",
-        "name": "Apple"
-      }
-    ],
-    "SU.PA": [
-      {
-        "ex_date": "2026-05-11",
+        "ex_date": "2026-05-18",
         "pay_date": "None",
         "record_date": "",
-        "amount": 4.2,
+        "amount": 2.95,
         "currency": "EUR",
         "freq": "",
-        "ticker": "SU.PA",
-        "name": "Schneider Electric S.E."
+        "ticker": "HO.PA",
+        "name": "Thales"
       }
     ],
-    "ASM.AS": [
+    "MSFT": [
       {
-        "ex_date": "2026-05-13",
-        "pay_date": "None",
+        "ex_date": "2026-05-21",
+        "pay_date": "2026-06-11",
         "record_date": "",
-        "amount": 3.25,
-        "currency": "EUR",
-        "freq": "",
-        "ticker": "ASM.AS",
-        "name": "ASM International (ASMI)"
-      }
-    ],
-    "BP.L": [
-      {
-        "ex_date": "2026-05-14",
-        "pay_date": "None",
-        "record_date": "",
-        "amount": 0.0832,
-        "currency": "GBp",
-        "freq": "",
-        "ticker": "BP.L",
-        "name": "BP plc"
-      }
-    ],
-    "HSBA.L": [
-      {
-        "ex_date": "2026-05-14",
-        "pay_date": "None",
-        "record_date": "",
-        "amount": 0.1,
-        "currency": "GBp",
-        "freq": "",
-        "ticker": "HSBA.L",
-        "name": "HSBC Holdings"
-      }
-    ],
-    "LLY": [
-      {
-        "ex_date": "2026-05-15",
-        "pay_date": "2026-06-10",
-        "record_date": "",
-        "amount": 1.73,
+        "amount": 0.91,
         "currency": "USD",
         "freq": "",
-        "ticker": "LLY",
-        "name": "Eli Lilly"
+        "ticker": "MSFT",
+        "name": "Microsoft"
+      }
+    ],
+    "GBF.DE": [
+      {
+        "ex_date": "2026-05-21",
+        "pay_date": "None",
+        "record_date": "",
+        "amount": 2.8,
+        "currency": "EUR",
+        "freq": "",
+        "ticker": "GBF.DE",
+        "name": "Bilfinger"
+      }
+    ],
+    "MILDEF.ST": [
+      {
+        "ex_date": "2026-05-22",
+        "pay_date": "None",
+        "record_date": "",
+        "amount": 0.75,
+        "currency": "SEK",
+        "freq": "",
+        "ticker": "MILDEF.ST",
+        "name": "MilDef Group"
       }
     ]
   },
   "splits": {},
   "ipos": [],
   "dividend_calendar": [
-    {
-      "ex_date": "2026-05-11",
-      "pay_date": "2026-05-14",
-      "record_date": "",
-      "amount": 0.26,
-      "currency": "USD",
-      "freq": "",
-      "ticker": "AAPL",
-      "name": "Apple"
-    },
-    {
-      "ex_date": "2026-05-11",
-      "pay_date": "None",
-      "record_date": "",
-      "amount": 4.2,
-      "currency": "EUR",
-      "freq": "",
-      "ticker": "SU.PA",
-      "name": "Schneider Electric S.E."
-    },
-    {
-      "ex_date": "2026-05-13",
-      "pay_date": "None",
-      "record_date": "",
-      "amount": 3.25,
-      "currency": "EUR",
-      "freq": "",
-      "ticker": "ASM.AS",
-      "name": "ASM International (ASMI)"
-    },
-    {
-      "ex_date": "2026-05-14",
-      "pay_date": "None",
-      "record_date": "",
-      "amount": 0.0832,
-      "currency": "GBp",
-      "freq": "",
-      "ticker": "BP.L",
-      "name": "BP plc"
-    },
-    {
-      "ex_date": "2026-05-14",
-      "pay_date": "None",
-      "record_date": "",
-      "amount": 0.1,
-      "currency": "GBp",
-      "freq": "",
-      "ticker": "HSBA.L",
-      "name": "HSBC Holdings"
-    },
-    {
-      "ex_date": "2026-05-15",
-      "pay_date": "2026-06-10",
-      "record_date": "",
-      "amount": 1.73,
-      "currency": "USD",
-      "freq": "",
-      "ticker": "LLY",
-      "name": "Eli Lilly"
-    },
     {
       "ex_date": "2026-05-18",
       "pay_date": "None",
@@ -267,8 +141,18 @@
       "freq": "",
       "ticker": "SMHN.DE",
       "name": "S\u00dcSS MicroTec"
+    },
+    {
+      "ex_date": "2026-06-08",
+      "pay_date": "2026-06-15",
+      "record_date": "",
+      "amount": 0.21,
+      "currency": "USD",
+      "freq": "",
+      "ticker": "GOOG",
+      "name": "Alphabet (Google) Class C"
     }
   ],
   "ai_brief": "",
-  "generated": "2026-05-09T10:13:54.119660"
+  "generated": "2026-05-16T10:23:21.497145"
 }
