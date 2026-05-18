@@ -120,6 +120,30 @@ def fetch_next_week_calendar(cfg: dict) -> dict:
     }
 
 
+def fetch_earnings_calendar_4w(cfg: dict) -> list:
+    """
+    Fetch upcoming earnings calls for all holdings over the next 4 weeks.
+    Returns a flat list sorted by date, each entry includes ticker, name,
+    date, hour, eps_estimate, revenue_est, quarter, year.
+    """
+    from_date    = date.today().isoformat()
+    to_date      = (date.today() + timedelta(weeks=4)).isoformat()
+    all_holdings = cfg["portfolio"]["stocks"] + cfg["portfolio"]["etfs"]
+    results      = []
+
+    for h in all_holdings:
+        ticker = (h.get("ticker") or "").strip()
+        name   = h.get("name", ticker)
+        if not ticker:
+            continue
+        for e in get_earnings_calendar(ticker, from_date=from_date, to_date=to_date):
+            results.append(dict(e, ticker=ticker, name=name))
+
+    results.sort(key=lambda x: x.get("date", ""))
+    log.info("  4-week earnings calendar: " + str(len(results)) + " events")
+    return results
+
+
 def fetch_dividend_calendar_4w(cfg: dict) -> list:
     """
     Fetch upcoming ex-dividend dates for all holdings over the next 4 weeks.
@@ -298,6 +322,9 @@ def main():
     next_mon = calendar["next_mon"]
     next_fri = calendar["next_fri"]
 
+    log.info("--- Fetching 4-week earnings calendar ---")
+    earnings_calendar_4w = fetch_earnings_calendar_4w(cfg)
+
     log.info("--- Fetching 4-week dividend calendar ---")
     dividend_calendar_4w = fetch_dividend_calendar_4w(cfg)
 
@@ -358,6 +385,7 @@ def main():
       "dividends":          div_map,
       "splits":             split_map,
       "ipos":               [],
+      "earnings_calendar":  earnings_calendar_4w,
       "dividend_calendar":  dividend_calendar_4w,
       "ai_brief":           ai_brief,
       "generated":          datetime.utcnow().isoformat(),
