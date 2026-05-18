@@ -328,8 +328,17 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
 
   <!-- Search + Filters -->
   <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:16px">
-    <input type="text" id="sc-search" placeholder="Search by ticker or name…"
-      oninput="renderScores()" style="max-width:400px">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+      <input type="text" id="sc-search" placeholder="Search by ticker or name…"
+        oninput="renderScores()" style="max-width:300px;flex:1;min-width:200px">
+      <div style="display:flex;align-items:center;gap:6px">
+        <label style="margin:0;white-space:nowrap">Sector:</label>
+        <select id="sc-sector" onchange="renderScores()"
+          style="background:var(--s2);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:7px 10px;font-family:var(--ff);font-size:12px;min-width:160px">
+          <option value="">All sectors</option>
+        </select>
+      </div>
+    </div>
 
     <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
       <div style="display:flex;align-items:center;gap:6px">
@@ -399,9 +408,11 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
           <th onclick="scSort('roe')"       style="cursor:pointer">ROE % <span id="scs-roe"></span></th>
           <th onclick="scSort('margin')"    style="cursor:pointer">Margin % <span id="scs-margin"></span></th>
           <th onclick="scSort('beta')"      style="cursor:pointer">Beta <span id="scs-beta"></span></th>
+          <th onclick="scSort('divyield')"  style="cursor:pointer">Div Yield <span id="scs-divyield"></span></th>
+          <th onclick="scSort('sector')"    style="cursor:pointer">Sector <span id="scs-sector"></span></th>
         </tr>
       </thead>
-      <tbody id="tb-scores"><tr><td colspan="10" class="empty">Loading fundamentals…</td></tr></tbody>
+      <tbody id="tb-scores"><tr><td colspan="12" class="empty">Loading fundamentals…</td></tr></tbody>
     </table>
   </div>
 
@@ -468,10 +479,10 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
     <!-- Analyst Upside -->
     <div class="cb2">
       <h3>🎯 Analyst Price Targets</h3>
-      <p style="color:var(--muted);font-size:11px;margin-bottom:12px">Upside/downside % from current price to analyst mean target</p>
+      <p style="color:var(--muted);font-size:11px;margin-bottom:12px">Upside/downside % from current price to analyst mean target. Range bar shows low → mean → high consensus.</p>
       <div class="tbox"><table>
         <thead><tr>
-          <th>Ticker</th><th>Price EUR</th><th>Target EUR</th><th>Upside %</th><th>Analysts</th>
+          <th>Ticker</th><th>Price EUR</th><th>Target Range EUR</th><th>Upside %</th><th>Analysts</th>
         </tr></thead>
         <tbody id="tb-upside"><tr><td colspan="5" class="empty">Loading…</td></tr></tbody>
       </table></div>
@@ -508,7 +519,7 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
   <!-- Revenue vs Earnings Trend — full width -->
   <div class="cb2" style="margin-top:20px">
     <h3>📊 Revenue vs Net Income Trend</h3>
-    <p style="color:var(--muted);font-size:11px;margin-bottom:16px">Last 4 quarters per holding — is the business actually growing?</p>
+    <p style="color:var(--muted);font-size:11px;margin-bottom:16px">Last 4 quarters per holding — revenue, net income and EBITDA margin.</p>
     <div id="mi-rev-trend"><div class="empty">Loading…</div></div>
   </div>
 </div>
@@ -630,11 +641,11 @@ pre{background:var(--s2);border:1px solid var(--border);border-radius:8px;paddin
   </div>
 
   <div class="sh" style="margin-top:4px">
-    <div class="st" style="font-size:13px;color:var(--intel)">📅 Earnings Calls</div>
+    <div class="st" style="font-size:13px;color:var(--intel)">📅 Earnings Calls <span style="color:var(--muted);font-size:11px;font-weight:400">· Next 4 weeks</span></div>
     <div class="bdg" id="wr-earn-cnt">0</div>
   </div>
   <div class="tbox" id="wr-earnings-wrap">
-    <div class="empty">No earnings calls for your holdings next week.</div>
+    <div class="empty">No earnings calls for your holdings in the next 4 weeks.</div>
   </div>
 
   <!-- EX-DIVIDEND 4-WEEK CALENDAR -->
@@ -1451,7 +1462,7 @@ function renderWeekly() {
   const divs   = wr.dividends || {};
   const splits = wr.splits    || {};
   const ipos   = wr.ipos      || [];
-  const nEarn  = Object.values(earn).flat().length;
+  const nEarn  = wr.earnings_calendar ? wr.earnings_calendar.length : Object.values(earn).flat().length;
   const nSplit = Object.values(splits).flat().length;
   const nIpo   = ipos.length;
 
@@ -1474,7 +1485,13 @@ function renderWeekly() {
   const setHtml = (id, html) => { const el = document.getElementById(id); if(el) el.innerHTML = html; };
 
   // ── Earnings ────────────────────────────────────────────────────────────────
-  const earnFlat = Object.entries(earn).flatMap(([t,evts])=>evts.map(e=>({t,...e}))).sort((a,b)=>a.date.localeCompare(b.date));
+  // Use 4-week earnings_calendar if available, else fall back to single-week earnings map
+  let earnFlat;
+  if (wr.earnings_calendar && wr.earnings_calendar.length >= 0) {
+    earnFlat = [...wr.earnings_calendar].sort((a, b) => a.date.localeCompare(b.date));
+  } else {
+    earnFlat = Object.entries(earn).flatMap(([t,evts])=>evts.map(e=>({t,...e}))).sort((a,b)=>a.date.localeCompare(b.date));
+  }
   const hourLbl  = h => ({'bmo':'Before open','amc':'After close','dmh':'During mkt'}[h]||h||'—');
   const fmtEps   = v => v != null ? (v >= 0 ? '+' : '') + Number(v).toFixed(2) : '—';
   const fmtRev   = v => {
@@ -1484,18 +1501,56 @@ function renderWeekly() {
     if (n >= 1e6)  return '$' + (n/1e6).toFixed(1)  + 'M';
     return '$' + n.toFixed(0);
   };
-  setHtml('wr-earnings-wrap', earnFlat.length ? tbl(
-    ['Date','Ticker','Company','Quarter','When','EPS Est.','Revenue Est.'],
-    earnFlat.map(e=>`<tr>
-      ${td(e.date,'color:var(--muted)')}
-      ${td(tkBadge(e.t))}
-      ${td(`<span style="color:var(--muted);font-size:11px">${(e.name||'').slice(0,24)}</span>`)}
-      ${td(e.quarter ? `Q${e.quarter} ${e.year||''}` : '—','color:var(--muted)')}
-      ${td(hourLbl(e.hour),'color:var(--muted);font-size:11px')}
-      ${td(fmtEps(e.eps_estimate),'color:var(--lime);font-weight:600')}
-      ${td(fmtRev(e.revenue_est),'color:var(--lime)')}
-    </tr>`)
-  ) : '<div class="empty">No earnings calls for your holdings next week.</div>');
+  if (earnFlat.length) {
+    // Group earnings by ISO week (Mon-Fri bucket)
+    const getWeekKey = dateStr => {
+      const d = new Date(dateStr + 'T00:00:00');
+      const day = d.getDay(); // 0=Sun,1=Mon...6=Sat
+      const diffToMon = (day === 0) ? -6 : 1 - day;
+      const mon = new Date(d); mon.setDate(d.getDate() + diffToMon);
+      const fri = new Date(mon); fri.setDate(mon.getDate() + 4);
+      const fmt = dt => dt.toISOString().slice(0,10);
+      return { key: fmt(mon), mon: fmt(mon), fri: fmt(fri) };
+    };
+    const fmtWeekLabel = isoDate => {
+      const d = new Date(isoDate + 'T00:00:00');
+      return d.toLocaleDateString('en-GB', { day:'numeric', month:'short' });
+    };
+    const todayIso = new Date().toISOString().slice(0,10);
+    const weekBuckets = [];
+    const weekIndex = {};
+    earnFlat.forEach(e => {
+      const { key, mon, fri } = getWeekKey(e.date);
+      if (!weekIndex[key]) {
+        weekIndex[key] = { mon, fri, events: [] };
+        weekBuckets.push(weekIndex[key]);
+      }
+      weekIndex[key].events.push(e);
+    });
+    const earnHtml = weekBuckets.map(wk => {
+      const isCurrentWk = todayIso >= wk.mon && todayIso <= wk.fri;
+      const label = isCurrentWk
+        ? `📅 This week: ${fmtWeekLabel(wk.mon)} → ${fmtWeekLabel(wk.fri)}`
+        : `📅 ${fmtWeekLabel(wk.mon)} → ${fmtWeekLabel(wk.fri)}`;
+      const weekHeader = `<tr><td colspan="7" style="padding:10px 14px 6px;background:var(--s2);color:var(--intel);font-size:11px;font-weight:600;letter-spacing:0.5px;border-bottom:1px solid var(--border)">${label}</td></tr>`;
+      const rows = wk.events.map(e => {
+        const ticker = e.ticker || e.t || '';
+        return `<tr>
+          ${td(e.date,'color:var(--muted)')}
+          ${td(tkBadge(ticker))}
+          ${td(`<span style="color:var(--muted);font-size:11px">${(e.name||'').slice(0,24)}</span>`)}
+          ${td(e.quarter ? `Q${e.quarter} ${e.year||''}` : '—','color:var(--muted)')}
+          ${td(hourLbl(e.hour),'color:var(--muted);font-size:11px')}
+          ${td(fmtEps(e.eps_estimate),'color:var(--lime);font-weight:600')}
+          ${td(fmtRev(e.revenue_est),'color:var(--lime)')}
+        </tr>`;
+      }).join('');
+      return weekHeader + rows;
+    }).join('');
+    setHtml('wr-earnings-wrap', `<table style="width:100%;border-collapse:collapse"><thead><tr>${['Date','Ticker','Company','Quarter','When','EPS Est.','Revenue Est.'].map(th).join('')}</tr></thead><tbody>${earnHtml}</tbody></table>`);
+  } else {
+    setHtml('wr-earnings-wrap', '<div class="empty">No earnings calls for your holdings in the next 4 weeks.</div>');
+  }
 
   // ── Splits ───────────────────────────────────────────────────────────────────
   const splitFlat = Object.entries(splits).flatMap(([t,evts])=>evts.map(s=>({t,...s}))).sort((a,b)=>a.date.localeCompare(b.date));
@@ -1659,7 +1714,7 @@ function calcScore(h) {
 
   // ── QUALITY PILLAR (0-100) ──────────────────────────────────────────────
   // Based on Piotroski F-score components + profitability metrics
-  // Weighted: ROE 30%, profit margin 25%, revenue growth 20%, debt 15%, liquidity 10%
+  // Weighted: ROE 25%, profit margin 20%, gross margin 15%, revenue growth 15%, debt 15%, liquidity 10%
   const bd = { quality: {}, value: {}, momentum: {} };
   let qPoints = 0, qMax = 0;
 
@@ -1668,38 +1723,50 @@ function calcScore(h) {
     qPoints += pts; qMax += maxPts;
   }
 
-  // ROE — Springer (2020): primary quality signal, weight 30%
+  // ROE — Springer (2020): primary quality signal, weight 25%
   if (roe != null) {
-    const p = roe > 25 ? 30 : roe > 15 ? 22 : roe > 10 ? 15 : roe > 0 ? 8 : 0;
+    const p = roe > 25 ? 25 : roe > 15 ? 18 : roe > 10 ? 12 : roe > 0 ? 6 : 0;
     const r = roe > 25 ? 'Excellent — top quartile (>25%)' :
               roe > 15 ? 'Good (15-25%)' :
               roe > 10 ? 'Fair (10-15%)' :
               roe > 0  ? 'Weak but positive (<10%)' : 'Negative — destroying equity value';
-    qAdd('ROE', roe, p, 30, r);
-  } else qAdd('ROE', null, 0, 30, 'Not available');
+    qAdd('ROE', roe, p, 25, r);
+  } else qAdd('ROE', null, 0, 25, 'Not available');
 
-  // Profit margin — Piotroski: earnings quality signal, weight 25%
+  // Profit margin — Piotroski: earnings quality signal, weight 20%
   if (margin != null) {
-    const p = margin > 20 ? 25 : margin > 10 ? 18 : margin > 5 ? 12 :
-              margin > 0  ? 6  : 0;
+    const p = margin > 20 ? 20 : margin > 10 ? 14 : margin > 5 ? 9 :
+              margin > 0  ? 4  : 0;
     const r = margin > 20 ? 'Excellent — high-margin business (>20%)' :
               margin > 10 ? 'Good (10-20%)' :
               margin > 5  ? 'Moderate (5-10%)' :
               margin > 0  ? 'Thin margin (<5%)' : 'Loss-making — negative margin';
-    qAdd('Profit Margin', margin, p, 25, r);
-  } else qAdd('Profit Margin', null, 0, 25, 'Not available');
+    qAdd('Profit Margin', margin, p, 20, r);
+  } else qAdd('Profit Margin', null, 0, 20, 'Not available');
 
-  // Revenue growth — forward-looking quality signal, weight 20%
+  // Gross margin — moat indicator: high gross margin = pricing power / competitive advantage, weight 15%
+  if (gmarg != null) {
+    const p = gmarg > 60 ? 15 : gmarg > 40 ? 12 : gmarg > 25 ? 8 :
+              gmarg > 10 ? 4  : 0;
+    const r = gmarg > 60 ? 'Exceptional — strong moat / pricing power (>60%)' :
+              gmarg > 40 ? 'Good — solid competitive advantage (40-60%)' :
+              gmarg > 25 ? 'Moderate — typical for industrials/retail (25-40%)' :
+              gmarg > 10 ? 'Thin gross margin (<25%) — cost-driven business' :
+                           'Very thin or negative gross margin';
+    qAdd('Gross Margin', gmarg, p, 15, r);
+  } else qAdd('Gross Margin', null, 0, 15, 'Not available');
+
+  // Revenue growth — forward-looking quality signal, weight 15%
   if (revG != null) {
-    const p = revG > 20 ? 20 : revG > 10 ? 15 : revG > 5 ? 10 :
-              revG > 0  ? 5  : revG > -5 ? 2 : 0;
+    const p = revG > 20 ? 15 : revG > 10 ? 11 : revG > 5 ? 8 :
+              revG > 0  ? 4  : revG > -5 ? 1 : 0;
     const r = revG > 20 ? 'Strong growth (>20%)' :
               revG > 10 ? 'Good growth (10-20%)' :
               revG > 5  ? 'Moderate growth (5-10%)' :
               revG > 0  ? 'Slow growth (<5%)' :
               revG > -5 ? 'Slight decline' : 'Revenue declining significantly';
-    qAdd('Revenue Growth', revG, p, 20, r);
-  } else qAdd('Revenue Growth', null, 0, 20, 'Not available');
+    qAdd('Revenue Growth', revG, p, 15, r);
+  } else qAdd('Revenue Growth', null, 0, 15, 'Not available');
 
   // Debt/Equity — Piotroski: financial leverage signal, weight 15%
   if (de != null) {
@@ -1723,53 +1790,80 @@ function calcScore(h) {
     qAdd('Current Ratio', cr, p, 10, r);
   } else qAdd('Current Ratio', null, 0, 10, 'Not available');
 
+  // Quick Ratio — display-only (no score weight): excludes inventory, more conservative
+  // Shown in breakdown panel to complement Current Ratio
+  if (qr != null) {
+    const r = qr > 1.5 ? 'Strong (QR > 1.5) — ample liquid assets' :
+              qr > 1   ? 'Good (QR 1-1.5) — covers short-term obligations' :
+              qr > 0.7 ? 'Adequate (QR 0.7-1) — watch closely' :
+                         'Weak (QR < 0.7) — potential short-term stress';
+    qAdd('Quick Ratio ℹ', qr, 0, 0, r + ' [informational — not scored]');
+  }
+
   const qualityScore = qMax > 0 ? Math.round(qPoints / qMax * 100) : 50;
 
   // ── VALUE PILLAR (0-100) ────────────────────────────────────────────────
   // Springer (2020): P/B is most important value factor, P/E secondary
-  // P/B 45%, P/E 35%, P/S 20%
+  // P/B 35%, P/E 30%, FCF Yield 25%, P/S 10%
   let vPoints = 0, vMax = 0;
+
+  // FCF Yield = free_cashflow / market_cap (both from yfinance)
+  const fcfYield = (h.free_cashflow != null && h.market_cap != null && h.market_cap > 0)
+    ? (h.free_cashflow / h.market_cap) * 100
+    : null;
 
   function vAdd(label, val, pts, maxPts, reason) {
     bd.value[label] = { value: val, contribution: pts, max: maxPts, reason };
     vPoints += pts; vMax += maxPts;
   }
 
-  // P/B — Springer (2020): primary value factor, weight 45%
+  // P/B — Springer (2020): primary value factor, weight 35%
   if (pb != null && pb > 0) {
-    const p = pb < 1   ? 45 : pb < 1.5 ? 36 : pb < 2.5 ? 27 :
-              pb < 4   ? 18 : pb < 6   ? 9  : 0;
+    const p = pb < 1   ? 35 : pb < 1.5 ? 28 : pb < 2.5 ? 21 :
+              pb < 4   ? 14 : pb < 6   ? 7  : 0;
     const r = pb < 1   ? 'Trading below book value — deep value' :
               pb < 1.5 ? 'Good value (P/B < 1.5)' :
               pb < 2.5 ? 'Fair value (P/B 1.5-2.5)' :
               pb < 4   ? 'Moderate premium (P/B 2.5-4)' :
               pb < 6   ? 'High premium (P/B 4-6)' : 'Very expensive vs book value';
-    vAdd('P/B Ratio', pb, p, 45, r);
-  } else vAdd('P/B Ratio', null, 0, 45, 'Not available');
+    vAdd('P/B Ratio', pb, p, 35, r);
+  } else vAdd('P/B Ratio', null, 0, 35, 'Not available');
 
-  // P/E — weight 35%
+  // P/E — weight 30%
   if (pe != null && pe > 0) {
-    const p = pe < 12  ? 35 : pe < 18 ? 28 : pe < 25 ? 21 :
-              pe < 35  ? 12 : pe < 50 ? 5  : 0;
+    const p = pe < 12  ? 30 : pe < 18 ? 24 : pe < 25 ? 18 :
+              pe < 35  ? 10 : pe < 50 ? 4  : 0;
     const r = pe < 12  ? 'Cheap — potentially undervalued (P/E < 12)' :
               pe < 18  ? 'Good value (P/E 12-18)' :
               pe < 25  ? 'Fair (P/E 18-25) — market average' :
               pe < 35  ? 'Moderate premium (P/E 25-35)' :
               pe < 50  ? 'Expensive (P/E 35-50) — needs high growth' :
                          'Very expensive (P/E > 50)';
-    vAdd('P/E Ratio', pe, p, 35, r);
-  } else vAdd('P/E Ratio', null, 0, 35, 'Not available');
+    vAdd('P/E Ratio', pe, p, 30, r);
+  } else vAdd('P/E Ratio', null, 0, 30, 'Not available');
 
-  // P/S — weight 20%
+  // FCF Yield — cash actually generated vs market cap; negative = cash burn, weight 25%
+  if (fcfYield != null) {
+    const p = fcfYield > 8  ? 25 : fcfYield > 5 ? 20 : fcfYield > 3 ? 14 :
+              fcfYield > 0  ? 7  : 0;
+    const r = fcfYield > 8  ? 'Excellent FCF yield (>8%) — cheap on cash generation' :
+              fcfYield > 5  ? 'Good FCF yield (5-8%)' :
+              fcfYield > 3  ? 'Moderate FCF yield (3-5%)' :
+              fcfYield > 0  ? 'Low FCF yield (<3%) — limited cash return' :
+                              'Negative FCF — burning cash';
+    vAdd('FCF Yield', fcfYield, p, 25, r);
+  } else vAdd('FCF Yield', null, 0, 25, 'Not available');
+
+  // P/S — weight 10%
   if (ps != null && ps > 0) {
-    const p = ps < 1  ? 20 : ps < 2 ? 16 : ps < 4 ? 12 :
-              ps < 8  ? 6  : ps < 12? 2  : 0;
+    const p = ps < 1  ? 10 : ps < 2 ? 8 : ps < 4 ? 6 :
+              ps < 8  ? 3  : ps < 12? 1  : 0;
     const r = ps < 1  ? 'Excellent — trading near revenue (P/S < 1)' :
               ps < 2  ? 'Good (P/S 1-2)' :
               ps < 4  ? 'Moderate (P/S 2-4)' :
               ps < 8  ? 'High (P/S 4-8)' : 'Very expensive vs revenue';
-    vAdd('P/S Ratio', ps, p, 20, r);
-  } else vAdd('P/S Ratio', null, 0, 20, 'Not available');
+    vAdd('P/S Ratio', ps, p, 10, r);
+  } else vAdd('P/S Ratio', null, 0, 10, 'Not available');
 
   const valueScore = vMax > 0 ? Math.round(vPoints / vMax * 100) : 50;
 
@@ -1856,17 +1950,28 @@ function renderScores() {
 
   document.getElementById('sc-count').textContent = scored.length;
 
+  // Populate sector dropdown (preserve current selection)
+  const sectorEl = document.getElementById('sc-sector');
+  if (sectorEl) {
+    const currentSector = sectorEl.value;
+    const sectors = [...new Set(scored.map(({h}) => h.sector).filter(Boolean))].sort();
+    sectorEl.innerHTML = '<option value="">All sectors</option>' +
+      sectors.map(s => `<option value="${s}"${s===currentSector?' selected':''}>${s}</option>`).join('');
+  }
+
   // Filters
-  const q        = (document.getElementById('sc-search')?.value    || '').toLowerCase();
-  const minScore = parseFloat(document.getElementById('sc-min-score')?.value) || null;
-  const maxScore = parseFloat(document.getElementById('sc-max-score')?.value) || null;
-  const minPrice = parseFloat(document.getElementById('sc-min-price')?.value) || null;
-  const maxPrice = parseFloat(document.getElementById('sc-max-price')?.value) || null;
-  const minChg   = parseFloat(document.getElementById('sc-min-chg')?.value)   || null;
-  const maxChg   = parseFloat(document.getElementById('sc-max-chg')?.value)   || null;
+  const q          = (document.getElementById('sc-search')?.value    || '').toLowerCase();
+  const sectorF    = document.getElementById('sc-sector')?.value || '';
+  const minScore   = parseFloat(document.getElementById('sc-min-score')?.value) || null;
+  const maxScore   = parseFloat(document.getElementById('sc-max-score')?.value) || null;
+  const minPrice   = parseFloat(document.getElementById('sc-min-price')?.value) || null;
+  const maxPrice   = parseFloat(document.getElementById('sc-max-price')?.value) || null;
+  const minChg     = parseFloat(document.getElementById('sc-min-chg')?.value)   || null;
+  const maxChg     = parseFloat(document.getElementById('sc-max-chg')?.value)   || null;
 
   scFiltered = scored.filter(({h, score}) => {
     if (q && !h.ticker.toLowerCase().includes(q) && !(h.name||'').toLowerCase().includes(q)) return false;
+    if (sectorF && (h.sector||'') !== sectorF) return false;
     if (minScore != null && score < minScore) return false;
     if (maxScore != null && score > maxScore) return false;
     if (minPrice != null && (h.price_eur||0) < minPrice) return false;
@@ -1890,7 +1995,9 @@ function renderScores() {
       case 'pb':     av = a.h.pb_ratio||0;  bv = b.h.pb_ratio||0;  break;
       case 'roe':    av = (a.h.roe||0)*100; bv = (b.h.roe||0)*100; break;
       case 'margin': av = (a.h.profit_margin||0)*100; bv = (b.h.profit_margin||0)*100; break;
-      case 'beta':   av = a.h.beta||0;      bv = b.h.beta||0;      break;
+      case 'beta':     av = a.h.beta||0;                      bv = b.h.beta||0;                      break;
+      case 'divyield': av = (a.h.dividend_yield||0)*100;       bv = (b.h.dividend_yield||0)*100;       break;
+      case 'sector':   av = a.h.sector||'';                    bv = b.h.sector||'';                    break;
       default:       av = a.score;          bv = b.score;
     }
     if (typeof av === 'string') return av.localeCompare(bv) * dir;
@@ -1910,7 +2017,7 @@ function renderScores() {
   document.getElementById('sc-next').disabled = scPage >= maxPages;
 
   // Update sort icons
-  ['symbol','name','score','price','change','pe','pb','roe','margin','beta'].forEach(f => {
+  ['symbol','name','score','price','change','pe','pb','roe','margin','beta','divyield','sector'].forEach(f => {
     const el = document.getElementById('scs-'+f);
     if (el) el.textContent = scSortField===f ? (scSortDir==='asc'?'↑':'↓') : '';
   });
@@ -1923,6 +2030,11 @@ function renderScores() {
     const col  = scoreBadgeColor(score);
     const roe  = h.roe   != null ? (h.roe   * 100).toFixed(1)+'%' : '—';
     const marg = h.profit_margin != null ? (h.profit_margin * 100).toFixed(1)+'%' : '—';
+    const sectorPill = h.sector
+      ? '<span style="background:var(--s3);border:1px solid var(--border);border-radius:4px;padding:1px 7px;font-size:10px;color:var(--muted)">'+h.sector+'</span>'
+      : '<span style="color:var(--dim)">—</span>';
+    const divY = h.dividend_yield != null ? (h.dividend_yield * 100).toFixed(2) + '%' : '—';
+    const divYCol = h.dividend_yield > 0.04 ? 'color:var(--up);font-weight:600' : h.dividend_yield > 0 ? 'color:var(--lime)' : 'color:var(--dim)';
     return '<tr onclick="showBreakdown('+idx+')" style="cursor:pointer" title="Click for score breakdown">'
       + '<td class="tk">'+h.ticker+'</td>'
       + '<td class="nm">'+((h.name||'').slice(0,22))+'</td>'
@@ -1934,8 +2046,10 @@ function renderScores() {
       + '<td class="dm">'+roe+'</td>'
       + '<td class="dm">'+marg+'</td>'
       + '<td class="dm">'+fn(h.beta,2)+'</td>'
+      + '<td class="dm" style="'+divYCol+'">'+divY+'</td>'
+      + '<td>'+sectorPill+'</td>'
       + '</tr>';
-  }).join('') || '<tr><td colspan="10" class="empty">No results match your filters.</td></tr>';
+  }).join('') || '<tr><td colspan="12" class="empty">No results match your filters.</td></tr>';
 }
 
 function scSort(field) {
@@ -1947,7 +2061,7 @@ function scSort(field) {
 }
 
 function clearScoreFilters() {
-  ['sc-search','sc-min-score','sc-max-score','sc-min-price','sc-max-price','sc-min-chg','sc-max-chg']
+  ['sc-search','sc-min-score','sc-max-score','sc-min-price','sc-max-price','sc-min-chg','sc-max-chg','sc-sector']
     .forEach(id => { const el = document.getElementById(id); if(el) el.value=''; });
   scPage = 1;
   renderScores();
@@ -1990,13 +2104,16 @@ function showBreakdown(idx) {
   // Detail cards per pillar
   function pillarSection(title, icon, items, col) {
     const cards = Object.entries(items).map(([label, d]) => {
-      const pct = d.max > 0 ? Math.round(d.contribution / d.max * 100) : 0;
-      const c = d.contribution > 0 ? 'var(--up)' : d.contribution === 0 ? 'var(--muted)' : 'var(--dn)';
+      const isInfo = d.max === 0; // informational-only, not scored
+      const c = isInfo ? 'var(--intel)' : d.contribution > 0 ? 'var(--up)' : d.contribution === 0 ? 'var(--muted)' : 'var(--dn)';
       const valStr = d.value != null ? (typeof d.value === 'number' ? d.value.toFixed(2) : d.value) : '—';
+      const scoreTag = isInfo
+        ? `<span style="font-size:10px;color:var(--intel);font-style:italic">ℹ info</span>`
+        : `<span style="font-size:11px;font-weight:600;color:${c}">${d.contribution}/${d.max}</span>`;
       return `<div style="padding:10px 12px;background:var(--s3);border-radius:7px;border-left:2px solid ${c}">
         <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:3px">
           <span style="font-size:10px;color:var(--muted)">${label}</span>
-          <span style="font-size:11px;font-weight:600;color:${c}">${d.contribution}/${d.max}</span>
+          ${scoreTag}
         </div>
         <div style="font-size:11px;color:var(--text);margin-bottom:2px">${valStr}</div>
         <div style="font-size:10px;color:var(--dim);font-style:italic">${d.reason}</div>
@@ -2207,11 +2324,44 @@ function renderUpsideTable() {
     const upside = h.analyst_upside_pct;
     const col    = upside > 15 ? 'var(--up)' : upside > 0 ? 'var(--lime)' : 'var(--dn)';
     const arrow  = upside > 0 ? '↑' : '↓';
-    const fx     = 1; // already in EUR
+
+    // Target range bar: low → price → mean → high
+    let rangeHtml = h.analyst_target_mean ? fe(h.analyst_target_mean) : '—';
+    if (h.analyst_target_low != null && h.analyst_target_high != null && h.analyst_target_mean != null) {
+      const lo  = h.analyst_target_low;
+      const hi  = h.analyst_target_high;
+      const mn  = h.analyst_target_mean;
+      const pr  = h.price_eur || mn;
+      // Build range spanning from min(lo, pr) to max(hi, pr)
+      const span_lo = Math.min(lo, pr);
+      const span_hi = Math.max(hi, pr);
+      const span    = span_hi - span_lo || 1;
+      const pricePct  = Math.round((pr  - span_lo) / span * 100);
+      const lowPct    = Math.round((lo  - span_lo) / span * 100);
+      const meanPct   = Math.round((mn  - span_lo) / span * 100);
+      const highPct   = Math.round((hi  - span_lo) / span * 100);
+      rangeHtml = `
+        <div style="min-width:130px">
+          <div style="font-size:10px;color:var(--muted);margin-bottom:3px">
+            <span style="color:var(--dim)">${fe(lo)}</span>
+            <span style="color:${col};font-weight:600;margin:0 4px">${fe(mn)}</span>
+            <span style="color:var(--dim)">${fe(hi)}</span>
+          </div>
+          <div style="position:relative;height:6px;background:var(--s3);border-radius:3px;margin-bottom:2px">
+            <!-- Analyst range band: low to high -->
+            <div style="position:absolute;left:${lowPct}%;width:${highPct - lowPct}%;height:100%;background:${col}33;border-radius:3px"></div>
+            <!-- Mean marker -->
+            <div style="position:absolute;left:${meanPct}%;transform:translateX(-50%);width:3px;height:100%;background:${col};border-radius:2px"></div>
+            <!-- Current price marker -->
+            <div style="position:absolute;left:${pricePct}%;transform:translateX(-50%);width:2px;height:140%;top:-20%;background:var(--text);border-radius:1px" title="Current price"></div>
+          </div>
+        </div>`;
+    }
+
     return `<tr>
       <td class="tk">${h.ticker}</td>
       <td class="mn">${fe(h.price_eur)}</td>
-      <td class="mn">${h.analyst_target_mean ? fe(h.analyst_target_mean) : '—'}</td>
+      <td>${rangeHtml}</td>
       <td style="color:${col};font-weight:700">${arrow} ${Math.abs(upside).toFixed(1)}%</td>
       <td class="dm">${h.analyst_total || '—'}</td>
     </tr>`;
@@ -2345,8 +2495,9 @@ function renderRevTrend() {
   if (!holdings.length) { el.innerHTML = '<div class="empty">No revenue/earnings trend data available.</div>'; return; }
   el.innerHTML = holdings.map(h => {
     const trend = h.revenue_earnings_trend;
-    // Simple bar chart using div widths
     const maxRev = Math.max(...trend.map(t => t.revenue || 0));
+    // EBITDA margin from fundamentals (single value — ttm/annual from yfinance)
+    const ebitdaM = h.ebitda_margin != null ? (h.ebitda_margin * 100).toFixed(1) : null;
     const bars = trend.map(t => {
       const revPct  = maxRev > 0 ? (t.revenue  || 0) / maxRev * 100 : 0;
       const netPos  = (t.net_income || 0) >= 0;
@@ -2360,9 +2511,23 @@ function renderRevTrend() {
         <div style="font-size:9px;color:${netCol};font-weight:600">${netB}</div>
       </div>`;
     }).join('');
+    // EBITDA margin badge — single ttm value shown as a pill next to the ticker
+    const ebitdaBadge = ebitdaM != null
+      ? (() => {
+          const em = parseFloat(ebitdaM);
+          const ec = em > 25 ? 'var(--up)' : em > 10 ? 'var(--warn)' : 'var(--dn)';
+          return `<span style="display:inline-block;margin-left:10px;background:${ec}22;border:1px solid ${ec}44;color:${ec};border-radius:5px;padding:1px 8px;font-size:10px;font-weight:600" title="EBITDA Margin (TTM)">EBITDA ${ebitdaM}%</span>`;
+        })()
+      : '';
     return `<div style="margin-bottom:20px">
-      <div style="font-size:11px;color:var(--accent);font-weight:600;margin-bottom:8px">${h.ticker} — ${(h.name||'').slice(0,28)}</div>
-      <div style="font-size:9px;color:var(--muted);margin-bottom:8px">Blue bar = Revenue · Colored number = Net Income (green=profit, red=loss)</div>
+      <div style="font-size:11px;color:var(--accent);font-weight:600;margin-bottom:6px">
+        ${h.ticker} — ${(h.name||'').slice(0,28)}${ebitdaBadge}
+      </div>
+      <div style="font-size:9px;color:var(--muted);margin-bottom:8px">
+        <span style="color:var(--accent)">■</span> Revenue bar &nbsp;·&nbsp;
+        <span style="color:var(--up)">Net income</span> / <span style="color:var(--dn)">Net loss</span> &nbsp;·&nbsp;
+        ${ebitdaM != null ? `<span style="color:var(--intel)">EBITDA margin (TTM): ${ebitdaM}%</span>` : ''}
+      </div>
       <div style="display:flex;gap:12px;align-items:flex-end">${bars}</div>
     </div>`;
   }).join('');
