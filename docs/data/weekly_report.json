@@ -1,76 +1,78 @@
 {
-  "week_from": "Mon 18 May",
-  "week_to": "Fri 22 May",
-  "week_from_iso": "2026-05-18",
-  "week_to_iso": "2026-05-22",
+  "week_from": "Mon 25 May",
+  "week_to": "Fri 29 May",
+  "week_from_iso": "2026-05-25",
+  "week_to_iso": "2026-05-29",
   "earnings": {
-    "NVDA": [
+    "MRVL": [
       {
-        "date": "2026-05-20",
+        "date": "2026-05-27",
         "hour": "",
-        "eps_estimate": 1.78,
+        "eps_estimate": 0.79,
         "eps_actual": null,
-        "revenue_est": 79166840620.0,
+        "revenue_est": 2399148760.0,
         "revenue_act": null,
         "quarter": 2,
         "year": 2026,
-        "ticker": "NVDA",
-        "name": "NVIDIA"
+        "ticker": "MRVL",
+        "name": "Marvell Technology"
       }
     ]
   },
   "dividends": {
-    "HO.PA": [
+    "IBE.MC": [
       {
-        "ex_date": "2026-05-18",
+        "ex_date": "2026-05-28",
         "pay_date": "None",
         "record_date": "",
-        "amount": 2.95,
+        "amount": 0.427,
         "currency": "EUR",
         "freq": "",
-        "ticker": "HO.PA",
-        "name": "Thales"
-      }
-    ],
-    "MSFT": [
-      {
-        "ex_date": "2026-05-21",
-        "pay_date": "2026-06-11",
-        "record_date": "",
-        "amount": 0.91,
-        "currency": "USD",
-        "freq": "",
-        "ticker": "MSFT",
-        "name": "Microsoft"
-      }
-    ],
-    "GBF.DE": [
-      {
-        "ex_date": "2026-05-21",
-        "pay_date": "None",
-        "record_date": "",
-        "amount": 2.8,
-        "currency": "EUR",
-        "freq": "",
-        "ticker": "GBF.DE",
-        "name": "Bilfinger"
-      }
-    ],
-    "MILDEF.ST": [
-      {
-        "ex_date": "2026-05-22",
-        "pay_date": "None",
-        "record_date": "",
-        "amount": 0.75,
-        "currency": "SEK",
-        "freq": "",
-        "ticker": "MILDEF.ST",
-        "name": "MilDef Group"
+        "ticker": "IBE.MC",
+        "name": "Iberdrola"
       }
     ]
   },
   "splits": {},
   "ipos": [],
+  "earnings_calendar": [
+    {
+      "date": "2026-05-20",
+      "hour": "",
+      "eps_estimate": 1.78,
+      "eps_actual": null,
+      "revenue_est": 79166935860.0,
+      "revenue_act": null,
+      "quarter": 2,
+      "year": 2026,
+      "ticker": "NVDA",
+      "name": "NVIDIA"
+    },
+    {
+      "date": "2026-05-27",
+      "hour": "",
+      "eps_estimate": 0.79,
+      "eps_actual": null,
+      "revenue_est": 2399148760.0,
+      "revenue_act": null,
+      "quarter": 2,
+      "year": 2026,
+      "ticker": "MRVL",
+      "name": "Marvell Technology"
+    },
+    {
+      "date": "2026-06-03",
+      "hour": "",
+      "eps_estimate": 2.39,
+      "eps_actual": null,
+      "revenue_est": 22084051860.0,
+      "revenue_act": null,
+      "quarter": 2,
+      "year": 2026,
+      "ticker": "AVGO",
+      "name": "Broadcom Inc."
+    }
+  ],
   "dividend_calendar": [
     {
       "ex_date": "2026-05-18",
@@ -154,5 +156,5 @@
     }
   ],
   "ai_brief": "",
-  "generated": "2026-05-16T10:23:21.497145"
+  "generated": "2026-05-18T19:38:02.898726"
 }
