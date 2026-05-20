@@ -54,6 +54,28 @@
       "forecast": "",
       "previous": "",
       "source": "BLS via FRED"
+    },
+    {
+      "date": "2026-06-17",
+      "time": "11:00 CET",
+      "currency": "EUR",
+      "impact": "\ud83d\udd34 High",
+      "impact_raw": "high",
+      "title": "Eurozone HICP (Flash CPI)",
+      "forecast": "",
+      "previous": "",
+      "source": "Eurostat via FRED"
+    },
+    {
+      "date": "2026-06-17",
+      "time": "20:00 CET",
+      "currency": "USD",
+      "impact": "\ud83d\udd34 High",
+      "impact_raw": "high",
+      "title": "Fed Interest Rate Decision (FOMC)",
+      "forecast": "",
+      "previous": "",
+      "source": "Federal Reserve"
     }
   ],
   "by_date": {
@@ -119,10 +141,34 @@
         "previous": "",
         "source": "BLS via FRED"
       }
+    ],
+    "2026-06-17": [
+      {
+        "date": "2026-06-17",
+        "time": "11:00 CET",
+        "currency": "EUR",
+        "impact": "\ud83d\udd34 High",
+        "impact_raw": "high",
+        "title": "Eurozone HICP (Flash CPI)",
+        "forecast": "",
+        "previous": "",
+        "source": "Eurostat via FRED"
+      },
+      {
+        "date": "2026-06-17",
+        "time": "20:00 CET",
+        "currency": "USD",
+        "impact": "\ud83d\udd34 High",
+        "impact_raw": "high",
+        "title": "Fed Interest Rate Decision (FOMC)",
+        "forecast": "",
+        "previous": "",
+        "source": "Federal Reserve"
+      }
     ]
   },
-  "from_date": "2026-05-19",
-  "to_date": "2026-06-16",
-  "updated": "2026-05-19T19:04:45.175992",
-  "count": 5
+  "from_date": "2026-05-20",
+  "to_date": "2026-06-17",
+  "updated": "2026-05-20T10:30:46.282482",
+  "count": 7
 }
