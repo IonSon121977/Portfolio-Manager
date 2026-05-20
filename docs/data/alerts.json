@@ -1,5 +1,23 @@
 [
   {
+    "ts": "2026-05-20 19:52 UTC",
+    "type": "52w_high",
+    "ticker": "AAPL",
+    "message": "AAPL 52W HIGH EUR 259.69"
+  },
+  {
+    "ts": "2026-05-20 19:52 UTC",
+    "type": "movement",
+    "ticker": "MRVL",
+    "message": "MRVL UP | vs morning: +5.2% | vs last check: +1.1% (morning EUR 152.07, last EUR 158.19, now EUR 159.98)"
+  },
+  {
+    "ts": "2026-05-20 19:52 UTC",
+    "type": "movement",
+    "ticker": "INTC",
+    "message": "INTC UP | vs morning: +6.8% | vs last check: +1.1% (morning EUR 95.59, last EUR 100.95, now EUR 102.05)"
+  },
+  {
     "ts": "2026-05-20 17:43 UTC",
     "type": "movement",
     "ticker": "HSBA.L",
@@ -2980,23 +2998,5 @@
     "type": "movement",
     "ticker": "AMD",
     "message": "AMD UP [CROSSED 3%] | vs morning: +208.0% | vs last check: +208.0% (morning EUR 96.30, last EUR 96.30, now EUR 296.61)"
-  },
-  {
-    "ts": "2026-04-25 19:38 UTC",
-    "type": "movement",
-    "ticker": "INTC",
-    "message": "INTC UP [CROSSED 3%] | vs morning: +243.4% | vs last check: +243.4% (morning EUR 20.50, last EUR 20.50, now EUR 70.39)"
-  },
-  {
-    "ts": "2026-04-25 13:43 UTC",
-    "type": "weekly_summary",
-    "ticker": "",
-    "message": "Weekly summary sent - 14 earnings, 1 dividends, 0 splits next week"
-  },
-  {
-    "ts": "2026-04-25 09:58 UTC",
-    "type": "weekly_summary",
-    "ticker": "",
-    "message": "Weekly summary sent - 14 earnings, 0 dividends, 0 splits next week"
   }
 ]
