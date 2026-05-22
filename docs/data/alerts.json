@@ -1,5 +1,35 @@
 [
   {
+    "ts": "2026-05-22 16:56 UTC",
+    "type": "52w_high",
+    "ticker": "SEMI.AS",
+    "message": "SEMI.AS 52W HIGH EUR 17.24"
+  },
+  {
+    "ts": "2026-05-22 16:56 UTC",
+    "type": "52w_high",
+    "ticker": "MRVL",
+    "message": "MRVL 52W HIGH EUR 170.09"
+  },
+  {
+    "ts": "2026-05-22 16:56 UTC",
+    "type": "movement",
+    "ticker": "MRVL",
+    "message": "MRVL UP [CROSSED 3%] | vs morning: +3.6% | vs last check: +2.0% (morning EUR 164.18, last EUR 166.72, now EUR 170.09)"
+  },
+  {
+    "ts": "2026-05-22 16:56 UTC",
+    "type": "movement",
+    "ticker": "NOK",
+    "message": "NOK UP | vs morning: +10.5% | vs last check: +2.6% (morning EUR 12.21, last EUR 13.15, now EUR 13.49)"
+  },
+  {
+    "ts": "2026-05-22 16:56 UTC",
+    "type": "movement",
+    "ticker": "ASML",
+    "message": "ASML UP [CROSSED 3%] | vs morning: +3.2% | vs last check: +0.5% (morning EUR 1370.71, last EUR 1408.30, now EUR 1415.17)"
+  },
+  {
     "ts": "2026-05-22 14:01 UTC",
     "type": "rating_change",
     "ticker": "TXN",
@@ -2968,35 +2998,5 @@
     "type": "movement",
     "ticker": "SNDK",
     "message": "SNDK UP [CROSSED 3%] | vs morning: +7.5% | vs last check: +7.5% (morning EUR 842.50, last EUR 842.21, now EUR 905.55)"
-  },
-  {
-    "ts": "2026-04-27 16:12 UTC",
-    "type": "movement",
-    "ticker": "ENR.DE",
-    "message": "ENR.DE DOWN [CROSSED 3%] | vs morning: -5.0% | vs last check: -3.8% (morning EUR 186.70, last EUR 184.52, now EUR 177.42)"
-  },
-  {
-    "ts": "2026-04-27 11:25 UTC",
-    "type": "52w_high",
-    "ticker": "SMHN.DE",
-    "message": "SMHN.DE 52W HIGH EUR 71.30"
-  },
-  {
-    "ts": "2026-04-27 09:58 UTC",
-    "type": "52w_high",
-    "ticker": "SEMI.AS",
-    "message": "SEMI.AS 52W HIGH EUR 14.44"
-  },
-  {
-    "ts": "2026-04-27 09:58 UTC",
-    "type": "52w_high",
-    "ticker": "IS3N.DE",
-    "message": "IS3N.DE 52W HIGH EUR 44.48"
-  },
-  {
-    "ts": "2026-04-27 09:58 UTC",
-    "type": "52w_high",
-    "ticker": "SPYY.DE",
-    "message": "SPYY.DE 52W HIGH EUR 261.60"
   }
 ]
