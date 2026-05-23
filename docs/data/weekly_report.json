@@ -10,7 +10,7 @@
         "hour": "",
         "eps_estimate": 0.79,
         "eps_actual": null,
-        "revenue_est": 2399148760.0,
+        "revenue_est": 2400777700.0,
         "revenue_act": null,
         "quarter": 2,
         "year": 2026,
@@ -37,23 +37,11 @@
   "ipos": [],
   "earnings_calendar": [
     {
-      "date": "2026-05-20",
-      "hour": "",
-      "eps_estimate": 1.78,
-      "eps_actual": null,
-      "revenue_est": 79166935860.0,
-      "revenue_act": null,
-      "quarter": 2,
-      "year": 2026,
-      "ticker": "NVDA",
-      "name": "NVIDIA"
-    },
-    {
       "date": "2026-05-27",
       "hour": "",
       "eps_estimate": 0.79,
       "eps_actual": null,
-      "revenue_est": 2399148760.0,
+      "revenue_est": 2400777700.0,
       "revenue_act": null,
       "quarter": 2,
       "year": 2026,
@@ -75,46 +63,6 @@
   ],
   "dividend_calendar": [
     {
-      "ex_date": "2026-05-18",
-      "pay_date": "None",
-      "record_date": "",
-      "amount": 2.95,
-      "currency": "EUR",
-      "freq": "",
-      "ticker": "HO.PA",
-      "name": "Thales"
-    },
-    {
-      "ex_date": "2026-05-21",
-      "pay_date": "2026-06-11",
-      "record_date": "",
-      "amount": 0.91,
-      "currency": "USD",
-      "freq": "",
-      "ticker": "MSFT",
-      "name": "Microsoft"
-    },
-    {
-      "ex_date": "2026-05-21",
-      "pay_date": "None",
-      "record_date": "",
-      "amount": 2.8,
-      "currency": "EUR",
-      "freq": "",
-      "ticker": "GBF.DE",
-      "name": "Bilfinger"
-    },
-    {
-      "ex_date": "2026-05-22",
-      "pay_date": "None",
-      "record_date": "",
-      "amount": 0.75,
-      "currency": "SEK",
-      "freq": "",
-      "ticker": "MILDEF.ST",
-      "name": "MilDef Group"
-    },
-    {
       "ex_date": "2026-05-28",
       "pay_date": "None",
       "record_date": "",
@@ -133,6 +81,16 @@
       "freq": "",
       "ticker": "VH2.DE",
       "name": "Friedrich Vorwerk Group"
+    },
+    {
+      "ex_date": "2026-06-04",
+      "pay_date": "2026-04-01",
+      "record_date": "",
+      "amount": 0.01,
+      "currency": "USD",
+      "freq": "",
+      "ticker": "NVDA",
+      "name": "NVIDIA"
     },
     {
       "ex_date": "2026-06-04",
@@ -156,5 +114,5 @@
     }
   ],
   "ai_brief": "",
-  "generated": "2026-05-18T19:38:02.898726"
+  "generated": "2026-05-23T10:41:57.342380"
 }
