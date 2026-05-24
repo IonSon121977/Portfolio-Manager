@@ -22,38 +22,68 @@ import yfinance as yf
 SENTIMENT_F = DATA_DIR / "market_sentiment.json"
 
 
-def fetch_indicator(ticker: str, label: str) -> dict:
-    """Fetch price + 50-day MA for a ticker."""
-    try:
-        t     = yf.Ticker(ticker)
-        fi    = t.fast_info
-        price = float(fi.last_price or fi.previous_close or 0)
-        prev  = float(fi.previous_close or fi.last_price or 0)
-        chg   = round(((price - prev) / prev * 100) if prev else 0, 2)
+def fetch_indicator(ticker: str, label: str, fallbacks: list = None) -> dict:
+    """Fetch price + 50-day MA for a ticker. Tries fallback tickers on failure."""
+    candidates = [ticker] + (fallbacks or [])
+    last_err   = None
 
-        # 50-day MA from history
-        ma50 = None
+    for t_sym in candidates:
         try:
-            hist = t.history(period="3mo", interval="1d")
-            if not hist.empty and len(hist) >= 10:
-                ma50 = round(float(hist["Close"].tail(50).mean()), 4)
-        except Exception:
-            pass
+            t     = yf.Ticker(t_sym)
+            price = 0.0
+            prev  = 0.0
 
-        log.info("  " + label + " (" + ticker + "): " + str(round(price, 2)) +
-                 ("  MA50=" + str(ma50) if ma50 else ""))
-        return {
-            "ticker":  ticker,
-            "label":   label,
-            "price":   round(price, 4),
-            "prev":    round(prev,  4),
-            "chg_pct": chg,
-            "ma50":    ma50,
-            "above_ma50": (price > ma50) if ma50 else None,
-        }
-    except Exception as e:
-        log.warning("  " + label + " failed: " + str(e))
-        return {"ticker": ticker, "label": label, "error": str(e)}
+            # Try fast_info first; some index tickers (e.g. V2TX.DE) trigger yfinance
+            # regressions ('NoneType not iterable' or missing exchangeTimezoneName).
+            # Fall back to history() which is more robust for index tickers.
+            try:
+                fi    = t.fast_info
+                price = float(fi.last_price or fi.previous_close or 0)
+                prev  = float(fi.previous_close or fi.last_price or 0)
+            except Exception:
+                pass
+
+            # history() fallback — always try this; it works when fast_info doesn't
+            if not price:
+                hist_fb = t.history(period="5d", interval="1d")
+                if hist_fb is not None and not hist_fb.empty:
+                    price = float(hist_fb["Close"].iloc[-1])
+                    prev  = float(hist_fb["Close"].iloc[-2]) if len(hist_fb) >= 2 else price
+
+            if not price:
+                raise ValueError("No price data for " + t_sym)
+
+            chg = round(((price - prev) / prev * 100) if prev else 0, 2)
+
+            # 50-day MA from history
+            ma50 = None
+            try:
+                hist = t.history(period="3mo", interval="1d")
+                if hist is not None and not hist.empty and len(hist) >= 10:
+                    ma50 = round(float(hist["Close"].tail(50).mean()), 4)
+            except Exception:
+                pass
+
+            if t_sym != ticker:
+                log.info("  " + label + " using fallback ticker " + t_sym)
+            log.info("  " + label + " (" + t_sym + "): " + str(round(price, 2)) +
+                     ("  MA50=" + str(ma50) if ma50 else ""))
+            return {
+                "ticker":     t_sym,
+                "label":      label,
+                "price":      round(price, 4),
+                "prev":       round(prev,  4),
+                "chg_pct":    chg,
+                "ma50":       ma50,
+                "above_ma50": (price > ma50) if ma50 else None,
+            }
+
+        except Exception as e:
+            last_err = e
+            log.warning("  " + label + " (" + t_sym + ") failed: " + str(e))
+            continue
+
+    return {"ticker": ticker, "label": label, "error": str(last_err)}
 
 
 def calc_composite_score(indicators: dict) -> dict:
@@ -285,7 +315,7 @@ def main():
     indicators = {}
 
     log.info("Fetching VSTOXX (European fear gauge)...")
-    indicators["vstoxx"] = fetch_indicator("V2TX.DE",     "VSTOXX")
+    indicators["vstoxx"] = fetch_indicator("V2TX.DE", "VSTOXX", fallbacks=["OVS.EX", "^V2TX"])
 
     log.info("Fetching VIX (US fear gauge)...")
     indicators["vix"]    = fetch_indicator("^VIX",      "VIX")
