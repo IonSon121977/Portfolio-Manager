@@ -1,18 +1,24 @@
 {
   "composite": {
-    "score": 58,
+    "score": 50,
     "label": "Neutral",
     "color": "#f6ad55",
     "components": {
+      "vstoxx": {
+        "value": 35.457,
+        "score": 20,
+        "contribution": -7.5,
+        "interpretation": "High fear"
+      },
       "vix": {
-        "value": 16.54,
+        "value": 16.7,
         "score": 60,
         "contribution": 2.0,
         "interpretation": "Calm"
       },
       "eurusd": {
-        "value": 1.1617,
-        "chg_pct": -0.03,
+        "value": 1.162,
+        "chg_pct": -0.01,
         "score": 50,
         "contribution": 0.0,
         "interpretation": "Neutral"
@@ -41,24 +47,28 @@
     "vstoxx": {
       "ticker": "V2TX.DE",
       "label": "VSTOXX",
-      "error": "'PriceHistory' object has no attribute '_dividends'"
+      "price": 35.457,
+      "prev": 35.457,
+      "chg_pct": 0.0,
+      "ma50": null,
+      "above_ma50": null
     },
     "vix": {
       "ticker": "^VIX",
       "label": "VIX",
-      "price": 16.54,
+      "price": 16.7,
       "prev": 16.76,
-      "chg_pct": -1.31,
-      "ma50": 20.774,
+      "chg_pct": -0.36,
+      "ma50": 20.7772,
       "above_ma50": false
     },
     "eurusd": {
       "ticker": "EURUSD=X",
       "label": "EUR/USD",
-      "price": 1.1617,
+      "price": 1.162,
       "prev": 1.1621,
-      "chg_pct": -0.03,
-      "ma50": 1.1652,
+      "chg_pct": -0.01,
+      "ma50": 1.1656,
       "above_ma50": false
     },
     "stoxx50": {
@@ -80,5 +90,5 @@
       "above_ma50": true
     }
   },
-  "updated": "2026-05-22T18:57:34.880366"
+  "updated": "2026-05-24T19:55:56.758039"
 }
