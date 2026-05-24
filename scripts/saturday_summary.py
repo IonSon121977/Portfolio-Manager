@@ -21,11 +21,10 @@ sys.path.insert(0, str(Path(__file__).parent))
 from shared import (
     load_config, load_json, save_json, append_alert, send_email,
     SNAPSHOT_F, INTEL_F, DATA_DIR,
-    get_stock_data, get_earnings_calendar, get_dividends, get_stock_splits,
+    get_earnings_calendar, get_dividends, get_stock_splits,
     saturday_summary_html, next_week_calendar_html,
     log
 )
-import time
 
 WEEK_OPEN_F = DATA_DIR / "week_open.json"
 
@@ -225,14 +224,14 @@ def generate_ai_brief(calendar: dict, snapshot: dict, week_movements: list,
     # Analyst upside from fundamentals
     holdings = (fundamentals or {}).get("holdings", [])
     upside_list = sorted(
-        [h for h in holdings if h.get("analyst_upside") is not None and not h.get("error")],
-        key=lambda h: h["analyst_upside"], reverse=True
+        [h for h in holdings if h.get("analyst_upside_pct") is not None and not h.get("error")],
+        key=lambda h: h["analyst_upside_pct"], reverse=True
     )
     top_upside = ", ".join(
-        f"{h['ticker']} +{h['analyst_upside']:.1f}%" for h in upside_list[:3]
+        f"{h['ticker']} +{h['analyst_upside_pct']:.1f}%" for h in upside_list[:3]
     ) if upside_list else "none"
     low_upside = ", ".join(
-        f"{h['ticker']} {h['analyst_upside']:.1f}%" for h in upside_list[-3:]
+        f"{h['ticker']} {h['analyst_upside_pct']:.1f}%" for h in upside_list[-3:]
     ) if upside_list else "none"
 
     earn_str = "; ".join(
@@ -254,8 +253,8 @@ def generate_ai_brief(calendar: dict, snapshot: dict, week_movements: list,
         "Reference specific tickers when relevant.\n\n"
         f"Week ahead: {fmt_date(next_mon)} to {fmt_date(next_fri)}\n"
         f"Market sentiment: {sent_score}/100 ({sent_label}) | "
-        f"VIX: {vix_val:.1f if vix_val else '?'} | "
-        f"VSTOXX: {vstoxx_val:.1f if vstoxx_val else '?'}\n"
+        f"VIX: {f'{vix_val:.1f}' if vix_val else '?'} | "
+        f"VSTOXX: {f'{vstoxx_val:.1f}' if vstoxx_val else '?'}\n"
         f"Week just ended — {movers_str or 'no movement data'}\n"
         f"Earnings calls next week: {earn_str}\n"
         f"Ex-dividend dates next week: {div_str}\n"

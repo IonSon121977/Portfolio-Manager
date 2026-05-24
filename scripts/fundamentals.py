@@ -188,9 +188,14 @@ def fetch_fundamentals(holding: dict) -> dict:
                     currency = "EUR"
                 elif ticker.endswith(".L"):
                     currency = "GBP"
-                elif ticker.endswith(".ST") or ticker.endswith(".HE") or \
-                     ticker.endswith(".OL") or ticker.endswith(".CO"):
-                    currency = "SEK"  # approximate; ST=SEK, HE=EUR, OL=NOK, CO=DKK
+                elif ticker.endswith(".ST"):
+                    currency = "SEK"
+                elif ticker.endswith(".HE"):
+                    currency = "EUR"
+                elif ticker.endswith(".OL"):
+                    currency = "NOK"
+                elif ticker.endswith(".CO"):
+                    currency = "DKK"
                 else:
                     currency = "USD"
             except Exception as hist_err:

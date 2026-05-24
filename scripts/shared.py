@@ -3,7 +3,7 @@ shared.py -- All data via yfinance (free, no API key needed)
 Supports all exchanges: US, XETRA (.DE), Euronext (.PA), LSE (.L), AMS (.AS), STO (.ST)
 """
 
-import os, json, time, smtplib, logging
+import os, json, smtplib, logging
 from datetime import datetime, date, timedelta
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -159,6 +159,12 @@ def get_stock_data(holding: dict, _ignored: str = "") -> dict:
                     currency = "GBP"
                 elif ticker.endswith(".ST"):
                     currency = "SEK"
+                elif ticker.endswith(".HE"):
+                    currency = "EUR"
+                elif ticker.endswith(".OL"):
+                    currency = "NOK"
+                elif ticker.endswith(".CO"):
+                    currency = "DKK"
                 else:
                     currency = "USD"
             except Exception as hist_err:
@@ -230,8 +236,10 @@ def get_stock_data(holding: dict, _ignored: str = "") -> dict:
             w52_high = info.get("fiftyTwoWeekHigh")
             w52_low  = info.get("fiftyTwoWeekLow")
             if w52_high:
-                out["52w_high"] = round(to_eur(w52_high, currency), 2)
-                out["52w_low"]  = round(to_eur(w52_low,  currency), 2)
+                # Same GBX fix as analyst targets: yfinance returns 52W in GBP, not pence
+                w52_ccy = "GBP" if currency == "GBX" else currency
+                out["52w_high"] = round(to_eur(w52_high, w52_ccy), 2)
+                out["52w_low"]  = round(to_eur(w52_low,  w52_ccy), 2)
 
         except Exception as e:
             log.warning("  info fetch failed for " + ticker + ": " + str(e))
@@ -1004,7 +1012,6 @@ def get_earnings_calendar(ticker: str, _ignored: str = "",
         try:
             ed_df = t.earnings_dates
             if ed_df is not None and not ed_df.empty:
-                today_str = date.today().isoformat()
                 # Filter to future (or very recent — within 7 days past)
                 cutoff_past = (date.today() - timedelta(days=7)).isoformat()
                 for idx in ed_df.index:

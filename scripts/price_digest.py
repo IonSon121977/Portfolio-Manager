@@ -14,7 +14,7 @@ from datetime import datetime, date, timedelta
 sys.path.insert(0, str(Path(__file__).parent))
 from shared import (
     load_config, save_config, save_json, load_json,
-    SNAPSHOT_F, INTEL_F, DATA_DIR,
+    SNAPSHOT_F, DATA_DIR,
     get_stock_data, get_company_news, get_earnings_calendar,
     get_etf_holdings,
     append_alert, send_email,
