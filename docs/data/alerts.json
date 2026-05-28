@@ -1,5 +1,17 @@
 [
   {
+    "ts": "2026-05-28 19:55 UTC",
+    "type": "52w_high",
+    "ticker": "AAPL",
+    "message": "AAPL 52W HIGH EUR 267.78"
+  },
+  {
+    "ts": "2026-05-28 19:55 UTC",
+    "type": "movement",
+    "ticker": "MRVL",
+    "message": "MRVL UP [CROSSED 3%] | vs morning: +3.2% | vs last check: +0.2% (morning EUR 171.04, last EUR 176.05, now EUR 176.47)"
+  },
+  {
     "ts": "2026-05-28 17:50 UTC",
     "type": "52w_high",
     "ticker": "SXRV.DE",
@@ -2986,17 +2998,5 @@
     "type": "movement",
     "ticker": "MSFT",
     "message": "MSFT DOWN [CROSSED 3%] | vs morning: -5.4% | vs last check: -5.3% (morning EUR 363.17, last EUR 362.83, now EUR 343.54)"
-  },
-  {
-    "ts": "2026-04-30 13:09 UTC",
-    "type": "52w_high",
-    "ticker": "SPYY.DE",
-    "message": "SPYY.DE 52W HIGH EUR 262.15"
-  },
-  {
-    "ts": "2026-04-30 09:38 UTC",
-    "type": "52w_high",
-    "ticker": "INTC",
-    "message": "INTC 52W HIGH EUR 81.04"
   }
 ]
