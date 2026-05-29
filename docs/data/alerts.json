@@ -1,5 +1,23 @@
 [
   {
+    "ts": "2026-05-29 17:54 UTC",
+    "type": "movement",
+    "ticker": "INTC",
+    "message": "INTC DOWN [CROSSED 3%] | vs morning: -3.3% | vs last check: -3.1% (morning EUR 103.88, last EUR 103.58, now EUR 100.42)"
+  },
+  {
+    "ts": "2026-05-29 17:54 UTC",
+    "type": "movement",
+    "ticker": "LLY",
+    "message": "LLY DOWN [CROSSED 3%] | vs morning: -3.1% | vs last check: -1.4% (morning EUR 968.26, last EUR 951.60, now EUR 938.72)"
+  },
+  {
+    "ts": "2026-05-29 17:54 UTC",
+    "type": "movement",
+    "ticker": "MSFT",
+    "message": "MSFT UP [CROSSED 3%] | vs morning: +3.6% | vs last check: +1.0% (morning EUR 366.91, last EUR 376.14, now EUR 380.04)"
+  },
+  {
     "ts": "2026-05-29 14:22 UTC",
     "type": "movement",
     "ticker": "AVGO",
@@ -2980,23 +2998,5 @@
     "type": "earnings",
     "ticker": "XOM",
     "message": "XOM earnings on 2026-05-01"
-  },
-  {
-    "ts": "2026-05-01 07:53 UTC",
-    "type": "digest",
-    "ticker": "",
-    "message": "Morning digest sent at 07:53 UTC"
-  },
-  {
-    "ts": "2026-05-01 07:33 UTC",
-    "type": "digest",
-    "ticker": "",
-    "message": "Morning digest sent at 07:33 UTC"
-  },
-  {
-    "ts": "2026-05-01 07:18 UTC",
-    "type": "digest",
-    "ticker": "",
-    "message": "Morning digest sent at 07:18 UTC"
   }
 ]
