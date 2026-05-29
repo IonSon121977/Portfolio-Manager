@@ -1,5 +1,23 @@
 [
   {
+    "ts": "2026-05-29 14:22 UTC",
+    "type": "movement",
+    "ticker": "AVGO",
+    "message": "AVGO UP [CROSSED 3%] | vs morning: +3.2% | vs last check: +3.3% (morning EUR 366.56, last EUR 366.30, now EUR 378.34)"
+  },
+  {
+    "ts": "2026-05-29 14:22 UTC",
+    "type": "movement",
+    "ticker": "NOK",
+    "message": "NOK DOWN [CROSSED 3%] | vs morning: -3.4% | vs last check: -3.3% (morning EUR 13.13, last EUR 13.12, now EUR 12.69)"
+  },
+  {
+    "ts": "2026-05-29 14:22 UTC",
+    "type": "movement",
+    "ticker": "MU",
+    "message": "MU UP [CROSSED 3%] | vs morning: +5.0% | vs last check: +5.1% (morning EUR 793.58, last EUR 793.03, now EUR 833.52)"
+  },
+  {
     "ts": "2026-05-29 10:58 UTC",
     "type": "52w_high",
     "ticker": "SXRV.DE",
@@ -2980,23 +2998,5 @@
     "type": "digest",
     "ticker": "",
     "message": "Morning digest sent at 07:18 UTC"
-  },
-  {
-    "ts": "2026-04-30 20:19 UTC",
-    "type": "52w_high",
-    "ticker": "AMD",
-    "message": "AMD 52W HIGH EUR 302.03"
-  },
-  {
-    "ts": "2026-04-30 20:19 UTC",
-    "type": "52w_high",
-    "ticker": "GOOG",
-    "message": "GOOG 52W HIGH EUR 325.41"
-  },
-  {
-    "ts": "2026-04-30 20:19 UTC",
-    "type": "movement",
-    "ticker": "NVDA",
-    "message": "NVDA DOWN | vs morning: -5.0% | vs last check: -1.0% (morning EUR 179.03, last EUR 171.75, now EUR 170.03)"
   }
 ]
