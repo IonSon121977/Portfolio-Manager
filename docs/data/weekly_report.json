@@ -1,35 +1,59 @@
 {
-  "week_from": "Mon 25 May",
-  "week_to": "Fri 29 May",
-  "week_from_iso": "2026-05-25",
-  "week_to_iso": "2026-05-29",
+  "week_from": "Mon 01 Jun",
+  "week_to": "Fri 05 Jun",
+  "week_from_iso": "2026-06-01",
+  "week_to_iso": "2026-06-05",
   "earnings": {
-    "MRVL": [
+    "AVGO": [
       {
-        "date": "2026-05-27",
+        "date": "2026-06-03",
         "hour": "",
-        "eps_estimate": 0.79,
+        "eps_estimate": 2.4,
         "eps_actual": null,
-        "revenue_est": 2400777700.0,
+        "revenue_est": 22112367080.0,
         "revenue_act": null,
         "quarter": 2,
         "year": 2026,
-        "ticker": "MRVL",
-        "name": "Marvell Technology"
+        "ticker": "AVGO",
+        "name": "Broadcom Inc."
       }
     ]
   },
   "dividends": {
-    "IBE.MC": [
+    "VH2.DE": [
       {
-        "ex_date": "2026-05-28",
+        "ex_date": "2026-06-02",
         "pay_date": "None",
         "record_date": "",
-        "amount": 0.427,
+        "amount": 1.1,
         "currency": "EUR",
         "freq": "",
-        "ticker": "IBE.MC",
-        "name": "Iberdrola"
+        "ticker": "VH2.DE",
+        "name": "Friedrich Vorwerk Group"
+      }
+    ],
+    "NVDA": [
+      {
+        "ex_date": "2026-06-04",
+        "pay_date": "2026-06-26",
+        "record_date": "",
+        "amount": 0.01,
+        "currency": "USD",
+        "freq": "",
+        "ticker": "NVDA",
+        "name": "NVIDIA"
+      }
+    ],
+    "SMHN.DE": [
+      {
+        "ex_date": "2026-06-04",
+        "pay_date": "None",
+        "record_date": "",
+        "amount": 0.04,
+        "currency": "EUR",
+        "freq": "",
+        "ticker": "SMHN.DE",
+        "name": "S\u00dcSS MicroTec"
       }
     ]
   },
@@ -37,41 +61,31 @@
   "ipos": [],
   "earnings_calendar": [
     {
-      "date": "2026-05-27",
-      "hour": "",
-      "eps_estimate": 0.79,
-      "eps_actual": null,
-      "revenue_est": 2400777700.0,
-      "revenue_act": null,
-      "quarter": 2,
-      "year": 2026,
-      "ticker": "MRVL",
-      "name": "Marvell Technology"
-    },
-    {
       "date": "2026-06-03",
       "hour": "",
-      "eps_estimate": 2.39,
+      "eps_estimate": 2.4,
       "eps_actual": null,
-      "revenue_est": 22084051860.0,
+      "revenue_est": 22112367080.0,
       "revenue_act": null,
       "quarter": 2,
       "year": 2026,
       "ticker": "AVGO",
       "name": "Broadcom Inc."
+    },
+    {
+      "date": "2026-06-24",
+      "hour": "",
+      "eps_estimate": 19.29,
+      "eps_actual": null,
+      "revenue_est": 33805574310.0,
+      "revenue_act": null,
+      "quarter": 2,
+      "year": 2026,
+      "ticker": "MU",
+      "name": "Micron Technology Inc."
     }
   ],
   "dividend_calendar": [
-    {
-      "ex_date": "2026-05-28",
-      "pay_date": "None",
-      "record_date": "",
-      "amount": 0.427,
-      "currency": "EUR",
-      "freq": "",
-      "ticker": "IBE.MC",
-      "name": "Iberdrola"
-    },
     {
       "ex_date": "2026-06-02",
       "pay_date": "None",
@@ -111,8 +125,18 @@
       "freq": "",
       "ticker": "GOOG",
       "name": "Alphabet (Google) Class C"
+    },
+    {
+      "ex_date": "2026-06-22",
+      "pay_date": "None",
+      "record_date": "",
+      "amount": 0.09,
+      "currency": "EUR",
+      "freq": "",
+      "ticker": "STMPA.PA",
+      "name": "STMicroelectronics"
     }
   ],
   "ai_brief": "",
-  "generated": "2026-05-24T20:37:40.224245"
+  "generated": "2026-05-30T10:51:24.412879"
 }
