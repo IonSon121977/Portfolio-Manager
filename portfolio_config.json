@@ -51,11 +51,39 @@
         "finnhub_symbol": "NVDA"
       },
       {
+        "ticker": "NOK",
+        "name": "Nokia",
+        "shares": 0,
+        "isin": "FI0009000681",
+        "finnhub_symbol": "NOK"
+      },
+      {
+        "ticker": "ANET",
+        "name": "Arista Networks",
+        "shares": 0,
+        "isin": "US0404132054",
+        "finnhub_symbol": "ANET"
+      },
+      {
         "ticker": "MU",
         "name": "Micron Technology Inc.",
         "shares": 1,
         "isin": "",
         "finnhub_symbol": "MU"
+      },
+      {
+        "ticker": "INTC",
+        "name": "Intel",
+        "shares": 0,
+        "isin": "US4581401001",
+        "finnhub_symbol": "INTC"
+      },
+      {
+        "ticker": "AMD",
+        "name": "Advanced Micro Devices",
+        "shares": 0,
+        "isin": "US0079031078",
+        "finnhub_symbol": "AMD"
       },
       {
         "ticker": "BTC-USD",
@@ -74,6 +102,20 @@
         "name": "Silver",
         "shares": 0,
         "isin": ""
+      },
+      {
+        "ticker": "ARM",
+        "name": "Arm Holdings",
+        "shares": 0,
+        "isin": "US0420682058",
+        "finnhub_symbol": "ARM"
+      },
+      {
+        "ticker": "ORCL",
+        "name": "US68389X1054",
+        "shares": 0,
+        "isin": "US0079031078",
+        "finnhub_symbol": "ORCL"
       },
       {
         "ticker": "AMZN",
@@ -177,20 +219,6 @@
         "finnhub_symbol": "LON:BP"
       },
       {
-        "ticker": "INTC",
-        "name": "Intel",
-        "shares": 0,
-        "isin": "US4581401001",
-        "finnhub_symbol": "INTC"
-      },
-      {
-        "ticker": "AMD",
-        "name": "Advanced Micro Devices",
-        "shares": 0,
-        "isin": "US0079031078",
-        "finnhub_symbol": "AMD"
-      },
-      {
         "ticker": "TXN",
         "name": "Texas Instruments",
         "shares": 0,
@@ -217,13 +245,6 @@
         "shares": 0,
         "isin": "FR0000121972",
         "finnhub_symbol": "EPA:SU"
-      },
-      {
-        "ticker": "NOK",
-        "name": "Nokia",
-        "shares": 0,
-        "isin": "FI0009000681",
-        "finnhub_symbol": "NOK"
       },
       {
         "ticker": "HSBA.L",
