@@ -1,59 +1,35 @@
 {
-  "week_from": "Mon 01 Jun",
-  "week_to": "Fri 05 Jun",
-  "week_from_iso": "2026-06-01",
-  "week_to_iso": "2026-06-05",
+  "week_from": "Mon 08 Jun",
+  "week_to": "Fri 12 Jun",
+  "week_from_iso": "2026-06-08",
+  "week_to_iso": "2026-06-12",
   "earnings": {
-    "AVGO": [
+    "ORCL": [
       {
-        "date": "2026-06-03",
+        "date": "2026-06-10",
         "hour": "",
-        "eps_estimate": 2.4,
+        "eps_estimate": 1.96,
         "eps_actual": null,
-        "revenue_est": 22112367080.0,
+        "revenue_est": 19093705860.0,
         "revenue_act": null,
         "quarter": 2,
         "year": 2026,
-        "ticker": "AVGO",
-        "name": "Broadcom Inc."
+        "ticker": "ORCL",
+        "name": "US68389X1054"
       }
     ]
   },
   "dividends": {
-    "VH2.DE": [
+    "GOOG": [
       {
-        "ex_date": "2026-06-02",
-        "pay_date": "None",
+        "ex_date": "2026-06-08",
+        "pay_date": "2026-06-15",
         "record_date": "",
-        "amount": 1.1,
-        "currency": "EUR",
-        "freq": "",
-        "ticker": "VH2.DE",
-        "name": "Friedrich Vorwerk Group"
-      }
-    ],
-    "NVDA": [
-      {
-        "ex_date": "2026-06-04",
-        "pay_date": "2026-06-26",
-        "record_date": "",
-        "amount": 0.01,
+        "amount": 0.21,
         "currency": "USD",
         "freq": "",
-        "ticker": "NVDA",
-        "name": "NVIDIA"
-      }
-    ],
-    "SMHN.DE": [
-      {
-        "ex_date": "2026-06-04",
-        "pay_date": "None",
-        "record_date": "",
-        "amount": 0.04,
-        "currency": "EUR",
-        "freq": "",
-        "ticker": "SMHN.DE",
-        "name": "S\u00dcSS MicroTec"
+        "ticker": "GOOG",
+        "name": "Alphabet (Google) Class C"
       }
     ]
   },
@@ -61,23 +37,23 @@
   "ipos": [],
   "earnings_calendar": [
     {
-      "date": "2026-06-03",
+      "date": "2026-06-10",
       "hour": "",
-      "eps_estimate": 2.4,
+      "eps_estimate": 1.96,
       "eps_actual": null,
-      "revenue_est": 22112367080.0,
+      "revenue_est": 19093705860.0,
       "revenue_act": null,
       "quarter": 2,
       "year": 2026,
-      "ticker": "AVGO",
-      "name": "Broadcom Inc."
+      "ticker": "ORCL",
+      "name": "US68389X1054"
     },
     {
       "date": "2026-06-24",
       "hour": "",
-      "eps_estimate": 19.29,
+      "eps_estimate": 19.31,
       "eps_actual": null,
-      "revenue_est": 33805574310.0,
+      "revenue_est": 33818351730.0,
       "revenue_act": null,
       "quarter": 2,
       "year": 2026,
@@ -86,36 +62,6 @@
     }
   ],
   "dividend_calendar": [
-    {
-      "ex_date": "2026-06-02",
-      "pay_date": "None",
-      "record_date": "",
-      "amount": 1.1,
-      "currency": "EUR",
-      "freq": "",
-      "ticker": "VH2.DE",
-      "name": "Friedrich Vorwerk Group"
-    },
-    {
-      "ex_date": "2026-06-04",
-      "pay_date": "2026-06-26",
-      "record_date": "",
-      "amount": 0.01,
-      "currency": "USD",
-      "freq": "",
-      "ticker": "NVDA",
-      "name": "NVIDIA"
-    },
-    {
-      "ex_date": "2026-06-04",
-      "pay_date": "None",
-      "record_date": "",
-      "amount": 0.04,
-      "currency": "EUR",
-      "freq": "",
-      "ticker": "SMHN.DE",
-      "name": "S\u00dcSS MicroTec"
-    },
     {
       "ex_date": "2026-06-08",
       "pay_date": "2026-06-15",
@@ -135,8 +81,28 @@
       "freq": "",
       "ticker": "STMPA.PA",
       "name": "STMicroelectronics"
+    },
+    {
+      "ex_date": "2026-06-22",
+      "pay_date": "2026-03-31",
+      "record_date": "",
+      "amount": 0.65,
+      "currency": "USD",
+      "freq": "",
+      "ticker": "AVGO",
+      "name": "Broadcom Inc."
+    },
+    {
+      "ex_date": "2026-06-30",
+      "pay_date": "None",
+      "record_date": "",
+      "amount": 0.9,
+      "currency": "EUR",
+      "freq": "",
+      "ticker": "TTE.PA",
+      "name": "TotalEnergies SE"
     }
   ],
   "ai_brief": "",
-  "generated": "2026-05-30T10:51:24.412879"
+  "generated": "2026-06-06T10:58:34.049222"
 }
