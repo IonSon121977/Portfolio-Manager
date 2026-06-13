@@ -225,21 +225,19 @@ def get_stock_data(holding: dict, _ignored: str = "") -> dict:
             target_high = info.get("targetHighPrice")
             target_low  = info.get("targetLowPrice")
             if target_mean:
-                # yfinance returns analyst targets in the stock's base currency (GBP for
-                # LSE stocks), even when fast_info.currency was overridden to GBX.
-                # Using the GBX rate would divide by 100 a second time, so force GBP.
-                target_ccy = "GBP" if currency == "GBX" else currency
-                out["analyst_target_mean"] = round(to_eur(target_mean, target_ccy), 2)
-                out["analyst_target_high"] = round(to_eur(target_high, target_ccy), 2) if target_high else None
-                out["analyst_target_low"]  = round(to_eur(target_low,  target_ccy), 2) if target_low  else None
+                # yfinance returns analyst targets in the native currency of the ticker
+                # (GBX pence for LSE stocks), consistent with price and 52W values.
+                out["analyst_target_mean"] = round(to_eur(target_mean, currency), 2)
+                out["analyst_target_high"] = round(to_eur(target_high, currency), 2) if target_high else None
+                out["analyst_target_low"]  = round(to_eur(target_low,  currency), 2) if target_low  else None
 
             w52_high = info.get("fiftyTwoWeekHigh")
             w52_low  = info.get("fiftyTwoWeekLow")
             if w52_high:
-                # Same GBX fix as analyst targets: yfinance returns 52W in GBP, not pence
-                w52_ccy = "GBP" if currency == "GBX" else currency
-                out["52w_high"] = round(to_eur(w52_high, w52_ccy), 2)
-                out["52w_low"]  = round(to_eur(w52_low,  w52_ccy), 2)
+                # yfinance returns fiftyTwoWeekHigh/Low in the same native currency
+                # as the price (GBX pence for LSE stocks), so use `currency` directly.
+                out["52w_high"] = round(to_eur(w52_high, currency), 2)
+                out["52w_low"]  = round(to_eur(w52_low,  currency), 2)
 
         except Exception as e:
             log.warning("  info fetch failed for " + ticker + ": " + str(e))

@@ -269,10 +269,9 @@ def fetch_fundamentals(holding: dict) -> dict:
             out["analyst_total"] = info.get("numberOfAnalystOpinions", 0) or 0
 
             # Convert analyst targets to EUR at fetch time.
-            # yfinance always returns analyst targets in the stock's base currency (GBP
-            # for LSE stocks), even when fast_info.currency was overridden to GBX.
-            # Using the GBX rate here would divide by 100 a second time, so we force GBP.
-            fx_targets = _get_fx_rate("GBP" if currency == "GBX" else currency)
+            # yfinance returns analyst targets in the native currency of the ticker
+            # (GBX pence for LSE stocks), consistent with price and 52W values.
+            fx_targets = _get_fx_rate(currency)
             t_mean = info.get("targetMeanPrice")
             t_high = info.get("targetHighPrice")
             t_low  = info.get("targetLowPrice")
