@@ -1,24 +1,88 @@
 {
-  "week_from": "Mon 15 Jun",
-  "week_to": "Fri 19 Jun",
-  "week_from_iso": "2026-06-15",
-  "week_to_iso": "2026-06-19",
-  "earnings": {},
-  "dividends": {},
+  "week_from": "Mon 22 Jun",
+  "week_to": "Fri 26 Jun",
+  "week_from_iso": "2026-06-22",
+  "week_to_iso": "2026-06-26",
+  "earnings": {
+    "MU": [
+      {
+        "date": "2026-06-24",
+        "hour": "",
+        "eps_estimate": 20.05,
+        "eps_actual": null,
+        "revenue_est": 35018404560.0,
+        "revenue_act": null,
+        "quarter": 2,
+        "year": 2026,
+        "ticker": "MU",
+        "name": "Micron Technology Inc."
+      }
+    ]
+  },
+  "dividends": {
+    "STMPA.PA": [
+      {
+        "ex_date": "2026-06-22",
+        "pay_date": "None",
+        "record_date": "",
+        "amount": 0.09,
+        "currency": "EUR",
+        "freq": "",
+        "ticker": "STMPA.PA",
+        "name": "STMicroelectronics"
+      }
+    ],
+    "AVGO": [
+      {
+        "ex_date": "2026-06-22",
+        "pay_date": "2026-06-30",
+        "record_date": "",
+        "amount": 0.65,
+        "currency": "USD",
+        "freq": "",
+        "ticker": "AVGO",
+        "name": "Broadcom Inc."
+      }
+    ]
+  },
   "splits": {},
   "ipos": [],
   "earnings_calendar": [
     {
       "date": "2026-06-24",
       "hour": "",
-      "eps_estimate": 19.66,
+      "eps_estimate": 20.05,
       "eps_actual": null,
-      "revenue_est": 34286563820.0,
+      "revenue_est": 35018404560.0,
       "revenue_act": null,
       "quarter": 2,
       "year": 2026,
       "ticker": "MU",
       "name": "Micron Technology Inc."
+    },
+    {
+      "date": "2026-07-15",
+      "hour": "",
+      "eps_estimate": 6.85,
+      "eps_actual": null,
+      "revenue_est": 8891151530.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "ASML",
+      "name": "ASML Holding"
+    },
+    {
+      "date": "2026-07-16",
+      "hour": "",
+      "eps_estimate": 0.72,
+      "eps_actual": null,
+      "revenue_est": 607144670.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "MILDEF.ST",
+      "name": "MilDef Group"
     }
   ],
   "dividend_calendar": [
@@ -64,7 +128,7 @@
     },
     {
       "ex_date": "2026-07-10",
-      "pay_date": "2026-04-24",
+      "pay_date": "2026-07-24",
       "record_date": "",
       "amount": 0.5,
       "currency": "USD",
@@ -74,5 +138,5 @@
     }
   ],
   "ai_brief": "",
-  "generated": "2026-06-13T15:12:40.455356"
+  "generated": "2026-06-20T11:24:35.810106"
 }
