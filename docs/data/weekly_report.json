@@ -1,47 +1,20 @@
 {
-  "week_from": "Mon 22 Jun",
-  "week_to": "Fri 26 Jun",
-  "week_from_iso": "2026-06-22",
-  "week_to_iso": "2026-06-26",
-  "earnings": {
-    "MU": [
-      {
-        "date": "2026-06-24",
-        "hour": "",
-        "eps_estimate": 20.05,
-        "eps_actual": null,
-        "revenue_est": 35018404560.0,
-        "revenue_act": null,
-        "quarter": 2,
-        "year": 2026,
-        "ticker": "MU",
-        "name": "Micron Technology Inc."
-      }
-    ]
-  },
+  "week_from": "Mon 29 Jun",
+  "week_to": "Fri 03 Jul",
+  "week_from_iso": "2026-06-29",
+  "week_to_iso": "2026-07-03",
+  "earnings": {},
   "dividends": {
-    "STMPA.PA": [
+    "TTE.PA": [
       {
-        "ex_date": "2026-06-22",
+        "ex_date": "2026-06-30",
         "pay_date": "None",
         "record_date": "",
-        "amount": 0.09,
+        "amount": 0.9,
         "currency": "EUR",
         "freq": "",
-        "ticker": "STMPA.PA",
-        "name": "STMicroelectronics"
-      }
-    ],
-    "AVGO": [
-      {
-        "ex_date": "2026-06-22",
-        "pay_date": "2026-06-30",
-        "record_date": "",
-        "amount": 0.65,
-        "currency": "USD",
-        "freq": "",
-        "ticker": "AVGO",
-        "name": "Broadcom Inc."
+        "ticker": "TTE.PA",
+        "name": "TotalEnergies SE"
       }
     ]
   },
@@ -49,23 +22,11 @@
   "ipos": [],
   "earnings_calendar": [
     {
-      "date": "2026-06-24",
-      "hour": "",
-      "eps_estimate": 20.05,
-      "eps_actual": null,
-      "revenue_est": 35018404560.0,
-      "revenue_act": null,
-      "quarter": 2,
-      "year": 2026,
-      "ticker": "MU",
-      "name": "Micron Technology Inc."
-    },
-    {
       "date": "2026-07-15",
       "hour": "",
       "eps_estimate": 6.85,
       "eps_actual": null,
-      "revenue_est": 8891151530.0,
+      "revenue_est": 8891368810.0,
       "revenue_act": null,
       "quarter": 3,
       "year": 2026,
@@ -75,37 +36,125 @@
     {
       "date": "2026-07-16",
       "hour": "",
-      "eps_estimate": 0.72,
+      "eps_estimate": 0.67,
       "eps_actual": null,
-      "revenue_est": 607144670.0,
+      "revenue_est": 587326330.0,
       "revenue_act": null,
       "quarter": 3,
       "year": 2026,
       "ticker": "MILDEF.ST",
       "name": "MilDef Group"
+    },
+    {
+      "date": "2026-07-22",
+      "hour": "",
+      "eps_estimate": 0.26,
+      "eps_actual": null,
+      "revenue_est": 10530494140.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "IBE.MC",
+      "name": "Iberdrola"
+    },
+    {
+      "date": "2026-07-22",
+      "hour": "",
+      "eps_estimate": 1.92,
+      "eps_actual": null,
+      "revenue_est": 5233803260.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "TXN",
+      "name": "Texas Instruments"
+    },
+    {
+      "date": "2026-07-23",
+      "hour": "",
+      "eps_estimate": 2.88,
+      "eps_actual": null,
+      "revenue_est": 116678355480.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "GOOG",
+      "name": "Alphabet (Google) Class C"
+    },
+    {
+      "date": "2026-07-23",
+      "hour": "",
+      "eps_estimate": 0.07,
+      "eps_actual": null,
+      "revenue_est": 4825345930.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "NOK",
+      "name": "Nokia"
+    },
+    {
+      "date": "2026-07-23",
+      "hour": "",
+      "eps_estimate": 0.21,
+      "eps_actual": null,
+      "revenue_est": 14400892530.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "INTC",
+      "name": "Intel"
+    },
+    {
+      "date": "2026-07-23",
+      "hour": "",
+      "eps_estimate": 12.29158,
+      "eps_actual": null,
+      "revenue_est": 5947000000.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "HO.PA",
+      "name": "Thales"
+    },
+    {
+      "date": "2026-07-23",
+      "hour": "",
+      "eps_estimate": 1.13,
+      "eps_actual": null,
+      "revenue_est": 250977470.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "BESI.AS",
+      "name": "BE Semiconductor (BESI)"
+    },
+    {
+      "date": "2026-07-23",
+      "hour": "",
+      "eps_estimate": 3.17,
+      "eps_actual": null,
+      "revenue_est": 52436110670.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "TTE.PA",
+      "name": "TotalEnergies SE"
+    },
+    {
+      "date": "2026-07-23",
+      "hour": "",
+      "eps_estimate": 0.26,
+      "eps_actual": null,
+      "revenue_est": 3458237500.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "STMPA.PA",
+      "name": "STMicroelectronics"
     }
   ],
   "dividend_calendar": [
-    {
-      "ex_date": "2026-06-22",
-      "pay_date": "None",
-      "record_date": "",
-      "amount": 0.09,
-      "currency": "EUR",
-      "freq": "",
-      "ticker": "STMPA.PA",
-      "name": "STMicroelectronics"
-    },
-    {
-      "ex_date": "2026-06-22",
-      "pay_date": "2026-06-30",
-      "record_date": "",
-      "amount": 0.65,
-      "currency": "USD",
-      "freq": "",
-      "ticker": "AVGO",
-      "name": "Broadcom Inc."
-    },
     {
       "ex_date": "2026-06-30",
       "pay_date": "None",
@@ -115,6 +164,16 @@
       "freq": "",
       "ticker": "TTE.PA",
       "name": "TotalEnergies SE"
+    },
+    {
+      "ex_date": "2026-07-06",
+      "pay_date": "2026-04-15",
+      "record_date": "",
+      "amount": 0.15,
+      "currency": "USD",
+      "freq": "",
+      "ticker": "MU",
+      "name": "Micron Technology Inc."
     },
     {
       "ex_date": "2026-07-06",
@@ -135,8 +194,28 @@
       "freq": "",
       "ticker": "ORCL",
       "name": "US68389X1054"
+    },
+    {
+      "ex_date": "2026-07-10",
+      "pay_date": "2026-04-30",
+      "record_date": "",
+      "amount": 0.06,
+      "currency": "USD",
+      "freq": "",
+      "ticker": "MRVL",
+      "name": "Marvell Technology"
+    },
+    {
+      "ex_date": "2026-07-20",
+      "pay_date": "2026-08-19",
+      "record_date": "",
+      "amount": 1.51,
+      "currency": "USD",
+      "freq": "",
+      "ticker": "CAT",
+      "name": "Caterpillar"
     }
   ],
   "ai_brief": "",
-  "generated": "2026-06-20T11:24:35.810106"
+  "generated": "2026-06-27T11:02:48.137107"
 }
