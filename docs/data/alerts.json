@@ -1,5 +1,65 @@
 [
   {
+    "ts": "2026-06-30 16:38 UTC",
+    "type": "52w_low",
+    "ticker": "BTC-USD",
+    "message": "BTC-USD 52W LOW EUR 50982.49"
+  },
+  {
+    "ts": "2026-06-30 16:38 UTC",
+    "type": "52w_high",
+    "ticker": "AMD",
+    "message": "AMD 52W HIGH EUR 505.66"
+  },
+  {
+    "ts": "2026-06-30 16:38 UTC",
+    "type": "movement",
+    "ticker": "MRVL",
+    "message": "MRVL UP [CROSSED 3%] | vs morning: +4.4% | vs last check: +4.5% (morning EUR 243.78, last EUR 243.56, now EUR 254.49)"
+  },
+  {
+    "ts": "2026-06-30 16:38 UTC",
+    "type": "movement",
+    "ticker": "ASML",
+    "message": "ASML UP [CROSSED 3%] | vs morning: +4.1% | vs last check: +4.2% (morning EUR 1652.81, last EUR 1651.30, now EUR 1720.98)"
+  },
+  {
+    "ts": "2026-06-30 16:38 UTC",
+    "type": "movement",
+    "ticker": "TXN",
+    "message": "TXN UP [CROSSED 3%] | vs morning: +3.3% | vs last check: +3.4% (morning EUR 250.57, last EUR 250.34, now EUR 258.91)"
+  },
+  {
+    "ts": "2026-06-30 16:38 UTC",
+    "type": "movement",
+    "ticker": "SNDK",
+    "message": "SNDK UP [CROSSED 3%] | vs morning: +7.2% | vs last check: +7.3% (morning EUR 1799.63, last EUR 1797.99, now EUR 1929.61)"
+  },
+  {
+    "ts": "2026-06-30 16:38 UTC",
+    "type": "movement",
+    "ticker": "ARM",
+    "message": "ARM UP [CROSSED 3%] | vs morning: +3.5% | vs last check: +3.6% (morning EUR 301.56, last EUR 301.29, now EUR 312.01)"
+  },
+  {
+    "ts": "2026-06-30 16:38 UTC",
+    "type": "movement",
+    "ticker": "AMD",
+    "message": "AMD UP [CROSSED 3%] | vs morning: +6.8% | vs last check: +6.9% (morning EUR 473.51, last EUR 473.08, now EUR 505.66)"
+  },
+  {
+    "ts": "2026-06-30 16:38 UTC",
+    "type": "movement",
+    "ticker": "INTC",
+    "message": "INTC UP [CROSSED 3%] | vs morning: +6.5% | vs last check: +6.6% (morning EUR 115.61, last EUR 115.51, now EUR 123.12)"
+  },
+  {
+    "ts": "2026-06-30 16:38 UTC",
+    "type": "movement",
+    "ticker": "ANET",
+    "message": "ANET UP [CROSSED 3%] | vs morning: +3.4% | vs last check: +3.4% (morning EUR 144.03, last EUR 143.90, now EUR 148.86)"
+  },
+  {
     "ts": "2026-06-30 11:59 UTC",
     "type": "movement",
     "ticker": "VH2.DE",
@@ -2938,65 +2998,5 @@
     "type": "movement",
     "ticker": "AMD",
     "message": "AMD DOWN [CROSSED 3%] | vs morning: -5.9% | vs last check: -5.9% (morning EUR 449.48, last EUR 449.38, now EUR 422.81)"
-  },
-  {
-    "ts": "2026-06-05 14:09 UTC",
-    "type": "movement",
-    "ticker": "INTC",
-    "message": "INTC DOWN [CROSSED 3%] | vs morning: -6.0% | vs last check: -6.0% (morning EUR 96.03, last EUR 96.01, now EUR 90.26)"
-  },
-  {
-    "ts": "2026-06-05 14:09 UTC",
-    "type": "movement",
-    "ticker": "MU",
-    "message": "MU DOWN [CROSSED 3%] | vs morning: -6.0% | vs last check: -6.0% (morning EUR 855.66, last EUR 855.46, now EUR 803.98)"
-  },
-  {
-    "ts": "2026-06-05 14:09 UTC",
-    "type": "movement",
-    "ticker": "ANET",
-    "message": "ANET DOWN [CROSSED 3%] | vs morning: -4.5% | vs last check: -4.5% (morning EUR 142.62, last EUR 142.59, now EUR 136.20)"
-  },
-  {
-    "ts": "2026-06-05 14:09 UTC",
-    "type": "movement",
-    "ticker": "NOK",
-    "message": "NOK DOWN [CROSSED 3%] | vs morning: -8.0% | vs last check: -7.9% (morning EUR 14.28, last EUR 14.27, now EUR 13.14)"
-  },
-  {
-    "ts": "2026-06-05 10:59 UTC",
-    "type": "52w_low",
-    "ticker": "HSBA.L",
-    "message": "HSBA.L 52W LOW EUR 15.80"
-  },
-  {
-    "ts": "2026-06-05 10:59 UTC",
-    "type": "52w_low",
-    "ticker": "BP.L",
-    "message": "BP.L 52W LOW EUR 6.31"
-  },
-  {
-    "ts": "2026-06-05 10:59 UTC",
-    "type": "52w_low",
-    "ticker": "BA.L",
-    "message": "BA.L 52W LOW EUR 22.31"
-  },
-  {
-    "ts": "2026-06-05 08:51 UTC",
-    "type": "digest",
-    "ticker": "",
-    "message": "Morning digest sent at 08:51 UTC"
-  },
-  {
-    "ts": "2026-06-04 21:02 UTC",
-    "type": "movement",
-    "ticker": "SNDK",
-    "message": "SNDK DOWN [CROSSED 3%] | vs morning: -3.9% | vs last check: -2.1% (morning EUR 1576.74, last EUR 1546.59, now EUR 1514.56)"
-  },
-  {
-    "ts": "2026-06-04 21:02 UTC",
-    "type": "movement",
-    "ticker": "AMD",
-    "message": "AMD DOWN [CROSSED 3%] | vs morning: -3.6% | vs last check: -1.4% (morning EUR 467.06, last EUR 456.72, now EUR 450.32)"
   }
 ]
