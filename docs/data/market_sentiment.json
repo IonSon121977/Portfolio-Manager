@@ -11,31 +11,31 @@
         "interpretation": "High fear"
       },
       "vix": {
-        "value": 15.9,
+        "value": 15.91,
         "score": 60,
         "contribution": 2.0,
         "interpretation": "Calm"
       },
       "eurusd": {
-        "value": 1.1436,
-        "chg_pct": -0.09,
+        "value": 1.1438,
+        "chg_pct": -0.08,
         "score": 50,
         "contribution": 0.0,
         "interpretation": "Neutral"
       },
       "stoxx50": {
-        "value": 6362.29,
-        "ma50": 6077.2898,
-        "pct_from_ma": 4.69,
+        "value": 6361.2598,
+        "ma50": 6077.2692,
+        "pct_from_ma": 4.67,
         "above_ma50": true,
         "score": 65,
         "contribution": 3.8,
         "interpretation": "Uptrend"
       },
       "dax": {
-        "value": 25635.5801,
-        "ma50": 24754.0523,
-        "pct_from_ma": 3.56,
+        "value": 25644.5508,
+        "ma50": 24754.2317,
+        "pct_from_ma": 3.6,
         "above_ma50": true,
         "score": 65,
         "contribution": 2.2,
@@ -56,39 +56,39 @@
     "vix": {
       "ticker": "^VIX",
       "label": "VIX",
-      "price": 15.9,
+      "price": 15.91,
       "prev": 15.56,
-      "chg_pct": 2.19,
-      "ma50": 17.4982,
+      "chg_pct": 2.25,
+      "ma50": 17.4984,
       "above_ma50": false
     },
     "eurusd": {
       "ticker": "EURUSD=X",
       "label": "EUR/USD",
-      "price": 1.1436,
+      "price": 1.1438,
       "prev": 1.1447,
-      "chg_pct": -0.09,
+      "chg_pct": -0.08,
       "ma50": 1.1584,
       "above_ma50": false
     },
     "stoxx50": {
       "ticker": "^STOXX50E",
       "label": "Euro Stoxx 50",
-      "price": 6362.29,
+      "price": 6361.2598,
       "prev": 6396.0601,
-      "chg_pct": -0.53,
-      "ma50": 6077.2898,
+      "chg_pct": -0.54,
+      "ma50": 6077.2692,
       "above_ma50": true
     },
     "dax": {
       "ticker": "^GDAXI",
       "label": "DAX",
-      "price": 25635.5801,
+      "price": 25644.5508,
       "prev": 25832.3906,
-      "chg_pct": -0.76,
-      "ma50": 24754.0523,
+      "chg_pct": -0.73,
+      "ma50": 24754.2317,
       "above_ma50": true
     }
   },
-  "updated": "2026-07-07T12:06:34.534271"
+  "updated": "2026-07-07T13:24:53.238102"
 }
