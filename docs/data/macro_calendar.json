@@ -54,6 +54,17 @@
       "forecast": "",
       "previous": "",
       "source": "Federal Reserve"
+    },
+    {
+      "date": "2026-08-07",
+      "time": "14:30 CET",
+      "currency": "USD",
+      "impact": "\ud83d\udd34 High",
+      "impact_raw": "high",
+      "title": "US Non-Farm Payrolls (NFP)",
+      "forecast": "",
+      "previous": "",
+      "source": "BLS via FRED"
     }
   ],
   "by_date": {
@@ -119,10 +130,23 @@
         "previous": "",
         "source": "Federal Reserve"
       }
+    ],
+    "2026-08-07": [
+      {
+        "date": "2026-08-07",
+        "time": "14:30 CET",
+        "currency": "USD",
+        "impact": "\ud83d\udd34 High",
+        "impact_raw": "high",
+        "title": "US Non-Farm Payrolls (NFP)",
+        "forecast": "",
+        "previous": "",
+        "source": "BLS via FRED"
+      }
     ]
   },
-  "from_date": "2026-07-09",
-  "to_date": "2026-08-06",
-  "updated": "2026-07-09T18:53:09.255655",
-  "count": 5
+  "from_date": "2026-07-10",
+  "to_date": "2026-08-07",
+  "updated": "2026-07-10T10:30:41.725022",
+  "count": 6
 }
