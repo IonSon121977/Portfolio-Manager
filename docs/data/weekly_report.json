@@ -1,59 +1,39 @@
 {
-  "week_from": "Mon 06 Jul",
-  "week_to": "Fri 10 Jul",
-  "week_from_iso": "2026-07-06",
-  "week_to_iso": "2026-07-10",
-  "earnings": {},
-  "dividends": {
-    "MU": [
+  "week_from": "Mon 13 Jul",
+  "week_to": "Fri 17 Jul",
+  "week_from_iso": "2026-07-13",
+  "week_to_iso": "2026-07-17",
+  "earnings": {
+    "ASML": [
       {
-        "ex_date": "2026-07-06",
-        "pay_date": "2026-07-21",
-        "record_date": "",
-        "amount": 0.15,
-        "currency": "USD",
-        "freq": "",
-        "ticker": "MU",
-        "name": "Micron Technology Inc."
+        "date": "2026-07-15",
+        "hour": "",
+        "eps_estimate": 6.88,
+        "eps_actual": null,
+        "revenue_est": 8865942660.0,
+        "revenue_act": null,
+        "quarter": 3,
+        "year": 2026,
+        "ticker": "ASML",
+        "name": "ASML Holding"
       }
     ],
-    "IBE.MC": [
+    "MILDEF.ST": [
       {
-        "ex_date": "2026-07-06",
-        "pay_date": "None",
-        "record_date": "",
-        "amount": 0.427,
-        "currency": "EUR",
-        "freq": "",
-        "ticker": "IBE.MC",
-        "name": "Iberdrola"
-      }
-    ],
-    "ORCL": [
-      {
-        "ex_date": "2026-07-10",
-        "pay_date": "2026-07-24",
-        "record_date": "",
-        "amount": 0.5,
-        "currency": "USD",
-        "freq": "",
-        "ticker": "ORCL",
-        "name": "US68389X1054"
-      }
-    ],
-    "MRVL": [
-      {
-        "ex_date": "2026-07-10",
-        "pay_date": "2026-04-30",
-        "record_date": "",
-        "amount": 0.06,
-        "currency": "USD",
-        "freq": "",
-        "ticker": "MRVL",
-        "name": "Marvell Technology"
+        "date": "2026-07-16",
+        "hour": "",
+        "eps_estimate": 0.67,
+        "eps_actual": null,
+        "revenue_est": 587326330.0,
+        "revenue_act": null,
+        "quarter": 3,
+        "year": 2026,
+        "ticker": "MILDEF.ST",
+        "name": "MilDef Group"
       }
     ]
   },
+  "dividends": {},
   "splits": {},
   "ipos": [],
   "earnings_calendar": [
@@ -62,7 +42,7 @@
       "hour": "",
       "eps_estimate": 6.88,
       "eps_actual": null,
-      "revenue_est": 8873206930.0,
+      "revenue_est": 8865942660.0,
       "revenue_act": null,
       "quarter": 3,
       "year": 2026,
@@ -84,7 +64,19 @@
     {
       "date": "2026-07-22",
       "hour": "",
-      "eps_estimate": 0.26,
+      "eps_estimate": 2.9,
+      "eps_actual": null,
+      "revenue_est": 116817382510.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "GOOG",
+      "name": "Alphabet (Google) Class C"
+    },
+    {
+      "date": "2026-07-22",
+      "hour": "",
+      "eps_estimate": 0.29,
       "eps_actual": null,
       "revenue_est": 10530494140.0,
       "revenue_act": null,
@@ -104,18 +96,6 @@
       "year": 2026,
       "ticker": "TXN",
       "name": "Texas Instruments"
-    },
-    {
-      "date": "2026-07-23",
-      "hour": "",
-      "eps_estimate": 2.88,
-      "eps_actual": null,
-      "revenue_est": 116737532030.0,
-      "revenue_act": null,
-      "quarter": 3,
-      "year": 2026,
-      "ticker": "GOOG",
-      "name": "Alphabet (Google) Class C"
     },
     {
       "date": "2026-07-23",
@@ -144,7 +124,7 @@
     {
       "date": "2026-07-23",
       "hour": "",
-      "eps_estimate": 12.29158,
+      "eps_estimate": 12.22703,
       "eps_actual": null,
       "revenue_est": 5947000000.0,
       "revenue_act": null,
@@ -168,7 +148,7 @@
     {
       "date": "2026-07-23",
       "hour": "",
-      "eps_estimate": 2.64,
+      "eps_estimate": 3.08,
       "eps_actual": null,
       "revenue_est": 50089188330.0,
       "revenue_act": null,
@@ -182,7 +162,7 @@
       "hour": "",
       "eps_estimate": 0.26,
       "eps_actual": null,
-      "revenue_est": 3458237500.0,
+      "revenue_est": 3456766670.0,
       "revenue_act": null,
       "quarter": 3,
       "year": 2026,
@@ -192,9 +172,9 @@
     {
       "date": "2026-07-28",
       "hour": "",
-      "eps_estimate": 5.73,
+      "eps_estimate": 5.65,
       "eps_actual": null,
-      "revenue_est": 999106050.0,
+      "revenue_est": 998421710.0,
       "revenue_act": null,
       "quarter": 3,
       "year": 2026,
@@ -216,9 +196,9 @@
     {
       "date": "2026-07-29",
       "hour": "",
-      "eps_estimate": 1.45,
+      "eps_estimate": 1.73,
       "eps_actual": null,
-      "revenue_est": 17949919090.0,
+      "revenue_est": 19499905400.0,
       "revenue_act": null,
       "quarter": 3,
       "year": 2026,
@@ -240,9 +220,9 @@
     {
       "date": "2026-07-29",
       "hour": "",
-      "eps_estimate": 140.27,
+      "eps_estimate": 163.99,
       "eps_actual": null,
-      "revenue_est": 172447016920000.0,
+      "revenue_est": 171112855180000.0,
       "revenue_act": null,
       "quarter": 3,
       "year": 2026,
@@ -252,9 +232,9 @@
     {
       "date": "2026-07-30",
       "hour": "",
-      "eps_estimate": 1.81,
+      "eps_estimate": 1.82,
       "eps_actual": null,
-      "revenue_est": 195802195740.0,
+      "revenue_est": 195909161130.0,
       "revenue_act": null,
       "quarter": 3,
       "year": 2026,
@@ -266,7 +246,7 @@
       "hour": "",
       "eps_estimate": 1.89,
       "eps_actual": null,
-      "revenue_est": 108900233640.0,
+      "revenue_est": 108900122530.0,
       "revenue_act": null,
       "quarter": 3,
       "year": 2026,
@@ -276,7 +256,7 @@
     {
       "date": "2026-07-30",
       "hour": "",
-      "eps_estimate": 0.94646,
+      "eps_estimate": 0.9468,
       "eps_actual": null,
       "revenue_est": 0.0,
       "revenue_act": null,
@@ -288,57 +268,137 @@
     {
       "date": "2026-07-30",
       "hour": "",
-      "eps_estimate": 11.57196,
+      "eps_estimate": 11.55015,
       "eps_actual": null,
-      "revenue_est": 10898707250.0,
+      "revenue_est": 10872617800.0,
       "revenue_act": null,
       "quarter": 3,
       "year": 2026,
       "ticker": "SU.PA",
       "name": "Schneider Electric S.E."
+    },
+    {
+      "date": "2026-08-04",
+      "hour": "",
+      "eps_estimate": 0.88,
+      "eps_actual": null,
+      "revenue_est": 2826330660.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "ANET",
+      "name": "Arista Networks"
+    },
+    {
+      "date": "2026-08-04",
+      "hour": "",
+      "eps_estimate": 1.61,
+      "eps_actual": null,
+      "revenue_est": 11284950390.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices"
+    },
+    {
+      "date": "2026-08-04",
+      "hour": "",
+      "eps_estimate": 6.22,
+      "eps_actual": null,
+      "revenue_est": 19189928130.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "CAT",
+      "name": "Caterpillar"
+    },
+    {
+      "date": "2026-08-04",
+      "hour": "",
+      "eps_estimate": 0.26,
+      "eps_actual": null,
+      "revenue_est": 57708582030.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "BP.L",
+      "name": "BP plc"
+    },
+    {
+      "date": "2026-08-04",
+      "hour": "",
+      "eps_estimate": 0.45,
+      "eps_actual": null,
+      "revenue_est": 18871346000.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "HSBA.L",
+      "name": "HSBC Holdings"
+    },
+    {
+      "date": "2026-08-05",
+      "hour": "",
+      "eps_estimate": 1.14,
+      "eps_actual": null,
+      "revenue_est": 11138423420.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "ENR.DE",
+      "name": "Siemens Energy"
+    },
+    {
+      "date": "2026-08-05",
+      "hour": "",
+      "eps_estimate": 8.67,
+      "eps_actual": null,
+      "revenue_est": 20546615620.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "LLY",
+      "name": "Eli Lilly"
+    },
+    {
+      "date": "2026-08-05",
+      "hour": "",
+      "eps_estimate": 33.88,
+      "eps_actual": null,
+      "revenue_est": 8307187910.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "SNDK",
+      "name": "SanDisk"
+    },
+    {
+      "date": "2026-08-06",
+      "hour": "",
+      "eps_estimate": 0.47,
+      "eps_actual": null,
+      "revenue_est": 123740000.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "SMHN.DE",
+      "name": "S\u00dcSS MicroTec"
+    },
+    {
+      "date": "2026-08-07",
+      "hour": "",
+      "eps_estimate": 6.92,
+      "eps_actual": null,
+      "revenue_est": 40896886000.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "ALV.DE",
+      "name": "Allianz SE"
     }
   ],
   "dividend_calendar": [
-    {
-      "ex_date": "2026-07-06",
-      "pay_date": "2026-07-21",
-      "record_date": "",
-      "amount": 0.15,
-      "currency": "USD",
-      "freq": "",
-      "ticker": "MU",
-      "name": "Micron Technology Inc."
-    },
-    {
-      "ex_date": "2026-07-06",
-      "pay_date": "None",
-      "record_date": "",
-      "amount": 0.427,
-      "currency": "EUR",
-      "freq": "",
-      "ticker": "IBE.MC",
-      "name": "Iberdrola"
-    },
-    {
-      "ex_date": "2026-07-10",
-      "pay_date": "2026-07-24",
-      "record_date": "",
-      "amount": 0.5,
-      "currency": "USD",
-      "freq": "",
-      "ticker": "ORCL",
-      "name": "US68389X1054"
-    },
-    {
-      "ex_date": "2026-07-10",
-      "pay_date": "2026-04-30",
-      "record_date": "",
-      "amount": 0.06,
-      "currency": "USD",
-      "freq": "",
-      "ticker": "MRVL",
-      "name": "Marvell Technology"
-    },
     {
       "ex_date": "2026-07-20",
       "pay_date": "2026-08-19",
@@ -351,5 +411,5 @@
     }
   ],
   "ai_brief": "",
-  "generated": "2026-07-04T10:59:00.559834"
+  "generated": "2026-07-11T10:22:49.642758"
 }
