@@ -11,14 +11,14 @@
         "interpretation": "High fear"
       },
       "vix": {
-        "value": 16.4,
+        "value": 16.36,
         "score": 60,
         "contribution": 2.0,
         "interpretation": "Calm"
       },
       "eurusd": {
-        "value": 1.1426,
-        "chg_pct": 0.06,
+        "value": 1.1429,
+        "chg_pct": 0.08,
         "score": 50,
         "contribution": 0.0,
         "interpretation": "Neutral"
@@ -33,9 +33,9 @@
         "interpretation": "Uptrend"
       },
       "dax": {
-        "value": 25095.6191,
-        "ma50": 24829.0848,
-        "pct_from_ma": 1.07,
+        "value": 25110.6094,
+        "ma50": 24829.3898,
+        "pct_from_ma": 1.13,
         "above_ma50": true,
         "score": 55,
         "contribution": 0.8,
@@ -56,18 +56,18 @@
     "vix": {
       "ticker": "^VIX",
       "label": "VIX",
-      "price": 16.4,
+      "price": 16.36,
       "prev": 15.03,
-      "chg_pct": 9.12,
-      "ma50": 17.3612,
+      "chg_pct": 8.85,
+      "ma50": 17.3604,
       "above_ma50": false
     },
     "eurusd": {
       "ticker": "EURUSD=X",
       "label": "EUR/USD",
-      "price": 1.1426,
+      "price": 1.1429,
       "prev": 1.1419,
-      "chg_pct": 0.06,
+      "chg_pct": 0.08,
       "ma50": 1.1561,
       "above_ma50": false
     },
@@ -83,12 +83,12 @@
     "dax": {
       "ticker": "^GDAXI",
       "label": "DAX",
-      "price": 25095.6191,
+      "price": 25110.6094,
       "prev": 25083.5293,
-      "chg_pct": 0.05,
-      "ma50": 24829.0848,
+      "chg_pct": 0.11,
+      "ma50": 24829.3898,
       "above_ma50": true
     }
   },
-  "updated": "2026-07-13T12:16:09.641299"
+  "updated": "2026-07-13T13:29:14.558745"
 }
