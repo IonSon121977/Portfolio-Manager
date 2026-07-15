@@ -1,17 +1,6 @@
 {
   "events": [
     {
-      "date": "2026-07-14",
-      "time": "14:30 CET",
-      "currency": "USD",
-      "impact": "\ud83d\udd34 High",
-      "impact_raw": "high",
-      "title": "US CPI (Consumer Price Index)",
-      "forecast": "",
-      "previous": "",
-      "source": "BLS via FRED"
-    },
-    {
       "date": "2026-07-17",
       "time": "11:00 CET",
       "currency": "EUR",
@@ -65,22 +54,20 @@
       "forecast": "",
       "previous": "",
       "source": "BLS via FRED"
+    },
+    {
+      "date": "2026-08-12",
+      "time": "14:30 CET",
+      "currency": "USD",
+      "impact": "\ud83d\udd34 High",
+      "impact_raw": "high",
+      "title": "US CPI (Consumer Price Index)",
+      "forecast": "",
+      "previous": "",
+      "source": "BLS via FRED"
     }
   ],
   "by_date": {
-    "2026-07-14": [
-      {
-        "date": "2026-07-14",
-        "time": "14:30 CET",
-        "currency": "USD",
-        "impact": "\ud83d\udd34 High",
-        "impact_raw": "high",
-        "title": "US CPI (Consumer Price Index)",
-        "forecast": "",
-        "previous": "",
-        "source": "BLS via FRED"
-      }
-    ],
     "2026-07-17": [
       {
         "date": "2026-07-17",
@@ -143,10 +130,23 @@
         "previous": "",
         "source": "BLS via FRED"
       }
+    ],
+    "2026-08-12": [
+      {
+        "date": "2026-08-12",
+        "time": "14:30 CET",
+        "currency": "USD",
+        "impact": "\ud83d\udd34 High",
+        "impact_raw": "high",
+        "title": "US CPI (Consumer Price Index)",
+        "forecast": "",
+        "previous": "",
+        "source": "BLS via FRED"
+      }
     ]
   },
-  "from_date": "2026-07-14",
-  "to_date": "2026-08-11",
-  "updated": "2026-07-14T18:08:38.479114",
+  "from_date": "2026-07-15",
+  "to_date": "2026-08-12",
+  "updated": "2026-07-15T09:22:53.835001",
   "count": 6
 }
