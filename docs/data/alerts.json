@@ -1,5 +1,17 @@
 [
   {
+    "ts": "2026-07-16 20:10 UTC",
+    "type": "movement",
+    "ticker": "ORCL",
+    "message": "ORCL DOWN | vs morning: -6.0% | vs last check: -1.5% (morning EUR 115.48, last EUR 110.18, now EUR 108.56)"
+  },
+  {
+    "ts": "2026-07-16 20:10 UTC",
+    "type": "movement",
+    "ticker": "GOOG",
+    "message": "GOOG DOWN [CROSSED 3%] | vs morning: -4.2% | vs last check: -1.6% (morning EUR 322.68, last EUR 314.27, now EUR 309.16)"
+  },
+  {
     "ts": "2026-07-16 18:44 UTC",
     "type": "movement",
     "ticker": "AVGO",
@@ -2986,17 +2998,5 @@
     "type": "52w_high",
     "ticker": "ASM.AS",
     "message": "ASM.AS 52W HIGH EUR 1046.00"
-  },
-  {
-    "ts": "2026-06-17 17:35 UTC",
-    "type": "movement",
-    "ticker": "MRVL",
-    "message": "MRVL UP | vs morning: +6.3% | vs last check: +1.6% (morning EUR 240.10, last EUR 251.34, now EUR 255.28)"
-  },
-  {
-    "ts": "2026-06-17 17:35 UTC",
-    "type": "movement",
-    "ticker": "ARM",
-    "message": "ARM UP | vs morning: +7.7% | vs last check: +2.0% (morning EUR 341.49, last EUR 360.27, now EUR 367.63)"
   }
 ]
