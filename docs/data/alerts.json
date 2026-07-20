@@ -1,5 +1,11 @@
 [
   {
+    "ts": "2026-07-20 19:15 UTC",
+    "type": "movement",
+    "ticker": "ORCL",
+    "message": "ORCL DOWN [CROSSED 3%] | vs morning: -3.1% | vs last check: -0.6% (morning EUR 110.44, last EUR 107.63, now EUR 107.01)"
+  },
+  {
     "ts": "2026-07-20 16:11 UTC",
     "type": "movement",
     "ticker": "MRVL",
@@ -2992,11 +2998,5 @@
     "type": "movement",
     "ticker": "AMZN",
     "message": "AMZN UP [CROSSED 3%] | vs morning: +3.1% | vs last check: +2.2% (morning EUR 206.86, last EUR 208.65, now EUR 213.20)"
-  },
-  {
-    "ts": "2026-06-18 17:45 UTC",
-    "type": "movement",
-    "ticker": "AMD",
-    "message": "AMD UP | vs morning: +4.5% | vs last check: +1.1% (morning EUR 446.37, last EUR 461.35, now EUR 466.30)"
   }
 ]
