@@ -1,5 +1,11 @@
 [
   {
+    "ts": "2026-07-20 12:02 UTC",
+    "type": "rating_change",
+    "ticker": "MSFT",
+    "message": "CLSA: -- -> Outperform"
+  },
+  {
     "ts": "2026-07-20 10:29 UTC",
     "type": "52w_high",
     "ticker": "AAPL",
@@ -2992,11 +2998,5 @@
     "type": "movement",
     "ticker": "ASML",
     "message": "ASML UP [CROSSED 3%] | vs morning: +3.3% | vs last check: +3.2% (morning EUR 1626.88, last EUR 1628.37, now EUR 1679.89)"
-  },
-  {
-    "ts": "2026-06-18 14:34 UTC",
-    "type": "movement",
-    "ticker": "TXN",
-    "message": "TXN UP [CROSSED 3%] | vs morning: +5.0% | vs last check: +4.9% (morning EUR 262.94, last EUR 263.18, now EUR 276.02)"
   }
 ]
