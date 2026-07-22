@@ -1,5 +1,29 @@
 [
   {
+    "ts": "2026-07-22 10:05 UTC",
+    "type": "52w_high",
+    "ticker": "ALV.DE",
+    "message": "ALV.DE 52W HIGH EUR 428.30"
+  },
+  {
+    "ts": "2026-07-22 10:05 UTC",
+    "type": "52w_high",
+    "ticker": "MILDEF.ST",
+    "message": "MILDEF.ST 52W HIGH EUR 20.64"
+  },
+  {
+    "ts": "2026-07-22 10:05 UTC",
+    "type": "movement",
+    "ticker": "MILDEF.ST",
+    "message": "MILDEF.ST UP [CROSSED 3%] | vs morning: +6.3% | vs last check: +6.3% (morning EUR 19.42, last EUR 19.42, now EUR 20.64)"
+  },
+  {
+    "ts": "2026-07-22 10:05 UTC",
+    "type": "movement",
+    "ticker": "VH2.DE",
+    "message": "VH2.DE UP [CROSSED 3%] | vs morning: +3.7% | vs last check: +3.7% (morning EUR 72.35, last EUR 72.35, now EUR 75.00)"
+  },
+  {
     "ts": "2026-07-22 07:41 UTC",
     "type": "earnings",
     "ticker": "STMPA.PA",
@@ -2974,29 +2998,5 @@
     "type": "movement",
     "ticker": "NOK",
     "message": "NOK UP [CROSSED 3%] | vs morning: +4.4% | vs last check: +4.3% (morning EUR 11.77, last EUR 11.78, now EUR 12.29)"
-  },
-  {
-    "ts": "2026-06-22 15:08 UTC",
-    "type": "movement",
-    "ticker": "GOOG",
-    "message": "GOOG DOWN [CROSSED 3%] | vs morning: -6.6% | vs last check: -6.7% (morning EUR 320.57, last EUR 321.01, now EUR 299.37)"
-  },
-  {
-    "ts": "2026-06-22 13:16 UTC",
-    "type": "52w_high",
-    "ticker": "EUNK.DE",
-    "message": "EUNK.DE 52W HIGH EUR 103.40"
-  },
-  {
-    "ts": "2026-06-22 13:16 UTC",
-    "type": "52w_high",
-    "ticker": "SU.PA",
-    "message": "SU.PA 52W HIGH EUR 291.35"
-  },
-  {
-    "ts": "2026-06-22 13:16 UTC",
-    "type": "52w_high",
-    "ticker": "STMPA.PA",
-    "message": "STMPA.PA 52W HIGH EUR 69.82"
   }
 ]
