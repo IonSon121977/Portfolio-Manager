@@ -10,6 +10,39 @@
       "forecast": "",
       "previous": "",
       "source": "Federal Reserve"
+    },
+    {
+      "date": "2026-08-07",
+      "time": "14:30 CET",
+      "currency": "USD",
+      "impact": "\ud83d\udd34 High",
+      "impact_raw": "high",
+      "title": "US Non-Farm Payrolls (NFP)",
+      "forecast": "",
+      "previous": "",
+      "source": "BLS via FRED"
+    },
+    {
+      "date": "2026-08-12",
+      "time": "14:30 CET",
+      "currency": "USD",
+      "impact": "\ud83d\udd34 High",
+      "impact_raw": "high",
+      "title": "US CPI (Consumer Price Index)",
+      "forecast": "",
+      "previous": "",
+      "source": "BLS via FRED"
+    },
+    {
+      "date": "2026-08-19",
+      "time": "11:00 CET",
+      "currency": "EUR",
+      "impact": "\ud83d\udd34 High",
+      "impact_raw": "high",
+      "title": "Eurozone HICP (Flash CPI)",
+      "forecast": "",
+      "previous": "",
+      "source": "Eurostat via FRED"
     }
   ],
   "by_date": {
@@ -25,10 +58,49 @@
         "previous": "",
         "source": "Federal Reserve"
       }
+    ],
+    "2026-08-07": [
+      {
+        "date": "2026-08-07",
+        "time": "14:30 CET",
+        "currency": "USD",
+        "impact": "\ud83d\udd34 High",
+        "impact_raw": "high",
+        "title": "US Non-Farm Payrolls (NFP)",
+        "forecast": "",
+        "previous": "",
+        "source": "BLS via FRED"
+      }
+    ],
+    "2026-08-12": [
+      {
+        "date": "2026-08-12",
+        "time": "14:30 CET",
+        "currency": "USD",
+        "impact": "\ud83d\udd34 High",
+        "impact_raw": "high",
+        "title": "US CPI (Consumer Price Index)",
+        "forecast": "",
+        "previous": "",
+        "source": "BLS via FRED"
+      }
+    ],
+    "2026-08-19": [
+      {
+        "date": "2026-08-19",
+        "time": "11:00 CET",
+        "currency": "EUR",
+        "impact": "\ud83d\udd34 High",
+        "impact_raw": "high",
+        "title": "Eurozone HICP (Flash CPI)",
+        "forecast": "",
+        "previous": "",
+        "source": "Eurostat via FRED"
+      }
     ]
   },
   "from_date": "2026-07-24",
   "to_date": "2026-08-21",
-  "updated": "2026-07-24T11:08:47.888521",
-  "count": 1
+  "updated": "2026-07-24T12:25:30.039256",
+  "count": 4
 }
