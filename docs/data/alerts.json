@@ -1,5 +1,17 @@
 [
   {
+    "ts": "2026-07-28 13:19 UTC",
+    "type": "movement",
+    "ticker": "STMPA.PA",
+    "message": "STMPA.PA DOWN [CROSSED 3%] | vs morning: -3.4% | vs last check: -0.8% (morning EUR 45.88, last EUR 44.64, now EUR 44.30)"
+  },
+  {
+    "ts": "2026-07-28 13:19 UTC",
+    "type": "movement",
+    "ticker": "ENR.DE",
+    "message": "ENR.DE DOWN | vs morning: -4.6% | vs last check: -1.6% (morning EUR 147.84, last EUR 143.28, now EUR 140.98)"
+  },
+  {
     "ts": "2026-07-28 11:37 UTC",
     "type": "movement",
     "ticker": "ENR.DE",
@@ -2986,17 +2998,5 @@
     "type": "52w_high",
     "ticker": "CAT",
     "message": "CAT 52W HIGH EUR 912.06"
-  },
-  {
-    "ts": "2026-06-25 13:50 UTC",
-    "type": "52w_low",
-    "ticker": "MSFT",
-    "message": "MSFT 52W LOW EUR 314.56"
-  },
-  {
-    "ts": "2026-06-25 13:50 UTC",
-    "type": "movement",
-    "ticker": "SNDK",
-    "message": "SNDK UP [CROSSED 3%] | vs morning: +15.5% | vs last check: +15.2% (morning EUR 1683.77, last EUR 1687.98, now EUR 1944.70)"
   }
 ]
