@@ -17,25 +17,25 @@
         "interpretation": "Calm"
       },
       "eurusd": {
-        "value": 1.1517,
-        "chg_pct": -0.09,
+        "value": 1.151,
+        "chg_pct": -0.01,
         "score": 50,
         "contribution": 0.0,
         "interpretation": "Neutral"
       },
       "stoxx50": {
-        "value": 6426.5,
-        "ma50": 6226.2382,
-        "pct_from_ma": 3.22,
+        "value": 6464.2402,
+        "ma50": 6226.993,
+        "pct_from_ma": 3.81,
         "above_ma50": true,
         "score": 65,
         "contribution": 3.8,
         "interpretation": "Uptrend"
       },
       "dax": {
-        "value": 26001.3105,
-        "ma50": 25045.357,
-        "pct_from_ma": 3.82,
+        "value": 26156.6309,
+        "ma50": 25048.4634,
+        "pct_from_ma": 4.42,
         "above_ma50": true,
         "score": 65,
         "contribution": 2.2,
@@ -57,38 +57,38 @@
       "ticker": "^VIX",
       "label": "VIX",
       "price": 15.75,
-      "prev": 15.99,
-      "chg_pct": -1.5,
+      "prev": 15.86,
+      "chg_pct": -0.69,
       "ma50": 17.357,
       "above_ma50": false
     },
     "eurusd": {
       "ticker": "EURUSD=X",
       "label": "EUR/USD",
-      "price": 1.1517,
-      "prev": 1.1527,
-      "chg_pct": -0.09,
-      "ma50": 1.1482,
+      "price": 1.151,
+      "prev": 1.1511,
+      "chg_pct": -0.01,
+      "ma50": 1.148,
       "above_ma50": true
     },
     "stoxx50": {
       "ticker": "^STOXX50E",
       "label": "Euro Stoxx 50",
-      "price": 6426.5,
-      "prev": 6354.6299,
-      "chg_pct": 1.13,
-      "ma50": 6226.2382,
+      "price": 6464.2402,
+      "prev": 6431.8101,
+      "chg_pct": 0.5,
+      "ma50": 6226.993,
       "above_ma50": true
     },
     "dax": {
       "ticker": "^GDAXI",
       "label": "DAX",
-      "price": 26001.3105,
-      "prev": 25629.24,
-      "chg_pct": 1.45,
-      "ma50": 25045.357,
+      "price": 26156.6309,
+      "prev": 26038.3594,
+      "chg_pct": 0.45,
+      "ma50": 25048.4634,
       "above_ma50": true
     }
   },
-  "updated": "2026-08-03T18:53:13.325284"
+  "updated": "2026-08-04T09:59:42.825166"
 }
