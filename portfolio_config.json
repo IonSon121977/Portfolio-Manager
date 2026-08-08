@@ -18,7 +18,7 @@
       {
         "ticker": "VH2.DE",
         "name": "Friedrich Vorwerk Group",
-        "shares": 11,
+        "shares": 0,
         "isin": "DE000A255F11",
         "finnhub_symbol": "XETRA:VH2"
       },
@@ -39,7 +39,7 @@
       {
         "ticker": "AIR.PA",
         "name": "Airbus",
-        "shares": 7,
+        "shares": 0,
         "isin": "NL0000235190",
         "finnhub_symbol": "EPA:AIR"
       },
@@ -53,21 +53,21 @@
       {
         "ticker": "NOK",
         "name": "Nokia",
-        "shares": 0,
+        "shares": 200,
         "isin": "FI0009000681",
         "finnhub_symbol": "NOK"
       },
       {
         "ticker": "ANET",
         "name": "Arista Networks",
-        "shares": 0,
+        "shares": 10,
         "isin": "US0404132054",
         "finnhub_symbol": "ANET"
       },
       {
         "ticker": "MU",
         "name": "Micron Technology Inc.",
-        "shares": 1,
+        "shares": 0,
         "isin": "",
         "finnhub_symbol": "MU"
       },
@@ -104,17 +104,24 @@
         "isin": ""
       },
       {
-        "ticker": "ARM",
-        "name": "Arm Holdings",
+        "ticker": "SIE.DE",
+        "name": "Siemens AG",
         "shares": 0,
-        "isin": "US0420682058",
-        "finnhub_symbol": "ARM"
+        "isin": "DE0007236101",
+        "finnhub_symbol": "XETRA:SIE"
+      },
+      {
+        "ticker": "IFX.DE",
+        "name": "Infineon Technologies AG",
+        "shares": 0,
+        "isin": "DE0006231004",
+        "finnhub_symbol": "XETRA:IFX"
       },
       {
         "ticker": "ORCL",
-        "name": "US68389X1054",
+        "name": "Oracle",
         "shares": 0,
-        "isin": "US0079031078",
+        "isin": "US68389X1054",
         "finnhub_symbol": "ORCL"
       },
       {
@@ -192,7 +199,7 @@
       },
       {
         "ticker": "SMHN.DE",
-        "name": "S\u00dcSS MicroTec",
+        "name": "SÜSS MicroTec",
         "shares": 0,
         "isin": "DE000A1K0235",
         "finnhub_symbol": "XETRA:SMHN"
@@ -217,13 +224,6 @@
         "shares": 0,
         "isin": "GB0007980591",
         "finnhub_symbol": "LON:BP"
-      },
-      {
-        "ticker": "TXN",
-        "name": "Texas Instruments",
-        "shares": 0,
-        "isin": "US8825081040",
-        "finnhub_symbol": "TXN"
       },
       {
         "ticker": "ASML",
