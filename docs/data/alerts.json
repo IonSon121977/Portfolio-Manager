@@ -1,5 +1,17 @@
 [
   {
+    "ts": "2026-08-12 10:40 UTC",
+    "type": "movement",
+    "ticker": "ASM.AS",
+    "message": "ASM.AS UP [CROSSED 3%] | vs morning: +3.4% | vs last check: +1.1% (morning EUR 880.00, last EUR 899.80, now EUR 909.80)"
+  },
+  {
+    "ts": "2026-08-12 10:40 UTC",
+    "type": "movement",
+    "ticker": "IFX.DE",
+    "message": "IFX.DE UP [CROSSED 3%] | vs morning: +3.4% | vs last check: +1.1% (morning EUR 62.85, last EUR 64.23, now EUR 64.96)"
+  },
+  {
     "ts": "2026-08-12 08:50 UTC",
     "type": "52w_high",
     "ticker": "EUNK.DE",
@@ -2986,17 +2998,5 @@
     "type": "52w_low",
     "ticker": "ORCL",
     "message": "ORCL 52W LOW EUR 117.77"
-  },
-  {
-    "ts": "2026-07-13 16:57 UTC",
-    "type": "movement",
-    "ticker": "BP.L",
-    "message": "BP.L DOWN [CROSSED 3%] | vs morning: -99.0% | vs last check: -99.0% (morning EUR 577.65, last EUR 584.39, now EUR 5.92)"
-  },
-  {
-    "ts": "2026-07-13 16:57 UTC",
-    "type": "movement",
-    "ticker": "SNDK",
-    "message": "SNDK DOWN | vs morning: -11.1% | vs last check: -1.4% (morning EUR 1674.13, last EUR 1508.84, now EUR 1487.76)"
   }
 ]
