@@ -1,6 +1,17 @@
 {
   "events": [
     {
+      "date": "2026-08-19",
+      "time": "11:00 CET",
+      "currency": "EUR",
+      "impact": "\ud83d\udd34 High",
+      "impact_raw": "high",
+      "title": "Eurozone HICP (Flash CPI)",
+      "forecast": "",
+      "previous": "",
+      "source": "Eurostat via FRED"
+    },
+    {
       "date": "2026-09-04",
       "time": "14:30 CET",
       "currency": "USD",
@@ -35,6 +46,19 @@
     }
   ],
   "by_date": {
+    "2026-08-19": [
+      {
+        "date": "2026-08-19",
+        "time": "11:00 CET",
+        "currency": "EUR",
+        "impact": "\ud83d\udd34 High",
+        "impact_raw": "high",
+        "title": "Eurozone HICP (Flash CPI)",
+        "forecast": "",
+        "previous": "",
+        "source": "Eurostat via FRED"
+      }
+    ],
     "2026-09-04": [
       {
         "date": "2026-09-04",
@@ -75,6 +99,6 @@
   },
   "from_date": "2026-08-13",
   "to_date": "2026-09-10",
-  "updated": "2026-08-13T16:02:13.530455",
-  "count": 3
+  "updated": "2026-08-13T18:00:38.151372",
+  "count": 4
 }
