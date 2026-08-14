@@ -1,5 +1,17 @@
 [
   {
+    "ts": "2026-08-14 18:28 UTC",
+    "type": "movement",
+    "ticker": "ORCL",
+    "message": "ORCL DOWN [CROSSED 3%] | vs morning: -4.0% | vs last check: -1.9% (morning EUR 135.32, last EUR 132.44, now EUR 129.92)"
+  },
+  {
+    "ts": "2026-08-14 18:28 UTC",
+    "type": "movement",
+    "ticker": "AMD",
+    "message": "AMD UP | vs morning: +4.9% | vs last check: +1.5% (morning EUR 418.38, last EUR 432.25, now EUR 438.77)"
+  },
+  {
     "ts": "2026-08-14 15:26 UTC",
     "type": "movement",
     "ticker": "AVGO",
@@ -2986,17 +2998,5 @@
     "type": "movement",
     "ticker": "VH2.DE",
     "message": "VH2.DE UP [CROSSED 3%] | vs morning: +3.8% | vs last check: +1.1% (morning EUR 62.50, last EUR 64.15, now EUR 64.85)"
-  },
-  {
-    "ts": "2026-07-15 09:33 UTC",
-    "type": "52w_high",
-    "ticker": "SPYY.DE",
-    "message": "SPYY.DE 52W HIGH EUR 283.10"
-  },
-  {
-    "ts": "2026-07-15 09:33 UTC",
-    "type": "52w_low",
-    "ticker": "ORCL",
-    "message": "ORCL 52W LOW EUR 111.99"
   }
 ]
