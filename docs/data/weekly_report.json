@@ -1,115 +1,26 @@
 {
-  "week_from": "Mon 10 Aug",
-  "week_to": "Fri 14 Aug",
-  "week_from_iso": "2026-08-10",
-  "week_to_iso": "2026-08-14",
-  "earnings": {
-    "GBF.DE": [
-      {
-        "date": "2026-08-12",
-        "hour": "",
-        "eps_estimate": 1.48,
-        "eps_actual": null,
-        "revenue_est": 1398000000.0,
-        "revenue_act": null,
-        "quarter": 3,
-        "year": 2026,
-        "ticker": "GBF.DE",
-        "name": "Bilfinger"
-      }
-    ],
-    "VH2.DE": [
-      {
-        "date": "2026-08-13",
-        "hour": "",
-        "eps_estimate": 5.625,
-        "eps_actual": null,
-        "revenue_est": 201050000.0,
-        "revenue_act": null,
-        "quarter": 3,
-        "year": 2026,
-        "ticker": "VH2.DE",
-        "name": "Friedrich Vorwerk Group"
-      }
-    ]
-  },
+  "week_from": "Mon 17 Aug",
+  "week_to": "Fri 21 Aug",
+  "week_from_iso": "2026-08-17",
+  "week_to_iso": "2026-08-21",
+  "earnings": {},
   "dividends": {
-    "AAPL": [
+    "MSFT": [
       {
-        "ex_date": "2026-08-10",
-        "pay_date": "2026-08-13",
-        "record_date": "",
-        "amount": 0.27,
-        "currency": "USD",
-        "freq": "",
-        "ticker": "AAPL",
-        "name": "Apple"
-      }
-    ],
-    "BP.L": [
-      {
-        "ex_date": "2026-08-12",
-        "pay_date": "None",
-        "record_date": "",
-        "amount": 0.0866,
-        "currency": "GBp",
-        "freq": "",
-        "ticker": "BP.L",
-        "name": "BP plc"
-      }
-    ],
-    "HSBA.L": [
-      {
-        "ex_date": "2026-08-13",
-        "pay_date": "None",
-        "record_date": "",
-        "amount": 0.1,
-        "currency": "GBp",
-        "freq": "",
-        "ticker": "HSBA.L",
-        "name": "HSBC Holdings"
-      }
-    ],
-    "LLY": [
-      {
-        "ex_date": "2026-08-14",
+        "ex_date": "2026-08-20",
         "pay_date": "2026-09-10",
         "record_date": "",
-        "amount": 1.73,
+        "amount": 0.91,
         "currency": "USD",
         "freq": "",
-        "ticker": "LLY",
-        "name": "Eli Lilly"
+        "ticker": "MSFT",
+        "name": "Microsoft"
       }
     ]
   },
   "splits": {},
   "ipos": [],
   "earnings_calendar": [
-    {
-      "date": "2026-08-12",
-      "hour": "",
-      "eps_estimate": 1.48,
-      "eps_actual": null,
-      "revenue_est": 1398000000.0,
-      "revenue_act": null,
-      "quarter": 3,
-      "year": 2026,
-      "ticker": "GBF.DE",
-      "name": "Bilfinger"
-    },
-    {
-      "date": "2026-08-13",
-      "hour": "",
-      "eps_estimate": 5.625,
-      "eps_actual": null,
-      "revenue_est": 201050000.0,
-      "revenue_act": null,
-      "quarter": 3,
-      "year": 2026,
-      "ticker": "VH2.DE",
-      "name": "Friedrich Vorwerk Group"
-    },
     {
       "date": "2026-08-26",
       "hour": "",
@@ -127,7 +38,7 @@
       "hour": "",
       "eps_estimate": 0.93,
       "eps_actual": null,
-      "revenue_est": 2702565000.0,
+      "revenue_est": 2704955330.0,
       "revenue_act": null,
       "quarter": 3,
       "year": 2026,
@@ -145,49 +56,21 @@
       "year": 2026,
       "ticker": "AVGO",
       "name": "Broadcom Inc."
+    },
+    {
+      "date": "2026-09-10",
+      "hour": "",
+      "eps_estimate": 1.74,
+      "eps_actual": null,
+      "revenue_est": 19124084550.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "ORCL",
+      "name": "Oracle"
     }
   ],
   "dividend_calendar": [
-    {
-      "ex_date": "2026-08-10",
-      "pay_date": "2026-08-13",
-      "record_date": "",
-      "amount": 0.27,
-      "currency": "USD",
-      "freq": "",
-      "ticker": "AAPL",
-      "name": "Apple"
-    },
-    {
-      "ex_date": "2026-08-12",
-      "pay_date": "None",
-      "record_date": "",
-      "amount": 0.0866,
-      "currency": "GBp",
-      "freq": "",
-      "ticker": "BP.L",
-      "name": "BP plc"
-    },
-    {
-      "ex_date": "2026-08-13",
-      "pay_date": "None",
-      "record_date": "",
-      "amount": 0.1,
-      "currency": "GBp",
-      "freq": "",
-      "ticker": "HSBA.L",
-      "name": "HSBC Holdings"
-    },
-    {
-      "ex_date": "2026-08-14",
-      "pay_date": "2026-09-10",
-      "record_date": "",
-      "amount": 1.73,
-      "currency": "USD",
-      "freq": "",
-      "ticker": "LLY",
-      "name": "Eli Lilly"
-    },
     {
       "ex_date": "2026-08-20",
       "pay_date": "2026-09-10",
@@ -210,5 +93,5 @@
     }
   ],
   "ai_brief": "",
-  "generated": "2026-08-08T20:02:56.374125"
+  "generated": "2026-08-15T09:33:25.313651"
 }
