@@ -125,6 +125,14 @@
           "source": "broker"
         },
         {
+          "date": "2026-08-12",
+          "firm": "Wells Fargo",
+          "from_grade": "Overweight",
+          "to_grade": "Overweight",
+          "action": "up",
+          "source": "broker"
+        },
+        {
           "date": "2026-08-05",
           "firm": "Tigress Financial",
           "from_grade": "Buy",
@@ -395,18 +403,31 @@
           "to_grade": "Buy",
           "action": "up",
           "source": "broker"
-        },
-        {
-          "date": "2026-07-30",
-          "firm": "DA Davidson",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
         }
       ],
       "new_ratings": [],
       "news": [
+        {
+          "title": "Big Tech companies have $3T in hidden AI expenditures- report",
+          "source": "Seeking Alpha",
+          "url": "https://seekingalpha.com/symbol/MSFT/news?source=feed_symbol_MSFT",
+          "date": "2026-08-17",
+          "summary": ""
+        },
+        {
+          "title": "3 Stocks the Smart Money Is Quietly Buying in August",
+          "source": "Yahoo Finance",
+          "url": "https://247wallst.com/investing/2026/08/17/3-stocks-the-smart-money-is-quietly-buying-in-august-2/?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "Institutional investors are quietly loading up on three cloud giants even as mega-cap tech cools from its highs, and Berkshire Hathaway's latest disclosure suggests the accumulation is far from over."
+        },
+        {
+          "title": "Could Microsoft spin off Xbox? Why it might be worth billions",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/video/could-microsoft-spin-off-xbox-110000182.html?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "Peter Levin of Griffin Gaming Partners explains to Yahoo Finance Executive Editor Brian Sozzi why Xbox could be strategically expendable within Microsoft while its franchises, platform, and intellectu"
+        },
         {
           "title": "Market Chatter: Nvidia Discussing $3 Billion Investment SB Energy's OpenAI Ohio Data Center",
           "source": "Yahoo Finance",
@@ -415,39 +436,18 @@
           "summary": "Nvidia (NVDA) is taking part in discussions to invest up to $3 billion in SB Energy, a Softbank-back"
         },
         {
-          "title": "Michael Burry Says \u2018You Could Have Heard It First\u2019 \u2014 As Big Tech\u2019s $3T AI Spending Risk Comes Into Focus",
+          "title": "'Spending is leading to earnings': Wall Street strategists see payoff from Big Tech's AI investment",
           "source": "Yahoo Finance",
-          "url": "https://stocktwits.com/news-articles/markets/equity/michael-burry-says-you-could-have-heard-it-first-as-big-tech-s-3-t-ai-spending-risk-comes-into-focus/cZo6sZzRJKV?.tsrc=rss",
-          "date": "2026-08-17",
-          "summary": "The total includes $1.2 trillion in unstarted leases and $1.9 trillion in purchase commitments."
+          "url": "https://finance.yahoo.com/news/spending-is-leading-to-earnings-wall-street-strategists-see-payoff-from-big-techs-ai-investment-151610093.html?.tsrc=rss",
+          "date": "2026-08-16",
+          "summary": "Wall Street sees booming cloud growth as a sign that AI spending is giving a return on investment."
         },
         {
-          "title": "Elon Musk and Jensen Huang\u2019s New Partnership Could Create the Next Era of Technology",
+          "title": "Satya Nadella's Microsoft Stock Jumped 18% in a Week After Azure's Annual Revenue Topped $100 Billion for the First Time. Is It Still a Buy?",
           "source": "Yahoo Finance",
-          "url": "https://247wallst.com/investing/2026/08/16/elon-musk-and-jensen-huangs-new-partnership-could-create-the-next-era-of-technology/?.tsrc=rss",
+          "url": "https://www.fool.com/investing/2026/08/16/satya-nadellas-microsoft-stock-jumped-18-in-a-week/?.tsrc=rss",
           "date": "2026-08-16",
-          "summary": "Four seemingly unrelated headlines dropped over two weeks, and when you line them up in sequence, they point to a partnership that could reshape who controls the next trillion dollars of AI infrastruc"
-        },
-        {
-          "title": "Amazon, Alphabet, and Microsoft Are Dropping Nearly $600 Billion on Capital Expenditures: 1 Clear Winner Emerges",
-          "source": "Yahoo Finance",
-          "url": "https://www.fool.com/investing/2026/08/16/amazon-alphabet-and-microsoft-are-dropping-nearly/?.tsrc=rss",
-          "date": "2026-08-16",
-          "summary": "Taiwan Semiconductor has its fingerprints all over the modern data center."
-        },
-        {
-          "title": "Billionaire Investor David Tepper Just Exited 12 Stocks. These 5 Are the Most Surprising.",
-          "source": "Yahoo Finance",
-          "url": "https://247wallst.com/investing/2026/08/16/billionaire-investor-david-tepper-just-exited-12-stocks-these-5-are-the-most-surprising/?.tsrc=rss",
-          "date": "2026-08-16",
-          "summary": "Appaloosa Management just walked away from 12 stocks, and the pattern hiding beneath the list suggests David Tepper is betting everything on a very short list of survivors."
-        },
-        {
-          "title": "2 Major Catalysts Are Lifting IREN Stock. How to Play It Here.",
-          "source": "Yahoo Finance",
-          "url": "https://www.barchart.com/story/news/3877364/2-major-catalysts-are-lifting-iren-stock-how-to-play-it-here?.tsrc=rss",
-          "date": "2026-08-16",
-          "summary": "Microsoft's acceptance and Nvidia's grant of Exemplar Cloud status have added to the stock's upmove."
+          "summary": "Microsoft's successful AI strategy has legs."
         }
       ],
       "morningstar": {},
@@ -909,7 +909,7 @@
           "source": "consensus"
         },
         {
-          "date": "2",
+          "date": "3",
           "firm": "19 Buy \u00b7 4 Hold \u00b7 2 Sell (25 analysts)",
           "from_grade": "",
           "to_grade": "Buy",
@@ -925,6 +925,13 @@
           "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxORnNjM3U4NGZTODF4bzVsa3l2ZlRlbGJQbGp0SThXS0R5VEJxUnVIcmFZMkJqV012VE1aUTBiSTFmaFJPUnRkeHBybTh3aTF2UUpTSHNQT2FpWUxKWkZ5aldxM3prWF90WTRtZDZYSTBzSXNTY1dYbGlpRS16YTBBaHNnSi1pcERkUFN0S2hFQ3o3ZWJxZ1IxUmpaRWlJVmhtWVl0ZTdNeGRqa3ZlYlFxdDQxTGZwTmlJbHAza1ZvdTJNOWk0?oc=5",
           "date": "2026-08-17",
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxORnNjM3U4NGZTODF4bzVsa3l2ZlRlbGJQbGp0SThXS0R5VEJxUnVIcmFZMkJqV012VE1aUTBiSTFmaFJPUnRkeHBybTh3aTF2UUpTSHNQT2FpWUxKWkZ5aldxM3prWF90WTRtZDZYST"
+        },
+        {
+          "title": "Siemens Energy's Twin Transformations: Record Turbine Orders Meet a \u20ac300 Million Brand Breakaway - ad-hoc-news.de",
+          "source": "ad-hoc-news.de",
+          "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNd3JDajZkbExwSXBuX00wblVsTjctMGVWLWZpLTh1bFNxczBsT2lIYmo1dVNLMkt5eHE0c3RlR3VnUXpfZFVacVRkY1hicEs4bEpKSmlBMXlkM1lDVjROQ3VsV2dnTXNBVWV2LW5tcjQtdW1FQVZUUHhOclRsUUozd3REbmZzWHJBYXYwUmRWM1ltVVhlVkxRdmxFNnY4a19SQzNFYTZlMVBZdXk1bFZMSDIxVi10NFQ0UU9CX081NTI3WnMzT2luVDdmazA5YXAtWUhSRk9yUGptdw?oc=5",
+          "date": "2026-08-17",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi2gFBVV95cUxNd3JDajZkbExwSXBuX00wblVsTjctMGVWLWZpLTh1bFNxczBsT2lIYmo1dVNLMkt5eHE0c3RlR3VnUXpfZFVacVRkY1hicEs4bEpKSmlBMXlkM1lDVjROQ3VsV2dnTXNBVWV2LW5tcj"
         },
         {
           "title": "Siemens Energy Turns a Page: Wind Unit's Return to Profit Collides With a \u20ac300 Million Brand Break - ad-hoc-news.de",
@@ -953,13 +960,6 @@
           "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPS2dFQlpfaEc5b1k1bDdZbGViak5QN2JmeTI5cjJvdFFQLTMtb19oQWhyMWZmY1VDZGRWV0lMR2doWDhtUnRxVk04UTFxWmVULXY5VXFLdURWSm93UkQyMExfYjBFbUw5U0lfN2lSNGdGQW9XMEtidVdhcnRqVU44QXB0aTl4YUlZLWwxRUVaUzZhTmlONUw0OC15cUVhbjZjaVBRRkgzVjJKclpJTXV2WTFZTGdUTnQ5QUtoVWNqaUEwejFIdU1venBOM0tGb2tuZXI5R2xqTEJ4Wm1kdm84?oc=5",
           "date": "2026-08-16",
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMi3wFBVV95cUxPS2dFQlpfaEc5b1k1bDdZbGViak5QN2JmeTI5cjJvdFFQLTMtb19oQWhyMWZmY1VDZGRWV0lMR2doWDhtUnRxVk04UTFxWmVULXY5VXFLdURWSm93UkQyMExfYjBFbUw5U0lfN2lSNG"
-        },
-        {
-          "title": "Siemens Energy's \u20ac6 Billion Buyback Masks a Boardroom Question That Could Move the Stock More - ad-hoc-news.de",
-          "source": "ad-hoc-news.de",
-          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNbzFhS1BGNERDYzd0NUhKb092VVNwN1liN1lpM0dxeDFrcmFzMy1nekxEa1JUV1d6ejY0eERuLXNhSHhHck12SDZlTEpXYXQtNi1vamd2OUstQ3FONWdWWGdKSTBFaWVxbkdFR0Jla1l3TmY4dFMwNW1HUWxJMjZscWVhNVdiWnJJbFd5WkdWclhJeklaY2xtdFNBRlJIZU9Bc1NkZjMtUUZnazJHck9UZHJla0xXNU9qeXF0YTdoOEhOOUlSNlZWUVNta3VIZTlJWVRubQ?oc=5",
-          "date": "2026-08-16",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi1AFBVV95cUxNbzFhS1BGNERDYzd0NUhKb092VVNwN1liN1lpM0dxeDFrcmFzMy1nekxEa1JUV1d6ejY0eERuLXNhSHhHck12SDZlTEpXYXQtNi1vamd2OUstQ3FONWdWWGdKSTBFaWVxbkdFR0Jla1"
         }
       ],
       "morningstar": {},
@@ -1341,7 +1341,7 @@
           "source": "consensus"
         },
         {
-          "date": "2",
+          "date": "3",
           "firm": "2 Buy \u00b7 0 Hold \u00b7 2 Sell (4 analysts)",
           "from_grade": "",
           "to_grade": "Sell",
@@ -1444,13 +1444,6 @@
           "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOaENnMV9tUTUyUU1QbGhKa0lDdDZ1WVZCZkRhUDYwSmMybGF6cTByTHhQWWZJNFY3UGd3Q1cxMUstejIxOUQ3bGdYYW43Z3daWEpJRUxxYmxaeFp0RExfZmw0bFBUSVNKaXpKamx5VmtJUC1nM3hVNHBRcTVFU1JldGQyaWZCc3ZQNTZlVkRCaEJRcWwwMERkSzd2UmtOdFJpdnhzMTZaczVWWXpsbHlj?oc=5",
           "date": "2026-08-14",
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxOaENnMV9tUTUyUU1QbGhKa0lDdDZ1WVZCZkRhUDYwSmMybGF6cTByTHhQWWZJNFY3UGd3Q1cxMUstejIxOUQ3bGdYYW43Z3daWEpJRUxxYmxaeFp0RExfZmw0bFBUSVNKaXpKamx5Vm"
-        },
-        {
-          "title": "Friedrich Vorwerk Group SE (VH2)",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82dd9d461e471490017aac07d3b194&url=https%3a%2f%2fwww.investing.com%2fequities%2ffriedrich-vorwerk-group-se-company-profile&c=15369715533212565814&mkt=en-us",
-          "date": "2026-08-14",
-          "summary": "Get an in-depth profile of Friedrich Vorwerk Group SE, including a general overview of the company's business and key management, as well as employee data and location and contact information."
         },
         {
           "title": "Friedrich Vorwerk Earnings Call Highlights Record Profits - TipRanks",
@@ -1939,7 +1932,7 @@
         {
           "title": "Mildef Group AB Ordinary Shares MILDEF",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82dd9d554a45a78066529a2e948052&url=https%3a%2f%2fwww.morningstar.com%2fstocks%2fxsto%2fmildef%2fquote&c=15204900314687233233&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82f7abe7f44c52956e1676e931ab56&url=https%3a%2f%2fwww.morningstar.com%2fstocks%2fxsto%2fmildef%2fquote&c=15204900314687233233&mkt=en-us",
           "date": "2026-08-14",
           "summary": "Morningstar Quantitative Ratings for Stocks are generated using an algorithm that compares companies that are not under analyst coverage to peer companies that do receive analyst-driven ratings."
         }
@@ -2392,11 +2385,25 @@
       "new_ratings": [],
       "news": [
         {
-          "title": "Alphabet's Reported $112 Billion Profit Included a $94 Billion Paper Gain From SpaceX. Here's What the Company Actually Earned.",
+          "title": "Who\u2019s Really The King of Custom Silicon, Broadcom or Marvell Technology?",
           "source": "Yahoo Finance",
-          "url": "https://www.fool.com/investing/2026/08/17/alphabets-reported-112-billion-profit-included-a-9/?.tsrc=rss",
+          "url": "https://247wallst.com/investing/2026/08/17/whos-really-the-king-of-custom-silicon-broadcom-or-marvell-technology/?.tsrc=rss",
           "date": "2026-08-17",
-          "summary": "During the second quarter, Alphabet reported 300% growth in net income."
+          "summary": "Broadcom and Marvell both design custom AI chips for the same hyperscaler clients, but their quarterly numbers tell two very different stories about who actually controls the future of cloud silicon."
+        },
+        {
+          "title": "Big Tech companies have $3T in hidden AI expenditures- report",
+          "source": "Seeking Alpha",
+          "url": "https://seekingalpha.com/symbol/GOOG/news?source=feed_symbol_GOOG",
+          "date": "2026-08-17",
+          "summary": ""
+        },
+        {
+          "title": "The Global Market for Computing and AI for Data Centers Report 2026\u20132040: Evaluating GPUs, Custom ASICs, Arm vs x86, and Strategies of Nvidia, AMD, Google, and AWS",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/technology/ai/articles/global-market-computing-ai-data-111600912.html?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "Expanding from a market valued at $215 billion in 2025, the sector is undergoing structural transformation as merchant GPU leaders (Nvidia, AMD) compete and collaborate with hyperscalers deploying pro"
         },
         {
           "title": "Alphabet seeks $3.6B in first Australian bond sale: report",
@@ -2406,11 +2413,11 @@
           "summary": ""
         },
         {
-          "title": "Berkshire Piles $17 Billion More into Google: Why Is Michael Burry Worried?",
+          "title": "Berkshire Hathaway adds $17 billion to Alphabet stake in Q2 2026",
           "source": "Yahoo Finance",
-          "url": "https://beincrypto.com/berkshire-alphabet-stake-burry-warning/?.tsrc=rss",
+          "url": "https://qz.com/berkshire-hathaway-alphabet-stake-17-billion-081726?.tsrc=rss",
           "date": "2026-08-17",
-          "summary": "Berkshire boosted its Alphabet stake by $17 billion in Q2, but Michael Burry says Greg Abel lacks Buffett's discipline."
+          "summary": "Google's parent company is now the third-largest holding in Berkshire's equity portfolio, worth around $36.6 billion"
         },
         {
           "title": "Alphabet leads institutional holders in SpaceX post-IPO with $94B stake",
@@ -2418,20 +2425,6 @@
           "url": "https://seekingalpha.com/symbol/GOOG/news?source=feed_symbol_GOOG",
           "date": "2026-08-17",
           "summary": ""
-        },
-        {
-          "title": "GOOGL Is Already Borrowing Billions For AI \u2013 Now It\u2019s Reportedly Eyeing Australia\u2019s Bond Market",
-          "source": "Yahoo Finance",
-          "url": "https://stocktwits.com/news-articles/markets/equity/googl-is-already-borrowing-billions-for-ai-now-it-s-reportedly-eyeing-australia-s-bond-market/cZo6NDPRJKO?.tsrc=rss",
-          "date": "2026-08-17",
-          "summary": "U.S. tech firms are flooding credit markets with debt to fund investments in AI."
-        },
-        {
-          "title": "Alphabet stock holds firm as Berkshire\u2019s big bet and SpaceX windfall reshape the story. - ad-hoc-news.de",
-          "source": "ad-hoc-news.de",
-          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQZWdGblpRaUdaa2c5Q1piTzI3OWN4MTJWMDg4SnpaSGdzWm05S1Y5WTZPUVBmZE9qSGphWlJvNlgzNVdrUXV4WWpaa0FMQVF1VmpMYjZTa0hLMmFkbGl5TzJJczM3Z01YOWdlSmFyTDdiYjhyLThWa0FrLTJVVXBxYUd6WVNpZ092ZFk3NVRmbnM0My1XTnV6Q210OEt6SW16N2IxRUhLMHNTRG1iazNwZ21oekI1YnJKVWRNbFNHZWVXLS1DazNVZUdwNA?oc=5",
-          "date": "2026-08-17",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxQZWdGblpRaUdaa2c5Q1piTzI3OWN4MTJWMDg4SnpaSGdzWm05S1Y5WTZPUVBmZE9qSGphWlJvNlgzNVdrUXV4WWpaa0FMQVF1VmpMYjZTa0hLMmFkbGl5TzJJczM3Z01YOWdlSmFyTD"
         }
       ],
       "morningstar": {},
@@ -2918,13 +2911,6 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMi1wFBVV95cUxOOWdyVlh1OEprOVY0WGtGTThyUmRwOEdra0IxRHJqNUd4anZNVW9kMWF1NFFKSW1lMTZZd0ktRjNyRVJBQ1VaYll2T1VPVWhRZ1lycnh4RWNxZG9LWkw2SmdjN0xmajJFMkVoZGpkUE"
         },
         {
-          "title": "Emirates' Oldest Airbus A380 Is Nearly 21: See The Routes It Still Flies Today",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82dd9f8f764f819ab84aaab946f307&url=https%3a%2f%2fsimpleflying.com%2femirates-oldest-airbus-a380-usage-analysis%2f&c=8820959607319846643&mkt=en-us",
-          "date": "2026-08-16",
-          "summary": "Indeed, according to ch-aviation, the 117 units of the A380 that are registered to the Dubai-based UAE flag carrier have an average age of 11.6 years. The most senior of these bears the registration ."
-        },
-        {
           "title": "Airbus (ENXTPA:AIR) Faces A Safety Probe, Is It Still Undervalued? - simplywall.st",
           "source": "simplywall.st",
           "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOOHJ2R1d0M1I2YXFPSkVrSmRiNUkzcVF0V3hqdDlqa3dVWEpwRmxYM3pHTXZQMVJheVJBVnhpd3U0VEFRbkRHLW40YVZwd1MwWkNpX29PRkpIZkdrSEZ5TWwwVGd0SXgxdlVFY19FS1U1UTQzQjc4NnMyblNCNDNPNXpuNVd4STFGUW9DSUpPYm1jMmwzenVOeEpvTGtkYXZIM3g2QTJNZmstT2dzZ19WVDFrdER1RGZQY1g3WjQ1b2Uyb09TWEhkUUFwVVFJd9IB0wFBVV95cUxNUVNpdmw0OFFXeUdpazk1MTlzWnBNNWdQbnVZMkxlTHNHdkswY3pTRjhoTS04OHh5VHcyR3pfTGlmMmJZT1M0RVVoSlllWmRmcklydXd0SDh2TUN5REpPNWFUODFhdHhmbTlGalM3VGxxcS03SGoxajZ2SlhmRDRxWUJYVDV6dzZiRVU0MkpDdHRwY3NDMGpUMVQyeTMtY1YyNUNnSUphTXFSazhJWm9kdDJVV3d3N0ZWaUtFVTRETFU1bTIzZ0NjUldsbnI1STMycHVR?oc=5",
@@ -2944,6 +2930,13 @@
           "url": "https://finance.yahoo.com/markets/stocks/articles/airbus-enxtpa-air-facing-rare-081217928.html?.tsrc=rss",
           "date": "2026-08-15",
           "summary": "Airbus (ENXTPA:AIR) is working with Indian authorities after an Air India Airbus A320 experienced a rare simultaneous triple hydraulic failure mid-flight, causing brief loss of control and passenger i"
+        },
+        {
+          "title": "Airbus (ENXTPA:AIR) Is Investigating A Rare Triple Hydraulic Failure On An A320 - simplywall.st",
+          "source": "simplywall.st",
+          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOckhiTVRmalZxM1Rid0F4WlhvZkRjWXZVeEstSHd6TVUySV9MWEFGZm5TTF9MSDk1d2RnZHdGeTlSV0VmUFFGUWV1U3BmM2JpQURXdHhyT2dFRnJVd0tjSG1jUExkVjV4aU1saDJUSWV3V1hIZ3FvaVB5RWRjRWFHeDJTRTc4OXRsY2laeHlYcHFJZFZfR3lLVTJBNFdPUFVabW1NM2F2TG9TR2IwUU1oamM0TzJ4MnB1UnY1RFBKdUY2M2NGYUJ5SkZ3SVBkQdIB0wFBVV95cUxOc2Y3YnZKeU11YmtuZEpzRjExSEhRblRVYUtHRGs2VTItSXdOLTlIeXlkT21Hb2tDMzFKOTViX2QtaDItZ3NDbldiTWR6bWdKQmFORkUwU2xfNWliVXZyUnBYZUozZDJXYU1MWXNLX0RKSkhWNFdTTGJYN1JQYm9YNHNKQ0ZLZm8wbklXUjhhYkZ1eDZCTDlkZFF5ajg1WmlrNmh4amRDU1RTQXItYzdqaGxyaE11bDlMYUFWWG9xTnpBOG83aWdVSDRwZEQ5amdudjdB?oc=5",
+          "date": "2026-08-15",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxOckhiTVRmalZxM1Rid0F4WlhvZkRjWXZVeEstSHd6TVUySV9MWEFGZm5TTF9MSDk1d2RnZHdGeTlSV0VmUFFGUWV1U3BmM2JpQURXdHhyT2dFRnJVd0tjSG1jUExkVjV4aU1saDJUSW"
         }
       ],
       "morningstar": {},
@@ -3205,12 +3198,12 @@
           "source": "broker"
         },
         {
-          "date": "3",
-          "firm": "58 Buy \u00b7 2 Hold \u00b7 1 Sell (61 analysts)",
-          "from_grade": "",
-          "to_grade": "Buy",
-          "action": "reit",
-          "source": "consensus"
+          "date": "2026-08-11",
+          "firm": "Wells Fargo",
+          "from_grade": "Overweight",
+          "to_grade": "Overweight",
+          "action": "up",
+          "source": "broker"
         },
         {
           "date": "3",
@@ -3325,7 +3318,7 @@
           "source": "consensus"
         },
         {
-          "date": "2",
+          "date": "3",
           "firm": "58 Buy \u00b7 2 Hold \u00b7 1 Sell (61 analysts)",
           "from_grade": "",
           "to_grade": "Buy",
@@ -3416,46 +3409,46 @@
       "new_ratings": [],
       "news": [
         {
-          "title": "Where Will Workday Stock Be in 5 Years If Silver Lake Doesn't Buy It?",
-          "source": "Yahoo Finance",
-          "url": "https://www.fool.com/investing/2026/08/17/where-will-workday-stock-be-in-5-years-if-silver-l/?.tsrc=rss",
+          "title": "Nvidia just took a very serious step on SpaceX stock",
+          "source": "Bing News",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82f7aebd5f44d9913c5dba2319734f&url=https%3a%2f%2fwww.thestreet.com%2finvesting%2fstocks%2fnvidia-just-took-a-very-serious-step-on-spacex-stock&c=1095145903715877129&mkt=en-us",
           "date": "2026-08-17",
-          "summary": "A report of buyout talks gave the software maker its best day in a decade. The five-year case has to work without them."
+          "summary": "Nvidia disclosed owning 122.8 million Class A shares of SpaceX in a 13F filing with the Securities and Exchange Commission on August 14, according to CNBC. At SpaceX\u2019s June 30 closing price of $170.86"
         },
         {
-          "title": "Nvidia reportedly eyes $3B investment in SB Energy tied to OpenAI data center deal",
+          "title": "Nvidia cuts OpenAI Ohio data center guarantee to $120 billion",
+          "source": "Yahoo Finance",
+          "url": "https://qz.com/nvidia-openai-ohio-data-center-backstop-081726?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "The chipmaker revised its plan after investors raised concerns about its risk exposure tied to large financing commitments"
+        },
+        {
+          "title": "Big Tech companies have $3T in hidden AI expenditures- report",
           "source": "Seeking Alpha",
           "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
           "date": "2026-08-17",
           "summary": ""
         },
         {
-          "title": "Billionaire Stanley Druckenmiller Dumped Micron and Intel, and More Than 11X'd Duquesne Family Office's Stake in an AI Pioneer",
+          "title": "HIVE Stock Surges After $350M Nvidia AI Cloud Contract Puts $200M ARR Goal Within Reach - Yahoo Finance",
           "source": "Yahoo Finance",
-          "url": "https://www.fool.com/investing/2026/08/17/billionaire-stanley-druckenmiller-mu-intc-buy-amzn/?.tsrc=rss",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNWHZKOWp4RVhobmtWREpoZ01FaHVEOVhFOVN4NGxSWHNGclhvRmlLYm1fSzZFRU5tRE5VQVVTSmZWNWx6djVScDN6ckpqWmdwWHN5c011MjZtV1FXa0I1NnB0RjlmbEN0LWhZVmpKeENwSG41c1daejZCVjVRZjZHaGNNakFxbmhyc01zbFhKZGI3VWQ2akFZbThB?oc=5",
           "date": "2026-08-17",
-          "summary": "Duquesne Family Office's billionaire boss made big moves in the artificial intelligence (AI) space during the second quarter."
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxNWHZKOWp4RVhobmtWREpoZ01FaHVEOVhFOVN4NGxSWHNGclhvRmlLYm1fSzZFRU5tRE5VQVVTSmZWNWx6djVScDN6ckpqWmdwWHN5c011MjZtV1FXa0I1NnB0RjlmbEN0LWhZVmpKeE"
         },
         {
-          "title": "Salesforce Borrowed $25 Billion to Buy Its Own Stock and Cut Its Cash Flow Growth Guidance in Half",
-          "source": "Yahoo Finance",
-          "url": "https://www.fool.com/investing/2026/08/17/salesforce-borrowed-25-billion-to-buy-its-own-stoc/?.tsrc=rss",
+          "title": "Nvidia stock faces its next big test: UBS sees one number Wall Street may be missing",
+          "source": "Bing News",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82f7aebd5f44d9913c5dba2319734f&url=https%3a%2f%2fwww.msn.com%2fen-us%2fmoney%2feconomy%2fnvidia-stock-faces-its-next-big-test-ubs-sees-one-number-wall-street-may-be-missing%2far-AA2ahzUi&c=11838334023012579329&mkt=en-us",
           "date": "2026-08-17",
-          "summary": "The software giant retired a tenth of its share count in a single stroke. The bill shows up in fiscal 2027 cash flow."
+          "summary": "Nvidia heads into its August 26 earnings report with Wall Street already expecting another beat, but UBS believes the more important test may come one quarter later. The chipmaker reported record ..."
         },
         {
-          "title": "Nebius Group (NBIS) Emerges As A Key Bidder In Decart AI Talks",
+          "title": "Nvidia Likely to Post Strong Results But Investors to Focus More on Long-Term Growth Drivers, Morgan Stanley Says",
           "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/technology/ai/articles/nebius-group-nbis-emerges-key-091017819.html?.tsrc=rss",
+          "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-likely-post-strong-results-105234888.html?.tsrc=rss",
           "date": "2026-08-17",
-          "summary": "Nebius Group (NasdaqGS: NBIS) has emerged as a key bidder in the Decart AI acquisition talks, competing with large technology companies including Amazon, NVIDIA, and SpaceX. The potential multibillion"
-        },
-        {
-          "title": "Wall Street Says the Stock Market's Return Will Crush the Long-Term Average in the Next Year",
-          "source": "Yahoo Finance",
-          "url": "https://www.fool.com/investing/2026/08/17/stock-market-return-will-crush-long-term-average/?.tsrc=rss",
-          "date": "2026-08-17",
-          "summary": "The S&P 500 returned 9.5% annually over the past two decades. Wall Street expects much bigger gains in the next year."
+          "summary": "Nvidia (NVDA) is expected to post strong fiscal second-quarter results, but investors are likely to"
         }
       ],
       "morningstar": {},
@@ -4100,6 +4093,14 @@
           "source": "consensus"
         },
         {
+          "date": "3",
+          "firm": "30 Buy \u00b7 0 Hold \u00b7 0 Sell (30 analysts)",
+          "from_grade": "",
+          "to_grade": "Buy",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
           "date": "2026-08-06",
           "firm": "Barclays",
           "from_grade": "Overweight",
@@ -4422,14 +4423,6 @@
         {
           "date": "2026-08-05",
           "firm": "B of A Securities",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-05",
-          "firm": "Needham",
           "from_grade": "Buy",
           "to_grade": "Buy",
           "action": "up",
@@ -4513,11 +4506,11 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMi2AFBVV95cUxQX2NkekJ2cW5UQ29XRXh1OExTNjJnVDlsNlBKMkFmOFJUcGV1R2I1UUt4UTJ3Vms4b0NLUDI0VkhZWVMwZ0g1Ym9kUE11V1V3T21yZFh5Nk5fZmJCaEQ5aHhTb1FZeTd6QWM4SVRaSl"
         },
         {
-          "title": "KBC Group NV Sells 19,804 Shares of Arista Networks, Inc. $ANET - MarketBeat",
+          "title": "HighTower Advisors LLC Grows Position in Arista Networks, Inc. $ANET - MarketBeat",
           "source": "MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNWEFjU1B3eXp2RkVNVkxYLXB3WGI2LTNUelAyYXpqcldUeUE5X1YxNEhSb05CeGYzdTNXck8wdXd0empjYVBtRTFTdS10NW9UdnVsU0U1UUF1VmpkaWJOa1VBQXBwTkdGZEU4VnBDTEpkMVFhVmZVdFAteTFtT2Y1bnA1RTVPQnBxUGQ1SGpxRnFkZTZ1OTdsTzJyTGN3YUg0UGFHMmc2YlpWYkJYd3htSzkyTGZ1NWZNMHlnNg?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQekYyVW1oSDRDY1hTTHhvNkVnV0hrOFBnSjFWQ2VneTVKdEJxQWdxVVNmaXJuMnMwX1FPU0lwOGNMNXJxaEpkZHpJSWJXcU1KLTdPNS03SmpkTFJudll5YWhiQWlSd2w1VlN2bTJQWTlQSnBTTkZ3NWNqbENERDdDVy1nb1BsTGFyaW9Ed0ZjeWVReW1Ca190UUVMaW12d0ZBWmlqYUlBLUI2WnhLbFVqQm5PZGw3d056dFlMYjZpdXhObnRw?oc=5",
           "date": "2026-08-17",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNWEFjU1B3eXp2RkVNVkxYLXB3WGI2LTNUelAyYXpqcldUeUE5X1YxNEhSb05CeGYzdTNXck8wdXd0empjYVBtRTFTdS10NW9UdnVsU0U1UUF1VmpkaWJOa1VBQXBwTkdGZEU4VnBDTE"
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQekYyVW1oSDRDY1hTTHhvNkVnV0hrOFBnSjFWQ2VneTVKdEJxQWdxVVNmaXJuMnMwX1FPU0lwOGNMNXJxaEpkZHpJSWJXcU1KLTdPNS03SmpkTFJudll5YWhiQWlSd2w1VlN2bTJQWT"
         },
         {
           "title": "Arista Networks (ANET) Shares Just Moved, So What Is Driving Attention Now? - simplywall.st",
@@ -4529,7 +4522,7 @@
         {
           "title": "Arista Networks vs. Intel: Which Technology Stock Is a Better Buy in 2026?",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82dda01cce4f7f84396ce4ec77d013&url=https%3a%2f%2fwww.fool.com%2fcoverage%2fbetter-buy%2f2026%2f08%2f15%2farista-networks-vs-intel-which-technology-stock-is-a-better-buy-in-2026%2f&c=5834339557397894913&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82f7af5f174a908624ed0e282e1ec0&url=https%3a%2f%2fwww.fool.com%2fcoverage%2fbetter-buy%2f2026%2f08%2f15%2farista-networks-vs-intel-which-technology-stock-is-a-better-buy-in-2026%2f&c=5834339557397894913&mkt=en-us",
           "date": "2026-08-15",
           "summary": "Arista is firing on all cylinders with 39% net margins and zero debt, while Intel is burning cash and posting losses as it pivots to foundry."
         },
@@ -4563,260 +4556,260 @@
           "source": "consensus"
         },
         {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-07",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
           "date": "3",
           "firm": "39 Buy \u00b7 4 Hold \u00b7 1 Sell (44 analysts)",
           "from_grade": "",
           "to_grade": "Buy",
           "action": "reit",
           "source": "consensus"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-07",
+          "firm": "Citigroup",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
         },
         {
           "date": "3",
@@ -5017,18 +5010,32 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNZm1zeTI0V0Z4Rm00Y2RlZVN4TFl2SVV0OW5SS3QwOHVlckNSTWhGN3d2QjN2dmRJQ3ZTZV9sQ3ZmNWxTNEcyZ1BaU3ZCVGZsU2FHQUZrWlNrVlE1aHlhX1lzVEU1ektWQ1lfSmhJVm"
         },
         {
-          "title": "Billionaire Stanley Druckenmiller Dumped Micron and Intel, and More Than 11X'd Duquesne Family Office's Stake in an AI Pioneer",
+          "title": "Micron stock heats up again, crossing $1,000",
           "source": "Yahoo Finance",
-          "url": "https://www.fool.com/investing/2026/08/17/billionaire-stanley-druckenmiller-mu-intc-buy-amzn/?.tsrc=rss",
+          "url": "https://finance.yahoo.com/markets/stocks/article/micron-stock-heats-up-again-crossing-1000-115304344.html?.tsrc=rss",
           "date": "2026-08-17",
-          "summary": "Duquesne Family Office's billionaire boss made big moves in the artificial intelligence (AI) space during the second quarter."
+          "summary": "Micron shares are back with some momentum."
         },
         {
-          "title": "Micron Stock Inches Closer to $1,000 Per Share, but Time Is Running Out for a Stock Split in 2026",
-          "source": "Yahoo Finance",
-          "url": "https://www.fool.com/investing/2026/08/17/micron-stock-inches-closer-to-1000-per-share-but-t/?.tsrc=rss",
+          "title": "Micron Technology MU Draws Bold $1,625 AI Supercycle Targets - StocksToTrade",
+          "source": "StocksToTrade",
+          "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE00b2g1cjQxSy1sekJaQ1NFU01KZ2xxcHhZRVpDbW5pUlhadGo2ZmctSFZ2VUMyRm9uTzJQcTdDZEd1dzMzc1hxckFMeVRDSUJldzZ2NDFJcHdZNzJSUXRFN213WS1nVXp4WnFQOFhTUE9CTVNoTkRwU3ZVNGQ?oc=5",
           "date": "2026-08-17",
-          "summary": "Micron could split its stock, but investors shouldn't expect a split in 2026."
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMifEFVX3lxTE00b2g1cjQxSy1sekJaQ1NFU01KZ2xxcHhZRVpDbW5pUlhadGo2ZmctSFZ2VUMyRm9uTzJQcTdDZEd1dzMzc1hxckFMeVRDSUJldzZ2NDFJcHdZNzJSUXRFN213WS1nVXp4WnFQOFhTUE"
+        },
+        {
+          "title": "MU Remains BofA's Top Memory Pick \u2013 SNDK Signals Memory Growth May Be Structural, BofA Says",
+          "source": "Yahoo Finance",
+          "url": "https://stocktwits.com/news-articles/markets/equity/mu-250-eps-bull-case-sndk-signals-memory-growth-structural-bofa/cZYGbtPRJ12?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "BofA reiterated its \u2018Buy\u2019 rating on Micron and a $1,550 price target, implying an upside potential of about 59% from current levels."
+        },
+        {
+          "title": "The Global DRAM Market Report 2026\u20132036: Evaluating HBM4, DDR5/GDDR7 Adoption, CMOS-Bonded Arrays, and Strategies of SK Hynix, Samsung, Micron, and ASML",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/technology/articles/global-dram-market-report-2026-110100507.html?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "The global DRAM market is forecast to approach $400 billion by 2027 as AI and data centre growth accelerate HBM demand. This 2026\u20132036 report analyses HBM4, DDR6, 3D DRAM, advanced packaging, investme"
         },
         {
           "title": "Micron Technology, Inc. stock nears $1,000 as bullish trend holds, momentum cools - The Cryptonomist",
@@ -5036,20 +5043,6 @@
           "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPSUNfRng4V2JpdmJvWUlrX0VYZ20xYkdLRWRZalAwUEpRMXdTYTV2U1A1MmxQbzUyY2RXUDFJMnA2Mm0tdWlzcnZ4V2trQVc4OGtOTGt6MFZ1TDMyX2dnQlNLNUsyc21JN19nU0dRVHE4T1lUeGxvaUFGeWhzTmYxX3c2T0RCa0dpZlJ6NzU4YmZvRmJ3VEZnM1dhdU1sbUdTZ29YYVUzcnk0cmdqZThpcUhnVHRYQQ?oc=5",
           "date": "2026-08-17",
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPSUNfRng4V2JpdmJvWUlrX0VYZ20xYkdLRWRZalAwUEpRMXdTYTV2U1A1MmxQbzUyY2RXUDFJMnA2Mm0tdWlzcnZ4V2trQVc4OGtOTGt6MFZ1TDMyX2dnQlNLNUsyc21JN19nU0dRVH"
-        },
-        {
-          "title": "SNDK, MU Rise Overnight: Analyst Target Hikes, KOSPI Rebound Power Surge",
-          "source": "Yahoo Finance",
-          "url": "https://stocktwits.com/news-articles/markets/equity/sndk-mu-rise-overnight-analyst-target-hikes-kospi-rebound-power-surge/cZo6v4ORJKA?.tsrc=rss",
-          "date": "2026-08-17",
-          "summary": "SanDisk issued bullish targets for 2030 last week, prompting analysts to raise their price targets on the memory chipmaker\u2019s shares."
-        },
-        {
-          "title": "Micron Nears $1,000 \u2013 And Apple Could Be The Next Catalyst",
-          "source": "Yahoo Finance",
-          "url": "https://stocktwits.com/news-articles/markets/equity/micron-nears-1-000-and-apple-could-be-the-next-catalyst/cZo6Ff1RJKh?.tsrc=rss",
-          "date": "2026-08-17",
-          "summary": "Gains in KOSPI could push Micron shares on Monday, retail traders said."
         }
       ]
     },
@@ -5194,12 +5187,12 @@
           "source": "broker"
         },
         {
-          "date": "3",
-          "firm": "12 Buy \u00b7 31 Hold \u00b7 5 Sell (48 analysts)",
-          "from_grade": "",
-          "to_grade": "Hold",
+          "date": "2026-08-12",
+          "firm": "UBS",
+          "from_grade": "Neutral",
+          "to_grade": "Neutral",
           "action": "reit",
-          "source": "consensus"
+          "source": "broker"
         },
         {
           "date": "3",
@@ -5521,11 +5514,11 @@
       },
       "news": [
         {
-          "title": "Billionaire Stanley Druckenmiller Dumped Micron and Intel, and More Than 11X'd Duquesne Family Office's Stake in an AI Pioneer",
+          "title": "Intel, Oracle, Marvell, Alibaba, and More Stocks That Explain Today\u2019s Market",
           "source": "Yahoo Finance",
-          "url": "https://www.fool.com/investing/2026/08/17/billionaire-stanley-druckenmiller-mu-intc-buy-amzn/?.tsrc=rss",
+          "url": "https://finance.yahoo.com/m/e16a2ee6-9fad-362d-ac29-c796aa9fd1b0/intel%2C-oracle%2C-marvell%2C.html?.tsrc=rss",
           "date": "2026-08-17",
-          "summary": "Duquesne Family Office's billionaire boss made big moves in the artificial intelligence (AI) space during the second quarter."
+          "summary": "Chips and memory stocks are catching a bid at the start of what could be a quiet week for the market."
         },
         {
           "title": "AI video startup Higgsfield hits $5.4B valuation with Goldman, Intel backing: FT",
@@ -5535,32 +5528,32 @@
           "summary": ""
         },
         {
+          "title": "Stocks making the biggest moves premarket: Alibaba, Intel, Sandisk & more - CNBC",
+          "source": "CNBC",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOaE10T1RRaEZDZmtMX204ZmtaNUNfWVJjdmVWdldSaVFicm5MRE00M2lRTm5ydzBOTFNtWXB6TWdCc3M1T1k4MENSa0FyUWtHb3hhTzQ4Q2NBZ1RKN2NyMWR2YV94QTFGV2FFcGFPMWp0em5XUW1SUVh6QXo1emhSTTNyOVVTSzVaODY0U3NQUnptMm4tbTY2Uw?oc=5",
+          "date": "2026-08-17",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxOaE10T1RRaEZDZmtMX204ZmtaNUNfWVJjdmVWdldSaVFicm5MRE00M2lRTm5ydzBOTFNtWXB6TWdCc3M1T1k4MENSa0FyUWtHb3hhTzQ4Q2NBZ1RKN2NyMWR2YV94QTFGV2FFcGFPMW"
+        },
+        {
+          "title": "Billionaire Stanley Druckenmiller Dumped Micron and Intel, and More Than 11X'd Duquesne Family Office's Stake in an AI Pioneer",
+          "source": "Yahoo Finance",
+          "url": "https://www.fool.com/investing/2026/08/17/billionaire-stanley-druckenmiller-mu-intc-buy-amzn/?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "Duquesne Family Office's billionaire boss made big moves in the artificial intelligence (AI) space during the second quarter."
+        },
+        {
+          "title": "Intel, Oracle, Marvell, Alibaba, and More Stocks That Explain Today\u2019s Market - Barron's",
+          "source": "Barron's",
+          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1yVGVBNlNXSmlqbjR1LTBGR2c2MXhyVE5lWXVhVThiOVlUdlJCU1RKZG83RENSbk95MTVHbXRPNDNQeXpiM1duVGtHUDVzUllwZXhnUmJpdW80T20yX3hEWjNtMEQ?oc=5",
+          "date": "2026-08-17",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiZEFVX3lxTE1yVGVBNlNXSmlqbjR1LTBGR2c2MXhyVE5lWXVhVThiOVlUdlJCU1RKZG83RENSbk95MTVHbXRPNDNQeXpiM1duVGtHUDVzUllwZXhnUmJpdW80T20yX3hEWjNtMEQ?oc=5\" target=\""
+        },
+        {
           "title": "Higgsfield Hits $5.4 Billion Valuation: Is AI Video Back?",
           "source": "Yahoo Finance",
           "url": "https://beincrypto.com/higgsfield-ai-video-valuation-funding/?.tsrc=rss",
           "date": "2026-08-17",
           "summary": "Higgsfield raised $400 million at a $5.4 billion valuation, with Goldman Sachs and Intel joining as new investors."
-        },
-        {
-          "title": "Dan Niles Says AI Infrastructure Rally Has \u2018At Least A Year\u2019 To Run \u2014 Names Intel His Favorite Chip Bet",
-          "source": "Yahoo Finance",
-          "url": "https://stocktwits.com/news-articles/markets/equity/dan-niles-says-ai-infrastructure-rally-has-at-least-a-year-to-run-names-intel-his-favorite-chip-bet/cZo6siyRJKN?.tsrc=rss",
-          "date": "2026-08-17",
-          "summary": "Dan Niles remains bullish on AI, citing strong infrastructure spending and cloud growth, while warning that elevated yields and geopolitical risks could drive volatility."
-        },
-        {
-          "title": "AI Money Moves Put These Five Stocks In Spotlight Last Week: NVDA, INTC, ORCL, AMD, SNDK",
-          "source": "Yahoo Finance",
-          "url": "https://stocktwits.com/news-articles/markets/equity/ai-money-moves-put-these-five-stocks-in-spotlight-last-week-nvda-intc-orcl-amd-sndk/cZo6V2KRJKf?.tsrc=rss",
-          "date": "2026-08-17",
-          "summary": "Tech companies are raising money, increasing production, and changing their plans as AI spending stays strong, while investors watch costs and how well companies deliver on their promises."
-        },
-        {
-          "title": "Intel eyes a memory comeback: why the timing matters for Micron stock",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82dda24fe24546b88ea6cb5604df4b&url=https%3a%2f%2finvezz.com%2fnews%2f2026%2f08%2f17%2fintel-eyes-a-memory-comeback-why-the-timing-matters-for-micron-stock%2f&c=17996952474796215175&mkt=en-us",
-          "date": "2026-08-16",
-          "summary": "Intel has not announced a new DRAM, NAND or HBM product. The comments matter for Micron stock investors because they arrive during shortages, rising prices and AI-driven demand. Tan\u2019s interest comes ."
         }
       ]
     },
@@ -5633,6 +5626,14 @@
           "source": "consensus"
         },
         {
+          "date": "3",
+          "firm": "41 Buy \u00b7 10 Hold \u00b7 0 Sell (51 analysts)",
+          "from_grade": "",
+          "to_grade": "Buy",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
           "date": "2026-08-06",
           "firm": "Argus Research",
           "from_grade": "Buy",
@@ -5957,14 +5958,6 @@
           "firm": "Wedbush",
           "from_grade": "Outperform",
           "to_grade": "Outperform",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-05",
-          "firm": "Cantor Fitzgerald",
-          "from_grade": "Overweight",
-          "to_grade": "Overweight",
           "action": "up",
           "source": "broker"
         }
@@ -6032,11 +6025,32 @@
       },
       "news": [
         {
+          "title": "The Global Market for Computing and AI for Data Centers Report 2026\u20132040: Evaluating GPUs, Custom ASICs, Arm vs x86, and Strategies of Nvidia, AMD, Google, and AWS",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/technology/ai/articles/global-market-computing-ai-data-111600912.html?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "Expanding from a market valued at $215 billion in 2025, the sector is undergoing structural transformation as merchant GPU leaders (Nvidia, AMD) compete and collaborate with hyperscalers deploying pro"
+        },
+        {
+          "title": "AMD rises as it offers details on $4.75B debt offering",
+          "source": "Seeking Alpha",
+          "url": "https://seekingalpha.com/symbol/AMD/news?source=feed_symbol_AMD",
+          "date": "2026-08-17",
+          "summary": ""
+        },
+        {
           "title": "Michael Burry Says \u2018You Could Have Heard It First\u2019 \u2014 As Big Tech\u2019s $3T AI Spending Risk Comes Into Focus",
           "source": "Yahoo Finance",
           "url": "https://stocktwits.com/news-articles/markets/equity/michael-burry-says-you-could-have-heard-it-first-as-big-tech-s-3-t-ai-spending-risk-comes-into-focus/cZo6sZzRJKV?.tsrc=rss",
           "date": "2026-08-17",
           "summary": "The total includes $1.2 trillion in unstarted leases and $1.9 trillion in purchase commitments."
+        },
+        {
+          "title": "Big Tech companies have $3T in hidden AI expenditures- report",
+          "source": "Seeking Alpha",
+          "url": "https://seekingalpha.com/symbol/AMD/news?source=feed_symbol_AMD",
+          "date": "2026-08-17",
+          "summary": ""
         },
         {
           "title": "AMD (AMD) Stock Trades Up, Here Is Why",
@@ -6046,32 +6060,11 @@
           "summary": "Shares of computer processor maker AMD (NASDAQ:AMD) jumped 5.1% in the afternoon session after the company priced a $4.75 billion bond offering to fund its expansion into the artificial intelligence a"
         },
         {
-          "title": "A $210 Billion Reason to Buy AMD Stock Here - Barchart.com",
-          "source": "Barchart.com",
-          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQdEZvRk5OZjdWMlRYRnlleTl0YkY3dE5nNXd0SUdHcDJLcTNtZGNjSEFKOE5tRXYxZ2tlcFlEMDhQRVpwaEtLSjZMLVVJYktPQXlHU0RGTzQ3Q0pVRXRxNHpIVmE5VnBpQjU5QzR4ZmExblhXU1plYjhSVWYyMENRWGNPNXI5Z3drZXFPdjJaNA?oc=5",
-          "date": "2026-08-16",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMijwFBVV95cUxQdEZvRk5OZjdWMlRYRnlleTl0YkY3dE5nNXd0SUdHcDJLcTNtZGNjSEFKOE5tRXYxZ2tlcFlEMDhQRVpwaEtLSjZMLVVJYktPQXlHU0RGTzQ3Q0pVRXRxNHpIVmE5VnBpQjU5QzR4Zm"
-        },
-        {
-          "title": "1 Major Red Flag AMD Investors Can't Afford to Ignore",
-          "source": "Yahoo Finance",
-          "url": "https://www.fool.com/investing/2026/08/16/1-major-red-flag-amd-investors-cant-afford-to-igno/?.tsrc=rss",
-          "date": "2026-08-16",
-          "summary": "The chipmaker's valuation is far higher than those of its peers."
-        },
-        {
-          "title": "A $210 Billion Reason to Buy AMD Stock Here",
-          "source": "Yahoo Finance",
-          "url": "https://www.barchart.com/story/news/3876501/a-210-billion-reason-to-buy-amd-stock-here?.tsrc=rss",
-          "date": "2026-08-16",
-          "summary": "Shares of Advanced Micro Devices could have plenty of runway as AI-driven computing is reshaping the server CPU market."
-        },
-        {
-          "title": "AMD Turned $10,000 Into More Than $700,000 in a Decade. The S&P 500 Turned It Into About $42,000.",
-          "source": "Yahoo Finance",
-          "url": "https://www.fool.com/investing/2026/08/16/amd-turned-10000-into-more-than-700000-in-a-decade/?.tsrc=rss",
-          "date": "2026-08-16",
-          "summary": "One chipmaker beat the index by a factor of 17 over ten years. The path there included a 55% single-year drop."
+          "title": "Glynn Capital Management LLC Boosts Stock Holdings in Advanced Micro Devices, Inc. $AMD - MarketBeat",
+          "source": "MarketBeat",
+          "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPd1lMMW1PNjNxcndLOHB6UnEySVIzaVJvaUs2bFI3N0ItZVg0NmtyQmJqcGUzVWFiRXkydkNoamdJVFdRUnVsbjFzaWxkM1pfMDh3U3pKZWVFNWJsRDB5NmRUWkhmV2xmWnNienhrYnNkb0hyWk9nTVFPQ3QwTVZaSkVILVNyTjJTcnpnSk4yNDlBaXJsZ1FJMnY1elQ2YVRLbzFMMVo3b2NxeEd6dEx5ZHVUUWVLYlV4WVlPb2IxVVBBNk9YLUtyWXY1WmtFRmU2ZTVKOWFKZ3B5OHNBekE?oc=5",
+          "date": "2026-08-17",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi3gFBVV95cUxPd1lMMW1PNjNxcndLOHB6UnEySVIzaVJvaUs2bFI3N0ItZVg0NmtyQmJqcGUzVWFiRXkydkNoamdJVFdRUnVsbjFzaWxkM1pfMDh3U3pKZWVFNWJsRDB5NmRUWkhmV2xmWnNienhrYn"
         }
       ]
     },
@@ -6081,6 +6074,27 @@
       "ratings": [],
       "news": [
         {
+          "title": "Why Strategy (MSTR) Shares Are Trading Lower Today - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOdWRVWm5WMVgxckg3YVZ3cmlDeDRvVGF5Njlrc3Uyd1dHdE5ERC1sZDRtaGZrcGJMZXU5NnJEY0dFUG5QdWFCSV9HTlkwOVhNSnhkVWhqQ3pkaUEtVVNVVXhEV0NXNjQxUHpfd0JEN2l2VHBSZEFRbHNxRlhHMEVBSy1kM0VlRnVJREl3RkgtRHRQNFBVcG4wajFNcVg0dw?oc=5",
+          "date": "2026-08-17",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxOdWRVWm5WMVgxckg3YVZ3cmlDeDRvVGF5Njlrc3Uyd1dHdE5ERC1sZDRtaGZrcGJMZXU5NnJEY0dFUG5QdWFCSV9HTlkwOVhNSnhkVWhqQ3pkaUEtVVNVVXhEV0NXNjQxUHpfd0JEN2"
+        },
+        {
+          "title": "Scott Bessent Has a $40 Trillion Problem, And Wall Street Isn\u2019t Sure He Can Solve It",
+          "source": "Yahoo Finance",
+          "url": "https://247wallst.com/investing/2026/08/17/scott-bessent-has-a-40-trillion-problem-and-wall-street-isnt-sure-he-can-solve-it/?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "Scott Bessent is juggling foreign interventions, suppressed guidance, and a maturity calendar that keeps converting sub-2% debt into 5% obligations. Wall Street strategists are watching his next move,"
+        },
+        {
+          "title": "Strategy (MSTR) Stock Looks Below Fair Value Despite Bitcoin Risks - simplywall.st",
+          "source": "simplywall.st",
+          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQMVhmWGhoYWFMR3pheWtTY1M5MnVzb0N1UmFpRHpZXzBCWlprQ29TV1BueEc1TUdfTWQ1VzBFVTJ4WXpGT0dIVS1sQlp3SV9tTkZZbXA0VmVodmdpZkZya2lRY0t4QXNIM3htMTlrbEhoc0FSTlNlOXZEZnlvWFhiOFhmaWVtNEFiS1JKdjVYNHVOV0RpVTJUVWFoa3p1TUgxNDJBTEppQVA3VHBOU2ZMWEtfVG5YSjVoUkNDVXZ6RFVyRlFwOUHSAcsBQVVfeXFMTmxVODNEeGJCWjRqaHZENVdwOVFOOW1XOGRld0VqdVVTSlZqQi1tMUw1STZuZ3cyTS1rOW1mcEpJZ3FkdWE0WGlJeUdHaTBURmRWb1BQd3dkS3djUGtXNmRVWkd5OGo3cUtBM3JoTXlLSklrTi12SmF0cUQzMkFhU1RRbU0zSVRqbW9uRkxfRExOTVVQdGhOS1FzdUd2ZFp3SkpCZVFkbk55cUdyMl9pelBlVTlkSmp3RkxteGtyUmVMNFFtVXdsSEtkNnc?oc=5",
+          "date": "2026-08-17",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxQMVhmWGhoYWFMR3pheWtTY1M5MnVzb0N1UmFpRHpZXzBCWlprQ29TV1BueEc1TUdfTWQ1VzBFVTJ4WXpGT0dIVS1sQlp3SV9tTkZZbXA0VmVodmdpZkZya2lRY0t4QXNIM3htMTlrbE"
+        },
+        {
           "title": "Why Is The Crypto Market Up Today?",
           "source": "Yahoo Finance",
           "url": "https://beincrypto.com/why-is-the-crypto-market-up-today/?.tsrc=rss",
@@ -6088,39 +6102,18 @@
           "summary": "The crypto market rose on Monday as record stock inflows lifted risk assets and last week's Bitcoin ETF outflows began to fade."
         },
         {
+          "title": "Bitcoin Stock Futures Update Highlights Market Shifts - The Cryptonomist",
+          "source": "The Cryptonomist",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1neWl6YUR0dm1kMl85UUZkOWs2SnpuNlpUay1QcXBUdnhReWdCeE1SSTJlcDlzUTV4b01SdURncUZVaTdHVkM4c1ZIRWprRTNaajNldGdJa3hkMzVfR2VCTjlFZXBUdWw3VENmd3JDaGRkSjdsTUE?oc=5",
+          "date": "2026-08-17",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMidkFVX3lxTE1neWl6YUR0dm1kMl85UUZkOWs2SnpuNlpUay1QcXBUdnhReWdCeE1SSTJlcDlzUTV4b01SdURncUZVaTdHVkM4c1ZIRWprRTNaajNldGdJa3hkMzVfR2VCTjlFZXBUdWw3VENmd3JDaG"
+        },
+        {
           "title": "GOOGL Is Already Borrowing Billions For AI \u2013 Now It\u2019s Reportedly Eyeing Australia\u2019s Bond Market",
           "source": "Yahoo Finance",
           "url": "https://stocktwits.com/news-articles/markets/equity/googl-is-already-borrowing-billions-for-ai-now-it-s-reportedly-eyeing-australia-s-bond-market/cZo6NDPRJKO?.tsrc=rss",
           "date": "2026-08-17",
           "summary": "U.S. tech firms are flooding credit markets with debt to fund investments in AI."
-        },
-        {
-          "title": "Why Coinbase (COIN) Stock Is Falling Today - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQY2dYTWZUNjhFNXJzY2RLelhGYnBPVVBEdVdWUWFSQnpXUkhrMnl5VURpX2l4cVc2RWVQOFpWUGhPaEZHRzBUOW83a0hkeUdxa1c3TTZZZHlxOXBYVnM1aE9idVhRWU9xc2xmZHFyWHZLeFJ1NGNzZkxkN3J6Yk9VUkdvajYxRUF3UkZPd25pblFWU3hXQnRvaTAxSDc?oc=5",
-          "date": "2026-08-17",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxQY2dYTWZUNjhFNXJzY2RLelhGYnBPVVBEdVdWUWFSQnpXUkhrMnl5VURpX2l4cVc2RWVQOFpWUGhPaEZHRzBUOW83a0hkeUdxa1c3TTZZZHlxOXBYVnM1aE9idVhRWU9xc2xmZHFyWH"
-        },
-        {
-          "title": "Capital B boosts bitcoin treasury via TOBAM-funded share issue and bond conversion - TipRanks",
-          "source": "TipRanks",
-          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNTlM0THJhRWlmVmdRRmo3eldBOHVGbUNCV2RqSkZNV3g3TTZZZVczaHRJdGpTQ2tNTEVzSnVnRXJqVUhtNkt2ZEd4WTJaM19qQkpDU0lVRTVoVFNaSlQxT01NaGJZLTdhVXQxbnFUcThEUUJBdVByeFg1U0FsOGJySER2ejdESzFKYUlGMmJEblg1M0M5MEhOZUs0YzB0b2tZM3ZJVWFXMkFRSTZKYk1VQnBmcjJINjZ3Nkd6elpVMlFYU3dHMXhaTmgydGlkVjg?oc=5",
-          "date": "2026-08-17",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxNTlM0THJhRWlmVmdRRmo3eldBOHVGbUNCV2RqSkZNV3g3TTZZZVczaHRJdGpTQ2tNTEVzSnVnRXJqVUhtNkt2ZEd4WTJaM19qQkpDU0lVRTVoVFNaSlQxT01NaGJZLTdhVXQxbnFUcT"
-        },
-        {
-          "title": "Strategy CEO Phong Le Thinks MSTR Stock Will Outperform Bitcoin During the Next Bull Market. Here's Why He's Wrong. - The Motley Fool",
-          "source": "The Motley Fool",
-          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPbkx2S1RrTTB5RFoxTHFYdUtESzRrMWZZa09FNWNubGU3QzFpaDlYMjF2SjVUUnN6VmZRSHpmb0ZXYVFHSDlPRGF2cXlCaHJ1LXpxWUpPdTlram9lRzVDUktVMUFDY3pkNWVxSWV2R3hEUkZtSU1YTGZPMDdaWU1HM3R6UlI0YmVQOWRSM0RSZTRXN3dTUFBZ?oc=5",
-          "date": "2026-08-16",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxPbkx2S1RrTTB5RFoxTHFYdUtESzRrMWZZa09FNWNubGU3QzFpaDlYMjF2SjVUUnN6VmZRSHpmb0ZXYVFHSDlPRGF2cXlCaHJ1LXpxWUpPdTlram9lRzVDUktVMUFDY3pkNWVxSWV2R3"
-        },
-        {
-          "title": "Bitcoin ETFs see largest outflow in six weeks as token stagnates",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82dda363ed443ba5fe64059715dea6&url=https%3a%2f%2fwww.theedgesingapore.com%2fnews%2fcryptocurrency%2fbitcoin-etfs-see-largest-outflow-six-weeks-token-stagnates&c=11106588386043318461&mkt=en-us",
-          "date": "2026-08-16",
-          "summary": "Spot Bitcoin exchange-traded funds recorded their largest outflows last week since the end of June, reversing a strong start to August."
         }
       ],
       "new_ratings": [],
@@ -6139,39 +6132,39 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPenJsTEhGekYtakl1UXZLOWwzQmh3V0l1MlpBN2xJQV8tVVZnb2YyYkd1a1UyZjdsUzRZN0dQUklnNWxacklqakUwYWlPZHRrS3FsSkg5eF9DU2FSVG9yWG1XX2kxRkNtRVdwbUJDZW"
         },
         {
-          "title": "Gold rises towards $4,400 as weaker dollar supports prices despite Middle East inflation concerns",
+          "title": "Why this Wall Street strategist says the \"trade is long gold\"",
           "source": "Yahoo Finance",
-          "url": "https://investorshub.advfn.com/market-news/article/34361/gold-rises-towards-4400-as-weaker-dollar-supports-prices-despite-middle-east-inflation-concerns?.tsrc=rss",
+          "url": "https://finance.yahoo.com/markets/commodities/articles/why-wall-street-strategist-says-113012320.html?.tsrc=rss",
           "date": "2026-08-17",
-          "summary": "Gold prices moved higher on Monday, remaining close to $4,400 an ounce as weakness in the U. S."
+          "summary": "Investing.com -- Bank of America strategist Michael Hartnett told investors in a note on Monday that gold remains his preferred hedge against a weakening dollar, pointing to the biggest inflows into t"
         },
         {
-          "title": "A 19.9% stake is set to stay intact\u2014who will receive more shares? - stocktitan.net",
-          "source": "stocktitan.net",
-          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPYzZ1X0hVWnpoX0tMWjB1NC1sUzJKNXFGUHhuajVlMjBVYXVjN2ZRZW1jM19obmRlTVVJLUpEbVQwQ3QxODBIbGZpSjhHbFJFZ1pGTHZmVERxbnpxcXM3RUxKbWtLbUUzRGpGX3dtODhld2NYdmQ2dENHX3gwVndqU1FIOVBkYVlUbS16dnoyc2ZDUFBQd0xSLVNPbXltdVBwQVRwWXVVeG9sUmNVSFAyWmhpRjFLeUpiOXkwUGVsZkU?oc=5",
+          "title": "Why is Zijin Gold International stock surging today? - Investing.com",
+          "source": "Investing.com",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPNUFsN2JPOTRJY0VaNC1VTHNhcmViNFhpdUJ6M0UwQzc4QTNmOWt2RUpWM19UTlp3RVM1dGwtdDZQMlZZOFBrYl9mbWhLcURWZXJILWtVRzVJNmFvWDl4OW53RnplNm4zRGxKR1laVmlFMGI0TnNIalBsQTR0bmp3QmVXcUpqZW5TdzI5MzlkbTlndnIzcWFUT2RscmMta3lXRDJuUE90ZERDOTZqSm1PbS1YOA?oc=5",
           "date": "2026-08-17",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPYzZ1X0hVWnpoX0tMWjB1NC1sUzJKNXFGUHhuajVlMjBVYXVjN2ZRZW1jM19obmRlTVVJLUpEbVQwQ3QxODBIbGZpSjhHbFJFZ1pGTHZmVERxbnpxcXM3RUxKbWtLbUUzRGpGX3dtOD"
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxPNUFsN2JPOTRJY0VaNC1VTHNhcmViNFhpdUJ6M0UwQzc4QTNmOWt2RUpWM19UTlp3RVM1dGwtdDZQMlZZOFBrYl9mbWhLcURWZXJILWtVRzVJNmFvWDl4OW53RnplNm4zRGxKR1laVm"
         },
         {
-          "title": "2 de-risked gold stocks from Yukon treasure to crypto crossover | 2026-08-17 | Investing News - Stockhouse",
-          "source": "Stockhouse",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQS0hBY2tyN1JpNllBWGRrYVNpUGE3dmE4TjVnemgyVjZoV0F3Y1Vmb3dtZXJfQ2tvcXY3RUJSM1l6MFU1WENYRFI3ZVEzYXhyd1RyOGZucmVZYThRanNEY0RWWDBCdl9OdEZEeGxQRmoxNzVqYnlubG02U29fdEMxN2hRaXhhVE41UE84QjNlZ01MRTl6V25BWXdwZHNMYnpZbG44dGoyVFl4NFUydnJtOQ?oc=5",
-          "date": "2026-08-17",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxQS0hBY2tyN1JpNllBWGRrYVNpUGE3dmE4TjVnemgyVjZoV0F3Y1Vmb3dtZXJfQ2tvcXY3RUJSM1l6MFU1WENYRFI3ZVEzYXhyd1RyOGZucmVZYThRanNEY0RWWDBCdl9OdEZEeGxQRm"
-        },
-        {
-          "title": "Gold Stocks In Focus As Geopolitical Risk Lifts Safe Haven Demand - simplywall.st",
-          "source": "simplywall.st",
-          "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNUzBmTnRGdW9fb1c2QW15SWRNb20yNlVWMGd1Wk5tMnQ5Q0ZmYlVYQ1AxY01uVEVxWFBFaUppWUZoWWZHd3BQSl9udlNaSHRpZ2pyRUZweDZfUEVlUVdXZml6eFp4NHg0U0xvWVNJcnplNUI2X2VwenlxanpsY3dDTVliNEtTLS1HR1lDQlVFUnBCRjFzcDNHaUptWHRQckI2cDVpNDk5dmRWLVFyVFFzbWpiUXdsNkRUSllJcU9oQTE3NUpURWJySDVHcTRVUG1EZElF0gHYAUFVX3lxTE1oQmZoQ1ZFQ1R0Y0luSTJMTkpkZk1oLWZNdDZSdU1RWDVDRGdOczRIUnV6QVZIOF9KSWoxRFBpY29yLVp0MUkzVmFBa1FvcXNfbkdqaU95d1JjUUQwSllyNmlWYTNFdWMycXUwQk1fNGtpeG9GaFp0SnF5eWtzZjhGNDUxOEJMaFlULUxEUnE1OC1XZXRudjdoT1RLZmdRVDVJOTdLUUJsRVR0dlh1NzFYcTQ2b3VFRU1mNVdJTGNpbDhkY3NHMjJhM1hXVFNfZWZQaURlQmJvcQ?oc=5",
-          "date": "2026-08-17",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxNUzBmTnRGdW9fb1c2QW15SWRNb20yNlVWMGd1Wk5tMnQ5Q0ZmYlVYQ1AxY01uVEVxWFBFaUppWUZoWWZHd3BQSl9udlNaSHRpZ2pyRUZweDZfUEVlUVdXZml6eFp4NHg0U0xvWVNJcn"
-        },
-        {
-          "title": "Equinox Gold Receives Positive Record of Decision for South Railroad; Significant Permitting Milestone Unlocks Next North American Growth Project",
+          "title": "Asante Reports Q2 & H1 2026 Operating & Financial Results",
           "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/commodities/articles/equinox-gold-receives-positive-record-100000651.html?.tsrc=rss",
+          "url": "https://finance.yahoo.com/markets/commodities/articles/asante-reports-q2-h1-2026-110000034.html?.tsrc=rss",
           "date": "2026-08-17",
-          "summary": "VANCOUVER, British Columbia, Aug. 17, 2026 (GLOBE NEWSWIRE) -- Equinox Gold Corp. (TSX: EQX, NYSE American: EQX) (\u201cEquinox Gold\u201d or the \u201cCompany\u201d) is pleased to announce that the United States Bureau "
+          "summary": "HIGHLIGHTS Q2 2026 gold production of 57,274 equivalent ounces at consolidated AISC of $4,281 per ounce; H1 2026 gold production of 117,076 equivalent ounces, up 46.1% over H1 2025, at consolidated AI"
+        },
+        {
+          "title": "30.4 Metres of Gold Mineralization, Plus Another Arizona Target - Stock Titan",
+          "source": "Stock Titan",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPUFMzR2dXYTV5UFJ5NDgxNWlBWDhSaGlxWEd3eWh5bHRBMXB0UjR0X2U3UVlfRUFKbWpnbXFlNGYtdUFmYlBhZmUteDB4ZEtmTzc4aU50REdTLWRlVjhZV1A0UjJZZDZZNjNVTGw1a25Ibng2eTNOa0V0TE5ndjIyTXQ1M25Xc2NtdFB1d1pzOWVuWmZqWkx5R1hKdDlqaHF1WUl5NVF2RGM0UldkYTd1QTRtbHM3NGNXRi1KZVFSWQ?oc=5",
+          "date": "2026-08-17",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPUFMzR2dXYTV5UFJ5NDgxNWlBWDhSaGlxWEd3eWh5bHRBMXB0UjR0X2U3UVlfRUFKbWpnbXFlNGYtdUFmYlBhZmUteDB4ZEtmTzc4aU50REdTLWRlVjhZV1A0UjJZZDZZNjNVTGw1a2"
+        },
+        {
+          "title": "Bill Ackman lost $400M dumping Netflix \u2014 now says it \u2018won the streaming wars.\u2019 Should you rebuy a stock that burned you?",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/bill-ackman-lost-400m-dumping-101500398.html?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "Here's what changed."
         }
       ],
       "new_ratings": [],
@@ -6183,6 +6176,20 @@
       "ratings": [],
       "news": [
         {
+          "title": "Where Will Workday Stock Be in 5 Years If Silver Lake Doesn't Buy It? - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNamoxZW5fM24xTHEtam1JdHhMekFVYTV1QkhUMGxaX2p5Uzc3Tl92OUZ4eU5BOEc0Tlk2MnAwVExUekd2cmNHTUxnX0ktQnpRaS13d0duUFhjTnVrWGk4YVdsVnNIMVFpblc1UGljaU9wSzl3aUluMkx5QXgzUjI5T2txNmNmcjd6RnlsT3o2NFllcWV4QWZZ?oc=5",
+          "date": "2026-08-17",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxNamoxZW5fM24xTHEtam1JdHhMekFVYTV1QkhUMGxaX2p5Uzc3Tl92OUZ4eU5BOEc0Tlk2MnAwVExUekd2cmNHTUxnX0ktQnpRaS13d0duUFhjTnVrWGk4YVdsVnNIMVFpblc1UGljaU"
+        },
+        {
+          "title": "Kuya Silver Reports Q2, 2026 Financial Results - Advances Bethania Mine Development and Drilling Program",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/kuya-silver-reports-q2-2026-110000393.html?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "Kuya Silver to hold a conference call webinar on August 17, 2026 to discuss Q2 2026 financial resultsToronto, Ontario--(Newsfile Corp. - August 17, 2026) - Kuya Silver Corporation (CSE: KUYA) (OTCQB: "
+        },
+        {
           "title": "Silver Price Today | Silver Spot Price Charts - SD Bullion",
           "source": "SD Bullion",
           "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5hT3hFTEstRXBaRUNWQ0NITm80Q0pVS0tOaXhEZXVCWF93MGhBaFNVOVRLamxfZElqVEx0S1hKaUhkbGx6aWY0R2Ywaw?oc=5",
@@ -6190,39 +6197,25 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMiS0FVX3lxTE5hT3hFTEstRXBaRUNWQ0NITm80Q0pVS0tOaXhEZXVCWF93MGhBaFNVOVRLamxfZElqVEx0S1hKaUhkbGx6aWY0R2Ywaw?oc=5\" target=\"_blank\">Silver Price Today | Silv"
         },
         {
-          "title": "Gold rises towards $4,400 as weaker dollar supports prices despite Middle East inflation concerns",
+          "title": "GoldInxs Deploys Cutting Edge Exploration Technology to Refine Drill Targets at Fishpot",
           "source": "Yahoo Finance",
-          "url": "https://investorshub.advfn.com/market-news/article/34361/gold-rises-towards-4400-as-weaker-dollar-supports-prices-despite-middle-east-inflation-concerns?.tsrc=rss",
+          "url": "https://finance.yahoo.com/markets/commodities/articles/goldinxs-deploys-cutting-edge-exploration-110000091.html?.tsrc=rss",
           "date": "2026-08-17",
-          "summary": "Gold prices moved higher on Monday, remaining close to $4,400 an ounce as weakness in the U. S."
+          "summary": "VANCOUVER, British Columbia, Aug. 17, 2026 (GLOBE NEWSWIRE) -- GoldInxs Mining Corp. (\u201cGoldInxs,\u201d or the \u201cCompany\u201d) (TSXV: INXS) is advancing its flagship Fishpot Property in central British Columbia "
         },
         {
-          "title": "Where Will Workday Stock Be in 5 Years If Silver Lake Doesn't Buy It? - The Motley Fool",
-          "source": "The Motley Fool",
-          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPNXY2dkpqallkQ1hmM3c5Qy0yaVM5NzlwcDZLWTFSZ0R5UjhhMDNpM256NE15ZjNramdOb1JIMTNGdXdDdWROcE9mZXRFaEsyNmNkclM1dWEwMUtsUmVIcUd1bmN4cXplVWhzQmhrUUFmZHk5eG4tRk1GMWdLZXZscXpNV1o5THJpbldUbXJlbGV5eHEyVXowag?oc=5",
+          "title": "Vizsla Silver: A Silver Giant In The Making That's Still Deeply Undervalued (NYSE:VZLA) - Seeking Alpha",
+          "source": "Seeking Alpha",
+          "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQSmVtR3I1a2JDNWtDZFJaUml1eUN6QVB6UDBjX0RQWGoyOXJzdjJ4OV9LaDhNM2ltNC1Uby1zbV9lbVVhUEY2anA3ZU54ekN2TFR3YktrcWlVZmNzLVZ0V3c1YXNwbzh2b3E1dkg3X1VSNFNiSWNhS1U5RF8xT1c4MGFxSlVHTzViZ3J0cEpDWVcxVF9EdTNzRk14X2lTN0Uwam1WeXFaQXVzU1dQMnlFTGotclFObUtKS3I0eFZ6VFlzWTgtZ1Y3bVp2R29wSDFRdnNn?oc=5",
           "date": "2026-08-17",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxPNXY2dkpqallkQ1hmM3c5Qy0yaVM5NzlwcDZLWTFSZ0R5UjhhMDNpM256NE15ZjNramdOb1JIMTNGdXdDdWROcE9mZXRFaEsyNmNkclM1dWEwMUtsUmVIcUd1bmN4cXplVWhzQmhrUU"
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxQSmVtR3I1a2JDNWtDZFJaUml1eUN6QVB6UDBjX0RQWGoyOXJzdjJ4OV9LaDhNM2ltNC1Uby1zbV9lbVVhUEY2anA3ZU54ekN2TFR3YktrcWlVZmNzLVZ0V3c1YXNwbzh2b3E1dkg3X1"
         },
         {
-          "title": "Arizona Eagle Mining Corp. Completes Acquisition of Three Past-Producing High-Grade Silver Mines to Consolidate Eagle Silver Project",
+          "title": "Lahontan Announces 22% Increase in Mineral Resources at Santa Fe: 1,195,000 Au Eq oz Indicated, and 1,190,000 Au Eq oz Inferred",
           "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/commodities/articles/arizona-eagle-mining-corp-completes-090000512.html?.tsrc=rss",
+          "url": "https://finance.yahoo.com/markets/commodities/articles/lahontan-announces-22-increase-mineral-110000570.html?.tsrc=rss",
           "date": "2026-08-17",
-          "summary": "Toronto, Ontario--(Newsfile Corp. - August 17, 2026) - Arizona Eagle Mining Corp. (TSXV: AZEM) (OTCQB: AZEMF) (the \"Company\" or \"Arizona Eagle\") is pleased to announce that it has completed the acquis"
-        },
-        {
-          "title": "Americas Gold And Silver (TSX:USA) Swung To Profitability, Is The Upside Already Priced In? - simplywall.st",
-          "source": "simplywall.st",
-          "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQYXM3YnRwUjRsbWItWnN5MVJENzBPLVN2NjQxSUlHY1NzNEV2ODc5T19sbDhleE9LRDJPMXZLM3BuNHRPMnNRSmxicXgxNkMtRkZ4Qlg0a3k1aW5HZmhfSldLOGN3RDRsaFk1TzJxOEt3VUpyaXQ1MlhUZmhCaWZOOWVpVWd3UXhQa3RPOE1IaklUMEZ2R3hPTEdzRkxrV0lPY2ZJMkFPblNfck5abFVPRlUxdE4zSWQtX3lBOEZOZDlCVFJWem5UNWNDLXMySU9fWElBVnZkTlhQWjd5T0ZkX9IB5gFBVV95cUxNRmZNODdpWmNDTUs1QlRNZ08tLUg0ZXgzNTcyaU1GTnFMckFvT0RCOU5qV2o5UDdpOHBHc2wzMHJtcnlacHpfOE1BZENVdEUwRmNwN3NVbWZXN09fSFdhaG8zTTM4cjRRdkdvcUxVNEpIemt5SEg2MTQ1QTBrUnM0Mnh4M2tvcVhxLU9YT3lXUk1TRFdzS0dGOVdxTXo2TVc4ck9fTkJMQ09wNUNka1NYbk9ucHBhdmZLX3docDZYQXRJakI0WmUyeEtUaEo4WHM4NDc2NlgzVTFXazd3dkFHZzZib3YxQQ?oc=5",
-          "date": "2026-08-17",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi4AFBVV95cUxQYXM3YnRwUjRsbWItWnN5MVJENzBPLVN2NjQxSUlHY1NzNEV2ODc5T19sbDhleE9LRDJPMXZLM3BuNHRPMnNRSmxicXgxNkMtRkZ4Qlg0a3k1aW5HZmhfSldLOGN3RDRsaFk1TzJxOE"
-        },
-        {
-          "title": "Tertiary Minerals discovers new shallow copper-mineralised zone in Zambia",
-          "source": "Yahoo Finance",
-          "url": "https://www.proactiveinvestors.com/companies/news/1097108/tertiary-minerals-discovers-new-shallow-copper-mineralised-zone-in-zambia-1097108.html?.tsrc=rss",
-          "date": "2026-08-17",
-          "summary": "Tertiary Minerals PLC (AIM:TYM, OTC:TTIRF, FRA:TMU) shares climbed 15%, rising to 0.075p, after the explorer discovered a new shallow copper-mineralised zone at its Mushima North project in Zambia, ar"
+          "summary": "TORONTO, Aug. 17, 2026 (GLOBE NEWSWIRE) -- Lahontan Gold Corp. (TSXV:LG, OTCQB:LGCXF, FSE:Y2F) (the \"Company\" or \"Lahontan\") is pleased to announce an updated Mineral Resource Estimate (\u201cMRE\u201d) for its"
         }
       ],
       "new_ratings": [],
@@ -6232,6 +6225,14 @@
       "ticker": "SIE.DE",
       "name": "Siemens AG",
       "ratings": [
+        {
+          "date": "3",
+          "firm": "17 Buy \u00b7 4 Hold \u00b7 3 Sell (24 analysts)",
+          "from_grade": "",
+          "to_grade": "Buy",
+          "action": "reit",
+          "source": "consensus"
+        },
         {
           "date": "3",
           "firm": "17 Buy \u00b7 4 Hold \u00b7 3 Sell (24 analysts)",
@@ -6581,18 +6582,11 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMifkFVX3lxTE5NQ1BvNWM2bHo4emhUa2lrXzJvX1FNcVhPLXZHVUpBOUhzQzU3OW9oSnlkRzNpQkN3ZGlUVFp6MF9YQ0d4bHpCRHVpd3JiZUh1SFhYXzZiU0FuY2ZMcFpoQWtOcE1MWGlTZGlqQW5Ka1"
         },
         {
-          "title": "I'm the CEO of Siemens. I reply to most emails with 2-letter responses and don't have recurring meetings \u2014 here's a day in my life.",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82dda6c112443db3936cf86e6bf709&url=https%3a%2f%2fwww.msn.com%2fen-ca%2flifestyle%2fcareer%2fi-m-the-ceo-of-siemens-i-reply-to-most-emails-with-2-letter-responses-and-don-t-have-recurring-meetings-here-s-a-day-in-my-life%2far-AA2a5hYd&c=17604388784774313595&mkt=en-us",
-          "date": "2026-08-14",
-          "summary": "The CEO of Siemens AG, Roland Busch, describes his daily routine: early gym sessions, efficient meetings, frequent travel, and weekend socializing."
-        },
-        {
-          "title": "CDNS Falls 12.9% in the Past Month. Is the Sell-Off an Opportunity?",
+          "title": "AXT, T1 Energy and Babcock & Wilcox Soaring Higher On Friday",
           "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/cdns-falls-12-9-past-164500703.html?.tsrc=rss",
+          "url": "https://247wallst.com/investing/2026/08/14/axt-t1-energy-and-babcock-wilcox-soaring-higher-on-friday/?.tsrc=rss",
           "date": "2026-08-14",
-          "summary": "CDNS has fallen 12.9% in a month despite strong Q2 growth, as a lower valuation and AI demand clash with a still-steep premium."
+          "summary": "AI's hunger for power and bandwidth is lifting stocks you would never expect, pulling a semiconductor substrate maker, a domestic solar upstart, and a restructured industrial into the same orbit as th"
         },
         {
           "title": "Siemens stock trades close to recent highs as Q3 FY 2026 beats support investor confidence - ad-hoc-news.de",
@@ -6600,6 +6594,13 @@
           "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNY29nNDdHekpxRmw4M19zTWVIU1dCYlpjdFV6UFdnQ3pKb1ppQUJRTFgwbmkzV2ZfdnBNWEEtMkkwd2otRTVGWkRVZG9xc1BOSzBHRnU1UWtTVXByelcyUmxfSnJUempaNUE0THZycVFlbDd2ZXJRVHdHb1pMeUUzYUdGREtrVWMteHJKTFVFQmEwRkxheFNZem1qRnQ5Y3ZsdmhKZXR0bXBweE9WQXhqT2ZGTkFYWTF6YUhVSGhwcmFEM1QxeDdKekVtT1FPZw?oc=5",
           "date": "2026-08-14",
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxNY29nNDdHekpxRmw4M19zTWVIU1dCYlpjdFV6UFdnQ3pKb1ppQUJRTFgwbmkzV2ZfdnBNWEEtMkkwd2otRTVGWkRVZG9xc1BOSzBHRnU1UWtTVXByelcyUmxfSnJUempaNUE0THZycV"
+        },
+        {
+          "title": "Siemens stock holds close to Xetra highs as Q3 FY 2026 beats support AI data center push - ad-hoc-news.de",
+          "source": "ad-hoc-news.de",
+          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOUDNHTXR4TmhYTGhLN0I5YVRhRXp0Qnc1bFFYdllpY2hPajlza2d3alVjRFZ0YUFSN2RwWVVERlNfTklhOUYwT2hFbUZyemhpQ2tXNEx4cEJjamxDLWxWa0tLTmEzdDZsMHIwQVgyc2p6cGo0WVl1WkpQMjlwTm1GUHo3THRqQ196R3lUUHVXcDJCRV9iNkFwNkJ0Rmp6T0JPZHpOR3dZaVNtbE1UWG5zV2ltc3I5MEl2aU1Zdjk5eU1scGxFbXpTenJ5TmpwaTg?oc=5",
+          "date": "2026-08-14",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxOUDNHTXR4TmhYTGhLN0I5YVRhRXp0Qnc1bFFYdllpY2hPajlza2d3alVjRFZ0YUFSN2RwWVVERlNfTklhOUYwT2hFbUZyemhpQ2tXNEx4cEJjamxDLWxWa0tLTmEzdDZsMHIwQVgyc2"
         }
       ]
     },
@@ -6607,6 +6608,14 @@
       "ticker": "IFX.DE",
       "name": "Infineon Technologies AG",
       "ratings": [
+        {
+          "date": "3",
+          "firm": "20 Buy \u00b7 3 Hold \u00b7 1 Sell (24 analysts)",
+          "from_grade": "",
+          "to_grade": "Buy",
+          "action": "reit",
+          "source": "consensus"
+        },
         {
           "date": "3",
           "firm": "20 Buy \u00b7 3 Hold \u00b7 1 Sell (24 analysts)",
@@ -6935,11 +6944,11 @@
       },
       "news": [
         {
-          "title": "Infineon Technologies AG: Release of a capital market information - marketscreener.com",
-          "source": "marketscreener.com",
-          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPZjZVR2F2c1BSWDM1RHM5d3p4UlRsYkxjZ05TZ1lKcTlqM0pjbW1GZ1lHc05DNVRQZS1oWHlXdC1vV3hSMmo4Q3VzZGl5U0R0aHJVWXVkMmxtZ1hkblFfeXBMXzVZa3Zja2tuMWh0Z2VRUkg5UXZMOEpkeENUR0NmSFFZSDFKQzdFOEY5M3FMc2F4QXlUeEF6S2hCZTZ3Q0Q1WjhkX0QzWGdDdmo4QlNqUnRrU0prZDZL?oc=5",
+          "title": "Infineon Technologies AG: Release of a capital market information - TradingView",
+          "source": "TradingView",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOUE9vRkVYcVNYOVVyQzhaNjdfdTEwQWtGMjdfTF9MbzItdTk3emdiaGIwZW9idnI3SVlqbS1jdWZUYmtUNVBRRjVSOU40eE9iYVpQYWNCMUpKeFZkMERkSjI0UDNRNkZkR09WMUg5VFRTeURaLWgwczFyX3htT19qNmprLUNYTnRmeWdiN1ZpaExTMVFXRU5YeVFkS096YXFHLUpsWXZ2QV8xUHJ3YUdiMUl1VS1Mc0tETWc?oc=5",
           "date": "2026-08-17",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxPZjZVR2F2c1BSWDM1RHM5d3p4UlRsYkxjZ05TZ1lKcTlqM0pjbW1GZ1lHc05DNVRQZS1oWHlXdC1vV3hSMmo4Q3VzZGl5U0R0aHJVWXVkMmxtZ1hkblFfeXBMXzVZa3Zja2tuMWh0Z2"
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxOUE9vRkVYcVNYOVVyQzhaNjdfdTEwQWtGMjdfTF9MbzItdTk3emdiaGIwZW9idnI3SVlqbS1jdWZUYmtUNVBRRjVSOU40eE9iYVpQYWNCMUpKeFZkMERkSjI0UDNRNkZkR09WMUg5VF"
         },
         {
           "title": "Infineon stock holds below recent highs as AI-driven guidance lifts fiscal 2025/ 26 outlook - ad-hoc-news.de",
@@ -7026,268 +7035,268 @@
           "source": "consensus"
         },
         {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "UBS",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
           "date": "3",
           "firm": "36 Buy \u00b7 6 Hold \u00b7 1 Sell (43 analysts)",
           "from_grade": "",
           "to_grade": "Buy",
           "action": "reit",
           "source": "consensus"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "UBS",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
         },
         {
           "date": "3",
@@ -7425,46 +7434,46 @@
       },
       "news": [
         {
-          "title": "As Oracle Deepens Its Partnership with AWS, Here\u2019s How You Should Play ORCL Stock - Yahoo Finance",
+          "title": "Intel, Oracle, Marvell, Alibaba, and More Stocks That Explain Today\u2019s Market",
           "source": "Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPTnotOWtOdFBTVl9OTlJ3MC13X1FrZnFHa3M5Q0NObXNCZG9jbGJ1NklsODhsa1BKRFo5Rmw1YmN2YnVzclVEWXVGOGsyRE5FWFRBV1ZmWmNDNk5DQ1ZFNk9ranFlNjFaNHk5OTAxTS1hN1h0R3BaY1VCOUt3OGdqTGhmVGdTSUk2NWpKQXl6Mnk3Wkx1X3lITEN6THRadVBaOEE?oc=5",
-          "date": "2026-08-16",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxPTnotOWtOdFBTVl9OTlJ3MC13X1FrZnFHa3M5Q0NObXNCZG9jbGJ1NklsODhsa1BKRFo5Rmw1YmN2YnVzclVEWXVGOGsyRE5FWFRBV1ZmWmNDNk5DQ1ZFNk9ranFlNjFaNHk5OTAxTS"
+          "url": "https://finance.yahoo.com/m/e16a2ee6-9fad-362d-ac29-c796aa9fd1b0/intel%2C-oracle%2C-marvell%2C.html?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "Chips and memory stocks are catching a bid at the start of what could be a quiet week for the market."
         },
         {
-          "title": "As Oracle deepens its partnership with AWS, here\u2019s how you should play ORCL stock",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82dda79e6142f59336cb9d6fc02324&url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2ftechnology%2fas-oracle-deepens-its-partnership-with-aws-here-s-how-you-should-play-orcl-stock%2far-AA2aeyoL&c=8901204291488514831&mkt=en-us",
-          "date": "2026-08-16",
-          "summary": "Oracle (ORCL), the erstwhile database powerhouse and now a serious cloud player, has made it known to the market that it has not forgotten its roots. The latest deal with Amazon.com (AMZN) Amazon Web "
+          "title": "Big Tech companies have $3T in hidden AI expenditures- report",
+          "source": "Seeking Alpha",
+          "url": "https://seekingalpha.com/symbol/ORCL/news?source=feed_symbol_ORCL",
+          "date": "2026-08-17",
+          "summary": ""
         },
         {
-          "title": "Microsoft and Oracle: J.P. Morgan Hikes One AI Stock\u2019s Price Target but Lowers the Other \u2013 Here\u2019s Why - TipRanks",
-          "source": "TipRanks",
-          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQZS00M1laV1llX3hOM05YY3JSM09NbjZfTFc5dl9sWEhhc015MnVyVnhNdTZwN3ljemkzM2hUOTFSc1V3UWpxX1gyTm9CLUR3TzR3MVNtTjcybVUxREY0dUpvM2dmcTZYeHRCYUVYVnFOSUk4dTFKcTB5QUVqbW5QWk9KVW8tbjdkX0RhTG81bHYzd3FkY3dDSTBScFNpamZKSTMwdkV5di1UM2x0Nmd5Q055eWEzczFQcXB2M3dId3NtUV8xamZmdzllUVB3Zw?oc=5",
-          "date": "2026-08-16",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxQZS00M1laV1llX3hOM05YY3JSM09NbjZfTFc5dl9sWEhhc015MnVyVnhNdTZwN3ljemkzM2hUOTFSc1V3UWpxX1gyTm9CLUR3TzR3MVNtTjcybVUxREY0dUpvM2dmcTZYeHRCYUVYVn"
-        },
-        {
-          "title": "Nvidia\u2019s Financing Platform Will Support the AI Investment Boom",
+          "title": "AI Is Driving Up Treasury Yields: \u2018It Just Touches Everything\u2019",
           "source": "Yahoo Finance",
-          "url": "https://www.barchart.com/story/news/3875922/nvidias-financing-platform-will-support-the-ai-investment-boom?.tsrc=rss",
-          "date": "2026-08-16",
-          "summary": "Michael Burry calls Nvidia's AI financing a \"Wall Street stunt,\" so how will investors respond?"
+          "url": "https://finance.yahoo.com/economy/policy/articles/ai-driving-treasury-yields-just-093000747.html?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "An age-old economics tenet posits that excessive government borrowing can leave little room for companies to tap financial markets and drive up their interest rates to punishing levels. It\u2019s called th"
         },
         {
-          "title": "Wix, AppLovin, Manhattan Associates, Strategy, and Oracle Shares Skyrocket, What You Need To Know - Yahoo Finance",
+          "title": "Michael Burry Says \u2018You Could Have Heard It First\u2019 \u2014 As Big Tech\u2019s $3T AI Spending Risk Comes Into Focus",
           "source": "Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOSGxTbFVhYXVYYy1hUjJ5VmdRVU5RODdHWWgzZ3VqRHZoQjFZLWhsd0FLaU16Vjc2eVVEZk81Wnc2SUx0Y0lZclkyTEk0a0lLMlN6T2dWNmtQV2xiUm5sUWFNeUZZMDdoM3dDazhHa1Rnb3pteXhCb1hDSXZ3NklHa296WkFDU1MtUVU4bXVoYmczZWFtSmhuMi0yVzhBM3FpTlE3UzV1MGdpZ00?oc=5",
-          "date": "2026-08-16",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOSGxTbFVhYXVYYy1hUjJ5VmdRVU5RODdHWWgzZ3VqRHZoQjFZLWhsd0FLaU16Vjc2eVVEZk81Wnc2SUx0Y0lZclkyTEk0a0lLMlN6T2dWNmtQV2xiUm5sUWFNeUZZMDdoM3dDazhHa1"
+          "url": "https://stocktwits.com/news-articles/markets/equity/michael-burry-says-you-could-have-heard-it-first-as-big-tech-s-3-t-ai-spending-risk-comes-into-focus/cZo6sZzRJKV?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "The total includes $1.2 trillion in unstarted leases and $1.9 trillion in purchase commitments."
         },
         {
-          "title": "Alphabet vs. Oracle: Which Is the Better AI Stock to Own for the Next 5 Years?",
+          "title": "AI Money Moves Put These Five Stocks In Spotlight Last Week: NVDA, INTC, ORCL, AMD, SNDK",
           "source": "Yahoo Finance",
-          "url": "https://www.fool.com/investing/2026/08/15/alphabet-vs-oracle-which-is-the-better-ai-stock-to/?.tsrc=rss",
-          "date": "2026-08-15",
-          "summary": "These companies have different business models, but share strong AI tailwinds."
+          "url": "https://stocktwits.com/news-articles/markets/equity/ai-money-moves-put-these-five-stocks-in-spotlight-last-week-nvda-intc-orcl-amd-sndk/cZo6V2KRJKf?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "Tech companies are raising money, increasing production, and changing their plans as AI spending stays strong, while investors watch costs and how well companies deliver on their promises."
+        },
+        {
+          "title": "Intel, Oracle, Marvell, Alibaba, and More Stocks That Explain Today\u2019s Market - Barron's",
+          "source": "Barron's",
+          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1yVGVBNlNXSmlqbjR1LTBGR2c2MXhyVE5lWXVhVThiOVlUdlJCU1RKZG83RENSbk95MTVHbXRPNDNQeXpiM1duVGtHUDVzUllwZXhnUmJpdW80T20yX3hEWjNtMEQ?oc=5",
+          "date": "2026-08-17",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiZEFVX3lxTE1yVGVBNlNXSmlqbjR1LTBGR2c2MXhyVE5lWXVhVThiOVlUdlJCU1RKZG83RENSbk95MTVHbXRPNDNQeXpiM1duVGtHUDVzUllwZXhnUmJpdW80T20yX3hEWjNtMEQ?oc=5\" target=\""
         }
       ]
     },
@@ -7472,6 +7481,14 @@
       "ticker": "AMZN",
       "name": "Amazon",
       "ratings": [
+        {
+          "date": "3",
+          "firm": "62 Buy \u00b7 4 Hold \u00b7 0 Sell (66 analysts)",
+          "from_grade": "",
+          "to_grade": "Buy",
+          "action": "reit",
+          "source": "consensus"
+        },
         {
           "date": "3",
           "firm": "62 Buy \u00b7 4 Hold \u00b7 0 Sell (66 analysts)",
@@ -7863,38 +7880,30 @@
           "to_grade": "Buy",
           "action": "up",
           "source": "broker"
-        },
-        {
-          "date": "2026-07-31",
-          "firm": "Keybanc",
-          "from_grade": "Overweight",
-          "to_grade": "Overweight",
-          "action": "up",
-          "source": "broker"
         }
       ],
       "new_ratings": [],
       "news": [
         {
-          "title": "Amazon.com, Inc. $AMZN Stock Holdings Lifted by Howard Financial Services LTD. - MarketBeat",
-          "source": "MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNX0l6SVdjUnFwVlpNVGp0VGZMSVZ0bFhFX1FVZGZPY3p5dTdCaF9IY2xwUTEweUU4aU5tT1FITlBSdnNrRE01bTViOEtSSndMRlF3R3h4UHlpT0J0QVJHYXpPLWVSNmNEdy01b2FvTXV3NTFHUERQRVMyMXJfUjEweGJFVkY3MUZSV0d3cHlXY2hMWEt2R2I4alNWc1BOTktFaUZoYV9DbE8xaW5sNV9GNGowSWRPT0tOMTFTVFItY3NGOUlCdy1yLUVFeEdoQjQ?oc=5",
+          "title": "Amazon (AMZN) Stock May Trade At A 39% Discount Following AI Demand News - webull.com",
+          "source": "webull.com",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBFTjZQT09rSXBpMUZKVFFZTmtqZkFJakE5QzFOck9qNjlYcDJ1cE83S0I5Yks0NnY5eVl3Qy1VMWpManYwbl9UMWhfY1RGTFJDcm5XZDNYVnc?oc=5",
           "date": "2026-08-17",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxNX0l6SVdjUnFwVlpNVGp0VGZMSVZ0bFhFX1FVZGZPY3p5dTdCaF9IY2xwUTEweUU4aU5tT1FITlBSdnNrRE01bTViOEtSSndMRlF3R3h4UHlpT0J0QVJHYXpPLWVSNmNEdy01b2FvTX"
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiWEFVX3lxTFBFTjZQT09rSXBpMUZKVFFZTmtqZkFJakE5QzFOck9qNjlYcDJ1cE83S0I5Yks0NnY5eVl3Qy1VMWpManYwbl9UMWhfY1RGTFJDcm5XZDNYVnc?oc=5\" target=\"_blank\">Amazon ("
         },
         {
-          "title": "Amazon restores binding arbitration and blocks class-action suits",
+          "title": "Two Squeezed Hyperscalers: Does Meta or Amazon Have The Bigger Cash Flow Problem?",
           "source": "Yahoo Finance",
-          "url": "https://www.retail-insight-network.com/news/amazon-restores-binding-arbitration/?.tsrc=rss",
+          "url": "https://247wallst.com/investing/2026/08/17/two-squeezed-hyperscalers-does-meta-or-amazon-have-the-bigger-cash-flow-problem/?.tsrc=rss",
           "date": "2026-08-17",
-          "summary": "The revised terms took effect immediately, with Amazon telling customers that continued use of its services constitutes agreement to the changes."
+          "summary": "Amazon and Meta both burned through tens of billions on AI infrastructure last quarter, but one of them is doing it without a paying tenant to recover the bill. The math behind each strategy points to"
         },
         {
-          "title": "Walmart, Target, Home Depot, Amazon, Micron and Alphabet are part of Zacks Earnings Preview",
-          "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-target-home-depot-amazon-085000989.html?.tsrc=rss",
+          "title": "Big Tech companies have $3T in hidden AI expenditures- report",
+          "source": "Seeking Alpha",
+          "url": "https://seekingalpha.com/symbol/AMZN/news?source=feed_symbol_AMZN",
           "date": "2026-08-17",
-          "summary": "Walmart leads a busy earnings week as retailers report amid cost pressures, while Tech's outsized gains lift S&P 500 earnings growth."
+          "summary": ""
         },
         {
           "title": "Paul R. Ried Financial Group LLC Boosts Stock Position in Amazon.com, Inc. $AMZN - MarketBeat",
@@ -7904,18 +7913,18 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMi0gFBVV95cUxQX05QU1Y0TFVtZmpwOGp6YU5PWGh3Ri1HQXBPQ29Ob3Flb01pV0V2XzRtMkZ3TUoxVHp2d0RxMXZIVWlhSHRMbFJEMFNGb3A5RDRhNGRkLXVQNFJjQmo5MF9wV05YYVprY21JemhxLT"
         },
         {
-          "title": "GAMMA Investing LLC Raises Stock Position in Amazon.com, Inc. $AMZN - MarketBeat",
-          "source": "MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOTGZXV3NpMkZQQVBWNVR2ZVUxamlaS01RWEhPVWhaaThRRFBZYVJzUjhRS0hCVzZ0dGlEYV84UExjOGNnLUlLVURsQVZTc0M3dExhNUN4WlUtSFpEeFotSm03VDlUR01LRnlsaEhtdkt3Mk11SjV3OEk4d2RRMFBtUGttNmhZQVVJMU1WOV9NY2tZNFdadnRsNGMzajVVS1FYM0dmSTVOQ2hhNjRPV09qRDBCbUxGVll5OVl5WTJHN2N3QQ?oc=5",
+          "title": "Google, Amazon, and Meta All Just Raised Capex Guidance Again. This Boring Industrial Wins No Matter Whose AI Infrastructure Is Best.",
+          "source": "Yahoo Finance",
+          "url": "https://www.fool.com/investing/2026/08/17/google-amazon-and-meta-all-just-raised-capex-guida/?.tsrc=rss",
           "date": "2026-08-17",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxOTGZXV3NpMkZQQVBWNVR2ZVUxamlaS01RWEhPVWhaaThRRFBZYVJzUjhRS0hCVzZ0dGlEYV84UExjOGNnLUlLVURsQVZTc0M3dExhNUN4WlUtSFpEeFotSm03VDlUR01LRnlsaEhtdk"
+          "summary": "Just be sure to look more than a year down the road."
         },
         {
-          "title": "Mainetti unveils M-Film flexible packaging range",
+          "title": "Amazon restores binding arbitration and blocks class-action suits",
           "source": "Yahoo Finance",
-          "url": "https://www.packaging-gateway.com/news/mainetti-m-film-flexible-packaging/?.tsrc=rss",
+          "url": "https://www.retail-insight-network.com/news/amazon-restores-binding-arbitration/?.tsrc=rss",
           "date": "2026-08-17",
-          "summary": "The line-up covers different packaging formats, including recyclable plastic and paper-based options."
+          "summary": "The revised terms took effect immediately, with Amazon telling customers that continued use of its services constitutes agreement to the changes."
         }
       ],
       "morningstar": {},
@@ -8386,22 +8395,7 @@
         }
       ],
       "new_ratings": [],
-      "news": [
-        {
-          "title": "New drones and space acrobatics? SpaceX, Power Metallic, Thales and Heidelberger Druck in flight mode",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82dda824164c9d800f03bee0d576c6&url=https%3a%2f%2fwww.msn.com%2fen-ca%2fmoney%2fcompanies%2fnew-drones-and-space-acrobatics-spacex-power-metallic-thales-and-heidelberger-druck-in-flight-mode%2far-AA2agVlF&c=14091419654001166083&mkt=en-us",
-          "date": "2026-08-16",
-          "summary": "SpaceX: After the IPO comes the bull run 8 times oversubscribed, up to USD 225 \u2013 then a sell-off down to USD 109 and back up to USD 149. Following its spectacular stock market debut in June, SpaceX .."
-        },
-        {
-          "title": "Thales staff in Govan secure new pay deal",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82dda824164c9d800f03bee0d576c6&url=https%3a%2f%2fwww.thebusinessdesk.com%2fscotland%2fnews%2f6634-thales-staff-in-govan-secure-new-pay-deal&c=4006387850553709226&mkt=en-us",
-          "date": "2026-08-14",
-          "summary": "Workers involved included electronics, software and systems engineers, along with manufacturing and mechanical technicians."
-        }
-      ],
+      "news": [],
       "morningstar": {},
       "consensus": {
         "months": [
@@ -8468,6 +8462,14 @@
       "ticker": "AAPL",
       "name": "Apple",
       "ratings": [
+        {
+          "date": "2026-08-10",
+          "firm": "Jefferies",
+          "from_grade": "Hold",
+          "to_grade": "Underperform",
+          "action": "down",
+          "source": "broker"
+        },
         {
           "date": "2026-08-10",
           "firm": "Jefferies",
@@ -8859,59 +8861,51 @@
           "to_grade": "Neutral",
           "action": "reit",
           "source": "broker"
-        },
-        {
-          "date": "2026-07-31",
-          "firm": "Barclays",
-          "from_grade": "Underweight",
-          "to_grade": "Underweight",
-          "action": "down",
-          "source": "broker"
         }
       ],
       "new_ratings": [],
       "news": [
         {
-          "title": "Market Chatter: Apple May Buy Chinese Memory Chips Despite US Request",
+          "title": "Here Are Monday\u2019s Top Wall Street Analyst Research Calls: Apple, Dave, Etsy, Federal Signal, Mobileye Global, Netskope, Okta, Shopify, Workday, and More",
           "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-apple-may-buy-083914102.html?.tsrc=rss",
+          "url": "https://247wallst.com/investing/2026/08/17/here-are-mondays-top-wall-street-analyst-research-calls-apple-dave-etsy-federal-signal-mobileye-global-netskope-okta-shopify-workday-and-more/?.tsrc=rss",
           "date": "2026-08-17",
-          "summary": "Apple (AAPL) may defy a request by the Trump administration and buy memory chips from China, which i"
+          "summary": "Pre-Market Stock Futures: Futures are trading mixed as we head into the new trading week, after a rollercoaster last week that gave investors and traders a bit of everything, from surprising economic "
         },
         {
-          "title": "Micron Nears $1,000 \u2013 And Apple Could Be The Next Catalyst - Stocktwits",
-          "source": "Stocktwits",
-          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQWFZ4UGk3elQ2MmFHTmdFTUZONVJsdEczTjVaUHRHUjRtSDBPYlZ4NHJHVmhxYXpKYmxjWUdETFJsTnlBZEJGMDZsdUJLUl9DTXUwcHh3cXhyNy13U0E0M2E0SFl4TU9fYzNQNFhBc3NoSTFBUGNyQlp3RlBLclF4eWlvRENXMXJHX2xtNEp5dll1aXNkc1RWWnRVYnlUWlo4UnZPaXZSeVRQcWwteV9JaFYzYWpES2JhZXg0?oc=5",
+          "title": "Germany concludes Apple antitrust probe as tech giant agrees to data consent changes",
+          "source": "Seeking Alpha",
+          "url": "https://seekingalpha.com/symbol/AAPL/news?source=feed_symbol_AAPL",
           "date": "2026-08-17",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQWFZ4UGk3elQ2MmFHTmdFTUZONVJsdEczTjVaUHRHUjRtSDBPYlZ4NHJHVmhxYXpKYmxjWUdETFJsTnlBZEJGMDZsdUJLUl9DTXUwcHh3cXhyNy13U0E0M2E0SFl4TU9fYzNQNFhBc3"
+          "summary": ""
         },
         {
-          "title": "Apple: For Investors, the 3 Things That Matter Now Are AI, Growth, and Valuation (NASDAQ: AAPL)",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82dda95388499b909b3c6b561329c2&url=https%3a%2f%2fwww.msn.com%2fen-us%2fmoney%2fgeneral%2fapple-for-investors-the-3-things-that-matter-now-are-ai-growth-and-valuation-nasdaq-aapl%2far-AA2ae28x&c=10433035476381544944&mkt=en-us",
-          "date": "2026-08-16",
-          "summary": "Investors who are interested in this dominant consumer tech business should pay close attention to the factors that matter most to its investment thesis."
-        },
-        {
-          "title": "Apple may finally have a $2,000 reason to enter foldables",
+          "title": "Update: Apple Changes App Tracking Rules Following German Competition Authority Review",
           "source": "Yahoo Finance",
-          "url": "https://www.thestreet.com/investing/apple-may-finally-have-a-2000-reason-to-enter-foldables?.tsrc=rss",
-          "date": "2026-08-16",
-          "summary": "The foldable smartphone used to resemble an expensive technical experiment. Now they\u2019re starting to appear more like something Apple can sell. That change is significant since Apple (AAPL) has spent y"
+          "url": "https://finance.yahoo.com/media-advertising/articles/apple-changes-app-tracking-rules-112818846.html?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "(Updates to include additional details in the third paragraph) Apple (AAPL) will modify its App T"
         },
         {
-          "title": "Jim Cramer Says Tim Cook Built Something No Other CEO Has: A Device People Think Is Their Friend",
-          "source": "Yahoo Finance",
-          "url": "https://247wallst.com/investing/2026/08/16/jim-cramer-says-tim-cook-built-something-no-other-ceo-has-a-device-people-think-is-their-friend-2/?.tsrc=rss",
-          "date": "2026-08-16",
-          "summary": "Jim Cramer credits Tim Cook with pulling off something no hardware company has managed before, and the financial case he makes reframes why Apple's valuation looks less like a tech stock and more like"
+          "title": "Sandisk and other memory stocks rise after U.S. asked Apple to avoid China competitors \u2014 and some more early-market movers - marketwatch.com",
+          "source": "marketwatch.com",
+          "url": "https://news.google.com/rss/articles/CBMikANBVV95cUxOQ21qR3N6RHhVMUJIMDA1cms1OEhNWnAwSmNCa2RUSEUtaEdEYmxYMVdEMGRzUS1ORXJUNWhCMTlFOEJ2ZWx6ai1ydFpuRW1XUnhwOTRkOThvWndjV183TGJwQy1vM2dOVFBGVjY3dUEtdExweVlCdzI2Tm1HYkc5Vk85NllXN3JNWjE5cEFUMHcxUmh5ZTdMZlB0aG1jY2NTcC1XX1JnZ3dwcEhKZG4xSGtPdk1FYWZpdGNaZ1lBdE1FTU8tNVVUQnR4V2JWdHdkUnVZa09wb3Rjc3BmcWJnbXA3N19haTdtYWRTbm5RMUhfdzdpVXd1QjBhcmhYdWhkNnl5ZE4xOVYyUy1UMG83NGFZNG9wVExQN2NGUkNrbUl1X2MyaVU2Q1Z3T3hjR2o4OHZvdDVERU5sZG84VHFHX200bHlxODVyS1BNT211NnRoOFNqNHUwVnFGeUUyR2w5VnBkQ1lBd1FfV3NBaWFIbnZXazVIVmptbTIzN2N3VmJuMzhIejNZdURVbXhseUFL?oc=5",
+          "date": "2026-08-17",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMikANBVV95cUxOQ21qR3N6RHhVMUJIMDA1cms1OEhNWnAwSmNCa2RUSEUtaEdEYmxYMVdEMGRzUS1ORXJUNWhCMTlFOEJ2ZWx6ai1ydFpuRW1XUnhwOTRkOThvWndjV183TGJwQy1vM2dOVFBGVjY3dU"
         },
         {
-          "title": "Apple's cheap-chip plan just hit a wall in Washington",
+          "title": "Berkshire Hathaway adds $17 billion to Alphabet stake in Q2 2026",
           "source": "Yahoo Finance",
-          "url": "https://www.thestreet.com/technology/apples-cheap-chip-plan-just-hit-a-wall-in-washington?.tsrc=rss",
-          "date": "2026-08-16",
-          "summary": "Every company eventually learns that the cheapest solution and the acceptable solution are two different things. That gap is where corporate strategy actually lives. You find the efficient answer, you"
+          "url": "https://qz.com/berkshire-hathaway-alphabet-stake-17-billion-081726?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "Google's parent company is now the third-largest holding in Berkshire's equity portfolio, worth around $36.6 billion"
+        },
+        {
+          "title": "Sandisk Stock Is Getting Its Mojo Back Amid China Memory-Chip Move",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/m/9c58832a-ac31-3e6c-9340-793142d64a4d/sandisk-stock-is-getting-its.html?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "Sandisk  stock is on a hot streak and may finally be getting its mojo back.  The shares are on a five-day winning streak through Friday, jumping 35% in that time.  Sandisk was moving in tandem with ot"
         }
       ],
       "morningstar": {},
@@ -8997,6 +8991,14 @@
           "source": "consensus"
         },
         {
+          "date": "3",
+          "firm": "24 Buy \u00b7 5 Hold \u00b7 2 Sell (31 analysts)",
+          "from_grade": "",
+          "to_grade": "Buy",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
           "date": "2026-08-07",
           "firm": "Truist Securities",
           "from_grade": "Buy",
@@ -9367,14 +9369,6 @@
         {
           "date": "2026-08-06",
           "firm": "Wells Fargo",
-          "from_grade": "Overweight",
-          "to_grade": "Overweight",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "Cantor Fitzgerald",
           "from_grade": "Overweight",
           "to_grade": "Overweight",
           "action": "up",
@@ -9444,6 +9438,20 @@
       },
       "news": [
         {
+          "title": "OmniAb Announces Global Collaboration and License Agreement for Ion Channel Program with Eli Lilly & Company",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/healthcare/articles/omniab-announces-global-collaboration-license-100100483.html?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "EMERYVILLE, Calif., August 17, 2026--OmniAb, Inc. (NASDAQ: OABI), a provider of cutting-edge discovery research technology to enable the discovery of next-generation therapeutics, today announced a gl"
+        },
+        {
+          "title": "OmniAb signs up to $370M licensing deal with Eli Lilly for ion channel program",
+          "source": "Seeking Alpha",
+          "url": "https://seekingalpha.com/symbol/LLY/news?source=feed_symbol_LLY",
+          "date": "2026-08-17",
+          "summary": ""
+        },
+        {
           "title": "Qsemble Capital Management LP Trims Stock Position in Eli Lilly and Company $LLY - MarketBeat",
           "source": "MarketBeat",
           "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQcUJCOEtUbktWSVBCS2ZydXVmQ2gyX0JlaDgyMjJ1Mk9ORTZGOG1jWVFLY2hTaVdCajBiXzl0eUotcW8tWlJHaWVlS0phYUhnRUY3RmxiSGVQUnhOVlFfQUN6aFJUM0lldndVZzdqWVhua2NoUzhabnFRaWFXQTc2eGhvMlVFSEdNS0VWRGxheXZwZm5JalJjZS1nOXUyS2Mzek5TN3g2djJFODNhN3dObEFSVkE5YmFBY2pzejhkR2JNelMyVGNtUU8tZkVuOHIyZWtFQ0dkVQ?oc=5",
@@ -9451,39 +9459,25 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMi1wFBVV95cUxQcUJCOEtUbktWSVBCS2ZydXVmQ2gyX0JlaDgyMjJ1Mk9ORTZGOG1jWVFLY2hTaVdCajBiXzl0eUotcW8tWlJHaWVlS0phYUhnRUY3RmxiSGVQUnhOVlFfQUN6aFJUM0lldndVZzdqWV"
         },
         {
+          "title": "Zacks Industry Outlook Highlights Eli Lilly, Johnson & Johnson and Bayer",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/healthcare/articles/zacks-industry-outlook-highlights-eli-094600001.html?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "Pharma's 2026 recovery puts Bayer, Eli Lilly and Johnson & Johnson in focus as innovation and M&A offset pricing and patent headwinds."
+        },
+        {
+          "title": "Zacks Industry Outlook Highlights Eli Lilly, Johnson & Johnson and Bayer - TradingView",
+          "source": "TradingView",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNNkY1SVVaMUtGWndMTFdLa0Q0WGRhdHZIMDZzNnRaZzJLLXNyeENQMkZodHlyYjlzeFVYbldBYXBwTTFIb043NE5LaUdpRnBCdnZwcXRfMXRTUjYwVVA1UGZ4bmg0Tzl0dE44Sy11WkFZVDdTc3pzUmdyQUNYaHg3WmZ2RXZlUnYweXV4VERDTEM5YXdRTUNNeVp6M3gwMEZfd1duS2J1dVVWYk5HM2hXYUZfNjl5RlBfM3JnR1paQTUtT1k?oc=5",
+          "date": "2026-08-17",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxNNkY1SVVaMUtGWndMTFdLa0Q0WGRhdHZIMDZzNnRaZzJLLXNyeENQMkZodHlyYjlzeFVYbldBYXBwTTFIb043NE5LaUdpRnBCdnZwcXRfMXRTUjYwVVA1UGZ4bmg0Tzl0dE44Sy11Wk"
+        },
+        {
           "title": "Eli Lilly and Company $LLY Shares Acquired by Strive Financial Group LLC - MarketBeat",
           "source": "MarketBeat",
           "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQUXFGSDJhTjNqb2hTbG1QTUJSeGF1cFVTZlM0a2VJaWt6V1dKOWhfREFNdzlkSlFfNDU5MmF3VXFxQS12OFVuQjIwT18tSVY0cjE3a2wxOTg0RnZJQVItX3RmUE5RTThVWVlIWXNkcG1XQkZ2WTZGanlVMkJKQzkwcnNPNVBQTHltM09mRzdpdXJqVk1yaFhSdWdYQ25CZ1hTSWs3eFZXRXdPWExzcU5ObnBoYkE5cm1kSHU2VHFnaW1UTTkwakdQdGEtaUw?oc=5",
           "date": "2026-08-17",
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxQUXFGSDJhTjNqb2hTbG1QTUJSeGF1cFVTZlM0a2VJaWt6V1dKOWhfREFNdzlkSlFfNDU5MmF3VXFxQS12OFVuQjIwT18tSVY0cjE3a2wxOTg0RnZJQVItX3RmUE5RTThVWVlIWXNkcG"
-        },
-        {
-          "title": "TD Asset Management Inc Decreases Stock Position in Eli Lilly and Company $LLY - MarketBeat",
-          "source": "MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxORDZzcGVHV0NaRG9kcGU3aDhLS1ZkNTVkVHZQUXJLTlpwbFRBWmR6eE5PQkdkQm9rcXA3LVBFZXVWal9RNDY3LXZJWE15S3dmWHNsS0lxSWJkYVpQRGFRRWNiQmpFVWVpcWNNMU1VNkhOdk9YblBWOUdHTm5RN3VUVEdaNXo3Ui1ZSW1rQVBrblNVdGFlcnNGMTlzbUhkeE14TmpUN09Jb2MxWWJRNm1GTFpIeS1nNHZBRGIxTHJRaXJJejJhclF3SjJWLVNOQ0VaNWpsNw?oc=5",
-          "date": "2026-08-17",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi1AFBVV95cUxORDZzcGVHV0NaRG9kcGU3aDhLS1ZkNTVkVHZQUXJLTlpwbFRBWmR6eE5PQkdkQm9rcXA3LVBFZXVWal9RNDY3LXZJWE15S3dmWHNsS0lxSWJkYVpQRGFRRWNiQmpFVWVpcWNNMU1VNk"
-        },
-        {
-          "title": "2,260 Shares in Eli Lilly and Company $LLY Acquired by Meridian Management Co. - MarketBeat",
-          "source": "MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQc2JmOXBDSUloVlJqTWw4eEkta3Z3Yy11YWRFUG5MZE1VMVF1dDB0QndOeDR0ZmM2Mnd2aFVWR0lyaWdpSGVCTWxLczkxRDNHdmxFM0dTQVFOZGkzcmtoQl82bnpZNWRvY2dDeXdzWFFfNmdwWlNGTFVtYnluM0xHZDFUaE4wV2N4a2hBN0VDVFF3OGNxZ3d1ZFJEdjR5LW1OMEtCcFVEVXRyN3llOHpPeUx5RTZJWUhpbjFBclJXemRZbjJZOUo1bnE2aDEzd1I5NXc?oc=5",
-          "date": "2026-08-17",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi0gFBVV95cUxQc2JmOXBDSUloVlJqTWw4eEkta3Z3Yy11YWRFUG5MZE1VMVF1dDB0QndOeDR0ZmM2Mnd2aFVWR0lyaWdpSGVCTWxLczkxRDNHdmxFM0dTQVFOZGkzcmtoQl82bnpZNWRvY2dDeXdzWF"
-        },
-        {
-          "title": "Ascent Group LLC Purchases 1,544 Shares of Eli Lilly and Company $LLY - MarketBeat",
-          "source": "MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNMnpjQ2VHUzBRejlQLUR5STBJd3VKODF3TTVPZjVtSlQ4QWRqSEZ2NWZCWkJMaHhrTzVxY2NwS2EtN1pGQWVLMFZwZFl3S2JVRlBLVGZIaE90M2FsMTBlQlF4eEhnY00yXzB2QlZsTzdNUmxaXzB1bkJCeUpGN205RjZwUnBWM05jZ2s3ZFRFeHNSMmd5eFRyaHRpd01yWmNrWXByU3ZMeGd3RGR6N1IwaE5fQW5TZlNRMmUwNzg4dlpKUXdyaERF?oc=5",
-          "date": "2026-08-17",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxNMnpjQ2VHUzBRejlQLUR5STBJd3VKODF3TTVPZjVtSlQ4QWRqSEZ2NWZCWkJMaHhrTzVxY2NwS2EtN1pGQWVLMFZwZFl3S2JVRlBLVGZIaE90M2FsMTBlQlF4eEhnY00yXzB2QlZsTz"
-        },
-        {
-          "title": "Gateway Wealth Partners LLC Has $3.15 Million Stock Holdings in Eli Lilly and Company $LLY - MarketBeat",
-          "source": "MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNQ29yNmVzMmpwQTAtektJWldab0g2YlFESmY3WlhIWnRJSzdGR2szaEkydFhGZVFyX3ZpZHl0N2NQT21vSDFjRTVLNHBvektGWGg1Q3p5LWlEZ3F3bF90a3Vqa0ZTem90YXNjNXpfcDZfb2FfV2FiOUxZT2JKVi1kYlhQYm01SGZFSUFfVW1Tb0pTT1h3V201T29uYUh1QW1CWGdWUnBsbVpoWkY2Q2ctTDRwNm9ZSjZTSFlpRTAxRnl3SzlDb2FTVjZaUW5ldmhlWmFnbkZlZVFWenNzLTVQUDd3?oc=5",
-          "date": "2026-08-17",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi4gFBVV95cUxNQ29yNmVzMmpwQTAtektJWldab0g2YlFESmY3WlhIWnRJSzdGR2szaEkydFhGZVFyX3ZpZHl0N2NQT21vSDFjRTVLNHBvektGWGg1Q3p5LWlEZ3F3bF90a3Vqa0ZTem90YXNjNXpfcD"
         }
       ]
     },
@@ -9652,7 +9646,7 @@
           "source": "consensus"
         },
         {
-          "date": "2",
+          "date": "3",
           "firm": "3 Buy \u00b7 1 Hold \u00b7 0 Sell (4 analysts)",
           "from_grade": "",
           "to_grade": "Buy",
@@ -9907,13 +9901,6 @@
           "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNUWFUTHNhYVNqSUtzcktHaWZCQW1uR0lRQ3l1aGdUQUpOdTE4SHZxYjhYN21VeUVrUExnZktHcTVWUXBaaHI3Qkh5ZmJTcHVfY09MbmFiRTd2X0tMRWZjbGdTUzJIWmJUU1M0dFl2SFJxY0dCOUkxTW5BVEwwYjdfM0Nqa3hkVEFSendOR1lUTWRWNnY3YmlBVTRKMlYwVE9oUHhJYmZYakx0Q3RxRUF6MGx0VW5GUnk4REFJTGFsa2lEVnlWa1lwV3ByZWx1V1FIdDU2eVJqVnVEQdIB3wFBVV95cUxNV1FaUzlpQTNmSk5BWmFxODRLVUhrdjJ0M3FKejFqNjhwZmkwRFduOUlaNWJSTlFFR0ZpeGpTYU43bVZ2OUNCOTd2VFRkaUsycE1wY2JKT3pDb3lTbGVlOFRVODBPY3BnVS1za1dHb3pQeWtZZFNYcGVqeWF3Yllyd1JVQlF2SmhEWGFCNklWZ3lvaGd6YTF2NndUS2oyU0VKaTZyVWU1OXRCU3lnM3NTTUgyNUVxZ3lYc1lzLWxwNW1pTm9mVlN0ZVNVeWJlT0NIblZ3dHNyOTJTeEhSRVRn?oc=5",
           "date": "2026-08-15",
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMi2gFBVV95cUxNUWFUTHNhYVNqSUtzcktHaWZCQW1uR0lRQ3l1aGdUQUpOdTE4SHZxYjhYN21VeUVrUExnZktHcTVWUXBaaHI3Qkh5ZmJTcHVfY09MbmFiRTd2X0tMRWZjbGdTUzJIWmJUU1M0dFl2SF"
-        },
-        {
-          "title": "Bilfinger SE",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82ddaac2a74b83930f38dff270b67c&url=https%3a%2f%2fwww.marketwatch.com%2finvesting%2fstock%2fgbf%2fcompany-profile%3fcountrycode%3dde%26iso%3dxhan&c=16944021278275992588&mkt=en-us",
-          "date": "2026-08-14",
-          "summary": "Bilfinger SE Bilfinger SE engages in the provision of industrial services. The firm also offers engineering and services to customers in the process industry. It operates through the following ..."
         }
       ],
       "morningstar": {},
@@ -10393,13 +10380,6 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMifkFVX3lxTE13XzRraHEwVzltbEdrRkhqcjcyd1RpaHdFaGlCRjRKRDRVNFNOalRqbnRKVGhzZi1zcm5QY3JTSVZpOXVkeHd2ODJPNzA0NVNWSXNHSTVOb3VkY1hybTdVTGZLRUt3eFZPUk5YMkhRWj"
         },
         {
-          "title": "BAE agrees to $36 million settlement over 104 alleged export violations",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82ddaa1a194d59b3461f84abc5968c&url=https%3a%2f%2fwww.msn.com%2fen-us%2ftravel%2fnews%2fbae-agrees-to-36-million-settlement-over-104-alleged-export-violations%2far-AA2ahjqb&c=1241572038219861491&mkt=en-us",
-          "date": "2026-08-17",
-          "summary": "BAE Systems has agreed to a $36 million U.S. settlement covering 104 alleged arms-export-control violations by its American subsidiary. Under the State Department\u2019s 36-month consent agreement, BAE ..."
-        },
-        {
           "title": "AM Applications Analysis: Parts Produced 2025-2034 Delivers 10-Year Additive Manufacturing Market Forecast",
           "source": "Yahoo Finance",
           "url": "https://finance.yahoo.com/technology/articles/am-applications-analysis-parts-produced-100300365.html?.tsrc=rss",
@@ -10407,18 +10387,25 @@
           "summary": "Supported by real market data through Q4 2025 and 10-year projections, this study delivers a granular evaluation across metal and polymer part categories (prototypes, tooling, end-use production compo"
         },
         {
+          "title": "BAE Systems (LSE:BA.) Puts Industrial Stocks Under An Earnings-Quality Spotlight - Kalkine Media",
+          "source": "Kalkine Media",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPQ2Uta1dQZzZrXzA1cFJFdnBDdFZZVWxNdTZ2bGJLenZJTklBYVBOT0NwNV96eUZQOWdhTy1oMXRoRXBpNUkzNEV6MjVLeEdETkxmUHpWa05HNnlVdURjY05sY0lQZk5Makk2cEoxelp3TG1pQW55aFVDaXdMOWNhQ2dIMkE2VnhzZmZTZkhkRHI1aFQ2cVFDQ0xBNl9wYXU1MGRmdERXOFZQb28wcVBCMlF5ajJtcDZoeHBmaDdjZw?oc=5",
+          "date": "2026-08-17",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPQ2Uta1dQZzZrXzA1cFJFdnBDdFZZVWxNdTZ2bGJLenZJTklBYVBOT0NwNV96eUZQOWdhTy1oMXRoRXBpNUkzNEV6MjVLeEdETkxmUHpWa05HNnlVdURjY05sY0lQZk5Makk2cEoxel"
+        },
+        {
+          "title": "Did BAE Systems (LSE:BA.) Just Give London Its Clearest Picture Of Long-Cycle Defence Demand? - Kalkine Media",
+          "source": "Kalkine Media",
+          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNZmRaUVZhLTFKQy1FOVYzU0dSWHpmeVMxOXYybVB1Y19SNEQ1NzhkRDRqN1R5ZHVZcnllQkJfZVVWMmtmOW1rZkFvWUNNTmpva1Y4dndXMHZyTGxFeXJiRDcyVmx2Z2xsbVhoaFNjbjBIUENLWWhLclktcV9zenBZUy1YZFYzd1c4WEFTa1Q5X2REd2E0Ukhfc256RnI5T0ZqVDN2UC1hVjc3RWtsZUVMcUF5STV0WVhjUnRZeV8wQmhHLUJuNTZTc1kyNmp1VWM?oc=5",
+          "date": "2026-08-17",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxNZmRaUVZhLTFKQy1FOVYzU0dSWHpmeVMxOXYybVB1Y19SNEQ1NzhkRDRqN1R5ZHVZcnllQkJfZVVWMmtmOW1rZkFvWUNNTmpva1Y4dndXMHZyTGxFeXJiRDcyVmx2Z2xsbVhoaFNjbj"
+        },
+        {
           "title": "This defence ETF holds BAE Systems, Palantir, and CrowdStrike. It\u2019s smashing the FTSE 100 in 2026 - The Twelfth Magpie",
           "source": "The Twelfth Magpie",
           "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNa2tpQ1RTWC1jejA2Vnl2RGJWaFdhVHRxYmRqSUl2ZWxrWHlJVnJPUlFNMDZZT3FFcFE1OUsyY0NFNDJNdVdydzBKZnJTUm1wLWNyNGJHQjFzeUxUamk2WFU5b0VJZFdUUWgxYloyaTlZMjJURjZwejNpNGVqS2JUMGxQQXllUkVyZjdya1VxQWd2RDhoWlJOc3IwT0p4RE5DQVNmbGlSbWJMemhGYXJlY3NXdllBQXpWTllHUDl0SWhKb2E0d3pSTUZzbGRIMDZ0?oc=5",
           "date": "2026-08-16",
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxNa2tpQ1RTWC1jejA2Vnl2RGJWaFdhVHRxYmRqSUl2ZWxrWHlJVnJPUlFNMDZZT3FFcFE1OUsyY0NFNDJNdVdydzBKZnJTUm1wLWNyNGJHQjFzeUxUamk2WFU5b0VJZFdUUWgxYloyaT"
-        },
-        {
-          "title": "What Does BAE Systems (LSE:BA.) Fine Over China Tech Transfers Mean?",
-          "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/does-bae-systems-lse-ba-011058887.html?.tsrc=rss",
-          "date": "2026-08-15",
-          "summary": "US subsidiary of BAE Systems (LSE:BA.) fined over alleged US arms trafficking violations tied to technology transfers to China. Penalty centres on export control breaches involving sensitive defense r"
         },
         {
           "title": "BAE Systems Stock: Thesis Remains Sound Despite The H1-26 Surge (OTCMKTS:BAESY) - Seeking Alpha",
@@ -11284,7 +11271,7 @@
           "source": "consensus"
         },
         {
-          "date": "2",
+          "date": "3",
           "firm": "16 Buy \u00b7 3 Hold \u00b7 1 Sell (20 analysts)",
           "from_grade": "",
           "to_grade": "Buy",
@@ -11760,39 +11747,39 @@
           "source": "consensus"
         },
         {
-          "date": "2",
-          "firm": "15 Buy \u00b7 11 Hold \u00b7 2 Sell (28 analysts)",
-          "from_grade": "",
-          "to_grade": "Hold",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "2",
-          "firm": "15 Buy \u00b7 11 Hold \u00b7 2 Sell (28 analysts)",
-          "from_grade": "",
-          "to_grade": "Hold",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "2",
-          "firm": "15 Buy \u00b7 11 Hold \u00b7 2 Sell (28 analysts)",
-          "from_grade": "",
-          "to_grade": "Hold",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "2",
-          "firm": "15 Buy \u00b7 11 Hold \u00b7 2 Sell (28 analysts)",
-          "from_grade": "",
-          "to_grade": "Hold",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
           "date": "3",
+          "firm": "15 Buy \u00b7 11 Hold \u00b7 2 Sell (28 analysts)",
+          "from_grade": "",
+          "to_grade": "Hold",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "2",
+          "firm": "15 Buy \u00b7 11 Hold \u00b7 2 Sell (28 analysts)",
+          "from_grade": "",
+          "to_grade": "Hold",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "2",
+          "firm": "15 Buy \u00b7 11 Hold \u00b7 2 Sell (28 analysts)",
+          "from_grade": "",
+          "to_grade": "Hold",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "2",
+          "firm": "15 Buy \u00b7 11 Hold \u00b7 2 Sell (28 analysts)",
+          "from_grade": "",
+          "to_grade": "Hold",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "2",
           "firm": "15 Buy \u00b7 11 Hold \u00b7 2 Sell (28 analysts)",
           "from_grade": "",
           "to_grade": "Hold",
@@ -11842,11 +11829,25 @@
       ],
       "news": [
         {
+          "title": "Caterpillar, Inc. Common Stock (Derivatives): Latest News, Social Media Updates and Insights - CryptoRank",
+          "source": "CryptoRank",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9qbi1paXlTZ3gzcXhFZmg4LTJFTmpIbXIyajhsN0Jrb0RncTE0enpGS2F1R2FpX0E0MzBhYi1tYjZHcWdIbEVYYWlUNkRFdDZNUm1hNllHUWpLeXFaNkpjM0UxWDV3SkttQ2JLTmJTZGRKSzUtakE?oc=5",
+          "date": "2026-08-17",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMidkFVX3lxTE9qbi1paXlTZ3gzcXhFZmg4LTJFTmpIbXIyajhsN0Jrb0RncTE0enpGS2F1R2FpX0E0MzBhYi1tYjZHcWdIbEVYYWlUNkRFdDZNUm1hNllHUWpLeXFaNkpjM0UxWDV3SkttQ2JLTmJTZG"
+        },
+        {
           "title": "Caterpillar stock holds firm as record Q2 backlog supports 2026 outlook - ad-hoc-news.de",
           "source": "ad-hoc-news.de",
           "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQSzFEQ3hmdDRjSUtHMi1hdzB4WUluWXNlcS1sWWFQazNvVGJWTWV4eXdpbWZ2VVd5NXRqeFRXcURWb3g1UTNmRFlrMUJqaUlRc1JzMU9ld0t4VDd1Vi1rWGw4ZXo0cFFjMXRQZzl6OURaV2lFSlFWZFpDbmVYMkxzbUNmTWE2NWdsRFJjdnVTbHk2Q1VOY0ExUnpEcGZJUGJFWVVfMjVlN3BEVkRxNkw2MzNiaWhmMFZQMHRQOVQ2aEF5S2twTm9QVGJPWVpSSUU?oc=5",
           "date": "2026-08-17",
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxQSzFEQ3hmdDRjSUtHMi1hdzB4WUluWXNlcS1sWWFQazNvVGJWTWV4eXdpbWZ2VVd5NXRqeFRXcURWb3g1UTNmRFlrMUJqaUlRc1JzMU9ld0t4VDd1Vi1rWGw4ZXo0cFFjMXRQZzl6OU"
+        },
+        {
+          "title": "Caterpillar, Inc. Common Stock (Derivatives) Price | CAT Price Today, Live Chart, USD converter, Market Capitalization - CryptoRank",
+          "source": "CryptoRank",
+          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1SdWg1V3o3TC1GX2s1NjJxRXdhdXRBelVPN205V3RSRUd6TkxqWF9fZm1XVUR2bUhMQXJSUFV5UlRNNlBhamdDTTkwQ1A0em5IVzA5VTdTTG1UVHIxNG9UV3BJSHNwM1ZKNmw5ZE5ZWkVHeGFlUXRF?oc=5",
+          "date": "2026-08-16",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMid0FVX3lxTE1SdWg1V3o3TC1GX2s1NjJxRXdhdXRBelVPN205V3RSRUd6TkxqWF9fZm1XVUR2bUhMQXJSUFV5UlRNNlBhamdDTTkwQ1A0em5IVzA5VTdTTG1UVHIxNG9UV3BJSHNwM1ZKNmw5ZE5ZWk"
         },
         {
           "title": "Independent Financial Group LLC Buys 6,490 Shares of Caterpillar Inc. $CAT - MarketBeat",
@@ -11868,20 +11869,6 @@
           "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNb3ZEbm1rNVRZUG95bWlhOG5seXpCVkZKNldWa0FUYmk5UzI3VENuWEtmX1NrNFdCLVdZQWw5NTl0cnlqQjdabjFlVDNiWWdnRUlpRVRPa01seFZudUNWc0N0ckFqc040aGVLMVZDYlY4ZnpRQWp5Y2MycXFDSzBxZnZVUmdPaVFwSm13TkxsRFNNcVBwdzN0cmQzUS1Xd1dOQzFQNno0NWt5THdMbzVOc3JVTQ?oc=5",
           "date": "2026-08-15",
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNb3ZEbm1rNVRZUG95bWlhOG5seXpCVkZKNldWa0FUYmk5UzI3VENuWEtmX1NrNFdCLVdZQWw5NTl0cnlqQjdabjFlVDNiWWdnRUlpRVRPa01seFZudUNWc0N0ckFqc040aGVLMVZDYl"
-        },
-        {
-          "title": "Caterpillar (CAT) Is Gaining Attention For Long Term AI Infrastructure Demand",
-          "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/caterpillar-cat-gaining-attention-long-200936573.html?.tsrc=rss",
-          "date": "2026-08-15",
-          "summary": "Caterpillar (NYSE:CAT) is drawing fresh investor attention as a potential beneficiary of AI-related infrastructure build-out and associated equipment demand. Recent commentary highlights the company a"
-        },
-        {
-          "title": "How fast can the U.S. build data centers amid labour concerns?",
-          "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/technology/articles/fast-u-build-data-centers-031225959.html?.tsrc=rss",
-          "date": "2026-08-15",
-          "summary": "Investing.com -- The U.S. could increase annual data center construction from 12 gigawatts in 2026 to 35 GW by 2030, but shortages of specialised mechanical, electrical and plumbing workers will set t"
         }
       ],
       "new_ratings": [],
@@ -12159,7 +12146,7 @@
           "source": "consensus"
         },
         {
-          "date": "2",
+          "date": "3",
           "firm": "8 Buy \u00b7 14 Hold \u00b7 1 Sell (23 analysts)",
           "from_grade": "",
           "to_grade": "Hold",
@@ -12616,6 +12603,46 @@
         },
         {
           "date": "2026-08-14",
+          "firm": "RBC Capital",
+          "from_grade": "Sector Perform",
+          "to_grade": "Sector Perform",
+          "action": "reit",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-14",
+          "firm": "Wells Fargo",
+          "from_grade": "Equal-Weight",
+          "to_grade": "Equal-Weight",
+          "action": "reit",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-14",
+          "firm": "Wedbush",
+          "from_grade": "Outperform",
+          "to_grade": "Outperform",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-14",
+          "firm": "Cantor Fitzgerald",
+          "from_grade": "Overweight",
+          "to_grade": "Overweight",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-10",
+          "firm": "Argus Research",
+          "from_grade": "Hold",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-08-14",
           "firm": "Wells Fargo",
           "from_grade": "Equal-Weight",
           "to_grade": "Equal-Weight",
@@ -12813,76 +12840,43 @@
           "to_grade": "Sector Perform",
           "action": "reit",
           "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "Wells Fargo",
-          "from_grade": "Equal-Weight",
-          "to_grade": "Equal-Weight",
-          "action": "reit",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "Citigroup",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "Evercore ISI Group",
-          "from_grade": "Outperform",
-          "to_grade": "Outperform",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-10",
-          "firm": "Argus Research",
-          "from_grade": "Hold",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-08-06",
-          "firm": "RBC Capital",
-          "from_grade": "Sector Perform",
-          "to_grade": "Sector Perform",
-          "action": "reit",
-          "source": "broker"
         }
       ],
       "news": [
         {
-          "title": "Investor dubbed \u2018AI stock god\u2019 had 56% of his funds in these two stocks before it blew up",
+          "title": "SanDisk stock is getting its mojo back amid China memory-chip move",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82ddad46b1456e958cd471695bea22&url=https%3a%2f%2fwww.msn.com%2fen-us%2fmoney%2ftopstocks%2finvestor-dubbed-ai-stock-god-had-56-of-his-funds-in-these-two-stocks-before-it-blew-up%2far-AA2ah9yw&c=8397611923007710634&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82f7bf121d48cfa8ec679fa6a3a4ef&url=https%3a%2f%2fwww.msn.com%2fen-us%2fmoney%2fmarkets%2fsandisk-stock-is-getting-its-mojo-back-amid-china-memory-chip-move%2far-AA2ahzH2&c=2605215797238013883&mkt=en-us",
           "date": "2026-08-17",
-          "summary": "At the end of the first half of 2026, on the cusp of a major correction in the sector, more than three quarters of the Situational Awareness fund was betting on just five stocks, all of which were, in"
+          "summary": "The memory storage company\u2019s shares are on a five-day winning streak and on track to make that six."
         },
         {
-          "title": "Dow Jones Futures: Nvidia Leads 5 Stocks In Buy Areas, Sandisk Nears Key Level; Walmart Looms",
+          "title": "SanDisk extends rally, Snap faces fresh pressure in premarket trade",
           "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/m/79b73c1c-e364-315f-8433-18e9ae96269d/dow-jones-futures%3A-nvidia.html?.tsrc=rss",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/sandisk-extends-rally-snap-faces-114856736.html?.tsrc=rss",
           "date": "2026-08-17",
-          "summary": "The S&P 500 and Nasdaq look ready to run, but they haven't quite done so. Sandisk surged but must do this. Walmart, Target loom."
+          "summary": "Investing.com - U.S. stock futures were mixed on Monday, with technology stocks pointing to a firmer open, as investors scaled back bets on an impending Federal Reserve rate hike and looked ahead to a"
         },
         {
-          "title": "SanDisk Stock Locks In $94B Backlog, Targets 80% Margins by 2030",
+          "title": "MU Remains BofA's Top Memory Pick \u2013 SNDK Signals Memory Growth May Be Structural, BofA Says",
           "source": "Yahoo Finance",
-          "url": "https://beincrypto.com/sandisk-stock-backlog-80-percent-margins-2030/?.tsrc=rss",
+          "url": "https://stocktwits.com/news-articles/markets/equity/mu-250-eps-bull-case-sndk-signals-memory-growth-structural-bofa/cZYGbtPRJ12?.tsrc=rss",
           "date": "2026-08-17",
-          "summary": "SanDisk stock rallied on a $93.9B backlog and an 80% gross margin target through fiscal 2030. Here's the plan behind it."
+          "summary": "BofA reiterated its \u2018Buy\u2019 rating on Micron and a $1,550 price target, implying an upside potential of about 59% from current levels."
         },
         {
-          "title": "SanDisk Stock Locks In $94B Backlog, Targets 80% Margins by 2030 - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOZXJfbnRPc2JEZTJUb0FzNUtrQUVXMldkNThjcG5FQnMtTGY0MHpGOVV0X3VGelpCS0hValhzOGM0WFVGd2lhRHNFcEtMbkhuOERhbDZBTmhRNEt5ZU9sV2ZRVDloM01lWnFza2NKQVA4SHpQbi1mbTEzWmw2dVFqQlNVTGphV3BmRWsxeHhUY0w2WVNrdnRpWms4VWc?oc=5",
+          "title": "Sandisk Stock Is Getting Its Mojo Back Amid China Memory-Chip Move - Barron's",
+          "source": "Barron's",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9PWGh3ci1WM1dLdXJ1U0pEaDlKUmcybHI3QUtrSE1IbWp5R21QSGxGRGhQU0ZlUlpKUzdab1dSOUt2cm5LRkNxc0JodDl4UnRkZlhNN3FJc3Z2YjFoUHRvWHliRG13MGFRMXFfekFKMnVScXJhcUQ2M2NJWmc4dw?oc=5",
           "date": "2026-08-17",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxOZXJfbnRPc2JEZTJUb0FzNUtrQUVXMldkNThjcG5FQnMtTGY0MHpGOVV0X3VGelpCS0hValhzOGM0WFVGd2lhRHNFcEtMbkhuOERhbDZBTmhRNEt5ZU9sV2ZRVDloM01lWnFza2NKQV"
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMifkFVX3lxTE9PWGh3ci1WM1dLdXJ1U0pEaDlKUmcybHI3QUtrSE1IbWp5R21QSGxGRGhQU0ZlUlpKUzdab1dSOUt2cm5LRkNxc0JodDl4UnRkZlhNN3FJc3Z2YjFoUHRvWHliRG13MGFRMXFfekFKMn"
+        },
+        {
+          "title": "Stocks Mostly Up Pre-Bell as Traders Await Fed Meeting Minutes, Retail Earnings",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/stocks-mostly-pre-bell-traders-110959890.html?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "The benchmark US stock measures were mostly pointing higher before the opening bell Monday as trader"
         },
         {
           "title": "A 5-Day Winning Streak Has SanDisk Stock Up 35% - Trefis",
@@ -12890,13 +12884,6 @@
           "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOcE4zbFNfb0VfTy1Od0czMnpodWphMXhpMVF6R2RZbzlUWG1FNTdGMlRhWkJGcVp1SWFjZks4WmF5LWpvektHVWFXejFsZGRHZlBQWW05YVpuR1pyNUN5cTY5R2ZtQWdGRDMwRndJakpMb0ZBeFlwdFZhN01hb0lwZTROY213bjNEUFBxOE8tQXNXYUxSZXF2Z1FuY1pJeERweTl1Y0RRalgza2c?oc=5",
           "date": "2026-08-17",
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOcE4zbFNfb0VfTy1Od0czMnpodWphMXhpMVF6R2RZbzlUWG1FNTdGMlRhWkJGcVp1SWFjZks4WmF5LWpvektHVWFXejFsZGRHZlBQWW05YVpuR1pyNUN5cTY5R2ZtQWdGRDMwRndJak"
-        },
-        {
-          "title": "Sandisk: The Memory Trade Lives On After Investor's Day",
-          "source": "Seeking Alpha",
-          "url": "https://seekingalpha.com/article/4936852-sandisk-the-memory-trade-lives-on-after-investors-day?source=feed_symbol_SNDK",
-          "date": "2026-08-16",
-          "summary": ""
         }
       ],
       "new_ratings": [],
@@ -13278,7 +13265,7 @@
           "source": "consensus"
         },
         {
-          "date": "2",
+          "date": "3",
           "firm": "5 Buy \u00b7 3 Hold \u00b7 0 Sell (8 analysts)",
           "from_grade": "",
           "to_grade": "Buy",
@@ -13897,6 +13884,13 @@
       },
       "news": [
         {
+          "title": "Allianz: Why I Believe 2Q26 Doesn't Change The Thesis (ALIZY) - Seeking Alpha",
+          "source": "Seeking Alpha",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPYXFSLS1RQlp2QjZ2QW1XTlMxbXVuTF9tel9lNDNROEZlOW9OSzFRRG9MZUJ6R1lWSTRVSkx6ak9PN1psMk1sY3ptOUJtSjdITEdobjhjNEJ1UnJqa3VsRjkzQjNZUGNVSUJXb08yT01vMk1xZlZhWk1qNzcxTE1SOVNvMkJQeFNLREtJVGhsWnBpSFkxVWRRX2NZejhoVV85alBJTmdoY2thc2JoVmMxckNWelVfYW50OEpIdUs1SjI?oc=5",
+          "date": "2026-08-17",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPYXFSLS1RQlp2QjZ2QW1XTlMxbXVuTF9tel9lNDNROEZlOW9OSzFRRG9MZUJ6R1lWSTRVSkx6ak9PN1psMk1sY3ptOUJtSjdITEdobjhjNEJ1UnJqa3VsRjkzQjNZUGNVSUJXb08yT0"
+        },
+        {
           "title": "Allianz stock holds just below its 52-week high as record Q2 operating profit supports guidance - ad-hoc-news.de",
           "source": "ad-hoc-news.de",
           "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQSGFPRTI2Q0lOb0RGelJXVDFLRTFTREEtVjgwNWg3R0d5LUN0cXdSeldlYTFKRlNIdTBDdWlWaFNVR1RBN0x3a3dqYlRUcEVuaTJRRjNTRFB0ODZ5S0ZwT21YLTNCS285OUxRWEMxTTdrNTNFdWtmRDFTS183LVhMUG5lMHVMTndlT2FGRW9ac2JEVWkxMWpWQXljTlNMcDUtZnNMcTdsODhLVmFMTUhTbUpIUmtrM3BLRFNIU3JzclFOeGxtVU1sSjZ5bFZoQQ?oc=5",
@@ -13918,13 +13912,6 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxPaXc4VWxyU3U4bmxIdVJUR3p3ZWZIblFZN1gxVk8zNlF2SE1iQVVOWElKZWFhRGQtNDc1UDgya2tPeFJocl9sZ0VXeVhLcktCNG9aM2ZEX1RUbGFYS091cFpmemVvRjExeXczMDRXcm"
         },
         {
-          "title": "Allianz's Singapore Acquisition Puts a Record Quarter in Sharper Focus - ad-hoc-news.de",
-          "source": "ad-hoc-news.de",
-          "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQUWpKbkZMc1lJZThaSldTNkdxRnh6NXUyNDhsejlEUEtWN3B6dWtSZHViZkV3Q2hvRlNtVzdYYnBpb0syb01YcmxFRENoZEhhbkVKaG14UzhGQVhpMkxNaDM0STJRcDNZZE0yNWVCbmV4Mkk5M29nclh2YXdFcnQwbjA5WTQ0cDZvZjJsLUF0WW15MmlGa0pDRkh0Z05DSHJ4ZlZHR0lMMTF1ZnlnODNSR0xFdHdqWjNsZEY3cGlBRG5NMHVHM3NxTFZ1d3JRZXpBZTJVdms4NURvQQ?oc=5",
-          "date": "2026-08-16",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi2gFBVV95cUxQUWpKbkZMc1lJZThaSldTNkdxRnh6NXUyNDhsejlEUEtWN3B6dWtSZHViZkV3Q2hvRlNtVzdYYnBpb0syb01YcmxFRENoZEhhbkVKaG14UzhGQVhpMkxNaDM0STJRcDNZZE0yNWVCbm"
-        },
-        {
           "title": "Allianz's Singapore Deal Highlights the Gap Between Operating Strength and Bottom-Line Reality - ad-hoc-news.de",
           "source": "ad-hoc-news.de",
           "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOZU4tVjVXLWl0cHBDVU1uQXBBSFZld3NfUy1JblRKNzdYaGc1bFN6V2NuamN0TENScGo2TlJEMmpnaDgycGNwLUd4THVqb2hmRlN5RWtvN1lqQWZpXzU0RmMzNmk5TnJtR1lTRm4waGNyX0UyWGFsVmRoQkxXT1RseFFYWTJwa19SZFFKcksxUFJLSU5qa2hqeFZKWFZJSF9la2RwYVBtdzRlbXdHNnhHbmN6aGZFRDZHaGQyZldBX1piX3NEUFVpUU1NYS1OY2hwRnhmZG52V0VXeHoyd3cw?oc=5",
@@ -13932,11 +13919,11 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMi3wFBVV95cUxOZU4tVjVXLWl0cHBDVU1uQXBBSFZld3NfUy1JblRKNzdYaGc1bFN6V2NuamN0TENScGo2TlJEMmpnaDgycGNwLUd4THVqb2hmRlN5RWtvN1lqQWZpXzU0RmMzNmk5TnJtR1lTRm4waG"
         },
         {
-          "title": "Allianz's Pimco Buyback and Singapore Push Frame a New Risk Calculus - ad-hoc-news.de",
+          "title": "Allianz's Singapore Acquisition Puts a Record Quarter in Sharper Focus - ad-hoc-news.de",
           "source": "ad-hoc-news.de",
-          "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPREFmbzl2MEN1WlhTSm9sc0JUVGdjS2FTQVZuYXJDQnlpd2NZSzhuZEJpWi1FcWwyVm1haFNoSVNONWpzSDlvOV9GMU85TG0teGlHTEpXX2gycklvZExpam5wUWRkYVFGSTB6WGZLWHVadURtUmNuQW9IUGhmVjAxQXlmTmVpNGl1UkVhb3JZMGd6dGZTZVdXb2dfMk9NTVlveHJ0ZFByY1g2V09ub0lONTlLM0dWNFdCQVJ0YkJ0QU9td1lzX1dDNkxlTW5FTHAwVEZNeVd2aw?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQUWpKbkZMc1lJZThaSldTNkdxRnh6NXUyNDhsejlEUEtWN3B6dWtSZHViZkV3Q2hvRlNtVzdYYnBpb0syb01YcmxFRENoZEhhbkVKaG14UzhGQVhpMkxNaDM0STJRcDNZZE0yNWVCbmV4Mkk5M29nclh2YXdFcnQwbjA5WTQ0cDZvZjJsLUF0WW15MmlGa0pDRkh0Z05DSHJ4ZlZHR0lMMTF1ZnlnODNSR0xFdHdqWjNsZEY3cGlBRG5NMHVHM3NxTFZ1d3JRZXpBZTJVdms4NURvQQ?oc=5",
           "date": "2026-08-16",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi1wFBVV95cUxPREFmbzl2MEN1WlhTSm9sc0JUVGdjS2FTQVZuYXJDQnlpd2NZSzhuZEJpWi1FcWwyVm1haFNoSVNONWpzSDlvOV9GMU85TG0teGlHTEpXX2gycklvZExpam5wUWRkYVFGSTB6WGZLWH"
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi2gFBVV95cUxQUWpKbkZMc1lJZThaSldTNkdxRnh6NXUyNDhsejlEUEtWN3B6dWtSZHViZkV3Q2hvRlNtVzdYYnBpb0syb01YcmxFRENoZEhhbkVKaG14UzhGQVhpMkxNaDM0STJRcDNZZE0yNWVCbm"
         }
       ]
     },
@@ -14415,11 +14402,11 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxOMDF0dkluMHhKSVdHZjZ5REhWSldDbnZuSW9nNnB6WUdrX1lfYXV6Ukw4VG1odjBGWF9sUXEzMWRFZmZuSG8yN1puWDNrcVh5VzBENVltMnFuekRoN2thamUwSmdqcGFVT1oxRDNfQm"
         },
         {
-          "title": "TTE|TotalEnergies SE|Price:88.330|Chg%:+1.280 - TradingKey",
-          "source": "TradingKey",
-          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9tNFZOQ19BbnM0YmlyTXFIRDJsdHJwTkNxREhFZk5wd0puTjZCbnJHNDZ0UlNtQTJxXzZoY3dibzlpUWZOeWtCTDlGelduUG5scDUxUXoyakNOX1h6XzBSMm13bGVzTjB2OUpycQ?oc=5",
-          "date": "2026-08-14",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE9tNFZOQ19BbnM0YmlyTXFIRDJsdHJwTkNxREhFZk5wd0puTjZCbnJHNDZ0UlNtQTJxXzZoY3dibzlpUWZOeWtCTDlGelduUG5scDUxUXoyakNOX1h6XzBSMm13bGVzTjB2OUpycQ?oc="
+          "title": "Brent Crude Nears $89 As Hormuz Stays Disrupted \u2013 Exxon, Chevron And Shell Rack Up Record Cash Flow",
+          "source": "Yahoo Finance",
+          "url": "https://stocktwits.com/news-articles/markets/equity/brent-crude-nears-89-strait-hormuz-xom-cvx-uso-record-cash-flow/cZo6uIKRJKY?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "As passage of oil through the Strait of Hormuz remains shrouded in uncertainty, the world's largest oil companies are stocking up their cash reserves, according to The Kobeissi Letter."
         },
         {
           "title": "TotalEnergies stock trades close to consensus as Strait of Hormuz risks shape outlook - ad-hoc-news.de",
@@ -14755,7 +14742,7 @@
           "source": "consensus"
         },
         {
-          "date": "2",
+          "date": "3",
           "firm": "9 Buy \u00b7 9 Hold \u00b7 1 Sell (19 analysts)",
           "from_grade": "",
           "to_grade": "Hold",
@@ -14898,6 +14885,13 @@
       },
       "news": [
         {
+          "title": "Brent Crude Nears $89 As Hormuz Stays Disrupted \u2013 Exxon, Chevron And Shell Rack Up Record Cash Flow",
+          "source": "Yahoo Finance",
+          "url": "https://stocktwits.com/news-articles/markets/equity/brent-crude-nears-89-strait-hormuz-xom-cvx-uso-record-cash-flow/cZo6uIKRJKY?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "As passage of oil through the Strait of Hormuz remains shrouded in uncertainty, the world's largest oil companies are stocking up their cash reserves, according to The Kobeissi Letter."
+        },
+        {
           "title": "BP stock steadies as North Sea asset sale draws bidder interest - ad-hoc-news.de",
           "source": "ad-hoc-news.de",
           "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNdWhERld5Z2FpRm1JR3pLUnRhRUk5bHF0RGthd0lXLXJsTW1HMWNISTlGN1c0bEkwSHA1enBudXlaYi1jSW5OczNub0tsZHp3WDJ3cnl2dUZvbkUtVUJnVkloLUVmVjk0eklsVWgxdEJMWWpaRWZVM2Rrd2NGb3hkZmhvT1dDZ3RWajd6N1QyQkhxR0s1eXRvOTVFcWdPZ0ZqZHRiMndRbjNSbTA1VXR5RkdQdTNSSTYzeVQtcUhEVlB1VXY2?oc=5",
@@ -14905,11 +14899,11 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxNdWhERld5Z2FpRm1JR3pLUnRhRUk5bHF0RGthd0lXLXJsTW1HMWNISTlGN1c0bEkwSHA1enBudXlaYi1jSW5OczNub0tsZHp3WDJ3cnl2dUZvbkUtVUJnVkloLUVmVjk0eklsVWgxdE"
         },
         {
-          "title": "BP p.l.c. $BP Shares Purchased by Russell Investments Group Ltd. - MarketBeat",
-          "source": "MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPajVVVzdYWmc2UEN5S0o2bVZFelE5MGh6X3hMbkZMR0RpcDNEMkxwLUtheHJmLTlPWTVsWnNXVzJCZ0xlTlVUSHhtZ0JUVThZNEYxMUFLNHJxNnNiR3pXRC02NHpreVltdUhENkg5TlRkdnUwbHFnN0NMczN0YzNaY1BwT3hNWDBnYnRoMUVGQzNmYmFPS2V6eVNtWUNmYV8xRG5xa0FNUEd6QzM4VTU0dEk1N0RuMGVGc3BiWA?oc=5",
-          "date": "2026-08-16",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPajVVVzdYWmc2UEN5S0o2bVZFelE5MGh6X3hMbkZMR0RpcDNEMkxwLUtheHJmLTlPWTVsWnNXVzJCZ0xlTlVUSHhtZ0JUVThZNEYxMUFLNHJxNnNiR3pXRC02NHpreVltdUhENkg5Tl"
+          "title": "BP (LSE:BP.) today: what does a deflating crude price mean for the oil major's cash engine? - Kalkine Media",
+          "source": "Kalkine Media",
+          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNZFFucFNYZjBaeGtHeFRPb0ZKeHpaeEJiVngyRGlPb1Z3LXhTb0g4anZpSjkxSGo0MHZWTXozOU0xMF9MYnp5X3ZKdW04UWRkQ1htZl9SQXlvVGtjOS1mZFl5bk1qV0hzZ1o2S1ZnN0xJU0J4T3NvRmEyd2t6MlVTX01TNVZiaHhCaWdaR2xWWE0wUXdVV0t4T0xCTnBFNDcyMktoZThjc0x1aWZVQU94MXRlb1dOQm9RV29kNnZZaGN5akdfV1E?oc=5",
+          "date": "2026-08-17",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxNZFFucFNYZjBaeGtHeFRPb0ZKeHpaeEJiVngyRGlPb1Z3LXhTb0g4anZpSjkxSGo0MHZWTXozOU0xMF9MYnp5X3ZKdW04UWRkQ1htZl9SQXlvVGtjOS1mZFl5bk1qV0hzZ1o2S1ZnN0"
         },
         {
           "title": "ETFs Investing in BP PLC Sponsored ADR Stocks - TradingView",
@@ -14919,25 +14913,18 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMiX0FVX3lxTE5yQ0duV1N6RnU5bEtBbmIzdG9qdDNVMmZpLWNYcjRrVlhVakFJd3YtMjFfVW5DcjdHbVVRLXpLMTJncDlVZG5ObFVFRkFBdG1abWZ0NFFoR0Frdy1kRkg4?oc=5\" target=\"_blank\""
         },
         {
-          "title": "BP Wins New Venezuela License",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82ddaf0a5643cbb172a343b77f2a71&url=https%3a%2f%2ffinance.yahoo.com%2fenergy%2farticles%2fbp-wins-venezuela-license-130336015.html&c=15295234089955900613&mkt=en-us",
-          "date": "2026-08-14",
-          "summary": "BP estimates four trillion cubic feet of recoverable gas resources in the project, part of the Plataforma Deltana area, and expects to deliver it 'in parallel with phase 1'."
+          "title": "Buyers line up for \u00a32.5bn BP North Sea takeover",
+          "source": "Yahoo Finance",
+          "url": "https://www.telegraph.co.uk/business/2026/08/16/bidders-line-up-for-25bn-bp-north-sea-takeover/?.tsrc=rss",
+          "date": "2026-08-16",
+          "summary": "Bidders are lining up for BP\u2019s North Sea oil fields after the company released confidential sale documents for the \u00a32.5bn package."
         },
         {
-          "title": "BP stock holds ex-dividend level as dividend increase and options activity shape outlook - ad-hoc-news.de",
-          "source": "ad-hoc-news.de",
-          "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxORTdVLWdqODk3ZTVNU0htM1BsbU9ickdJaW12dkdvckpTdzl1OGRqQVV6ZVRieU1xcXotX1VxOF9qM1hkNmxBNFN5U09sT0Myd3p1TEJ5cURCdWk3MFhYaUVLcjZCQ1pTdDlESV81cGYzRUVMSFVvYkZHZ0lqeWFsOXpSRHU3RUhqN245d2x4VTI3SmFLS1VZZWhOa3ZoOXRBNFhCM09QRW04N0ZhNHhfNGlfamVwOGlBSVVZN2tYc0E1VlZ6SzZiZzRaOWpYemtlaWdn?oc=5",
-          "date": "2026-08-14",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxORTdVLWdqODk3ZTVNU0htM1BsbU9ickdJaW12dkdvckpTdzl1OGRqQVV6ZVRieU1xcXotX1VxOF9qM1hkNmxBNFN5U09sT0Myd3p1TEJ5cURCdWk3MFhYaUVLcjZCQ1pTdDlESV81cG"
-        },
-        {
-          "title": "BP stock holds ex-dividend level as options activity picks up - ad-hoc-news.de",
-          "source": "ad-hoc-news.de",
-          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQWW5ZTkdwa2VrbllKa1VVVXNIOW1XQ1U4OUc3SzNsZWtVc19iZmItNU03MFNudlJxUFZjMWgzWHQ1R3l4TTQ2dnJnWTFsNG92ZjQtRThGU2U0MndZakVMRFZPQnRmazJpWlVHaEJhN2prQlBLbU9sTmpyc25CMWxBLWhoX3JaMTBqVmhXR25Hak9kOFZMMFZWWnQxWnlXM2xLbEtLWXVET0lWenJrM3Juc1lCNWliQWV2M3FReW9iakZNZw?oc=5",
-          "date": "2026-08-14",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxQWW5ZTkdwa2VrbllKa1VVVXNIOW1XQ1U4OUc3SzNsZWtVc19iZmItNU03MFNudlJxUFZjMWgzWHQ1R3l4TTQ2dnJnWTFsNG92ZjQtRThGU2U0MndZakVMRFZPQnRmazJpWlVHaEJhN2"
+          "title": "BP (LSE:BP.) Returns To Venezuela To Run Loran Phase 2 Gas Project",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/energy/articles/bp-lse-bp-returns-venezuela-031831897.html?.tsrc=rss",
+          "date": "2026-08-15",
+          "summary": "BP (LSE:BP.) has agreed to return to Venezuela as operator of the offshore Loran Phase 2 gas project, partnering with XRG and UCC. The move follows recent energy reforms in Venezuela and a relaxation "
         }
       ]
     },
@@ -15266,79 +15253,79 @@
           "source": "consensus"
         },
         {
-          "date": "2",
-          "firm": "38 Buy \u00b7 5 Hold \u00b7 1 Sell (44 analysts)",
-          "from_grade": "",
-          "to_grade": "Buy",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "2",
-          "firm": "38 Buy \u00b7 5 Hold \u00b7 1 Sell (44 analysts)",
-          "from_grade": "",
-          "to_grade": "Buy",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "2",
-          "firm": "38 Buy \u00b7 5 Hold \u00b7 1 Sell (44 analysts)",
-          "from_grade": "",
-          "to_grade": "Buy",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "2",
-          "firm": "38 Buy \u00b7 5 Hold \u00b7 1 Sell (44 analysts)",
-          "from_grade": "",
-          "to_grade": "Buy",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "2",
-          "firm": "38 Buy \u00b7 5 Hold \u00b7 1 Sell (44 analysts)",
-          "from_grade": "",
-          "to_grade": "Buy",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "2",
-          "firm": "38 Buy \u00b7 5 Hold \u00b7 1 Sell (44 analysts)",
-          "from_grade": "",
-          "to_grade": "Buy",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "2",
-          "firm": "38 Buy \u00b7 5 Hold \u00b7 1 Sell (44 analysts)",
-          "from_grade": "",
-          "to_grade": "Buy",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "2",
-          "firm": "38 Buy \u00b7 5 Hold \u00b7 1 Sell (44 analysts)",
-          "from_grade": "",
-          "to_grade": "Buy",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "2",
-          "firm": "38 Buy \u00b7 5 Hold \u00b7 1 Sell (44 analysts)",
-          "from_grade": "",
-          "to_grade": "Buy",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
           "date": "3",
+          "firm": "38 Buy \u00b7 5 Hold \u00b7 1 Sell (44 analysts)",
+          "from_grade": "",
+          "to_grade": "Buy",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "2",
+          "firm": "38 Buy \u00b7 5 Hold \u00b7 1 Sell (44 analysts)",
+          "from_grade": "",
+          "to_grade": "Buy",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "2",
+          "firm": "38 Buy \u00b7 5 Hold \u00b7 1 Sell (44 analysts)",
+          "from_grade": "",
+          "to_grade": "Buy",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "2",
+          "firm": "38 Buy \u00b7 5 Hold \u00b7 1 Sell (44 analysts)",
+          "from_grade": "",
+          "to_grade": "Buy",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "2",
+          "firm": "38 Buy \u00b7 5 Hold \u00b7 1 Sell (44 analysts)",
+          "from_grade": "",
+          "to_grade": "Buy",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "2",
+          "firm": "38 Buy \u00b7 5 Hold \u00b7 1 Sell (44 analysts)",
+          "from_grade": "",
+          "to_grade": "Buy",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "2",
+          "firm": "38 Buy \u00b7 5 Hold \u00b7 1 Sell (44 analysts)",
+          "from_grade": "",
+          "to_grade": "Buy",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "2",
+          "firm": "38 Buy \u00b7 5 Hold \u00b7 1 Sell (44 analysts)",
+          "from_grade": "",
+          "to_grade": "Buy",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "2",
+          "firm": "38 Buy \u00b7 5 Hold \u00b7 1 Sell (44 analysts)",
+          "from_grade": "",
+          "to_grade": "Buy",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "2",
           "firm": "38 Buy \u00b7 5 Hold \u00b7 1 Sell (44 analysts)",
           "from_grade": "",
           "to_grade": "Buy",
@@ -15409,6 +15396,13 @@
       },
       "news": [
         {
+          "title": "The Global DRAM Market Report 2026\u20132036: Evaluating HBM4, DDR5/GDDR7 Adoption, CMOS-Bonded Arrays, and Strategies of SK Hynix, Samsung, Micron, and ASML",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/technology/articles/global-dram-market-report-2026-110100507.html?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "The global DRAM market is forecast to approach $400 billion by 2027 as AI and data centre growth accelerate HBM demand. This 2026\u20132036 report analyses HBM4, DDR6, 3D DRAM, advanced packaging, investme"
+        },
+        {
           "title": "ASML stock holds near record levels after earnings and analyst lift - ad-hoc-news.de",
           "source": "ad-hoc-news.de",
           "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOZGRLT1dHbmp0UzlCa3JvSGpOWlFLa0liaG45YmVwRmRySGJWUy1mLVpPbVNHbjdCSkozOWdVSnoxLXRpcXNuaUtzOFN1NGFJNEkxcHVBMFNsXzJkY1lzUlhqdWNydFV1STFtTjIyQTFrdllMN0lwTzcxNHB4NV84STVhZFVzOEhfcGl0TldfdlFFZ1JVLVRJV05rT3ZhemxPdDlrcWc3bXZqSVF0QktzaldNdUhxUXJoc19TRnpfR1FkNVd0b19WdHFn?oc=5",
@@ -15442,13 +15436,6 @@
           "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPbjMxekZVeWRLWEpCcS1zSnAwVFBOeTREclEzVjNQaUFSamxwOUZYUmVuZV8xV09aZDd2a2RQZXk4bnV6N05FUG1jZlZqZ2EyMHRqS0d5azVPQXBSaXNBNUlVVm5JTVNDOUU3eGpEcnRFRGtXZUVKNm9HYkx1azMwY0o4c2dpRTN1cmFObzBsNzNRbjZaa0QxTFlpVDJ3VXBFT3hVMXNVbmdjbkpYanBzTjhqR2pVd3ZJbW1VdU5KSVJWV1E1bUtTZ1VR?oc=5",
           "date": "2026-08-15",
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxPbjMxekZVeWRLWEpCcS1zSnAwVFBOeTREclEzVjNQaUFSamxwOUZYUmVuZV8xV09aZDd2a2RQZXk4bnV6N05FUG1jZlZqZ2EyMHRqS0d5azVPQXBSaXNBNUlVVm5JTVNDOUU3eGpEcn"
-        },
-        {
-          "title": "ASML (NasdaqGS:ASML) Stock May Be Pricey After Its 193% Run - simplywall.st",
-          "source": "simplywall.st",
-          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNNE04MEgxdGRXc1NhN2xFbk1RSXFBM2xhbWpESlZjZVlLajJTdk43MkFiMC14RnZLd1lzMFVqZl95Z3lVRGlMc2dMTEVfRm50cjlWXzdOX0pPR2U1SW16aW5vLUtXa0N1NEZzWkp4QklBOVE5UmpoNU5mLTZDWDdwSEpJUzZZcmhua0pURjFueXRSYnUyd2VPZnB5akRWY01DRkFUUzBhMnI4TjJLeTFFWDZ6cmI4aUd1SVhIdTNDRnhEMU0zams5bXBZcULSAdIBQVVfeXFMT3ZybXZKWlg4Smhld1l0Q24yVGZZN3VGQmhMclgwWXluYmhKc1ltcFNYcUhTSHFhdWc4OXg2NEF3Q25yQmtnMkE3bGFES1BmMmtqcXpwRFlRUXBybFd6QllkSHpzbmhSRU00d1pwNlZNTTMzT1pDeUxmaklBWXY2SmlWN05VdVBJVlVfaVZ2a1c4UWdESDBqMFBCZ2pHcGhxS1d2VzJIWFZBTWhuQVJhbjlTYnJVRHBzc0V5bkhfbnA5TmRjcnU4VzZITVc4ZVM0NTZn?oc=5",
-          "date": "2026-08-14",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNNE04MEgxdGRXc1NhN2xFbk1RSXFBM2xhbWpESlZjZVlLajJTdk43MkFiMC14RnZLd1lzMFVqZl95Z3lVRGlMc2dMTEVfRm50cjlWXzdOX0pPR2U1SW16aW5vLUtXa0N1NEZzWkp4Qk"
         }
       ]
     },
@@ -15925,13 +15912,6 @@
           "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNdGlfVHA2aXR3UEh3WGdReHZ1QUJRZl9rZmduTWdqSHdOa3JXZVhkLTE0bGtfR1VMWmU5LXNCNl8yTnR1NTdJeG85SWd3UWNHYWxONFRfS2kyNEd4VEZfVk9pS0RsTFFzcnVBWmcyMmFoXzU3dE00WUxReVVpVE1pa3NMQ2dOamI4Q0xCSGY2UUFwRlhxd2doWHByX3RtSEF4Z19DaF9MYmNTRDZGbjhjV0Y0MGpjV2tveU5zaUJ2RERHOXNsb1ZnbV9YTjZVUG1BZWRLc09R?oc=5",
           "date": "2026-08-16",
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMi1gFBVV95cUxNdGlfVHA2aXR3UEh3WGdReHZ1QUJRZl9rZmduTWdqSHdOa3JXZVhkLTE0bGtfR1VMWmU5LXNCNl8yTnR1NTdJeG85SWd3UWNHYWxONFRfS2kyNEd4VEZfVk9pS0RsTFFzcnVBWmcyMm"
-        },
-        {
-          "title": "Can Optical Connectivity Strengthen STMicroelectronics' AI Strategy?",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82ddb0c9824500bb78202b8afe20f9&url=https%3a%2f%2ffinance.yahoo.com%2ftechnology%2fai%2farticles%2foptical-connectivity-strengthen-stmicroelectronics-ai-145900313.html&c=3383207325597921910&mkt=en-us",
-          "date": "2026-08-14",
-          "summary": "Can STM's optical connectivity push strengthen its AI strategy as demand rises for faster data transmission and higher-speed optical solutions?"
         }
       ]
     },
@@ -16417,8 +16397,8 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxObkZoSmVzY0l5Rk5IWm04bGVHWEVCLXBNdlhDVDF2eFo5S3ZuRnVabHc3MFVQS0NNSC0tUngwUi1nRDg2VjRzTGQ0eWt5U01YWXliRWgyQXUyQ2FIajlsQWRBLThGaU9CbGNWa2ZJQ2"
         },
         {
-          "title": "Schneider Electric Infrastructure Share Price Falls 8.89% - Univest",
-          "source": "Univest",
+          "title": "Schneider Electric Infrastructure Share Price Falls 8.89% - univest.in",
+          "source": "univest.in",
           "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQM1phcXZhdkhHajduVXA0cEFMNmMzUGRQSk9lNks5a0VORHhlOG9IaHJ2RDBGWk1mbTRJUGdmWFM4MEE5VVF4VWZBZHBPT21CRko2SW9RMVg5WFN0Y1FxOXY4cnlUbEZyeGlIMFJrQVlqNXlkOHZqQU9QcWpOZ2M2MTJSdW5VbkNrbjBBZ1BUQmtvaWVoZzRBeDZn?oc=5",
           "date": "2026-08-17",
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxQM1phcXZhdkhHajduVXA0cEFMNmMzUGRQSk9lNks5a0VORHhlOG9IaHJ2RDBGWk1mbTRJUGdmWFM4MEE5VVF4VWZBZHBPT21CRko2SW9RMVg5WFN0Y1FxOXY4cnlUbEZyeGlIMFJrQV"
@@ -16438,11 +16418,11 @@
           "summary": "Schneider Electric stock has delivered a strong 120.1% return over the past five years, yet the current valuation picture is more cautious, with the Discounted Cash Flow (DCF) intrinsic value estimate"
         },
         {
-          "title": "Stratasys Q2 Earnings Beat, Revenues Miss on Weak System Sales",
+          "title": "$14+ Billion Data Center PDU Market Outlook, 2032: AI and Hyperscale Infrastructure Accelerate Demand",
           "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/stratasys-q2-earnings-beat-revenues-155000820.html?.tsrc=rss",
+          "url": "https://finance.yahoo.com/technology/ai/articles/14-billion-data-center-pdu-092900482.html?.tsrc=rss",
           "date": "2026-08-14",
-          "summary": "SSYS beats Q2 earnings estimates as record consumables revenues and aerospace growth offset weaker system sales and currency pressure."
+          "summary": "Switched PDUs are expected to lead the market, while AI workloads will record the fastest growth. Asia Pacific will hold the second-largest share. Key players include Schneider Electric, Vertiv, Eaton"
         }
       ]
     },
@@ -16921,6 +16901,13 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPS0ZJNUZ5aThybnNwMklsMmk2V2Vuc1YwMlZSNkN2QXEwUnUtUDctZGZsQS1BWS1OczVUYVdoRUJxV2dQVkhPRzZZeW9Kbjc2UEhMMDFrdmhxSHFnZ3FGTmhTZC1YWjd5YkJ1Uy05en"
         },
         {
+          "title": "What does a divided Bank of England mean for HSBC Holdings (LSE:HSBA) and UK banking heavyweights? - Kalkine Media",
+          "source": "Kalkine Media",
+          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOeTY3SHVFZ1k4b3luNEJaUjVwUWtPcnd2b3d6eUktNkpWMkpqVGFreUVlNTBtZXZOVlhXYTAtTDkyQjJrS0dQNko1RGdzTERDMC05RDJLazduajFjWk9qNVFOSlRlREZBbnJFbjhmQjhZQ2l5bW93a1czenNYX2g3ZEYtTFBzQXFuNHZ4VXFXYnVWMUFwUkZwLS1YaXlEdktseHRqblo4Nm5jMzExOGJITW5uOW5GeF9oQnRpNXNhV1lJYThna0dBbFduVDNkSXU2emxTRw?oc=5",
+          "date": "2026-08-17",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi1AFBVV95cUxOeTY3SHVFZ1k4b3luNEJaUjVwUWtPcnd2b3d6eUktNkpWMkpqVGFreUVlNTBtZXZOVlhXYTAtTDkyQjJrS0dQNko1RGdzTERDMC05RDJLazduajFjWk9qNVFOSlRlREZBbnJFbjhmQj"
+        },
+        {
           "title": "HSBC Holdings PLC (HSBC) Stock News Today - TradingKey",
           "source": "TradingKey",
           "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5wSTd4T0dBbmItMk1mT25haUtWTFNqWnIzcXg1LUxoMGlNVmpVT1d6WGRfbndHeWVlZUxRTXQ5ZFg3ZF9NVTJyWU1tMWZKSDJhUVRDQjg1cTdmMlFWRmJDV21vOVgteEZDNjJINmhhRURQQQ?oc=5",
@@ -16935,13 +16922,6 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNd0g0dkZ3TDRjZ2g0aGtfLTFvRGhCRVFVQVhOLWlHaVE5T19yZ3AwZkMtX2FZRDFxcFZ5Qm4yT0FYUlFVeUdkSmNyMURtUXY2MjBTWmUwWl9xaFpXWVVZMGc4dmktYzBOVjRZbFBrcE"
         },
         {
-          "title": "HSBC Holdings (HSBC) repurchases 1.88M shares in ongoing August 2026 buy-back - stocktitan.net",
-          "source": "stocktitan.net",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNcGJqSGY1bGpzdUNpYm9aR1pUNld0S3VXeUR2c19GRVZiM0pVRWF3M2dzb0VMZWhqdS03TzBBVDZ1aTJQV0N0X3lMTFRWSUhmdzlLRmRnY2dsbW5xdmdFMWUwbDk4WklWY3dxQ0U2OFpsSjlVLURuMWQzSFNwY3hHS3RINVJRR3FEa3JGTFV6VXh3TGRiZUZpQVFLYXIwU0d3MlhrakttOFVFRlZiUkFYQ3VpSQ?oc=5",
-          "date": "2026-08-14",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNcGJqSGY1bGpzdUNpYm9aR1pUNld0S3VXeUR2c19GRVZiM0pVRWF3M2dzb0VMZWhqdS03TzBBVDZ1aTJQV0N0X3lMTFRWSUhmdzlLRmRnY2dsbW5xdmdFMWUwbDk4WklWY3dxQ0U2OF"
-        },
-        {
           "title": "REG - HSBC Holdings PLC - Issuance of senior unsecured notes - TradingView",
           "source": "TradingView",
           "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE84UHNTQ3VFWGtwcHlxTmd3b282RThZXzJVaGVpQ3NZUWNJV21GeU1NaEJWcmRwSzZyY1lmbTkzXy1UOGtQTmNTM3NjS3NNV2ZiY01Ea0IxcFZ4MkhNN0JzQ2VUdGNhc0N6UWVHVnUtaVpiRDhsZE1nS0d6cTN4b2M?oc=5",
@@ -16949,11 +16929,11 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE84UHNTQ3VFWGtwcHlxTmd3b282RThZXzJVaGVpQ3NZUWNJV21GeU1NaEJWcmRwSzZyY1lmbTkzXy1UOGtQTmNTM3NjS3NNV2ZiY01Ea0IxcFZ4MkhNN0JzQ2VUdGNhc0N6UWVHVnUtaV"
         },
         {
-          "title": "Fund Update: New $156.4M $HONA stock position opened by HSBC HOLDINGS PLC - Quiver Quantitative",
-          "source": "Quiver Quantitative",
-          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPZkEwMGI5OWlTRERzcmQzRmVLcWNpdXJwVGRaeDgxbHNsWl9FTXFoZ2hVdnpTNVVVVHIwVENPN0VrdThuWXVHNnpESnBnOE5ISk1zd0FsRXlranJOZnFza0tMeTFOVVdVYmFoa3dNYTZkOFFGZUtjNFlWRXdubTJDalVLNzlIR25lV0QxX3RMQmtQeTlKdVpQaTZmUnpGYVBBQUJ0U016eHcySVplVGIzakN3?oc=5",
+          "title": "HSBC Stock And 2 Global Bank Picks for Trade and Rate Rule Changes - simplywall.st",
+          "source": "simplywall.st",
+          "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPR0NvX2doanpZZ0FyV3NNdWtPNl9FSXJOV2xUYXg0YmxaMzd1dGZlTV9mT2ZTYVBNYlk1anpvRDlxXzRNakpHSHpfYVdXSEdDMEh4UTk4R2lYR3huUXpuYWMtQkNIZ1czRzI0aGo1dmw5ZDh2MkN0VVFLS1k0ZmZWWV9zZ00tM04ybTNZSG43dFktRW1CLWdLZ29mZGxELWhoYnhDbF9UMXZ1SW1zOFpadEI2MkVObXRXa3BDd1NVV3VPSUI3V3JiWUViblp4cW41QzhCVzBkS21FOVlyQy1GWDhYYjRPUdIB6wFBVV95cUxNUklsQW1lOGY4NFRiVzdNcEdRZWcybTVkM25odTdkZVZhcFdKbWpyWkpVeHVMcC00RE44MUt6aDFENXhHNlhRYnpCWjlvc28tZ0ZYSHJVazZVTndsZHBPNnZqVFlsTkFfbjc1SjZra0l0S3RuWkJXS3dSYWJkc0RMSnE1LVVtWWxIVFRSTENsWTFDci1ZSE92Yjd1MVFfTzR2VklydE1USGpWWHo3OWI3V1loRUNlc3Y0TGZCbnpTbExtX1RJNDBVckxHeGpfQnV5UmpRV0VjMXpTdTdrdEpXSlR5Y2pzMzVOVnRJ?oc=5",
           "date": "2026-08-14",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxPZkEwMGI5OWlTRERzcmQzRmVLcWNpdXJwVGRaeDgxbHNsWl9FTXFoZ2hVdnpTNVVVVHIwVENPN0VrdThuWXVHNnpESnBnOE5ISk1zd0FsRXlranJOZnFza0tMeTFOVVdVYmFoa3dNYT"
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi5gFBVV95cUxPR0NvX2doanpZZ0FyV3NNdWtPNl9FSXJOV2xUYXg0YmxaMzd1dGZlTV9mT2ZTYVBNYlk1anpvRDlxXzRNakpHSHpfYVdXSEdDMEh4UTk4R2lYR3huUXpuYWMtQkNIZ1czRzI0aGo1dm"
         }
       ]
     },
@@ -17625,7 +17605,7 @@
           "source": "consensus"
         },
         {
-          "date": "2",
+          "date": "3",
           "firm": "44 Buy \u00b7 4 Hold \u00b7 0 Sell (48 analysts)",
           "from_grade": "",
           "to_grade": "Buy",
@@ -17904,25 +17884,18 @@
       },
       "news": [
         {
-          "title": "EMCOR and Thor Industries have been highlighted as Zacks Bull and Bear of the Day",
+          "title": "Who\u2019s Really The King of Custom Silicon, Broadcom or Marvell Technology?",
           "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/emcor-thor-industries-highlighted-zacks-084100302.html?.tsrc=rss",
+          "url": "https://247wallst.com/investing/2026/08/17/whos-really-the-king-of-custom-silicon-broadcom-or-marvell-technology/?.tsrc=rss",
           "date": "2026-08-17",
-          "summary": "EMCOR's AI-driven growth, strong Q2 beat and raised outlook contrast sharply with Thor Industries' RV market headwinds."
+          "summary": "Broadcom and Marvell both design custom AI chips for the same hyperscaler clients, but their quarterly numbers tell two very different stories about who actually controls the future of cloud silicon."
         },
         {
-          "title": "US Stock Market Today S&P 500 Futures Dip As Inflation Concerns Resurface",
-          "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/us-stock-market-today-p-081043474.html?.tsrc=rss",
+          "title": "Big Tech companies have $3T in hidden AI expenditures- report",
+          "source": "Seeking Alpha",
+          "url": "https://seekingalpha.com/symbol/AVGO/news?source=feed_symbol_AVGO",
           "date": "2026-08-17",
-          "summary": "The Morning Bull - US Market Morning Update Monday, Aug, 17 2026 US stock futures are pointing slightly lower this morning, with E-mini S&P 500 contracts down about 0.2%. The key pressure comes from t"
-        },
-        {
-          "title": "Michael Burry Says \u2018You Could Have Heard It First\u2019 \u2014 As Big Tech\u2019s $3T AI Spending Risk Comes Into Focus",
-          "source": "Yahoo Finance",
-          "url": "https://stocktwits.com/news-articles/markets/equity/michael-burry-says-you-could-have-heard-it-first-as-big-tech-s-3-t-ai-spending-risk-comes-into-focus/cZo6sZzRJKV?.tsrc=rss",
-          "date": "2026-08-17",
-          "summary": "The total includes $1.2 trillion in unstarted leases and $1.9 trillion in purchase commitments."
+          "summary": ""
         },
         {
           "title": "AVGO Stock Rebounds After Worst Drop In Two Months: Retail Traders Look Past VMware Worry, Bet On Rebound",
@@ -17932,18 +17905,25 @@
           "summary": "AVGO dipped 6% on Friday, piquing interest among retail investors ahead of the chipmaker's quarterly report due early next month."
         },
         {
-          "title": "Dow Futures Slip, S&P 500, Nasdaq Futures Climb Ahead Of Key Retail Earnings, Fed Minutes: NLST, AVGO, LUNR, MRK Stocks In Focus",
+          "title": "EMCOR and Thor Industries have been highlighted as Zacks Bull and Bear of the Day",
           "source": "Yahoo Finance",
-          "url": "https://stocktwits.com/news-articles/markets/equity/dow-futures-slip-s-and-p-500-nasdaq-futures-climb-ahead-of-key-retail-earnings-fed-minutes-nlst-avgo-lunr-mrk-stocks-in-focus/cZo6n1CRJKQ?.tsrc=rss",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/emcor-thor-industries-highlighted-zacks-084100302.html?.tsrc=rss",
           "date": "2026-08-17",
-          "summary": "Dow futures were down 0.09%, while the S&P 500 futures climbed 0.09% and the Nasdaq-100 futures were up 0.25% at the time of writing."
+          "summary": "EMCOR's AI-driven growth, strong Q2 beat and raised outlook contrast sharply with Thor Industries' RV market headwinds."
         },
         {
-          "title": "Broadcom: VMware-Driven Sell-Off Is A Buying Opportunity",
-          "source": "Seeking Alpha",
-          "url": "https://seekingalpha.com/article/4937112-broadcom-vmware-driven-sell-off-buying-opportunity?source=feed_symbol_AVGO",
+          "title": "AI Chips Today - Fort Technology Expands Amid Record Revenue and Strategic Acquisitions",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/technology/ai/articles/ai-chips-today-fort-technology-113704087.html?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "Recent developments in the AI Chips sector highlight significant growth and strategic expansions. Fort Technology Inc., a subsidiary of Nexera Technologies, reported a record 49% increase in revenue a"
+        },
+        {
+          "title": "Broadcom vs. AMD: Which AI Chip Stock Is the Better Buy? - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNYzNObFhMMlM5V213bmNfN19FYU01S1h1YU9GblowT1NlNTJHbVRvX2hwQTVORkhzYThYOW5CamNYUDF0eFkzN3NuZDd5U3JRTWdYR3F5YXJSY3NhdnU5djZYSkM4ZHVTR3QtcUhLS3lmUnluc1B0SE41Q0lYa2JjVUhfd2d3cFRzLTFlWHk4S3E?oc=5",
           "date": "2026-08-16",
-          "summary": ""
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxNYzNObFhMMlM5V213bmNfN19FYU01S1h1YU9GblowT1NlNTJHbVRvX2hwQTVORkhzYThYOW5CamNYUDF0eFkzN3NuZDd5U3JRTWdYR3F5YXJSY3NhdnU5djZYSkM4ZHVTR3QtcUhLS3"
         }
       ]
     },
@@ -18136,7 +18116,7 @@
           "source": "consensus"
         },
         {
-          "date": "2",
+          "date": "3",
           "firm": "39 Buy \u00b7 5 Hold \u00b7 0 Sell (44 analysts)",
           "from_grade": "",
           "to_grade": "Buy",
@@ -18422,11 +18402,25 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPNXpuZnZUa1NiOW9HTFNwOVE1MTRVTzlvblgwTXE1VWppRkNzREp0XzhuSDJwRGNTVlFTME1YbjNVeTdYcFN6YmxGT3p3M2NBTFNzTXNBdm9KRlh1bHVUYVpSaGZsQ1d0UWxnQUE1Sm"
         },
         {
-          "title": "1 Growth Stock with Explosive Upside and 2 We Question",
+          "title": "Who\u2019s Really The King of Custom Silicon, Broadcom or Marvell Technology?",
           "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/1-growth-stock-explosive-upside-174100027.html?.tsrc=rss",
-          "date": "2026-08-16",
-          "summary": "Growth is oxygen. But when it evaporates, the consequences can be severe - ask anyone who bought Cisco in the Dot-Com Bubble or newer investors who lived through the 2020 to 2022 COVID cycle."
+          "url": "https://247wallst.com/investing/2026/08/17/whos-really-the-king-of-custom-silicon-broadcom-or-marvell-technology/?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "Broadcom and Marvell both design custom AI chips for the same hyperscaler clients, but their quarterly numbers tell two very different stories about who actually controls the future of cloud silicon."
+        },
+        {
+          "title": "Who\u2019s Really The King of Custom Silicon, Broadcom or Marvell Technology? - 24/7 Wall St.",
+          "source": "24/7 Wall St.",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPanAxcGk0MzBkQV9JYjFIM2NQOGVpVnlzX0VTRGtJVU1GVlVWUXRzaW00ZlJtR25wUC1nZ3RaWThQOFRkSUVGZ3lHTU1SOFRCZ2hUUkM1aEx5MkFES1RIa3Z4OFhfb0VTcU13bHNQWEV4dDBDRWFxYVFqdVhyYkRTX1ExWkttOTQ0ZS1HMUN3WnVmLTMtYURuZmlvU3psT2hKZjhPbVExZE11QmttcXlHXzhhRQ?oc=5",
+          "date": "2026-08-17",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxPanAxcGk0MzBkQV9JYjFIM2NQOGVpVnlzX0VTRGtJVU1GVlVWUXRzaW00ZlJtR25wUC1nZ3RaWThQOFRkSUVGZ3lHTU1SOFRCZ2hUUkM1aEx5MkFES1RIa3Z4OFhfb0VTcU13bHNQWE"
+        },
+        {
+          "title": "Intel, Oracle, Marvell, Alibaba, and More Stocks That Explain Today\u2019s Market",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/m/e16a2ee6-9fad-362d-ac29-c796aa9fd1b0/intel%2C-oracle%2C-marvell%2C.html?.tsrc=rss",
+          "date": "2026-08-17",
+          "summary": "Chips and memory stocks are catching a bid at the start of what could be a quiet week for the market."
         },
         {
           "title": "Marvell Technology, Inc. $MRVL Stock Holdings Lessened by Farther Finance Advisors LLC - MarketBeat",
@@ -18436,25 +18430,11 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMi3AFBVV95cUxNalBtbjFXQlV4czQ4UF9fcHJ0NjRtcVBmNHBMZEQyQ3ZjaDI2TGVtbmJSXy1KNmd2akVMX1FmUy1CT2Zta1pLS0dzY3lQb21wTXNpeldVZl9UeG1RaVZvczVuZWlpdGlIQjRzd2NCWU"
         },
         {
-          "title": "Marvell (MRVL) Stock Ahead of Q2 Results: What Investors Need to Know",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82ddb3e6f840c099b3f23e77a7a642&url=https%3a%2f%2fblockonomi.com%2fmarvell-mrvl-stock-ahead-of-q2-results-what-investors-need-to-know%2f&c=16990494742235138442&mkt=en-us",
-          "date": "2026-08-15",
-          "summary": "Marvell (MRVL) reports Q2 earnings Aug 27. Options price 14% move. Analysts forecast $2.71B revenue, $0.93 EPS. Is the stock a buy at current levels?"
-        },
-        {
-          "title": "Marvell Technology (MRVL) On Nvidia\u2019s $2b Backing And Why Fair Value Still Looks Debatable - simplywall.st",
-          "source": "simplywall.st",
-          "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPZmYzbTltNkczakVHWDYwMUMtNFVrSmJLYk44RHJyODNYX25ZaVJrUjZVSmY2U3oxUFVRZnljSWp0ODBneUZ1ZHhpbktWbTVoeXdzODBrRzNLVDlSQ2tpck1wUHlRUjZ2YzBtZi1YSGRDbXl1XzBTZnlwUGZwNk5WekJHRkQxUjd2d21QTXlxNXc3cmNfeXdra0FDMFhHLV85ZFhoZlRGNkhzckVPOXFna3NXMTZUX0syb25XalA2aXRMa19SNE1HY0NjRnE0SHlQTUdKNERQSG1iaVnSAeABQVVfeXFMTVZMQTBwdmR1UGxBRjExQk5fTE83VHNfcXYwRUxUSFVkREZ2REYyTUxrTk16QmlNNUM3MEhwenlwelMxUE9DZF9SUDV2UVdxc0d6aWtSX3NLeDh0SjhrbzVMOFVyNjRVc3BFelZtekotLU11dnk2ZW1GNmtPOGVXWGlTVDd1emY1czhOLURPc2h0a0o1M1gzOE9SLS1ESnl5akdHMkh6OHF6aGRPT0dHTThFd2VpYWhLNzVpTVBuTEJYYnIwRnltdTVvaTYxT2NfNl9uTjhwUFNBeGg3Q05HRWg?oc=5",
-          "date": "2026-08-15",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxPZmYzbTltNkczakVHWDYwMUMtNFVrSmJLYk44RHJyODNYX25ZaVJrUjZVSmY2U3oxUFVRZnljSWp0ODBneUZ1ZHhpbktWbTVoeXdzODBrRzNLVDlSQ2tpck1wUHlRUjZ2YzBtZi1YSG"
-        },
-        {
-          "title": "Crossmark Global Holdings Inc. Boosts Stock Position in Marvell Technology, Inc. $MRVL - MarketBeat",
-          "source": "MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOLUZDSjYxYVF6MWZGU1NDSUYtSllXbzl2V041SEpiaWxwRDR5UUxiYTA5eGo5MUVsalpzNzdZMHV3M3F5d25YZ2RtMlAzV24teFZlamcwYXVpaU1lNV9EdFdSLV9rOEdIWHVzckNiSGZQQ29STzFGNlhBaWhaZ0RqcjQzelJVMU9JRllZRlEzaklLQ1FuM1N3aWNrM1BmMzR2WWFfZ0Q0cmU1cXF2cDBBRzE3dnYwekdoTmpoS2NVUUdybUotMFZaRDZ1dlVLRkFsTmYyWkJTaXRDVnc?oc=5",
-          "date": "2026-08-15",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxOLUZDSjYxYVF6MWZGU1NDSUYtSllXbzl2V041SEpiaWxwRDR5UUxiYTA5eGo5MUVsalpzNzdZMHV3M3F5d25YZ2RtMlAzV24teFZlamcwYXVpaU1lNV9EdFdSLV9rOEdIWHVzckNiSG"
+          "title": "1 Growth Stock with Explosive Upside and 2 We Question",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/1-growth-stock-explosive-upside-174100027.html?.tsrc=rss",
+          "date": "2026-08-16",
+          "summary": "Growth is oxygen. But when it evaporates, the consequences can be severe - ask anyone who bought Cisco in the Dot-Com Bubble or newer investors who lived through the 2020 to 2022 COVID cycle."
         }
       ]
     },
@@ -18467,7 +18447,7 @@
         {
           "title": "SPDR MSCI ACWI UCITS ETF",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82ddb4ffa6453a98ef106a851b18bb&url=https%3a%2f%2fwww.barrons.com%2fmarket-data%2ffunds%2feacw%3fcountrycode%3dch&c=5773294655472841057&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82f7c9b02b450698582657a5d04b31&url=https%3a%2f%2fwww.barrons.com%2fmarket-data%2ffunds%2feacw%3fcountrycode%3dch&c=5773294655472841057&mkt=en-us",
           "date": "2026-08-14",
           "summary": "Stocks: Real-time U.S. stock quotes reflect trades reported through Nasdaq only; comprehensive quotes and volume reflect trading in all markets and are delayed at least 15 minutes. International stock"
         }
@@ -18482,16 +18462,9 @@
       "new_ratings": [],
       "news": [
         {
-          "title": "iShares Core MSCI EAFE ETF",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82ddb55c3a48dba6c0e6b1bd85465e&url=https%3a%2f%2fwww.barrons.com%2fmarket-data%2ffunds%2fiefa&c=6505081872146240948&mkt=en-us",
-          "date": "2026-08-14",
-          "summary": "Stocks: Real-time U.S. stock quotes reflect trades reported through Nasdaq only; comprehensive quotes and volume reflect trading in all markets and are delayed at least 15 minutes. International stock"
-        },
-        {
           "title": "iShares Core MSCI Emerging Markets ETF",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82ddb55c3a48dba6c0e6b1bd85465e&url=https%3a%2f%2fwww.barrons.com%2fmarket-data%2ffunds%2fiemg&c=18045368832966847709&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82f7ca37d2416bb9977490881a917a&url=https%3a%2f%2fwww.barrons.com%2fmarket-data%2ffunds%2fiemg&c=18045368832966847709&mkt=en-us",
           "date": "2026-08-14",
           "summary": "Stocks: Real-time U.S. stock quotes reflect trades reported through Nasdaq only; comprehensive quotes and volume reflect trading in all markets and are delayed at least 15 minutes. International stock"
         }
@@ -18508,14 +18481,7 @@
         {
           "title": "iShares Core MSCI Emerging Markets ETF",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82ddb5353e4cebba7f947553c1afb4&url=https%3a%2f%2fwww.barrons.com%2fmarket-data%2ffunds%2fiemg&c=18045368832966847709&mkt=en-us",
-          "date": "2026-08-14",
-          "summary": "Stocks: Real-time U.S. stock quotes reflect trades reported through Nasdaq only; comprehensive quotes and volume reflect trading in all markets and are delayed at least 15 minutes. International stock"
-        },
-        {
-          "title": "iShares Core MSCI EAFE ETF",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82ddb5353e4cebba7f947553c1afb4&url=https%3a%2f%2fwww.barrons.com%2fmarket-data%2ffunds%2fiefa&c=6505081872146240948&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82f7ccd5f6437fb5fbd3600fbb4055&url=https%3a%2f%2fwww.barrons.com%2fmarket-data%2ffunds%2fiemg&c=18045368832966847709&mkt=en-us",
           "date": "2026-08-14",
           "summary": "Stocks: Real-time U.S. stock quotes reflect trades reported through Nasdaq only; comprehensive quotes and volume reflect trading in all markets and are delayed at least 15 minutes. International stock"
         }
@@ -18533,7 +18499,7 @@
         {
           "title": "iShares MSCI Global Semiconductors UCITS ETF",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82ddb6d0614393b0a82566f8ba13e8&url=https%3a%2f%2fwww.barrons.com%2fmarket-data%2ffunds%2fsemi%3fcountrycode%3duk&c=16786534862210486254&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82f7cc1c4f448caa5ae9fd82af98bc&url=https%3a%2f%2fwww.barrons.com%2fmarket-data%2ffunds%2fsemi%3fcountrycode%3duk&c=16786534862210486254&mkt=en-us",
           "date": "2026-08-14",
           "summary": "Stocks: Real-time U.S. stock quotes reflect trades reported through Nasdaq only; comprehensive quotes and volume reflect trading in all markets and are delayed at least 15 minutes. International stock"
         }
@@ -18553,15 +18519,7 @@
       "ratings": [],
       "new_ratings": [],
       "consensus": {},
-      "news": [
-        {
-          "title": "iShares Nasdaq 100 ETF",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a82ddb7430c4e13af3ce9c7640f9756&url=https%3a%2f%2fwww.barrons.com%2fmarket-data%2ffunds%2fiqq&c=133095631996926890&mkt=en-us",
-          "date": "2026-08-14",
-          "summary": "Stocks: Real-time U.S. stock quotes reflect trades reported through Nasdaq only; comprehensive quotes and volume reflect trading in all markets and are delayed at least 15 minutes. International stock"
-        }
-      ]
+      "news": []
     }
   ],
   "updated": "2026-08-17"
