@@ -54,6 +54,17 @@
       "forecast": "",
       "previous": "",
       "source": "BLS via FRED"
+    },
+    {
+      "date": "2026-09-16",
+      "time": "20:00 CET",
+      "currency": "USD",
+      "impact": "\ud83d\udd34 High",
+      "impact_raw": "high",
+      "title": "Fed Interest Rate Decision (FOMC)",
+      "forecast": "",
+      "previous": "",
+      "source": "Federal Reserve"
     }
   ],
   "by_date": {
@@ -119,10 +130,23 @@
         "previous": "",
         "source": "BLS via FRED"
       }
+    ],
+    "2026-09-16": [
+      {
+        "date": "2026-09-16",
+        "time": "20:00 CET",
+        "currency": "USD",
+        "impact": "\ud83d\udd34 High",
+        "impact_raw": "high",
+        "title": "Fed Interest Rate Decision (FOMC)",
+        "forecast": "",
+        "previous": "",
+        "source": "Federal Reserve"
+      }
     ]
   },
-  "from_date": "2026-08-18",
-  "to_date": "2026-09-15",
-  "updated": "2026-08-18T17:31:36.681441",
-  "count": 5
+  "from_date": "2026-08-19",
+  "to_date": "2026-09-16",
+  "updated": "2026-08-19T07:55:44.913388",
+  "count": 6
 }
