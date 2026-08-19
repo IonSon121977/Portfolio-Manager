@@ -1,6 +1,6 @@
 {
   "composite": {
-    "score": 50,
+    "score": 53,
     "label": "Neutral",
     "color": "#f6ad55",
     "components": {
@@ -11,7 +11,7 @@
         "interpretation": "High fear"
       },
       "vix": {
-        "value": 15.13,
+        "value": 15.17,
         "score": 60,
         "contribution": 2.0,
         "interpretation": "Calm"
@@ -24,18 +24,18 @@
         "interpretation": "Risk-on"
       },
       "stoxx50": {
-        "value": 6452.3301,
-        "ma50": 6334.6952,
-        "pct_from_ma": 1.86,
+        "value": 6444.46,
+        "ma50": 6317.7648,
+        "pct_from_ma": 2.01,
         "above_ma50": true,
-        "score": 55,
-        "contribution": 1.2,
+        "score": 65,
+        "contribution": 3.8,
         "interpretation": "Uptrend"
       },
       "dax": {
-        "value": 26123.9805,
-        "ma50": 25380.0414,
-        "pct_from_ma": 2.93,
+        "value": 26091.3301,
+        "ma50": 25328.3603,
+        "pct_from_ma": 3.01,
         "above_ma50": true,
         "score": 65,
         "contribution": 2.2,
@@ -56,10 +56,10 @@
     "vix": {
       "ticker": "^VIX",
       "label": "VIX",
-      "price": 15.13,
+      "price": 15.17,
       "prev": 15.84,
-      "chg_pct": -4.48,
-      "ma50": 16.9858,
+      "chg_pct": -4.23,
+      "ma50": 17.1096,
       "above_ma50": false
     },
     "eurusd": {
@@ -74,21 +74,21 @@
     "stoxx50": {
       "ticker": "^STOXX50E",
       "label": "Euro Stoxx 50",
-      "price": 6452.3301,
+      "price": 6444.46,
       "prev": 6472.5298,
-      "chg_pct": -0.31,
-      "ma50": 6334.6952,
+      "chg_pct": -0.43,
+      "ma50": 6317.7648,
       "above_ma50": true
     },
     "dax": {
       "ticker": "^GDAXI",
       "label": "DAX",
-      "price": 26123.9805,
-      "prev": 26150.5605,
-      "chg_pct": -0.1,
-      "ma50": 25380.0414,
+      "price": 26091.3301,
+      "prev": 26128.36,
+      "chg_pct": -0.14,
+      "ma50": 25328.3603,
       "above_ma50": true
     }
   },
-  "updated": "2026-08-19T15:35:22.812072"
+  "updated": "2026-08-19T17:30:08.632473"
 }
