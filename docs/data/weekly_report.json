@@ -1,32 +1,48 @@
 {
-  "week_from": "Mon 17 Aug",
-  "week_to": "Fri 21 Aug",
-  "week_from_iso": "2026-08-17",
-  "week_to_iso": "2026-08-21",
-  "earnings": {},
-  "dividends": {
-    "MSFT": [
+  "week_from": "Mon 24 Aug",
+  "week_to": "Fri 28 Aug",
+  "week_from_iso": "2026-08-24",
+  "week_to_iso": "2026-08-28",
+  "earnings": {
+    "NVDA": [
       {
-        "ex_date": "2026-08-20",
-        "pay_date": "2026-09-10",
-        "record_date": "",
-        "amount": 0.91,
-        "currency": "USD",
-        "freq": "",
-        "ticker": "MSFT",
-        "name": "Microsoft"
+        "date": "2026-08-26",
+        "hour": "",
+        "eps_estimate": 2.09,
+        "eps_actual": null,
+        "revenue_est": 92072420560.0,
+        "revenue_act": null,
+        "quarter": 3,
+        "year": 2026,
+        "ticker": "NVDA",
+        "name": "NVIDIA"
+      }
+    ],
+    "MRVL": [
+      {
+        "date": "2026-08-27",
+        "hour": "",
+        "eps_estimate": 0.93,
+        "eps_actual": null,
+        "revenue_est": 2706834300.0,
+        "revenue_act": null,
+        "quarter": 3,
+        "year": 2026,
+        "ticker": "MRVL",
+        "name": "Marvell Technology"
       }
     ]
   },
+  "dividends": {},
   "splits": {},
   "ipos": [],
   "earnings_calendar": [
     {
       "date": "2026-08-26",
       "hour": "",
-      "eps_estimate": 2.08,
+      "eps_estimate": 2.09,
       "eps_actual": null,
-      "revenue_est": 91846098240.0,
+      "revenue_est": 92072420560.0,
       "revenue_act": null,
       "quarter": 3,
       "year": 2026,
@@ -38,7 +54,7 @@
       "hour": "",
       "eps_estimate": 0.93,
       "eps_actual": null,
-      "revenue_est": 2704955330.0,
+      "revenue_est": 2706834300.0,
       "revenue_act": null,
       "quarter": 3,
       "year": 2026,
@@ -62,7 +78,7 @@
       "hour": "",
       "eps_estimate": 1.74,
       "eps_actual": null,
-      "revenue_est": 19124084550.0,
+      "revenue_est": 19128439390.0,
       "revenue_act": null,
       "quarter": 3,
       "year": 2026,
@@ -71,16 +87,6 @@
     }
   ],
   "dividend_calendar": [
-    {
-      "ex_date": "2026-08-20",
-      "pay_date": "2026-09-10",
-      "record_date": "",
-      "amount": 0.91,
-      "currency": "USD",
-      "freq": "",
-      "ticker": "MSFT",
-      "name": "Microsoft"
-    },
     {
       "ex_date": "2026-09-04",
       "pay_date": "2026-09-14",
@@ -93,5 +99,5 @@
     }
   ],
   "ai_brief": "",
-  "generated": "2026-08-15T09:33:25.313651"
+  "generated": "2026-08-22T09:34:40.116366"
 }
