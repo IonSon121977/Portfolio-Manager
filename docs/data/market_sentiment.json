@@ -24,18 +24,18 @@
         "interpretation": "Risk-off"
       },
       "stoxx50": {
-        "value": 6485.6699,
-        "ma50": 6364.9602,
-        "pct_from_ma": 1.9,
+        "value": 6485.67,
+        "ma50": 6361.1094,
+        "pct_from_ma": 1.96,
         "above_ma50": true,
         "score": 55,
         "contribution": 1.2,
         "interpretation": "Uptrend"
       },
       "dax": {
-        "value": 26569.9902,
-        "ma50": 25581.7646,
-        "pct_from_ma": 3.86,
+        "value": 26569.99,
+        "ma50": 25550.0812,
+        "pct_from_ma": 3.99,
         "above_ma50": true,
         "score": 65,
         "contribution": 2.2,
@@ -74,21 +74,21 @@
     "stoxx50": {
       "ticker": "^STOXX50E",
       "label": "Euro Stoxx 50",
-      "price": 6485.6699,
+      "price": 6485.67,
       "prev": 6421.54,
       "chg_pct": 1.0,
-      "ma50": 6364.9602,
+      "ma50": 6361.1094,
       "above_ma50": true
     },
     "dax": {
       "ticker": "^GDAXI",
       "label": "DAX",
-      "price": 26569.9902,
+      "price": 26569.99,
       "prev": 26367.24,
       "chg_pct": 0.77,
-      "ma50": 25581.7646,
+      "ma50": 25550.0812,
       "above_ma50": true
     }
   },
-  "updated": "2026-08-28T21:21:30.199675"
+  "updated": "2026-08-28T22:57:49.102861"
 }
