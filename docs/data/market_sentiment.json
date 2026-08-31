@@ -1,6 +1,6 @@
 {
   "composite": {
-    "score": 49,
+    "score": 48,
     "label": "Neutral",
     "color": "#f6ad55",
     "components": {
@@ -11,31 +11,31 @@
         "interpretation": "High fear"
       },
       "vix": {
-        "value": 14.43,
-        "score": 75,
-        "contribution": 5.0,
-        "interpretation": "Greed"
+        "value": 15.26,
+        "score": 60,
+        "contribution": 2.0,
+        "interpretation": "Calm"
       },
       "eurusd": {
-        "value": 1.1587,
-        "chg_pct": -0.6,
-        "score": 35,
-        "contribution": -2.2,
-        "interpretation": "Risk-off"
+        "value": 1.162,
+        "chg_pct": 0.28,
+        "score": 50,
+        "contribution": 0.0,
+        "interpretation": "Neutral"
       },
       "stoxx50": {
-        "value": 6485.67,
-        "ma50": 6361.1094,
-        "pct_from_ma": 1.96,
+        "value": 6432.4902,
+        "ma50": 6367.3836,
+        "pct_from_ma": 1.02,
         "above_ma50": true,
         "score": 55,
         "contribution": 1.2,
         "interpretation": "Uptrend"
       },
       "dax": {
-        "value": 26569.99,
-        "ma50": 25550.0812,
-        "pct_from_ma": 3.99,
+        "value": 26298.1992,
+        "ma50": 25604.9348,
+        "pct_from_ma": 2.71,
         "above_ma50": true,
         "score": 65,
         "contribution": 2.2,
@@ -56,39 +56,39 @@
     "vix": {
       "ticker": "^VIX",
       "label": "VIX",
-      "price": 14.43,
-      "prev": 14.51,
-      "chg_pct": -0.55,
-      "ma50": 16.5076,
+      "price": 15.26,
+      "prev": 14.42,
+      "chg_pct": 5.83,
+      "ma50": 16.4848,
       "above_ma50": false
     },
     "eurusd": {
       "ticker": "EURUSD=X",
       "label": "EUR/USD",
-      "price": 1.1587,
-      "prev": 1.1658,
-      "chg_pct": -0.6,
-      "ma50": 1.1484,
+      "price": 1.162,
+      "prev": 1.1587,
+      "chg_pct": 0.28,
+      "ma50": 1.1488,
       "above_ma50": true
     },
     "stoxx50": {
       "ticker": "^STOXX50E",
       "label": "Euro Stoxx 50",
-      "price": 6485.67,
-      "prev": 6421.54,
-      "chg_pct": 1.0,
-      "ma50": 6361.1094,
+      "price": 6432.4902,
+      "prev": 6489.9502,
+      "chg_pct": -0.89,
+      "ma50": 6367.3836,
       "above_ma50": true
     },
     "dax": {
       "ticker": "^GDAXI",
       "label": "DAX",
-      "price": 26569.99,
-      "prev": 26367.24,
-      "chg_pct": 0.77,
-      "ma50": 25550.0812,
+      "price": 26298.1992,
+      "prev": 26582.0508,
+      "chg_pct": -1.07,
+      "ma50": 25604.9348,
       "above_ma50": true
     }
   },
-  "updated": "2026-08-29T00:54:16.767083"
+  "updated": "2026-08-31T15:09:06.927941"
 }
