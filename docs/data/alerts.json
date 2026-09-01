@@ -1,5 +1,17 @@
 [
   {
+    "ts": "2026-09-01 17:56 UTC",
+    "type": "movement",
+    "ticker": "ORCL",
+    "message": "ORCL DOWN | vs morning: -5.3% | vs last check: -1.1% (morning EUR 128.57, last EUR 123.11, now EUR 121.77)"
+  },
+  {
+    "ts": "2026-09-01 17:56 UTC",
+    "type": "movement",
+    "ticker": "AMD",
+    "message": "AMD DOWN [CROSSED 3%] | vs morning: -3.2% | vs last check: -0.7% (morning EUR 405.85, last EUR 395.68, now EUR 392.76)"
+  },
+  {
     "ts": "2026-09-01 15:33 UTC",
     "type": "movement",
     "ticker": "VH2.DE",
@@ -2986,17 +2998,5 @@
     "type": "earnings",
     "ticker": "MSFT",
     "message": "MSFT earnings on 2026-07-29"
-  },
-  {
-    "ts": "2026-07-27 08:41 UTC",
-    "type": "digest",
-    "ticker": "",
-    "message": "Morning digest sent at 08:41 UTC"
-  },
-  {
-    "ts": "2026-07-25 10:40 UTC",
-    "type": "weekly_summary",
-    "ticker": "",
-    "message": "Weekly summary sent - 9 earnings, 2 dividends, 0 splits next week"
   }
 ]
