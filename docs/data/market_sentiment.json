@@ -11,21 +11,21 @@
         "interpretation": "High fear"
       },
       "vix": {
-        "value": 16.19,
+        "value": 15.41,
         "score": 60,
         "contribution": 2.0,
         "interpretation": "Calm"
       },
       "eurusd": {
-        "value": 1.1596,
-        "chg_pct": -0.01,
+        "value": 1.1598,
+        "chg_pct": 0.01,
         "score": 50,
         "contribution": 0.0,
         "interpretation": "Neutral"
       },
       "stoxx50": {
-        "value": 6363.8901,
-        "ma50": 6367.47,
+        "value": 6363.5801,
+        "ma50": 6367.4638,
         "pct_from_ma": -0.06,
         "above_ma50": false,
         "score": 45,
@@ -33,9 +33,9 @@
         "interpretation": "Downtrend"
       },
       "dax": {
-        "value": 25858.7793,
-        "ma50": 25611.4394,
-        "pct_from_ma": 0.97,
+        "value": 25846.3906,
+        "ma50": 25611.1916,
+        "pct_from_ma": 0.92,
         "above_ma50": true,
         "score": 55,
         "contribution": 0.8,
@@ -56,39 +56,39 @@
     "vix": {
       "ticker": "^VIX",
       "label": "VIX",
-      "price": 16.19,
+      "price": 15.41,
       "prev": 16.33,
-      "chg_pct": -0.86,
-      "ma50": 16.4944,
+      "chg_pct": -5.63,
+      "ma50": 16.4788,
       "above_ma50": false
     },
     "eurusd": {
       "ticker": "EURUSD=X",
       "label": "EUR/USD",
-      "price": 1.1596,
+      "price": 1.1598,
       "prev": 1.1597,
-      "chg_pct": -0.01,
+      "chg_pct": 0.01,
       "ma50": 1.1496,
       "above_ma50": true
     },
     "stoxx50": {
       "ticker": "^STOXX50E",
       "label": "Euro Stoxx 50",
-      "price": 6363.8901,
+      "price": 6363.5801,
       "prev": 6364.29,
       "chg_pct": -0.01,
-      "ma50": 6367.47,
+      "ma50": 6367.4638,
       "above_ma50": false
     },
     "dax": {
       "ticker": "^GDAXI",
       "label": "DAX",
-      "price": 25858.7793,
+      "price": 25846.3906,
       "prev": 25957.6895,
-      "chg_pct": -0.38,
-      "ma50": 25611.4394,
+      "chg_pct": -0.43,
+      "ma50": 25611.1916,
       "above_ma50": true
     }
   },
-  "updated": "2026-09-02T13:32:59.070857"
+  "updated": "2026-09-02T15:03:29.305118"
 }
