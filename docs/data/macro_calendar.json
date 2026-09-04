@@ -65,6 +65,17 @@
       "forecast": "",
       "previous": "",
       "source": "Eurostat via FRED"
+    },
+    {
+      "date": "2026-10-02",
+      "time": "14:30 CET",
+      "currency": "USD",
+      "impact": "\ud83d\udd34 High",
+      "impact_raw": "high",
+      "title": "US Non-Farm Payrolls (NFP)",
+      "forecast": "",
+      "previous": "",
+      "source": "BLS via FRED"
     }
   ],
   "by_date": {
@@ -143,10 +154,23 @@
         "previous": "",
         "source": "Eurostat via FRED"
       }
+    ],
+    "2026-10-02": [
+      {
+        "date": "2026-10-02",
+        "time": "14:30 CET",
+        "currency": "USD",
+        "impact": "\ud83d\udd34 High",
+        "impact_raw": "high",
+        "title": "US Non-Farm Payrolls (NFP)",
+        "forecast": "",
+        "previous": "",
+        "source": "BLS via FRED"
+      }
     ]
   },
-  "from_date": "2026-09-03",
-  "to_date": "2026-10-01",
-  "updated": "2026-09-03T19:41:48.056149",
-  "count": 6
+  "from_date": "2026-09-04",
+  "to_date": "2026-10-02",
+  "updated": "2026-09-04T12:09:26.396061",
+  "count": 7
 }
