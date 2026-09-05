@@ -1,35 +1,35 @@
 {
-  "week_from": "Mon 31 Aug",
-  "week_to": "Fri 04 Sep",
-  "week_from_iso": "2026-08-31",
-  "week_to_iso": "2026-09-04",
+  "week_from": "Mon 07 Sep",
+  "week_to": "Fri 11 Sep",
+  "week_from_iso": "2026-09-07",
+  "week_to_iso": "2026-09-11",
   "earnings": {
-    "AVGO": [
+    "ORCL": [
       {
-        "date": "2026-09-02",
+        "date": "2026-09-10",
         "hour": "",
-        "eps_estimate": 3.24,
+        "eps_estimate": 1.74,
         "eps_actual": null,
-        "revenue_est": 29434507200.0,
+        "revenue_est": 19129315930.0,
         "revenue_act": null,
         "quarter": 3,
         "year": 2026,
-        "ticker": "AVGO",
-        "name": "Broadcom Inc."
+        "ticker": "ORCL",
+        "name": "Oracle"
       }
     ]
   },
   "dividends": {
-    "GOOG": [
+    "NVDA": [
       {
-        "ex_date": "2026-09-04",
-        "pay_date": "2026-09-14",
+        "ex_date": "2026-09-10",
+        "pay_date": "2026-10-01",
         "record_date": "",
-        "amount": 0.22,
+        "amount": 0.25,
         "currency": "USD",
         "freq": "",
-        "ticker": "GOOG",
-        "name": "Alphabet (Google) Class C"
+        "ticker": "NVDA",
+        "name": "NVIDIA"
       }
     ]
   },
@@ -37,44 +37,34 @@
   "ipos": [],
   "earnings_calendar": [
     {
-      "date": "2026-09-02",
-      "hour": "",
-      "eps_estimate": 3.24,
-      "eps_actual": null,
-      "revenue_est": 29434507200.0,
-      "revenue_act": null,
-      "quarter": 3,
-      "year": 2026,
-      "ticker": "AVGO",
-      "name": "Broadcom Inc."
-    },
-    {
       "date": "2026-09-10",
       "hour": "",
       "eps_estimate": 1.74,
       "eps_actual": null,
-      "revenue_est": 19129328840.0,
+      "revenue_est": 19129315930.0,
       "revenue_act": null,
       "quarter": 3,
       "year": 2026,
       "ticker": "ORCL",
       "name": "Oracle"
+    },
+    {
+      "date": "2026-09-30",
+      "hour": "",
+      "eps_estimate": 31.28,
+      "eps_actual": null,
+      "revenue_est": 50784289620.0,
+      "revenue_act": null,
+      "quarter": 3,
+      "year": 2026,
+      "ticker": "MU",
+      "name": "Micron Technology Inc."
     }
   ],
   "dividend_calendar": [
     {
-      "ex_date": "2026-09-04",
-      "pay_date": "2026-09-14",
-      "record_date": "",
-      "amount": 0.22,
-      "currency": "USD",
-      "freq": "",
-      "ticker": "GOOG",
-      "name": "Alphabet (Google) Class C"
-    },
-    {
       "ex_date": "2026-09-10",
-      "pay_date": "2026-06-26",
+      "pay_date": "2026-10-01",
       "record_date": "",
       "amount": 0.25,
       "currency": "USD",
@@ -91,8 +81,28 @@
       "freq": "",
       "ticker": "STMPA.PA",
       "name": "STMicroelectronics"
+    },
+    {
+      "ex_date": "2026-09-21",
+      "pay_date": "2026-09-30",
+      "record_date": "",
+      "amount": 0.65,
+      "currency": "USD",
+      "freq": "",
+      "ticker": "AVGO",
+      "name": "Broadcom Inc."
+    },
+    {
+      "ex_date": "2026-09-30",
+      "pay_date": "None",
+      "record_date": "",
+      "amount": 0.9,
+      "currency": "EUR",
+      "freq": "",
+      "ticker": "TTE.PA",
+      "name": "TotalEnergies SE"
     }
   ],
   "ai_brief": "",
-  "generated": "2026-08-29T14:22:46.703833"
+  "generated": "2026-09-05T12:33:32.227559"
 }
