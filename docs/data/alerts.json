@@ -1,5 +1,11 @@
 [
   {
+    "ts": "2026-09-09 12:29 UTC",
+    "type": "movement",
+    "ticker": "IFX.DE",
+    "message": "IFX.DE DOWN [CROSSED 3%] | vs morning: -3.3% | vs last check: -3.3% (morning EUR 57.90, last EUR 57.90, now EUR 56.01)"
+  },
+  {
     "ts": "2026-09-09 09:37 UTC",
     "type": "earnings",
     "ticker": "ORCL",
@@ -2992,11 +2998,5 @@
     "type": "movement",
     "ticker": "ARM",
     "message": "ARM DOWN [CROSSED 3%] | vs morning: -7.8% | vs last check: -7.9% (morning EUR 234.21, last EUR 234.24, now EUR 215.83)"
-  },
-  {
-    "ts": "2026-07-28 16:20 UTC",
-    "type": "movement",
-    "ticker": "AMD",
-    "message": "AMD DOWN [CROSSED 3%] | vs morning: -7.0% | vs last check: -7.0% (morning EUR 435.26, last EUR 435.31, now EUR 404.85)"
   }
 ]
