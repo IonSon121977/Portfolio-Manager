@@ -1,5 +1,23 @@
 [
   {
+    "ts": "2026-09-10 15:10 UTC",
+    "type": "rating_change",
+    "ticker": "AMD",
+    "message": "Piper Sandler: -- -> Overweight"
+  },
+  {
+    "ts": "2026-09-10 15:10 UTC",
+    "type": "rating_change",
+    "ticker": "NVDA",
+    "message": "Piper Sandler: -- -> Overweight"
+  },
+  {
+    "ts": "2026-09-10 15:10 UTC",
+    "type": "movement",
+    "ticker": "GBF.DE",
+    "message": "GBF.DE DOWN [CROSSED 3%] | vs morning: -3.3% | vs last check: -1.0% (morning EUR 77.65, last EUR 75.80, now EUR 75.05)"
+  },
+  {
     "ts": "2026-09-10 13:47 UTC",
     "type": "movement",
     "ticker": "SNDK",
@@ -2980,23 +2998,5 @@
     "type": "earnings",
     "ticker": "SU.PA",
     "message": "SU.PA earnings on 2026-07-30"
-  },
-  {
-    "ts": "2026-07-29 07:51 UTC",
-    "type": "earnings",
-    "ticker": "BA.L",
-    "message": "BA.L earnings on 2026-07-30"
-  },
-  {
-    "ts": "2026-07-29 07:51 UTC",
-    "type": "earnings",
-    "ticker": "AAPL",
-    "message": "AAPL earnings on 2026-07-30"
-  },
-  {
-    "ts": "2026-07-29 07:51 UTC",
-    "type": "earnings",
-    "ticker": "AMZN",
-    "message": "AMZN earnings on 2026-07-30"
   }
 ]
