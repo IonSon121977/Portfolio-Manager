@@ -1,5 +1,23 @@
 [
   {
+    "ts": "2026-09-10 20:00 UTC",
+    "type": "movement",
+    "ticker": "MRVL",
+    "message": "MRVL DOWN [CROSSED 3%] | vs morning: -3.2% | vs last check: -1.2% (morning EUR 201.94, last EUR 197.80, now EUR 195.41)"
+  },
+  {
+    "ts": "2026-09-10 20:00 UTC",
+    "type": "movement",
+    "ticker": "ORCL",
+    "message": "ORCL DOWN | vs morning: -5.2% | vs last check: -1.9% (morning EUR 138.89, last EUR 134.22, now EUR 131.69)"
+  },
+  {
+    "ts": "2026-09-10 20:00 UTC",
+    "type": "movement",
+    "ticker": "AMD",
+    "message": "AMD DOWN [CROSSED 3%] | vs morning: -3.2% | vs last check: -0.2% (morning EUR 447.78, last EUR 434.56, now EUR 433.50)"
+  },
+  {
     "ts": "2026-09-10 17:52 UTC",
     "type": "rating_change",
     "ticker": "MRVL",
@@ -2980,23 +2998,5 @@
     "type": "movement",
     "ticker": "MU",
     "message": "MU DOWN [CROSSED 3%] | vs morning: -6.5% | vs last check: -6.7% (morning EUR 719.60, last EUR 720.51, now EUR 672.58)"
-  },
-  {
-    "ts": "2026-07-29 16:05 UTC",
-    "type": "movement",
-    "ticker": "ANET",
-    "message": "ANET DOWN [CROSSED 3%] | vs morning: -6.4% | vs last check: -6.5% (morning EUR 148.84, last EUR 149.02, now EUR 139.28)"
-  },
-  {
-    "ts": "2026-07-29 16:05 UTC",
-    "type": "movement",
-    "ticker": "NOK",
-    "message": "NOK DOWN [CROSSED 3%] | vs morning: -5.2% | vs last check: -5.4% (morning EUR 7.83, last EUR 7.84, now EUR 7.42)"
-  },
-  {
-    "ts": "2026-07-29 16:05 UTC",
-    "type": "movement",
-    "ticker": "ENR.DE",
-    "message": "ENR.DE DOWN [CROSSED 3%] | vs morning: -3.2% | vs last check: -1.4% (morning EUR 139.58, last EUR 137.06, now EUR 135.18)"
   }
 ]
