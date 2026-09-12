@@ -1,53 +1,13 @@
 {
-  "week_from": "Mon 07 Sep",
-  "week_to": "Fri 11 Sep",
-  "week_from_iso": "2026-09-07",
-  "week_to_iso": "2026-09-11",
-  "earnings": {
-    "ORCL": [
-      {
-        "date": "2026-09-10",
-        "hour": "",
-        "eps_estimate": 1.74,
-        "eps_actual": null,
-        "revenue_est": 19129315930.0,
-        "revenue_act": null,
-        "quarter": 3,
-        "year": 2026,
-        "ticker": "ORCL",
-        "name": "Oracle"
-      }
-    ]
-  },
-  "dividends": {
-    "NVDA": [
-      {
-        "ex_date": "2026-09-10",
-        "pay_date": "2026-10-01",
-        "record_date": "",
-        "amount": 0.25,
-        "currency": "USD",
-        "freq": "",
-        "ticker": "NVDA",
-        "name": "NVIDIA"
-      }
-    ]
-  },
+  "week_from": "Mon 14 Sep",
+  "week_to": "Fri 18 Sep",
+  "week_from_iso": "2026-09-14",
+  "week_to_iso": "2026-09-18",
+  "earnings": {},
+  "dividends": {},
   "splits": {},
   "ipos": [],
   "earnings_calendar": [
-    {
-      "date": "2026-09-10",
-      "hour": "",
-      "eps_estimate": 1.74,
-      "eps_actual": null,
-      "revenue_est": 19129315930.0,
-      "revenue_act": null,
-      "quarter": 3,
-      "year": 2026,
-      "ticker": "ORCL",
-      "name": "Oracle"
-    },
     {
       "date": "2026-09-30",
       "hour": "",
@@ -62,16 +22,6 @@
     }
   ],
   "dividend_calendar": [
-    {
-      "ex_date": "2026-09-10",
-      "pay_date": "2026-10-01",
-      "record_date": "",
-      "amount": 0.25,
-      "currency": "USD",
-      "freq": "",
-      "ticker": "NVDA",
-      "name": "NVIDIA"
-    },
     {
       "ex_date": "2026-09-21",
       "pay_date": "None",
@@ -101,8 +51,18 @@
       "freq": "",
       "ticker": "TTE.PA",
       "name": "TotalEnergies SE"
+    },
+    {
+      "ex_date": "2026-10-09",
+      "pay_date": "2026-07-24",
+      "record_date": "",
+      "amount": 0.5,
+      "currency": "USD",
+      "freq": "",
+      "ticker": "ORCL",
+      "name": "Oracle"
     }
   ],
   "ai_brief": "",
-  "generated": "2026-09-05T12:33:32.227559"
+  "generated": "2026-09-12T12:48:53.249418"
 }
