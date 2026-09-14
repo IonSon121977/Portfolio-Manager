@@ -11,14 +11,14 @@
         "interpretation": "High fear"
       },
       "vix": {
-        "value": 16.98,
+        "value": 16.73,
         "score": 60,
         "contribution": 2.0,
         "interpretation": "Calm"
       },
       "eurusd": {
-        "value": 1.1549,
-        "chg_pct": -0.46,
+        "value": 1.1565,
+        "chg_pct": -0.32,
         "score": 35,
         "contribution": -2.2,
         "interpretation": "Risk-off"
@@ -56,18 +56,18 @@
     "vix": {
       "ticker": "^VIX",
       "label": "VIX",
-      "price": 16.98,
+      "price": 16.73,
       "prev": 15.84,
-      "chg_pct": 7.2,
-      "ma50": 16.1464,
+      "chg_pct": 5.62,
+      "ma50": 16.1414,
       "above_ma50": true
     },
     "eurusd": {
       "ticker": "EURUSD=X",
       "label": "EUR/USD",
-      "price": 1.1549,
+      "price": 1.1565,
       "prev": 1.1602,
-      "chg_pct": -0.46,
+      "chg_pct": -0.32,
       "ma50": 1.153,
       "above_ma50": true
     },
@@ -84,11 +84,11 @@
       "ticker": "^GDAXI",
       "label": "DAX",
       "price": 25440.8105,
-      "prev": 25557.3496,
-      "chg_pct": -0.46,
+      "prev": 25568.56,
+      "chg_pct": -0.5,
       "ma50": 25737.7178,
       "above_ma50": false
     }
   },
-  "updated": "2026-09-14T15:52:02.347869"
+  "updated": "2026-09-14T16:56:29.130756"
 }
