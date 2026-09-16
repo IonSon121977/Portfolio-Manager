@@ -11,7 +11,7 @@
         "interpretation": "High fear"
       },
       "vix": {
-        "value": 16.78,
+        "value": 16.74,
         "score": 60,
         "contribution": 2.0,
         "interpretation": "Calm"
@@ -24,18 +24,18 @@
         "interpretation": "Neutral"
       },
       "stoxx50": {
-        "value": 6273.6299,
-        "ma50": 6377.687,
-        "pct_from_ma": -1.63,
+        "value": 6260.9399,
+        "ma50": 6377.4332,
+        "pct_from_ma": -1.83,
         "above_ma50": false,
         "score": 45,
         "contribution": -1.2,
         "interpretation": "Downtrend"
       },
       "dax": {
-        "value": 25492.4297,
-        "ma50": 25748.358,
-        "pct_from_ma": -0.99,
+        "value": 25517.7402,
+        "ma50": 25748.8642,
+        "pct_from_ma": -0.9,
         "above_ma50": false,
         "score": 45,
         "contribution": -0.8,
@@ -56,10 +56,10 @@
     "vix": {
       "ticker": "^VIX",
       "label": "VIX",
-      "price": 16.78,
+      "price": 16.74,
       "prev": 17.21,
-      "chg_pct": -2.5,
-      "ma50": 16.1678,
+      "chg_pct": -2.73,
+      "ma50": 16.167,
       "above_ma50": true
     },
     "eurusd": {
@@ -74,21 +74,21 @@
     "stoxx50": {
       "ticker": "^STOXX50E",
       "label": "Euro Stoxx 50",
-      "price": 6273.6299,
+      "price": 6260.9399,
       "prev": 6237.52,
-      "chg_pct": 0.58,
-      "ma50": 6377.687,
+      "chg_pct": 0.38,
+      "ma50": 6377.4332,
       "above_ma50": false
     },
     "dax": {
       "ticker": "^GDAXI",
       "label": "DAX",
-      "price": 25492.4297,
+      "price": 25517.7402,
       "prev": 25420.4199,
-      "chg_pct": 0.28,
-      "ma50": 25748.358,
+      "chg_pct": 0.38,
+      "ma50": 25748.8642,
       "above_ma50": false
     }
   },
-  "updated": "2026-09-16T12:37:53.986014"
+  "updated": "2026-09-16T14:10:31.415448"
 }
