@@ -32,6 +32,17 @@
       "forecast": "",
       "previous": "",
       "source": "BLS via FRED"
+    },
+    {
+      "date": "2026-10-14",
+      "time": "14:30 CET",
+      "currency": "USD",
+      "impact": "\ud83d\udd34 High",
+      "impact_raw": "high",
+      "title": "US CPI (Consumer Price Index)",
+      "forecast": "",
+      "previous": "",
+      "source": "BLS via FRED"
     }
   ],
   "by_date": {
@@ -73,10 +84,23 @@
         "previous": "",
         "source": "BLS via FRED"
       }
+    ],
+    "2026-10-14": [
+      {
+        "date": "2026-10-14",
+        "time": "14:30 CET",
+        "currency": "USD",
+        "impact": "\ud83d\udd34 High",
+        "impact_raw": "high",
+        "title": "US CPI (Consumer Price Index)",
+        "forecast": "",
+        "previous": "",
+        "source": "BLS via FRED"
+      }
     ]
   },
   "from_date": "2026-09-16",
   "to_date": "2026-10-14",
-  "updated": "2026-09-16T14:10:38.102281",
-  "count": 3
+  "updated": "2026-09-16T15:24:23.348087",
+  "count": 4
 }
