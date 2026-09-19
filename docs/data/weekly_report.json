@@ -1,24 +1,61 @@
 {
-  "week_from": "Mon 14 Sep",
-  "week_to": "Fri 18 Sep",
-  "week_from_iso": "2026-09-14",
-  "week_to_iso": "2026-09-18",
+  "week_from": "Mon 21 Sep",
+  "week_to": "Fri 25 Sep",
+  "week_from_iso": "2026-09-21",
+  "week_to_iso": "2026-09-25",
   "earnings": {},
-  "dividends": {},
+  "dividends": {
+    "STMPA.PA": [
+      {
+        "ex_date": "2026-09-21",
+        "pay_date": "None",
+        "record_date": "",
+        "amount": 0.09,
+        "currency": "EUR",
+        "freq": "",
+        "ticker": "STMPA.PA",
+        "name": "STMicroelectronics"
+      }
+    ],
+    "AVGO": [
+      {
+        "ex_date": "2026-09-21",
+        "pay_date": "2026-09-30",
+        "record_date": "",
+        "amount": 0.65,
+        "currency": "USD",
+        "freq": "",
+        "ticker": "AVGO",
+        "name": "Broadcom Inc."
+      }
+    ]
+  },
   "splits": {},
   "ipos": [],
   "earnings_calendar": [
     {
       "date": "2026-09-30",
       "hour": "",
-      "eps_estimate": 31.28,
+      "eps_estimate": 31.35,
       "eps_actual": null,
-      "revenue_est": 50784289620.0,
+      "revenue_est": 50819225080.0,
       "revenue_act": null,
       "quarter": 3,
       "year": 2026,
       "ticker": "MU",
       "name": "Micron Technology Inc."
+    },
+    {
+      "date": "2026-10-14",
+      "hour": "",
+      "eps_estimate": 10.58,
+      "eps_actual": null,
+      "revenue_est": 11659847070.0,
+      "revenue_act": null,
+      "quarter": 4,
+      "year": 2026,
+      "ticker": "ASML",
+      "name": "ASML Holding"
     }
   ],
   "dividend_calendar": [
@@ -54,7 +91,7 @@
     },
     {
       "ex_date": "2026-10-09",
-      "pay_date": "2026-07-24",
+      "pay_date": "2026-10-23",
       "record_date": "",
       "amount": 0.5,
       "currency": "USD",
@@ -64,5 +101,5 @@
     }
   ],
   "ai_brief": "",
-  "generated": "2026-09-12T12:48:53.249418"
+  "generated": "2026-09-19T13:02:25.489851"
 }
