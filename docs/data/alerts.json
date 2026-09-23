@@ -1,5 +1,11 @@
 [
   {
+    "ts": "2026-09-23 18:36 UTC",
+    "type": "movement",
+    "ticker": "GOOG",
+    "message": "GOOG DOWN [CROSSED 3%] | vs morning: -3.2% | vs last check: -0.5% (morning EUR 304.40, last EUR 296.22, now EUR 294.81)"
+  },
+  {
     "ts": "2026-09-23 14:26 UTC",
     "type": "rating_change",
     "ticker": "MRVL",
@@ -2992,11 +2998,5 @@
     "type": "digest",
     "ticker": "",
     "message": "Morning digest sent at 07:46 UTC"
-  },
-  {
-    "ts": "2026-08-03 20:38 UTC",
-    "type": "movement",
-    "ticker": "MRVL",
-    "message": "MRVL UP [CROSSED 3%] | vs morning: +3.4% | vs last check: +0.7% (morning EUR 162.71, last EUR 167.22, now EUR 168.31)"
   }
 ]
