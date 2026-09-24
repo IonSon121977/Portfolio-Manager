@@ -1,5 +1,23 @@
 [
   {
+    "ts": "2026-09-24 15:56 UTC",
+    "type": "52w_high",
+    "ticker": "TTE.PA",
+    "message": "TTE.PA 52W HIGH EUR 81.05"
+  },
+  {
+    "ts": "2026-09-24 15:56 UTC",
+    "type": "52w_low",
+    "ticker": "GBF.DE",
+    "message": "GBF.DE 52W LOW EUR 55.10"
+  },
+  {
+    "ts": "2026-09-24 15:55 UTC",
+    "type": "movement",
+    "ticker": "GBF.DE",
+    "message": "GBF.DE DOWN [CROSSED 3%] | vs morning: -4.8% | vs last check: -2.2% (morning EUR 57.85, last EUR 56.35, now EUR 55.10)"
+  },
+  {
     "ts": "2026-09-24 14:24 UTC",
     "type": "movement",
     "ticker": "LLY",
@@ -2980,23 +2998,5 @@
     "type": "earnings",
     "ticker": "BP.L",
     "message": "BP.L earnings on 2026-08-04"
-  },
-  {
-    "ts": "2026-08-04 07:47 UTC",
-    "type": "earnings",
-    "ticker": "SMHN.DE",
-    "message": "SMHN.DE earnings on 2026-08-06"
-  },
-  {
-    "ts": "2026-08-04 07:47 UTC",
-    "type": "earnings",
-    "ticker": "SNDK",
-    "message": "SNDK earnings on 2026-08-05"
-  },
-  {
-    "ts": "2026-08-04 07:47 UTC",
-    "type": "earnings",
-    "ticker": "CAT",
-    "message": "CAT earnings on 2026-08-04"
   }
 ]
