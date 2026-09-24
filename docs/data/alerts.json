@@ -1,5 +1,23 @@
 [
   {
+    "ts": "2026-09-24 14:24 UTC",
+    "type": "movement",
+    "ticker": "LLY",
+    "message": "LLY UP [CROSSED 3%] | vs morning: +3.6% | vs last check: +3.6% (morning EUR 1011.72, last EUR 1012.18, now EUR 1048.56)"
+  },
+  {
+    "ts": "2026-09-24 14:24 UTC",
+    "type": "movement",
+    "ticker": "ORCL",
+    "message": "ORCL DOWN [CROSSED 3%] | vs morning: -6.1% | vs last check: -6.2% (morning EUR 127.07, last EUR 127.13, now EUR 119.31)"
+  },
+  {
+    "ts": "2026-09-24 14:24 UTC",
+    "type": "movement",
+    "ticker": "NOK",
+    "message": "NOK DOWN [CROSSED 3%] | vs morning: -3.9% | vs last check: -4.0% (morning EUR 9.34, last EUR 9.35, now EUR 8.98)"
+  },
+  {
     "ts": "2026-09-24 09:54 UTC",
     "type": "digest",
     "ticker": "",
@@ -2980,23 +2998,5 @@
     "type": "earnings",
     "ticker": "CAT",
     "message": "CAT earnings on 2026-08-04"
-  },
-  {
-    "ts": "2026-08-04 07:47 UTC",
-    "type": "earnings",
-    "ticker": "LLY",
-    "message": "LLY earnings on 2026-08-05"
-  },
-  {
-    "ts": "2026-08-04 07:47 UTC",
-    "type": "earnings",
-    "ticker": "AMD",
-    "message": "AMD earnings on 2026-08-04"
-  },
-  {
-    "ts": "2026-08-04 07:47 UTC",
-    "type": "earnings",
-    "ticker": "ANET",
-    "message": "ANET earnings on 2026-08-04"
   }
 ]
