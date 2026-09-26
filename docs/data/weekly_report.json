@@ -1,32 +1,35 @@
 {
-  "week_from": "Mon 21 Sep",
-  "week_to": "Fri 25 Sep",
-  "week_from_iso": "2026-09-21",
-  "week_to_iso": "2026-09-25",
-  "earnings": {},
-  "dividends": {
-    "STMPA.PA": [
+  "week_from": "Mon 28 Sep",
+  "week_to": "Fri 02 Oct",
+  "week_from_iso": "2026-09-28",
+  "week_to_iso": "2026-10-02",
+  "earnings": {
+    "MU": [
       {
-        "ex_date": "2026-09-21",
+        "date": "2026-09-30",
+        "hour": "",
+        "eps_estimate": 31.59,
+        "eps_actual": null,
+        "revenue_est": 51244100130.0,
+        "revenue_act": null,
+        "quarter": 3,
+        "year": 2026,
+        "ticker": "MU",
+        "name": "Micron Technology Inc."
+      }
+    ]
+  },
+  "dividends": {
+    "TTE.PA": [
+      {
+        "ex_date": "2026-09-30",
         "pay_date": "None",
         "record_date": "",
-        "amount": 0.09,
+        "amount": 0.9,
         "currency": "EUR",
         "freq": "",
-        "ticker": "STMPA.PA",
-        "name": "STMicroelectronics"
-      }
-    ],
-    "AVGO": [
-      {
-        "ex_date": "2026-09-21",
-        "pay_date": "2026-09-30",
-        "record_date": "",
-        "amount": 0.65,
-        "currency": "USD",
-        "freq": "",
-        "ticker": "AVGO",
-        "name": "Broadcom Inc."
+        "ticker": "TTE.PA",
+        "name": "TotalEnergies SE"
       }
     ]
   },
@@ -36,9 +39,9 @@
     {
       "date": "2026-09-30",
       "hour": "",
-      "eps_estimate": 31.35,
+      "eps_estimate": 31.59,
       "eps_actual": null,
-      "revenue_est": 50819225080.0,
+      "revenue_est": 51244100130.0,
       "revenue_act": null,
       "quarter": 3,
       "year": 2026,
@@ -56,29 +59,69 @@
       "year": 2026,
       "ticker": "ASML",
       "name": "ASML Holding"
+    },
+    {
+      "date": "2026-10-21",
+      "hour": "",
+      "eps_estimate": 0.25,
+      "eps_actual": null,
+      "revenue_est": 11141769000.0,
+      "revenue_act": null,
+      "quarter": 4,
+      "year": 2026,
+      "ticker": "IBE.MC",
+      "name": "Iberdrola"
+    },
+    {
+      "date": "2026-10-22",
+      "hour": "",
+      "eps_estimate": 1.26,
+      "eps_actual": null,
+      "revenue_est": 664333330.0,
+      "revenue_act": null,
+      "quarter": 4,
+      "year": 2026,
+      "ticker": "MILDEF.ST",
+      "name": "MilDef Group"
+    },
+    {
+      "date": "2026-10-22",
+      "hour": "",
+      "eps_estimate": 0.07,
+      "eps_actual": null,
+      "revenue_est": 5052747050.0,
+      "revenue_act": null,
+      "quarter": 4,
+      "year": 2026,
+      "ticker": "NOK",
+      "name": "Nokia"
+    },
+    {
+      "date": "2026-10-22",
+      "hour": "",
+      "eps_estimate": 0.39,
+      "eps_actual": null,
+      "revenue_est": 16428276720.0,
+      "revenue_act": null,
+      "quarter": 4,
+      "year": 2026,
+      "ticker": "INTC",
+      "name": "Intel"
+    },
+    {
+      "date": "2026-10-22",
+      "hour": "",
+      "eps_estimate": 1.31,
+      "eps_actual": null,
+      "revenue_est": 283319550.0,
+      "revenue_act": null,
+      "quarter": 4,
+      "year": 2026,
+      "ticker": "BESI.AS",
+      "name": "BE Semiconductor (BESI)"
     }
   ],
   "dividend_calendar": [
-    {
-      "ex_date": "2026-09-21",
-      "pay_date": "None",
-      "record_date": "",
-      "amount": 0.09,
-      "currency": "EUR",
-      "freq": "",
-      "ticker": "STMPA.PA",
-      "name": "STMicroelectronics"
-    },
-    {
-      "ex_date": "2026-09-21",
-      "pay_date": "2026-09-30",
-      "record_date": "",
-      "amount": 0.65,
-      "currency": "USD",
-      "freq": "",
-      "ticker": "AVGO",
-      "name": "Broadcom Inc."
-    },
     {
       "ex_date": "2026-09-30",
       "pay_date": "None",
@@ -98,8 +141,18 @@
       "freq": "",
       "ticker": "ORCL",
       "name": "Oracle"
+    },
+    {
+      "ex_date": "2026-10-22",
+      "pay_date": "None",
+      "record_date": "",
+      "amount": 0.15,
+      "currency": "GBp",
+      "freq": "",
+      "ticker": "BA.L",
+      "name": "BAE Systems"
     }
   ],
   "ai_brief": "",
-  "generated": "2026-09-19T13:02:25.489851"
+  "generated": "2026-09-26T13:43:35.376776"
 }
