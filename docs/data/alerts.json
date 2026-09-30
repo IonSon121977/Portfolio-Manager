@@ -1,5 +1,17 @@
 [
   {
+    "ts": "2026-09-30 16:04 UTC",
+    "type": "movement",
+    "ticker": "INTC",
+    "message": "INTC UP [CROSSED 3%] | vs morning: +3.2% | vs last check: +1.2% (morning EUR 102.04, last EUR 104.08, now EUR 105.31)"
+  },
+  {
+    "ts": "2026-09-30 16:04 UTC",
+    "type": "movement",
+    "ticker": "GOOG",
+    "message": "GOOG UP [CROSSED 3%] | vs morning: +3.3% | vs last check: +0.5% (morning EUR 296.91, last EUR 305.21, now EUR 306.85)"
+  },
+  {
     "ts": "2026-09-30 14:14 UTC",
     "type": "rating_change",
     "ticker": "ANET",
@@ -2986,17 +2998,5 @@
     "type": "movement",
     "ticker": "GOOG",
     "message": "GOOG DOWN [CROSSED 3%] | vs morning: -4.4% | vs last check: -4.3% (morning EUR 325.32, last EUR 324.98, now EUR 311.14)"
-  },
-  {
-    "ts": "2026-08-05 11:38 UTC",
-    "type": "movement",
-    "ticker": "HSBA.L",
-    "message": "HSBA.L DOWN [CROSSED 3%] | vs morning: -3.1% | vs last check: -2.7% (morning EUR 17.91, last EUR 17.84, now EUR 17.35)"
-  },
-  {
-    "ts": "2026-08-05 10:15 UTC",
-    "type": "52w_high",
-    "ticker": "EUNK.DE",
-    "message": "EUNK.DE 52W HIGH EUR 106.56"
   }
 ]
