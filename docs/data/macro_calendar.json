@@ -54,6 +54,17 @@
       "forecast": "",
       "previous": "",
       "source": "BLS via FRED"
+    },
+    {
+      "date": "2026-11-18",
+      "time": "11:00 CET",
+      "currency": "EUR",
+      "impact": "\ud83d\udd34 High",
+      "impact_raw": "high",
+      "title": "Eurozone HICP (Flash CPI)",
+      "forecast": "",
+      "previous": "",
+      "source": "Eurostat via FRED"
     }
   ],
   "by_date": {
@@ -119,10 +130,23 @@
         "previous": "",
         "source": "BLS via FRED"
       }
+    ],
+    "2026-11-18": [
+      {
+        "date": "2026-11-18",
+        "time": "11:00 CET",
+        "currency": "EUR",
+        "impact": "\ud83d\udd34 High",
+        "impact_raw": "high",
+        "title": "Eurozone HICP (Flash CPI)",
+        "forecast": "",
+        "previous": "",
+        "source": "Eurostat via FRED"
+      }
     ]
   },
   "from_date": "2026-10-22",
   "to_date": "2026-11-19",
-  "updated": "2026-10-22T13:00:19.795623",
-  "count": 5
+  "updated": "2026-10-22T14:28:50.598193",
+  "count": 6
 }
