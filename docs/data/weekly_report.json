@@ -1,71 +1,211 @@
 {
-  "week_from": "Mon 19 Oct",
-  "week_to": "Fri 23 Oct",
-  "week_from_iso": "2026-10-19",
-  "week_to_iso": "2026-10-23",
+  "week_from": "Mon 26 Oct",
+  "week_to": "Fri 30 Oct",
+  "week_from_iso": "2026-10-26",
+  "week_to_iso": "2026-10-30",
   "earnings": {
-    "IBE.MC": [
+    "ASM.AS": [
       {
-        "date": "2026-10-21",
+        "date": "2026-10-27",
         "hour": "",
-        "eps_estimate": 0.25,
+        "eps_estimate": 6.26,
         "eps_actual": null,
-        "revenue_est": 11211244520.0,
+        "revenue_est": 1104970410.0,
         "revenue_act": null,
         "quarter": 4,
         "year": 2026,
-        "ticker": "IBE.MC",
-        "name": "Iberdrola"
+        "ticker": "ASM.AS",
+        "name": "ASM International (ASMI)"
       }
     ],
-    "MILDEF.ST": [
+    "HSBA.L": [
       {
-        "date": "2026-10-22",
+        "date": "2026-10-27",
         "hour": "",
-        "eps_estimate": 1.99,
+        "eps_estimate": 0.42,
         "eps_actual": null,
-        "revenue_est": 825000000.0,
+        "revenue_est": 19090354250.0,
         "revenue_act": null,
         "quarter": 4,
         "year": 2026,
-        "ticker": "MILDEF.ST",
-        "name": "MilDef Group"
+        "ticker": "HSBA.L",
+        "name": "HSBC Holdings"
       }
     ],
-    "NOK": [
+    "MSFT": [
       {
-        "date": "2026-10-22",
+        "date": "2026-10-28",
         "hour": "",
-        "eps_estimate": 0.07,
+        "eps_estimate": 4.72,
         "eps_actual": null,
-        "revenue_est": 5069991980.0,
+        "revenue_est": 90716592940.0,
         "revenue_act": null,
         "quarter": 4,
         "year": 2026,
-        "ticker": "NOK",
-        "name": "Nokia"
+        "ticker": "MSFT",
+        "name": "Microsoft"
       }
     ],
-    "BESI.AS": [
+    "GOOG": [
       {
-        "date": "2026-10-22",
+        "date": "2026-10-28",
         "hour": "",
-        "eps_estimate": 1.3,
+        "eps_estimate": 2.97,
         "eps_actual": null,
-        "revenue_est": 281708730.0,
+        "revenue_est": 127832702820.0,
         "revenue_act": null,
         "quarter": 4,
         "year": 2026,
-        "ticker": "BESI.AS",
-        "name": "BE Semiconductor (BESI)"
+        "ticker": "GOOG",
+        "name": "Alphabet (Google) Class C"
+      }
+    ],
+    "AIR.PA": [
+      {
+        "date": "2026-10-28",
+        "hour": "",
+        "eps_estimate": 1.68,
+        "eps_actual": null,
+        "revenue_est": 18111649030.0,
+        "revenue_act": null,
+        "quarter": 4,
+        "year": 2026,
+        "ticker": "AIR.PA",
+        "name": "Airbus"
+      }
+    ],
+    "SMSN.L": [
+      {
+        "date": "2026-10-28",
+        "hour": "",
+        "eps_estimate": 225.37,
+        "eps_actual": null,
+        "revenue_est": 195940858880000.0,
+        "revenue_act": null,
+        "quarter": 4,
+        "year": 2026,
+        "ticker": "SMSN.L",
+        "name": "Samsung Electronics GDR"
+      }
+    ],
+    "INTC": [
+      {
+        "date": "2026-10-29",
+        "hour": "",
+        "eps_estimate": 0.4,
+        "eps_actual": null,
+        "revenue_est": 16473360700.0,
+        "revenue_act": null,
+        "quarter": 4,
+        "year": 2026,
+        "ticker": "INTC",
+        "name": "Intel"
+      }
+    ],
+    "AMZN": [
+      {
+        "date": "2026-10-29",
+        "hour": "",
+        "eps_estimate": 1.96,
+        "eps_actual": null,
+        "revenue_est": 202202781700.0,
+        "revenue_act": null,
+        "quarter": 4,
+        "year": 2026,
+        "ticker": "AMZN",
+        "name": "Amazon"
+      }
+    ],
+    "LLY": [
+      {
+        "date": "2026-10-29",
+        "hour": "",
+        "eps_estimate": 6.67,
+        "eps_actual": null,
+        "revenue_est": 22615416050.0,
+        "revenue_act": null,
+        "quarter": 4,
+        "year": 2026,
+        "ticker": "LLY",
+        "name": "Eli Lilly"
+      }
+    ],
+    "CAT": [
+      {
+        "date": "2026-10-29",
+        "hour": "",
+        "eps_estimate": 7.03,
+        "eps_actual": null,
+        "revenue_est": 20692015010.0,
+        "revenue_act": null,
+        "quarter": 4,
+        "year": 2026,
+        "ticker": "CAT",
+        "name": "Caterpillar"
+      }
+    ],
+    "SNDK": [
+      {
+        "date": "2026-10-29",
+        "hour": "",
+        "eps_estimate": 46.27,
+        "eps_actual": null,
+        "revenue_est": 10676645260.0,
+        "revenue_act": null,
+        "quarter": 4,
+        "year": 2026,
+        "ticker": "SNDK",
+        "name": "SanDisk"
+      }
+    ],
+    "TTE.PA": [
+      {
+        "date": "2026-10-29",
+        "hour": "",
+        "eps_estimate": 3.61,
+        "eps_actual": null,
+        "revenue_est": 67933841000.0,
+        "revenue_act": null,
+        "quarter": 4,
+        "year": 2026,
+        "ticker": "TTE.PA",
+        "name": "TotalEnergies SE"
+      }
+    ],
+    "STMPA.PA": [
+      {
+        "date": "2026-10-29",
+        "hour": "",
+        "eps_estimate": 0.4,
+        "eps_actual": null,
+        "revenue_est": 3721657910.0,
+        "revenue_act": null,
+        "quarter": 4,
+        "year": 2026,
+        "ticker": "STMPA.PA",
+        "name": "STMicroelectronics"
+      }
+    ],
+    "BP.L": [
+      {
+        "date": "2026-10-30",
+        "hour": "",
+        "eps_estimate": 0.48,
+        "eps_actual": null,
+        "revenue_est": 64538252860.0,
+        "revenue_act": null,
+        "quarter": 4,
+        "year": 2026,
+        "ticker": "BP.L",
+        "name": "BP plc"
       }
     ]
   },
   "dividends": {
     "CAT": [
       {
-        "ex_date": "2026-10-19",
-        "pay_date": "2026-08-19",
+        "ex_date": "2026-10-26",
+        "pay_date": "2026-11-19",
         "record_date": "",
         "amount": 1.63,
         "currency": "USD",
@@ -74,16 +214,28 @@
         "name": "Caterpillar"
       }
     ],
-    "BA.L": [
+    "NOK": [
       {
-        "ex_date": "2026-10-22",
-        "pay_date": "None",
+        "ex_date": "2026-10-27",
+        "pay_date": "2026-08-11",
         "record_date": "",
-        "amount": 0.15,
-        "currency": "GBp",
+        "amount": 0.047,
+        "currency": "USD",
         "freq": "",
-        "ticker": "BA.L",
-        "name": "BAE Systems"
+        "ticker": "NOK",
+        "name": "Nokia"
+      }
+    ],
+    "ASML": [
+      {
+        "ex_date": "2026-10-27",
+        "pay_date": "2026-11-04",
+        "record_date": "",
+        "amount": 2.138,
+        "currency": "USD",
+        "freq": "",
+        "ticker": "ASML",
+        "name": "ASML Holding"
       }
     ]
   },
@@ -91,59 +243,11 @@
   "ipos": [],
   "earnings_calendar": [
     {
-      "date": "2026-10-21",
-      "hour": "",
-      "eps_estimate": 0.25,
-      "eps_actual": null,
-      "revenue_est": 11211244520.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "IBE.MC",
-      "name": "Iberdrola"
-    },
-    {
-      "date": "2026-10-22",
-      "hour": "",
-      "eps_estimate": 1.99,
-      "eps_actual": null,
-      "revenue_est": 825000000.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "MILDEF.ST",
-      "name": "MilDef Group"
-    },
-    {
-      "date": "2026-10-22",
-      "hour": "",
-      "eps_estimate": 0.07,
-      "eps_actual": null,
-      "revenue_est": 5069991980.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "NOK",
-      "name": "Nokia"
-    },
-    {
-      "date": "2026-10-22",
-      "hour": "",
-      "eps_estimate": 1.3,
-      "eps_actual": null,
-      "revenue_est": 281708730.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "BESI.AS",
-      "name": "BE Semiconductor (BESI)"
-    },
-    {
       "date": "2026-10-27",
       "hour": "",
       "eps_estimate": 6.26,
       "eps_actual": null,
-      "revenue_est": 1104284490.0,
+      "revenue_est": 1104970410.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -153,7 +257,7 @@
     {
       "date": "2026-10-27",
       "hour": "",
-      "eps_estimate": 0.44,
+      "eps_estimate": 0.42,
       "eps_actual": null,
       "revenue_est": 19090354250.0,
       "revenue_act": null,
@@ -167,7 +271,7 @@
       "hour": "",
       "eps_estimate": 4.72,
       "eps_actual": null,
-      "revenue_est": 90706507470.0,
+      "revenue_est": 90716592940.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -179,7 +283,7 @@
       "hour": "",
       "eps_estimate": 2.97,
       "eps_actual": null,
-      "revenue_est": 127676941840.0,
+      "revenue_est": 127832702820.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -189,9 +293,9 @@
     {
       "date": "2026-10-28",
       "hour": "",
-      "eps_estimate": 1.71,
+      "eps_estimate": 1.68,
       "eps_actual": null,
-      "revenue_est": 18350170320.0,
+      "revenue_est": 18111649030.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -203,7 +307,7 @@
       "hour": "",
       "eps_estimate": 225.37,
       "eps_actual": null,
-      "revenue_est": 196550856670000.0,
+      "revenue_est": 195940858880000.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -213,9 +317,9 @@
     {
       "date": "2026-10-29",
       "hour": "",
-      "eps_estimate": 0.39,
+      "eps_estimate": 0.4,
       "eps_actual": null,
-      "revenue_est": 16447416260.0,
+      "revenue_est": 16473360700.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -227,7 +331,7 @@
       "hour": "",
       "eps_estimate": 1.96,
       "eps_actual": null,
-      "revenue_est": 202162044620.0,
+      "revenue_est": 202202781700.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -237,9 +341,9 @@
     {
       "date": "2026-10-29",
       "hour": "",
-      "eps_estimate": 7.16,
+      "eps_estimate": 6.67,
       "eps_actual": null,
-      "revenue_est": 22498261460.0,
+      "revenue_est": 22615416050.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -273,9 +377,9 @@
     {
       "date": "2026-10-29",
       "hour": "",
-      "eps_estimate": 3.85,
+      "eps_estimate": 3.61,
       "eps_actual": null,
-      "revenue_est": 66976216000.0,
+      "revenue_est": 67933841000.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -285,9 +389,9 @@
     {
       "date": "2026-10-29",
       "hour": "",
-      "eps_estimate": 0.42,
+      "eps_estimate": 0.4,
       "eps_actual": null,
-      "revenue_est": 3735963700.0,
+      "revenue_est": 3721657910.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -297,9 +401,9 @@
     {
       "date": "2026-10-30",
       "hour": "",
-      "eps_estimate": 0.45,
+      "eps_estimate": 0.48,
       "eps_actual": null,
-      "revenue_est": 62955452860.0,
+      "revenue_est": 64538252860.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -311,7 +415,7 @@
       "hour": "",
       "eps_estimate": 1.98,
       "eps_actual": null,
-      "revenue_est": 113626875100.0,
+      "revenue_est": 113357085200.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -335,7 +439,7 @@
       "hour": "",
       "eps_estimate": 1.93,
       "eps_actual": null,
-      "revenue_est": 13072358150.0,
+      "revenue_est": 13077889730.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -359,7 +463,7 @@
       "hour": "",
       "eps_estimate": 0.62,
       "eps_actual": null,
-      "revenue_est": 4706562310.0,
+      "revenue_est": 4714937230.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -381,9 +485,9 @@
     {
       "date": "2026-11-11",
       "hour": "",
-      "eps_estimate": 1.27,
+      "eps_estimate": 1.11,
       "eps_actual": null,
-      "revenue_est": 1354070000.0,
+      "revenue_est": 1358023330.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -393,9 +497,9 @@
     {
       "date": "2026-11-12",
       "hour": "",
-      "eps_estimate": 5.81,
+      "eps_estimate": 5.95,
       "eps_actual": null,
-      "revenue_est": 0.0,
+      "revenue_est": 228300000.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -407,7 +511,7 @@
       "hour": "",
       "eps_estimate": 2.81,
       "eps_actual": null,
-      "revenue_est": 23153830040.0,
+      "revenue_est": 23239932540.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -425,12 +529,24 @@
       "year": 2026,
       "ticker": "ALV.DE",
       "name": "Allianz SE"
+    },
+    {
+      "date": "2026-11-17",
+      "hour": "",
+      "eps_estimate": 2.47,
+      "eps_actual": null,
+      "revenue_est": 108976833310.0,
+      "revenue_act": null,
+      "quarter": 4,
+      "year": 2026,
+      "ticker": "NVDA",
+      "name": "NVIDIA"
     }
   ],
   "dividend_calendar": [
     {
-      "ex_date": "2026-10-19",
-      "pay_date": "2026-08-19",
+      "ex_date": "2026-10-26",
+      "pay_date": "2026-11-19",
       "record_date": "",
       "amount": 1.63,
       "currency": "USD",
@@ -439,26 +555,36 @@
       "name": "Caterpillar"
     },
     {
-      "ex_date": "2026-10-22",
-      "pay_date": "None",
+      "ex_date": "2026-10-27",
+      "pay_date": "2026-08-11",
       "record_date": "",
-      "amount": 0.15,
-      "currency": "GBp",
+      "amount": 0.047,
+      "currency": "USD",
       "freq": "",
-      "ticker": "BA.L",
-      "name": "BAE Systems"
+      "ticker": "NOK",
+      "name": "Nokia"
     },
     {
       "ex_date": "2026-10-27",
-      "pay_date": "2026-08-05",
+      "pay_date": "2026-11-04",
       "record_date": "",
       "amount": 2.138,
       "currency": "USD",
       "freq": "",
       "ticker": "ASML",
       "name": "ASML Holding"
+    },
+    {
+      "ex_date": "2026-11-19",
+      "pay_date": "2026-12-10",
+      "record_date": "",
+      "amount": 0.91,
+      "currency": "USD",
+      "freq": "",
+      "ticker": "MSFT",
+      "name": "Microsoft"
     }
   ],
   "ai_brief": "",
-  "generated": "2026-10-17T12:53:44.131704"
+  "generated": "2026-10-24T13:14:35.020386"
 }
