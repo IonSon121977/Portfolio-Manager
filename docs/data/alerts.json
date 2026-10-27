@@ -1,5 +1,17 @@
 [
   {
+    "ts": "2026-10-27 13:34 UTC",
+    "type": "rating_change",
+    "ticker": "AVGO",
+    "message": "DA Davidson: Neutral -> Buy"
+  },
+  {
+    "ts": "2026-10-27 13:33 UTC",
+    "type": "movement",
+    "ticker": "SMHN.DE",
+    "message": "SMHN.DE UP [CROSSED 3%] | vs morning: +4.6% | vs last check: +4.6% (morning EUR 47.00, last EUR 47.00, now EUR 49.18)"
+  },
+  {
     "ts": "2026-10-27 10:24 UTC",
     "type": "earnings",
     "ticker": "SMSN.L",
@@ -2986,17 +2998,5 @@
     "type": "digest",
     "ticker": "",
     "message": "Morning digest sent at 09:57 UTC"
-  },
-  {
-    "ts": "2026-08-31 20:21 UTC",
-    "type": "movement",
-    "ticker": "SMSN.L",
-    "message": "SMSN.L UP [CROSSED 3%] | vs morning: +302.9% | vs last check: +303.4% (morning EUR 1016.38, last EUR 1015.08, now EUR 4095.21)"
-  },
-  {
-    "ts": "2026-08-31 20:21 UTC",
-    "type": "movement",
-    "ticker": "SNDK",
-    "message": "SNDK UP [CROSSED 3%] | vs morning: +5.4% | vs last check: +4.3% (morning EUR 1279.61, last EUR 1292.98, now EUR 1348.46)"
   }
 ]
