@@ -1,421 +1,76 @@
 {
-  "week_from": "Mon 26 Oct",
-  "week_to": "Fri 30 Oct",
-  "week_from_iso": "2026-10-26",
-  "week_to_iso": "2026-10-30",
+  "week_from": "Mon 02 Nov",
+  "week_to": "Fri 06 Nov",
+  "week_from_iso": "2026-11-02",
+  "week_to_iso": "2026-11-06",
   "earnings": {
-    "ASM.AS": [
+    "AAPL": [
       {
-        "date": "2026-10-27",
+        "date": "2026-11-02",
         "hour": "",
-        "eps_estimate": 6.26,
+        "eps_estimate": 1.98,
         "eps_actual": null,
-        "revenue_est": 1104970410.0,
+        "revenue_est": 113252174380.0,
         "revenue_act": null,
         "quarter": 4,
         "year": 2026,
-        "ticker": "ASM.AS",
-        "name": "ASM International (ASMI)"
+        "ticker": "AAPL",
+        "name": "Apple"
       }
     ],
-    "HSBA.L": [
+    "ANET": [
       {
-        "date": "2026-10-27",
+        "date": "2026-11-03",
         "hour": "",
-        "eps_estimate": 0.42,
+        "eps_estimate": 1.08,
         "eps_actual": null,
-        "revenue_est": 19090354250.0,
+        "revenue_est": 3334085820.0,
         "revenue_act": null,
         "quarter": 4,
         "year": 2026,
-        "ticker": "HSBA.L",
-        "name": "HSBC Holdings"
+        "ticker": "ANET",
+        "name": "Arista Networks"
       }
     ],
-    "MSFT": [
+    "AMD": [
       {
-        "date": "2026-10-28",
+        "date": "2026-11-03",
         "hour": "",
-        "eps_estimate": 4.72,
+        "eps_estimate": 1.94,
         "eps_actual": null,
-        "revenue_est": 90716592940.0,
+        "revenue_est": 13083021310.0,
         "revenue_act": null,
         "quarter": 4,
         "year": 2026,
-        "ticker": "MSFT",
-        "name": "Microsoft"
+        "ticker": "AMD",
+        "name": "Advanced Micro Devices"
       }
     ],
-    "GOOG": [
+    "SMHN.DE": [
       {
-        "date": "2026-10-28",
+        "date": "2026-11-05",
         "hour": "",
-        "eps_estimate": 2.97,
+        "eps_estimate": 0.66,
         "eps_actual": null,
-        "revenue_est": 127832702820.0,
+        "revenue_est": 139480000.0,
         "revenue_act": null,
         "quarter": 4,
         "year": 2026,
-        "ticker": "GOOG",
-        "name": "Alphabet (Google) Class C"
-      }
-    ],
-    "AIR.PA": [
-      {
-        "date": "2026-10-28",
-        "hour": "",
-        "eps_estimate": 1.68,
-        "eps_actual": null,
-        "revenue_est": 18111649030.0,
-        "revenue_act": null,
-        "quarter": 4,
-        "year": 2026,
-        "ticker": "AIR.PA",
-        "name": "Airbus"
-      }
-    ],
-    "SMSN.L": [
-      {
-        "date": "2026-10-28",
-        "hour": "",
-        "eps_estimate": 225.37,
-        "eps_actual": null,
-        "revenue_est": 195940858880000.0,
-        "revenue_act": null,
-        "quarter": 4,
-        "year": 2026,
-        "ticker": "SMSN.L",
-        "name": "Samsung Electronics GDR"
-      }
-    ],
-    "INTC": [
-      {
-        "date": "2026-10-29",
-        "hour": "",
-        "eps_estimate": 0.4,
-        "eps_actual": null,
-        "revenue_est": 16473360700.0,
-        "revenue_act": null,
-        "quarter": 4,
-        "year": 2026,
-        "ticker": "INTC",
-        "name": "Intel"
-      }
-    ],
-    "AMZN": [
-      {
-        "date": "2026-10-29",
-        "hour": "",
-        "eps_estimate": 1.96,
-        "eps_actual": null,
-        "revenue_est": 202202781700.0,
-        "revenue_act": null,
-        "quarter": 4,
-        "year": 2026,
-        "ticker": "AMZN",
-        "name": "Amazon"
-      }
-    ],
-    "LLY": [
-      {
-        "date": "2026-10-29",
-        "hour": "",
-        "eps_estimate": 6.67,
-        "eps_actual": null,
-        "revenue_est": 22615416050.0,
-        "revenue_act": null,
-        "quarter": 4,
-        "year": 2026,
-        "ticker": "LLY",
-        "name": "Eli Lilly"
-      }
-    ],
-    "CAT": [
-      {
-        "date": "2026-10-29",
-        "hour": "",
-        "eps_estimate": 7.03,
-        "eps_actual": null,
-        "revenue_est": 20692015010.0,
-        "revenue_act": null,
-        "quarter": 4,
-        "year": 2026,
-        "ticker": "CAT",
-        "name": "Caterpillar"
-      }
-    ],
-    "SNDK": [
-      {
-        "date": "2026-10-29",
-        "hour": "",
-        "eps_estimate": 46.27,
-        "eps_actual": null,
-        "revenue_est": 10676645260.0,
-        "revenue_act": null,
-        "quarter": 4,
-        "year": 2026,
-        "ticker": "SNDK",
-        "name": "SanDisk"
-      }
-    ],
-    "TTE.PA": [
-      {
-        "date": "2026-10-29",
-        "hour": "",
-        "eps_estimate": 3.61,
-        "eps_actual": null,
-        "revenue_est": 67933841000.0,
-        "revenue_act": null,
-        "quarter": 4,
-        "year": 2026,
-        "ticker": "TTE.PA",
-        "name": "TotalEnergies SE"
-      }
-    ],
-    "STMPA.PA": [
-      {
-        "date": "2026-10-29",
-        "hour": "",
-        "eps_estimate": 0.4,
-        "eps_actual": null,
-        "revenue_est": 3721657910.0,
-        "revenue_act": null,
-        "quarter": 4,
-        "year": 2026,
-        "ticker": "STMPA.PA",
-        "name": "STMicroelectronics"
-      }
-    ],
-    "BP.L": [
-      {
-        "date": "2026-10-30",
-        "hour": "",
-        "eps_estimate": 0.48,
-        "eps_actual": null,
-        "revenue_est": 64538252860.0,
-        "revenue_act": null,
-        "quarter": 4,
-        "year": 2026,
-        "ticker": "BP.L",
-        "name": "BP plc"
+        "ticker": "SMHN.DE",
+        "name": "S\u00dcSS MicroTec"
       }
     ]
   },
-  "dividends": {
-    "CAT": [
-      {
-        "ex_date": "2026-10-26",
-        "pay_date": "2026-11-19",
-        "record_date": "",
-        "amount": 1.63,
-        "currency": "USD",
-        "freq": "",
-        "ticker": "CAT",
-        "name": "Caterpillar"
-      }
-    ],
-    "NOK": [
-      {
-        "ex_date": "2026-10-27",
-        "pay_date": "2026-08-11",
-        "record_date": "",
-        "amount": 0.047,
-        "currency": "USD",
-        "freq": "",
-        "ticker": "NOK",
-        "name": "Nokia"
-      }
-    ],
-    "ASML": [
-      {
-        "ex_date": "2026-10-27",
-        "pay_date": "2026-11-04",
-        "record_date": "",
-        "amount": 2.138,
-        "currency": "USD",
-        "freq": "",
-        "ticker": "ASML",
-        "name": "ASML Holding"
-      }
-    ]
-  },
+  "dividends": {},
   "splits": {},
   "ipos": [],
   "earnings_calendar": [
-    {
-      "date": "2026-10-27",
-      "hour": "",
-      "eps_estimate": 6.26,
-      "eps_actual": null,
-      "revenue_est": 1104970410.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "ASM.AS",
-      "name": "ASM International (ASMI)"
-    },
-    {
-      "date": "2026-10-27",
-      "hour": "",
-      "eps_estimate": 0.42,
-      "eps_actual": null,
-      "revenue_est": 19090354250.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "HSBA.L",
-      "name": "HSBC Holdings"
-    },
-    {
-      "date": "2026-10-28",
-      "hour": "",
-      "eps_estimate": 4.72,
-      "eps_actual": null,
-      "revenue_est": 90716592940.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "MSFT",
-      "name": "Microsoft"
-    },
-    {
-      "date": "2026-10-28",
-      "hour": "",
-      "eps_estimate": 2.97,
-      "eps_actual": null,
-      "revenue_est": 127832702820.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "GOOG",
-      "name": "Alphabet (Google) Class C"
-    },
-    {
-      "date": "2026-10-28",
-      "hour": "",
-      "eps_estimate": 1.68,
-      "eps_actual": null,
-      "revenue_est": 18111649030.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "AIR.PA",
-      "name": "Airbus"
-    },
-    {
-      "date": "2026-10-28",
-      "hour": "",
-      "eps_estimate": 225.37,
-      "eps_actual": null,
-      "revenue_est": 195940858880000.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "SMSN.L",
-      "name": "Samsung Electronics GDR"
-    },
-    {
-      "date": "2026-10-29",
-      "hour": "",
-      "eps_estimate": 0.4,
-      "eps_actual": null,
-      "revenue_est": 16473360700.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "INTC",
-      "name": "Intel"
-    },
-    {
-      "date": "2026-10-29",
-      "hour": "",
-      "eps_estimate": 1.96,
-      "eps_actual": null,
-      "revenue_est": 202202781700.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "AMZN",
-      "name": "Amazon"
-    },
-    {
-      "date": "2026-10-29",
-      "hour": "",
-      "eps_estimate": 6.67,
-      "eps_actual": null,
-      "revenue_est": 22615416050.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "LLY",
-      "name": "Eli Lilly"
-    },
-    {
-      "date": "2026-10-29",
-      "hour": "",
-      "eps_estimate": 7.03,
-      "eps_actual": null,
-      "revenue_est": 20692015010.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "CAT",
-      "name": "Caterpillar"
-    },
-    {
-      "date": "2026-10-29",
-      "hour": "",
-      "eps_estimate": 46.27,
-      "eps_actual": null,
-      "revenue_est": 10676645260.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "SNDK",
-      "name": "SanDisk"
-    },
-    {
-      "date": "2026-10-29",
-      "hour": "",
-      "eps_estimate": 3.61,
-      "eps_actual": null,
-      "revenue_est": 67933841000.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "TTE.PA",
-      "name": "TotalEnergies SE"
-    },
-    {
-      "date": "2026-10-29",
-      "hour": "",
-      "eps_estimate": 0.4,
-      "eps_actual": null,
-      "revenue_est": 3721657910.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "STMPA.PA",
-      "name": "STMicroelectronics"
-    },
-    {
-      "date": "2026-10-30",
-      "hour": "",
-      "eps_estimate": 0.48,
-      "eps_actual": null,
-      "revenue_est": 64538252860.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "BP.L",
-      "name": "BP plc"
-    },
     {
       "date": "2026-11-02",
       "hour": "",
       "eps_estimate": 1.98,
       "eps_actual": null,
-      "revenue_est": 113357085200.0,
+      "revenue_est": 113252174380.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -437,9 +92,9 @@
     {
       "date": "2026-11-03",
       "hour": "",
-      "eps_estimate": 1.93,
+      "eps_estimate": 1.94,
       "eps_actual": null,
-      "revenue_est": 13077889730.0,
+      "revenue_est": 13083021310.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -449,9 +104,9 @@
     {
       "date": "2026-11-05",
       "hour": "",
-      "eps_estimate": 0.62,
+      "eps_estimate": 0.66,
       "eps_actual": null,
-      "revenue_est": 121560000.0,
+      "revenue_est": 139480000.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -473,9 +128,9 @@
     {
       "date": "2026-11-11",
       "hour": "",
-      "eps_estimate": 1.35,
+      "eps_estimate": 1.38,
       "eps_actual": null,
-      "revenue_est": 12618870880.0,
+      "revenue_est": 12728444880.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -545,34 +200,24 @@
   ],
   "dividend_calendar": [
     {
-      "ex_date": "2026-10-26",
-      "pay_date": "2026-11-19",
+      "ex_date": "2026-11-12",
+      "pay_date": "None",
       "record_date": "",
-      "amount": 1.63,
-      "currency": "USD",
+      "amount": 0.0866,
+      "currency": "GBp",
       "freq": "",
-      "ticker": "CAT",
-      "name": "Caterpillar"
+      "ticker": "BP.L",
+      "name": "BP plc"
     },
     {
-      "ex_date": "2026-10-27",
-      "pay_date": "2026-08-11",
+      "ex_date": "2026-11-13",
+      "pay_date": "2026-12-10",
       "record_date": "",
-      "amount": 0.047,
+      "amount": 1.73,
       "currency": "USD",
       "freq": "",
-      "ticker": "NOK",
-      "name": "Nokia"
-    },
-    {
-      "ex_date": "2026-10-27",
-      "pay_date": "2026-11-04",
-      "record_date": "",
-      "amount": 2.138,
-      "currency": "USD",
-      "freq": "",
-      "ticker": "ASML",
-      "name": "ASML Holding"
+      "ticker": "LLY",
+      "name": "Eli Lilly"
     },
     {
       "ex_date": "2026-11-19",
@@ -586,5 +231,5 @@
     }
   ],
   "ai_brief": "",
-  "generated": "2026-10-24T13:14:35.020386"
+  "generated": "2026-10-31T15:14:48.167315"
 }
