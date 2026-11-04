@@ -1,5 +1,29 @@
 [
   {
+    "ts": "2026-11-04 17:29 UTC",
+    "type": "movement",
+    "ticker": "STMPA.PA",
+    "message": "STMPA.PA DOWN [CROSSED 3%] | vs morning: -3.9% | vs last check: -2.2% (morning EUR 42.53, last EUR 41.82, now EUR 40.88)"
+  },
+  {
+    "ts": "2026-11-04 17:29 UTC",
+    "type": "movement",
+    "ticker": "SMHN.DE",
+    "message": "SMHN.DE DOWN [CROSSED 3%] | vs morning: -3.8% | vs last check: -2.5% (morning EUR 51.25, last EUR 50.60, now EUR 49.32)"
+  },
+  {
+    "ts": "2026-11-04 17:29 UTC",
+    "type": "movement",
+    "ticker": "IFX.DE",
+    "message": "IFX.DE DOWN [CROSSED 3%] | vs morning: -3.8% | vs last check: -3.1% (morning EUR 52.22, last EUR 51.87, now EUR 50.24)"
+  },
+  {
+    "ts": "2026-11-04 17:29 UTC",
+    "type": "movement",
+    "ticker": "ENR.DE",
+    "message": "ENR.DE DOWN [CROSSED 3%] | vs morning: -4.2% | vs last check: -1.8% (morning EUR 124.64, last EUR 121.60, now EUR 119.46)"
+  },
+  {
     "ts": "2026-11-04 15:45 UTC",
     "type": "52w_high",
     "ticker": "EUNK.DE",
@@ -2974,29 +2998,5 @@
     "type": "digest",
     "ticker": "",
     "message": "Morning digest sent at 10:37 UTC"
-  },
-  {
-    "ts": "2026-09-19 13:02 UTC",
-    "type": "weekly_summary",
-    "ticker": "",
-    "message": "Weekly summary sent - 0 earnings, 2 dividends, 0 splits next week"
-  },
-  {
-    "ts": "2026-09-18 19:56 UTC",
-    "type": "movement",
-    "ticker": "ASML",
-    "message": "ASML UP [CROSSED 3%] | vs morning: +3.0% | vs last check: +1.8% (morning EUR 1418.63, last EUR 1435.25, now EUR 1461.30)"
-  },
-  {
-    "ts": "2026-09-18 19:56 UTC",
-    "type": "movement",
-    "ticker": "SNDK",
-    "message": "SNDK UP | vs morning: +10.7% | vs last check: +2.4% (morning EUR 1405.33, last EUR 1518.88, now EUR 1555.19)"
-  },
-  {
-    "ts": "2026-09-18 19:56 UTC",
-    "type": "movement",
-    "ticker": "MU",
-    "message": "MU UP [CROSSED 3%] | vs morning: +3.7% | vs last check: +1.4% (morning EUR 850.91, last EUR 870.13, now EUR 882.74)"
   }
 ]
