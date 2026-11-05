@@ -5,14 +5,14 @@
     "color": "#f6ad55",
     "components": {
       "vix": {
-        "value": 26.92,
+        "value": 26.09,
         "score": 35,
         "contribution": -3.0,
         "interpretation": "Fear"
       },
       "eurusd": {
-        "value": 1.1235,
-        "chg_pct": -0.03,
+        "value": 1.1226,
+        "chg_pct": -0.11,
         "score": 50,
         "contribution": 0.0,
         "interpretation": "Neutral"
@@ -46,18 +46,18 @@
     "vix": {
       "ticker": "^VIX",
       "label": "VIX",
-      "price": 26.92,
+      "price": 26.09,
       "prev": 16.57,
-      "chg_pct": 62.46,
-      "ma50": 16.6726,
+      "chg_pct": 57.45,
+      "ma50": 16.656,
       "above_ma50": true
     },
     "eurusd": {
       "ticker": "EURUSD=X",
       "label": "EUR/USD",
-      "price": 1.1235,
+      "price": 1.1226,
       "prev": 1.1238,
-      "chg_pct": -0.03,
+      "chg_pct": -0.11,
       "ma50": 1.1362,
       "above_ma50": false
     },
@@ -80,5 +80,5 @@
       "above_ma50": true
     }
   },
-  "updated": "2026-11-05T18:40:31.111975"
+  "updated": "2026-11-05T20:31:10.978530"
 }
