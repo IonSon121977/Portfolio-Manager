@@ -580,10 +580,12 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
             rows    = list(reader)
             hdr_idx = None
             for i, row in enumerate(rows):
-                if row and row[0].strip().lower() in ("ticker", "name") or \
-                   any(c.strip().lower() in ("ticker", "weight (%)", "weight(%)") for c in row):
-                    hdr_idx = i
-                    break
+                if row: 
+                    raise ValueError("row "+row[0].strip())
+                    if row and row[0].strip().lower() in ("ticker", "name") or \
+                       any(c.strip().lower() in ("ticker", "weight (%)", "weight(%)") for c in row):
+                        hdr_idx = i
+                        break
             if hdr_idx is None:
                 raise ValueError("Could not find header row in iShares CSV")
 
