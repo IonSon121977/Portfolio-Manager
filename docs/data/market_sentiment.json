@@ -1,6 +1,6 @@
 {
   "composite": {
-    "score": 58,
+    "score": 56,
     "label": "Neutral",
     "color": "#f6ad55",
     "components": {
@@ -11,11 +11,11 @@
         "interpretation": "Calm"
       },
       "eurusd": {
-        "value": 1.1225,
-        "chg_pct": 0.73,
-        "score": 65,
-        "contribution": 2.2,
-        "interpretation": "Risk-on"
+        "value": 1.1221,
+        "chg_pct": -0.06,
+        "score": 50,
+        "contribution": 0.0,
+        "interpretation": "Neutral"
       },
       "stoxx50": {
         "value": 6290.45,
@@ -55,10 +55,10 @@
     "eurusd": {
       "ticker": "EURUSD=X",
       "label": "EUR/USD",
-      "price": 1.1225,
-      "prev": 1.1143,
-      "chg_pct": 0.73,
-      "ma50": 1.1347,
+      "price": 1.1221,
+      "prev": 1.1227,
+      "chg_pct": -0.06,
+      "ma50": 1.1337,
       "above_ma50": false
     },
     "stoxx50": {
@@ -80,5 +80,5 @@
       "above_ma50": true
     }
   },
-  "updated": "2026-11-09T23:43:41.554318"
+  "updated": "2026-11-10T00:36:00.997192"
 }
