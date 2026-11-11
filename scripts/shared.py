@@ -558,63 +558,107 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
             return fallback
         return str(val).strip()
 
-    # ── iShares downloader (cookie session + browser headers) ────────────────
+    # ── iShares downloader ───────────────────────────────────────────────────
+    # iShares sits behind bot protection that fingerprints the TLS handshake, so
+    # plain urllib often gets an HTML page. If `curl_cffi` is installed
+    # (pip install curl_cffi) we impersonate Chrome, otherwise we use urllib.
     def _fetch_ishares_csv(prod_id, slug, file_ticker, fallback_url) -> str:
         import re, html as _html, http.cookiejar
 
-        BROWSER_UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                      "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
-        base_hdrs = {
-            "User-Agent":      BROWSER_UA,
+        UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+              "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
+        page_hdrs = {
+            "User-Agent": UA,
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
             "Accept-Language": "en-GB,en;q=0.9",
+            "Upgrade-Insecure-Requests": "1",
         }
-        opener = urllib.request.build_opener(
-            urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
 
-        def _get(u, extra=None, timeout=25):
-            h = dict(base_hdrs)
-            h.update(extra or {})
-            with opener.open(urllib.request.Request(u, headers=h), timeout=timeout) as r:
-                return r.read().decode("utf-8-sig", errors="replace")
+        try:
+            from curl_cffi import requests as _cr
+            _sess = _cr.Session(impersonate="chrome")
+            def _get(u, extra=None):
+                h = dict(page_hdrs); h.update(extra or {})
+                r = _sess.get(u, headers=h, timeout=30, allow_redirects=True)
+                return r.status_code, r.headers.get("content-type", ""), str(r.url), \
+                       r.content.decode("utf-8-sig", errors="replace")
+            client = "curl_cffi"
+        except ImportError:
+            _op = urllib.request.build_opener(
+                urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
+            def _get(u, extra=None):
+                h = dict(page_hdrs); h.update(extra or {})
+                with _op.open(urllib.request.Request(u, headers=h), timeout=30) as r:
+                    return r.status, r.headers.get("Content-Type", ""), r.geturl(), \
+                           r.read().decode("utf-8-sig", errors="replace")
+            client = "urllib"
 
         def _looks_like_csv(t: str) -> bool:
-            head = t[:500].lstrip().lower()
-            return not (head.startswith("<!doctype") or head.startswith("<html")
-                        or head.startswith("<")) and "," in t[:2000]
+            return not t.lstrip()[:1] == "<" and "," in t[:2000]
+
+        def _debug(tag, status, ctype, final, txt, requested=""):
+            snippet = re.sub(r"\s+", " ", txt[:300])
+            redirected = " (REDIRECTED)" if requested and final.split("?")[0] != requested.split("?")[0] else ""
+            log.warning(f"    [{file_ticker}/{client}] {tag}: HTTP {status} {ctype}\n"
+                        f"        requested: {requested}\n"
+                        f"        final:     {final}{redirected}\n"
+                        f"        body:      {snippet!r}")
+            try:
+                (DATA_DIR / f"debug_ishares_{file_ticker}_{tag}.html").write_text(
+                    txt[:200000], encoding="utf-8")
+            except Exception:
+                pass
 
         product_url = (f"https://www.ishares.com/uk/individual/en/products/"
                        f"{prod_id}/{slug}?switchLocale=y&siteEntryPassthrough=true")
 
         candidates = []
-        # 1) visit the product page: sets consent/site-entry cookies and
-        #    reveals the real (current) CSV download link
+        page = ""
         try:
-            page = _get(product_url)
-            for m in re.finditer(r'href="([^"]+\.ajax\?[^"]*fileType=csv[^"]*)"', page):
-                link = _html.unescape(m.group(1))
-                if "dataType=fund" in link or "holdings" in link.lower():
-                    if link.startswith("/"):
-                        link = "https://www.ishares.com" + link
-                    candidates.append(link)
-                    break
+            st, ct, fin, page = _get(product_url)
+            if st != 200 or "csv" not in page.lower():
+                _debug("productpage", st, ct, fin, page, product_url)
         except Exception as e:
-            log.info(f"    iShares product page fetch failed for {file_ticker}: {e}")
+            log.warning(f"    [{file_ticker}/{client}] product page failed: {e}")
 
-        # 2) constructed URLs as fallback
+        # a) a ready-made CSV link on the page
+        for m in re.finditer(r"""href=["']([^"']+\.ajax\?[^"']*fileType=csv[^"']*)["']""", page):
+            link = _html.unescape(m.group(1))
+            if "dataType=fund" in link or "holdings" in link.lower():
+                if link.startswith("/"):
+                    link = "https://www.ishares.com" + link
+                candidates.append(link)
+                break
+
+        # b) any ajax id mentioned on the page -> build the holdings URL from it
+        ajax_ids = list(dict.fromkeys(re.findall(r"/(\d{10,})\.ajax", page)))
+        if ajax_ids:
+            log.info(f"    [{file_ticker}/{client}] ajax ids found on page: {ajax_ids}")
+        for aid in ajax_ids:
+            candidates.append(
+                f"https://www.ishares.com/uk/individual/en/products/{prod_id}/{slug}/"
+                f"{aid}.ajax?fileType=csv&fileName={file_ticker}_holdings&dataType=fund")
+
+        # c) the hardcoded URL as last resort
         candidates.append(fallback_url + "&siteEntryPassthrough=true")
         candidates.append(fallback_url)
+        candidates = list(dict.fromkeys(candidates))
 
         last = "no candidates"
-        for u in candidates:
+        for n, u in enumerate(candidates):
             try:
-                txt = _get(u, {"Accept": "text/csv,application/csv,*/*;q=0.8",
-                               "Referer": product_url})
-                if _looks_like_csv(txt):
+                st, ct, fin, txt = _get(u, {"Accept": "text/csv,application/csv,*/*;q=0.8",
+                                            "Referer": product_url})
+                if st == 200 and _looks_like_csv(txt):
+                    log.info(f"    [{file_ticker}/{client}] CSV OK via candidate {n}")
                     return txt
-                last = f"HTML instead of CSV from {u[:90]}…"
+                _debug(f"csv{n}", st, ct, fin, txt, u)
+                last = f"HTTP {st}, not CSV"
             except Exception as e:
-                last = f"{u[:90]}…: {e}"
-        raise ValueError(f"iShares did not return CSV ({last})")
+                last = str(e)
+                log.warning(f"    [{file_ticker}/{client}] candidate {n} error: {e}")
+        raise ValueError(f"iShares did not return CSV ({last}; client={client}; "
+                         f"see debug_ishares_{file_ticker}_*.html in {DATA_DIR})")
 
     # ── Source 1: iShares CSV (EUNK, IS3N, QDVE, SEMI) ───────────────────────
     if ticker in ISHARES_PRODUCTS:
