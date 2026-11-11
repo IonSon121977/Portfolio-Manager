@@ -616,47 +616,70 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
         page = ""
         try:
             st, ct, fin, page = _get(product_url)
-            if st != 200 or "csv" not in page.lower():
+            try:
+                (DATA_DIR / f"debug_ishares_{file_ticker}_productpage.html").write_text(
+                    page[:400000], encoding="utf-8")
+            except Exception:
+                pass
+            if st != 200:
                 _debug("productpage", st, ct, fin, page, product_url)
         except Exception as e:
             log.warning(f"    [{file_ticker}/{client}] product page failed: {e}")
 
-        # a) a ready-made CSV link on the page
-        for m in re.finditer(r"""href=["']([^"']+\.ajax\?[^"']*fileType=csv[^"']*)["']""", page):
-            link = _html.unescape(m.group(1))
-            if "dataType=fund" in link or "holdings" in link.lower():
-                if link.startswith("/"):
-                    link = "https://www.ishares.com" + link
-                candidates.append(link)
-                break
+        # Normalise escapes so links inside inline JSON / JS are visible too
+        page_n = (page.replace("\\/", "/").replace("\\u0026", "&")
+                      .replace("&amp;", "&"))
+        host = "https://www.ishares.com"
+        csv_tail = f"?fileType=csv&fileName={file_ticker}_holdings&dataType=fund"
 
-        # b) any ajax id mentioned on the page -> build the holdings URL from it
-        ajax_ids = list(dict.fromkeys(re.findall(r"/(\d{10,})\.ajax", page)))
-        if ajax_ids:
-            log.info(f"    [{file_ticker}/{client}] ajax ids found on page: {ajax_ids}")
-        for aid in ajax_ids:
-            candidates.append(
-                f"https://www.ishares.com/uk/individual/en/products/{prod_id}/{slug}/"
-                f"{aid}.ajax?fileType=csv&fileName={file_ticker}_holdings&dataType=fund")
+        # a) EVERY *.ajax reference found anywhere in the page
+        found = []
+        for m in re.finditer(r"""(?:https?://www\.ishares\.com)?(/[^\s"'<>\\]*?\.ajax)([^\s"'<>\\]*)""", page_n):
+            path, query = m.group(1), m.group(2)
+            if f"/{prod_id}/" not in path:
+                continue
+            found.append(path + query)
+        found = list(dict.fromkeys(found))
+        if found:
+            log.info(f"    [{file_ticker}/{client}] .ajax links on page: {found[:8]}")
+        else:
+            # show where the page talks about downloads so we can see the new format
+            hints = []
+            for kw in ("fileType", "holdings.csv", "_holdings", "Download"):
+                for m in list(re.finditer(kw, page_n))[:2]:
+                    hints.append(re.sub(r"\s+", " ", page_n[max(0, m.start()-80): m.end()+120]))
+            log.warning(f"    [{file_ticker}/{client}] no .ajax links on page "
+                        f"({len(page)} chars). Download hints: {hints[:6]}")
 
-        # c) the hardcoded URL as last resort
+        for link in found[:6]:
+            path = link.split("?")[0]
+            if "fileType=csv" in link:
+                candidates.append(host + link)
+            candidates.append(host + path + csv_tail)
+
+        # b) the hardcoded URL as last resort
         candidates.append(fallback_url + "&siteEntryPassthrough=true")
         candidates.append(fallback_url)
         candidates = list(dict.fromkeys(candidates))
 
         last = "no candidates"
         for n, u in enumerate(candidates):
-            try:
-                st, ct, fin, txt = _get(u, {"Accept": "text/csv,application/csv,*/*;q=0.8",
-                                            "Referer": product_url})
-                if st == 200 and _looks_like_csv(txt):
-                    log.info(f"    [{file_ticker}/{client}] CSV OK via candidate {n}")
-                    return txt
-                _debug(f"csv{n}", st, ct, fin, txt, u)
-                last = f"HTTP {st}, not CSV"
-            except Exception as e:
-                last = str(e)
-                log.warning(f"    [{file_ticker}/{client}] candidate {n} error: {e}")
+            # second pass sends the request like the site's own XHR would
+            for xhr in (False, True):
+                hdrs = {"Accept": "text/csv,application/csv,*/*;q=0.8", "Referer": product_url}
+                if xhr:
+                    hdrs.update({"X-Requested-With": "XMLHttpRequest", "Accept": "*/*"})
+                try:
+                    st, ct, fin, txt = _get(u, hdrs)
+                    if st == 200 and _looks_like_csv(txt):
+                        log.info(f"    [{file_ticker}/{client}] CSV OK via candidate {n} (xhr={xhr})")
+                        return txt
+                    if xhr:
+                        _debug(f"csv{n}", st, ct, fin, txt, u)
+                    last = f"HTTP {st}, not CSV"
+                except Exception as e:
+                    last = str(e)
+                    log.warning(f"    [{file_ticker}/{client}] candidate {n} error: {e}")
         raise ValueError(f"iShares did not return CSV ({last}; client={client}; "
                          f"see debug_ishares_{file_ticker}_*.html in {DATA_DIR})")
 
