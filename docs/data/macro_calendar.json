@@ -1,17 +1,6 @@
 {
   "events": [
     {
-      "date": "2026-11-10",
-      "time": "14:30 CET",
-      "currency": "USD",
-      "impact": "\ud83d\udd34 High",
-      "impact_raw": "high",
-      "title": "US CPI (Consumer Price Index)",
-      "forecast": "",
-      "previous": "",
-      "source": "BLS via FRED"
-    },
-    {
       "date": "2026-11-18",
       "time": "11:00 CET",
       "currency": "EUR",
@@ -32,22 +21,20 @@
       "forecast": "",
       "previous": "",
       "source": "BLS via FRED"
+    },
+    {
+      "date": "2026-12-09",
+      "time": "20:00 CET",
+      "currency": "USD",
+      "impact": "\ud83d\udd34 High",
+      "impact_raw": "high",
+      "title": "Fed Interest Rate Decision (FOMC)",
+      "forecast": "",
+      "previous": "",
+      "source": "Federal Reserve"
     }
   ],
   "by_date": {
-    "2026-11-10": [
-      {
-        "date": "2026-11-10",
-        "time": "14:30 CET",
-        "currency": "USD",
-        "impact": "\ud83d\udd34 High",
-        "impact_raw": "high",
-        "title": "US CPI (Consumer Price Index)",
-        "forecast": "",
-        "previous": "",
-        "source": "BLS via FRED"
-      }
-    ],
     "2026-11-18": [
       {
         "date": "2026-11-18",
@@ -73,10 +60,23 @@
         "previous": "",
         "source": "BLS via FRED"
       }
+    ],
+    "2026-12-09": [
+      {
+        "date": "2026-12-09",
+        "time": "20:00 CET",
+        "currency": "USD",
+        "impact": "\ud83d\udd34 High",
+        "impact_raw": "high",
+        "title": "Fed Interest Rate Decision (FOMC)",
+        "forecast": "",
+        "previous": "",
+        "source": "Federal Reserve"
+      }
     ]
   },
-  "from_date": "2026-11-10",
-  "to_date": "2026-12-08",
-  "updated": "2026-11-10T22:13:08.230440",
+  "from_date": "2026-11-11",
+  "to_date": "2026-12-09",
+  "updated": "2026-11-11T15:17:19.943900",
   "count": 3
 }
