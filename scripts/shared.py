@@ -603,11 +603,6 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
                         f"        requested: {requested}\n"
                         f"        final:     {final}{redirected}\n"
                         f"        body:      {snippet!r}")
-            try:
-                (DATA_DIR / f"debug_ishares_{file_ticker}_{tag}.html").write_text(
-                    txt[:200000], encoding="utf-8")
-            except Exception:
-                pass
 
         product_url = (f"https://www.ishares.com/uk/individual/en/products/"
                        f"{prod_id}/{slug}?switchLocale=y&siteEntryPassthrough=true")
@@ -616,11 +611,6 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
         page = ""
         try:
             st, ct, fin, page = _get(product_url)
-            try:
-                (DATA_DIR / f"debug_ishares_{file_ticker}_productpage.html").write_text(
-                    page[:400000], encoding="utf-8")
-            except Exception:
-                pass
             if st != 200:
                 _debug("productpage", st, ct, fin, page, product_url)
         except Exception as e:
@@ -632,6 +622,18 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
         host = "https://www.ishares.com"
         csv_tail = f"?fileType=csv&fileName={file_ticker}_holdings&dataType=fund"
 
+        # 0) NEW iShares site: hidden link  .../<id>/<slug>/latest-holdings.csv
+        new_links = []
+        for m in re.finditer(r"""(?:https?://www\.ishares\.com)?(/[^\s"'<>\\]*?/latest-holdings\.csv)""", page_n):
+            path = m.group(1)
+            if f"/{prod_id}/" in path:
+                new_links.append(host + path)
+        new_links = list(dict.fromkeys(new_links))
+        if new_links:
+            log.info(f"    [{file_ticker}/{client}] latest-holdings.csv link(s): {new_links[:3]}")
+        candidates.extend(new_links[:3])
+        candidates.append(f"{host}/uk/individual/en/products/{prod_id}/{slug}/latest-holdings.csv")
+
         # a) EVERY *.ajax reference found anywhere in the page
         found = []
         for m in re.finditer(r"""(?:https?://www\.ishares\.com)?(/[^\s"'<>\\]*?\.ajax)([^\s"'<>\\]*)""", page_n):
@@ -642,7 +644,7 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
         found = list(dict.fromkeys(found))
         if found:
             log.info(f"    [{file_ticker}/{client}] .ajax links on page: {found[:8]}")
-        else:
+        elif not new_links:
             # show where the page talks about downloads so we can see the new format
             hints = []
             for kw in ("fileType", "holdings.csv", "_holdings", "Download"):
@@ -681,7 +683,7 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
                     last = str(e)
                     log.warning(f"    [{file_ticker}/{client}] candidate {n} error: {e}")
         raise ValueError(f"iShares did not return CSV ({last}; client={client}; "
-                         f"see debug_ishares_{file_ticker}_*.html in {DATA_DIR})")
+                         f"see log above)")
 
     # ── Source 1: iShares CSV (EUNK, IS3N, QDVE, SEMI) ───────────────────────
     if ticker in ISHARES_PRODUCTS:
