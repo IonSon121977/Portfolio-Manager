@@ -558,6 +558,64 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
             return fallback
         return str(val).strip()
 
+    # ── iShares downloader (cookie session + browser headers) ────────────────
+    def _fetch_ishares_csv(prod_id, slug, file_ticker, fallback_url) -> str:
+        import re, html as _html, http.cookiejar
+
+        BROWSER_UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                      "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
+        base_hdrs = {
+            "User-Agent":      BROWSER_UA,
+            "Accept-Language": "en-GB,en;q=0.9",
+        }
+        opener = urllib.request.build_opener(
+            urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
+
+        def _get(u, extra=None, timeout=25):
+            h = dict(base_hdrs)
+            h.update(extra or {})
+            with opener.open(urllib.request.Request(u, headers=h), timeout=timeout) as r:
+                return r.read().decode("utf-8-sig", errors="replace")
+
+        def _looks_like_csv(t: str) -> bool:
+            head = t[:500].lstrip().lower()
+            return not (head.startswith("<!doctype") or head.startswith("<html")
+                        or head.startswith("<")) and "," in t[:2000]
+
+        product_url = (f"https://www.ishares.com/uk/individual/en/products/"
+                       f"{prod_id}/{slug}?switchLocale=y&siteEntryPassthrough=true")
+
+        candidates = []
+        # 1) visit the product page: sets consent/site-entry cookies and
+        #    reveals the real (current) CSV download link
+        try:
+            page = _get(product_url)
+            for m in re.finditer(r'href="([^"]+\.ajax\?[^"]*fileType=csv[^"]*)"', page):
+                link = _html.unescape(m.group(1))
+                if "dataType=fund" in link or "holdings" in link.lower():
+                    if link.startswith("/"):
+                        link = "https://www.ishares.com" + link
+                    candidates.append(link)
+                    break
+        except Exception as e:
+            log.info(f"    iShares product page fetch failed for {file_ticker}: {e}")
+
+        # 2) constructed URLs as fallback
+        candidates.append(fallback_url + "&siteEntryPassthrough=true")
+        candidates.append(fallback_url)
+
+        last = "no candidates"
+        for u in candidates:
+            try:
+                txt = _get(u, {"Accept": "text/csv,application/csv,*/*;q=0.8",
+                               "Referer": product_url})
+                if _looks_like_csv(txt):
+                    return txt
+                last = f"HTML instead of CSV from {u[:90]}…"
+            except Exception as e:
+                last = f"{u[:90]}…: {e}"
+        raise ValueError(f"iShares did not return CSV ({last})")
+
     # ── Source 1: iShares CSV (EUNK, IS3N, QDVE, SEMI) ───────────────────────
     if ticker in ISHARES_PRODUCTS:
         prod_id, slug, file_ticker = ISHARES_PRODUCTS[ticker]
@@ -565,27 +623,26 @@ def get_etf_holdings(ticker: str, max_holdings: int = 25) -> list:
                f"{prod_id}/{slug}/{ISHARES_AJAX}.ajax"
                f"?fileType=csv&fileName={file_ticker}_holdings&dataType=fund")
         try:
-            req = urllib.request.Request(
-                url,
-                headers={
-                    "User-Agent": "Mozilla/5.0 (compatible; portfolio-bot/1.0)",
-                    "Accept":     "text/csv,*/*",
-                    "Referer":    "https://www.ishares.com/",
-                }
-            )
-            with urllib.request.urlopen(req, timeout=20) as resp:
-                raw = resp.read().decode("utf-8", errors="replace")
+            raw = _fetch_ishares_csv(prod_id, slug, file_ticker, url)
 
-            reader  = csv.reader(io.StringIO(raw))
-            rows    = list(reader)
+            rows    = list(csv.reader(io.StringIO(raw)))
             hdr_idx = None
             for i, row in enumerate(rows):
-                if row and row[0].strip().lower() in ("ticker", "name") or \
-                   any(c.strip().lower() in ("ticker", "weight (%)", "weight(%)") for c in row):
-                   hdr_idx = i
-                   break
+                cells = [c.strip().lower() for c in row]
+                if "ticker" in cells and any(c.startswith("weight") for c in cells):
+                    hdr_idx = i
+                    break
             if hdr_idx is None:
-                raise ValueError("Could not find header row in iShares CSV")
+                # looser fallback: any row with a weight column plus name/ticker
+                for i, row in enumerate(rows):
+                    cells = [c.strip().lower() for c in row]
+                    if any(c.startswith("weight") for c in cells) and \
+                       any(c in ("name", "ticker") for c in cells):
+                        hdr_idx = i
+                        break
+            if hdr_idx is None:
+                raise ValueError("Could not find header row in iShares CSV. "
+                                 f"First 200 chars: {raw[:200]!r}")
 
             headers = [c.strip().lower() for c in rows[hdr_idx]]
 
