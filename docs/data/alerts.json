@@ -1,5 +1,65 @@
 [
   {
+    "ts": "2026-11-13 15:44 UTC",
+    "type": "movement",
+    "ticker": "SEMI.AS",
+    "message": "SEMI.AS DOWN [CROSSED 3%] | vs morning: -4.3% | vs last check: -4.3% (morning EUR 15.70, last EUR 15.70, now EUR 15.03)"
+  },
+  {
+    "ts": "2026-11-13 15:44 UTC",
+    "type": "movement",
+    "ticker": "MRVL",
+    "message": "MRVL DOWN [CROSSED 3%] | vs morning: -8.2% | vs last check: -8.2% (morning EUR 148.79, last EUR 148.79, now EUR 136.65)"
+  },
+  {
+    "ts": "2026-11-13 15:44 UTC",
+    "type": "movement",
+    "ticker": "AVGO",
+    "message": "AVGO DOWN [CROSSED 3%] | vs morning: -6.3% | vs last check: -6.3% (morning EUR 329.67, last EUR 329.67, now EUR 308.82)"
+  },
+  {
+    "ts": "2026-11-13 15:44 UTC",
+    "type": "movement",
+    "ticker": "SNDK",
+    "message": "SNDK DOWN [CROSSED 3%] | vs morning: -8.7% | vs last check: -8.7% (morning EUR 848.21, last EUR 848.21, now EUR 774.46)"
+  },
+  {
+    "ts": "2026-11-13 15:44 UTC",
+    "type": "movement",
+    "ticker": "AMD",
+    "message": "AMD DOWN [CROSSED 3%] | vs morning: -9.5% | vs last check: -9.5% (morning EUR 529.58, last EUR 529.58, now EUR 479.40)"
+  },
+  {
+    "ts": "2026-11-13 15:44 UTC",
+    "type": "movement",
+    "ticker": "INTC",
+    "message": "INTC DOWN [CROSSED 3%] | vs morning: -6.2% | vs last check: -6.2% (morning EUR 55.37, last EUR 55.37, now EUR 51.93)"
+  },
+  {
+    "ts": "2026-11-13 15:44 UTC",
+    "type": "movement",
+    "ticker": "MU",
+    "message": "MU DOWN [CROSSED 3%] | vs morning: -4.8% | vs last check: -4.8% (morning EUR 722.43, last EUR 722.43, now EUR 687.96)"
+  },
+  {
+    "ts": "2026-11-13 15:44 UTC",
+    "type": "movement",
+    "ticker": "ANET",
+    "message": "ANET DOWN [CROSSED 3%] | vs morning: -4.3% | vs last check: -4.3% (morning EUR 186.96, last EUR 186.96, now EUR 178.89)"
+  },
+  {
+    "ts": "2026-11-13 15:44 UTC",
+    "type": "movement",
+    "ticker": "NOK",
+    "message": "NOK DOWN [CROSSED 3%] | vs morning: -3.7% | vs last check: -3.7% (morning EUR 7.49, last EUR 7.49, now EUR 7.21)"
+  },
+  {
+    "ts": "2026-11-13 15:44 UTC",
+    "type": "movement",
+    "ticker": "NVDA",
+    "message": "NVDA DOWN [CROSSED 3%] | vs morning: -3.8% | vs last check: -3.8% (morning EUR 150.37, last EUR 150.37, now EUR 144.63)"
+  },
+  {
     "ts": "2026-11-13 13:02 UTC",
     "type": "digest",
     "ticker": "",
@@ -2938,65 +2998,5 @@
     "type": "digest",
     "ticker": "",
     "message": "Morning digest sent at 09:47 UTC"
-  },
-  {
-    "ts": "2026-10-14 20:56 UTC",
-    "type": "movement",
-    "ticker": "MRVL",
-    "message": "MRVL DOWN | vs morning: -8.4% | vs last check: -2.5% (morning EUR 240.06, last EUR 225.36, now EUR 219.80)"
-  },
-  {
-    "ts": "2026-10-14 20:56 UTC",
-    "type": "movement",
-    "ticker": "ASML",
-    "message": "ASML DOWN [CROSSED 3%] | vs morning: -3.6% | vs last check: -1.6% (morning EUR 1534.48, last EUR 1502.68, now EUR 1478.56)"
-  },
-  {
-    "ts": "2026-10-14 20:56 UTC",
-    "type": "movement",
-    "ticker": "MU",
-    "message": "MU DOWN [CROSSED 3%] | vs morning: -3.8% | vs last check: -1.0% (morning EUR 851.48, last EUR 827.56, now EUR 819.15)"
-  },
-  {
-    "ts": "2026-10-14 18:51 UTC",
-    "type": "movement",
-    "ticker": "AVGO",
-    "message": "AVGO DOWN [CROSSED 3%] | vs morning: -3.2% | vs last check: -1.3% (morning EUR 319.19, last EUR 312.98, now EUR 308.97)"
-  },
-  {
-    "ts": "2026-10-14 18:51 UTC",
-    "type": "movement",
-    "ticker": "SNDK",
-    "message": "SNDK DOWN | vs morning: -4.2% | vs last check: -1.2% (morning EUR 1324.17, last EUR 1284.04, now EUR 1268.42)"
-  },
-  {
-    "ts": "2026-10-14 18:51 UTC",
-    "type": "movement",
-    "ticker": "CAT",
-    "message": "CAT DOWN [CROSSED 3%] | vs morning: -3.1% | vs last check: -1.2% (morning EUR 690.32, last EUR 677.16, now EUR 668.86)"
-  },
-  {
-    "ts": "2026-10-14 18:51 UTC",
-    "type": "movement",
-    "ticker": "ORCL",
-    "message": "ORCL DOWN | vs morning: -9.0% | vs last check: -2.6% (morning EUR 127.92, last EUR 119.58, now EUR 116.44)"
-  },
-  {
-    "ts": "2026-10-14 18:51 UTC",
-    "type": "movement",
-    "ticker": "AMD",
-    "message": "AMD DOWN | vs morning: -5.4% | vs last check: -1.4% (morning EUR 540.92, last EUR 518.97, now EUR 511.76)"
-  },
-  {
-    "ts": "2026-10-14 18:51 UTC",
-    "type": "movement",
-    "ticker": "INTC",
-    "message": "INTC DOWN [CROSSED 3%] | vs morning: -4.0% | vs last check: -1.2% (morning EUR 91.84, last EUR 89.25, now EUR 88.20)"
-  },
-  {
-    "ts": "2026-10-14 18:51 UTC",
-    "type": "movement",
-    "ticker": "ANET",
-    "message": "ANET DOWN | vs morning: -4.6% | vs last check: -1.5% (morning EUR 182.70, last EUR 176.87, now EUR 174.21)"
   }
 ]
