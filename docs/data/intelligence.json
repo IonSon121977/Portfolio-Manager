@@ -293,6 +293,14 @@
           "source": "consensus"
         },
         {
+          "date": "3",
+          "firm": "52 Buy \u00b7 3 Hold \u00b7 0 Sell (55 analysts)",
+          "from_grade": "",
+          "to_grade": "Buy",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
           "date": "2026-10-29",
           "firm": "Bernstein",
           "from_grade": "Outperform",
@@ -395,31 +403,23 @@
           "to_grade": "Overweight",
           "action": "up",
           "source": "broker"
-        },
-        {
-          "date": "2026-10-29",
-          "firm": "Oppenheimer",
-          "from_grade": "Outperform",
-          "to_grade": "Outperform",
-          "action": "up",
-          "source": "broker"
         }
       ],
       "new_ratings": [],
       "news": [
         {
-          "title": "Microsoft stock slumps on outage that includes the Copilot tool it has been heavily promoting",
+          "title": "MSFT Stock Price Faces Pressure as Microsoft Outage and $170 Billion AI Spending Raise Concerns",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bacff5042959264657ffb289537&url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2fother%2fmicrosoft-stock-slumps-on-outage-that-includes-the-copilot-tool-it-has-been-heavily-promoting%2far-AA2hmRK5&c=4034141822553627423&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77a982f0d4d5484c7ede8a41f569f&url=https%3a%2f%2fcoinpedia.org%2fstock-market-news%2fmicrosoft-stock-has-more-than-an-outage-to-worry-about-heres-why%2f&c=13518510109905468637&mkt=en-us",
           "date": "2026-11-13",
-          "summary": "Microsoft stock fell in premarket trade Friday as the company struggled to address a worldwide outage of its popular products."
+          "summary": "Microsoft stock has another problem beyond its latest global outage. While the disruption to Outlook, Teams and Copilot has put cloud reliability under ..."
         },
         {
-          "title": "Microsoft outage is \u2018one of the most economically damaging in history\u2019, expert warns",
+          "title": "Microsoft's latest outage hit Outlook and Copilot \u2014 what it means for your email",
           "source": "Yahoo Finance",
-          "url": "https://www.independent.co.uk/tech/microsoft-outage-economic-impact-cost-b3084563.html?.tsrc=rss",
+          "url": "https://finance.yahoo.com/markets/article/microsofts-latest-outage-hit-outlook-and-copilot--what-it-means-for-your-email-190121806.html?.tsrc=rss",
           "date": "2026-11-13",
-          "summary": "Massive disruption is \u2018terrifying demonstration\u2019 of how fragile our modern economy has become"
+          "summary": "No one has confirmed what caused the Microsoft outage that took down Outlook and Copilot, and nothing links it to layoffs or AI, but it's not the first time Microsoft's own changes broke its apps."
         },
         {
           "title": "Microsoft: No Outage In The Growth Story, Hiking My Target",
@@ -429,11 +429,18 @@
           "summary": ""
         },
         {
-          "title": "CBRG 2X Cerebras ETF Surges 16% as Cerebras Jumps 8% on Microsoft Deal and Raised Guidance",
-          "source": "Yahoo Finance",
-          "url": "https://247wallst.com/investing/2026/11/13/cbrg-2x-cerebras-etf-surges-16-as-cerebras-jumps-8-on-microsoft-deal-and-raised-guidance/?.tsrc=rss",
+          "title": "Microsoft stock slumps on outage that includes the Copilot tool it has been heavily promoting",
+          "source": "Bing News",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77a982f0d4d5484c7ede8a41f569f&url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2fother%2fmicrosoft-stock-slumps-on-outage-that-includes-the-copilot-tool-it-has-been-heavily-promoting%2far-AA2hmRK5&c=4034141822553627423&mkt=en-us",
           "date": "2026-11-13",
-          "summary": "A leveraged Cerebras fund that lost more than half its value in a month is suddenly ripping higher while NVIDIA and AMD sink. A new hyperscaler customer explains the move, but one unresolved OpenAI pr"
+          "summary": "Microsoft stock fell in premarket trade Friday as the company struggled to address a worldwide outage of its popular products."
+        },
+        {
+          "title": "Microsoft vs. Salesforce: One Software Stock Remains a Top Pick, the Other Has Something to Prove, Says RBC",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-vs-salesforce-one-software-203940316.html?.tsrc=rss",
+          "date": "2026-11-13",
+          "summary": "Microsoft (NASDAQ:MSFT) and Salesforce (NYSE:CRM) sell to many of the same corporate customers, and both are betting that AI agents, software that can carry out tasks on its own, will become a major s"
         },
         {
           "title": "Microsoft says it continues to make 'sustained improvements' in restoring outage",
@@ -441,13 +448,6 @@
           "url": "https://seekingalpha.com/symbol/MSFT/news?source=feed_symbol_MSFT",
           "date": "2026-11-13",
           "summary": ""
-        },
-        {
-          "title": "Microsoft Stock Slips on Widespread Outage - WSJ",
-          "source": "WSJ",
-          "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPcXV2VzNBNnNwY0FyZUR6UlZBN1BBR1Q4ek9TRnVxa25HNVR5bWRodWlHMi1PdkdMcUozNkJmT2gtYUFmb1d5dXZoTDRrZTBKd3ZkNHk1UWJQeEJiR3dBSVNfSmRLQmdRVDRoRHBxSUR4N3FSV0l3ODBLRm51dFh1aFUycld3aElhZkFfcXlvQlg3WGFaNl9sMjA0ZlNnaVZZUW50X09IQVZyNWtPcFlSb3lpWGZaUkl2Skt5SHFGdGgweWFyajdReERyeERhdzYzMDBZSXc1LXZUUXhwV3BQd2dWTQ?oc=5",
-          "date": "2026-11-13",
-          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMi4wFBVV95cUxPcXV2VzNBNnNwY0FyZUR6UlZBN1BBR1Q4ek9TRnVxa25HNVR5bWRodWlHMi1PdkdMcUozNkJmT2gtYUFmb1d5dXZoTDRrZTBKd3ZkNHk1UWJQeEJiR3dBSVNfSmRLQmdRVD"
         }
       ],
       "morningstar": {},
@@ -749,7 +749,7 @@
           "source": "consensus"
         },
         {
-          "date": "2",
+          "date": "3",
           "firm": "19 Buy \u00b7 4 Hold \u00b7 2 Sell (25 analysts)",
           "from_grade": "",
           "to_grade": "Buy",
@@ -929,21 +929,14 @@
         {
           "title": "Siemens Energy stock enters fiscal 2027 with record backlog",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bac7b5040f28fe4d12e2a23578e&url=https%3a%2f%2fwww.ad-hoc-news.de%2fboerse%2fnews%2fcorporate-news%2fsiemens-energy-stock-enters-fiscal-2027-with-record-backlog%2f70503751&c=292042786969469360&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77a9845c54e7892a4bdb1c7f22172&url=https%3a%2f%2fwww.ad-hoc-news.de%2fboerse%2fnews%2fcorporate-news%2fsiemens-energy-stock-enters-fiscal-2027-with-record-backlog%2f70503751&c=292042786969469360&mkt=en-us",
           "date": "2026-11-13",
           "summary": "Siemens Energy stock begins a new fiscal year after record revenue, earnings and cash flow. Management targets faster growth and higher margins through 2030. Siemens Energy closed fiscal 2026 with ..."
         },
         {
-          "title": "Siemens Energy AG : Gets a Buy rating from Goldman Sachs - marketscreener.com",
-          "source": "marketscreener.com",
-          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNT1NFRC0zbDZWTk9MZ1VfVFFPOWtZTEZlVnhmS3JWUzNjR1ZuenBnVEx1LTViZWlvLV9kRkVZcHZMNGZDMndLS2k1VGt6d0JBbHRraFdGX1hMdWhrb3dhVHphd2ZhX0o2TTlONkx2bDl3NFZsdUdDV2FOR3ZDUm11amlIVDVBZnZFV1hZRzhIeVpLT1BkZ1ROYTQyalZmT2tQUF9lNnNIZWp4S2s?oc=5",
-          "date": "2026-11-13",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxNT1NFRC0zbDZWTk9MZ1VfVFFPOWtZTEZlVnhmS3JWUzNjR1ZuenBnVEx1LTViZWlvLV9kRkVZcHZMNGZDMndLS2k1VGt6d0JBbHRraFdGX1hMdWhrb3dhVHphd2ZhX0o2TTlONkx2bD"
-        },
-        {
           "title": "Siemens Energy Targets 22% Margin as Annual Profit Jumps 145%",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bac7b5040f28fe4d12e2a23578e&url=https%3a%2f%2ffinance.yahoo.com%2fenergy%2farticles%2fsiemens-energy-targets-22-margin-121500425.html&c=11785372608821895075&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77a9845c54e7892a4bdb1c7f22172&url=https%3a%2f%2ffinance.yahoo.com%2fenergy%2farticles%2fsiemens-energy-targets-22-margin-121500425.html&c=11785372608821895075&mkt=en-us",
           "date": "2026-11-12",
           "summary": "Siemens Energy reports record annual earnings, a soaring order backlog, and ambitious growth targets driven by strong demand for gas turbines and power grid infrastructure."
         },
@@ -953,6 +946,13 @@
           "url": "https://www.power-technology.com/news/siemens-energy-supplier-berwick-bank-b/?.tsrc=rss",
           "date": "2026-11-12",
           "summary": "The proposed 1.4GW project could support manufacturing, engineering, delivery, and servicing roles across the UK."
+        },
+        {
+          "title": "Power index rises 1%: Siemens Energy, GE Vernova rally up to 5%; here's why",
+          "source": "Bing News",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77a9845c54e7892a4bdb1c7f22172&url=https%3a%2f%2fwww.business-standard.com%2fmarkets%2fnews%2fpower-index-rises-1-siemens-energy-ge-vernova-rally-up-to-5-here-s-why-126111300489_1.html&c=18421384042933544061&mkt=en-us",
+          "date": "2026-11-12",
+          "summary": "Power stocks were in demand on Friday amid reports that the National Committee on Transmission approved a first-of-its-kind 1,150 kV transmission project worth \u20b968,816 crore."
         },
         {
           "title": "Siemens Energy sees higher margins as data centres boost power equipment demand - Reuters",
@@ -969,8 +969,8 @@
             "period": "0",
             "strongBuy": 6,
             "buy": 15,
-            "hold": 4,
-            "sell": 2,
+            "hold": 5,
+            "sell": 1,
             "strongSell": 1,
             "total": 28,
             "buy_pct": 75.0,
@@ -1029,70 +1029,6 @@
       "name": "Friedrich Vorwerk Group",
       "ratings": [
         {
-          "date": "1",
-          "firm": "2 Buy \u00b7 2 Hold \u00b7 0 Sell (4 analysts)",
-          "from_grade": "",
-          "to_grade": "Hold",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "2",
-          "firm": "2 Buy \u00b7 2 Hold \u00b7 0 Sell (4 analysts)",
-          "from_grade": "",
-          "to_grade": "Hold",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "2",
-          "firm": "2 Buy \u00b7 2 Hold \u00b7 0 Sell (4 analysts)",
-          "from_grade": "",
-          "to_grade": "Hold",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "2",
-          "firm": "2 Buy \u00b7 2 Hold \u00b7 0 Sell (4 analysts)",
-          "from_grade": "",
-          "to_grade": "Hold",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "2",
-          "firm": "2 Buy \u00b7 2 Hold \u00b7 0 Sell (4 analysts)",
-          "from_grade": "",
-          "to_grade": "Hold",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "2",
-          "firm": "2 Buy \u00b7 2 Hold \u00b7 0 Sell (4 analysts)",
-          "from_grade": "",
-          "to_grade": "Hold",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "2",
-          "firm": "2 Buy \u00b7 2 Hold \u00b7 0 Sell (4 analysts)",
-          "from_grade": "",
-          "to_grade": "Hold",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "2",
-          "firm": "2 Buy \u00b7 2 Hold \u00b7 0 Sell (4 analysts)",
-          "from_grade": "",
-          "to_grade": "Hold",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
           "date": "2",
           "firm": "2 Buy \u00b7 2 Hold \u00b7 0 Sell (4 analysts)",
           "from_grade": "",
@@ -1102,6 +1038,70 @@
         },
         {
           "date": "1",
+          "firm": "2 Buy \u00b7 2 Hold \u00b7 0 Sell (4 analysts)",
+          "from_grade": "",
+          "to_grade": "Hold",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "2",
+          "firm": "2 Buy \u00b7 2 Hold \u00b7 0 Sell (4 analysts)",
+          "from_grade": "",
+          "to_grade": "Hold",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "2",
+          "firm": "2 Buy \u00b7 2 Hold \u00b7 0 Sell (4 analysts)",
+          "from_grade": "",
+          "to_grade": "Hold",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "2",
+          "firm": "2 Buy \u00b7 2 Hold \u00b7 0 Sell (4 analysts)",
+          "from_grade": "",
+          "to_grade": "Hold",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "2",
+          "firm": "2 Buy \u00b7 2 Hold \u00b7 0 Sell (4 analysts)",
+          "from_grade": "",
+          "to_grade": "Hold",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "2",
+          "firm": "2 Buy \u00b7 2 Hold \u00b7 0 Sell (4 analysts)",
+          "from_grade": "",
+          "to_grade": "Hold",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "2",
+          "firm": "2 Buy \u00b7 2 Hold \u00b7 0 Sell (4 analysts)",
+          "from_grade": "",
+          "to_grade": "Hold",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "2",
+          "firm": "2 Buy \u00b7 2 Hold \u00b7 0 Sell (4 analysts)",
+          "from_grade": "",
+          "to_grade": "Hold",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "2",
           "firm": "2 Buy \u00b7 2 Hold \u00b7 0 Sell (4 analysts)",
           "from_grade": "",
           "to_grade": "Hold",
@@ -1432,11 +1432,11 @@
       "new_ratings": [],
       "news": [
         {
-          "title": "Earnings call transcript: Friedrich Vorwerk lifts 2026 outlook after record Q3 - Investing.com Nigeria",
-          "source": "Investing.com Nigeria",
-          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQN1I2OGU5Ymp0bU5nNkVzSFl5VUUyRFp6TklBUWgwNTM2eVFEczEyajVXbVhLSWF1T2xYNFQ5MUNQVWxWY1ZDeGZrblZzZ2lkUTdWYU9rTWZvd2xUYzRkek9RYkRkb0FXOEhQVW1VQVFTTlpsdjlSTV9OYW4tQ1ZrYkZfdU00Y0ZaLTdiYU5aX0REd3JQWHl3RWNFOGM0ZDlsa0YzM3Q3UDNHbjE4WWU0ckJxMlpoaWFGQkItMWdVNjlxcDNSSjd3bjRfLW42dFU5UHF6Tg?oc=5",
+          "title": "Friedrich Vorwerk Group SE 2026 Q3 - Results - Earnings Call Presentation (OTCMKTS:FDVWF) 2026-11-13 - Seeking Alpha",
+          "source": "Seeking Alpha",
+          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNdGh4MTJYOG80d2J3SDVCLVNzdzR3b1lWcE5MaFdBUnR2UmxIaEVsdFFCMWI3SGJHTFJCaFlfWHQ0VGl2eERRdkRfQzlWRUZOVmZPOGRkTFRhNGIwSnpaUmxQMWgtLXM1elpzQXUzeHJaR0paU2Fxb2NiajdsWHBoT3NrVTRUZ21ScHkwSkZNV0dxb3pSdGlvY085QkJWdjlrMmRuSkl3cmZqcmFhMGVmWUNmVVV5UEF1TXFsbWM5alBMcFVxLUcxWUN5RTFVMjhl?oc=5",
           "date": "2026-11-13",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi1AFBVV95cUxQN1I2OGU5Ymp0bU5nNkVzSFl5VUUyRFp6TklBUWgwNTM2eVFEczEyajVXbVhLSWF1T2xYNFQ5MUNQVWxWY1ZDeGZrblZzZ2lkUTdWYU9rTWZvd2xUYzRkek9RYkRkb0FXOEhQVW1VQV"
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxNdGh4MTJYOG80d2J3SDVCLVNzdzR3b1lWcE5MaFdBUnR2UmxIaEVsdFFCMWI3SGJHTFJCaFlfWHQ0VGl2eERRdkRfQzlWRUZOVmZPOGRkTFRhNGIwSnpaUmxQMWgtLXM1elpzQXUzeH"
         },
         {
           "title": "Friedrich Vorwerk Earnings Call Signals Record Growth Expansion - TipRanks",
@@ -1448,7 +1448,7 @@
         {
           "title": "Friedrich Vorwerk Group SE (FDVWF) Q3 2026 Earnings Call Transcript",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75badfda74edd80fa1f5fbf78685a&url=https%3a%2f%2fseekingalpha.com%2farticle%2f4967227-friedrich-vorwerk-group-se-fdvwf-q3-2026-earnings-call-transcript&c=11523454273053086845&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77a99942b4e69bd1a204e9b55ccb8&url=https%3a%2f%2fseekingalpha.com%2farticle%2f4967227-friedrich-vorwerk-group-se-fdvwf-q3-2026-earnings-call-transcript&c=11523454273053086845&mkt=en-us",
           "date": "2026-11-12",
           "summary": "Welcome to the earnings call of Friedrich Vorwerk Group SE regarding the third quarter figures of 2026. The company's CEO, Torben Kleinfeldt; and CFO, Tim Hameister, will guide you through the ..."
         },
@@ -1462,16 +1462,16 @@
         {
           "title": "Friedrich Vorwerk Group SE Reports Earnings Results for the Third Quarter and Nine Months Ended September 30, 2026",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75badfda74edd80fa1f5fbf78685a&url=https%3a%2f%2fwww.marketscreener.com%2fnews%2ffriedrich-vorwerk-group-se-reports-earnings-results-for-the-third-quarter-and-nine-months-ended-sept-ce785ed8dd8ff523&c=7411471500615973625&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77a99942b4e69bd1a204e9b55ccb8&url=https%3a%2f%2fwww.marketscreener.com%2fnews%2ffriedrich-vorwerk-group-se-reports-earnings-results-for-the-third-quarter-and-nine-months-ended-sept-ce785ed8dd8ff523&c=7411471500615973625&mkt=en-us",
           "date": "2026-11-12",
           "summary": "Friedrich Vorwerk Group SE reported earnings results for the third quarter and nine months ended September 30, 2026. For the third quarter, the company reported sales was EUR 228.33 million compared ."
         },
         {
-          "title": "Transcript : Friedrich Vorwerk Group SE, Q3 2026 Earnings Call, Nov 12, 2026",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75badfda74edd80fa1f5fbf78685a&url=https%3a%2f%2fwww.marketscreener.com%2fnews%2ftranscript-friedrich-vorwerk-group-se-q3-2026-earnings-call-nov-12-2026-ce785ed8d180f620&c=7658235311693027516&mkt=en-us",
+          "title": "Earnings call transcript: Friedrich Vorwerk lifts 2026 outlook after record Q3 - Investing.com UK",
+          "source": "Investing.com UK",
+          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPSldULWpiSFlZVnBrWWptVzNaUUdkb0w2Nm11TnF3bV80SDk3M3owYjd0cE5HOFZNeDV1SGRwMG56cGRNdHJpUnFSN1lxQ2VaM1NQcTFlcFhHbGU3NmU5R05iUHVFa3djanB3QVZoQy1SX1Zyek1yT3pWV1FuSkM1dmNFMXBfRF9BVWUyTFBVZ0F4UHMwVVZ6NU9RRlBLUElQSm9YWWVhTklVNnU2bmF4S1dzS1RCbGZKdzZ5UEtMaW4zaHJ5Y3ZVdFNkWmx2SWdReHd5bA?oc=5",
           "date": "2026-11-12",
-          "summary": "[Audio Gap] Torben Kleinfeld and CFO, Tim Hameister, will guide you through the presentation and the figures shortly, after we will reach over to the ..."
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi1AFBVV95cUxPSldULWpiSFlZVnBrWWptVzNaUUdkb0w2Nm11TnF3bV80SDk3M3owYjd0cE5HOFZNeDV1SGRwMG56cGRNdHJpUnFSN1lxQ2VaM1NQcTFlcFhHbGU3NmU5R05iUHVFa3djanB3QVZoQy"
         }
       ],
       "morningstar": {},
@@ -1498,10 +1498,21 @@
             "total": 4,
             "buy_pct": 50.0,
             "grade": "Hold"
+          },
+          {
+            "period": "2",
+            "strongBuy": 0,
+            "buy": 2,
+            "hold": 2,
+            "sell": 0,
+            "strongSell": 0,
+            "total": 4,
+            "buy_pct": 50.0,
+            "grade": "Hold"
           }
         ],
         "latest": {
-          "period": "1",
+          "period": "2",
           "strongBuy": 0,
           "buy": 2,
           "hold": 2,
@@ -1922,6 +1933,13 @@
       "new_ratings": [],
       "news": [
         {
+          "title": "MilDef Group AB (publ) (MILDES.XC) Stock Major Holders - Yahoo Finance - Yahoo! Finance Canada",
+          "source": "Yahoo! Finance Canada",
+          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1CLVdPQ2d4QjFtci1LRUpUVVg0am83dFZ1YnlLZGk3aDBicHQxdHlDSjBNa2tZTXNmSzJib2J6LU1IS3VCcTZrWXA1RlFkZFJNaFhiY3RDUFpsRU5zT0R4cVY0cw?oc=5",
+          "date": "2026-11-12",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiY0FVX3lxTE1CLVdPQ2d4QjFtci1LRUpUVVg0am83dFZ1YnlLZGk3aDBicHQxdHlDSjBNa2tZTXNmSzJib2J6LU1IS3VCcTZrWXA1RlFkZFJNaFhiY3RDUFpsRU5zT0R4cVY0cw?oc=5\" target=\"_"
+        },
+        {
           "title": "Mildef Group AB (8QA.HA) interactive stock chart - Yahoo Finance UK",
           "source": "Yahoo Finance UK",
           "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE55cmZIbENTeHVzU1RWTnM5clVveEVjOXl3SG54bE5welYzM3RKRzN2QXc4ZktRc3l3c3RlZUdReFNGR0oxVlpBemZQWXAzOWc0MGpwOGh1dkl6TWw0?oc=5",
@@ -2283,6 +2301,14 @@
           "source": "consensus"
         },
         {
+          "date": "3",
+          "firm": "58 Buy \u00b7 5 Hold \u00b7 0 Sell (63 analysts)",
+          "from_grade": "",
+          "to_grade": "Buy",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
           "date": "2026-10-29",
           "firm": "JP Morgan",
           "from_grade": "Overweight",
@@ -2383,14 +2409,6 @@
           "firm": "JP Morgan",
           "from_grade": "Overweight",
           "to_grade": "Overweight",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-10-29",
-          "firm": "TD Cowen",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
           "action": "up",
           "source": "broker"
         }
@@ -2405,11 +2423,11 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxNRjF5NzJtVUR6VFJmaGMzbEJaSG43bkc2V01DcHlvWjdLbkpMclNTU044Tm12VWVtZHhtbVJSMjhmU0RzaWtxVFp3MzZlZnBJNm40ajQ3ZUx6RHZCQUt3VEx1QjdXcGlMVjE2NkI4M1"
         },
         {
-          "title": "Should You Wait Before Buying Reddit Stock?",
+          "title": "Inside Jim Cramer\u2019s Charitable Trust: 5 Stocks He Actually Owns",
           "source": "Yahoo Finance",
-          "url": "https://www.trefis.com/stock/rddt/articles/625021/should-you-wait-before-buying-reddit-stock/2026-11-13?.tsrc=rss",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/inside-jim-cramer-charitable-trust-203302856.html?.tsrc=rss",
           "date": "2026-11-13",
-          "summary": "For questions about this article or underlying research, email help@trefis.com."
+          "summary": "Jim Cramer started his Charitable Trust in 2005 with $3 million of his own money. According to CNBC, Cramer\u2019s own investment is at risk, and the trust distributes its investment income and realized ca"
         },
         {
           "title": "Muse's gains slow in October, while Google's volumes remain 'robust,' Wells Fargo says",
@@ -2419,11 +2437,11 @@
           "summary": ""
         },
         {
-          "title": "Marvell Is Still Up 81% This Year. Can MRVL Stock Hit $300 by 2029?",
+          "title": "Should You Wait Before Buying Reddit Stock?",
           "source": "Yahoo Finance",
-          "url": "https://247wallst.com/investing/2026/11/13/marvell-is-still-up-81-this-year-can-mrvl-stock-hit-300-by-2029/?.tsrc=rss",
+          "url": "https://www.trefis.com/stock/rddt/articles/625021/should-you-wait-before-buying-reddit-stock/2026-11-13?.tsrc=rss",
           "date": "2026-11-13",
-          "summary": "Marvell has shrugged off a brutal chip selloff better than most, and one executive's remark about 2029 has bulls dreaming big. But a rival's confident boast about its moat gives the bears real ammunit"
+          "summary": "For questions about this article or underlying research, email help@trefis.com."
         },
         {
           "title": "Anthropic: Why You Should Consider Pre-IPO Ownership Via Alphabet",
@@ -2433,11 +2451,11 @@
           "summary": ""
         },
         {
-          "title": "Meta reportedly paid 2 teens a combined $7 million to settle social media addiction claims as 9,800 more cases loom",
+          "title": "Marvell Is Still Up 81% This Year. Can MRVL Stock Hit $300 by 2029?",
           "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/media-advertising/articles/meta-reportedly-paid-2-teens-173000653.html?.tsrc=rss",
+          "url": "https://247wallst.com/investing/2026/11/13/marvell-is-still-up-81-this-year-can-mrvl-stock-hit-300-by-2029/?.tsrc=rss",
           "date": "2026-11-13",
-          "summary": "Settlements come as the company looks to shut down cases accusing it of damaging mental health."
+          "summary": "Marvell has shrugged off a brutal chip selloff better than most, and one executive's remark about 2029 has bulls dreaming big. But a rival's confident boast about its moat gives the bears real ammunit"
         }
       ],
       "morningstar": {},
@@ -2910,6 +2928,20 @@
       "new_ratings": [],
       "news": [
         {
+          "title": "Airbus reports share buyback transactions 9-13 November 2026 - www.marketscreener.com",
+          "source": "www.marketscreener.com",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUXRnUVdSMHFFWEJPSUdPR2V3VGlTdTBrYkhwb1k3OWctZHdULVY3Y1lkY2pJeldMdG1JWVZXdlozZnRWdGxoMlE3djNOV2pxQlp0a2Z6RGZoTzh6SFgzQ1ZRWnpKbTNzWTdHMUlvLVNibWtMTXc1aTNiR19IOTcyN3kzLTV3NzYyTU8yS1lBVlNxT3hTQXQxNDR6TVByLTJ5ei1ybFlsengxbEYyUGlGN1JVMA?oc=5",
+          "date": "2026-11-13",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxOUXRnUVdSMHFFWEJPSUdPR2V3VGlTdTBrYkhwb1k3OWctZHdULVY3Y1lkY2pJeldMdG1JWVZXdlozZnRWdGxoMlE3djNOV2pxQlp0a2Z6RGZoTzh6SFgzQ1ZRWnpKbTNzWTdHMUlvLV"
+        },
+        {
+          "title": "Airbus reports share buyback transactions 9-13 November 2026",
+          "source": "Bing News",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77a9a2c3c4d3bb559f62274adb069&url=https%3a%2f%2fwww.airbus.com%2fen%2fnewsroom%2fpress-releases%2f2026-11-airbus-reports-share-buyback-transactions-9-13-november-2026&c=4271312615939501063&mkt=en-us",
+          "date": "2026-11-13",
+          "summary": "Airbus SE (stock exchange symbol: AIR) reports the following share buyback transactions under Regulation (EU) No 596/2014 of the European Parliament ..."
+        },
+        {
           "title": "Airbus shares among the biggest decliners in the CAC 40, but up 9.5% over one month - Id\u00e9al Investisseur",
           "source": "Id\u00e9al Investisseur",
           "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPSkRXaDd4cHFheHFsaWdVaTkyR1RXaHFUQlhSdmdheXU3N0gtN0d1anpGNVpZYzJNQTBOaGVBZ0dDSG1abVRjNjl4aXNrbFNtRzVueVdUNlNHV3VYNDV1ZEM2UzlFN2IwVEwyOGJnbVBkSFlZNHRlM0YwMG5BMkFuQV9FTV80RVNzN0xTZThsS1VRZHRxTGJzV1NEX2tWRzNLRHVhSHYwTXAzc3M4ZXJLMUFKa3htWTFBcnVKeGN4eVl6OVctVmpUNnlFa29MWkxmOE44UElPcw?oc=5",
@@ -2917,16 +2949,16 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMi1wFBVV95cUxPSkRXaDd4cHFheHFsaWdVaTkyR1RXaHFUQlhSdmdheXU3N0gtN0d1anpGNVpZYzJNQTBOaGVBZ0dDSG1abVRjNjl4aXNrbFNtRzVueVdUNlNHV3VYNDV1ZEM2UzlFN2IwVEwyOGJnbV"
         },
         {
-          "title": "Iberia completes Starlink installation on Airbus A321XLRs",
+          "title": "Giant Airbus A380 takes off without passengers",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75baeb0194792a4a3e3588c45b94b&url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2fother%2fiberia-completes-starlink-installation-on-airbus-a321xlrs%2far-AA2hnB9X&c=1342429116218067988&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77a9a2c3c4d3bb559f62274adb069&url=https%3a%2f%2fwww.msn.com%2fen-au%2fnews%2fother%2fgiant-airbus-a380-takes-off-without-passengers%2fvi-AA2hokSg&c=10323144181911775691&mkt=en-us",
           "date": "2026-11-13",
-          "summary": "Spain\u2019s flag carrier, Iberia, has announced that it has installed high-speed Starlink inflight Wi-Fi on its entire fleet of Airbus A321XLR aircraft, which operate some long-haul routes from its Madrid"
+          "summary": "A giant Airbus A380 takes off without passengers in this aviation planespotting video, capturing a positioning flight involving the world's largest passenger aircraft. The footage highlights the ..."
         },
         {
           "title": "Airbus strengthening wide-body aircraft footprint in Asia Pacific, says senior executive",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75baeb0194792a4a3e3588c45b94b&url=https%3a%2f%2fwww.cnbctv18.com%2fbusiness%2fairbus-strengthening-wide-body-aircraft-footprint-in-asia-pacific-says-senior-executive-20033730.htm&c=7352799751278092818&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77a9a2c3c4d3bb559f62274adb069&url=https%3a%2f%2fwww.cnbctv18.com%2fbusiness%2fairbus-strengthening-wide-body-aircraft-footprint-in-asia-pacific-says-senior-executive-20033730.htm&c=7352799751278092818&mkt=en-us",
           "date": "2026-11-13",
           "summary": "Airbus is expanding its wide-body aircraft footprint in Asia Pacific, driven by a projected surge in travel and a growing middle-class population by 2045."
         },
@@ -2936,20 +2968,6 @@
           "url": "https://finance.yahoo.com/technology/articles/global-unmanned-aerial-vehicle-uav-142300333.html?.tsrc=rss",
           "date": "2026-11-12",
           "summary": "ROI strategies: launch compact, low-power UAV satcom portfolios to cut costs and boost mission efficiency; expand global BVLOS capabilities through acquisitions.Dublin, Nov. 12, 2026 (GLOBE NEWSWIRE) "
-        },
-        {
-          "title": "Airbus (ENXTPA:AIR) Gains Attention For AI Swarm Drone Advances",
-          "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/technology/ai/articles/airbus-enxtpa-air-gains-attention-141426871.html?.tsrc=rss",
-          "date": "2026-11-12",
-          "summary": "Airbus (ENXTPA:AIR) is highlighted in recent industry reports for advances in AI-powered swarm drone autonomy within Airbus Defence and Space. The company is cited among a small group of global player"
-        },
-        {
-          "title": "Emirates strikes deal to take ownership of six Airbus A380 aircraft",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75baeb0194792a4a3e3588c45b94b&url=https%3a%2f%2fwww.aerotime.aero%2farticles%2femirates-airbus-a380-aircraft-lesha-bank&c=8685761430972050734&mkt=en-us",
-          "date": "2026-11-12",
-          "summary": "Emirates will take ownership of six Airbus A380-800 aircraft currently operated as part of its fleet under a lease agreement with Qatar's Lesha Bank."
         }
       ],
       "morningstar": {},
@@ -3422,23 +3440,30 @@
       "new_ratings": [],
       "news": [
         {
-          "title": "Billionaire investor KoGuan vows to stop buying Nvidia stock after Huang exit\u2014Musk and others back ex-CEO",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bae0c234ea889204d19d96f1271&url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2fother%2fbillionaire-investor-koguan-vows-to-stop-buying-nvidia-stock-after-huang-exit-musk-and-others-back-ex-ceo%2far-AA2hngZo&c=4976999320271192879&mkt=en-us",
-          "date": "2026-11-13",
-          "summary": "KoGuan said he hopes to invest in any new AI venture led by Huang, while Musk and other tech leaders praised the former Nvidia CEO amid the scandal."
-        },
-        {
-          "title": "How Nvidia's stock decline could impact your 401(k) and portfolio",
+          "title": "Nvidia live updates: Following Jensen Huang's resignation as CEO, allegations of a third affair emerge - Yahoo Finance",
           "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/article/how-nvidias-stock-decline-could-impact-your-401k-and-portfolio-181913465.html?.tsrc=rss",
+          "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNUjN6ZHpwVTN4R3loaDYzLThpNnhsUmY5NGoxLWJIaG5WSWlSNE5iVi1OS0RxNnpZNUFDLWhXWUY0TDZ3UUlpYThqWFc3SlhRV185N2RGNmFpYjlGWUg5TUVWNzhEUkF6TVdxbGVLN3VGc19xZHM4QjQ4eWkwZUxGaXB6LXBydzloUHpySXpWZ0NVSHh4VWtuSWtidnBJNEZYem96el9VOXVVZmVvWGVQNEJlb1RKdkVqWUNhY2hyT2VuZjZIdWd4TVNhT1VhY0NRWWV0VHVsZjlwS3pGdkxLLUJJS0JtNDJxaFVzNQ?oc=5",
           "date": "2026-11-13",
-          "summary": "You don't need to own a single share of Nvidia to feel the impact."
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi7AFBVV95cUxNUjN6ZHpwVTN4R3loaDYzLThpNnhsUmY5NGoxLWJIaG5WSWlSNE5iVi1OS0RxNnpZNUFDLWhXWUY0TDZ3UUlpYThqWFc3SlhRV185N2RGNmFpYjlGWUg5TUVWNzhEUkF6TVdxbGVLN3"
         },
         {
-          "title": "Nvidia: Jensen Huang Could Return As CEO",
+          "title": "Nvidia stock slide wipes out more than $20B in value for Jensen Huang over 5 days",
+          "source": "Bing News",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77a9b51fd4b2ebb82a40529486929&url=https%3a%2f%2fwww.msn.com%2fen-us%2fmoney%2feconomy%2fnvidia-stock-slide-wipes-out-more-than-20b-in-value-for-jensen-huang-over-5-days%2far-AA2hnGRj&c=9550907846507614300&mkt=en-us",
+          "date": "2026-11-13",
+          "summary": "The declining share price of Nvidia this week has wiped out around $20 billion of the value of ex-CEO Jensen Huang's stock holdings in the company."
+        },
+        {
+          "title": "'Nothing has changed': Why some Nvidia stock bulls aren't wavering after Jensen Huang ouster",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/technology/article/nothing-has-changed-why-some-nvidia-stock-bulls-arent-wavering-after-jensen-huang-ouster-204522204.html?.tsrc=rss",
+          "date": "2026-11-13",
+          "summary": "The bulls refuse to completely throw in the towel on Nvidia."
+        },
+        {
+          "title": "SA Asks: How much will Jensen Huang's departure hurt Nvidia? (Update)",
           "source": "Seeking Alpha",
-          "url": "https://seekingalpha.com/article/4967912-nvidia-jensen-huang-could-return-as-ceo?source=feed_symbol_NVDA",
+          "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
           "date": "2026-11-13",
           "summary": ""
         },
@@ -3450,18 +3475,11 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxNSmg4NHJ5V24yXzQ2TFZvRlVSeEJJSGFhUm5uYUUxTXhMVWhLdzlkOFhfUktLVDBrV2VkTnVwZnUxN3MzZlhYbUdCY3JhRkJWTEd2MW9IZDVJc0xOVjVsN2ppZS1vX3Zia2pYd0xabl"
         },
         {
-          "title": "Stock Market Today: Nvidia Set to Recoup Some Losses as Investors Parse Fallout From Jensen Huang's Exit",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bae0c234ea889204d19d96f1271&url=https%3a%2f%2fwww.wsj.com%2flivecoverage%2fstock-market-today-dow-sp-500-nasdaq-11-13-2026&c=646409851027739191&mkt=en-us",
-          "date": "2026-11-13",
-          "summary": "Live updates on stocks, bonds and markets, including the Dow Jones Industrial Average, S&P 500 and Nasdaq Composite ..."
-        },
-        {
-          "title": "Why Sandisk Stock Is Falling Today",
+          "title": "Rene Haas, Ian Buck, Chris Malachowsky: Wall Street zeroes in on potential Nvidia CEO successors",
           "source": "Yahoo Finance",
-          "url": "https://www.fool.com/investing/2026/11/13/why-sandisk-stock-is-falling-today/?.tsrc=rss",
+          "url": "https://finance.yahoo.com/markets/article/rene-haas-ian-buck-chris-malachowsky-wall-street-zeroes-in-on-potential-nvidia-ceo-successors-204105759.html?.tsrc=rss",
           "date": "2026-11-13",
-          "summary": "Sandisk is falling for a second day as the fallout from Nvidia's CEO exit hits AI hardware stocks, even though its latest quarter was huge."
+          "summary": "Wall Street has a list of names that could replace Jensen Haung, including Rene Haas, Ian Buck and others."
         }
       ],
       "morningstar": {},
@@ -3470,12 +3488,12 @@
           {
             "period": "0",
             "strongBuy": 10,
-            "buy": 48,
-            "hold": 3,
-            "sell": 1,
+            "buy": 38,
+            "hold": 13,
+            "sell": 0,
             "strongSell": 0,
-            "total": 62,
-            "buy_pct": 93.5,
+            "total": 61,
+            "buy_pct": 78.7,
             "grade": "Buy"
           },
           {
@@ -3983,6 +4001,34 @@
       },
       "news": [
         {
+          "title": "Is Nokia Attractive as AI Growth Meets Valuation and Execution Risks? - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOZ0E2dTNYNFhCSHdCWkNySHBtQTZCZ1JFSnp2ZmJOX0trRkdfbE9UTlZyOWJwT19kaF94WDRzS1hNbkZiMUhSZkM5eHltUHhyM21ySjhqbXdYczdRZUI4M05ENHA5SExkWWg2RkpqUENOdG90X1JKcFF0VFlPeGMzckNQXzlLdWdjMTFDN2poX3I4V0NJYkNIY0F3NUJNUQ?oc=5",
+          "date": "2026-11-13",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxOZ0E2dTNYNFhCSHdCWkNySHBtQTZCZ1JFSnp2ZmJOX0trRkdfbE9UTlZyOWJwT19kaF94WDRzS1hNbkZiMUhSZkM5eHltUHhyM21ySjhqbXdYczdRZUI4M05ENHA5SExkWWg2RkpqUE"
+        },
+        {
+          "title": "Is Nokia Attractive as AI Growth Meets Valuation and Execution Risks?",
+          "source": "Bing News",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77a9b81cd4ff48380e1534fac959e&url=https%3a%2f%2ffinance.yahoo.com%2fmarkets%2fstocks%2farticles%2fnokia-attractive-ai-growth-meets-175700285.html&c=9083600794108309814&mkt=en-us",
+          "date": "2026-11-13",
+          "summary": "NOK's AI and Cloud growth prospects strengthen its outlook, but restructuring costs, weak cash conversion and mixed valuation warrant investor caution."
+        },
+        {
+          "title": "Nokia Falls 3.4% in a Week as AI Growth Collides With Cash Flow Risks - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxORmdMaEwwd0tpUW03RzZ2eEZYS0xTTGswRGJqOTEzd19iTVFad0hzMVkzSWo2ZUJ2ZmRrUTFIRUp1eEZhMEZEUk1ySGpNaUtqOXlWWjlJc21KVkVqRFpoaXBLQnZ2Z3dMc3dhRDZXM1BWUkRNSUphNjdrQjhlWTAwRXExNUZ3V21Bdk94ZzVzcjB0d2t1S09MLVpTcw?oc=5",
+          "date": "2026-11-13",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxORmdMaEwwd0tpUW03RzZ2eEZYS0xTTGswRGJqOTEzd19iTVFad0hzMVkzSWo2ZUJ2ZmRrUTFIRUp1eEZhMEZEUk1ySGpNaUtqOXlWWjlJc21KVkVqRFpoaXBLQnZ2Z3dMc3dhRDZXM1"
+        },
+        {
+          "title": "Nokia Falls 3.4% in a Week as AI Growth Collides With Cash Flow Risks",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/nokia-falls-3-4-week-175200635.html?.tsrc=rss",
+          "date": "2026-11-13",
+          "summary": "NOK shares fall 3.4% in a week despite surging AI demand, as weak cash conversion, restructuring costs and uneven telecom spending cloud its 2027 growth outlook."
+        },
+        {
           "title": "Nokia Corporation - Managers' transactions (Mahajan)",
           "source": "Yahoo Finance",
           "url": "https://finance.yahoo.com/markets/stocks/articles/nokia-corporation-managers-transactions-mahajan-150000694.html?.tsrc=rss",
@@ -3990,39 +4036,11 @@
           "summary": "Nokia CorporationManagers\u2019 transactions13 November 2026 at 17:00 EETNokia Corporation - Managers' transactions (Mahajan) Transaction notification under Article 19 of EU Market Abuse Regulation._______"
         },
         {
-          "title": "Is Nokia Attractive as AI Growth Meets Valuation and Execution Risks? - Zacks Investment Research",
-          "source": "Zacks Investment Research",
-          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPbzJ5bGJtaTNuV0tBc25VbG1DNFZub200M01hUXRkM0UtZzY3SUxDSGlEaTBDb3RieEFVREllMi1XQWliOVAwTmpzNXpiQjlXQ0kxdTlEcGVSeVUwbWtjdzhfNTBLTk5LS3lBRm1TVVZYZ2JnX0FqRmUtQTUwd0d2V0RQdmVvMWlKMmxpLVFnVEN4SzdUTFU1QWl5U3kydFlBVW1RN0NhWmRpcDBrUnc?oc=5",
+          "title": "Nokia Discloses Senior Managers\u2019 Share Acquisitions - TipRanks",
+          "source": "TipRanks",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNdUJwT2dGZXBBUjNBSks3VGYxV1FpM2F4ekZETkdGbzhCQ0J4eUdiMVFqUk5PbTdCR2c1UWpuVG16bC0wbXVlNUdreG8tTUdNYUJUdTlZRkF0TTRSaHIwb3hJb2FpNmRzUmV2WFBuNndVX0s0cVoyUEZpZGd4YlBjdEdvQnMwTTNxOFlJX1llb1ZkdVNDdFh0OFpjSUctZzFvUFRaQg?oc=5",
           "date": "2026-11-13",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPbzJ5bGJtaTNuV0tBc25VbG1DNFZub200M01hUXRkM0UtZzY3SUxDSGlEaTBDb3RieEFVREllMi1XQWliOVAwTmpzNXpiQjlXQ0kxdTlEcGVSeVUwbWtjdzhfNTBLTk5LS3lBRm1TVV"
-        },
-        {
-          "title": "Nokia Corporation - Managers' transactions (Heard)",
-          "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/nokia-corporation-managers-transactions-heard-150000461.html?.tsrc=rss",
-          "date": "2026-11-13",
-          "summary": "Nokia CorporationManagers\u2019 transactions13 November 2026 at 17:00 EETNokia Corporation - Managers' transactions (Heard) Transaction notification under Article 19 of EU Market Abuse Regulation._________"
-        },
-        {
-          "title": "TMUS vs. NOK: Which Telecom Stock is the Better Buy Now? - TradingView",
-          "source": "TradingView",
-          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVzhEenB5YkVweXFFNzdacTRSUlJfdWNBM1JpOWNfSmlkcmdkYktyWEJHeUJDcDh0LVdpZmZPX3ZEeXB5MVQ4dy13WUl0MER3QUR5UVotTHlvNTFKNllXTmxfQ0htaDdxTnl2Z2RGRVgwYWM2SWQtajlVdm1OTWZwZFJvd0xTUFhkSS1VU21CU3pKWTA5U3Y0WjNPSnpUMXlPTVJtZ0JkRTRhRi1kSXc?oc=5",
-          "date": "2026-11-13",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQVzhEenB5YkVweXFFNzdacTRSUlJfdWNBM1JpOWNfSmlkcmdkYktyWEJHeUJDcDh0LVdpZmZPX3ZEeXB5MVQ4dy13WUl0MER3QUR5UVotTHlvNTFKNllXTmxfQ0htaDdxTnl2Z2RGRV"
-        },
-        {
-          "title": "Nokia Corporation - Managers' transactions (Prosi)",
-          "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/nokia-corporation-managers-transactions-prosi-150000061.html?.tsrc=rss",
-          "date": "2026-11-13",
-          "summary": "Nokia CorporationManagers\u2019 transactions13 November 2026 at 17:00 EETNokia Corporation - Managers' transactions (Prosi) Transaction notification under Article 19 of EU Market Abuse Regulation._________"
-        },
-        {
-          "title": "Nokia Corporation - Managers' transactions (Sahgal)",
-          "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/nokia-corporation-managers-transactions-sahgal-150000581.html?.tsrc=rss",
-          "date": "2026-11-13",
-          "summary": "Nokia CorporationManagers\u2019 transactions13 November 2026 at 17:00 EETNokia Corporation - Managers' transactions (Sahgal) Transaction notification under Article 19 of EU Market Abuse Regulation.________"
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxNdUJwT2dGZXBBUjNBSks3VGYxV1FpM2F4ekZETkdGbzhCQ0J4eUdiMVFqUk5PbTdCR2c1UWpuVG16bC0wbXVlNUdreG8tTUdNYUJUdTlZRkF0TTRSaHIwb3hJb2FpNmRzUmV2WFBuNn"
         }
       ]
     },
@@ -4111,6 +4129,14 @@
           "source": "consensus"
         },
         {
+          "date": "3",
+          "firm": "31 Buy \u00b7 0 Hold \u00b7 0 Sell (31 analysts)",
+          "from_grade": "",
+          "to_grade": "Buy",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
           "date": "2026-11-04",
           "firm": "UBS",
           "from_grade": "Buy",
@@ -4417,14 +4443,6 @@
         {
           "date": "2026-11-04",
           "firm": "Piper Sandler",
-          "from_grade": "Overweight",
-          "to_grade": "Overweight",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-11-04",
-          "firm": "Barclays",
           "from_grade": "Overweight",
           "to_grade": "Overweight",
           "action": "up",
@@ -4503,7 +4521,7 @@
         {
           "title": "What Did Arista Networks Stock Investors Miss Before The Run?",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75baf71c7427faf71352778f61bae&url=https%3a%2f%2ffinance.yahoo.com%2fmarkets%2fstocks%2farticles%2fdid-arista-networks-stock-investors-121251283.html&c=15565146804700143716&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77a9c3fa844d8865ea386c2b389d6&url=https%3a%2f%2ffinance.yahoo.com%2fmarkets%2fstocks%2farticles%2fdid-arista-networks-stock-investors-121251283.html&c=15565146804700143716&mkt=en-us",
           "date": "2026-11-13",
           "summary": "Arista Networks (ANET) stock returned 53.1% in the twelve months to November 12, 2026, against 12.2% for the S&P 500. The shares had already risen 38.7% in the six months before that stretch began."
         },
@@ -4529,11 +4547,11 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMiiwFBVV95cUxOdUhVRl91VThhSEs1eTNqMThaNV9vSVZpVWRQYjZYS0VEZm5XQURZMnhNOE1lWi1NNkI5N0ZaWmthNnlpMGdiaHFfWVRjZXBhZ2YtVnJ1czhnZThPWWh4VWhJSXlFT2NtWTB0UFJSRz"
         },
         {
-          "title": "Arista Networks (ANET) Guides Higher, Is The Stock Overvalued Following Earnings?",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75baf71c7427faf71352778f61bae&url=https%3a%2f%2ffinance.yahoo.com%2fmarkets%2fstocks%2farticles%2farista-networks-anet-guides-higher-201254192.html&c=644130926059759574&mkt=en-us",
-          "date": "2026-11-12",
-          "summary": "What Arista Networks\u2019 latest earnings and guidance tell investors Arista Networks (ANET) just paired a third quarter earnings update with fresh fourth quarter 2026 guidance, giving investors new ..."
+          "title": "Will Arista Networks stock recover soon as sellers dominate the current trend? - Traders Union",
+          "source": "Traders Union",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOWFFyRE44Sl9fQ0xTUXpOaHRveXVfdTQ4Y3FFY2pkWnlscS1rNmNTaDZMTjUtV21IV3JEMVFOclA5b1NfZHpjMVA4ZDdmV2hVZ1hpcFFndTloZzVqWUs0OS0ydHgxQmtnVzhCZXhNUnRwRkJpa1Vwamd1c2VQeDFzUk9EVTd5QjJJZzhMVmlLQlBFdnFz?oc=5",
+          "date": "2026-11-13",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMilAFBVV95cUxOWFFyRE44Sl9fQ0xTUXpOaHRveXVfdTQ4Y3FFY2pkWnlscS1rNmNTaDZMTjUtV21IV3JEMVFOclA5b1NfZHpjMVA4ZDdmV2hVZ1hpcFFndTloZzVqWUs0OS0ydHgxQmtnVzhCZXhNUn"
         }
       ]
     },
@@ -5005,13 +5023,6 @@
       },
       "news": [
         {
-          "title": "Why Micron Stock Was Sliding Today - The Motley Fool",
-          "source": "The Motley Fool",
-          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQWm51RHk0MnZpTDZrTWFTR0l5RDJyTVBFWFBEQTNoVHZmQUNxLS1lMTlyNzJKajJkd1RHOW1LRVBPaFR5djF1aUJEV0ZxamlhTTZOUUhBSXVEenMzRVN1S05qZ282V3ZYa0xIa0FJVE52c1NNN08xbEUxaFQ2VXZldkN5cw?oc=5",
-          "date": "2026-11-13",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxQWm51RHk0MnZpTDZrTWFTR0l5RDJyTVBFWFBEQTNoVHZmQUNxLS1lMTlyNzJKajJkd1RHOW1LRVBPaFR5djF1aUJEV0ZxamlhTTZOUUhBSXVEenMzRVN1S05qZ282V3ZYa0xIa0FJVE"
-        },
-        {
           "title": "Micron Stocks Fall 3.96% as Nvidia CEO Exit Drags Memory Shares Lower",
           "source": "Yahoo Finance",
           "url": "https://finance.yahoo.com/markets/stocks/articles/micron-stocks-fall-3-96-175931806.html?.tsrc=rss",
@@ -5026,6 +5037,13 @@
           "summary": ""
         },
         {
+          "title": "Micron Stock Has Moved 5% or More on a Third of Its Trading Days Since October. Here's How Much of It I'd Own. - The Motley Fool",
+          "source": "The Motley Fool",
+          "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQWjlxbUNIRG1pZjQ3T0tPbFRxY3JCVEU5WjJUZjZCQThOdENMeW5wTC1BS0IzMGhhcEFWYkR6bnRLcEtBVkQ4Y20tVVV5NnIxTkMwazZscElsYXNDeDBDMG9wOUM3eFI2am1YMWVVSlBWalBHTm83UC1ZbkgzRlE0WVg4R1lZM2cwdUMyRUEweGdhVFBqOXlvVDEtWXc1UmZWU0p0eTUwQnhKQjdCdHVjc2M1TW1BZUVtYXl2djdMS1dhZnJOWnMwS1N1ZzNjZm5aMmd3X0dPQlRDNEpBVWhsdi1ZcU4?oc=5",
+          "date": "2026-11-13",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi5AFBVV95cUxQWjlxbUNIRG1pZjQ3T0tPbFRxY3JCVEU5WjJUZjZCQThOdENMeW5wTC1BS0IzMGhhcEFWYkR6bnRLcEtBVkQ4Y20tVVV5NnIxTkMwazZscElsYXNDeDBDMG9wOUM3eFI2am1YMWVVSl"
+        },
+        {
           "title": "Micron Is Down 20% in a Month. What Will It Take to Get MU Stock Back to $1,000?",
           "source": "Yahoo Finance",
           "url": "https://247wallst.com/investing/2026/11/13/micron-is-down-20-in-a-month-what-will-it-take-to-get-mu-stock-back-to-1000/?.tsrc=rss",
@@ -5033,11 +5051,11 @@
           "summary": "Micron posted record results and still watched its shares tumble, while SanDisk and Western Digital fell even harder. Two forces, one in memory pricing and one in market mood, will decide whether the "
         },
         {
-          "title": "Why Micron Stock Was Sliding Today",
+          "title": "What Micron Stock Needs to Mount a Serious Rally",
           "source": "Yahoo Finance",
-          "url": "https://www.fool.com/investing/2026/11/13/why-micron-stock-was-sliding-today/?.tsrc=rss",
+          "url": "https://finance.yahoo.com/m/35f28542-f0c0-309b-9b41-62718a279985/what-micron-stock-needs-to.html?.tsrc=rss",
           "date": "2026-11-13",
-          "summary": "Malaise about the broader AI sector seemed to sink in following Jensen Huang's resignation from Nvidia."
+          "summary": "Micron stock is up 16% in the past five trading sessions. Watch these factors for what happens next."
         },
         {
           "title": "Micron Technology Inc Stock (MU) Moved Down by 4.69% on Nov 13: What Signal Does It Send? - TradingKey",
@@ -5052,6 +5070,14 @@
       "ticker": "INTC",
       "name": "Intel",
       "ratings": [
+        {
+          "date": "2026-11-12",
+          "firm": "B of A Securities",
+          "from_grade": "Neutral",
+          "to_grade": "Neutral",
+          "action": "reit",
+          "source": "broker"
+        },
         {
           "date": "2026-11-12",
           "firm": "B of A Securities",
@@ -5443,14 +5469,6 @@
           "to_grade": "Neutral",
           "action": "reit",
           "source": "broker"
-        },
-        {
-          "date": "2026-10-31",
-          "firm": "UBS",
-          "from_grade": "Neutral",
-          "to_grade": "Neutral",
-          "action": "reit",
-          "source": "broker"
         }
       ],
       "new_ratings": [],
@@ -5530,11 +5548,18 @@
           "summary": ""
         },
         {
-          "title": "Intel Stocks Fall 4.55% as Nvidia Shake-Up Clouds Its $5 Billion Partner Bet",
+          "title": "Intel Stocks Fall 4.55% as Nvidia Shake-Up Clouds Its $5 Billion Partner Bet - Yahoo Finance",
           "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/intel-stocks-fall-4-55-175351220.html?.tsrc=rss",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPWXZ6MHdRYnBSRGdIQW1kT3JBSkRMSk1UY0ZiTzN6TWEycjBsMFVfU3Z0S0ItYlNlaG82djF1WElpWlhPQkNLMWIzWXNZUWlvZjJhNjZJZFRKS1BUbzhVeTFOVGdoRlFNSmFvZW9GR0Z2WnNOUElnVWFHTjVqTUtZUnZJbHJ1bTdQVkdROHBwbUo?oc=5",
           "date": "2026-11-13",
-          "summary": "Nvidia's stake, bought at $23.28 a share, is now worth about $12.5 billion, but the next round of joint deals looks less certain."
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxPWXZ6MHdRYnBSRGdIQW1kT3JBSkRMSk1UY0ZiTzN6TWEycjBsMFVfU3Z0S0ItYlNlaG82djF1WElpWlhPQkNLMWIzWXNZUWlvZjJhNjZJZFRKS1BUbzhVeTFOVGdoRlFNSmFvZW9GR0"
+        },
+        {
+          "title": "AMD or Intel: 1 Chip Stock Is the Clear Winner",
+          "source": "Yahoo Finance",
+          "url": "https://www.fool.com/investing/2026/11/13/amd-or-intel-1-chip-stock-is-the-clear-winner/?.tsrc=rss",
+          "date": "2026-11-13",
+          "summary": "It's really not close."
         },
         {
           "title": "Chip stocks slide as Nvidia rebound fades",
@@ -5544,18 +5569,11 @@
           "summary": ""
         },
         {
-          "title": "What Is Going On With Intel Stock After Its Earnings Call? - Trefis",
-          "source": "Trefis",
-          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOdU5BQnBrOXVIdzNsVmFZZXQyb2dHMkkzd2p3UXRuV3RCQzlLRi1LQUpKQzc2alF4S21rZkh5OHMxbWkxbTVMYnZRaHVPaHk3S21RQ192YnVZZE9VeEZKRWhJc2pYZm5INnFmM3pNZm14WTNsREVIOWxxVkZBdjJsdzhXc3AwSFg4eVFtTXlIQjZVNDdHNjUyTE1TeENvSXRlX3BZcl9YSTRQcmZBSmYyckl3b0VlUk5BS3c?oc=5",
+          "title": "AMD or Intel: 1 Chip Stock Is the Clear Winner - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPdHBQQld4eGVlRXdIRDFvUUpkTWhEd0Q0WVUwUnNnbGNNWmQ5NHplc1Z2azhyWTR6elpkUG5rX1pSQ0s0a3IySWd5VE9WOHowY285eWhlVjFoVzlsNUtydVN1dHpIanA2UldHdXFjdFYwWXpnRTdJZGJaUDlCdHkwVGhqbkRaTFE5bHdxTDYzUmI?oc=5",
           "date": "2026-11-13",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxOdU5BQnBrOXVIdzNsVmFZZXQyb2dHMkkzd2p3UXRuV3RCQzlLRi1LQUpKQzc2alF4S21rZkh5OHMxbWkxbTVMYnZRaHVPaHk3S21RQ192YnVZZE9VeEZKRWhJc2pYZm5INnFmM3pNZm"
-        },
-        {
-          "title": "What Is Going On With Intel Stock After Its Earnings Call?",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bb089774395827bb07837d8df70&url=https%3a%2f%2ffinance.yahoo.com%2fmarkets%2fstocks%2farticles%2fgoing-intel-stock-earnings-call-165315329.html&c=13355914320190637587&mkt=en-us",
-          "date": "2026-11-13",
-          "summary": "The above button links to Coinbase. Yahoo Finance is not a broker-dealer or investment adviser and does not offer securities or cryptocurrencies for sale or facilitate trading. Coinbase pays us for .."
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxPdHBQQld4eGVlRXdIRDFvUUpkTWhEd0Q0WVUwUnNnbGNNWmQ5NHplc1Z2azhyWTR6elpkUG5rX1pSQ0s0a3IySWd5VE9WOHowY285eWhlVjFoVzlsNUtydVN1dHpIanA2UldHdXFjdF"
         }
       ]
     },
@@ -5563,6 +5581,38 @@
       "ticker": "AMD",
       "name": "Advanced Micro Devices",
       "ratings": [
+        {
+          "date": "2026-11-12",
+          "firm": "B of A Securities",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-11-12",
+          "firm": "RBC Capital",
+          "from_grade": "Sector Perform",
+          "to_grade": "Sector Perform",
+          "action": "reit",
+          "source": "broker"
+        },
+        {
+          "date": "2026-11-12",
+          "firm": "William Blair",
+          "from_grade": "Market Perform",
+          "to_grade": "Outperform",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-11-09",
+          "firm": "Oppenheimer",
+          "from_grade": "Perform",
+          "to_grade": "Outperform",
+          "action": "up",
+          "source": "broker"
+        },
         {
           "date": "2026-11-12",
           "firm": "B of A Securities",
@@ -5930,38 +5980,6 @@
           "to_grade": "Buy",
           "action": "up",
           "source": "broker"
-        },
-        {
-          "date": "2026-11-04",
-          "firm": "Keybanc",
-          "from_grade": "Overweight",
-          "to_grade": "Overweight",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-11-04",
-          "firm": "Rosenblatt",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-11-04",
-          "firm": "Mizuho",
-          "from_grade": "Outperform",
-          "to_grade": "Outperform",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-11-04",
-          "firm": "Cantor Fitzgerald",
-          "from_grade": "Overweight",
-          "to_grade": "Overweight",
-          "action": "up",
-          "source": "broker"
         }
       ],
       "new_ratings": [],
@@ -5970,12 +5988,12 @@
           {
             "period": "0",
             "strongBuy": 5,
-            "buy": 40,
-            "hold": 8,
+            "buy": 42,
+            "hold": 7,
             "sell": 0,
             "strongSell": 0,
-            "total": 53,
-            "buy_pct": 84.9,
+            "total": 54,
+            "buy_pct": 87.0,
             "grade": "Buy"
           },
           {
@@ -6027,11 +6045,11 @@
       },
       "news": [
         {
-          "title": "Stock Market Midday, Nov. 13: Nasdaq Plunges as Nvidia Turmoil Deepens and Treasury Yields Hit 5%",
+          "title": "Bank of America resets AMD stock price target as Nvidia CEO exits",
           "source": "Yahoo Finance",
-          "url": "https://www.fool.com/coverage/stock-market-today/2026/11/13/stock-market-midday-nov-13-nasdaq-plunges-as-nvidia-turmoil-deepens-and-treasury-yields-hit-5/?.tsrc=rss",
+          "url": "https://www.thestreet.com/investing/stocks/bank-of-america-amd-price-target?.tsrc=rss",
           "date": "2026-11-13",
-          "summary": "Markets came under renewed pressure Friday as rising Treasury yields and uncertainty surrounding the AI industry sparked a rotation out of technology stocks and into defensive sectors."
+          "summary": "The biggest clue wasn\u2019t in the price target."
         },
         {
           "title": "AMD: The AI Trade Just Entered Another Phase",
@@ -6041,11 +6059,25 @@
           "summary": ""
         },
         {
-          "title": "AMD Stocks Fall 6.46% After 30% Weekly Surge on Nvidia Leadership Shock",
+          "title": "Why Advanced Micro Devices Stock Is Down Today - Yahoo Finance",
           "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/amd-stocks-fall-6-46-172243555.html?.tsrc=rss",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOVEFLanBoU3haWmJMX3Y5aVNYcVdjSnI2LTJPYlNFTUFoMGdxQnB0UFpKV2pmalBMd1ZNSS1kZTVBSzBWQXJhY2Y2TjJYbFcydE5LODRqX3BXRWJ3RmstN0YzTFZVS2Y0OWM3OVhwNWtJWWhLRkJmZHdTdFA4Tl8yVU90cEg0YUhMN19KUHlHa05oNWRRUmVTSzVjN1N3Zw?oc=5",
           "date": "2026-11-13",
-          "summary": "The pullback trims a rally of roughly 30% this week, while Michael Burry publicly doubled his bet against the Nasdaq 100."
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxOVEFLanBoU3haWmJMX3Y5aVNYcVdjSnI2LTJPYlNFTUFoMGdxQnB0UFpKV2pmalBMd1ZNSS1kZTVBSzBWQXJhY2Y2TjJYbFcydE5LODRqX3BXRWJ3RmstN0YzTFZVS2Y0OWM3OVhwNW"
+        },
+        {
+          "title": "AMD stock has outrun Nvidia 5x since 2024 but there\u2019s a valuation catch",
+          "source": "Bing News",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77a9d0ec643858fc3731218c0e71c&url=https%3a%2f%2fwww.msn.com%2fen-us%2fmoney%2ftop-stocks%2famd-stock-has-outrun-nvidia-5x-since-2024-but-there-s-a-valuation-catch%2far-AA2hnwoV&c=3886359016094525809&mkt=en-us",
+          "date": "2026-11-13",
+          "summary": "Advanced Micro Devices, Inc.\u2018s (NASDAQ:AMD) remarkable stock-market run has given investors a reason to revisit a once-contrarian bet against Nvidia Corp (NASDAQ:NVDA). But the rally has also created "
+        },
+        {
+          "title": "AMDL 2X AMD ETF Tumbles 18% as AMD Sinks Amid Michael Burry\u2019s Bearish Chip Bets",
+          "source": "Yahoo Finance",
+          "url": "https://247wallst.com/investing/2026/11/13/amdl-2x-amd-etf-tumbles-18-as-amd-sinks-amid-michael-burrys-bearish-chip-bets/?.tsrc=rss",
+          "date": "2026-11-13",
+          "summary": "A leveraged AMD fund is getting crushed just as a famous short seller doubles down on chips and NVIDIA's turmoil shakes the sector. Why is AMD falling harder than the stock at the center of the storm?"
         },
         {
           "title": "Chip stocks slide as Nvidia rebound fades",
@@ -6053,20 +6085,6 @@
           "url": "https://seekingalpha.com/symbol/AMD/news?source=feed_symbol_AMD",
           "date": "2026-11-13",
           "summary": ""
-        },
-        {
-          "title": "How to Play AMD Stock as Google Picks EPYC for Its Next-Gen TPUs - Barchart.com",
-          "source": "Barchart.com",
-          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPSHhROUlmYVBZV2NyTXp4YmF3SmUwT1EybVZVcVRrYWdGZGFOaVBrSW9FVmFnY0Q2WkliT0hkV252ZmhGLTQ5aXdFTlZJS08yTEFINlBhZkJvT05pSU16T2FtdV8za2hnR2FMWDN6YzNrbFNQQlh1N3lhYXhENFE3dUZja3BLd1NCWF9DaUZhMk9RWWphMEVDQjBBSk5vbWFucDhKZGlKbnptQU9Y?oc=5",
-          "date": "2026-11-13",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxPSHhROUlmYVBZV2NyTXp4YmF3SmUwT1EybVZVcVRrYWdGZGFOaVBrSW9FVmFnY0Q2WkliT0hkV252ZmhGLTQ5aXdFTlZJS08yTEFINlBhZkJvT05pSU16T2FtdV8za2hnR2FMWDN6Yz"
-        },
-        {
-          "title": "Nvidia, AMD, Microsoft, Cerebras, Cisco, Modine, and More Stocks That Explain Today\u2019s Market",
-          "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/m/fa0293c5-bebc-3c34-924d-04a0b56c1b18/nvidia%2C-amd%2C-microsoft%2C.html?.tsrc=rss",
-          "date": "2026-11-13",
-          "summary": "Microsoft falls as a global outage across the company\u2019s tools impact millions of people."
         }
       ]
     },
@@ -6076,25 +6094,25 @@
       "ratings": [],
       "news": [
         {
-          "title": "Strategy Stocks Fall 3.64% as Bitcoin Breaks $70,000 Ahead of MSCI Exit - Yahoo Finance",
+          "title": "How Bitcoin Gains Will Impact Trump Media Stock Investors - Yahoo Finance",
           "source": "Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOV2V4UW9qZ2FJZUpnZ0drLWlUN0R6V24wZTJxQzBYQ1VxdV9JLWZHQUduRlZzbVpTV2V6NnhkMHF2VThPdW5KVUxubktHZTFNUkp4XzlZQi00U1BxbHZPS3k3QlZmcEQ4OVZDZ0RYeUVyd28zN2NrVFdLRFBqYklONFRqNWxYUnVQb3pGZEE0cUNlNkk5?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOaEhfNFJZdlVyaHJEemJDS0xVMk1jVUszNVBJSm1BMTN0VmRHNHVIRE1YeXNSY3k1R1k2SjNzWGpNdDZ4MTM3ODFmeS1BZDBQeEJsS2Y4Vm9mVnl1dFZ6QXNURzB4ZnFKMGl4Zm5fc2lraVdtWTdOcGpRZm10bFluUENaWHo3djJzZW9iWUx5STBJc2J1dkZIc0F3cVZkQQ?oc=5",
           "date": "2026-11-13",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMilAFBVV95cUxOV2V4UW9qZ2FJZUpnZ0drLWlUN0R6V24wZTJxQzBYQ1VxdV9JLWZHQUduRlZzbVpTV2V6NnhkMHF2VThPdW5KVUxubktHZTFNUkp4XzlZQi00U1BxbHZPS3k3QlZmcEQ4OVZDZ0RYeU"
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxOaEhfNFJZdlVyaHJEemJDS0xVMk1jVUszNVBJSm1BMTN0VmRHNHVIRE1YeXNSY3k1R1k2SjNzWGpNdDZ4MTM3ODFmeS1BZDBQeEJsS2Y4Vm9mVnl1dFZ6QXNURzB4ZnFKMGl4Zm5fc2"
         },
         {
-          "title": "JPMorgan\u2019s latest filing reveals a bigger Bitcoin footprint",
+          "title": "What Bitcoin Did Every Time It Fell to Its 200-Week Average",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bb26f7349039167f03c4331a1eb&url=https%3a%2f%2fwww.thestreet.com%2fcrypto%2finvesting%2fjpmorgans-latest-filing-reveals-a-bigger-bitcoin-footprint&c=16807567183785437207&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77a9ea72b43edb4aa7a662db7cc2a&url=https%3a%2f%2ffinance.yahoo.com%2fmarkets%2fcrypto%2farticles%2fbitcoin-did-every-time-fell-175943418.html&c=16676263081091526615&mkt=en-us",
           "date": "2026-11-13",
-          "summary": "JPMorgan\u2019s latest SEC filing shows growing positions in Bitcoin-linked stocks and funds, including a big jump in one company."
+          "summary": "Bitcoin is testing a support line that has cracked before, and the aftermath looked very different each time. With ETF outflows mounting and rate hike odds climbing, this dip may not follow the old .."
         },
         {
-          "title": "Sector Update: Financial Stocks Higher Friday Afternoon",
+          "title": "Sector Update: Financial Stocks Higher Late Afternoon",
           "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-higher-friday-184112484.html?.tsrc=rss",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-higher-afternoon-205120843.html?.tsrc=rss",
           "date": "2026-11-13",
-          "summary": "Financial stocks were advancing in Friday afternoon trading, with the NYSE Financial Index up 0.4% a"
+          "summary": "Financial stocks rose in late Friday afternoon trading, with the NYSE Financial Index gaining 0.4% a"
         },
         {
           "title": "Bitcoin slips 4% below $70K mark as broader crypto market faces heavy liquidations",
@@ -6106,16 +6124,16 @@
         {
           "title": "MSTR Stock Slides as Bitcoin Sinks Below Strategy\u2019s $75,456 Cost and JPMorgan Lifts Its Stake 36%",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bb26f7349039167f03c4331a1eb&url=https%3a%2f%2ffinancefeeds.com%2fmstr-stock-bitcoin-below-strategy-cost-jpmorgan%2f&c=10513666342705274128&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77a9ea72b43edb4aa7a662db7cc2a&url=https%3a%2f%2ffinancefeeds.com%2fmstr-stock-bitcoin-below-strategy-cost-jpmorgan%2f&c=10513666342705274128&mkt=en-us",
           "date": "2026-11-13",
           "summary": "MSTR stock fell 6.49% as Bitcoin dropped 8.3% below Strategy\u2019s $75,456 average cost, while a 13F showed JPMorgan lifting its stake 36% ahead of the MSCI exit."
         },
         {
-          "title": "Fed Chair Warsh Wants Answers on AI Inflation\u2014and Bitcoin May Feel the Impact",
+          "title": "JPMorgan\u2019s latest filing reveals a bigger Bitcoin footprint",
           "source": "Yahoo Finance",
-          "url": "https://decrypt.co/383259/fed-chair-warsh-wants-answers-ai-inflation-bitcoin?.tsrc=rss",
+          "url": "https://www.thestreet.com/crypto/investing/jpmorgans-latest-filing-reveals-a-bigger-bitcoin-footprint?.tsrc=rss",
           "date": "2026-11-13",
-          "summary": "The Federal Reserve is examining whether AI will lower prices or keep inflation elevated, a question that could shape interest rates and the outlook for crypto."
+          "summary": "JPMorgan\u2019s latest SEC filing shows growing positions in Bitcoin-linked stocks and funds, including a big jump in one company."
         }
       ],
       "new_ratings": [],
@@ -6148,11 +6166,11 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQUUtBRjRBRE95bmxqb2lFamE4czV4SXowbGlyc21HWlV1XzlmWl85cGJ6RzJGQm9HbmZtZjM3UTd0b25WaHZ5WlZYb3AxX0IzRk5LbUZzbkZoQjFvUWZpak9XNlVZUWQ2enpXemN6LU"
         },
         {
-          "title": "Richemont Looks to the Future After Posting Double-Digit Growth in First-Half Sales, Profits",
+          "title": "BC-Gold-Silver",
           "source": "Yahoo Finance",
-          "url": "https://wwd.com/business-news/business-features/richemont-looks-future-double-digit-rises-first-half-sales-1239415568/?.tsrc=rss",
+          "url": "https://finance.yahoo.com/markets/commodities/articles/bc-gold-silver-200014241.html?.tsrc=rss",
           "date": "2026-11-13",
-          "summary": "Founder and chairman Johann Rupert said he's happy with the succession plan at Richemont, but has no plans to retire because he's still having fun."
+          "summary": "NEW YORK (AP) \u2014 Futures trading on the NY Merc Friday:Open High Low Settle Chg.'s open int 406,617 up 511  SILVER  5,000 troy oz."
         },
         {
           "title": "Stocks in play: Americas Gold and Silver Corporation - Yahoo! Finance Canada",
@@ -6162,11 +6180,11 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMiiAFBVV95cUxQX2ZnaUFyVW1VM0VsdDBxcjBEWHNMWG8tMnpzLWowUVlBT0lkNDMtMXBWUDlwZnF2dnlKUGt5VVZpNEZJUWJXT3JrdHNzSFNPM3ZtV0h3NWJFWXdQR0FTaVQya1hWc2lYSDBRMllLZm"
         },
         {
-          "title": "BC-Gold Futures",
+          "title": "Heliostar Presents Q3 2026 Financial and Operating Results with Record Mine Operating Earnings and Cash Balance",
           "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/commodities/articles/bc-gold-futures-150023956.html?.tsrc=rss",
+          "url": "https://investorshub.advfn.com/market-news/article/39997/heliostar-presents-q3-2026-financial-and-operating-results-with-record-mine-operating-earnings-and-cash-balance?.tsrc=rss",
           "date": "2026-11-13",
-          "summary": "NEW YORK (AP) \u2014 Prices as of 10:00:00 AM Friday, November 13.Contract Open High Low Last Change Today's Volume Thursday's Volume  Nov 26 3877."
+          "summary": "Q3 2026 Highlights:Produced 14,481 gold ounces and 83,067 silver ouncesQuarter-over-quarter decrease in costs, with a cash cost of $1,588 per ounce of gold sold and a consolidated all-in sustaining co"
         }
       ],
       "new_ratings": [],
@@ -6178,11 +6196,11 @@
       "ratings": [],
       "news": [
         {
-          "title": "Equity Metals Advances Silver Queen Towards 2027 PEA as Arlington Emerges as Second Growth Opportunity",
+          "title": "BC-Gold-Silver",
           "source": "Yahoo Finance",
-          "url": "https://investorshub.advfn.com/market-news/article/40033/equity-metals-advances-silver-queen-towards-2027-pea-as-arlington-emerges-as-second-growth-opportunity?.tsrc=rss",
+          "url": "https://finance.yahoo.com/markets/commodities/articles/bc-gold-silver-200014241.html?.tsrc=rss",
           "date": "2026-11-13",
-          "summary": "Equity Metals Corporation (TSX-V:EQTY) (USOTC:EQMEF) (FSE:EGSD) is continuing to build the foundations for future development at its Silver Queen silver-gold project in British Columbia, with further "
+          "summary": "NEW YORK (AP) \u2014 Futures trading on the NY Merc Friday:Open High Low Settle Chg.'s open int 406,617 up 511  SILVER  5,000 troy oz."
         },
         {
           "title": "What's Going On With Americas Gold and Silver Stock Friday? - Americas Gold And Silver (AMEX:USAS) - Benzinga",
@@ -6192,11 +6210,25 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxONW05dTMyM2MwTExxazR4eUNuZjQtVGhUeUNVWFlaT0s2SUp3b0ZyNFk3TVUxZlphcjZBYUJ0QTBfb1FwckI0aWlCNkVjYTdYemxfanhLclBNVzhkUTk4MmJEa2poNkhjdmxFemtYLX"
         },
         {
-          "title": "Silver price today, Friday, November 13, 2026: Silver opens down 3%, slides further",
+          "title": "Equity Metals Advances Silver Queen Towards 2027 PEA as Arlington Emerges as Second Growth Opportunity",
           "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/personal-finance/investing/article/silver-price-today-friday-november-13-2026-silver-opens-down-3-slides-further-143536840.html?.tsrc=rss",
+          "url": "https://investorshub.advfn.com/market-news/article/40033/equity-metals-advances-silver-queen-towards-2027-pea-as-arlington-emerges-as-second-growth-opportunity?.tsrc=rss",
+          "date": "2026-11-13",
+          "summary": "Equity Metals Corporation (TSX-V:EQTY) (USOTC:EQMEF) (FSE:EGSD) is continuing to build the foundations for future development at its Silver Queen silver-gold project in British Columbia, with further "
+        },
+        {
+          "title": "Silver price today, Friday, November 13, 2026: Silver opens down 3%, slides further",
+          "source": "Bing News",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77a9fb3f74d7ab750094e78f74de1&url=https%3a%2f%2ffinance.yahoo.com%2fpersonal-finance%2finvesting%2farticle%2fsilver-price-today-friday-november-13-2026-silver-opens-down-3-slides-further-143536840.html&c=12650811193571180342&mkt=en-us",
           "date": "2026-11-13",
           "summary": "Silver futures opened at $50.01 per ounce on Friday, November 13, 2026, down 3.2% from Thursday's open. Silver is moving down this morning, reaching $49.60 as of 9:28 a.m. ET."
+        },
+        {
+          "title": "Is a silver IRA worth it? What to know before you invest",
+          "source": "Bing News",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77a9fb3f74d7ab750094e78f74de1&url=https%3a%2f%2fwww.usatoday.com%2fstory%2fmoney%2fmoney-management%2finvesting%2fsilver-ira-pros-and-cons%2f92739884007%2f&c=5822496368259464198&mkt=en-us",
+          "date": "2026-11-13",
+          "summary": "A silver IRA lets you hold physical silver for retirement, but fees and risks can add up. Learn the costs, benefits and IRS rules before you invest."
         },
         {
           "title": "LunR Reports Q3 2026 Results",
@@ -6204,20 +6236,6 @@
           "url": "https://finance.yahoo.com/news/lunr-reports-q3-2026-results-140000984.html?.tsrc=rss",
           "date": "2026-11-13",
           "summary": "LunR Royalties Corp. (\"LunR\", or the \"Company\") (TSX: LUNR) is pleased to announce its operating and financial results for the three months ended September 30, 2026. During the quarter, LunR continued"
-        },
-        {
-          "title": "Is a silver IRA worth it? What to know before you invest",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bb372c94162b4222ea9a909f3d1&url=https%3a%2f%2fwww.usatoday.com%2fstory%2fmoney%2fmoney-management%2finvesting%2fsilver-ira-pros-and-cons%2f92739884007%2f&c=5822496368259464198&mkt=en-us",
-          "date": "2026-11-13",
-          "summary": "A silver IRA lets you hold physical silver for retirement, but fees and risks can add up. Learn the costs, benefits and IRS rules before you invest."
-        },
-        {
-          "title": "Modern Mining to Begin Trading Today on NYSE American Under Ticker Symbol \"MDRN\"",
-          "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/modern-mining-begin-trading-today-130000455.html?.tsrc=rss",
-          "date": "2026-11-13",
-          "summary": "GREENVILLE, N.C., November 13, 2026--Modern Mining Technology Corp. (\"Modern Mining\" or the \"Company\"), which recovers gold, silver, copper, palladium, and other valuable metals from electronic waste "
         }
       ],
       "new_ratings": [],
@@ -6404,7 +6422,7 @@
           "source": "consensus"
         },
         {
-          "date": "2",
+          "date": "3",
           "firm": "17 Buy \u00b7 5 Hold \u00b7 2 Sell (24 analysts)",
           "from_grade": "",
           "to_grade": "Buy",
@@ -6698,6 +6716,13 @@
           "summary": "Dublin, Nov. 13, 2026 (GLOBE NEWSWIRE) -- \"Grid Edge Control Platforms Market Report 2026\" has been added to ResearchAndMarkets.com's offering. The global grid edge control platforms market is experie"
         },
         {
+          "title": "Siemens Healthineers to Become Healthineers",
+          "source": "Bing News",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aa0117842b6a4f7a1b5bab62051&url=https%3a%2f%2fevtoday.com%2fnews%2fsiemens-healthineers-to-become-healthineers&c=11622952751814606433&mkt=en-us",
+          "date": "2026-11-13",
+          "summary": "Siemens Healthineers announced it will change its name to Healthineers. The transition is the next step in the company&rsquo ..."
+        },
+        {
           "title": "Grid Resilience Analytics Market Global Report 2026 | Capitalize on 19.6% CAGR Through 2030",
           "source": "Yahoo Finance",
           "url": "https://finance.yahoo.com/energy/articles/grid-resilience-analytics-market-global-145300225.html?.tsrc=rss",
@@ -6724,13 +6749,6 @@
           "url": "https://finance.yahoo.com/energy/articles/digital-grid-solutions-market-report-143400796.html?.tsrc=rss",
           "date": "2026-11-12",
           "summary": "Boost ROI with cloud-native platforms, AI analytics, predictive maintenance, renewable integration, real-time asset control and localized hardware production to reduce tariff exposure.Dublin, Nov. 12,"
-        },
-        {
-          "title": "Siemens Stocks Gain 1.13% as Record 34.8 Billion Quarter Lifts Growth Targets - TradingView",
-          "source": "TradingView",
-          "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQdHJ2VjRxclR6VHpQY3ZyMElUOFpFSkZISW1sN0laSDQ4S2xpT1ZDblhwa2d0aE1WNkNkdF9IUndrbkxmM2xBM2FvcGtwb3VYZzVZY3ZIVHpqZVd3S2xncFU2elphcDdBbG9tYTZVclJGLUNidFdHd0JQZU9qQ3JGYnVaMi1xTXJkM0lGQXlSckhXOGJDZ0dmemRNRXhlcmZxYUt3aFRwUnVyekN1eWt3eEZFMnB4eEc3Nm11Z2dZVkx3X2YzNjdjY1RDdG44WUNNVVE?oc=5",
-          "date": "2026-11-12",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi0gFBVV95cUxQdHJ2VjRxclR6VHpQY3ZyMElUOFpFSkZISW1sN0laSDQ4S2xpT1ZDblhwa2d0aE1WNkNkdF9IUndrbkxmM2xBM2FvcGtwb3VYZzVZY3ZIVHpqZVd3S2xncFU2elphcDdBbG9tYTZVcl"
         }
       ]
     },
@@ -7144,13 +7162,13 @@
         "months": [
           {
             "period": "0",
-            "strongBuy": 4,
-            "buy": 16,
-            "hold": 4,
+            "strongBuy": 5,
+            "buy": 17,
+            "hold": 2,
             "sell": 0,
             "strongSell": 0,
             "total": 24,
-            "buy_pct": 83.3,
+            "buy_pct": 91.7,
             "grade": "Buy"
           },
           {
@@ -7204,7 +7222,7 @@
         {
           "title": "Infineon Technologies AG (IFNNY) Presents at Deutsche Bank Virtual Investor Conference Transcript",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bb4cc9d4fbebe4853abc12d3a53&url=https%3a%2f%2fseekingalpha.com%2farticle%2f4967156-infineon-technologies-ag-ifnny-presents-at-deutsche-bank-virtual-investor-conference&c=14985356466874919396&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aa0fdc34dd285e9d3b543014192&url=https%3a%2f%2fseekingalpha.com%2farticle%2f4967156-infineon-technologies-ag-ifnny-presents-at-deutsche-bank-virtual-investor-conference&c=14985356466874919396&mkt=en-us",
           "date": "2026-11-12",
           "summary": "Deutsche Bank Virtual Investor Conference November 12, 2026 10:00 AM ESTCompany ParticipantsAlexander Foltin - Head ..."
         },
@@ -7442,6 +7460,14 @@
           "source": "consensus"
         },
         {
+          "date": "3",
+          "firm": "36 Buy \u00b7 7 Hold \u00b7 1 Sell (44 analysts)",
+          "from_grade": "",
+          "to_grade": "Buy",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
           "date": "2026-11-02",
           "firm": "Stephens & Co.",
           "from_grade": "Equal-Weight",
@@ -7638,14 +7664,6 @@
           "firm": "Stephens & Co.",
           "from_grade": "Equal-Weight",
           "to_grade": "Overweight",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-10-29",
-          "firm": "TD Cowen",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
           "action": "up",
           "source": "broker"
         }
@@ -7656,12 +7674,12 @@
           {
             "period": "0",
             "strongBuy": 7,
-            "buy": 28,
-            "hold": 6,
+            "buy": 29,
+            "hold": 5,
             "sell": 1,
             "strongSell": 0,
             "total": 42,
-            "buy_pct": 83.3,
+            "buy_pct": 85.7,
             "grade": "Buy"
           },
           {
@@ -7715,9 +7733,16 @@
         {
           "title": "Oracle Looks Cheap After The Selloff, But New Mexico Is The Risk",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bb56b3e4dbc9c155d83bc7c5e54&url=https%3a%2f%2fseekingalpha.com%2farticle%2f4967787-oracle-looks-cheap-after-the-selloff-but-new-mexico-is-the-risk&c=10072874154280587109&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aa079e448758c50de37c4f226ae&url=https%3a%2f%2fseekingalpha.com%2farticle%2f4967787-oracle-looks-cheap-after-the-selloff-but-new-mexico-is-the-risk&c=10072874154280587109&mkt=en-us",
           "date": "2026-11-13",
           "summary": "Analyst rates Oracle Corporation a Buy: at about $127, shares trade near 6x the fiscal 2030 EPS target, pricing in substantial execution risk."
+        },
+        {
+          "title": "HSBC Says Buy the Dip in These 11 Stocks -- Alphabet and Oracle Top the List",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/hsbc-says-buy-dip-11-185515397.html?.tsrc=rss",
+          "date": "2026-11-13",
+          "summary": "Alphabet and Oracle Are Among HSBC's Top Stocks to Buy After the Selloff"
         },
         {
           "title": "Oracle's $125 billion debt raises a major AI warning",
@@ -7741,13 +7766,6 @@
           "summary": "Siemens, Accenture, IBM, General Electric and Oracle are profiled, covering their grid resilience analytics offerings and competitive positioningDublin, Nov. 13, 2026 (GLOBE NEWSWIRE) -- \"Grid Resilie"
         },
         {
-          "title": "Microsoft Just Piled Onto the Bad News for CoreWeave, Oracle, and Nebius",
-          "source": "Yahoo Finance",
-          "url": "https://www.fool.com/investing/2026/11/13/microsoft-just-piled-onto-the-bad-news-for-neoclouds/?.tsrc=rss",
-          "date": "2026-11-13",
-          "summary": "Microsoft's latest move could completely change the outlook for some neocloud companies."
-        },
-        {
           "title": "Oracle Looks Cheap After The Selloff, But New Mexico Is The Risk (NYSE:ORCL) - Seeking Alpha",
           "source": "Seeking Alpha",
           "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQNTRlU1JxTWk4Z1JFZktJTzUyY0V4c0J3akhZNTZOLW14N1dzMl9YaGVfcEJPRlZKcU80Ri11MFhWcW5fVC1YZnBYVy05STF5aFFLQVRIeWNNQUlncVh1aUN6WXNQSm9qMGZjZ2ppNGk5NlBSTlN3dXJWN21PSDFCVW10S19RZFRmX1d4ZzE4aDg2QzBfS0JJVnk2eFJHUEJDNDd6UWhoMA?oc=5",
@@ -7760,6 +7778,14 @@
       "ticker": "AMZN",
       "name": "Amazon",
       "ratings": [
+        {
+          "date": "3",
+          "firm": "62 Buy \u00b7 2 Hold \u00b7 0 Sell (64 analysts)",
+          "from_grade": "",
+          "to_grade": "Buy",
+          "action": "reit",
+          "source": "consensus"
+        },
         {
           "date": "3",
           "firm": "61 Buy \u00b7 2 Hold \u00b7 0 Sell (63 analysts)",
@@ -8151,14 +8177,6 @@
           "to_grade": "Sector Outperform",
           "action": "up",
           "source": "broker"
-        },
-        {
-          "date": "2026-10-30",
-          "firm": "Telsey Advisory Group",
-          "from_grade": "Outperform",
-          "to_grade": "Outperform",
-          "action": "up",
-          "source": "broker"
         }
       ],
       "new_ratings": [],
@@ -8173,16 +8191,16 @@
         {
           "title": "Amazon is the only magnificent seven stock I'd buy with $1,000 right now",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bb5f24146999a0006c0d036b5a9&url=https%3a%2f%2fwww.msn.com%2fen-us%2fmoney%2feconomy%2famazon-is-the-only-magnificent-seven-stock-i-d-buy-with-1-000-right-now%2far-AA2hmOsP&c=500487690437071286&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aa128104f2699723fdb9d8e4336&url=https%3a%2f%2fwww.msn.com%2fen-us%2fmoney%2feconomy%2famazon-is-the-only-magnificent-seven-stock-i-d-buy-with-1-000-right-now%2far-AA2hmOsP&c=500487690437071286&mkt=en-us",
           "date": "2026-11-13",
           "summary": "CEO Andy Jassy says Amazon could run two trillion-dollar businesses within a decade. Here's why I think he has a real shot, and why my $1,000 goes to his company first."
         },
         {
-          "title": "Sector Update: Consumer Stocks Mixed in Afternoon Trading",
+          "title": "Sector Update: Consumer Stocks Mixed Late Afternoon",
           "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-mixed-afternoon-183352371.html?.tsrc=rss",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-mixed-afternoon-204247882.html?.tsrc=rss",
           "date": "2026-11-13",
-          "summary": "Consumer stocks were mixed Friday afternoon, with the State Street Consumer Staples Select Sector SP"
+          "summary": "Consumer stocks were mixed late Friday afternoon, with the State Street Consumer Staples Select Sect"
         },
         {
           "title": "Amazon: AI Bet Getting Riskier",
@@ -8192,11 +8210,11 @@
           "summary": ""
         },
         {
-          "title": "How Investors May Respond To Amazon Stock As AWS Growth And Anthropic IPO Near",
+          "title": "Sector Update: Consumer Stocks Mixed in Afternoon Trading",
           "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/investors-may-respond-amazon-stock-180818974.html?.tsrc=rss",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-mixed-afternoon-183352371.html?.tsrc=rss",
           "date": "2026-11-13",
-          "summary": "Recent updates around Amazon.com highlight rapid momentum in AWS, expanding AI infrastructure spending, and growing commercial ties such as Anthropic and new satellite and cloud partnerships. A key nu"
+          "summary": "Consumer stocks were mixed Friday afternoon, with the State Street Consumer Staples Select Sector SP"
         },
         {
           "title": "Amazon's plan to take on AI agents is to scoop up all the shopping data",
@@ -8212,27 +8230,16 @@
           {
             "period": "0",
             "strongBuy": 14,
-            "buy": 44,
+            "buy": 45,
             "hold": 3,
             "sell": 0,
             "strongSell": 0,
-            "total": 61,
-            "buy_pct": 95.1,
+            "total": 62,
+            "buy_pct": 95.2,
             "grade": "Buy"
           },
           {
             "period": "1",
-            "strongBuy": 16,
-            "buy": 42,
-            "hold": 2,
-            "sell": 0,
-            "strongSell": 0,
-            "total": 60,
-            "buy_pct": 96.7,
-            "grade": "Buy"
-          },
-          {
-            "period": "2",
             "strongBuy": 16,
             "buy": 43,
             "hold": 2,
@@ -8243,26 +8250,37 @@
             "grade": "Buy"
           },
           {
-            "period": "3",
+            "period": "2",
             "strongBuy": 16,
-            "buy": 45,
+            "buy": 44,
             "hold": 2,
             "sell": 0,
             "strongSell": 0,
-            "total": 63,
+            "total": 62,
             "buy_pct": 96.8,
+            "grade": "Buy"
+          },
+          {
+            "period": "3",
+            "strongBuy": 16,
+            "buy": 46,
+            "hold": 2,
+            "sell": 0,
+            "strongSell": 0,
+            "total": 64,
+            "buy_pct": 96.9,
             "grade": "Buy"
           }
         ],
         "latest": {
           "period": "3",
           "strongBuy": 16,
-          "buy": 45,
+          "buy": 46,
           "hold": 2,
           "sell": 0,
           "strongSell": 0,
-          "total": 63,
-          "buy_pct": 96.8,
+          "total": 64,
+          "buy_pct": 96.9,
           "grade": "Buy"
         },
         "trend": "stable"
@@ -8505,7 +8523,7 @@
           "source": "consensus"
         },
         {
-          "date": "2",
+          "date": "3",
           "firm": "12 Buy \u00b7 6 Hold \u00b7 1 Sell (19 analysts)",
           "from_grade": "",
           "to_grade": "Buy",
@@ -8699,7 +8717,7 @@
         {
           "title": "Thales (ENXTPA:HO) Is Getting Fresh Attention, What Is Behind It?",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bb6cdfb41789fb43ccd31e4049c&url=https%3a%2f%2ffinance.yahoo.com%2fmarkets%2fstocks%2farticles%2fthales-enxtpa-ho-getting-fresh-121324005.html&c=5061754163907980186&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aa15cc74286a5ad0b930f8fa14d&url=https%3a%2f%2ffinance.yahoo.com%2fmarkets%2fstocks%2farticles%2fthales-enxtpa-ho-getting-fresh-121324005.html&c=5061754163907980186&mkt=en-us",
           "date": "2026-11-12",
           "summary": "Thales (ENXTPA:HO) has drawn fresh attention after working with HII on an end to end autonomous mine countermeasure system that connects underwater vehicles, sensors and neutralization tools into a .."
         },
@@ -8713,7 +8731,7 @@
         {
           "title": "Thales (ENXTPA:HO) Deepens Its European Defence Technology Push",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bb6cdfb41789fb43ccd31e4049c&url=https%3a%2f%2ffinance.yahoo.com%2ftechnology%2fai%2farticles%2fthales-enxtpa-ho-deepens-european-071625650.html&c=1895310688913111995&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aa15cc74286a5ad0b930f8fa14d&url=https%3a%2f%2ffinance.yahoo.com%2ftechnology%2fai%2farticles%2fthales-enxtpa-ho-deepens-european-071625650.html&c=1895310688913111995&mkt=en-us",
           "date": "2026-11-12",
           "summary": "Thales (ENXTPA:HO) agreed a new partnership with Netcompany to develop sovereign AI and cybersecurity solutions for European public and private clients. The group signed an MoU with LMT Defence to ..."
         }
@@ -8873,6 +8891,14 @@
           "source": "broker"
         },
         {
+          "date": "2026-11-11",
+          "firm": "China Renaissance",
+          "from_grade": "Hold",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
           "date": "2026-11-04",
           "firm": "Bernstein",
           "from_grade": "Buy",
@@ -9174,25 +9200,24 @@
           "from_grade": "Buy",
           "to_grade": "Buy",
           "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-11-03",
-          "firm": "DA Davidson",
-          "from_grade": "Neutral",
-          "to_grade": "Neutral",
-          "action": "reit",
           "source": "broker"
         }
       ],
       "new_ratings": [],
       "news": [
         {
-          "title": "What to make of Jensen Huang's resignation: AI Investing Panel",
-          "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/video/what-to-make-of-jensen-huangs-resignation-ai-investing-panel-144935369.html?.tsrc=rss",
+          "title": "Apple stock stands out as Big Tech tumbles. Here's what's working",
+          "source": "Bing News",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aa2caa34277a3394899e596b284&url=https%3a%2f%2fwww.usatoday.com%2fstory%2fmoney%2fmoney-management%2finvesting%2f2026%2f11%2f13%2fapple-stock-big-tech-market%2f92708432007%2f&c=17906378972224900986&mkt=en-us",
           "date": "2026-11-13",
-          "summary": "Yahoo Finance's Julie Hyman chats with SoFi (SOFI) chief market strategist Liz Thomas, Moor Insights & Strategy founder Patrick Moorhead, and EMJ Capital founder and president Eric Jackson at Yahoo Fi"
+          "summary": "The tech sector has had a rough few weeks. Many stocks are down significantly from their all-time highs, but there's one that is holding strong."
+        },
+        {
+          "title": "JardogsHealth Forms Strategic Advisory Council with Leaders from Discover Card, MTV, DoorDash and Apple",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/healthcare/articles/jardogshealth-forms-strategic-advisory-council-192900019.html?.tsrc=rss",
+          "date": "2026-11-13",
+          "summary": "JardogsHealth, the AI operating layer for healthcare, today announced the formation of the JardogsHealth Strategic Advisory Council, four executives who reached the top of financial services, media, s"
         },
         {
           "title": "SA analyst upgrades/downgrades: NVDA, AAPL, SMCI, TSLA",
@@ -9216,18 +9241,11 @@
           "summary": ""
         },
         {
-          "title": "What Does Apple\u2019s Run Mean for a 72-Year-Old Widow With $600,000 of a $1.6 Million IRA in the Stock? - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQOEZmSkViR3M0SWk4blFnT01qMjVkVy1uVVRMSUxpdnphNkM0ejE3S0s0TFVqdndFRHZqZkhxZmFtcld4bkt1aHFMT3lxR01ZWmViMEJ1Uld2TEwyWmpJbnVVLVVhcnJKQzc4WHdTRGdhQkdlNjBwZlFTNi0yeVBQYUtPWGNNLUd6Z0VIdkI0SGo?oc=5",
+          "title": "Apple stock stands out as Big Tech tumbles. Here's what's working - USA Today",
+          "source": "USA Today",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNRENVVXo5di0yWWlNUHljT3dqWEtfeDhWT1hHdklaWU9rOHRlVmZCMkF6aV9JTk9JSFFNQW1hRXdtX2NESS1zSjgzaFpiWHl6NUx3RTFFTjl5OVZZYVhzakRWcnhxSmd4Y09zSEltTUVBNVdybzJLZjl0UmY2Y1ItLTJZeUVqdDhCMGxJUllWd0xwczdMYWtuaERRdEcxQTJ0ZFRCNEZKZnBjdHFVWG13cnZlY2M1QQ?oc=5",
           "date": "2026-11-13",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxQOEZmSkViR3M0SWk4blFnT01qMjVkVy1uVVRMSUxpdnphNkM0ejE3S0s0TFVqdndFRHZqZkhxZmFtcld4bkt1aHFMT3lxR01ZWmViMEJ1Uld2TEwyWmpJbnVVLVVhcnJKQzc4WHdTRG"
-        },
-        {
-          "title": "What Could Still Send Apple Stock Higher?",
-          "source": "Yahoo Finance",
-          "url": "https://www.trefis.com/stock/aapl/articles/624982/what-could-still-send-apple-stock-higher/2026-11-13?.tsrc=rss",
-          "date": "2026-11-13",
-          "summary": "For questions about this article or underlying research, email help@trefis.com."
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNRENVVXo5di0yWWlNUHljT3dqWEtfeDhWT1hHdklaWU9rOHRlVmZCMkF6aV9JTk9JSFFNQW1hRXdtX2NESS1zSjgzaFpiWHl6NUx3RTFFTjl5OVZZYVhzakRWcnhxSmd4Y09zSEltTU"
         }
       ],
       "morningstar": {},
@@ -9236,12 +9254,12 @@
           {
             "period": "0",
             "strongBuy": 6,
-            "buy": 19,
-            "hold": 14,
+            "buy": 20,
+            "hold": 13,
             "sell": 3,
             "strongSell": 3,
             "total": 45,
-            "buy_pct": 55.6,
+            "buy_pct": 57.8,
             "grade": "Hold"
           },
           {
@@ -9497,6 +9515,14 @@
           "source": "broker"
         },
         {
+          "date": "2026-11-09",
+          "firm": "Jefferies",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
           "date": "2026-11-02",
           "firm": "Cantor Fitzgerald",
           "from_grade": "Overweight",
@@ -9685,14 +9711,6 @@
           "firm": "RBC Capital",
           "from_grade": "Outperform",
           "to_grade": "Outperform",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-10-30",
-          "firm": "Argus Research",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
           "action": "up",
           "source": "broker"
         }
@@ -9702,13 +9720,13 @@
         "months": [
           {
             "period": "0",
-            "strongBuy": 6,
+            "strongBuy": 5,
             "buy": 20,
-            "hold": 3,
+            "hold": 4,
             "sell": 1,
             "strongSell": 1,
             "total": 31,
-            "buy_pct": 83.9,
+            "buy_pct": 80.6,
             "grade": "Buy"
           },
           {
@@ -9781,13 +9799,6 @@
           "summary": "Lilly's oral obesity drug wins Chinese approval, setting up a fight with Novo Nordisk, Pfizer and Innovent in a vast market."
         },
         {
-          "title": "State Street Health Care SPDR (XLV) Buys $66.8 Million More Eli Lilly on Nov. 11",
-          "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/healthcare/articles/state-street-health-care-spdr-110327637.html?.tsrc=rss",
-          "date": "2026-11-13",
-          "summary": "The fund added $396.8 million across all 60 of its positions, led by a $66.8 million increase in Eli Lilly."
-        },
-        {
           "title": "Here\u2019s How Much You Would Have Made Owning Eli Lilly Stock In The Last 5 Years - Benzinga",
           "source": "Benzinga",
           "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOa0MwdWVIZGRwc3E1bS1EQlJrYkVremprQV9XbkFha0J0TGszVXF4bTl6VVplZ045T2xseGlpWFZuc19uMlU3VFRjMkZGR1dZQVdPclZKR2xQaDluR1ZaXzZMa1JxR2R6QXFEdWNRQlc5RmQtT25kM21LX2hPWGdkTGhrdTNzX1pXNUg5MXg5SEhjbkNablU3OXZaamVZS2M3QmdBNzM1MVlNb3I2a0xOQ0Nybnc5eUk?oc=5",
@@ -9795,9 +9806,16 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxOa0MwdWVIZGRwc3E1bS1EQlJrYkVremprQV9XbkFha0J0TGszVXF4bTl6VVplZ045T2xseGlpWFZuc19uMlU3VFRjMkZGR1dZQVdPclZKR2xQaDluR1ZaXzZMa1JxR2R6QXFEdWNRQl"
         },
         {
+          "title": "State Street Health Care SPDR (XLV) Buys $66.8 Million More Eli Lilly on Nov. 11",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/healthcare/articles/state-street-health-care-spdr-110327637.html?.tsrc=rss",
+          "date": "2026-11-13",
+          "summary": "The fund added $396.8 million across all 60 of its positions, led by a $66.8 million increase in Eli Lilly."
+        },
+        {
           "title": "Mapping the Market: Eli Lilly shares ready to rally again",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bb7c0e046cd9dcbcf8cf653142f&url=https%3a%2f%2fwww.reuters.com%2fmarkets%2fus%2fglobal-markets-technicals-graphic-2026-11-13%2f&c=4425163390539760184&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aa24b1645a79aef6f15917beb33&url=https%3a%2f%2fwww.reuters.com%2fmarkets%2fus%2fglobal-markets-technicals-graphic-2026-11-13%2f&c=4425163390539760184&mkt=en-us",
           "date": "2026-11-13",
           "summary": "Shares in Eli Lilly rose more than 70% from their 2026 low to the record high they hit on Thursday, and more gains could be in store, technical analysis indicates."
         }
@@ -9928,7 +9946,7 @@
           "source": "consensus"
         },
         {
-          "date": "2",
+          "date": "3",
           "firm": "5 Buy \u00b7 0 Hold \u00b7 0 Sell (5 analysts)",
           "from_grade": "",
           "to_grade": "Buy",
@@ -10213,7 +10231,7 @@
         {
           "title": "Bilfinger (0NRG) Gets a Buy from Deutsche Bank",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bb7bfa44e93bfccd3e831b76b49&url=https%3a%2f%2fwww.theglobeandmail.com%2finvesting%2fmarkets%2fmarkets-news%2fTipranks%2f8817262%2fbilfinger-0nrg-gets-a-buy-from-deutsche-bank%2f&c=11894175313785214776&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aa3c7ba4bd0a1d2efc5a8f3ae1f&url=https%3a%2f%2fwww.theglobeandmail.com%2finvesting%2fmarkets%2fmarkets-news%2fTipranks%2f8817262%2fbilfinger-0nrg-gets-a-buy-from-deutsche-bank%2f&c=11894175313785214776&mkt=en-us",
           "date": "2026-11-13",
           "summary": "In a report released today, Michael Kuhn from Deutsche Bank maintained a Buy rating on Bilfinger, with a price target of \u20ac100.00. According to TipRanks, Kuhn is a 2-star analyst with an average return"
         },
@@ -10241,14 +10259,14 @@
         {
           "title": "Bilfinger stock drops as Q3 margin pressure offsets strong orders",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bb7bfa44e93bfccd3e831b76b49&url=https%3a%2f%2fwww.ad-hoc-news.de%2fboerse%2fnews%2fcorporate-news%2fbilfinger-stock-drops-as-q3-margin-pressure-offsets-strong-orders%2f70499956&c=11790379396656903477&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aa3c7ba4bd0a1d2efc5a8f3ae1f&url=https%3a%2f%2fwww.ad-hoc-news.de%2fboerse%2fnews%2fcorporate-news%2fbilfinger-stock-drops-as-q3-margin-pressure-offsets-strong-orders%2f70499956&c=11790379396656903477&mkt=en-us",
           "date": "2026-11-12",
           "summary": "Bilfinger's third-quarter results show a widening gap between demand and near-term profitability. Orders rose strongly, but postponed customer investment decisions and lower capacity utilization ..."
         },
         {
           "title": "Bilfinger (0NRG) Receives a Hold from Berenberg Bank",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bb7bfa44e93bfccd3e831b76b49&url=https%3a%2f%2fwww.theglobeandmail.com%2finvesting%2fmarkets%2fmarkets-news%2fTipranks%2f8815796%2fbilfinger-0nrg-receives-a-hold-from-berenberg-bank%2f&c=10368801691653839775&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aa3c7ba4bd0a1d2efc5a8f3ae1f&url=https%3a%2f%2fwww.theglobeandmail.com%2finvesting%2fmarkets%2fmarkets-news%2fTipranks%2f8815796%2fbilfinger-0nrg-receives-a-hold-from-berenberg-bank%2f&c=10368801691653839775&mkt=en-us",
           "date": "2026-11-12",
           "summary": "In a report released today, Andreas Wolf from Berenberg Bank maintained a Hold rating on Bilfinger, with a price target of \u20ac63.00. According to TipRanks, Wolf is ranked #9070 out of 12455 analysts."
         }
@@ -10320,70 +10338,6 @@
       "name": "BAE Systems",
       "ratings": [
         {
-          "date": "2",
-          "firm": "11 Buy \u00b7 6 Hold \u00b7 2 Sell (19 analysts)",
-          "from_grade": "",
-          "to_grade": "Hold",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "3",
-          "firm": "11 Buy \u00b7 6 Hold \u00b7 2 Sell (19 analysts)",
-          "from_grade": "",
-          "to_grade": "Hold",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "3",
-          "firm": "11 Buy \u00b7 6 Hold \u00b7 2 Sell (19 analysts)",
-          "from_grade": "",
-          "to_grade": "Hold",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "3",
-          "firm": "11 Buy \u00b7 6 Hold \u00b7 2 Sell (19 analysts)",
-          "from_grade": "",
-          "to_grade": "Hold",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "3",
-          "firm": "11 Buy \u00b7 6 Hold \u00b7 2 Sell (19 analysts)",
-          "from_grade": "",
-          "to_grade": "Hold",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "3",
-          "firm": "11 Buy \u00b7 6 Hold \u00b7 2 Sell (19 analysts)",
-          "from_grade": "",
-          "to_grade": "Hold",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "3",
-          "firm": "11 Buy \u00b7 6 Hold \u00b7 2 Sell (19 analysts)",
-          "from_grade": "",
-          "to_grade": "Hold",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
-          "date": "3",
-          "firm": "11 Buy \u00b7 6 Hold \u00b7 2 Sell (19 analysts)",
-          "from_grade": "",
-          "to_grade": "Hold",
-          "action": "reit",
-          "source": "consensus"
-        },
-        {
           "date": "3",
           "firm": "11 Buy \u00b7 6 Hold \u00b7 2 Sell (19 analysts)",
           "from_grade": "",
@@ -10393,6 +10347,70 @@
         },
         {
           "date": "2",
+          "firm": "11 Buy \u00b7 6 Hold \u00b7 2 Sell (19 analysts)",
+          "from_grade": "",
+          "to_grade": "Hold",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "3",
+          "firm": "11 Buy \u00b7 6 Hold \u00b7 2 Sell (19 analysts)",
+          "from_grade": "",
+          "to_grade": "Hold",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "3",
+          "firm": "11 Buy \u00b7 6 Hold \u00b7 2 Sell (19 analysts)",
+          "from_grade": "",
+          "to_grade": "Hold",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "3",
+          "firm": "11 Buy \u00b7 6 Hold \u00b7 2 Sell (19 analysts)",
+          "from_grade": "",
+          "to_grade": "Hold",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "3",
+          "firm": "11 Buy \u00b7 6 Hold \u00b7 2 Sell (19 analysts)",
+          "from_grade": "",
+          "to_grade": "Hold",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "3",
+          "firm": "11 Buy \u00b7 6 Hold \u00b7 2 Sell (19 analysts)",
+          "from_grade": "",
+          "to_grade": "Hold",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "3",
+          "firm": "11 Buy \u00b7 6 Hold \u00b7 2 Sell (19 analysts)",
+          "from_grade": "",
+          "to_grade": "Hold",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "3",
+          "firm": "11 Buy \u00b7 6 Hold \u00b7 2 Sell (19 analysts)",
+          "from_grade": "",
+          "to_grade": "Hold",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
+          "date": "3",
           "firm": "11 Buy \u00b7 6 Hold \u00b7 2 Sell (19 analysts)",
           "from_grade": "",
           "to_grade": "Hold",
@@ -10732,7 +10750,7 @@
         {
           "title": "BAE Systems wins Navy contract for Virginia-class nuclear submarine propulsors",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bb873424786978268f067856a16&url=https%3a%2f%2fwww.msn.com%2fen-us%2ftechnology%2fgeneral%2fbae-systems-wins-navy-contract-for-virginia-class-nuclear-submarine-propulsors%2far-AA2hmSoI&c=15126222818133656752&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aa3ccfe4a099de9f51a3b35eb78&url=https%3a%2f%2fwww.msn.com%2fen-us%2ftechnology%2fgeneral%2fbae-systems-wins-navy-contract-for-virginia-class-nuclear-submarine-propulsors%2far-AA2hmSoI&c=15126222818133656752&mkt=en-us",
           "date": "2026-11-13",
           "summary": "BAE Systems has received a $138 million US Navy contract to continue manufacturing propulsor ..."
         },
@@ -10742,6 +10760,13 @@
           "url": "https://finance.yahoo.com/technology/articles/bae-systems-selected-mission-enabling-150000428.html?.tsrc=rss",
           "date": "2026-11-13",
           "summary": "BAE Systems (LON: BA) announced today that its Jet Propulsion Laboratory (JPL)-led PRIMA (PRobe far-Infrared Mission for Astrophysics) team has been selected by NASA for the next phase of development "
+        },
+        {
+          "title": "BAE Systems receives US Navy contract for Virginia propulsors",
+          "source": "Bing News",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aa3ccfe4a099de9f51a3b35eb78&url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2fother%2fbae-systems-receives-us-navy-contract-for-virginia-propulsors%2far-AA2ho3Ew&c=1694443685289578084&mkt=en-us",
+          "date": "2026-11-13",
+          "summary": "The agreement t covers propulsor assemblies, engineering, and support for Virginia-class submarines until September 2032."
         },
         {
           "title": "Global SEWIP Block 4 Roadmap Market Report 2026-2030 | Capitalize on 8.3% CAGR, Featuring Profiles of Lockheed Martin, Northrop Grumman, and BAE Systems",
@@ -10756,13 +10781,6 @@
           "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOYlp0eVlBXzNzRDFUdENmRUtNdDBaWE9LMXZVMEhlSHpIbUxuTWctemFmb2tYWlhOcENrMWxDaFIzS0Z4aFRqQnJjdjdrd0ROblRmYnRLOTFOMlBTWk1SNFN1UW5SdzEtbnA3RWxfVld2S1lGbGpqSl9EbjlZTlVuQXRlcmh5VGctWElMczJxSDZKQQ?oc=5",
           "date": "2026-11-12",
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxOYlp0eVlBXzNzRDFUdENmRUtNdDBaWE9LMXZVMEhlSHpIbUxuTWctemFmb2tYWlhOcENrMWxDaFIzS0Z4aFRqQnJjdjdrd0ROblRmYnRLOTFOMlBTWk1SNFN1UW5SdzEtbnA3RWxfVl"
-        },
-        {
-          "title": "BAE Systems completes Lot 8 LRASM sensor deliveries to Lockheed Martin",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bb873424786978268f067856a16&url=https%3a%2f%2fwww.msn.com%2fen-us%2ftechnology%2fgeneral%2fbae-systems-completes-lot-8-lrasm-sensor-deliveries-to-lockheed-martin%2far-AA2hkgnh&c=4502336475335181979&mkt=en-us",
-          "date": "2026-11-12",
-          "summary": "BAE Systems\u2019 RF sensor provides guidance for engaging maritime targets in heavily contested environments."
         }
       ],
       "morningstar": {},
@@ -10794,6 +10812,17 @@
             "period": "2",
             "strongBuy": 3,
             "buy": 8,
+            "hold": 7,
+            "sell": 2,
+            "strongSell": 0,
+            "total": 20,
+            "buy_pct": 55.0,
+            "grade": "Hold"
+          },
+          {
+            "period": "3",
+            "strongBuy": 3,
+            "buy": 8,
             "hold": 6,
             "sell": 2,
             "strongSell": 0,
@@ -10803,7 +10832,7 @@
           }
         ],
         "latest": {
-          "period": "2",
+          "period": "3",
           "strongBuy": 3,
           "buy": 8,
           "hold": 6,
@@ -11233,21 +11262,21 @@
         {
           "title": "Does BE Semiconductor Industries (ENXTAM:BESI) Trade Above Fair Value?",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bb860dd481cbbeda9deaa5fff1f&url=https%3a%2f%2ffinance.yahoo.com%2fmarkets%2fstocks%2farticles%2fdoes-semiconductor-industries-enxtam-besi-091525000.html&c=2466511108801142597&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aa44cd14e86a54a090a838d2a0f&url=https%3a%2f%2ffinance.yahoo.com%2fmarkets%2fstocks%2farticles%2fdoes-semiconductor-industries-enxtam-besi-091525000.html&c=2466511108801142597&mkt=en-us",
           "date": "2026-11-12",
           "summary": "BE Semiconductor Industries has delivered a 115.8% share price gain over the past 5 years, which puts fresh attention on whether the current \u20ac159.75 level is still supported by the cash it can ..."
         },
         {
           "title": "Besi stock gets strategic backing as Applied Materials targets 20%",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bb860dd481cbbeda9deaa5fff1f&url=https%3a%2f%2fwww.ad-hoc-news.de%2fboerse%2fnews%2fcorporate-news%2fbesi-stock-gets-strategic-backing-as-applied-materials-targets-20-prozent%2f70496477&c=12120534104682936905&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aa44cd14e86a54a090a838d2a0f&url=https%3a%2f%2fwww.ad-hoc-news.de%2fboerse%2fnews%2fcorporate-news%2fbesi-stock-gets-strategic-backing-as-applied-materials-targets-20-prozent%2f70496477&c=12120534104682936905&mkt=en-us",
           "date": "2026-11-12",
           "summary": "Besi stock gains a stronger strategic link with Applied Materials through expanded advanced-packaging cooperation. Closing remains subject to US antitrust review. Applied Materials plans to expand its"
         },
         {
           "title": "Besi stock: AI orders surge as hybrid-bonding adoption widens",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bb860dd481cbbeda9deaa5fff1f&url=https%3a%2f%2fwww.ad-hoc-news.de%2fboerse%2fnews%2fcorporate-news%2fbesi-stock-ai-orders-surge-as-hybrid-bonding-adoption-widens%2f70491076&c=17799214876490629664&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aa44cd14e86a54a090a838d2a0f&url=https%3a%2f%2fwww.ad-hoc-news.de%2fboerse%2fnews%2fcorporate-news%2fbesi-stock-ai-orders-surge-as-hybrid-bonding-adoption-widens%2f70491076&c=17799214876490629664&mkt=en-us",
           "date": "2026-11-11",
           "summary": "Besi stock remains supported by strong AI-linked orders and broader hybrid-bonding demand. Delivery timing may limit near-term revenue growth. Besi's third-quarter orders rose sharply on demand for AI"
         },
@@ -12006,6 +12035,14 @@
           "source": "broker"
         },
         {
+          "date": "2026-11-10",
+          "firm": "Evercore ISI Group",
+          "from_grade": "Outperform",
+          "to_grade": "Outperform",
+          "action": "up",
+          "source": "broker"
+        },
+        {
           "date": "3",
           "firm": "14 Buy \u00b7 12 Hold \u00b7 2 Sell (28 analysts)",
           "from_grade": "",
@@ -12219,14 +12256,6 @@
           "from_grade": "Buy",
           "to_grade": "Buy",
           "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-10-30",
-          "firm": "RBC Capital",
-          "from_grade": "Sector Perform",
-          "to_grade": "Sector Perform",
-          "action": "reit",
           "source": "broker"
         }
       ],
@@ -12269,7 +12298,7 @@
         {
           "title": "Caterpillar Has Fallen 44% From Its June High, but $1,000 Invested Ten Years Ago Is Still Worth $7,785",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bb9d46243b182151824aa6e2d66&url=https%3a%2f%2f247wallst.com%2finvesting%2f2026%2f11%2f12%2fcaterpillar-has-fallen-44-from-its-june-high-but-1000-invested-ten-years-ago-is-still-worth-7785%2f&c=1975240871355809807&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aa46fb34f2da8097b8707017938&url=https%3a%2f%2f247wallst.com%2finvesting%2f2026%2f11%2f12%2fcaterpillar-has-fallen-44-from-its-june-high-but-1000-invested-ten-years-ago-is-still-worth-7785%2f&c=1975240871355809807&mkt=en-us",
           "date": "2026-11-12",
           "summary": "AI data center demand sent Caterpillar soaring to a record, then oil, bond yields and tariff costs dragged it back down. Long-term holders still came out ahead, but the gap between buying at the peak "
         }
@@ -12773,14 +12802,14 @@
         {
           "title": "Iberdrola is said to weigh sale of German solar assets for up to $223M",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bb96ba24d5e86d122fcb155b84b&url=https%3a%2f%2fseekingalpha.com%2fnews%2f4670930-iberdrola-is-said-to-weigh-sale-of-german-solar-assets-for-up-to-223m&c=16732006051440135068&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aa554b34748948c27866990ce8c&url=https%3a%2f%2fseekingalpha.com%2fnews%2f4670930-iberdrola-is-said-to-weigh-sale-of-german-solar-assets-for-up-to-223m&c=16732006051440135068&mkt=en-us",
           "date": "2026-11-11",
           "summary": "Iberdrola considers selling 121 MW of German solar assets for up to \u20ac200 million; talks are preliminary as it shifts investment to regulated networks."
         },
         {
           "title": "Iberdrola S A : starts construction of a new base for its East Anglia offshore wind farms",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bb96ba24d5e86d122fcb155b84b&url=https%3a%2f%2fwww.marketscreener.com%2fnews%2fiberdrola-s-a-starts-construction-of-a-new-base-for-its-east-anglia-offshore-wind-farms-ce785edbdd8bf426&c=4842574913601353714&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aa554b34748948c27866990ce8c&url=https%3a%2f%2fwww.marketscreener.com%2fnews%2fiberdrola-s-a-starts-construction-of-a-new-base-for-its-east-anglia-offshore-wind-farms-ce785edbdd8bf426&c=4842574913601353714&mkt=en-us",
           "date": "2026-11-11",
           "summary": "ScottishPower Renewables, the renewables subsidiary of Iberdrola Group in the UK, is making progress on the development of its offshore wind operations in the UK with the start of work to build a new "
         }
@@ -13044,6 +13073,14 @@
           "source": "consensus"
         },
         {
+          "date": "3",
+          "firm": "20 Buy \u00b7 3 Hold \u00b7 1 Sell (24 analysts)",
+          "from_grade": "",
+          "to_grade": "Buy",
+          "action": "reit",
+          "source": "consensus"
+        },
+        {
           "date": "2026-11-02",
           "firm": "Fox Advisors",
           "from_grade": "Overweight",
@@ -13241,24 +13278,23 @@
           "from_grade": "Buy",
           "to_grade": "Buy",
           "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-10-30",
-          "firm": "Wells Fargo",
-          "from_grade": "Equal-Weight",
-          "to_grade": "Equal-Weight",
-          "action": "reit",
           "source": "broker"
         }
       ],
       "news": [
         {
-          "title": "Why Sandisk Stock Is Falling Today",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bb930e14acf8eb2cc2136304f4c&url=https%3a%2f%2fwww.fool.com%2finvesting%2f2026%2f11%2f13%2fwhy-sandisk-stock-is-falling-today%2f&c=1714070239487707455&mkt=en-us",
+          "title": "SanDisk Stock At $937: Why So Cheap? - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNWGtGWnBpMi1ocTNNQk5pNlBfUnNRblB3X0FZMGFhal9vdDc1aTVua3ZFb19DYlVveWtYZUtiY3B5Ukg1TGZBWGI3XzRZenN4N3ZfUDNyODRILUlkRmU2TlhIRzNmWVNqMWFycmItTkQ2OWppQzU5ejUtcDhfVkV3dlVVeWQ5blZ1U2MzVkNYQzZhU2Y1NzRV?oc=5",
           "date": "2026-11-13",
-          "summary": "Sandisk is falling for a second day as the fallout from Nvidia's CEO exit hits AI hardware stocks, even though its latest quarter was huge."
+          "summary": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxNWGtGWnBpMi1ocTNNQk5pNlBfUnNRblB3X0FZMGFhal9vdDc1aTVua3ZFb19DYlVveWtYZUtiY3B5Ukg1TGZBWGI3XzRZenN4N3ZfUDNyODRILUlkRmU2TlhIRzNmWVNqMW"
+        },
+        {
+          "title": "Chart of the day: SanDisk stock looks ready to bounce back",
+          "source": "Bing News",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aa59f1a43698ac580cecdaac2dd&url=https%3a%2f%2fwww.msn.com%2fen-us%2fmoney%2fgeneral%2fchart-of-the-day-sandisk-stock-looks-ready-to-bounce-back%2far-AA2hnY72&c=11407530643223138&mkt=en-us",
+          "date": "2026-11-13",
+          "summary": "Sandisk stock has faced considerable selling pressure and is trading 64% below its 52-week high."
         },
         {
           "title": "Chip stocks slide as Nvidia rebound fades",
@@ -13268,32 +13304,25 @@
           "summary": ""
         },
         {
-          "title": "SanDisk Corporation Stock (SNDK) Moved Down by 8.23% on Nov 13: A Full Analysis - TradingKey",
-          "source": "TradingKey",
-          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQWjZMeHgtWnU2NTliYjczaS1OU2IyYnZsTXBfLVNfT25ETHNIeERzTEhaTFhTYWpJWXUzc0oyUXR0cmZlLVY4SnB0UHU2UEIwcFh6VktWNzBsdUNhNkdRVEkxTjVjRXE2UTNPcGpRc0JrRld6STFGczYtWERKWXRoMUtKVW5QOENCUWZZ?oc=5",
+          "title": "Why Sandisk Stock Is Falling Today",
+          "source": "Bing News",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aa59f1a43698ac580cecdaac2dd&url=https%3a%2f%2fwww.fool.com%2finvesting%2f2026%2f11%2f13%2fwhy-sandisk-stock-is-falling-today%2f&c=1714070239487707455&mkt=en-us",
           "date": "2026-11-13",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiiwFBVV95cUxQWjZMeHgtWnU2NTliYjczaS1OU2IyYnZsTXBfLVNfT25ETHNIeERzTEhaTFhTYWpJWXUzc0oyUXR0cmZlLVY4SnB0UHU2UEIwcFh6VktWNzBsdUNhNkdRVEkxTjVjRXE2UTNPcGpRc0"
+          "summary": "Sandisk is falling for a second day as the fallout from Nvidia's CEO exit hits AI hardware stocks, even though its latest quarter was huge."
         },
         {
-          "title": "Sandisk Stocks Fall 7.2% as Chip Selloff Hits Days Before 8-for-1 Split",
+          "title": "Beat Value Traps: 4 Stocks With Attractive PEG Ratios to Buy Now",
           "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/sandisk-stocks-fall-7-2-173439245.html?.tsrc=rss",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/beat-value-traps-4-stocks-190000039.html?.tsrc=rss",
           "date": "2026-11-13",
-          "summary": "The flash memory maker slid with the chip sector even after reporting 378% revenue growth and an 85% gross margin."
+          "summary": "Discover four stocks with attractive PEG ratios, strong earnings growth prospects and favorable value scores that could help investors avoid value traps."
         },
         {
-          "title": "SanDisk Stock At $937: Why So Cheap? - Trefis",
-          "source": "Trefis",
-          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNNFg0N09LQjEzTjBSc2FLNF9DM0JWWHJhUTdKOTFubW5SOE8wWDN2b09Vek9RWThBOFBER1BJNmxsSmRRZnJqTksyeWJDQXllVlFlM3VrRWZaUW13Q2lJdmkzMkExY1RMQzJ6eHUzVWRyb0MyZ0E2WllTY3BQMzVaV084QTVnWHhVX3NOZXNfc2htNnBlakQxVzB3?oc=5",
-          "date": "2026-11-13",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxNNFg0N09LQjEzTjBSc2FLNF9DM0JWWHJhUTdKOTFubW5SOE8wWDN2b09Vek9RWThBOFBER1BJNmxsSmRRZnJqTksyeWJDQXllVlFlM3VrRWZaUW13Q2lJdmkzMkExY1RMQzJ6eHUzVW"
-        },
-        {
-          "title": "SanDisk Stock At $937: Why So Cheap?",
+          "title": "Why Sandisk Stock Is Falling Today - Yahoo Finance",
           "source": "Yahoo Finance",
-          "url": "https://www.trefis.com/stock/sndk/articles/624470/sandisk-stock-at-937-why-so-cheap/2026-11-13?.tsrc=rss",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPRTNSSTA2XzhxM1NyOVVBa2JJUXVwV1E2UEhrNi1wbWhqN19mclE5cDhfUzRNaHpSeDljYWJGNGswcUR0ajVCc2lWOW5ZVnNnM3VUTlFnQmdjbmVZaG4yaXZndnJZUUV6bV9GeXNsTjVTTjNUT2RnZDNpNXpkOS14MTRKZmU2MW56Q3ZxRUJ5YlFULXo3bG1MZVczLS0?oc=5",
           "date": "2026-11-13",
-          "summary": "More on the AI trade: our AI storyline page collects our pieces on AI stocks."
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxPRTNSSTA2XzhxM1NyOVVBa2JJUXVwV1E2UEhrNi1wbWhqN19mclE5cDhfUzRNaHpSeDljYWJGNGswcUR0ajVCc2lWOW5ZVnNnM3VUTlFnQmdjbmVZaG4yaXZndnJZUUV6bV9GeXNsTj"
         }
       ],
       "new_ratings": [],
@@ -13595,7 +13624,7 @@
           "source": "consensus"
         },
         {
-          "date": "2",
+          "date": "3",
           "firm": "8 Buy \u00b7 0 Hold \u00b7 0 Sell (8 analysts)",
           "from_grade": "",
           "to_grade": "Buy",
@@ -13765,6 +13794,13 @@
       ],
       "news": [
         {
+          "title": "SUSS MicroTec stock trades 5.39% below Nov. 12 Xetra close - ad-hoc-news.de",
+          "source": "ad-hoc-news.de",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxObUpKZGRzbjJZWG9LdTg1SW1HcmdlZUhBTlRRMXJ3TUZEUlBEaXkxZ0Fia1kyTWdNU0VNQ3BZaU1UYVFsRUdzcXY3SlRXckl4bERrM19Wd3FvN3ZwRXhpdC1WZGZhNER5ZGJXWWRhcEUybUhKa3pBbHMyT2kxWEhVYVc3WlQ0TnpRLVlBcnRCY2sybnNCQy1xbldnRmpGb2pYRXFna21OdXJNb1F2VFRnMnpIMTNuQmItZERV?oc=5",
+          "date": "2026-11-13",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxObUpKZGRzbjJZWG9LdTg1SW1HcmdlZUhBTlRRMXJ3TUZEUlBEaXkxZ0Fia1kyTWdNU0VNQ3BZaU1UYVFsRUdzcXY3SlRXckl4bERrM19Wd3FvN3ZwRXhpdC1WZGZhNER5ZGJXWWRhcE"
+        },
+        {
           "title": "SUSS MicroTec stock gains strategic access to European deep-tech - ad-hoc-news.de",
           "source": "ad-hoc-news.de",
           "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNWlR5RkdxdHNCV0E4cXRKcUI3OTRZYnlCX3JrMDFNanZSUVZiZWk5ZnROREtUX09JLVZ0NU5iaUx3VC15N2xiZk9tbjNibjNxaV9hYXcxaG4yM1M4SFhKVEdEMXBjUDFPYmNVekI5cWUzdmRSZGphWGU4ZHQxVWlPV1ljNnk5UTJLel9jNFJiWU9ROGt1dHh4V3dJVVVTQWU2Z3ZVZXFfY0RhcEFWMVBQV0JZVTNsWEVfU0xRUl9GOEowUlRFM3c?oc=5",
@@ -13798,13 +13834,6 @@
           "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQUkRzQ0JJbHJJc1J3cURpS2JNbFJDX1VuTVhiZEVCTE8wemFGV0hEWldEaUl5eEhzNWtqcERZMDRobWlaY2F4eHNFeVkzX01FWGl4MmtjWkhWaVVHLVRubzJDb0otX3lCdE9PNE9MWDRtem9YNTlmTzFpNDNObFV2ajZFamNnMFZiYXNoTWozRElTZERXSjVfU1B3?oc=5",
           "date": "2026-11-12",
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxQUkRzQ0JJbHJJc1J3cURpS2JNbFJDX1VuTVhiZEVCTE8wemFGV0hEWldEaUl5eEhzNWtqcERZMDRobWlaY2F4eHNFeVkzX01FWGl4MmtjWkhWaVVHLVRubzJDb0otX3lCdE9PNE9MWD"
-        },
-        {
-          "title": "SUSS MicroTec stock at EUR 49.81, up 4.21% premarket - ad-hoc-news.de",
-          "source": "ad-hoc-news.de",
-          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPOWZ6Z2pDQUlPUEpJME9tbFhDc01xeXRYZEhsM3BZOFJlc3J4XzVMdHFEUVhfQS1EV1FWMnFJbUM0aGxZa0I5VVdYRHZTVUtyNHlidE5OeEtzVTIxczZxV25KZEFWM3hoM3lMWXZPbzRNT2JPeG9QR3VfZEJvWENua3N1em1WRUFvSEZuMTdlZndkUF9nYWlTWVJWbGlzUGdLMm9EcXVIUnR6ZEVn?oc=5",
-          "date": "2026-11-11",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxPOWZ6Z2pDQUlPUEpJME9tbFhDc01xeXRYZEhsM3BZOFJlc3J4XzVMdHFEUVhfQS1EV1FWMnFJbUM0aGxZa0I5VVdYRHZTVUtyNHlidE5OeEtzVTIxczZxV25KZEFWM3hoM3lMWXZPbz"
         }
       ],
       "new_ratings": [],
@@ -14358,6 +14387,13 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxOdlF2dENWSE5pY1oteXNKZ2VSc0hWdjFhQXBwaTU2S1NMRFpoOGgtY0JKSlJHSHRXTkZDeDZjaV9rV3ltRF9CRTR1d01QcUdIOFNxaWNIX2pianY5XzFfbUlESXRkdUhmRVhhWE5nZ3"
         },
         {
+          "title": "Allianz SE (ALIZY) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+          "source": "Yahoo! Finance Canada",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5VZTNodDJXQ1RHdlJOXzRMbjhjcm1rbXdWcFNPVm1KNW1aeUo0WFVaRnJxSm1PMXY5OUZ0WEs4TThxd3dyOFAtN0kxR2JZb2lVQm5B?oc=5",
+          "date": "2026-11-12",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiU0FVX3lxTE5VZTNodDJXQ1RHdlJOXzRMbjhjcm1rbXdWcFNPVm1KNW1aeUo0WFVaRnJxSm1PMXY5OUZ0WEs4TThxd3dyOFAtN0kxR2JZb2lVQm5B?oc=5\" target=\"_blank\">Allianz SE (ALI"
+        },
+        {
           "title": "Allianz Q3 profit beats forecasts as asset management offsets catastrophe losses",
           "source": "Yahoo Finance",
           "url": "https://finance.yahoo.com/markets/stocks/articles/allianz-q3-profit-beats-forecasts-070401119.html?.tsrc=rss",
@@ -14365,18 +14401,11 @@
           "summary": "Investing.com -- Allianz reported third-quarter operating profit above analyst expectations on Thursday, as record earnings at its asset management arm, including PIMCO, offset the impact of natural c"
         },
         {
-          "title": "Earnings call transcript: Allianz raises 2026 outlook after strong Q3, shares rise - Investing.com",
-          "source": "Investing.com",
-          "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPWnNSbzhCZUl3TWgtSTdybHFRYmQ5RGl1VW5PRVNxZWZFQnlCR1E0Y3FaTkEzZVE0Z0lyVUJyZUFJOU5ibHJZUHMzZnp2MC04TDF1MUwyenNOcHMzWmgzeHZsUTk3bDZ4cWxoLXpLbkN5eUx0cXVpRmRXam1MZXlSRGlpYTEwelBWNXVfR1dMaXE2N05jWm5uT2FjdmRYcHh0ejFkdzg5ZkdWNGQ1c0FWaG1aNHNvLVI2SlRycnBDTlc5eG5sTUsxNnM3cGQ3amZ6dWc?oc=5",
+          "title": "Allianz Delivers Record Nine-month Result of 14.1 Billion Euros and Raises 2026 Outlook",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/allianz-delivers-record-nine-month-060600980.html?.tsrc=rss",
           "date": "2026-11-12",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi0gFBVV95cUxPWnNSbzhCZUl3TWgtSTdybHFRYmQ5RGl1VW5PRVNxZWZFQnlCR1E0Y3FaTkEzZVE0Z0lyVUJyZUFJOU5ibHJZUHMzZnp2MC04TDF1MUwyenNOcHMzWmgzeHZsUTk3bDZ4cWxoLXpLbk"
-        },
-        {
-          "title": "Allianz SE Reports Earnings Results for the Third Quarter and Nine Months Ended September 30, 2026",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bbab8df4b97b6009fd798e2439c&url=https%3a%2f%2fwww.marketscreener.com%2fnews%2fallianz-se-reports-earnings-results-for-the-third-quarter-and-nine-months-ended-september-30-2026-ce785ed8da8af62c&c=8742921306801414459&mkt=en-us",
-          "date": "2026-11-12",
-          "summary": "Allianz SE reported earnings results for the third quarter and nine months ended September 30, 2026. For the third quarter, the company reported net income was EUR 2,784 million compared to EUR 2,847 "
+          "summary": "MUNICH, November 12, 2026--3Q 2026 This press release features multimedia. View the full release here: https://www.businesswire.com/news/home/20261111915059/en/"
         }
       ]
     },
@@ -16693,7 +16722,7 @@
           "source": "consensus"
         },
         {
-          "date": "2",
+          "date": "3",
           "firm": "22 Buy \u00b7 2 Hold \u00b7 0 Sell (24 analysts)",
           "from_grade": "",
           "to_grade": "Buy",
@@ -17172,7 +17201,7 @@
           "source": "consensus"
         },
         {
-          "date": "2",
+          "date": "3",
           "firm": "6 Buy \u00b7 9 Hold \u00b7 2 Sell (17 analysts)",
           "from_grade": "",
           "to_grade": "Hold",
@@ -17424,11 +17453,11 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxPaURaMVFOaVhkcEN6cnJuaThJR29fRXpEQXZVOS01RURLMWNvVkpTUmpPUlNGR2VObDhCd3V0X1dPRWFKZmpFRWxES0h5TEtMWVh3Smx4cGZranRFeTFDZGNlREhmU3NzRFlrTUpBSU"
         },
         {
-          "title": "HSBC HOLDINGS PLC ANNOUNCES THE SATISFACTION OF THE NEW ISSUE CONDITION IN RESPECT OF ITS TENDER OFFER FOR ONE SERIES OF SECURITIES",
+          "title": "HSBC Downgraded NVIDIA With a $170 Target, and It\u2019s Not Just About Jensen Huang",
           "source": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/hsbc-holdings-plc-announces-satisfaction-155400064.html?.tsrc=rss",
+          "url": "https://www.tikr.com/blog/hsbc-downgraded-nvidia-with-a-170-target-and-its-not-just-about-jensen-huang?ref=yahoofinance&tlnk=yf-261113-8f9j369v&.tsrc=rss",
           "date": "2026-11-13",
-          "summary": "HSBC Holdings plc (the 'Company', 'we' or 'us') today announces the successful closing, on terms and conditions reasonably satisfactory to the Company, of the offering of $1,500,000,000 7.625% Perpetu"
+          "summary": "Key TakeawaysHSBC downgraded NVIDIA to Hold and cut its price target to $170 from $365 on Nov. 13, one of at least nine Hold-type downgrades as Jensen Huang left as CEO."
         },
         {
           "title": "REG - SSP Group PLC HSBC Holdings PLC - TR1 Notification of major interest in shares - TradingView",
@@ -17438,11 +17467,11 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMi7AFBVV95cUxQbXB6V05OZUJwZWNDb1RCdkljbG03Y3FnYXVwMnFReGY3dFh2WmZkZ1hRNHlBbEtBQlE2TVpzdExWQVZPZ1dmZnZtdlJXUUl3bE4zdjdzbFZhV2Vqd1pFWThzYmV4aGRzUjlTVE05VT"
         },
         {
-          "title": "Yuan May Double Global Payment Share as Usage Climbs, HSBC Says - Bloomberg.com",
-          "source": "Bloomberg.com",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOSkx6bTMtVXhDcE04X0pfdEZXNXdLT1VuLWpiNE5PcXh6OFppYkdyNzFhUXgybW5Nck4xdUpqUi1mVmJJX09USWJ1NVo5TFF5d0ZLSzczYnRDMk11OXg5ZlhFSnUzSkVGUkpiVXozN3FqdXdiOFFFVWFYY3dYWXFJckt6ZDdpN0hvN1VDMXF3ekIzZHQzTl9KVjUyTzlzOV8td0twTGJTYjFZY3BoTElsWFhmNA?oc=5",
+          "title": "HSBC HOLDINGS PLC ANNOUNCES THE SATISFACTION OF THE NEW ISSUE CONDITION IN RESPECT OF ITS TENDER OFFER FOR ONE SERIES OF SECURITIES",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/hsbc-holdings-plc-announces-satisfaction-155400064.html?.tsrc=rss",
           "date": "2026-11-13",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxOSkx6bTMtVXhDcE04X0pfdEZXNXdLT1VuLWpiNE5PcXh6OFppYkdyNzFhUXgybW5Nck4xdUpqUi1mVmJJX09USWJ1NVo5TFF5d0ZLSzczYnRDMk11OXg5ZlhFSnUzSkVGUkpiVXozN3"
+          "summary": "HSBC Holdings plc (the 'Company', 'we' or 'us') today announces the successful closing, on terms and conditions reasonably satisfactory to the Company, of the offering of $1,500,000,000 7.625% Perpetu"
         }
       ]
     },
@@ -17683,7 +17712,7 @@
           "source": "consensus"
         },
         {
-          "date": "2",
+          "date": "3",
           "firm": "5 Buy \u00b7 0 Hold \u00b7 0 Sell (5 analysts)",
           "from_grade": "",
           "to_grade": "Buy",
@@ -17914,6 +17943,13 @@
       },
       "news": [
         {
+          "title": "Modine Stock Just Soared 29% on a Report That Samsung Wants to Buy It. Is It Too Late to Buy?",
+          "source": "Yahoo Finance",
+          "url": "https://www.fool.com/investing/2026/11/13/modine-stock-just-soared-29-on-a-report-that-samsung-wants-to-buy-it-is-it-too-late-to-buy/?.tsrc=rss",
+          "date": "2026-11-13",
+          "summary": "Samsung is reportedly in talks to acquire the data center cooling company. But nothing has been signed, and the stock has already priced in a lot of good news."
+        },
+        {
           "title": "SK hynix Stocks Fall 3.03% as Nvidia Leadership Shock Hits Key HBM Supplier",
           "source": "Yahoo Finance",
           "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-stocks-fall-3-183209379.html?.tsrc=rss",
@@ -17947,13 +17983,6 @@
           "url": "https://247wallst.com/investing/2026/11/13/samsung-wants-to-buy-an-american-ai-data-center-cooling-company/?.tsrc=rss",
           "date": "2026-11-13",
           "summary": "Modine's shares jumped after hours on a report of Samsung interest, yet the stock still sits far below its peak. Behind the rally lie missed earnings, negative cash flow, and a regulatory hurdle that "
-        },
-        {
-          "title": "Samsung in Talks to Buy Modine as Data Center Cooling Stock Surges 29%",
-          "source": "Yahoo Finance",
-          "url": "https://www.ibtimes.com/samsung-talks-acquire-modine-data-center-cooling-3809734?.tsrc=rss",
-          "date": "2026-11-13",
-          "summary": "No deal has been finalized, but a potential multibillion-dollar transaction sent Modine shares sharply higher as investors assessed Samsung's push into data center thermal infrastructure."
         }
       ]
     },
@@ -17961,6 +17990,14 @@
       "ticker": "AVGO",
       "name": "Broadcom Inc.",
       "ratings": [
+        {
+          "date": "3",
+          "firm": "45 Buy \u00b7 4 Hold \u00b7 0 Sell (49 analysts)",
+          "from_grade": "",
+          "to_grade": "Buy",
+          "action": "reit",
+          "source": "consensus"
+        },
         {
           "date": "3",
           "firm": "45 Buy \u00b7 4 Hold \u00b7 0 Sell (49 analysts)",
@@ -18352,14 +18389,6 @@
           "to_grade": "Buy",
           "action": "up",
           "source": "broker"
-        },
-        {
-          "date": "2026-10-27",
-          "firm": "Rosenblatt",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
         }
       ],
       "new_ratings": [],
@@ -18425,14 +18454,35 @@
       },
       "news": [
         {
+          "title": "Broadcom is 'very, very capable,' analyst says as NVIDIA's troubles mount",
+          "source": "Bing News",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aaa90cb42659af42124ad857ee3&url=https%3a%2f%2fwww.msn.com%2fen-us%2ftechnology%2ftech-companies%2fbroadcom-is-very-very-capable-analyst-says-as-nvidia-s-troubles-mount%2far-AA2hnd1n&c=4919003167951687866&mkt=en-us",
+          "date": "2026-11-13",
+          "summary": "Broadcom Inc. (NASDAQ:AVGO) is emerging as a potential winner from NVIDIA Corp. (NASDAQ:NVDA)\u2018s leadership turmoil, as analysts see the chipmaker gaining ground in the AI race while tech giants ..."
+        },
+        {
+          "title": "How Investors May Respond To Broadcom (AVGO) As Nvidia Rivals Gain Attention",
+          "source": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/investors-may-respond-broadcom-avgo-191037922.html?.tsrc=rss",
+          "date": "2026-11-13",
+          "summary": "In early November 2026, Traefik Labs disclosed broad availability of Traefik Hub across VMware Cloud Foundation from Broadcom, SUSE AI Factory with NVIDIA, Spectro Cloud PaletteAI and Nutanix. Broadco"
+        },
+        {
+          "title": "Chip stocks slide as Nvidia rebound fades",
+          "source": "Seeking Alpha",
+          "url": "https://seekingalpha.com/symbol/AVGO/news?source=feed_symbol_AVGO",
+          "date": "2026-11-13",
+          "summary": ""
+        },
+        {
           "title": "Why Broadcom Stock Dove Today",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bbe9fd648faa7259d966acc0286&url=https%3a%2f%2fwww.fool.com%2finvesting%2f2026%2f11%2f13%2fwhy-broadcom-stock-dove-today%2f&c=3791579518032768013&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aaa90cb42659af42124ad857ee3&url=https%3a%2f%2fwww.fool.com%2finvesting%2f2026%2f11%2f13%2fwhy-broadcom-stock-dove-today%2f&c=3791579518032768013&mkt=en-us",
           "date": "2026-11-13",
           "summary": "Shares of Broadcom ( AVGO -5.43%) turned lower on Friday, falling as much as 7.3%. As of 12:53 p.m. ET, the stock was still down 5.1%. The catalyst that sent the semiconductor and networking ..."
         },
         {
-          "title": "Chip stocks slide as Nvidia rebound fades",
+          "title": "Broadcom in focus as Rothschild downgrades to Neutral but flags potential upside",
           "source": "Seeking Alpha",
           "url": "https://seekingalpha.com/symbol/AVGO/news?source=feed_symbol_AVGO",
           "date": "2026-11-13",
@@ -18444,27 +18494,6 @@
           "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stocks-fall-4-59-172217386.html?.tsrc=rss",
           "date": "2026-11-13",
           "summary": "The custom-chip leader gives back part of Thursday's 5.54% surge, with Nvidia's Tuesday report now the key test for the rotation trade."
-        },
-        {
-          "title": "Broadcom in focus as Rothschild downgrades to Neutral but flags potential upside",
-          "source": "Seeking Alpha",
-          "url": "https://seekingalpha.com/symbol/AVGO/news?source=feed_symbol_AVGO",
-          "date": "2026-11-13",
-          "summary": ""
-        },
-        {
-          "title": "Is Rothschild & Co Redburn Wrong to Give Up on Broadcom? Wall Street Still Sees $533",
-          "source": "Yahoo Finance",
-          "url": "https://www.tikr.com/blog/is-rothschild-co-redburn-wrong-to-give-up-on-broadcom-wall-street-still-sees-533?ref=yahoofinance&tlnk=yf-261113-4j384xm2&.tsrc=rss",
-          "date": "2026-11-13",
-          "summary": "Key TakeawaysRothschild & Co Redburn downgraded Broadcom to Neutral from Buy on Nov. 13 and cut its price target to $398 from $595, 9% above the Nov."
-        },
-        {
-          "title": "Polen Global Growth adds Seagate, AMD And SK Hynix, trims Nvidia and Broadcom among Q3 moves",
-          "source": "Seeking Alpha",
-          "url": "https://seekingalpha.com/symbol/AVGO/news?source=feed_symbol_AVGO",
-          "date": "2026-11-13",
-          "summary": ""
         }
       ]
     },
@@ -18609,78 +18638,6 @@
           "source": "broker"
         },
         {
-          "date": "2026-11-03",
-          "firm": "B. Riley Securities",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-11-03",
-          "firm": "Wells Fargo",
-          "from_grade": "Overweight",
-          "to_grade": "Overweight",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-11-03",
-          "firm": "TD Cowen",
-          "from_grade": "Buy",
-          "to_grade": "Hold",
-          "action": "reit",
-          "source": "broker"
-        },
-        {
-          "date": "2026-11-03",
-          "firm": "RBC Capital",
-          "from_grade": "Outperform",
-          "to_grade": "Outperform",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-11-03",
-          "firm": "Susquehanna",
-          "from_grade": "Positive",
-          "to_grade": "Positive",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-11-03",
-          "firm": "Rosenblatt",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-11-03",
-          "firm": "Cantor Fitzgerald",
-          "from_grade": "Neutral",
-          "to_grade": "Neutral",
-          "action": "reit",
-          "source": "broker"
-        },
-        {
-          "date": "2026-11-03",
-          "firm": "Needham",
-          "from_grade": "Buy",
-          "to_grade": "Buy",
-          "action": "up",
-          "source": "broker"
-        },
-        {
-          "date": "2026-11-03",
-          "firm": "B of A Securities",
-          "from_grade": "Buy",
-          "to_grade": "Neutral",
-          "action": "reit",
-          "source": "broker"
-        },
-        {
           "date": "2026-11-09",
           "firm": "B. Riley Securities",
           "from_grade": "Buy",
@@ -18870,6 +18827,78 @@
           "from_grade": "Buy",
           "to_grade": "Hold",
           "action": "reit",
+          "source": "broker"
+        },
+        {
+          "date": "2026-11-03",
+          "firm": "RBC Capital",
+          "from_grade": "Outperform",
+          "to_grade": "Outperform",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-11-03",
+          "firm": "Susquehanna",
+          "from_grade": "Positive",
+          "to_grade": "Positive",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-11-03",
+          "firm": "Rosenblatt",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-11-03",
+          "firm": "Cantor Fitzgerald",
+          "from_grade": "Neutral",
+          "to_grade": "Neutral",
+          "action": "reit",
+          "source": "broker"
+        },
+        {
+          "date": "2026-11-03",
+          "firm": "Needham",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-11-03",
+          "firm": "B of A Securities",
+          "from_grade": "Buy",
+          "to_grade": "Neutral",
+          "action": "reit",
+          "source": "broker"
+        },
+        {
+          "date": "2026-11-09",
+          "firm": "B. Riley Securities",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-11-03",
+          "firm": "B. Riley Securities",
+          "from_grade": "Buy",
+          "to_grade": "Buy",
+          "action": "up",
+          "source": "broker"
+        },
+        {
+          "date": "2026-11-03",
+          "firm": "Wells Fargo",
+          "from_grade": "Overweight",
+          "to_grade": "Overweight",
+          "action": "up",
           "source": "broker"
         }
       ],
@@ -18944,10 +18973,10 @@
         },
         {
           "title": "Marvell Is Still Up 81% This Year. Can MRVL Stock Hit $300 by 2029?",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bbefdfc4363bd2fb59e7847ebb5&url=https%3a%2f%2f247wallst.com%2finvesting%2f2026%2f11%2f13%2fmarvell-is-still-up-81-this-year-can-mrvl-stock-hit-300-by-2029%2f&c=18330936616130488742&mkt=en-us",
+          "source": "Yahoo Finance",
+          "url": "https://247wallst.com/investing/2026/11/13/marvell-is-still-up-81-this-year-can-mrvl-stock-hit-300-by-2029/?.tsrc=rss",
           "date": "2026-11-13",
-          "summary": "A hard autumn for chip stocks hasn\u2019t erased one of the sector\u2019s standout gains of the year. Marvell Technology (NASDAQ:MRVL | MRVL Price Prediction) stock is up 81% year to date (YTD) to $153.93 in .."
+          "summary": "Marvell has shrugged off a brutal chip selloff better than most, and one executive's remark about 2029 has bulls dreaming big. But a rival's confident boast about its moat gives the bears real ammunit"
         },
         {
           "title": "What Is Going on With Marvell Tech Stock on Friday? - Benzinga",
@@ -18964,18 +18993,18 @@
           "summary": "Nvidia's leadership shake-up is testing Marvell's $115 billion all-stock bid for Lumentum and Nvidia's own $2 billion stake"
         },
         {
-          "title": "Marvell Technology Inc Stock (MRVL) Moved Down by 6.23% on Nov 13: Key Drivers Unveiled - TradingKey",
-          "source": "TradingKey",
-          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQYk54amN0d0pRTDV0LVgtVU80NHpyMW50TERwcEdjZHZuNTZKZWt4RVJUWHZLSW5TQzd6bTkyM24wUHFmWlVjRDVKZTRjLUVmclFaU2FUSFpEa1dDNU1HSUxsWUpURXdxS0JrclVMM1lYQ3dGTThGYUZsR3ZEU3hkY3A3Y3o5MWNnYXhV?oc=5",
+          "title": "Marvell Is Still Up 81% This Year. Can MRVL Stock Hit $300 by 2029? - 24/7 Wall St.",
+          "source": "24/7 Wall St.",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOUmtqemZnblJxMGtTUXZQaThIWG13TGJwS05TZ1I1RHJGcWJoV0VVZmtzeDI5U1l4ZDd0LW1pTm03YS1YSjNDU2JhV3lKeEgtaVpYckZpcHBKS05hMlpiTHc3dHhWQTdVQ2FSLXl0d3o4cWtqckFGSW1DUU40OGN3V01aQ3I0d2Fxc3ByWlNuT1dyNmlEWVlGNk91QUVPNmF2VlYzVjBLS2lTRUU?oc=5",
           "date": "2026-11-13",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiiwFBVV95cUxQYk54amN0d0pRTDV0LVgtVU80NHpyMW50TERwcEdjZHZuNTZKZWt4RVJUWHZLSW5TQzd6bTkyM24wUHFmWlVjRDVKZTRjLUVmclFaU2FUSFpEa1dDNU1HSUxsWUpURXdxS0JrclVMM1"
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOUmtqemZnblJxMGtTUXZQaThIWG13TGJwS05TZ1I1RHJGcWJoV0VVZmtzeDI5U1l4ZDd0LW1pTm03YS1YSjNDU2JhV3lKeEgtaVpYckZpcHBKS05hMlpiTHc3dHhWQTdVQ2FSLXl0d3"
         },
         {
-          "title": "The Stock Market Tumbled After the Midterms. History Says This Sector Could Rally More Than 30% in the Next 12 Months",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bbefdfc4363bd2fb59e7847ebb5&url=https%3a%2f%2fwww.fool.com%2finvesting%2f2026%2f11%2f13%2fthe-stock-market-tumbled-after-the-midterms-history-says-this-sector-could-rally-more-than-30%2f&c=1960347735764071308&mkt=en-us",
+          "title": "Marvell Stock Could Have a Bigger AI Opportunity Than Investors Realize",
+          "source": "Yahoo Finance",
+          "url": "https://247wallst.com/investing/2026/11/13/marvell-stock-could-have-a-bigger-ai-opportunity-than-investors-realize/?.tsrc=rss",
           "date": "2026-11-13",
-          "summary": "In the second quarter of its fiscal year 2027, which ended on Aug. 1, Marvell's revenue grew 37% year over year to a record $2.7 billion. The company's GAAP earnings per share were $0.33, up 50% ..."
+          "summary": "Marvell's shares have lost nearly 40% in a month, yet its business is accelerating and a quiet Google deal could rewrite the numbers. So why is the market running the other way, and who is about to be"
         }
       ]
     },
@@ -18986,23 +19015,16 @@
       "new_ratings": [],
       "news": [
         {
-          "title": "Fidelity launches All Country Equity Research Enhanced ETF - RankiaPro",
-          "source": "RankiaPro",
-          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZ1Z1d2R2dUVlck5LWjBrZ2VmTkxGS1dlMHFUSTU5QVpibVEwWHpXSTFDS3lYa3NyXzhDcWhIbENaZlFIckwwYUNUdy1XbWdQUUFfell0YVZCU1JtZjBjeDRhdkpmRDlXUFJYVXhtNC1XUjI2R3owd2FNNFpnS3lyR1hWdkxhU1dVTEVSaGpXSFJFNlhidWdKYXFpZHIxamstbkd1NGlJN0g0ZDFER1pZNjFR?oc=5",
-          "date": "2026-11-11",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQZ1Z1d2R2dUVlck5LWjBrZ2VmTkxGS1dlMHFUSTU5QVpibVEwWHpXSTFDS3lYa3NyXzhDcWhIbENaZlFIckwwYUNUdy1XbWdQUUFfell0YVZCU1JtZjBjeDRhdkpmRDlXUFJYVXhtNC"
-        },
-        {
           "title": "State Street\u00ae SPDR\u00ae MSCI ACWI ex-US ETF",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bbf56154bd9b6981ffe4dbc508d&url=https%3a%2f%2fmarkets.businessinsider.com%2fetfs%2fstate-street-spdr-msci-acwi-ex-us-etf-us78463x8487&c=6509488104668991574&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aabf2704b33a0a8e043edeef3d4&url=https%3a%2f%2fmarkets.businessinsider.com%2fetfs%2fstate-street-spdr-msci-acwi-ex-us-etf-us78463x8487&c=6509488104668991574&mkt=en-us",
           "date": "2026-11-11",
           "summary": "Historical Prices for State Street\u00ae SPDR\u00ae MSCI ACWI ex-US ETF Sustainability Rating Copyright \u00a9 2026 Insider Inc and finanzen.net GmbH (Imprint). All rights ..."
         },
         {
           "title": "State Street\u00ae SPDR\u00ae MSCI ACWI Climate Paris Aligned ETF",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bbf56154bd9b6981ffe4dbc508d&url=https%3a%2f%2fmarkets.businessinsider.com%2fetfs%2fstate-street-spdr-msci-acwi-climate-paris-aligned-etf-us78463x1946&c=3057743652807452508&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aabf2704b33a0a8e043edeef3d4&url=https%3a%2f%2fmarkets.businessinsider.com%2fetfs%2fstate-street-spdr-msci-acwi-climate-paris-aligned-etf-us78463x1946&c=3057743652807452508&mkt=en-us",
           "date": "2026-11-11",
           "summary": "Historical Prices for State Street\u00ae SPDR\u00ae MSCI ACWI Climate Paris Aligned ETF Sustainability Rating Copyright \u00a9 2026 Insider Inc and finanzen.net GmbH (Imprint ..."
         }
@@ -19038,6 +19060,13 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxOR016a0pzWnYtbFk4a3NEeFRfbW82WVBJREppZFNkelJ1YUJhQUVvV0Q0UzV5eUJnb1dCam8tQ1pCaWVRdmdERFR0VjRITjBaOVBxRk9lcE0wOXA4b0gwTEp4dEw4azBONjAwYXRwTF"
         },
         {
+          "title": "iShares MSCI EAFE Tokenized ETF (Ondo) price today, EFAon to USD chart, marketcap and volume - CryptoSlate",
+          "source": "CryptoSlate",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1hTUg1dzhNYUJtVGhNQ1lrZFBGVVZEODlhczd0SG5SQVNCSVg3VDM0dFJXXzBhc0FBMG9ZcTk2OVhwUnduaXNRX2doTnJHbWFQNzhMTXdhWmtqQ2E4Z2lLZVgyWGxIaUhNYldrNHpaU3ZDcWFSakE?oc=5",
+          "date": "2026-11-13",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMidkFVX3lxTE1hTUg1dzhNYUJtVGhNQ1lrZFBGVVZEODlhczd0SG5SQVNCSVg3VDM0dFJXXzBhc0FBMG9ZcTk2OVhwUnduaXNRX2doTnJHbWFQNzhMTXdhWmtqQ2E4Z2lLZVgyWGxIaUhNYldrNHpaU3"
+        },
+        {
           "title": "How the (XEF.U) price action is used to our Advantage (XEF.U:CA) - Stock Traders Daily",
           "source": "Stock Traders Daily",
           "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRGFlUTJVeUdLNXhnYzBYM09ZQ1FUd2RxUGdxdXM4dzVwWkFEa0xMYU5JZmhaajdjNklvUWt1N2dEd0dJZ0Z0b0QzQnR1aDg1NkR3a1d3SFlnVVlQZVpmWVotVm05dmhweTV0cGFpcGdhZU9CWHRaZC01b2FXYldfbWlJTVFQXzEwY1hVTTlZZEs3aVFON2JMaFg4cnRlZGpNZUk4MGI5RlFaRDJo?oc=5",
@@ -19050,13 +19079,6 @@
           "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPYjFrZi0xdXEzd0hOZUR4MVdsbXVia3I0d3l2LW8yZnRoREVqeFY2TWNURWVGTEhHMnpjNkp1di1hVFJJOUt3R1lOdHRmc3lTZjdqOGdjNXdaU1dGMlpYWjVtYjlFVlhTZkxSdUFwMm9aTE5KX0pRRy14dlp2WG1LeXdFd21qNEpCdlJnSWpGQ21RVUNyekFVaFFhNl94SEZsNDNZeTdZQjlfWmVQVDI4M3dnZw?oc=5",
           "date": "2026-11-12",
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxPYjFrZi0xdXEzd0hOZUR4MVdsbXVia3I0d3l2LW8yZnRoREVqeFY2TWNURWVGTEhHMnpjNkp1di1hVFJJOUt3R1lOdHRmc3lTZjdqOGdjNXdaU1dGMlpYWjVtYjlFVlhTZkxSdUFwMm"
-        },
-        {
-          "title": "SPDW vs IXUS: Which International ETF Is the Better Buy for 2027? - The Motley Fool",
-          "source": "The Motley Fool",
-          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPR0QwdXl4RmVXaGlwbEJWT2pjUm9VcTdsZHU5Snl3UjVUSjlEcjZ2eEljd0UxS3NaUUw2MG96RXFZNUtYeXBSdnJQNWJyeS1rZFdqWW9Ydk5RZWV4dlUzT0s4THBEZzhkMXAzcnA0bkJhX21TaFkwbHgzTXlCQjBUaTJsN0x2TExPZm5FMUs2bHVQaFRNOWdoRmhLNWlsbGc3WWFMbzVST1lBczAwU0VB?oc=5",
-          "date": "2026-11-12",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxPR0QwdXl4RmVXaGlwbEJWT2pjUm9VcTdsZHU5Snl3UjVUSjlEcjZ2eEljd0UxS3NaUUw2MG96RXFZNUtYeXBSdnJQNWJyeS1rZFdqWW9Ydk5RZWV4dlUzT0s4THBEZzhkMXAzcnA0bk"
         }
       ],
       "morningstar": {},
@@ -19090,6 +19112,13 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxOR016a0pzWnYtbFk4a3NEeFRfbW82WVBJREppZFNkelJ1YUJhQUVvV0Q0UzV5eUJnb1dCam8tQ1pCaWVRdmdERFR0VjRITjBaOVBxRk9lcE0wOXA4b0gwTEp4dEw4azBONjAwYXRwTF"
         },
         {
+          "title": "iShares MSCI EAFE Tokenized ETF (Ondo) price today, EFAon to USD chart, marketcap and volume - CryptoSlate",
+          "source": "CryptoSlate",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1hTUg1dzhNYUJtVGhNQ1lrZFBGVVZEODlhczd0SG5SQVNCSVg3VDM0dFJXXzBhc0FBMG9ZcTk2OVhwUnduaXNRX2doTnJHbWFQNzhMTXdhWmtqQ2E4Z2lLZVgyWGxIaUhNYldrNHpaU3ZDcWFSakE?oc=5",
+          "date": "2026-11-13",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMidkFVX3lxTE1hTUg1dzhNYUJtVGhNQ1lrZFBGVVZEODlhczd0SG5SQVNCSVg3VDM0dFJXXzBhc0FBMG9ZcTk2OVhwUnduaXNRX2doTnJHbWFQNzhMTXdhWmtqQ2E4Z2lLZVgyWGxIaUhNYldrNHpaU3"
+        },
+        {
           "title": "How the (XEF.U) price action is used to our Advantage (XEF.U:CA) - Stock Traders Daily",
           "source": "Stock Traders Daily",
           "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRGFlUTJVeUdLNXhnYzBYM09ZQ1FUd2RxUGdxdXM4dzVwWkFEa0xMYU5JZmhaajdjNklvUWt1N2dEd0dJZ0Z0b0QzQnR1aDg1NkR3a1d3SFlnVVlQZVpmWVotVm05dmhweTV0cGFpcGdhZU9CWHRaZC01b2FXYldfbWlJTVFQXzEwY1hVTTlZZEs3aVFON2JMaFg4cnRlZGpNZUk4MGI5RlFaRDJo?oc=5",
@@ -19102,13 +19131,6 @@
           "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPYjFrZi0xdXEzd0hOZUR4MVdsbXVia3I0d3l2LW8yZnRoREVqeFY2TWNURWVGTEhHMnpjNkp1di1hVFJJOUt3R1lOdHRmc3lTZjdqOGdjNXdaU1dGMlpYWjVtYjlFVlhTZkxSdUFwMm9aTE5KX0pRRy14dlp2WG1LeXdFd21qNEpCdlJnSWpGQ21RVUNyekFVaFFhNl94SEZsNDNZeTdZQjlfWmVQVDI4M3dnZw?oc=5",
           "date": "2026-11-12",
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxPYjFrZi0xdXEzd0hOZUR4MVdsbXVia3I0d3l2LW8yZnRoREVqeFY2TWNURWVGTEhHMnpjNkp1di1hVFJJOUt3R1lOdHRmc3lTZjdqOGdjNXdaU1dGMlpYWjVtYjlFVlhTZkxSdUFwMm"
-        },
-        {
-          "title": "SPDW vs IXUS: Which International ETF Is the Better Buy for 2027? - The Motley Fool",
-          "source": "The Motley Fool",
-          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPR0QwdXl4RmVXaGlwbEJWT2pjUm9VcTdsZHU5Snl3UjVUSjlEcjZ2eEljd0UxS3NaUUw2MG96RXFZNUtYeXBSdnJQNWJyeS1rZFdqWW9Ydk5RZWV4dlUzT0s4THBEZzhkMXAzcnA0bkJhX21TaFkwbHgzTXlCQjBUaTJsN0x2TExPZm5FMUs2bHVQaFRNOWdoRmhLNWlsbGc3WWFMbzVST1lBczAwU0VB?oc=5",
-          "date": "2026-11-12",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxPR0QwdXl4RmVXaGlwbEJWT2pjUm9VcTdsZHU5Snl3UjVUSjlEcjZ2eEljd0UxS3NaUUw2MG96RXFZNUtYeXBSdnJQNWJyeS1rZFdqWW9Ydk5RZWV4dlUzT0s4THBEZzhkMXAzcnA0bk"
         }
       ],
       "morningstar": {},
@@ -19121,6 +19143,13 @@
       "new_ratings": [],
       "consensus": {},
       "news": [
+        {
+          "title": "iShares MSCI EAFE Tokenized ETF (Ondo) price today, EFAon to USD chart, marketcap and volume - CryptoSlate",
+          "source": "CryptoSlate",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1hTUg1dzhNYUJtVGhNQ1lrZFBGVVZEODlhczd0SG5SQVNCSVg3VDM0dFJXXzBhc0FBMG9ZcTk2OVhwUnduaXNRX2doTnJHbWFQNzhMTXdhWmtqQ2E4Z2lLZVgyWGxIaUhNYldrNHpaU3ZDcWFSakE?oc=5",
+          "date": "2026-11-13",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMidkFVX3lxTE1hTUg1dzhNYUJtVGhNQ1lrZFBGVVZEODlhczd0SG5SQVNCSVg3VDM0dFJXXzBhc0FBMG9ZcTk2OVhwUnduaXNRX2doTnJHbWFQNzhMTXdhWmtqQ2E4Z2lLZVgyWGxIaUhNYldrNHpaU3"
+        },
         {
           "title": "iShares MSCI ACWI (ACWI) Adds Apple and Nvidia on Nov. 11 - Yahoo Finance",
           "source": "Yahoo Finance",
@@ -19143,18 +19172,11 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMidkFVX3lxTE1QV2x6UlFia25rQnBMMVF0RDRrcjRybzNvWWI2TWU2b3I2NEYway1lbWdyZ2djc1Z5VVhWN2R6c1JEdDN6X01GSjdCc1o4MDRiQUo0YUFDb3FDSWdIT0ZISHVoMThSRllwVmFnUFdVel"
         },
         {
-          "title": "Which Household Brands Anchor the iShares Global Consumer Staples ETF (NYSEARCA:KXI)? - Kalkine",
-          "source": "Kalkine",
-          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQeTJBeUpvaElzWnNoRHNTMW9aQWR6YlJqSlRkSnVBUGJFTWxyRnVPUzZlLVJlTEdocEh3SzQwT2x5T2FjSGdaRUpRUnVxZ2RZVFVwZUdiWW02QzkzY3dtTjZiMlQyaWp4ZkxIelAxTnZSODU5VFJlNi04Z3NNWEt2VU14UEROSXdOYlY0LWNmMmU1bmRrRHVrT3pUaFpLaFZTNloxaVZXVGFsa3BGNFdTMHZld3Q0Vk9NZHRQLUZfU2pjNEVpVGc?oc=5",
+          "title": "iShares MSCI South Korea ETF Tokenized bStocks price today, EWYB to USD chart, marketcap and volume - CryptoSlate",
+          "source": "CryptoSlate",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNb2dwUmJsbnhISkY4Ri16cldvWEJtbVJQT1haekE3OGFVdzBXWkIyLWMwa3FzN1FEVUhvSzBJYURBSDRma3E4M0pLSkpUb0t4OXdKd1VNa2JlR1hJd2tEb05VaXdSeS1tZU14NE5GQndSNGNCSmxvSm9uOFpiOWpheG40VQ?oc=5",
           "date": "2026-11-13",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxQeTJBeUpvaElzWnNoRHNTMW9aQWR6YlJqSlRkSnVBUGJFTWxyRnVPUzZlLVJlTEdocEh3SzQwT2x5T2FjSGdaRUpRUnVxZ2RZVFVwZUdiWW02QzkzY3dtTjZiMlQyaWp4ZkxIelAxTn"
-        },
-        {
-          "title": "Why did VGS ETF just hit a record high? - The Motley Fool Australia",
-          "source": "The Motley Fool Australia",
-          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE8tdG1id2dYS01ZOVVpbmNmVUMzaUU0azk2eThVQ3l5Q0VJOUZESWZUcUM2Y1l0OEFBLU5ick1aMFVITDNYdVlXQlRlc0hSZ0RJT05CQ2k5X1JEdGw1VVp6OUt4MksyNmthaWxfODVGQnNHNFVIZVlNMkE3UzRZdWs?oc=5",
-          "date": "2026-11-13",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE8tdG1id2dYS01ZOVVpbmNmVUMzaUU0azk2eThVQ3l5Q0VJOUZESWZUcUM2Y1l0OEFBLU5ick1aMFVITDNYdVlXQlRlc0hSZ0RJT05CQ2k5X1JEdGw1VVp6OUt4MksyNmthaWxfODVGQn"
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxNb2dwUmJsbnhISkY4Ri16cldvWEJtbVJQT1haekE3OGFVdzBXWkIyLWMwa3FzN1FEVUhvSzBJYURBSDRma3E4M0pLSkpUb0t4OXdKd1VNa2JlR1hJd2tEb05VaXdSeS1tZU14NE5GQn"
         },
         {
           "title": "Behavioral Patterns of RING and Institutional Flows - Stock Traders Daily",
@@ -19175,7 +19197,7 @@
         {
           "title": "What iShares Core S&P 500 ETF (IVV) Sold: Apple Leads on Nov. 11",
           "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bc16c6b4e7692767f64bcc99cbd&url=https%3a%2f%2ffinance.yahoo.com%2fmarkets%2fstocks%2farticles%2fishares-core-p-500-etf-110323691.html&c=10357279600368490518&mkt=en-us",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aadd9814a93910f151414800124&url=https%3a%2f%2ffinance.yahoo.com%2fmarkets%2fstocks%2farticles%2fishares-core-p-500-etf-110323691.html&c=10357279600368490518&mkt=en-us",
           "date": "2026-11-13",
           "summary": "In Wednesday's session, one ETF was selling and none were buying. iShares Core S&P 500 ETF ( IVV) recorded $645.9 million in gross trades, all of it net selling, with no positions increased and 497 .."
         },
@@ -19194,13 +19216,6 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE8tdG1id2dYS01ZOVVpbmNmVUMzaUU0azk2eThVQ3l5Q0VJOUZESWZUcUM2Y1l0OEFBLU5ick1aMFVITDNYdVlXQlRlc0hSZ0RJT05CQ2k5X1JEdGw1VVp6OUt4MksyNmthaWxfODVGQn"
         },
         {
-          "title": "Why Did the Russell 2000 Drop 1.66%, Leading Losses in Stocks and Hitting iShares Russell 2000 ETF (NYSEARCA:IWM)? - kalkine.ca",
-          "source": "kalkine.ca",
-          "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPNVprRUdoVElOTHF1ancwX1JHQzhQWEdPcWVCVjQtMVhSNTFlVHc0VGxCc3BRNzNSbTYya1FzX0NHcHkybzVhTUdvQU5BMHduT09MTWtDWjI2c1JEcVRwMGF6ZmFfWjNMWkJSYVZPM1ZnX3FwWEpfc1phNUZMRl85cXo4b21xcWdPRjNtNk96YnNzWnd4dU5iRVB4OTVGUUVnQUY3RmFoRkNVaHJURFB6ZTdmZy03OWVYZVJLMjJLcjFhN3MtUlZ6TXVKbjhRNFVwSDVKdXhmdTlzWXNp?oc=5",
-          "date": "2026-11-13",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi3AFBVV95cUxPNVprRUdoVElOTHF1ancwX1JHQzhQWEdPcWVCVjQtMVhSNTFlVHc0VGxCc3BRNzNSbTYya1FzX0NHcHkybzVhTUdvQU5BMHduT09MTWtDWjI2c1JEcVRwMGF6ZmFfWjNMWkJSYVZPM1"
-        },
-        {
           "title": "The S&P 500 Has a \u201cPure Value\u201d Version. RPV Gives Its Cheapest Stocks the Biggest Weights - Yahoo Finance",
           "source": "Yahoo Finance",
           "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPb2QxdUJfSTBIV0hadTJZZnlvTDFDMXVhY1FYVlp2R1VyTEFhbk04ZF9lNXRGakdiMmZYT3NFUUIwOFg5dU45OFEtaGxhNWl6cy10d2hFV3d3NDE3X01Vb05tZnpJa1E1cXExblhCWGpZNVZpR21yeVQ1elQ3azZIcE5ZajVybDRmcFVqOGIwSzJHTzQ?oc=5",
@@ -19213,6 +19228,13 @@
           "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNdjg0Vjk1NVJwbmVsYUNfMGM2bmlzOFNwTjVKVW5CR0NwdGw1TjdHSzBFNk5BUkFBSzdOUHdjLWpXOXpxUnhUTUVUUHZPeXB5OUp3NF9jTFd1V0QzaXUzZFpWMHJOdko4SEMtYzJ1Rlk2ZFp0WU9icGd0U3pDbXBzS3lVcHhFd2RjYnRFRGpVTUQ?oc=5",
           "date": "2026-11-12",
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxNdjg0Vjk1NVJwbmVsYUNfMGM2bmlzOFNwTjVKVW5CR0NwdGw1TjdHSzBFNk5BUkFBSzdOUHdjLWpXOXpxUnhUTUVUUHZPeXB5OUp3NF9jTFd1V0QzaXUzZFpWMHJOdko4SEMtYzJ1Rl"
+        },
+        {
+          "title": "IJH Holders Booked a $116,670 Gain on $300,000, but the Promotion Rule Sells Their Best Winners - 24/7 Wall St.",
+          "source": "24/7 Wall St.",
+          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQMkZNbHRtUEl5U1NyTUFXczNDUGl2aUxJNHBBRjlSUVlJaFpXRkJzVnJuQXpjUUFNQW1hbWcycjB5U2dQeUJDUTV3YlRvSTBtdDg0a25RbEN2M3ItSl8zcFpiWUs4bDJZLUY2ZVVuY2hkeVNLRXhwMFFickJhb1g4SnQ1eXpKSXRtaGN4N1JaSUJDRHBwZ3pJSFRtYUw5aC03eFN4OHBfQ2wzYWRzTWlkQl9DXzlBRWZxdlpxbUR1V2piYTlmQWpKeVBYV0luSjJoVEZ5Sg?oc=5",
+          "date": "2026-11-12",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi1AFBVV95cUxQMkZNbHRtUEl5U1NyTUFXczNDUGl2aUxJNHBBRjlSUVlJaFpXRkJzVnJuQXpjUUFNQW1hbWcycjB5U2dQeUJDUTV3YlRvSTBtdDg0a25RbEN2M3ItSl8zcFpiWUs4bDJZLUY2ZVVuY2"
         }
       ]
     },
@@ -19223,6 +19245,13 @@
       "new_ratings": [],
       "consensus": {},
       "news": [
+        {
+          "title": "ADI Global Distribution Shares Cut Nearly in Half After $659 Million Write-Down and Guidance Cut - BigGo Finance",
+          "source": "BigGo Finance",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBSamRuQzFmRGNPd3NFUEtlYnR5azN3eWpwN3pXV0FRWm5VWlQwd3p6dGNEa3pWeV80WnhoLVIyQ3d5NzRRZEFIVjFyRDgxQVZJTjh4b051VHljSHZlTkV6NXFJeEktS0dhVjl2cmJmQnZkMXp1SGc?oc=5",
+          "date": "2026-11-13",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMidkFVX3lxTFBSamRuQzFmRGNPd3NFUEtlYnR5azN3eWpwN3pXV0FRWm5VWlQwd3p6dGNEa3pWeV80WnhoLVIyQ3d5NzRRZEFIVjFyRDgxQVZJTjh4b051VHljSHZlTkV6NXFJeEktS0dhVjl2cmJmQn"
+        },
         {
           "title": "QQQ ETF Guide: How to invest in the Nasdaq-100 from Singapore - Beansprout - Singapore\u2019s Leading Financial Insights Platform - Growbeansprout.com",
           "source": "Beansprout - Singapore\u2019s Leading Financial Insights Platform - Growbeansprout.com",
@@ -19238,6 +19267,13 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMi3AFBVV95cUxPNVprRUdoVElOTHF1ancwX1JHQzhQWEdPcWVCVjQtMVhSNTFlVHc0VGxCc3BRNzNSbTYya1FzX0NHcHkybzVhTUdvQU5BMHduT09MTWtDWjI2c1JEcVRwMGF6ZmFfWjNMWkJSYVZPM1"
         },
         {
+          "title": "iShares Nasdaq 100 ETF (IQQ)",
+          "source": "Bing News",
+          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77aad92a4474a8668330cd212cc4c&url=https%3a%2f%2ffinance.yahoo.com%2fquote%2fIQQ%2fholdings%2f&c=13007505801805255139&mkt=en-us",
+          "date": "2026-11-12",
+          "summary": "The fund seeks to track the investment results of the Nasdaq-100 Index (the \u201cunderlying index\u201d), which measures the performance of securities of the 100 largest domestic and international ..."
+        },
+        {
           "title": "ETF Prime: BlackRock on Liquid Alts & the Rise of AI-Managed Portfolios - ETF Database",
           "source": "ETF Database",
           "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1UZkxjdmUwMy1RSlU2bWNZLXhlTVl5M19Xd2ZZU2hfOC1ZTk93cVhKcDFkMWktMGNGTExMa0s1TGR5OVZySlk5WWl3aEVZeXBzejU5X1JoQ3JiZE9KTWVNZld0d1JfOWhtWlpWNjV1TWNGU0JpOXVZZmtB?oc=5",
@@ -19245,25 +19281,11 @@
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMiekFVX3lxTE1UZkxjdmUwMy1RSlU2bWNZLXhlTVl5M19Xd2ZZU2hfOC1ZTk93cVhKcDFkMWktMGNGTExMa0s1TGR5OVZySlk5WWl3aEVZeXBzejU5X1JoQ3JiZE9KTWVNZld0d1JfOWhtWlpWNjV1TW"
         },
         {
-          "title": "iShares Nasdaq 100 ETF (IQQ)",
-          "source": "Bing News",
-          "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af75bc181924c18993340accacd0665&url=https%3a%2f%2ffinance.yahoo.com%2fquote%2fIQQ%2fholdings%2f&c=13007505801805255139&mkt=en-us",
-          "date": "2026-11-12",
-          "summary": "The fund seeks to track the investment results of the Nasdaq-100 Index (the \u201cunderlying index\u201d), which measures the performance of securities of the 100 largest domestic and international ..."
-        },
-        {
           "title": "Nasdaq 100 Futures Drop As Reports Relating To Jensen Huang\u2019s Ousting Outweigh CoreWeave\u2019s Strong Outlook \u2014 NVDA, TSLA, SNDK, CAPR, CRWV In Focus - TradingView",
           "source": "TradingView",
           "url": "https://news.google.com/rss/articles/CBMipwJBVV95cUxQWi1sSUdDZm9Qdm9uYjNBeDlFei1Bc0NNVm5uTHZObFhWNzlYS1prTkVoTW85T2hVS1kzY0NiU3ZFNlFpSF8xNWpxbXdKSkNGNUJvSEJ5LU00eWxiQ29RUWRkNDdjd3V3aktXdUhnbkdkLVA2UnRrQmtHeUhuSXRwclhCaV9UaDhlbWdXa3pPa2t2UDV4eGNQcVpBQ3B1WV9uZXFjYm4wOTR6dTJabnN0TmJYQ0szbTJySVl4UWJvYWRFVWdncTJ4Q2szRzRrZVh0aVVhR19wTGVNcGd4Um1IV1VRUXFtTDFMTXVMYUloWm5iLTRDc2d3UWQzMVFBTzExNU1JTE53SnA3MUcwRUF3NF92Rm5GNGt2dDNseEE1Q1dudG5vU01B?oc=5",
           "date": "2026-11-12",
           "summary": "<a href=\"https://news.google.com/rss/articles/CBMipwJBVV95cUxQWi1sSUdDZm9Qdm9uYjNBeDlFei1Bc0NNVm5uTHZObFhWNzlYS1prTkVoTW85T2hVS1kzY0NiU3ZFNlFpSF8xNWpxbXdKSkNGNUJvSEJ5LU00eWxiQ29RUWRkNDdjd3V3aktXdUhnbk"
-        },
-        {
-          "title": "Strategy Sinks As MSCI Axes Bitcoin Whale; Is Nasdaq 100 Next? - Investor's Business Daily",
-          "source": "Investor's Business Daily",
-          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOUFJJWHVqZkRrWUlDV3N6V04yUUVCbHVJczFOYk1hQmhlUURjalNDaTF3N2g0Y0FtUDlKeUFSRkI1WW5mdTRmal8xQ0NaU25oNU0xdXpzWHptRmlyR1p3YjBtQzdYZ2tTSi02Y0o3c2dTYS1BSXFKb19iSTQxZ2V1WjNFZHZscXNHcHZLVEdLaDM2QQ?oc=5",
-          "date": "2026-11-12",
-          "summary": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxOUFJJWHVqZkRrWUlDV3N6V04yUUVCbHVJczFOYk1hQmhlUURjalNDaTF3N2g0Y0FtUDlKeUFSRkI1WW5mdTRmal8xQ0NaU25oNU0xdXpzWHptRmlyR1p3YjBtQzdYZ2tTSi02Y0o3c2"
         }
       ]
     }
