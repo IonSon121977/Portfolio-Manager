@@ -1,129 +1,35 @@
 {
-  "week_from": "Mon 09 Nov",
-  "week_to": "Fri 13 Nov",
-  "week_from_iso": "2026-11-09",
-  "week_to_iso": "2026-11-13",
+  "week_from": "Mon 16 Nov",
+  "week_to": "Fri 20 Nov",
+  "week_from_iso": "2026-11-16",
+  "week_to_iso": "2026-11-20",
   "earnings": {
-    "IFX.DE": [
+    "NVDA": [
       {
-        "date": "2026-11-10",
+        "date": "2026-11-17",
         "hour": "",
-        "eps_estimate": 0.63,
+        "eps_estimate": 2.47,
         "eps_actual": null,
-        "revenue_est": 4715259360.0,
+        "revenue_est": 108731903900.0,
         "revenue_act": null,
         "quarter": 4,
         "year": 2026,
-        "ticker": "IFX.DE",
-        "name": "Infineon Technologies AG"
-      }
-    ],
-    "ENR.DE": [
-      {
-        "date": "2026-11-11",
-        "hour": "",
-        "eps_estimate": 1.38,
-        "eps_actual": null,
-        "revenue_est": 12664773310.0,
-        "revenue_act": null,
-        "quarter": 4,
-        "year": 2026,
-        "ticker": "ENR.DE",
-        "name": "Siemens Energy"
-      }
-    ],
-    "GBF.DE": [
-      {
-        "date": "2026-11-11",
-        "hour": "",
-        "eps_estimate": 1.11,
-        "eps_actual": null,
-        "revenue_est": 1358023330.0,
-        "revenue_act": null,
-        "quarter": 4,
-        "year": 2026,
-        "ticker": "GBF.DE",
-        "name": "Bilfinger"
-      }
-    ],
-    "VH2.DE": [
-      {
-        "date": "2026-11-12",
-        "hour": "",
-        "eps_estimate": 5.95,
-        "eps_actual": null,
-        "revenue_est": 228300000.0,
-        "revenue_act": null,
-        "quarter": 4,
-        "year": 2026,
-        "ticker": "VH2.DE",
-        "name": "Friedrich Vorwerk Group"
-      }
-    ],
-    "SIE.DE": [
-      {
-        "date": "2026-11-12",
-        "hour": "",
-        "eps_estimate": 2.81,
-        "eps_actual": null,
-        "revenue_est": 23239932540.0,
-        "revenue_act": null,
-        "quarter": 4,
-        "year": 2026,
-        "ticker": "SIE.DE",
-        "name": "Siemens AG"
-      }
-    ],
-    "ALV.DE": [
-      {
-        "date": "2026-11-12",
-        "hour": "",
-        "eps_estimate": 7.51,
-        "eps_actual": null,
-        "revenue_est": 0.0,
-        "revenue_act": null,
-        "quarter": 4,
-        "year": 2026,
-        "ticker": "ALV.DE",
-        "name": "Allianz SE"
+        "ticker": "NVDA",
+        "name": "NVIDIA"
       }
     ]
   },
   "dividends": {
-    "AAPL": [
+    "MSFT": [
       {
-        "ex_date": "2026-11-12",
-        "pay_date": "2026-08-13",
-        "record_date": "",
-        "amount": 0.27,
-        "currency": "USD",
-        "freq": "",
-        "ticker": "AAPL",
-        "name": "Apple"
-      }
-    ],
-    "BP.L": [
-      {
-        "ex_date": "2026-11-12",
-        "pay_date": "None",
-        "record_date": "",
-        "amount": 0.0866,
-        "currency": "GBp",
-        "freq": "",
-        "ticker": "BP.L",
-        "name": "BP plc"
-      }
-    ],
-    "LLY": [
-      {
-        "ex_date": "2026-11-13",
+        "ex_date": "2026-11-19",
         "pay_date": "2026-12-10",
         "record_date": "",
-        "amount": 1.73,
+        "amount": 0.91,
         "currency": "USD",
         "freq": "",
-        "ticker": "LLY",
-        "name": "Eli Lilly"
+        "ticker": "MSFT",
+        "name": "Microsoft"
       }
     ]
   },
@@ -131,83 +37,11 @@
   "ipos": [],
   "earnings_calendar": [
     {
-      "date": "2026-11-10",
-      "hour": "",
-      "eps_estimate": 0.63,
-      "eps_actual": null,
-      "revenue_est": 4715259360.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "IFX.DE",
-      "name": "Infineon Technologies AG"
-    },
-    {
-      "date": "2026-11-11",
-      "hour": "",
-      "eps_estimate": 1.38,
-      "eps_actual": null,
-      "revenue_est": 12664773310.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "ENR.DE",
-      "name": "Siemens Energy"
-    },
-    {
-      "date": "2026-11-11",
-      "hour": "",
-      "eps_estimate": 1.11,
-      "eps_actual": null,
-      "revenue_est": 1358023330.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "GBF.DE",
-      "name": "Bilfinger"
-    },
-    {
-      "date": "2026-11-12",
-      "hour": "",
-      "eps_estimate": 5.95,
-      "eps_actual": null,
-      "revenue_est": 228300000.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "VH2.DE",
-      "name": "Friedrich Vorwerk Group"
-    },
-    {
-      "date": "2026-11-12",
-      "hour": "",
-      "eps_estimate": 2.81,
-      "eps_actual": null,
-      "revenue_est": 23239932540.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "SIE.DE",
-      "name": "Siemens AG"
-    },
-    {
-      "date": "2026-11-12",
-      "hour": "",
-      "eps_estimate": 7.51,
-      "eps_actual": null,
-      "revenue_est": 0.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "ALV.DE",
-      "name": "Allianz SE"
-    },
-    {
       "date": "2026-11-17",
       "hour": "",
       "eps_estimate": 2.47,
       "eps_actual": null,
-      "revenue_est": 108976833310.0,
+      "revenue_est": 108731903900.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -219,45 +53,27 @@
       "hour": "",
       "eps_estimate": 1.1,
       "eps_actual": null,
-      "revenue_est": 3155914360.0,
+      "revenue_est": 3156204700.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
       "ticker": "MRVL",
       "name": "Marvell Technology"
+    },
+    {
+      "date": "2026-12-09",
+      "hour": "",
+      "eps_estimate": 3.84,
+      "eps_actual": null,
+      "revenue_est": 34906205760.0,
+      "revenue_act": null,
+      "quarter": 4,
+      "year": 2026,
+      "ticker": "AVGO",
+      "name": "Broadcom Inc."
     }
   ],
   "dividend_calendar": [
-    {
-      "ex_date": "2026-11-12",
-      "pay_date": "2026-08-13",
-      "record_date": "",
-      "amount": 0.27,
-      "currency": "USD",
-      "freq": "",
-      "ticker": "AAPL",
-      "name": "Apple"
-    },
-    {
-      "ex_date": "2026-11-12",
-      "pay_date": "None",
-      "record_date": "",
-      "amount": 0.0866,
-      "currency": "GBp",
-      "freq": "",
-      "ticker": "BP.L",
-      "name": "BP plc"
-    },
-    {
-      "ex_date": "2026-11-13",
-      "pay_date": "2026-12-10",
-      "record_date": "",
-      "amount": 1.73,
-      "currency": "USD",
-      "freq": "",
-      "ticker": "LLY",
-      "name": "Eli Lilly"
-    },
     {
       "ex_date": "2026-11-19",
       "pay_date": "2026-12-10",
@@ -277,8 +93,18 @@
       "freq": "",
       "ticker": "HO.PA",
       "name": "Thales"
+    },
+    {
+      "ex_date": "2026-12-07",
+      "pay_date": "2026-12-14",
+      "record_date": "",
+      "amount": 0.22,
+      "currency": "USD",
+      "freq": "",
+      "ticker": "GOOG",
+      "name": "Alphabet (Google) Class C"
     }
   ],
   "ai_brief": "",
-  "generated": "2026-11-07T15:35:53.166423"
+  "generated": "2026-11-14T15:42:58.789823"
 }
