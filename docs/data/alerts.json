@@ -1,5 +1,41 @@
 [
   {
+    "ts": "2026-11-20 19:19 UTC",
+    "type": "52w_low",
+    "ticker": "ORCL",
+    "message": "ORCL 52W LOW EUR 93.01"
+  },
+  {
+    "ts": "2026-11-20 19:19 UTC",
+    "type": "movement",
+    "ticker": "SNDK",
+    "message": "SNDK DOWN | vs morning: -15.6% | vs last check: -1.9% (morning EUR 85.86, last EUR 73.85, now EUR 72.45)"
+  },
+  {
+    "ts": "2026-11-20 19:19 UTC",
+    "type": "movement",
+    "ticker": "AMZN",
+    "message": "AMZN DOWN [CROSSED 3%] | vs morning: -3.2% | vs last check: -0.7% (morning EUR 234.10, last EUR 228.32, now EUR 226.62)"
+  },
+  {
+    "ts": "2026-11-20 19:19 UTC",
+    "type": "movement",
+    "ticker": "BTC-USD",
+    "message": "BTC-USD DOWN | vs morning: -5.9% | vs last check: -1.8% (morning EUR 56216.04, last EUR 53856.39, now EUR 52906.81)"
+  },
+  {
+    "ts": "2026-11-20 19:19 UTC",
+    "type": "movement",
+    "ticker": "AMD",
+    "message": "AMD DOWN | vs morning: -12.1% | vs last check: -1.5% (morning EUR 444.97, last EUR 397.38, now EUR 391.27)"
+  },
+  {
+    "ts": "2026-11-20 19:19 UTC",
+    "type": "movement",
+    "ticker": "NVDA",
+    "message": "NVDA DOWN | vs morning: -8.9% | vs last check: -2.3% (morning EUR 132.78, last EUR 123.89, now EUR 121.00)"
+  },
+  {
     "ts": "2026-11-20 18:04 UTC",
     "type": "movement",
     "ticker": "SEMI.AS",
@@ -2962,41 +2998,5 @@
     "type": "earnings",
     "ticker": "GOOG",
     "message": "GOOG earnings on 2026-10-28"
-  },
-  {
-    "ts": "2026-10-26 10:59 UTC",
-    "type": "earnings",
-    "ticker": "MSFT",
-    "message": "MSFT earnings on 2026-10-28"
-  },
-  {
-    "ts": "2026-10-26 10:58 UTC",
-    "type": "digest",
-    "ticker": "",
-    "message": "Morning digest sent at 10:58 UTC"
-  },
-  {
-    "ts": "2026-10-24 13:14 UTC",
-    "type": "weekly_summary",
-    "ticker": "",
-    "message": "Weekly summary sent - 14 earnings, 3 dividends, 0 splits next week"
-  },
-  {
-    "ts": "2026-10-23 18:41 UTC",
-    "type": "movement",
-    "ticker": "LLY",
-    "message": "LLY DOWN [CROSSED 3%] | vs morning: -3.5% | vs last check: -1.7% (morning EUR 1166.48, last EUR 1144.64, now EUR 1125.33)"
-  },
-  {
-    "ts": "2026-10-23 15:55 UTC",
-    "type": "movement",
-    "ticker": "MU",
-    "message": "MU UP [CROSSED 3%] | vs morning: +3.7% | vs last check: +0.8% (morning EUR 764.59, last EUR 786.28, now EUR 792.56)"
-  },
-  {
-    "ts": "2026-10-23 14:25 UTC",
-    "type": "movement",
-    "ticker": "NOK",
-    "message": "NOK UP [CROSSED 3%] | vs morning: +4.3% | vs last check: +4.3% (morning EUR 7.03, last EUR 7.03, now EUR 7.33)"
   }
 ]
