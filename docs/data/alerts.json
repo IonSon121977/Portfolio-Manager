@@ -1,5 +1,41 @@
 [
   {
+    "ts": "2026-11-20 01:16 UTC",
+    "type": "52w_low",
+    "ticker": "CAT",
+    "message": "CAT 52W LOW EUR 489.65"
+  },
+  {
+    "ts": "2026-11-20 01:16 UTC",
+    "type": "52w_low",
+    "ticker": "SI=F",
+    "message": "SI=F 52W LOW EUR 38.47"
+  },
+  {
+    "ts": "2026-11-20 01:16 UTC",
+    "type": "52w_low",
+    "ticker": "GC=F",
+    "message": "GC=F 52W LOW EUR 3276.86"
+  },
+  {
+    "ts": "2026-11-20 01:16 UTC",
+    "type": "52w_low",
+    "ticker": "NVDA",
+    "message": "NVDA 52W LOW EUR 133.02"
+  },
+  {
+    "ts": "2026-11-20 01:16 UTC",
+    "type": "52w_low",
+    "ticker": "GOOG",
+    "message": "GOOG 52W LOW EUR 246.95"
+  },
+  {
+    "ts": "2026-11-20 01:16 UTC",
+    "type": "movement",
+    "ticker": "SI=F",
+    "message": "SI=F DOWN | vs morning: -6.2% | vs last check: -1.0% (morning EUR 41.03, last EUR 38.87, now EUR 38.47)"
+  },
+  {
     "ts": "2026-11-19 23:50 UTC",
     "type": "movement",
     "ticker": "NVDA",
@@ -2962,41 +2998,5 @@
     "type": "52w_high",
     "ticker": "LLY",
     "message": "LLY 52W HIGH EUR 1169.28"
-  },
-  {
-    "ts": "2026-10-22 14:38 UTC",
-    "type": "movement",
-    "ticker": "MRVL",
-    "message": "MRVL DOWN [CROSSED 3%] | vs morning: -6.6% | vs last check: -6.8% (morning EUR 218.11, last EUR 218.40, now EUR 203.64)"
-  },
-  {
-    "ts": "2026-10-22 14:38 UTC",
-    "type": "movement",
-    "ticker": "AVGO",
-    "message": "AVGO DOWN [CROSSED 3%] | vs morning: -3.2% | vs last check: -3.3% (morning EUR 301.01, last EUR 301.42, now EUR 291.44)"
-  },
-  {
-    "ts": "2026-10-22 14:38 UTC",
-    "type": "movement",
-    "ticker": "ASML",
-    "message": "ASML DOWN [CROSSED 3%] | vs morning: -4.1% | vs last check: -4.3% (morning EUR 1494.10, last EUR 1496.11, now EUR 1432.28)"
-  },
-  {
-    "ts": "2026-10-22 14:38 UTC",
-    "type": "movement",
-    "ticker": "SNDK",
-    "message": "SNDK DOWN [CROSSED 3%] | vs morning: -4.9% | vs last check: -5.0% (morning EUR 1228.13, last EUR 1229.79, now EUR 1167.75)"
-  },
-  {
-    "ts": "2026-10-22 14:38 UTC",
-    "type": "movement",
-    "ticker": "CAT",
-    "message": "CAT DOWN [CROSSED 3%] | vs morning: -5.0% | vs last check: -5.1% (morning EUR 659.60, last EUR 660.49, now EUR 626.65)"
-  },
-  {
-    "ts": "2026-10-22 14:38 UTC",
-    "type": "movement",
-    "ticker": "LLY",
-    "message": "LLY UP [CROSSED 3%] | vs morning: +3.3% | vs last check: +3.1% (morning EUR 1132.37, last EUR 1133.89, now EUR 1169.28)"
   }
 ]
