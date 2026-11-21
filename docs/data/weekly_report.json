@@ -1,59 +1,19 @@
 {
-  "week_from": "Mon 16 Nov",
-  "week_to": "Fri 20 Nov",
-  "week_from_iso": "2026-11-16",
-  "week_to_iso": "2026-11-20",
-  "earnings": {
-    "NVDA": [
-      {
-        "date": "2026-11-17",
-        "hour": "",
-        "eps_estimate": 2.47,
-        "eps_actual": null,
-        "revenue_est": 108731903900.0,
-        "revenue_act": null,
-        "quarter": 4,
-        "year": 2026,
-        "ticker": "NVDA",
-        "name": "NVIDIA"
-      }
-    ]
-  },
-  "dividends": {
-    "MSFT": [
-      {
-        "ex_date": "2026-11-19",
-        "pay_date": "2026-12-10",
-        "record_date": "",
-        "amount": 0.91,
-        "currency": "USD",
-        "freq": "",
-        "ticker": "MSFT",
-        "name": "Microsoft"
-      }
-    ]
-  },
+  "week_from": "Mon 23 Nov",
+  "week_to": "Fri 27 Nov",
+  "week_from_iso": "2026-11-23",
+  "week_to_iso": "2026-11-27",
+  "earnings": {},
+  "dividends": {},
   "splits": {},
   "ipos": [],
   "earnings_calendar": [
-    {
-      "date": "2026-11-17",
-      "hour": "",
-      "eps_estimate": 2.47,
-      "eps_actual": null,
-      "revenue_est": 108731903900.0,
-      "revenue_act": null,
-      "quarter": 4,
-      "year": 2026,
-      "ticker": "NVDA",
-      "name": "NVIDIA"
-    },
     {
       "date": "2026-12-01",
       "hour": "",
       "eps_estimate": 1.1,
       "eps_actual": null,
-      "revenue_est": 3156204700.0,
+      "revenue_est": 3152214940.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -63,26 +23,50 @@
     {
       "date": "2026-12-09",
       "hour": "",
-      "eps_estimate": 3.84,
+      "eps_estimate": 3.83,
       "eps_actual": null,
-      "revenue_est": 34906205760.0,
+      "revenue_est": 34903482540.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
       "ticker": "AVGO",
       "name": "Broadcom Inc."
+    },
+    {
+      "date": "2026-12-14",
+      "hour": "",
+      "eps_estimate": 1.89,
+      "eps_actual": null,
+      "revenue_est": 21325430780.0,
+      "revenue_act": null,
+      "quarter": 4,
+      "year": 2026,
+      "ticker": "ORCL",
+      "name": "Oracle"
+    },
+    {
+      "date": "2026-12-17",
+      "hour": "",
+      "eps_estimate": 38.22,
+      "eps_actual": null,
+      "revenue_est": 61721544580.0,
+      "revenue_act": null,
+      "quarter": 4,
+      "year": 2026,
+      "ticker": "MU",
+      "name": "Micron Technology Inc."
     }
   ],
   "dividend_calendar": [
     {
-      "ex_date": "2026-11-19",
-      "pay_date": "2026-12-10",
+      "ex_date": "2026-12-02",
+      "pay_date": "2026-12-23",
       "record_date": "",
-      "amount": 0.91,
+      "amount": 0.25,
       "currency": "USD",
       "freq": "",
-      "ticker": "MSFT",
-      "name": "Microsoft"
+      "ticker": "NVDA",
+      "name": "NVIDIA"
     },
     {
       "ex_date": "2026-12-02",
@@ -103,8 +87,18 @@
       "freq": "",
       "ticker": "GOOG",
       "name": "Alphabet (Google) Class C"
+    },
+    {
+      "ex_date": "2026-12-14",
+      "pay_date": "None",
+      "record_date": "",
+      "amount": 0.09,
+      "currency": "EUR",
+      "freq": "",
+      "ticker": "STMPA.PA",
+      "name": "STMicroelectronics"
     }
   ],
   "ai_brief": "",
-  "generated": "2026-11-14T15:42:58.789823"
+  "generated": "2026-11-21T16:44:02.552162"
 }
