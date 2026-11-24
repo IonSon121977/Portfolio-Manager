@@ -11,25 +11,25 @@
         "interpretation": "Fear"
       },
       "eurusd": {
-        "value": 1.0918,
-        "chg_pct": 0.07,
+        "value": 1.0912,
+        "chg_pct": 0.01,
         "score": 50,
         "contribution": 0.0,
         "interpretation": "Neutral"
       },
       "stoxx50": {
-        "value": 6074.47,
-        "ma50": 6220.8758,
-        "pct_from_ma": -2.35,
+        "value": 6074.4702,
+        "ma50": 6217.1576,
+        "pct_from_ma": -2.3,
         "above_ma50": false,
         "score": 35,
         "contribution": -3.8,
         "interpretation": "Downtrend"
       },
       "dax": {
-        "value": 25337.27,
-        "ma50": 25611.7807,
-        "pct_from_ma": -1.07,
+        "value": 25337.2695,
+        "ma50": 25609.7098,
+        "pct_from_ma": -1.06,
         "above_ma50": false,
         "score": 45,
         "contribution": -0.8,
@@ -55,30 +55,30 @@
     "eurusd": {
       "ticker": "EURUSD=X",
       "label": "EUR/USD",
-      "price": 1.0918,
+      "price": 1.0912,
       "prev": 1.0911,
-      "chg_pct": 0.07,
+      "chg_pct": 0.01,
       "ma50": 1.1219,
       "above_ma50": false
     },
     "stoxx50": {
       "ticker": "^STOXX50E",
       "label": "Euro Stoxx 50",
-      "price": 6074.47,
+      "price": 6074.4702,
       "prev": 5951.9702,
       "chg_pct": 2.06,
-      "ma50": 6220.8758,
+      "ma50": 6217.1576,
       "above_ma50": false
     },
     "dax": {
       "ticker": "^GDAXI",
       "label": "DAX",
-      "price": 25337.27,
+      "price": 25337.2695,
       "prev": 24839.4707,
       "chg_pct": 2.0,
-      "ma50": 25611.7807,
+      "ma50": 25609.7098,
       "above_ma50": false
     }
   },
-  "updated": "2026-11-24T02:03:12.954169"
+  "updated": "2026-11-24T03:12:20.161260"
 }
