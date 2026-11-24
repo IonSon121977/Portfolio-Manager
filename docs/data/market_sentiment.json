@@ -1,6 +1,6 @@
 {
   "composite": {
-    "score": 40,
+    "score": 42,
     "label": "Fear",
     "color": "#f56565",
     "components": {
@@ -11,25 +11,25 @@
         "interpretation": "Fear"
       },
       "eurusd": {
-        "value": 1.0905,
-        "chg_pct": -0.63,
-        "score": 35,
-        "contribution": -2.2,
-        "interpretation": "Risk-off"
+        "value": 1.091,
+        "chg_pct": 0.01,
+        "score": 50,
+        "contribution": 0.0,
+        "interpretation": "Neutral"
       },
       "stoxx50": {
-        "value": 6074.4702,
-        "ma50": 6217.1576,
-        "pct_from_ma": -2.3,
+        "value": 6074.47,
+        "ma50": 6220.8758,
+        "pct_from_ma": -2.35,
         "above_ma50": false,
         "score": 35,
         "contribution": -3.8,
         "interpretation": "Downtrend"
       },
       "dax": {
-        "value": 25337.2695,
-        "ma50": 25609.7098,
-        "pct_from_ma": -1.06,
+        "value": 25337.27,
+        "ma50": 25611.7807,
+        "pct_from_ma": -1.07,
         "above_ma50": false,
         "score": 45,
         "contribution": -0.8,
@@ -55,30 +55,30 @@
     "eurusd": {
       "ticker": "EURUSD=X",
       "label": "EUR/USD",
-      "price": 1.0905,
-      "prev": 1.0975,
-      "chg_pct": -0.63,
-      "ma50": 1.123,
+      "price": 1.091,
+      "prev": 1.0909,
+      "chg_pct": 0.01,
+      "ma50": 1.1219,
       "above_ma50": false
     },
     "stoxx50": {
       "ticker": "^STOXX50E",
       "label": "Euro Stoxx 50",
-      "price": 6074.4702,
+      "price": 6074.47,
       "prev": 5951.9702,
       "chg_pct": 2.06,
-      "ma50": 6217.1576,
+      "ma50": 6220.8758,
       "above_ma50": false
     },
     "dax": {
       "ticker": "^GDAXI",
       "label": "DAX",
-      "price": 25337.2695,
+      "price": 25337.27,
       "prev": 24839.4707,
       "chg_pct": 2.0,
-      "ma50": 25609.7098,
+      "ma50": 25611.7807,
       "above_ma50": false
     }
   },
-  "updated": "2026-11-23T22:33:05.607365"
+  "updated": "2026-11-24T00:39:28.120870"
 }
