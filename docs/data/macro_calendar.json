@@ -1,6 +1,17 @@
 {
   "events": [
     {
+      "date": "2026-12-04",
+      "time": "14:30 CET",
+      "currency": "USD",
+      "impact": "\ud83d\udd34 High",
+      "impact_raw": "high",
+      "title": "US Non-Farm Payrolls (NFP)",
+      "forecast": "",
+      "previous": "",
+      "source": "BLS via FRED"
+    },
+    {
       "date": "2026-12-09",
       "time": "20:00 CET",
       "currency": "USD",
@@ -57,6 +68,19 @@
     }
   ],
   "by_date": {
+    "2026-12-04": [
+      {
+        "date": "2026-12-04",
+        "time": "14:30 CET",
+        "currency": "USD",
+        "impact": "\ud83d\udd34 High",
+        "impact_raw": "high",
+        "title": "US Non-Farm Payrolls (NFP)",
+        "forecast": "",
+        "previous": "",
+        "source": "BLS via FRED"
+      }
+    ],
     "2026-12-09": [
       {
         "date": "2026-12-09",
@@ -121,6 +145,6 @@
   },
   "from_date": "2026-11-25",
   "to_date": "2026-12-23",
-  "updated": "2026-11-25T18:00:09.361493",
-  "count": 5
+  "updated": "2026-11-25T19:08:08.950291",
+  "count": 6
 }
