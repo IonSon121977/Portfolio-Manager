@@ -1,10 +1,50 @@
 {
-  "week_from": "Mon 23 Nov",
-  "week_to": "Fri 27 Nov",
-  "week_from_iso": "2026-11-23",
-  "week_to_iso": "2026-11-27",
-  "earnings": {},
-  "dividends": {},
+  "week_from": "Mon 30 Nov",
+  "week_to": "Fri 04 Dec",
+  "week_from_iso": "2026-11-30",
+  "week_to_iso": "2026-12-04",
+  "earnings": {
+    "MRVL": [
+      {
+        "date": "2026-12-01",
+        "hour": "",
+        "eps_estimate": 1.1,
+        "eps_actual": null,
+        "revenue_est": 3152214940.0,
+        "revenue_act": null,
+        "quarter": 4,
+        "year": 2026,
+        "ticker": "MRVL",
+        "name": "Marvell Technology"
+      }
+    ]
+  },
+  "dividends": {
+    "NVDA": [
+      {
+        "ex_date": "2026-12-02",
+        "pay_date": "2026-12-23",
+        "record_date": "",
+        "amount": 0.25,
+        "currency": "USD",
+        "freq": "",
+        "ticker": "NVDA",
+        "name": "NVIDIA"
+      }
+    ],
+    "HO.PA": [
+      {
+        "ex_date": "2026-12-02",
+        "pay_date": "None",
+        "record_date": "",
+        "amount": 1.05,
+        "currency": "EUR",
+        "freq": "",
+        "ticker": "HO.PA",
+        "name": "Thales"
+      }
+    ]
+  },
   "splits": {},
   "ipos": [],
   "earnings_calendar": [
@@ -25,7 +65,7 @@
       "hour": "",
       "eps_estimate": 3.83,
       "eps_actual": null,
-      "revenue_est": 34903482540.0,
+      "revenue_est": 34906205760.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -47,9 +87,9 @@
     {
       "date": "2026-12-17",
       "hour": "",
-      "eps_estimate": 38.22,
+      "eps_estimate": 38.25,
       "eps_actual": null,
-      "revenue_est": 61721544580.0,
+      "revenue_est": 61756168190.0,
       "revenue_act": null,
       "quarter": 4,
       "year": 2026,
@@ -100,5 +140,5 @@
     }
   ],
   "ai_brief": "",
-  "generated": "2026-11-21T16:44:02.552162"
+  "generated": "2026-11-28T17:28:31.808978"
 }
